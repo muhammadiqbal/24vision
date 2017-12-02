@@ -11,29 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [
+  'as' => 'login',
+  'uses' => 'Auth\LoginController@showLoginForm'
+]);
 
-
-//Auth::routes();
-
-Route::get('/home', 'HomeController@index');
-Route::get('/openPositions/{port}', 'HomeController@openPosition');
-
-Route::get('generator_builder', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@builder');
-
-Route::get('field_template', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@fieldTemplate');
-
-Route::post('generator_builder/generate', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@generate');
-
-
-Route::resource('roles', 'roleController');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/openPositions/{port}', 'HomeController@openPosition');
+
+Route::resource('roles', 'roleController');
+
+Route::get('/home', 'HomeController@index');
 
 Route::resource('roles', 'RoleController');
 

@@ -34,13 +34,14 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-       <a href="{{ url('/home') }}"><img src="/img/favi-24.png" style="height: 50px;"><b><i>Vision</i></b></a>
+       <a href="{{ url('/home') }}"></a>
     </div>
 
     <!-- /.login-logo -->
     <div class="login-box-body">
+        <p class="login-box-msg"><img src="/img/logo.png" style="height: 100px;">
+        </p>
         <p class="login-box-msg">Sign in to start your session</p>
-
         <form method="post" action="{{ url('/login') }}">
             {!! csrf_field() !!}
 
@@ -81,7 +82,7 @@
         </form>
 
         <a href="{{ url('/password/reset') }}">I forgot my password</a><br>
-        <a href="{{ url('/register') }}" class="text-center">Register a new membership</a>
+      {{--   <a href="{{ url('/register') }}" class="text-center">Register a new membership</a> --}}
 
     </div>
     <!-- /.login-box-body -->
