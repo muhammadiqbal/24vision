@@ -59,11 +59,11 @@ class LdRateType extends Model
         return $this->hasMany(\App\Models\Cargo::class);
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     **/
-    public function cargos()
-    {
-        return $this->hasMany(\App\Models\Cargo::class);
-    }
+    // /**
+    //  * @return \Illuminate\Database\Eloquent\Relations\HasMany
+    //  **/
+    // public function cargos()
+    // {
+    //     return $this->hasMany(\App\Models\Cargo::class);
+    // }
 }

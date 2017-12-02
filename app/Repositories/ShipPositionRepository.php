@@ -8,7 +8,7 @@ use InfyOm\Generator\Common\BaseRepository;
 /**
  * Class ShipPositionRepository
  * @package App\Repositories
- * @version September 10, 2017, 9:47 pm UTC
+ * @version October 14, 2017, 9:08 pm UTC
  *
  * @method ShipPosition findWithoutFail($id, $columns = ['*'])
  * @method ShipPosition find($id, $columns = ['*'])

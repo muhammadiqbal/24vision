@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\ShipPositionDataTable;
+use App\Http\Requests;
 use App\Http\Requests\CreateShipPositionRequest;
 use App\Http\Requests\UpdateShipPositionRequest;
 use App\Repositories\ShipPositionRepository;
-use App\Http\Controllers\AppBaseController;
-use Illuminate\Http\Request;
 use Flash;
-use Prettus\Repository\Criteria\RequestCriteria;
+use App\Http\Controllers\AppBaseController;
 use Response;
 
 class ShipPositionController extends AppBaseController
@@ -24,16 +24,12 @@ class ShipPositionController extends AppBaseController
     /**
      * Display a listing of the ShipPosition.
      *
-     * @param Request $request
+     * @param ShipPositionDataTable $shipPositionDataTable
      * @return Response
      */
-    public function index(Request $request)
+    public function index(ShipPositionDataTable $shipPositionDataTable)
     {
-        $this->shipPositionRepository->pushCriteria(new RequestCriteria($request));
-        $shipPositions = $this->shipPositionRepository->all();
-
-        return view('ship_positions.index')
-            ->with('shipPositions', $shipPositions);
+        return $shipPositionDataTable->render('ship_positions.index');
     }
 
     /**

@@ -19,6 +19,7 @@ class CreateTablePorts extends Migration
             $table->string('name')->unique();
             $table->timestamps();
         });
+        DB::statement('ALTER TABLE ports ADD location POINT' );
     }
 
     /**

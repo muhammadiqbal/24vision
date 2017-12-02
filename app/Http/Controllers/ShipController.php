@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\ShipDataTable;
+use App\Http\Requests;
 use App\Http\Requests\CreateShipRequest;
 use App\Http\Requests\UpdateShipRequest;
 use App\Repositories\ShipRepository;
-use App\Http\Controllers\AppBaseController;
-use Illuminate\Http\Request;
 use Flash;
-use Prettus\Repository\Criteria\RequestCriteria;
+use App\Http\Controllers\AppBaseController;
 use Response;
 
 class ShipController extends AppBaseController
@@ -24,16 +24,12 @@ class ShipController extends AppBaseController
     /**
      * Display a listing of the Ship.
      *
-     * @param Request $request
+     * @param ShipDataTable $shipDataTable
      * @return Response
      */
-    public function index(Request $request)
+    public function index(ShipDataTable $shipDataTable)
     {
-        $this->shipRepository->pushCriteria(new RequestCriteria($request));
-        $ships = $this->shipRepository->all();
-
-        return view('ships.index')
-            ->with('ships', $ships);
+        return $shipDataTable->render('ships.index');
     }
 
     /**

@@ -1,3 +1,9 @@
+<!-- Id Field -->
+<div class="form-group">
+    {!! Form::label('id', 'Id:') !!}
+    <p>{!! $cargo->id !!}</p>
+</div>
+
 <!-- Loading Port Field -->
 <div class="form-group">
     {!! Form::label('loading_port', 'Loading Port:') !!}
@@ -98,5 +104,29 @@
 <div class="form-group">
     {!! Form::label('extra_condition', 'Extra Condition:') !!}
     <p>{!! $cargo->extra_condition !!}</p>
+</div>
+
+<!-- Comission Field -->
+<div class="form-group">
+    {!! Form::label('comission', 'Comission:') !!}
+    <p>{!! $cargo->comission !!}</p>
+</div>
+
+<!-- Created At Field -->
+<div class="form-group">
+    {!! Form::label('created_at', 'Created At:') !!}
+    <p>{!! $cargo->created_at !!}</p>
+</div>
+
+<!-- Updated At Field -->
+<div class="form-group">
+    {!! Form::label('updated_at', 'Updated At:') !!}
+    <p>{!! $cargo->updated_at !!}</p>
+</div>
+
+<!-- Deleted At Field -->
+<div class="form-group">
+    {!! Form::label('deleted_at', 'Deleted At:') !!}
+    <p>{!! $cargo->deleted_at !!}</p>
 </div>
 

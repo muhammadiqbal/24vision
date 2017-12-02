@@ -19,6 +19,7 @@ Route::get('/', function () {
 //Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/openPositions/{port}', 'HomeController@openPosition');
 
 Route::get('generator_builder', '\InfyOm\GeneratorBuilder\Controllers\GeneratorBuilderController@builder');
 
@@ -33,12 +34,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-
-Route::resource('roles', 'RoleController');
-
-Route::resource('roles', 'RoleController');
-
-Route::resource('roles', 'RoleController');
 
 Route::resource('roles', 'RoleController');
 
@@ -63,3 +58,13 @@ Route::resource('freightIdeaMeasurements', 'FreightIdeaMeasurementController');
 Route::resource('cargos', 'CargoController');
 
 Route::resource('shipPositions', 'ShipPositionController');
+
+Route::resource('agreements', 'AgreementController');
+
+Route::resource('agreements', 'AgreementController');
+
+Route::resource('cargos', 'CargoController');
+
+Route::resource('shipPositions', 'ShipPositionController');
+
+Route::resource('ships', 'ShipController');

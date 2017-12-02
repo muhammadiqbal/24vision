@@ -8,7 +8,7 @@ use InfyOm\Generator\Common\BaseRepository;
 /**
  * Class CargoRepository
  * @package App\Repositories
- * @version September 10, 2017, 9:47 pm UTC
+ * @version October 14, 2017, 9:07 pm UTC
  *
  * @method Cargo findWithoutFail($id, $columns = ['*'])
  * @method Cargo find($id, $columns = ['*'])
@@ -36,7 +36,8 @@ class CargoRepository extends BaseRepository
         'discharging_rate',
         'freight_idea_measurement_id',
         'freight_idea',
-        'extra_condition'
+        'extra_condition',
+        'comission'
     ];
 
     /**

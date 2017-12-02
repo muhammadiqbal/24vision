@@ -15,6 +15,7 @@ class CreateTableCargos extends Migration
     {
         //
         Schema::create('cargos', function (Blueprint $table) {
+            $table->increments('id');
             $table->integer('loading_port')->unsigned();
             $table->foreign('loading_port')->references('id')->on('ports');
             $table->integer('discharging_port')->unsigned();
@@ -40,6 +41,8 @@ class CreateTableCargos extends Migration
             $table->foreign('freight_idea_measurement_id')->references('id')->on('freight_idea_measurements');
             $table->integer('freight_idea');
             $table->text('extra_condition');
+            $table->decimal('comission')->nullable();
+            $table->timestamps();
         });
     }
 

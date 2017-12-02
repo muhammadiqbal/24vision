@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Cargo
  * @package App\Models
- * @version September 10, 2017, 9:47 pm UTC
+ * @version October 14, 2017, 9:07 pm UTC
  *
  * @property \App\Models\Port port
  * @property \App\Models\LoadingDischagingRateType loadingDischagingRateType
@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property \App\Models\QuantityMeasurement quantityMeasurement
  * @property \App\Models\StowageFactorUnit stowageFactorUnit
  * @property \App\Models\ShipSpecialization shipSpecialization
+ * @property \Illuminate\Database\Eloquent\Collection Agreement
  * @property \Illuminate\Database\Eloquent\Collection ships
  * @property integer loading_port
  * @property integer discharging_port
@@ -36,13 +37,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property integer freight_idea_measurement_id
  * @property integer freight_idea
  * @property string extra_condition
+ * @property decimal comission
  */
 class Cargo extends Model
 {
     use SoftDeletes;
 
     public $table = 'cargos';
-
+    
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -67,7 +69,8 @@ class Cargo extends Model
         'discharging_rate',
         'freight_idea_measurement_id',
         'freight_idea',
-        'extra_condition'
+        'extra_condition',
+        'comission'
     ];
 
     /**
@@ -76,6 +79,7 @@ class Cargo extends Model
      * @var array
      */
     protected $casts = [
+        'id' => 'integer',
         'loading_port' => 'integer',
         'discharging_port' => 'integer',
         'laycan_first_day' => 'date',
@@ -101,7 +105,7 @@ class Cargo extends Model
      * @var array
      */
     public static $rules = [
-
+        
     ];
 
     /**
@@ -166,5 +170,13 @@ class Cargo extends Model
     public function shipSpecialization()
     {
         return $this->belongsTo(\App\Models\ShipSpecialization::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function agreements()
+    {
+        return $this->hasMany(\App\Models\Agreement::class);
     }
 }

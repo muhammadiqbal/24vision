@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Ship
  * @package App\Models
- * @version September 10, 2017, 9:42 pm UTC
+ * @version October 14, 2017, 9:08 pm UTC
  *
  * @property \App\Models\ShipSpecialization shipSpecialization
  * @property \App\Models\ShipType shipType
+ * @property \Illuminate\Database\Eloquent\Collection agreements
  * @property \Illuminate\Database\Eloquent\Collection ShipPosition
  * @property string name
  * @property string imo

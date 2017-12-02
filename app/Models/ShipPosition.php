@@ -8,11 +8,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class ShipPosition
  * @package App\Models
- * @version September 10, 2017, 9:47 pm UTC
+ * @version October 14, 2017, 9:08 pm UTC
  *
  * @property \App\Models\Port port
  * @property \App\Models\Region region
  * @property \App\Models\Ship ship
+ * @property \Illuminate\Database\Eloquent\Collection Agreement
  * @property \Illuminate\Database\Eloquent\Collection ships
  * @property integer ship_id
  * @property integer region_id
@@ -83,5 +84,13 @@ class ShipPosition extends Model
     public function ship()
     {
         return $this->belongsTo(\App\Models\Ship::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function agreements()
+    {
+        return $this->hasMany(\App\Models\Agreement::class);
     }
 }

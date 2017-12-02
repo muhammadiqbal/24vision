@@ -100,6 +100,12 @@
     {!! Form::textarea('extra_condition', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Comission Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('comission', 'Comission:') !!}
+    {!! Form::number('comission', null, ['class' => 'form-control']) !!}
+</div>
+
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}

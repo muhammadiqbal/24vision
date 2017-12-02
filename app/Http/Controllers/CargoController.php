@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\CargoDataTable;
+use App\Http\Requests;
 use App\Http\Requests\CreateCargoRequest;
 use App\Http\Requests\UpdateCargoRequest;
 use App\Repositories\CargoRepository;
-use App\Http\Controllers\AppBaseController;
-use Illuminate\Http\Request;
 use Flash;
-use Prettus\Repository\Criteria\RequestCriteria;
+use App\Http\Controllers\AppBaseController;
 use Response;
 
 class CargoController extends AppBaseController
@@ -24,16 +24,12 @@ class CargoController extends AppBaseController
     /**
      * Display a listing of the Cargo.
      *
-     * @param Request $request
+     * @param CargoDataTable $cargoDataTable
      * @return Response
      */
-    public function index(Request $request)
+    public function index(CargoDataTable $cargoDataTable)
     {
-        $this->cargoRepository->pushCriteria(new RequestCriteria($request));
-        $cargos = $this->cargoRepository->all();
-
-        return view('cargos.index')
-            ->with('cargos', $cargos);
+        return $cargoDataTable->render('cargos.index');
     }
 
     /**
