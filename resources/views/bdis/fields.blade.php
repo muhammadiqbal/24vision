@@ -1,13 +1,34 @@
 <!-- Ship Id Field -->
-<div class="form-group col-sm-6">
+{{-- <div class="form-group col-sm-6">
     {!! Form::label('ship_id', 'Ship Id:') !!}
     {!! Form::number('ship_id', null, ['class' => 'form-control']) !!}
+</div> --}}
+
+<!-- Ship Id Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('ship_id', 'Ship :') !!}
+    <select name="ship_id" class="form-control">
+        @foreach($ships as $ship)
+            <option value="{{$ship->id}}">{{$ship->name}}</option>
+        @endforeach
+    </select>
 </div>
 
-<!-- Route Id Field -->
+
+{{-- <!-- Route Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('route_id', 'Route Id:') !!}
     {!! Form::number('route_id', null, ['class' => 'form-control']) !!}
+</div> --}}
+
+<!-- Ship Id Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('route_id', 'Route :') !!}
+    <select name="route_id" class="form-control">
+        @foreach($routes as $route)
+            <option value="{{$ship->id}}">{{$ship->name}}</option>
+        @endforeach
+    </select>
 </div>
 
 <!-- Price Field -->

@@ -10,6 +10,8 @@ use App\Repositories\BdiRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
+use App\Models\Route;
+use App\Models\Ship;
 
 class BdiController extends AppBaseController
 {
@@ -39,7 +41,9 @@ class BdiController extends AppBaseController
      */
     public function create()
     {
-        return view('bdis.create');
+        $routes = Route::all();
+        $ships  = Ship::all();
+        return view('bdis.create')->with('routes',$routes)->with('ships',$ships);
     }
 
     /**
@@ -97,7 +101,10 @@ class BdiController extends AppBaseController
             return redirect(route('bdis.index'));
         }
 
-        return view('bdis.edit')->with('bdi', $bdi);
+        $routes = Route::all();
+        $ships  = Ship::all();
+
+        return view('bdis.edit')->with('bdi', $bdi)->with('routes',$routes)->with('ships',$ships);
     }
 
     /**

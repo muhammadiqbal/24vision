@@ -11,6 +11,7 @@ use App\Models\Ship;
 use App\Models\Region;
 use App\Models\ShipPosition;
 use App\Models\Cargo;
+use App\Models\FuelType;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 
@@ -31,6 +32,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('ShipSpecializationSeeder');
 		$this->call('StowageFactorUnitSeeder');
 		$this->call('ShipTypeSeeder');
+		$this->call('FuelTypeSeeder');
 		// $this->call('CargoDataSeeder');
 		// $this->call('ShipSeeder');
 		//$this->call('RegionSeeder');
@@ -190,6 +192,24 @@ class PortDataSeeder extends Seeder {
 			FreightIdeaMeasurement::create(['id'=>2,'name'=>'Lumpsum']);
 			FreightIdeaMeasurement::create(['id'=>3,'name'=>'Time Charter']);
 			FreightIdeaMeasurement::create(['id'=>4,'name'=>'Best offer']);
+		}
+
+	}
+
+		/**
+	* 
+	*/
+	class FuelTypeSeeder extends Seeder
+	{
+		
+		public function run(){
+
+			DB::table('fuel_types')->delete();
+			
+			FuelType::create(['id'=>1,'name'=>'FO']);
+			FuelType::create(['id'=>2,'name'=>'MD/GO']);
+			FuelType::create(['id'=>3,'name'=>'LSMGO']);
+			
 		}
 
 	}

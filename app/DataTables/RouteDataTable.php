@@ -4,7 +4,7 @@ namespace App\DataTables;
 
 use App\Models\Route;
 use Form;
-use Yajra\Datatables\Services\DataTable;
+use Yajra\DataTables\Services\DataTable;
 
 class RouteDataTable extends DataTable
 {
@@ -14,7 +14,7 @@ class RouteDataTable extends DataTable
      */
     public function ajax()
     {
-        return $this->datatables
+        return datatables()
             ->eloquent($this->query())
             ->addColumn('action', 'routes.datatables_actions')
             ->make(true);
