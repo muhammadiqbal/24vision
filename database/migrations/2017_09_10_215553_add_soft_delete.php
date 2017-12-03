@@ -14,9 +14,6 @@ class AddSoftDelete extends Migration
     public function up()
     {
         //
-        Schema::table('roles', function (Blueprint $table) {
-            $table->softDeletes();
-        });
         Schema::table('ship_types', function (Blueprint $table) {
             $table->softDeletes();
         });

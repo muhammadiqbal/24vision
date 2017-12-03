@@ -4,7 +4,7 @@ namespace App\DataTables;
 
 use App\Models\Bdi;
 use Form;
-use Yajra\Datatables\Services\DataTable;
+use Yajra\DataTables\Services\DataTable;
 
 class BdiDataTable extends DataTable
 {

@@ -37,12 +37,13 @@
 <body class="hold-transition register-page">
 <div class="register-box">
     <div class="register-logo">
-                <a href="{{ url('/home') }}"><img src="/img/favi-24.png" style="height: 50px;"><b><i>Vision</i></b></a>
+               {{--  <a href="{{ url('/home') }}"><img src="/img/favi-24.png" style="height: 50px;"><b><i>Vision</i></b></a> --}}
         
     </div>
 
     <div class="register-box-body">
-        
+        <p class="login-box-msg"><img src="/img/logo.png" style="height: 100px;">
+        </p>
         <p class="login-box-msg">Register new user</p>
 
         <form method="post" action="{{ url('/register') }}">
@@ -96,9 +97,8 @@
             <div class="form-group">
             <label>Role</label>
             <select name="role" class="form-control">
-                <option value="Broker">Broker</option>
-                <option value="Broker">Ship Owner</option>
-                <option value="Broker">Manager</option>
+                <option value="Super admin">Super Admin</option>
+                <option value="User">User</option>
             </select>
             </div>
 

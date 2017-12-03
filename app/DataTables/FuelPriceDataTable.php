@@ -4,7 +4,7 @@ namespace App\DataTables;
 
 use App\Models\FuelPrice;
 use Form;
-use Yajra\Datatables\Services\DataTable;
+use Yajra\DataTables\Services\DataTable;
 
 class FuelPriceDataTable extends DataTable
 {

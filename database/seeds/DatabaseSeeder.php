@@ -25,15 +25,15 @@ class DatabaseSeeder extends Seeder {
 		Model::unguard();
 
 		// $this->call('PortDataSeeder');
-		// $this->call('FreightIdeaMeasurementSeeder');
-		// $this->call('LdRateTypeSeeder');
-		// $this->call('QuantityMeasurementSeeder');
-		// $this->call('ShipSpecializationSeeder');
-		// $this->call('StowageFactorUnitSeeder');
-		// $this->call('ShipTypeSeeder');
+		$this->call('FreightIdeaMeasurementSeeder');
+		$this->call('LdRateTypeSeeder');
+		$this->call('QuantityMeasurementSeeder');
+		$this->call('ShipSpecializationSeeder');
+		$this->call('StowageFactorUnitSeeder');
+		$this->call('ShipTypeSeeder');
 		// $this->call('CargoDataSeeder');
 		// $this->call('ShipSeeder');
-		$this->call('RegionSeeder');
+		//$this->call('RegionSeeder');
 		//$this->call('ShipPositionSeeder');
 
 	}
