@@ -18,10 +18,11 @@ class CreateTableShips extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('imo')->unique();
-            $table->date('year_of_built');
+            $table->date('year_of_build');
             $table->integer('dwcc');
-            $table->integer('max_holds_capacity');
-            $table->integer('max_laden_draft');
+            $table->decimal('max_holds_capacity');
+            $table->decimal('ballast_draft');
+            $table->decimal('max_laden_draft');
             $table->decimal('speed_laden');
             $table->decimal('speed_ballast');
             $table->integer('fuel_type_id')->unsigned();
