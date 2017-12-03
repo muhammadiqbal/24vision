@@ -27,7 +27,7 @@ class ShipPositionDataTable extends DataTable
      */
     public function query()
     {
-        $shipPositions = ShipPosition::with('ship')->select('ships.*')->select('ship_positions.*');
+        $shipPositions = ShipPosition::with('ship')->with('region')->with('port')->select('ship_positions.*');
 
         return $this->applyScopes($shipPositions);
     }
@@ -72,9 +72,9 @@ class ShipPositionDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'ship_id' => ['name' => 'ships.name', 'data' => 'ship_id'],
-            'region_id' => ['name' => 'region_id', 'data' => 'region_id'],
-            'port_id' => ['name' => 'port_id', 'data' => 'port_id'],
+            'ship' => ['name' => 'ship.name', 'data' => 'ship.name'],
+            'region' => ['name' => 'region.name', 'data' => 'region.name'],
+            'port' => ['name' => 'port.name', 'data' => 'port.name'],
             'date_of_opening' => ['name' => 'date_of_opening', 'data' => 'date_of_opening']
         ];
     }

@@ -19,13 +19,13 @@ Route::get('/', [
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', 'DashboardController@index');
 
-Route::get('/openPositions/{port}', 'HomeController@openPosition');
+//Route::get('/openPositions/{port}', 'HomeController@openPosition');
 
 Route::resource('roles', 'roleController');
 
-Route::get('/home', 'HomeController@index');
+//Route::get('/home', 'HomeController@index');
 
 Route::resource('roles', 'RoleController');
 

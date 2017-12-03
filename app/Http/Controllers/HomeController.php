@@ -45,7 +45,7 @@ class HomeController extends Controller
             Mapper::marker($port->location,$port->location,['eventMouseOver' => '', 'eventClick' => 'window.location = \''.url('ports/'.$port->id).'\';', 'title'=> $port->name.' cargo='.$cargo.', ships='.$ships,'label'=> $port->name.',Cargo='.$cargo.'; Ships='.$ships]);
             if($port==$ports[20])
                 break;
-        }
+    }
         
     return view('map')->with(['ports'=>$ports]);
     }

@@ -25,7 +25,7 @@ class Port extends Model
     
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
-    protected $geofields = array('location');
+    //protected $geofields = array('location');
 
 
     protected $dates = ['deleted_at'];
@@ -79,32 +79,32 @@ class Port extends Model
     }
 
     
-    //geofield functions 
-    public function setLocationAttribute($value) {
-        $this->attributes['location'] = DB::raw("POINT($value)");
-    }
+    // //geofield functions 
+    // public function setLocationAttribute($value) {
+    //     $this->attributes['location'] = DB::raw("POINT($value)");
+    // }
  
-    public function getLocationAttribute($value){
+    // public function getLocationAttribute($value){
  
-        $loc =  substr($value, 6);
-        $loc = preg_replace('/[ ,]+/', ',', $loc, 1);
+    //     $loc =  substr($value, 6);
+    //     $loc = preg_replace('/[ ,]+/', ',', $loc, 1);
  
-        return substr($loc,0,-1);
-    }
+    //     return substr($loc,0,-1);
+    // }
  
-    public function newQuery($excludeDeleted = true)
-    {
-        $raw='';
-        foreach($this->geofields as $column){
-            $raw .= ' astext('.$column.') as '.$column.' ';
-        }
+    // public function newQuery($excludeDeleted = true)
+    // {
+    //     $raw='';
+    //     foreach($this->geofields as $column){
+    //         $raw .= ' astext('.$column.') as '.$column.' ';
+    //     }
  
-        return parent::newQuery($excludeDeleted)->addSelect('*',DB::raw($raw));
-    }
+    //     return parent::newQuery($excludeDeleted)->addSelect('*',DB::raw($raw));
+    // }
 
-    public function scopeDistance($query,$dist,$location)
-    {
-        return $query->whereRaw('st_distance(location,POINT('.$location.')) < '.$dist);
+    // public function scopeDistance($query,$dist,$location)
+    // {
+    //     return $query->whereRaw('st_distance(location,POINT('.$location.')) < '.$dist);
  
-    }
+    // }
 }

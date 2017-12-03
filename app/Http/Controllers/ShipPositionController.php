@@ -10,6 +10,9 @@ use App\Repositories\ShipPositionRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
+use App\Models\Ship;
+use App\Models\Port;
+use App\Models\Region;
 
 class ShipPositionController extends AppBaseController
 {
@@ -39,7 +42,12 @@ class ShipPositionController extends AppBaseController
      */
     public function create()
     {
-        return view('ship_positions.create');
+        $ships = Ship::all();
+        $regions = Region::all();
+        $ports = Port::all();
+        return view('ship_positions.create')->with('ships',$ships)
+                                            ->with('regions',$regions)
+                                            ->with('ports', $ports);
     }
 
     /**
@@ -77,7 +85,10 @@ class ShipPositionController extends AppBaseController
             return redirect(route('shipPositions.index'));
         }
 
-        return view('ship_positions.show')->with('shipPosition', $shipPosition);
+        return view('ship_positions.show')->with('shipPosition', $shipPosition)
+                                          ->with('ships',$ships)
+                                          ->with('regions',$regions)
+                                          ->with('ports', $ports);
     }
 
     /**
@@ -96,6 +107,10 @@ class ShipPositionController extends AppBaseController
 
             return redirect(route('shipPositions.index'));
         }
+
+        $ships = Ship::all();
+        $regions = Region::all();
+        $ports = Port::all();
 
         return view('ship_positions.edit')->with('shipPosition', $shipPosition);
     }
