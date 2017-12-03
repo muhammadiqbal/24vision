@@ -10,10 +10,10 @@
     {!! Form::text('imo', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Year Of Built Field -->
+<!-- Year Of Build Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('year_of_built', 'Year Of Built:') !!}
-    {!! Form::date('year_of_built', null, ['class' => 'form-control']) !!}
+    {!! Form::label('year_of_build', 'Year Of Build:') !!}
+    {!! Form::date('year_of_build', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Dwcc Field -->
@@ -28,10 +28,39 @@
     {!! Form::number('max_holds_capacity', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Ballast Draft Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('ballast_draft', 'Ballast Draft:') !!}
+    {!! Form::number('ballast_draft', null, ['class' => 'form-control']) !!}
+</div>
+
 <!-- Max Laden Draft Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('max_laden_draft', 'Max Laden Draft:') !!}
     {!! Form::number('max_laden_draft', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Speed Laden Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('speed_laden', 'Speed Laden:') !!}
+    {!! Form::number('speed_laden', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Speed Ballast Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('speed_ballast', 'Speed Ballast:') !!}
+    {!! Form::number('speed_ballast', null, ['class' => 'form-control']) !!}
+</div>
+
+
+<!-- Fuel type Id Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('fuel_type_id', 'Fuel Type :') !!}
+        <select name="fuel_type_id" class="form-control">
+        @foreach($fuelTypes as $fuelType)
+            <option value="{{$fuelType->id}}">{{$fuelType->name}}</option>
+        @endforeach
+    </select>
 </div>
 
 <!-- Fuel Consumption At Sea Field -->
@@ -55,14 +84,23 @@
 <!-- Ship Type Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('ship_type_id', 'Ship Type Id:') !!}
-    {!! Form::number('ship_type_id', null, ['class' => 'form-control']) !!}
+    <select name="ship_type_id" class="form-control">
+        @foreach($shipTypes as $shipType)
+            <option value="{{$shipType->id}}">{{$shipType->name}}</option>
+        @endforeach
+    </select>
 </div>
 
 <!-- Ship Specialization Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('ship_specialization_id', 'Ship Specialization Id:') !!}
-    {!! Form::number('ship_specialization_id', null, ['class' => 'form-control']) !!}
+        <select name="ship_specialization_id" class="form-control">
+        @foreach($shipSpecializations as $shipSpecialization)
+            <option value="{{$shipSpecialization->id}}">{{$shipSpecialization->name}}</option>
+        @endforeach
+    </select>
 </div>
+
 
 <!-- Gear Onboard Field -->
 <div class="form-group col-sm-12 col-lg-12">

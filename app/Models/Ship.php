@@ -8,18 +8,23 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Ship
  * @package App\Models
- * @version October 14, 2017, 9:08 pm UTC
+ * @version December 3, 2017, 3:00 pm UTC
  *
+ * @property \App\Models\FuelType fuelType
  * @property \App\Models\ShipSpecialization shipSpecialization
  * @property \App\Models\ShipType shipType
- * @property \Illuminate\Database\Eloquent\Collection agreements
+ * @property \Illuminate\Database\Eloquent\Collection Bdi
  * @property \Illuminate\Database\Eloquent\Collection ShipPosition
  * @property string name
  * @property string imo
- * @property date year_of_built
+ * @property date year_of_build
  * @property integer dwcc
- * @property integer max_holds_capacity
- * @property integer max_laden_draft
+ * @property decimal max_holds_capacity
+ * @property decimal ballast_draft
+ * @property decimal max_laden_draft
+ * @property decimal speed_laden
+ * @property decimal speed_ballast
+ * @property integer fuel_type_id
  * @property decimal fuel_consumption_at_sea
  * @property decimal fuel_consumption_in_port
  * @property string flag
@@ -44,10 +49,14 @@ class Ship extends Model
     public $fillable = [
         'name',
         'imo',
-        'year_of_built',
+        'year_of_build',
         'dwcc',
         'max_holds_capacity',
+        'ballast_draft',
         'max_laden_draft',
+        'speed_laden',
+        'speed_ballast',
+        'fuel_type_id',
         'fuel_consumption_at_sea',
         'fuel_consumption_in_port',
         'flag',
@@ -66,10 +75,9 @@ class Ship extends Model
         'id' => 'integer',
         'name' => 'string',
         'imo' => 'string',
-        'year_of_built' => 'date',
+        'year_of_build' => 'date',
         'dwcc' => 'integer',
-        'max_holds_capacity' => 'integer',
-        'max_laden_draft' => 'integer',
+        'fuel_type_id' => 'integer',
         'flag' => 'string',
         'ship_type_id' => 'integer',
         'ship_specialization_id' => 'integer',
@@ -89,6 +97,14 @@ class Ship extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
+    public function fuelType()
+    {
+        return $this->belongsTo(\App\Models\FuelType::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
     public function shipSpecialization()
     {
         return $this->belongsTo(\App\Models\ShipSpecialization::class);
@@ -100,6 +116,14 @@ class Ship extends Model
     public function shipType()
     {
         return $this->belongsTo(\App\Models\ShipType::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function bdis()
+    {
+        return $this->hasMany(\App\Models\Bdi::class);
     }
 
     /**

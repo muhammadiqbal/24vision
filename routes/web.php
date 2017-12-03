@@ -68,3 +68,5 @@ Route::resource('fuelTypes', 'FuelTypeController');
 Route::resource('fuelPrices', 'FuelPriceController');
 
 Route::resource('bdis', 'BdiController');
+
+Route::resource('ships', 'ShipController');

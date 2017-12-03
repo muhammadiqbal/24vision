@@ -16,10 +16,10 @@
     <p>{!! $ship->imo !!}</p>
 </div>
 
-<!-- Year Of Built Field -->
+<!-- Year Of Build Field -->
 <div class="form-group">
-    {!! Form::label('year_of_built', 'Year Of Built:') !!}
-    <p>{!! $ship->year_of_built !!}</p>
+    {!! Form::label('year_of_build', 'Year Of Build:') !!}
+    <p>{!! $ship->year_of_build !!}</p>
 </div>
 
 <!-- Dwcc Field -->
@@ -34,10 +34,34 @@
     <p>{!! $ship->max_holds_capacity !!}</p>
 </div>
 
+<!-- Ballast Draft Field -->
+<div class="form-group">
+    {!! Form::label('ballast_draft', 'Ballast Draft:') !!}
+    <p>{!! $ship->ballast_draft !!}</p>
+</div>
+
 <!-- Max Laden Draft Field -->
 <div class="form-group">
     {!! Form::label('max_laden_draft', 'Max Laden Draft:') !!}
     <p>{!! $ship->max_laden_draft !!}</p>
+</div>
+
+<!-- Speed Laden Field -->
+<div class="form-group">
+    {!! Form::label('speed_laden', 'Speed Laden:') !!}
+    <p>{!! $ship->speed_laden !!}</p>
+</div>
+
+<!-- Speed Ballast Field -->
+<div class="form-group">
+    {!! Form::label('speed_ballast', 'Speed Ballast:') !!}
+    <p>{!! $ship->speed_ballast !!}</p>
+</div>
+
+<!-- Fuel Type Id Field -->
+<div class="form-group">
+    {!! Form::label('fuel_type_id', 'Fuel Type Id:') !!}
+    <p>{!! $ship->fuel_type_id !!}</p>
 </div>
 
 <!-- Fuel Consumption At Sea Field -->

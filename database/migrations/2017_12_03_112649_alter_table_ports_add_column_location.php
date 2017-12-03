@@ -14,7 +14,7 @@ class AlterTablePortsAddColumnLocation extends Migration
     public function up()
     {
         //
-        DB::statement('ALTER TABLE ports ADD location POINT' );
+      //  DB::statement('ALTER TABLE ports ADD location POINT' );
     }
 
     /**
