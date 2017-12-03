@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTablePorts extends Migration
+class CreateTableFuelPrices extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +14,16 @@ class CreateTablePorts extends Migration
     public function up()
     {
         //
-        Schema::create('ports', function (Blueprint $table) {
+        Schema::create('fuel_prices', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->unique();
+            $table->integer('fuel_type_id')->unsigned();
+            $table->foreign('fuel_type_id')->references('id')->on('fuel_types');
+            $table->decimal('price');
+            $table->date('start_date');
+            $table->date('end_date');
             $table->timestamps();
+            $table->softDeletes();
         });
-       // DB::statement('ALTER TABLE ports ADD location POINT' );
     }
 
     /**
@@ -30,6 +34,6 @@ class CreateTablePorts extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('ports');
+         Schema::dropIfExists('fuel_prices');
     }
 }

@@ -60,3 +60,11 @@ Route::resource('cargos', 'CargoController');
 Route::resource('shipPositions', 'ShipPositionController');
 
 Route::resource('ships', 'ShipController');
+
+Route::resource('routes', 'RouteController');
+
+Route::resource('fuelTypes', 'FuelTypeController');
+
+Route::resource('fuelPrices', 'FuelPriceController');
+
+Route::resource('bdis', 'BdiController');

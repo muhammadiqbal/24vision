@@ -22,6 +22,8 @@ class CreateTableShips extends Migration
             $table->integer('dwcc');
             $table->integer('max_holds_capacity');
             $table->integer('max_laden_draft');
+            $table->integer('fuel_type_id')->unsigned();
+            $table->foreign('fuel_type_id')->references('id')->on('fuel_types');
             $table->decimal('fuel_consumption_at_sea')->nullable();
             $table->decimal('fuel_consumption_in_port')->nullable();
             $table->string('flag');

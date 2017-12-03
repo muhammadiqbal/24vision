@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTablePorts extends Migration
+class CreateTableRoutes extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +14,17 @@ class CreateTablePorts extends Migration
     public function up()
     {
         //
-        Schema::create('ports', function (Blueprint $table) {
+
+         Schema::create('routes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->unique();
+            $table->string('code');
+            $table->string('name');
+            $table->string('area1');
+            $table->string('area2')->nullable();
+            $table->string('area3');
             $table->timestamps();
+            $table->softDeletes();
         });
-       // DB::statement('ALTER TABLE ports ADD location POINT' );
     }
 
     /**
@@ -30,6 +35,6 @@ class CreateTablePorts extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('ports');
+        Schema::dropIfExists('routes');
     }
 }
