@@ -2,7 +2,7 @@
 <!-- Ship Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('ship_id', 'Ship:') !!}
-        <select name="ship_id" class="form-control">
+    <select name="ship_id" class="form-control">
         @foreach($ships as $ship)
             <option value="{{$ship->id}}">{{$ship->name}}</option>
         @endforeach
@@ -22,7 +22,7 @@
 <!-- Port Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('port_id', 'Port:') !!}
-        <select name="port_id" class="form-control">
+    <select name="port_id" class="form-control">
         @foreach($ports as $port)
             <option value="{{$port->id}}">{{$port->name}}</option>
         @endforeach

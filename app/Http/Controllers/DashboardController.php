@@ -6,6 +6,9 @@ use App\Models\ShipPosition;
 use App\Models\Cargo;
 use Illuminate\Http\Request;
 use Route;
+use App\Models\Ship;
+use App\Models\Region;
+use App\Models\Port;
 
 class DashboardController extends Controller
 {
@@ -27,9 +30,14 @@ class DashboardController extends Controller
     public function index()
     {
         $shipPosition = ShipPosition::all()[0];
-        return view('calculator.index')->with(['shipPosition'=>$shipPosition]);
+        $ships = Ship::all();
+        $regions = Region::all();
+        $ports = Port::all();
+        return view('calculator.index')->with('shipPosition',$shipPosition)
+                                       ->with('ships',$ships)
+                                       ->with('regions',$regions)
+                                       ->with('ports',$ports);
     }
-
 
     public function openPosition($port){
         $cargos = Cargo::where('port_id',$port);
@@ -39,12 +47,8 @@ class DashboardController extends Controller
                                    ->with('shipPositions',$shipPositions);
     }
 
-    protected function calculateNTC(Ship $ship, Cargo $cargo, Bdi $bdi){
 
-        return $ntc;
-    }
-
-    protected function calculateNTCE(){
+    protected function calculateNTCE(Ship $ship, Cargo $cargo, Bdi $bdi){
 
         return $ntce;
     }
