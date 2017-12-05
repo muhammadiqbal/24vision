@@ -47,6 +47,7 @@ class DashboardController extends Controller
                                    ->with('shipPositions',$shipPositions);
     }
 
+	
 	//Formular for calculating the NTCE for a cargo and given ship, ship position, fuel price and rate. 
 	protected function calculateNTCE(Cargo $cargo, Ship $ship, Port $port_ship, Port $port_start, Port $port_end, $fuel_price, $rate){
 		
@@ -141,19 +142,25 @@ class DashboardController extends Controller
 		$distance_cargo = calculateDistance($port_start->location_lat,$port_start->location_lon,$port_end->location_lat,$port_end->location_lon);
 		
 		// Formular for result of the function
-		$travel_time= $distance_to_start/$speed_ballast + $distance_cargo/$speed_laden;
+		$travel_time= $distance_to_start/$speed_ballast/(24*0.95) + $distance_cargo/$speed_laden/(24*0.95);
 
         return $travel_time;
     }
 	
 	
-	//need to find calculation fo direct distance between two points
-	protected function calculateDistance(start_lat,start_lon,end_lat,end_lon){
+		//Formular for calculating direct distance between two points with given latidude and longitude
+		// Based on: https://stackoverflow.com/questions/10053358/measuring-the-distance-between-two-coordinates-in-php
+	protected function calculateDistance($lat1, $lon1, $lat2, $lon2) {
 
-        return $distance;
-    }
-	
-	
+		$theta = $lon1 - $lon2;
+  		$dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
+  		$dist = acos($dist);
+  		$dist = rad2deg($dist);
+  		$miles = $dist * 60 * 1.1515;
+		$nm = 0.868976 * $miles
+		return $nm;
+  }
+}
 
 }
 
