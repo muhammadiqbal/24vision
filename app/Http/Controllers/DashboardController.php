@@ -214,7 +214,8 @@ class DashboardController extends Controller
     protected function calculatePortTime($quantity,$load_speed,$load_factor,$disch_speed,$disch_factor){
 	
 		// Formular for result of the function
-		$port_time = $quantity/$load_speed*$load_factor + $quantity/$disch_speed*$disch_factor;
+        //+2 because there is one day extra for each port
+		$port_time = ($quantity/$load_speed*$load_factor + $quantity/$disch_speed*$disch_factor)+2;
 
         return $port_time;
     }		
