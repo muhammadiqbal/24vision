@@ -3,19 +3,25 @@
 namespace App\Models;
 
 use Eloquent as Model;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * Class Port
  * @package App\Models
- * @version September 10, 2017, 9:42 pm UTC
+ * @version December 5, 2017, 1:40 pm UTC
  *
+ * @property \App\Models\Region region
+ * @property \App\Models\Region region
+ * @property \Illuminate\Database\Eloquent\Collection bdi
  * @property \Illuminate\Database\Eloquent\Collection Cargo
  * @property \Illuminate\Database\Eloquent\Collection Cargo
  * @property \Illuminate\Database\Eloquent\Collection ShipPosition
- * @property \Illuminate\Database\Eloquent\Collection ships
  * @property string name
+ * @property integer fee
+ * @property integer region_id
+ * @property decimal max_laden_draft
+ * @property decimal latitude
+ * @property decimal longitude
  */
 class Port extends Model
 {
@@ -25,14 +31,18 @@ class Port extends Model
     
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
-    //protected $geofields = array('location');
 
 
     protected $dates = ['deleted_at'];
 
 
     public $fillable = [
-        'name'
+        'name',
+        'fee',
+        'region_id',
+        'max_laden_draft',
+        'latitude',
+        'longitude'
     ];
 
     /**
@@ -42,7 +52,9 @@ class Port extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'name' => 'string'
+        'name' => 'string',
+        'fee' => 'integer',
+        'region_id' => 'integer'
     ];
 
     /**
@@ -54,12 +66,20 @@ class Port extends Model
         
     ];
 
+    // /**
+    //  * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+    //  **/
+    // public function region()
+    // {
+    //     return $this->belongsTo(\App\Models\Region::class);
+    // }
+
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function cargos()
+    public function region()
     {
-        return $this->hasMany(\App\Models\Cargo::class);
+        return $this->belongsTo(\App\Models\Region::class);
     }
 
     // /**
@@ -73,38 +93,16 @@ class Port extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      **/
+    public function cargos()
+    {
+        return $this->hasMany(\App\Models\Cargo::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
     public function shipPositions()
     {
         return $this->hasMany(\App\Models\ShipPosition::class);
     }
-
-    
-    // //geofield functions 
-    // public function setLocationAttribute($value) {
-    //     $this->attributes['location'] = DB::raw("POINT($value)");
-    // }
- 
-    // public function getLocationAttribute($value){
- 
-    //     $loc =  substr($value, 6);
-    //     $loc = preg_replace('/[ ,]+/', ',', $loc, 1);
- 
-    //     return substr($loc,0,-1);
-    // }
- 
-    // public function newQuery($excludeDeleted = true)
-    // {
-    //     $raw='';
-    //     foreach($this->geofields as $column){
-    //         $raw .= ' astext('.$column.') as '.$column.' ';
-    //     }
- 
-    //     return parent::newQuery($excludeDeleted)->addSelect('*',DB::raw($raw));
-    // }
-
-    // public function scopeDistance($query,$dist,$location)
-    // {
-    //     return $query->whereRaw('st_distance(location,POINT('.$location.')) < '.$dist);
- 
-    // }
 }

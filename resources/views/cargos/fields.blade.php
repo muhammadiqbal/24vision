@@ -1,3 +1,9 @@
+<!-- Customer Id Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('customer_id', 'Customer Id:') !!}
+    {!! Form::number('customer_id', null, ['class' => 'form-control']) !!}
+</div>
+
 <!-- Loading Port Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('loading_port', 'Loading Port:') !!}

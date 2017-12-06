@@ -11,25 +11,22 @@
         <th>NTC</th>
         <th>Gross rate</th>
         <th>NTCE</th>
-        <th colspan="3">Action</th>
     </thead>
     <tbody>
-
+    @foreach( $cargos as $cargo)
         <tr>
+            <td>{{$cargo->customer->name}}</td>
+            <td></td>
+            <td></td>
+            <td>{{$cargo->loadingPort->name}}</td>
+            <td>{{$cargo->dischargingPort->name}}</td>
+            <td>{{Carbon\Carbon::parse($cargo->laycan_first_day)->diffInDays(Carbon\Carbon::now())}}</td>
+            <td>{{Carbon\Carbon::parse($cargo->laycan_last_day)->diffInDays(Carbon\Carbon::now())}}</td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-            </td>
         </tr>
-   
+    @endforeach
     </tbody>
 </table>

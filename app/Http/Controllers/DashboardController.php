@@ -27,13 +27,25 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $shipPosition = ShipPosition::all()[0];
+        //$shipPosition = ShipPosition::all()[0];
+        $shipId = $request->input('shipId',1);
+        if($shipId != null){
+            $ship = Ship::find($shipId);
+        }else{
+            //default ship is the first one
+            $ship = Ship::find(1);
+        }
         $ships = Ship::all();
         $regions = Region::all();
         $ports = Port::all();
-        return view('calculator.index')->with('shipPosition',$shipPosition)
+        $cargos = Cargo::where('ship_specialization_id', 
+                                $ship->ship_specialization_id)
+                                ->get();
+        return view('calculator.index')//->with('shipPosition',$shipPosition)
+                                       ->with('ship',$ship)
+                                       ->with('cargos',$cargos)
                                        ->with('ships',$ships)
                                        ->with('regions',$regions)
                                        ->with('ports',$ports);

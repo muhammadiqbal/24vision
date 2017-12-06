@@ -4,16 +4,16 @@
     <p>{!! $bdi->id !!}</p>
 </div>
 
+<!-- Bdi Code Id Field -->
+<div class="form-group">
+    {!! Form::label('bdi_code_id', 'Bdi Code Id:') !!}
+    <p>{!! $bdi->bdi_code_id !!}</p>
+</div>
+
 <!-- Ship Id Field -->
 <div class="form-group">
     {!! Form::label('ship_id', 'Ship Id:') !!}
     <p>{!! $bdi->ship_id !!}</p>
-</div>
-
-<!-- Route Id Field -->
-<div class="form-group">
-    {!! Form::label('route_id', 'Route Id:') !!}
-    <p>{!! $bdi->route_id !!}</p>
 </div>
 
 <!-- Price Field -->

@@ -4,7 +4,7 @@ namespace App\DataTables;
 
 use App\Models\Bdi;
 use Form;
-use Yajra\DataTables\Services\DataTable;
+use Yajra\Datatables\Services\DataTable;
 
 class BdiDataTable extends DataTable
 {
@@ -14,7 +14,7 @@ class BdiDataTable extends DataTable
      */
     public function ajax()
     {
-        return datatables()
+        return $this->datatables
             ->eloquent($this->query())
             ->addColumn('action', 'bdis.datatables_actions')
             ->make(true);
@@ -72,8 +72,8 @@ class BdiDataTable extends DataTable
     private function getColumns()
     {
         return [
+            'bdi_code_id' => ['name' => 'bdi_code_id', 'data' => 'bdi_code_id'],
             'ship_id' => ['name' => 'ship_id', 'data' => 'ship_id'],
-            'route_id' => ['name' => 'route_id', 'data' => 'route_id'],
             'price' => ['name' => 'price', 'data' => 'price'],
             'start_date' => ['name' => 'start_date', 'data' => 'start_date'],
             'end_date' => ['name' => 'end_date', 'data' => 'end_date']

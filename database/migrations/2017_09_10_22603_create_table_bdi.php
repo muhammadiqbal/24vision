@@ -16,10 +16,10 @@ class CreateTableBdi extends Migration
         //
         Schema::create('bdi', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('bdi_code_id')->unsigned();
+            $table->foreign('bdi_code_id')->references('id')->on('bdi_codes');
             $table->integer('ship_id')->unsigned();
             $table->foreign('ship_id')->references('id')->on('ships');
-            $table->integer('route_id')->unsigned();
-            $table->foreign('route_id')->references('id')->on('routes');
             $table->decimal('price');
             $table->date('start_date');
             $table->date('end_date');
@@ -36,5 +36,6 @@ class CreateTableBdi extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('bdis');
     }
 }

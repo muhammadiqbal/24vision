@@ -19,7 +19,7 @@ class LdRateType extends Model
 {
     use SoftDeletes;
 
-    public $table = 'loading_dischaging_rate_type';
+    public $table = 'loading_discharging_rate_type';
     
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';

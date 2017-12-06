@@ -35,7 +35,7 @@ class AddSoftDelete extends Migration
         Schema::table('quantity_measurements', function (Blueprint $table) {
             $table->softDeletes();
         });
-        Schema::table('loading_dischaging_rate_type', function (Blueprint $table) {
+        Schema::table('loading_discharging_rate_type', function (Blueprint $table) {
             $table->softDeletes();
         });
         Schema::table('freight_idea_measurements', function (Blueprint $table) {

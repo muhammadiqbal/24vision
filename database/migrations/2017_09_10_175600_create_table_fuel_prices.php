@@ -14,7 +14,8 @@ class CreateTableFuelPrices extends Migration
     public function up()
     {
         //
-        Schema::create('fuel_prices', function (Blueprint $table) {
+        Schema::create('fuel_prices', function (Blueprint $table) 
+        {
             $table->increments('id');
             $table->integer('fuel_type_id')->unsigned();
             $table->foreign('fuel_type_id')->references('id')->on('fuel_types');

@@ -4,6 +4,12 @@
     <p>{!! $cargo->id !!}</p>
 </div>
 
+<!-- Customer Id Field -->
+<div class="form-group">
+    {!! Form::label('customer_id', 'Customer Id:') !!}
+    <p>{!! $cargo->customer_id !!}</p>
+</div>
+
 <!-- Loading Port Field -->
 <div class="form-group">
     {!! Form::label('loading_port', 'Loading Port:') !!}

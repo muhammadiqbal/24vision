@@ -72,6 +72,7 @@ class CargoDataTable extends DataTable
     private function getColumns()
     {
         return [
+            'customer_id' => ['name' => 'customer_id', 'data' => 'customer_id'],
             'loading_port' => ['name' => 'loading_port', 'data' => 'loading_port'],
             'discharging_port' => ['name' => 'discharging_port', 'data' => 'discharging_port'],
             'laycan_first_day' => ['name' => 'laycan_first_day', 'data' => 'laycan_first_day'],

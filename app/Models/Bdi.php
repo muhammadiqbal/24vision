@@ -8,14 +8,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Bdi
  * @package App\Models
- * @version December 3, 2017, 11:25 am UTC
+ * @version December 5, 2017, 11:27 am UTC
  *
- * @property \App\Models\Route route
+ * @property \App\Models\BdiCode bdiCode
  * @property \App\Models\Ship ship
- * @property \Illuminate\Database\Eloquent\Collection agreements
- * @property \Illuminate\Database\Eloquent\Collection ships
+ * @property integer bdi_code_id
  * @property integer ship_id
- * @property integer route_id
  * @property decimal price
  * @property date start_date
  * @property date end_date
@@ -34,8 +32,8 @@ class Bdi extends Model
 
 
     public $fillable = [
+        'bdi_code_id',
         'ship_id',
-        'route_id',
         'price',
         'start_date',
         'end_date'
@@ -48,8 +46,8 @@ class Bdi extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'bdi_code_id' => 'integer',
         'ship_id' => 'integer',
-        'route_id' => 'integer',
         'start_date' => 'date',
         'end_date' => 'date'
     ];
@@ -66,9 +64,9 @@ class Bdi extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function route()
+    public function bdiCode()
     {
-        return $this->belongsTo(\App\Models\Route::class);
+        return $this->belongsTo(\App\Models\BdiCode::class);
     }
 
     /**
