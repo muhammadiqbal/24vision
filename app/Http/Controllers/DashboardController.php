@@ -59,7 +59,7 @@ class DashboardController extends Controller
 		
 				
 		// Formular for result of the function
-		$ntce= ((1-$voy_comm)*$quantity*rate-$non_hire_costs)/$voyage_time
+		$ntce= ((1-$voy_comm/100)*$quantity*rate-$non_hire_costs)/$voyage_time
 
         return $ntce;
     }
@@ -76,7 +76,7 @@ class DashboardController extends Controller
 		
 				
 		// Formular for result of the function
-		$gross_rate= ($bdi*$voyage_time+$non_hire_costs)/((1-$voy_comm)*$quantity);
+		$gross_rate= ($bdi*$voyage_time+$non_hire_costs)/((1-$voy_comm/100)*$quantity);
 
         return $gross_rate;
     }
@@ -157,7 +157,7 @@ class DashboardController extends Controller
   		$dist = acos($dist);
   		$dist = rad2deg($dist);
   		$miles = $dist * 60 * 1.1515;
-		$nm = 0.868976 * $miles
+		$nm = 0.868976 * $miles;
 		return $nm;
   }
 }
