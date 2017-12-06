@@ -38,7 +38,7 @@
                 </a>
 
 
-                   <div class="col-xs-6 col-xs-offset-2" style="margin-top: 5px;">
+{{--                    <div class="col-xs-6 col-xs-offset-2" style="margin-top: 5px;">
                         <div class="input-group">
                             <div class="input-group-btn search-panel">
                                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -56,7 +56,7 @@
                                 <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
                             </span>
                         </div>
-                    </div>
+                    </div> --}}
 
                 <!-- Navbar Right Menu -->
                 <div class="navbar-custom-menu">

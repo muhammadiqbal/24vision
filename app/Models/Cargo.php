@@ -42,6 +42,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Cargo extends Model
 {
+
+    /*START non db attrobites */
+    protected $ntce;
+    protected $grossRate;
+    protected $ntc;
+    protected $route;//later we need relation for this 
+    /*END non db attribute*/
+
+
     use SoftDeletes;
 
     public $table = 'cargos';
@@ -111,6 +120,41 @@ class Cargo extends Model
         
     ];
 
+    /*START non db attribute setter and getter*/
+    public function setNtce($ntce){
+        $this->ntce = $ntce;
+    }
+
+    public function getNtce(){
+        return $this->ntce;
+    }
+
+    public function setGrossRate($grossRate){
+        $this->grossRate = $grossRate;
+    }
+
+    public function getGrossRate(){
+        return $this->grossRate;
+    }
+
+    public function setNtc($ntc){
+         $this->ntc = $ntc;
+    }
+
+    public function getNtc(){
+        return $this->ntc;
+    }
+
+    public function setRoute(Route $route){
+         $this->route = $route;
+    }
+
+    public function getRoute(){
+        return $this->route;
+    }
+    /*END non db attribute setter and getter*/
+
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
@@ -118,14 +162,6 @@ class Cargo extends Model
     {
         return $this->belongsTo(\App\Models\Customer::class);
     }
-
-    // /**
-    //  * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-    //  **/
-    // public function port()
-    // {
-    //     return $this->belongsTo(\App\Models\Port::class);
-    // }
 
     // /**
     //  * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

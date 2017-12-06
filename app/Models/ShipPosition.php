@@ -93,4 +93,5 @@ class ShipPosition extends Model
     {
         return $this->hasMany(\App\Models\Agreement::class);
     }
+
 }

@@ -7,7 +7,7 @@
     "require": {
         "php": ">=5.6.4",
         "cornford/googlmapper": "2.*",
-        "doctrine/dbal": "2.6.3",
+        "doctrine/dbal": "2.5.13",
         "infyomlabs/adminlte-templates": "5.4.x-dev",
         "infyomlabs/generator-builder": "dev-master",
         "infyomlabs/laravel-generator": "5.4.x-dev",
@@ -16,10 +16,11 @@
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.4.0",
+        "league/geotools": "@stable",
         "toin0u/geocoder-laravel": "^1.1",
-        "yajra/laravel-datatables-oracle": "8.*",
-        "yajra/laravel-datatables-buttons":"3.*",
-        "yajra/laravel-datatables-html" :"3.*"
+        "yajra/laravel-datatables-buttons": "3.*",
+        "yajra/laravel-datatables-html": "3.*",
+        "yajra/laravel-datatables-oracle": "8.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -29,12 +29,12 @@
           class="active"
         @endif
         >
-        <a href="{{url('/shipPositions')}}"><i class="fa fa-link"></i> <span>Ship offers</span></a></li>
-      <li
+        <a href="{{url('/shipPositions')}}"><i class="fa fa-link"></i> <span>Ship Positions</span></a></li>
+      {{-- <li
         @if( $route =='App\Http\Controllers\AgreementController')
           class="active"
         @endif
         ><a href="{{url('/agreements')}}"><i class="fa fa-link"></i> <span>Agreements</span></a></li>
-      
+       --}}
     </ul>
     <!-- /.sidebar-menu -->
