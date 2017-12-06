@@ -26,6 +26,12 @@ class DashboardController extends Controller
         $this->middleware('auth');
     }
 
+
+    public function testing(){
+
+        return $testResultValue;
+    }
+
     /**
      * Show the application dashboard.
      *

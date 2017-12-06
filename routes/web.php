@@ -21,6 +21,7 @@ Auth::routes();
 
 Route::get('/home', 'DashboardController@index');
 
+Route::get('/home', 'DashboardController@testing');
 //Route::get('/openPositions/{port}', 'HomeController@openPosition');
 
 Route::resource('roles', 'roleController');
