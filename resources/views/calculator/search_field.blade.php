@@ -14,7 +14,7 @@
     </select>
 </div>
 
-<!-- Region Id Field -->
+{{-- <!-- Region Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('region_id', 'Region:') !!}
         <select name="region_id" class="form-control">
@@ -26,7 +26,7 @@
             @endif
         @endforeach
     </select>
-</div>
+</div> --}}
 
 <!-- Port Id Field -->
 <div class="form-group col-sm-6">
