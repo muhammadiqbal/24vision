@@ -5,7 +5,11 @@
     {!! Form::label('ship_id', 'Ship:') !!}
     <select name="ship_id" class="form-control">
         @foreach($ships as $ship)
-            <option value="{{$ship->id}}">{{$ship->name}}</option>
+            @if($ship->id == $shipPosition->ship->id)
+                <option value="{{$ship->id}}" selected="true">{{$ship->name}}</option>
+            @else
+                <option value="{{$ship->id}}">{{$ship->name}}</option>
+            @endif
         @endforeach
     </select>
 </div>
@@ -15,7 +19,11 @@
     {!! Form::label('region_id', 'Region:') !!}
         <select name="region_id" class="form-control">
         @foreach($regions as $region)
-            <option value="{{$region->id}}">{{$region->name}}</option>
+            @if($region->id == $shipPosition->region_id)
+                <option value="{{$region->id}}" selected="true">{{$region->name}}</option>
+            @else
+                <option value="{{$region->id}}">{{$region->name}}</option>
+            @endif
         @endforeach
     </select>
 </div>
@@ -25,7 +33,11 @@
     {!! Form::label('port_id', 'Port:') !!}
     <select name="port_id" class="form-control">
         @foreach($ports as $port)
-            <option value="{{$port->id}}">{{$port->name}}</option>
+            @if($port->id == $shipPosition->port_id )
+                <option value="{{$port->id}}" selected="true">{{$port->name}}</option>
+            @else
+                <option value="{{$port->id}}">{{$port->name}}</option>
+            @endif
         @endforeach
     </select>
 </div>
