@@ -86,10 +86,11 @@ class DashboardController extends Controller
                         ->where('quantity','<=',$ship->max_holds_capacity - 0)
                         //->where($ship->max_holds_capacity - 0,'>=','quantity')
                         ->get();
+        $shipPositionGrossRate = ShipPosition::where('ship_id',1);
 
         foreach ($cargos as $cargo) {
             $bdi = Bdi::find(1);
-            $grossRate = $this->calculateGrossRate($cargo, $shipPosition, 226, $bdi->price);
+            $grossRate = $this->calculateGrossRate($cargo, $shipPositionGrossRate, 226, $bdi->price);
             $ntce = $this->calculateNTCE($cargo, $shipPosition,226, $grossRate);
             
             $route = Route::where('area1',$cargo->loading_port)
