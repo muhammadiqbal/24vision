@@ -89,8 +89,8 @@ class DashboardController extends Controller
 
         foreach ($cargos as $cargo) {
             $bdi = Bdi::find(1);
-            $grossRate = $this->calculateGrossRate($cargo, $shipPosition, 23, $bdi->price);
-            $ntce = $this->calculateNTCE($cargo, $shipPosition,23, $grossRate);
+            $grossRate = $this->calculateGrossRate($cargo, $shipPosition, 226, $bdi->price);
+            $ntce = $this->calculateNTCE($cargo, $shipPosition,226, $grossRate);
             
             $route = Route::where('area1',$cargo->loading_port)
                           ->where('area3',$cargo->discharging_port)->first();
