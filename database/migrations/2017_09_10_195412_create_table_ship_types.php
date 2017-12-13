@@ -14,7 +14,8 @@ class CreateTableShipTypes extends Migration
     public function up()
     {
         //
-        Schema::create('ship_types', function (Blueprint $table) {
+        Schema::create('ship_types', function (Blueprint $table) 
+        {
             $table->increments('id');
             $table->string('name')->unique();
             $table->timestamps();

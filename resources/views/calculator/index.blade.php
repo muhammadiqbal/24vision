@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="content-header">
-        <h1 class="pull-left">Cargo In Ship matcher</h1>
+        <h1 class="pull-left">Cargo In Ship matcher </h1>
     </section>
     <div class="content">
         <div class="clearfix"></div>
@@ -13,14 +13,22 @@
         <div class="box box-primary">
             <div class="box-body">
                     <div class="row">
-                        <div class="col-sm-6">@include('calculator.ship_position')</div>
-                        <div class="col-sm-6">@include('calculator.occupancy_table')</div>
-                    </div>
-                    <div class="row">
-                       @include('calculator.table') 
+                        <div class="col-md-12">
+                            <div class="col-md-6">
+                                @include('calculator.search_field')
+                            </div>
+                            <div class="col-md-6">
+                                @include('calculator.occupancy_table')
+                            </div>
+                        </div>
                     </div>
             </div>
+        </div>
 
+        <div class="box box-primary">
+            <div class="box box-primary">
+                       @include('calculator.table') 
+            </div>
         </div>
     </div>
 @endsection

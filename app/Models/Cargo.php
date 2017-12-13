@@ -8,18 +8,19 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Cargo
  * @package App\Models
- * @version October 14, 2017, 9:07 pm UTC
+ * @version December 5, 2017, 11:30 am UTC
  *
+ * @property \App\Models\Customer customer
  * @property \App\Models\Port port
- * @property \App\Models\LoadingDischagingRateType loadingDischagingRateType
+ * @property \App\Models\LoadingDischargingRateType loadingDischargingRateType
  * @property \App\Models\FreightIdeaMeasurement freightIdeaMeasurement
  * @property \App\Models\Port port
- * @property \App\Models\LoadingDischagingRateType loadingDischagingRateType
+ * @property \App\Models\LoadingDischargingRateType loadingDischargingRateType
  * @property \App\Models\QuantityMeasurement quantityMeasurement
  * @property \App\Models\StowageFactorUnit stowageFactorUnit
  * @property \App\Models\ShipSpecialization shipSpecialization
- * @property \Illuminate\Database\Eloquent\Collection Agreement
- * @property \Illuminate\Database\Eloquent\Collection ships
+ * @property \Illuminate\Database\Eloquent\Collection bdi
+ * @property integer customer_id
  * @property integer loading_port
  * @property integer discharging_port
  * @property date laycan_first_day
@@ -41,6 +42,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Cargo extends Model
 {
+
+    /*START non db attrobites */
+    protected $ntce;
+    protected $grossRate;
+    protected $ntc;
+    protected $route;//later we need relation for this 
+    /*END non db attribute*/
+
+
     use SoftDeletes;
 
     public $table = 'cargos';
@@ -53,6 +63,7 @@ class Cargo extends Model
 
 
     public $fillable = [
+        'customer_id',
         'loading_port',
         'discharging_port',
         'laycan_first_day',
@@ -80,6 +91,7 @@ class Cargo extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'customer_id' => 'integer',
         'loading_port' => 'integer',
         'discharging_port' => 'integer',
         'laycan_first_day' => 'date',
@@ -108,21 +120,56 @@ class Cargo extends Model
         
     ];
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     **/
-    public function port()
-    {
-        return $this->belongsTo(\App\Models\Port::class);
+    /*START non db attribute setter and getter*/
+    public function setNtce($ntce){
+        $this->ntce = $ntce;
     }
+
+    public function getNtce(){
+        return $this->ntce;
+    }
+
+    public function setGrossRate($grossRate){
+        $this->grossRate = $grossRate;
+    }
+
+    public function getGrossRate(){
+        return $this->grossRate;
+    }
+
+    public function setNtc($ntc){
+         $this->ntc = $ntc;
+    }
+
+    public function getNtc(){
+        return $this->ntc;
+    }
+
+    public function setRoute(Route $route){
+         $this->route = $route;
+    }
+
+    public function getRoute(){
+        return $this->route;
+    }
+    /*END non db attribute setter and getter*/
+
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function loadingDischagingRateType()
+    public function customer()
     {
-        return $this->belongsTo(\App\Models\LoadingDischagingRateType::class);
+        return $this->belongsTo(\App\Models\Customer::class);
     }
+
+    // /**
+    //  * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+    //  **/
+    // public function loadingDischargingRateType()
+    // {
+    //     return $this->belongsTo(\App\Models\LoadingDischargingRateType::class);
+    // }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -132,21 +179,29 @@ class Cargo extends Model
         return $this->belongsTo(\App\Models\FreightIdeaMeasurement::class);
     }
 
-    // /**
-    //  * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-    //  **/
-    // public function port()
-    // {
-    //     return $this->belongsTo(\App\Models\Port::class);
-    // }
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function loadingPort()
+    {
+        return $this->belongsTo(\App\Models\Port::class,'loading_port');
+    }
 
-    // /**
-    //  * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-    //  **/
-    // public function loadingDischagingRateType()
-    // {
-    //     return $this->belongsTo(\App\Models\LoadingDischagingRateType::class);
-    // }
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function dischargingPort()
+    {
+        return $this->belongsTo(\App\Models\Port::class,'discharging_port');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function loadingDischargingRateType()
+    {
+        return $this->belongsTo(\App\Models\LoadingDischargingRateType::class);
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -170,13 +225,5 @@ class Cargo extends Model
     public function shipSpecialization()
     {
         return $this->belongsTo(\App\Models\ShipSpecialization::class);
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     **/
-    public function agreements()
-    {
-        return $this->hasMany(\App\Models\Agreement::class);
     }
 }

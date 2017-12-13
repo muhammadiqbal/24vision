@@ -8,7 +8,7 @@ use InfyOm\Generator\Common\BaseRepository;
 /**
  * Class CargoRepository
  * @package App\Repositories
- * @version October 14, 2017, 9:07 pm UTC
+ * @version December 5, 2017, 11:30 am UTC
  *
  * @method Cargo findWithoutFail($id, $columns = ['*'])
  * @method Cargo find($id, $columns = ['*'])
@@ -20,6 +20,7 @@ class CargoRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
+        'customer_id',
         'loading_port',
         'discharging_port',
         'laycan_first_day',

@@ -19,9 +19,12 @@ class CreateTableRoutes extends Migration
             $table->increments('id');
             $table->string('code');
             $table->string('name');
-            $table->string('area1');
-            $table->string('area2')->nullable();
-            $table->string('area3');
+            $table->integer('area1')->unsigned();
+            $table->foreign('area1')->references('id')->on('regions');
+            $table->integer('area2')->unsigned()->nullable();
+            $table->foreign('area2')->references('id')->on('regions');
+            $table->integer('area3')->unsigned();
+            $table->foreign('area3')->references('id')->on('regions');
             $table->timestamps();
             $table->softDeletes();
         });

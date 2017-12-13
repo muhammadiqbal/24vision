@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AlterTablePortsAddColumnLocation extends Migration
+class AlterTableCargosSetNullable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,11 @@ class AlterTablePortsAddColumnLocation extends Migration
     public function up()
     {
         //
-      //  DB::statement('ALTER TABLE ports ADD location POINT' );
+        Schema::table('cargos', function (Blueprint $table) {
+            $table->date('laycan_last_day')->nullable();
+            $table->integer('freight_idea_measurement_id')->unsigned()->nullable();
+            $table->integer('freight_idea')->nullable();
+        });
     }
 
     /**

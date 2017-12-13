@@ -21,6 +21,7 @@ Auth::routes();
 
 Route::get('/home', 'DashboardController@index');
 
+Route::get('/testing', 'DashboardController@testing');
 //Route::get('/openPositions/{port}', 'HomeController@openPosition');
 
 Route::resource('roles', 'roleController');
@@ -70,3 +71,17 @@ Route::resource('fuelPrices', 'FuelPriceController');
 Route::resource('bdis', 'BdiController');
 
 Route::resource('ships', 'ShipController');
+
+Route::resource('bdis', 'BdiController');
+
+Route::resource('bdiCodes', 'BdiCodeController');
+
+Route::resource('customers', 'CustomerController');
+
+Route::resource('cargos', 'CargoController');
+
+Route::resource('ports', 'PortController');
+
+Route::resource('ports', 'PortController');
+
+Route::resource('ports', 'PortController');

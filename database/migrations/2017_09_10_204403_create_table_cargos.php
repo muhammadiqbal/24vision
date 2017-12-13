@@ -16,6 +16,8 @@ class CreateTableCargos extends Migration
         //
         Schema::create('cargos', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('customer_id')->unsigned();
+            $table->foreign('customer_id')->references('id')->on('customers');
             $table->integer('loading_port')->unsigned();
             $table->foreign('loading_port')->references('id')->on('ports');
             $table->integer('discharging_port')->unsigned();
@@ -32,10 +34,10 @@ class CreateTableCargos extends Migration
             $table->foreign('quantity_measurement_id')->references('id')->on('quantity_measurements');
             $table->integer('quantity');
             $table->integer('loading_rate_type')->unsigned();
-            $table->foreign('loading_rate_type')->references('id')->on('loading_dischaging_rate_type');
+            $table->foreign('loading_rate_type')->references('id')->on('loading_discharging_rate_type');
             $table->integer('loading_rate');
             $table->integer('discharging_rate_type')->unsigned();
-            $table->foreign('discharging_rate_type')->references('id')->on('loading_dischaging_rate_type');
+            $table->foreign('discharging_rate_type')->references('id')->on('loading_discharging_rate_type');
             $table->integer('discharging_rate');
             $table->integer('freight_idea_measurement_id')->unsigned();
             $table->foreign('freight_idea_measurement_id')->references('id')->on('freight_idea_measurements');

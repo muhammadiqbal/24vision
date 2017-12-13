@@ -8,7 +8,7 @@ use InfyOm\Generator\Common\BaseRepository;
 /**
  * Class BdiRepository
  * @package App\Repositories
- * @version December 3, 2017, 11:25 am UTC
+ * @version December 5, 2017, 11:27 am UTC
  *
  * @method Bdi findWithoutFail($id, $columns = ['*'])
  * @method Bdi find($id, $columns = ['*'])
@@ -20,8 +20,8 @@ class BdiRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
+        'bdi_code_id',
         'ship_id',
-        'route_id',
         'price',
         'start_date',
         'end_date'
