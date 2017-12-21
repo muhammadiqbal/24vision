@@ -27,7 +27,7 @@ class FuelPriceDataTable extends DataTable
      */
     public function query()
     {
-        $fuelPrices = FuelPrice::query();
+        $fuelPrices = FuelPrice::with('fuelType')->select('fuel_prices.*');
 
         return $this->applyScopes($fuelPrices);
     }
@@ -72,7 +72,7 @@ class FuelPriceDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'fuel_type_id' => ['name' => 'fuel_type_id', 'data' => 'fuel_type_id'],
+            'fuel_type' => ['name' => 'fuelType.name', 'data' => 'fuel_type.name'],
             'price' => ['name' => 'price', 'data' => 'price'],
             'start_date' => ['name' => 'start_date', 'data' => 'start_date'],
             'end_date' => ['name' => 'end_date', 'data' => 'end_date']

@@ -1,8 +1,18 @@
 <!-- Fuel Type Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('fuel_type_id', 'Fuel Type Id:') !!}
-    {!! Form::number('fuel_type_id', null, ['class' => 'form-control']) !!}
+    {!! Form::label('fuel_type_id', 'Fuel Type:') !!}
+    <select name="fuel_type_id" class="form-control">
+        @foreach($fuelTypes as $fuelType)
+                @if(!empty($fuelPrice) && $fuelType->id == $fuelPrice->fuel_type_id )
+                    <option value="{{$fuelType->id}}" selected="true">{{$fuelType->name}}</option>
+                @else
+                    <option value="{{$fuelType->id}}">{{$fuelType->name}}</option>
+                @endif
+        @endforeach
+    </select>
 </div>
+
+
 
 <!-- Price Field -->
 <div class="form-group col-sm-6">

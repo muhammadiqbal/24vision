@@ -10,6 +10,7 @@ use App\Repositories\FuelPriceRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
+use App\Models\FuelType;
 
 class FuelPriceController extends AppBaseController
 {
@@ -39,7 +40,8 @@ class FuelPriceController extends AppBaseController
      */
     public function create()
     {
-        return view('fuel_prices.create');
+        $fuelTypes = FuelType::all();
+        return view('fuel_prices.create')->with('fuelTypes',$fuelTypes);
     }
 
     /**
@@ -89,6 +91,7 @@ class FuelPriceController extends AppBaseController
      */
     public function edit($id)
     {
+        $fuelTypes = FuelType::all();
         $fuelPrice = $this->fuelPriceRepository->findWithoutFail($id);
 
         if (empty($fuelPrice)) {
@@ -97,7 +100,7 @@ class FuelPriceController extends AppBaseController
             return redirect(route('fuelPrices.index'));
         }
 
-        return view('fuel_prices.edit')->with('fuelPrice', $fuelPrice);
+        return view('fuel_prices.edit')->with('fuelPrice', $fuelPrice)->with('fuelTypes', $fuelTypes);
     }
 
     /**

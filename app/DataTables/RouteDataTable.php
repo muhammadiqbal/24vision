@@ -27,7 +27,7 @@ class RouteDataTable extends DataTable
      */
     public function query()
     {
-        $routes = Route::query();
+        $routes = Route::with('area1')->with('area2')->with('area3')->select('routes.*');
 
         return $this->applyScopes($routes);
     }
@@ -73,10 +73,9 @@ class RouteDataTable extends DataTable
     {
         return [
             'code' => ['name' => 'code', 'data' => 'code'],
-            'name' => ['name' => 'name', 'data' => 'name'],
-            'area1' => ['name' => 'area1', 'data' => 'area1'],
-            'area2' => ['name' => 'area2', 'data' => 'area2'],
-            'area3' => ['name' => 'area3', 'data' => 'area3']
+            'area1' => ['name' => 'area1.name', 'data' => 'area1.name'],
+            'area2' => ['name' => 'area2.name', 'data' => 'area2.name'],
+            'area3' => ['name' => 'area3.name', 'data' => 'area3.name']
         ];
     }
 

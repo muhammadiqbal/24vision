@@ -19,69 +19,45 @@ Route::get('/', [
 
 Auth::routes();
 
-Route::get('/home', 'DashboardController@index');
+Route::group(['middleware' => 'auth'], function() 
+{
+	Route::get('/home', 'DashboardController@index')->middleware('auth');
 
-Route::get('/testing', 'DashboardController@testing');
-//Route::get('/openPositions/{port}', 'HomeController@openPosition');
+	Route::get('/testing', 'DashboardController@testing');
 
-Route::resource('roles', 'roleController');
+	Route::resource('shipTypes', 'ShipTypeController');
 
-//Route::get('/home', 'HomeController@index');
+	Route::resource('shipSpecializations', 'ShipSpecializationController');
 
-Route::resource('roles', 'RoleController');
+	Route::resource('ships', 'ShipController');
 
-Route::resource('shipTypes', 'ShipTypeController');
+	Route::resource('regions', 'RegionController');
 
-Route::resource('shipSpecializations', 'ShipSpecializationController');
+	Route::resource('ports', 'PortController');
 
-Route::resource('ships', 'ShipController');
+	Route::resource('cargos', 'CargoController');
 
-Route::resource('regions', 'RegionController');
+	Route::resource('shipPositions', 'ShipPositionController');
 
-Route::resource('ports', 'PortController');
+	Route::resource('routes', 'RouteController');
 
-Route::resource('stowageFactorUnits', 'StowageFactorUnitController');
+	Route::resource('fuelTypes', 'FuelTypeController');
 
-Route::resource('quantityMeasurements', 'QuantityMeasurementController');
+	Route::resource('fuelPrices', 'FuelPriceController');
 
-Route::resource('ldRateTypes', 'LdRateTypeController');
+	Route::resource('bdis', 'BdiController');
 
-Route::resource('freightIdeaMeasurements', 'FreightIdeaMeasurementController');
+	Route::resource('bdiCodes', 'BdiCodeController');
 
-Route::resource('cargos', 'CargoController');
+	Route::resource('customers', 'CustomerController');
 
-Route::resource('shipPositions', 'ShipPositionController');
+});
+//Route::resource('stowageFactorUnits', 'StowageFactorUnitController');
 
-Route::resource('agreements', 'AgreementController');
+//Route::resource('quantityMeasurements', 'QuantityMeasurementController');
 
-Route::resource('agreements', 'AgreementController');
+//Route::resource('ldRateTypes', 'LdRateTypeController');
 
-Route::resource('cargos', 'CargoController');
+//Route::resource('freightIdeaMeasurements', 'FreightIdeaMeasurementController');
 
-Route::resource('shipPositions', 'ShipPositionController');
 
-Route::resource('ships', 'ShipController');
-
-Route::resource('routes', 'RouteController');
-
-Route::resource('fuelTypes', 'FuelTypeController');
-
-Route::resource('fuelPrices', 'FuelPriceController');
-
-Route::resource('bdis', 'BdiController');
-
-Route::resource('ships', 'ShipController');
-
-Route::resource('bdis', 'BdiController');
-
-Route::resource('bdiCodes', 'BdiCodeController');
-
-Route::resource('customers', 'CustomerController');
-
-Route::resource('cargos', 'CargoController');
-
-Route::resource('ports', 'PortController');
-
-Route::resource('ports', 'PortController');
-
-Route::resource('ports', 'PortController');

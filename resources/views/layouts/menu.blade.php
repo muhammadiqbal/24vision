@@ -29,7 +29,25 @@
           class="active"
         @endif
         >
-        <a href="{{url('/shipPositions')}}"><i class="fa fa-link"></i> <span>Ship Positions</span></a></li>
+        <a href="{{url('/shipPositions')}}"><i class="fa fa-link"></i> <span>Cargo Mail</span></a></li>
+      <li
+        @if( $route =='App\Http\Controllers\FuelPriceController')
+          class="active"
+        @endif
+        >
+        <a href="{{url('/fuelPrices')}}"><i class="fa fa-link"></i> <span>Fuel Price</span></a></li>
+      <li
+        @if( $route =='App\Http\Controllers\RouteController')
+          class="active"
+        @endif
+        >
+        <a href="{{url('/routes')}}"><i class="fa fa-link"></i> <span>Route</span></a></li>
+      <li
+        @if( $route =='App\Http\Controllers\BdiController')
+          class="active"
+        @endif
+        >
+        <a href="{{url('/bdis')}}"><i class="fa fa-link"></i> <span>Bdi</span></a></li>
       {{-- <li
         @if( $route =='App\Http\Controllers\AgreementController')
           class="active"

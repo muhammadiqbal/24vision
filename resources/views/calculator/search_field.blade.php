@@ -1,7 +1,7 @@
 {!! Form::model($shipPosition, ['url' => ['/home'], 'method' => 'get']) !!}
 
 <!-- Ship Id Field -->
-<div class="form-group col-sm-6">
+<div class="form-group col-sm-8">
     {!! Form::label('ship_id', 'Ship:') !!}
     <select name="ship_id" class="form-control">
         @foreach($ships as $ship)
@@ -12,6 +12,12 @@
             @endif
         @endforeach
     </select>
+</div>
+
+<!-- Date Of Opening Field -->
+<div class="form-group col-sm-4">
+    {!! Form::label('occupied_size', 'Occupied size:') !!}
+    {!! Form::number('occupied_size',null, ['class' => 'form-control']) !!}
 </div>
 
 {{-- <!-- Region Id Field -->
@@ -29,7 +35,7 @@
 </div> --}}
 
 <!-- Port Id Field -->
-<div class="form-group col-sm-6">
+<div class="form-group col-sm-8">
     {!! Form::label('port_id', 'Port:') !!}
     <select name="port_id" class="form-control">
         @foreach($ports as $port)
@@ -43,9 +49,29 @@
 </div>
 
 <!-- Date Of Opening Field -->
-<div class="form-group col-sm-6">
+<div class="form-group col-sm-4">
+    {!! Form::label('occupied_tonage', 'Occupied tonage:') !!}
+    {!! Form::number('occupied_tonage',null, ['class' => 'form-control']) !!}
+</div>
+
+
+<!-- Date Of Opening Field -->
+<div class="form-group col-sm-4">
     {!! Form::label('date_of_opening', 'Date Of Opening:') !!}
     {!! Form::date('date_of_opening',date($shipPosition->date_of_opening), ['class' => 'form-control']) !!}
+</div>
+
+
+<!-- Date Of Opening Field -->
+<div class="form-group col-sm-4">
+    {!! Form::label('Range', 'Range:') !!}
+    {!! Form::number('range',null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Date Of Opening Field -->
+<div class="form-group col-sm-4">
+    {!! Form::label('current_draft', 'Current draft:') !!}
+    {!! Form::number('current_draft',null, ['class' => 'form-control']) !!}
 </div>
 
 <div class="form-group col-sm-12">

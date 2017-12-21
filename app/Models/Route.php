@@ -34,7 +34,6 @@ class Route extends Model
 
     public $fillable = [
         'code',
-        'name',
         'area1',
         'area2',
         'area3'
@@ -48,10 +47,9 @@ class Route extends Model
     protected $casts = [
         'id' => 'integer',
         'code' => 'string',
-        'name' => 'string',
-        'area1' => 'string',
-        'area2' => 'string',
-        'area3' => 'string'
+        'area1' => 'integer',
+        'area2' => 'integer',
+        'area3' => 'integer'
     ];
 
     /**
@@ -70,4 +68,29 @@ class Route extends Model
     {
         return $this->hasMany(\App\Models\Bdi::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function area1()
+    {
+        return $this->belongsTo(\App\Models\Region::class,'area1');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function area2()
+    {
+        return $this->belongsTo(\App\Models\Region::class,'area2');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function area3()
+    {
+        return $this->belongsTo(\App\Models\Region::class,'area3');
+    }
+
 }
