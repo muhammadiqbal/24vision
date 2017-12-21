@@ -68,11 +68,7 @@ class DashboardController extends Controller
     public function index(Request $request)
     {
         $shipId = $request->input('ship_id',1);
-        $dateOfOpening = $request->input('date_of_opening');
-        $portId = $request->input('port_id');
-
-
-
+        
         $shipPosition = ShipPosition::where('ship_id',$shipId)->first();
         $ship = Ship::find($shipId);
         $ships = Ship::whereIn('id',ShipPosition::all('ship_id'))->get();
@@ -80,30 +76,21 @@ class DashboardController extends Controller
         $ports = Port::all();
         $port_ship = $shipPosition->port;
         
-        
-        if(!empty($dateOfOpening) && !empty($portId)){
-            $cargos = Cargo::where('ship_specialization_id', 
-                                    $ship->ship_specialization_id)
-                            ->whereDate('laycan_first_day','>=',$dateOfOpening)
-                            ->where('discharging_port',$portId)
-                            ->get();
-        }else{
-            $cargos = Cargo::where('ship_specialization_id', 
-                                    $ship->ship_specialization_id)
-                            ->whereDate('laycan_first_day','<=',$shipPosition->date_of_opening)
-                            ->whereDate('laycan_last_day','>=',$shipPosition->date_of_opening)
-                            ->where('quantity','<=',$ship->max_holds_capacity - 0)
-                            //->where($ship->max_holds_capacity - 0,'>=','quantity')
-                            ->get();
-        }
-                        
+        // $cargo = Cargo::find(1);
+        // $travel_time = $this->calculateTravelTime($port_ship, $cargo ,$ship->speed_ballast,$ship->speed_laden);
+
+        $cargos = Cargo::where('ship_specialization_id', 
+                                $ship->ship_specialization_id)
+                        ->whereDate('laycan_first_day','<=',$shipPosition->date_of_opening)
+                        ->whereDate('laycan_last_day','>=',$shipPosition->date_of_opening)
+                        ->where('quantity','<=',$ship->max_holds_capacity - 0)
+                        //->where($ship->max_holds_capacity - 0,'>=','quantity')
+                        ->get();
         $shipPositionGrossRate = ShipPosition::where('ship_id',1)->first();
 
         foreach ($cargos as $cargo) {
             $bdi = Bdi::find(1);
-            
             $grossRate = $this->calculateGrossRate($cargo, $shipPositionGrossRate, 226, $bdi->price);
-
             $ntce = $this->calculateNTCE($cargo, $shipPosition,226, $grossRate);
             
             $route = Route::where('area1',$cargo->loading_port)
@@ -184,28 +171,11 @@ class DashboardController extends Controller
 		
 				
 		// Formular for result of the function
-
 		$ntce= (((1 - $voy_comm) * $quantity * $rate) - $non_hire_costs ) / $voyage_time;
 
         return $ntce;
     }
 		
-
-		// Defining all parameter for the formular
-		$voyage_time =calculateVoyageTime($cargo, $ship, $port_ship, $port_start, $port_end);
-		$non_hire_costs = calculateNonHireCosts($cargo, $ship, $port_ship, $port_start, $port_end,$fuel_price);
-		$voy_comm = $cargo->comission;
-		$quantity = $cargo->quantity;
-		
-				
-		// Formular for result of the function
-		$gross_rate= ($bdi*$voyage_time+$non_hire_costs)/((1-$voy_comm/100)*$quantity);
-
-        return $gross_rate;
-    }
-	
-
-
 	//Formular for calculating NonHireCosts (for NTCE or GrossRate) based on given cargo, ship, ship_position and fuel price
     protected function calculateNonHireCosts(Cargo $cargo, Ship $ship, Port $port_ship, $fuel_price)
     {
