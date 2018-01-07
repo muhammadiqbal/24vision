@@ -18,6 +18,7 @@ class CreateTableStowageFactorUnits extends Migration
             $table->increments('id');
             $table->string('unit')->unique();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

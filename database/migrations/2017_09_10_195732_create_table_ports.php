@@ -17,13 +17,14 @@ class CreateTablePorts extends Migration
         Schema::create('ports', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique();
-            $table->integer('fee')->nullable();
-            $table->integer('region_id')->unsigned();
-            $table->foreign('region_id')->references('id')->on('regions');
+            $table->integer('zone_id')->unsigned();
+            $table->foreign('zone_id')->references('id')->on('zones');
             $table->decimal('max_laden_draft')->nullable();
             $table->decimal('latitude');
             $table->decimal('longitude');
+            $table->decimal('draft_factor');
             $table->timestamps();
+            $table->softDeletes();
         });
        // DB::statement('ALTER TABLE ports ADD location POINT' );
     }

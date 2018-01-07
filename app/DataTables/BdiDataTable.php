@@ -72,11 +72,8 @@ class BdiDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'bdi_code_id' => ['name' => 'bdi_code_id', 'data' => 'bdi_code_id'],
-            'ship_id' => ['name' => 'ship_id', 'data' => 'ship_id'],
-            'price' => ['name' => 'price', 'data' => 'price'],
-            'start_date' => ['name' => 'start_date', 'data' => 'start_date'],
-            'end_date' => ['name' => 'end_date', 'data' => 'end_date']
+            'code' => ['name' => 'code', 'data' => 'code'],
+            'name' => ['name' => 'name', 'data' => 'name']
         ];
     }
 

@@ -14,7 +14,7 @@ class RouteDataTable extends DataTable
      */
     public function ajax()
     {
-        return datatables()
+        return $this->datatables
             ->eloquent($this->query())
             ->addColumn('action', 'routes.datatables_actions')
             ->make(true);
@@ -27,7 +27,7 @@ class RouteDataTable extends DataTable
      */
     public function query()
     {
-        $routes = Route::with('area1')->with('area2')->with('area3')->select('routes.*');
+        $routes = Route::query();
 
         return $this->applyScopes($routes);
     }
@@ -72,10 +72,9 @@ class RouteDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'code' => ['name' => 'code', 'data' => 'code'],
-            'area1' => ['name' => 'area1.name', 'data' => 'area1.name'],
-            'area2' => ['name' => 'area2.name', 'data' => 'area2.name'],
-            'area3' => ['name' => 'area3.name', 'data' => 'area3.name']
+            'zone1' => ['name' => 'zone1', 'data' => 'zone1'],
+            'zone2' => ['name' => 'zone2', 'data' => 'zone2'],
+            'zone3' => ['name' => 'zone3', 'data' => 'zone3']
         ];
     }
 

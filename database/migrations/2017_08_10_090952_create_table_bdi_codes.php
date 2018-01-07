@@ -14,7 +14,7 @@ class CreateTableBdiCodes extends Migration
     public function up()
     {
         //
-        Schema::create('bdi_codes', function (Blueprint $table) 
+        Schema::create('bdi', function (Blueprint $table) 
         {
             $table->increments('id');
             $table->string('code');
@@ -32,6 +32,6 @@ class CreateTableBdiCodes extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('bdi_codes');
+        Schema::dropIfExists('bdi');
     }
 }

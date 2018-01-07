@@ -18,6 +18,7 @@ class CreateTableFreightIdeaMeasurement extends Migration
             $table->increments('id');
             $table->string('name')->unique();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

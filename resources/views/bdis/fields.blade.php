@@ -1,31 +1,13 @@
-<!-- Bdi Code Id Field -->
+<!-- Code Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('bdi_code_id', 'Bdi Code Id:') !!}
-    {!! Form::number('bdi_code_id', null, ['class' => 'form-control']) !!}
+    {!! Form::label('code', 'Code:') !!}
+    {!! Form::text('code', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Ship Id Field -->
+<!-- Name Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('ship_id', 'Ship Id:') !!}
-    {!! Form::number('ship_id', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Price Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('price', 'Price:') !!}
-    {!! Form::number('price', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Start Date Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('start_date', 'Start Date:') !!}
-    {!! Form::date('start_date', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- End Date Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('end_date', 'End Date:') !!}
-    {!! Form::date('end_date', null, ['class' => 'form-control']) !!}
+    {!! Form::label('name', 'Name:') !!}
+    {!! Form::text('name', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

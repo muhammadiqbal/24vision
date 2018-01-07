@@ -8,7 +8,7 @@ use InfyOm\Generator\Common\BaseRepository;
 /**
  * Class RouteRepository
  * @package App\Repositories
- * @version December 3, 2017, 11:24 am UTC
+ * @version January 7, 2018, 3:39 pm UTC
  *
  * @method Route findWithoutFail($id, $columns = ['*'])
  * @method Route find($id, $columns = ['*'])
@@ -20,11 +20,9 @@ class RouteRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
-        'code',
-        'name',
-        'area1',
-        'area2',
-        'area3'
+        'zone1',
+        'zone2',
+        'zone3'
     ];
 
     /**

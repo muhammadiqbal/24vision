@@ -4,34 +4,22 @@
     <p>{!! $route->id !!}</p>
 </div>
 
-<!-- Code Field -->
+<!-- Zone1 Field -->
 <div class="form-group">
-    {!! Form::label('code', 'Code:') !!}
-    <p>{!! $route->code !!}</p>
+    {!! Form::label('zone1', 'Zone1:') !!}
+    <p>{!! $route->zone1 !!}</p>
 </div>
 
-<!-- Name Field -->
+<!-- Zone2 Field -->
 <div class="form-group">
-    {!! Form::label('name', 'Name:') !!}
-    <p>{!! $route->name !!}</p>
+    {!! Form::label('zone2', 'Zone2:') !!}
+    <p>{!! $route->zone2 !!}</p>
 </div>
 
-<!-- Area1 Field -->
+<!-- Zone3 Field -->
 <div class="form-group">
-    {!! Form::label('area1', 'Area1:') !!}
-    <p>{!! $route->area1 !!}</p>
-</div>
-
-<!-- Area2 Field -->
-<div class="form-group">
-    {!! Form::label('area2', 'Area2:') !!}
-    <p>{!! $route->area2 !!}</p>
-</div>
-
-<!-- Area3 Field -->
-<div class="form-group">
-    {!! Form::label('area3', 'Area3:') !!}
-    <p>{!! $route->area3 !!}</p>
+    {!! Form::label('zone3', 'Zone3:') !!}
+    <p>{!! $route->zone3 !!}</p>
 </div>
 
 <!-- Created At Field -->

@@ -8,15 +8,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Bdi
  * @package App\Models
- * @version December 5, 2017, 11:27 am UTC
+ * @version January 7, 2018, 3:38 pm UTC
  *
- * @property \App\Models\BdiCode bdiCode
- * @property \App\Models\Ship ship
- * @property integer bdi_code_id
- * @property integer ship_id
- * @property decimal price
- * @property date start_date
- * @property date end_date
+ * @property \Illuminate\Database\Eloquent\Collection BdiPrice
+ * @property \Illuminate\Database\Eloquent\Collection zonePorts
+ * @property string code
+ * @property string name
  */
 class Bdi extends Model
 {
@@ -32,11 +29,8 @@ class Bdi extends Model
 
 
     public $fillable = [
-        'bdi_code_id',
-        'ship_id',
-        'price',
-        'start_date',
-        'end_date'
+        'code',
+        'name'
     ];
 
     /**
@@ -46,10 +40,8 @@ class Bdi extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'bdi_code_id' => 'integer',
-        'ship_id' => 'integer',
-        'start_date' => 'date',
-        'end_date' => 'date'
+        'code' => 'string',
+        'name' => 'string'
     ];
 
     /**
@@ -62,18 +54,10 @@ class Bdi extends Model
     ];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      **/
-    public function bdiCode()
+    public function bdiPrices()
     {
-        return $this->belongsTo(\App\Models\BdiCode::class);
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     **/
-    public function ship()
-    {
-        return $this->belongsTo(\App\Models\Ship::class);
+        return $this->hasMany(\App\Models\BdiPrice::class);
     }
 }

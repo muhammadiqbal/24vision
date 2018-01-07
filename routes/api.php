@@ -16,3 +16,28 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::resource('bdis', 'BdiAPIController');
+
+Route::resource('zones', 'ZoneAPIController');
+
+Route::resource('routes', 'RouteAPIController');
+
+Route::resource('cargo_statuses', 'CargoStatusAPIController');
+
+Route::resource('cargo_types', 'CargoTypeAPIController');
+
+Route::resource('bdi_prices', 'BdiPriceAPIController');
+
+Route::resource('fee_prices', 'FeePriceAPIController');
+
+Route::resource('zone_points', 'ZonePointAPIController');
+
+Route::resource('zone_ports', 'ZonePortsAPIController');
+
+Route::resource('paths', 'PathAPIController');
+
+Route::resource('distances', 'DistanceAPIController');
+
+Route::resource('zone_ports', 'ZonePortAPIController');

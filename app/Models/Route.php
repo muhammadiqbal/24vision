@@ -8,16 +8,16 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Route
  * @package App\Models
- * @version December 3, 2017, 11:24 am UTC
+ * @version January 7, 2018, 3:39 pm UTC
  *
- * @property \Illuminate\Database\Eloquent\Collection agreements
- * @property \Illuminate\Database\Eloquent\Collection Bdi
- * @property \Illuminate\Database\Eloquent\Collection ships
- * @property string code
- * @property string name
- * @property string area1
- * @property string area2
- * @property string area3
+ * @property \App\Models\Zone zone
+ * @property \App\Models\Zone zone
+ * @property \App\Models\Zone zone
+ * @property \Illuminate\Database\Eloquent\Collection Path
+ * @property \Illuminate\Database\Eloquent\Collection zonePorts
+ * @property integer zone1
+ * @property integer zone2
+ * @property integer zone3
  */
 class Route extends Model
 {
@@ -33,10 +33,9 @@ class Route extends Model
 
 
     public $fillable = [
-        'code',
-        'area1',
-        'area2',
-        'area3'
+        'zone1',
+        'zone2',
+        'zone3'
     ];
 
     /**
@@ -46,10 +45,9 @@ class Route extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'code' => 'string',
-        'area1' => 'integer',
-        'area2' => 'integer',
-        'area3' => 'integer'
+        'zone1' => 'integer',
+        'zone2' => 'integer',
+        'zone3' => 'integer'
     ];
 
     /**
@@ -62,35 +60,34 @@ class Route extends Model
     ];
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function zone()
+    {
+        return $this->belongsTo(\App\Models\Zone::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function zone()
+    {
+        return $this->belongsTo(\App\Models\Zone::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function zone()
+    {
+        return $this->belongsTo(\App\Models\Zone::class);
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      **/
-    public function bdis()
+    public function paths()
     {
-        return $this->hasMany(\App\Models\Bdi::class);
+        return $this->hasMany(\App\Models\Path::class);
     }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     **/
-    public function area1()
-    {
-        return $this->belongsTo(\App\Models\Region::class,'area1');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     **/
-    public function area2()
-    {
-        return $this->belongsTo(\App\Models\Region::class,'area2');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     **/
-    public function area3()
-    {
-        return $this->belongsTo(\App\Models\Region::class,'area3');
-    }
-
 }

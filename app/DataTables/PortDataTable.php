@@ -4,7 +4,7 @@ namespace App\DataTables;
 
 use App\Models\Port;
 use Form;
-use Yajra\Datatables\Services\DataTable;
+use Yajra\DataTables\Services\DataTable;
 
 class PortDataTable extends DataTable
 {

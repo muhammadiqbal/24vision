@@ -1,0 +1,91 @@
+<?php
+
+namespace App\DataTables;
+
+use App\Models\FeePrice;
+use Form;
+use Yajra\DataTables\Services\DataTable;
+
+class FeePriceDataTable extends DataTable
+{
+
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function ajax()
+    {
+        return $this->datatables
+            ->eloquent($this->query())
+            ->addColumn('action', 'fee_prices.datatables_actions')
+            ->make(true);
+    }
+
+    /**
+     * Get the query object to be processed by datatables.
+     *
+     * @return \Illuminate\Database\Query\Builder|\Illuminate\Database\Eloquent\Builder
+     */
+    public function query()
+    {
+        $feePrices = FeePrice::query();
+
+        return $this->applyScopes($feePrices);
+    }
+
+    /**
+     * Optional method if you want to use html builder.
+     *
+     * @return \Yajra\Datatables\Html\Builder
+     */
+    public function html()
+    {
+        return $this->builder()
+            ->columns($this->getColumns())
+            ->addAction(['width' => '10%'])
+            ->ajax('')
+            ->parameters([
+                'dom' => 'Bfrtip',
+                'scrollX' => false,
+                'buttons' => [
+                    'print',
+                    'reset',
+                    'reload',
+                    [
+                         'extend'  => 'collection',
+                         'text'    => '<i class="fa fa-download"></i> Export',
+                         'buttons' => [
+                             'csv',
+                             'excel',
+                             'pdf',
+                         ],
+                    ],
+                    'colvis'
+                ]
+            ]);
+    }
+
+    /**
+     * Get columns.
+     *
+     * @return array
+     */
+    private function getColumns()
+    {
+        return [
+            'port_id' => ['name' => 'port_id', 'data' => 'port_id'],
+            'star_date' => ['name' => 'star_date', 'data' => 'star_date'],
+            'end_date' => ['name' => 'end_date', 'data' => 'end_date'],
+            'price' => ['name' => 'price', 'data' => 'price']
+        ];
+    }
+
+    /**
+     * Get filename for export.
+     *
+     * @return string
+     */
+    protected function filename()
+    {
+        return 'feePrices';
+    }
+}

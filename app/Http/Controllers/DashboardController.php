@@ -12,6 +12,8 @@ use App\Models\Port;
 use App\Models\Bdi;
 use \League\Geotools\Coordinate\Coordinate;
 use \League\Geotools\Geotools;
+use App\Models\Email;
+use DB;
 
 
 class DashboardController extends Controller
@@ -28,36 +30,46 @@ class DashboardController extends Controller
 
 
     public function testing(){
-        $cargo = Cargo::find(1);
-        $shipPosition =ShipPosition::find(1);
-        $ship = $shipPosition->ship;
-        $bdi =2300;
-        $fuel_price = 23;
-        $rate = 2300;
-        $port_ship = $shipPosition->port;
+        // $cargo = Cargo::find(1);
+        // $shipPosition =ShipPosition::find(1);
+        // $ship = $shipPosition->ship;
+        // $bdi =2300;
+        // $fuel_price = 23;
+        // $rate = 2300;
+        // $port_ship = $shipPosition->port;
 
-        $grossRate = $this->calculateGrossRate($cargo, $shipPosition, $fuel_price, $bdi);
-        $ntce = $this->calculateNTCE($cargo, $shipPosition, $fuel_price, $rate);
-        $voyage_time = $this->calculateVoyageTime($cargo, $ship, $port_ship);
-        $non_hire_costs = $this->calculateNonHireCosts($cargo, $ship, $port_ship, $fuel_price);
-        $fuel_consumption = $this->calculateFuelConsumption($cargo, $ship, $port_ship);
-        $port_time = $this->calculatePortTime($cargo->quantity,$cargo->loading_rate,1,$cargo->discharging_rate,1);
-        $travel_time = $this->calculateTravelTime($port_ship, $cargo ,$ship->speed_ballast,$ship->speed_laden);
+        // $grossRate = $this->calculateGrossRate($cargo, $shipPosition, $fuel_price, $bdi);
+        // $ntce = $this->calculateNTCE($cargo, $shipPosition, $fuel_price, $rate);
+        // $voyage_time = $this->calculateVoyageTime($cargo, $ship, $port_ship);
+        // $non_hire_costs = $this->calculateNonHireCosts($cargo, $ship, $port_ship, $fuel_price);
+        // $fuel_consumption = $this->calculateFuelConsumption($cargo, $ship, $port_ship);
+        // $port_time = $this->calculatePortTime($cargo->quantity,$cargo->loading_rate,1,$cargo->discharging_rate,1);
+        // $travel_time = $this->calculateTravelTime($port_ship, $cargo ,$ship->speed_ballast,$ship->speed_laden);
 
-        return 'cargo'.$cargo.'<br>'.
-               'shiPosition'.$shipPosition.'<br>'.
-               'ship:'.$ship.'<br>'.
-               'bdi:'.$bdi.'<br>'.
-               'fuel price:'.$fuel_price.'<br>'.
-               'rate:'.$rate.'<br>'.
-               'grossRate:'.$grossRate.'<br>'.
-               'ntce:'.$ntce.'<br>'.
-               'voyage_time:'.$voyage_time.'<br>'.
-               'non_hire_costs'.$non_hire_costs.'<br>'.
-               'fuel_consumption:'.$fuel_consumption.'<br>'.
-               'port_time:'.$port_time.'<br>'.
-               'travel_time:'.$travel_time.'<br>';
+        // return 'cargo'.$cargo.'<br>'.
+        //        'shiPosition'.$shipPosition.'<br>'.
+        //        'ship:'.$ship.'<br>'.
+        //        'bdi:'.$bdi.'<br>'.
+        //        'fuel price:'.$fuel_price.'<br>'.
+        //        'rate:'.$rate.'<br>'.
+        //        'grossRate:'.$grossRate.'<br>'.
+        //        'ntce:'.$ntce.'<br>'.
+        //        'voyage_time:'.$voyage_time.'<br>'.
+        //        'non_hire_costs'.$non_hire_costs.'<br>'.
+        //        'fuel_consumption:'.$fuel_consumption.'<br>'.
+        //        'port_time:'.$port_time.'<br>'.
+        //        'travel_time:'.$travel_time.'<br>';
 
+        //   $geotools = new \League\Geotools\Geotools();
+        // $coordinateStartA = new Coordinate([24.18, 120.30]);
+        // $coordinateStartB = new Coordinate([35.4, 139.45]);
+
+
+        // // Defining all parameter for the formular
+        // $distance_to_start = 0.868976 * $geotools->distance()->setFrom($coordinateStartA)->setTo($coordinateStartB)->in('mi')->haversine();
+        $email = new Email();
+
+        return $email->getTableColumns();
     }
 
     /**
@@ -191,18 +203,7 @@ class DashboardController extends Controller
     }
 		
 
-		// Defining all parameter for the formular
-		$voyage_time =calculateVoyageTime($cargo, $ship, $port_ship, $port_start, $port_end);
-		$non_hire_costs = calculateNonHireCosts($cargo, $ship, $port_ship, $port_start, $port_end,$fuel_price);
-		$voy_comm = $cargo->comission;
-		$quantity = $cargo->quantity;
-		
-				
-		// Formular for result of the function
-		$gross_rate= ($bdi*$voyage_time+$non_hire_costs)/((1-$voy_comm/100)*$quantity);
 
-        return $gross_rate;
-    }
 	
 
 

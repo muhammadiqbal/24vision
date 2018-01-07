@@ -37,6 +37,7 @@ class CreateTableShips extends Migration
             $table->text('gear_onboard')->nullable();
             $table->text('additional_information')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
 
     }

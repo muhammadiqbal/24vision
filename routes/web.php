@@ -61,3 +61,28 @@ Route::group(['middleware' => 'auth'], function()
 //Route::resource('freightIdeaMeasurements', 'FreightIdeaMeasurementController');
 
 
+
+
+Route::resource('bdis', 'BdiController');
+
+Route::resource('zones', 'ZoneController');
+
+Route::resource('routes', 'RouteController');
+
+Route::resource('cargoStatuses', 'CargoStatusController');
+
+Route::resource('cargoTypes', 'CargoTypeController');
+
+Route::resource('bdiPrices', 'BdiPriceController');
+
+Route::resource('feePrices', 'FeePriceController');
+
+Route::resource('zonePoints', 'ZonePointController');
+
+Route::resource('zonePorts', 'ZonePortsController');
+
+Route::resource('paths', 'PathController');
+
+Route::resource('distances', 'DistanceController');
+
+Route::resource('zonePorts', 'ZonePortController');

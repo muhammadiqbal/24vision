@@ -4,34 +4,16 @@
     <p>{!! $bdi->id !!}</p>
 </div>
 
-<!-- Bdi Code Id Field -->
+<!-- Code Field -->
 <div class="form-group">
-    {!! Form::label('bdi_code_id', 'Bdi Code Id:') !!}
-    <p>{!! $bdi->bdi_code_id !!}</p>
+    {!! Form::label('code', 'Code:') !!}
+    <p>{!! $bdi->code !!}</p>
 </div>
 
-<!-- Ship Id Field -->
+<!-- Name Field -->
 <div class="form-group">
-    {!! Form::label('ship_id', 'Ship Id:') !!}
-    <p>{!! $bdi->ship_id !!}</p>
-</div>
-
-<!-- Price Field -->
-<div class="form-group">
-    {!! Form::label('price', 'Price:') !!}
-    <p>{!! $bdi->price !!}</p>
-</div>
-
-<!-- Start Date Field -->
-<div class="form-group">
-    {!! Form::label('start_date', 'Start Date:') !!}
-    <p>{!! $bdi->start_date !!}</p>
-</div>
-
-<!-- End Date Field -->
-<div class="form-group">
-    {!! Form::label('end_date', 'End Date:') !!}
-    <p>{!! $bdi->end_date !!}</p>
+    {!! Form::label('name', 'Name:') !!}
+    <p>{!! $bdi->name !!}</p>
 </div>
 
 <!-- Created At Field -->
