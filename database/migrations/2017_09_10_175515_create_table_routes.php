@@ -17,12 +17,9 @@ class CreateTableRoutes extends Migration
 
          Schema::create('routes', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('zone1')->unsigned();
-            $table->foreign('zone1')->references('id')->on('zones');
-            $table->integer('zone2')->unsigned()->nullable();
-            $table->foreign('zone2')->references('id')->on('zones');
-            $table->integer('zone3')->unsigned();
-            $table->foreign('zone3')->references('id')->on('zones');
+            $table->string('name');
+            $table->integer('bdi_id')->unsigned();
+            $table->foreign('bdi_id')->references('id')->on('bdi');
             $table->timestamps();
             $table->softDeletes();
         });

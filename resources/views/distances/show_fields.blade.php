@@ -22,12 +22,6 @@
     <p>{!! $distance->distance !!}</p>
 </div>
 
-<!-- Path Id Field -->
-<div class="form-group">
-    {!! Form::label('path_id', 'Path Id:') !!}
-    <p>{!! $distance->path_id !!}</p>
-</div>
-
 <!-- Created At Field -->
 <div class="form-group">
     {!! Form::label('created_at', 'Created At:') !!}

@@ -12,6 +12,8 @@ use App\Models\Region;
 use App\Models\ShipPosition;
 use App\Models\Cargo;
 use App\Models\FuelType;
+use App\Models\CargoStatus;
+use App\Models\CargoType;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 
@@ -25,44 +27,69 @@ class DatabaseSeeder extends Seeder {
 	public function run() {
 		Model::unguard();
 
-		// $this->call('PortDataSeeder');
-		$this->call('FreightIdeaMeasurementSeeder');
+		$this->call('CargoTypeSeeder');
+		$this->call('CargoStatusSeeder');
 		$this->call('LdRateTypeSeeder');
 		$this->call('QuantityMeasurementSeeder');
 		$this->call('ShipSpecializationSeeder');
 		$this->call('StowageFactorUnitSeeder');
 		$this->call('ShipTypeSeeder');
 		$this->call('FuelTypeSeeder');
-		// $this->call('CargoDataSeeder');
-		// $this->call('ShipSeeder');
-		//$this->call('RegionSeeder');
-		//$this->call('ShipPositionSeeder');
 
 	}
 
 }
 
-
-
 	/**
 	* 
 	*/
-	class FreightIdeaMeasurementSeeder extends Seeder
+	class CargoTypeSeeder extends Seeder
 	{
 		
 		public function run(){
 
-			DB::table('freight_idea_measurements')->delete();
-			
-			FreightIdeaMeasurement::create(['id'=>1,'name'=>'Per MTS']);
-			FreightIdeaMeasurement::create(['id'=>2,'name'=>'Lumpsum']);
-			FreightIdeaMeasurement::create(['id'=>3,'name'=>'Time Charter']);
-			FreightIdeaMeasurement::create(['id'=>4,'name'=>'Best offer']);
+			DB::table('cargo_types')->delete();
+			CargoType::create([
+				'id'=>1,
+				'name'=>'',
+				'standard_stowage_factor'=>0
+			]);
 		}
 
 	}
 
 		/**
+	* 
+	*/
+	class CargoStatusSeeder extends Seeder
+	{
+		
+		public function run(){
+
+			DB::table('cargo_status')->delete();
+			CargoStatus::create([
+				'id'=>1,
+				'name'=>'OK'
+			]);
+			CargoStatus::create([
+				'id'=>2,
+				'name'=>'Incomplete'
+			]);
+			CargoStatus::create([
+				'id'=>3,
+				'name'=>'Unusable'
+			]);
+			CargoStatus::create([
+				'id'=>4,
+				'name'=>'Review'
+			]);
+			
+		}
+
+	}
+	
+
+	/**
 	* 
 	*/
 	class FuelTypeSeeder extends Seeder
@@ -72,9 +99,18 @@ class DatabaseSeeder extends Seeder {
 
 			DB::table('fuel_types')->delete();
 			
-			FuelType::create(['id'=>1,'name'=>'FO']);
-			FuelType::create(['id'=>2,'name'=>'MD/GO']);
-			FuelType::create(['id'=>3,'name'=>'LSMGO']);
+			FuelType::create([
+				'id'=>1,
+				'name'=>'FO'
+			]);
+			FuelType::create([
+				'id'=>2,
+				'name'=>'MD/GO'
+			]);
+			FuelType::create([
+				'id'=>3,
+				'name'=>'LSMGO'
+			]);
 			
 		}
 
@@ -89,18 +125,54 @@ class DatabaseSeeder extends Seeder {
 		
 		public function run(){
 			DB::table('loading_discharging_rate_type')->delete();
-			LdRateType::create(['id'=>1,'name'=>'SHEX EIU']);
-			LdRateType::create(['id'=>2,'name'=>'SHEX UU']);
-			LdRateType::create(['id'=>3,'name'=>'SSHEX EIU']);
-			LdRateType::create(['id'=>4,'name'=>'SSHEX UU']);
-			LdRateType::create(['id'=>5,'name'=>'FHEX EIU']);
-			LdRateType::create(['id'=>6,'name'=>'FHEX UU']);
-			LdRateType::create(['id'=>7,'name'=>'FSHEX EIU']);
-			LdRateType::create(['id'=>8,'name'=>'FSHEX UU']);
-			LdRateType::create(['id'=>9,'name'=>'TFHEX EIU']);
-			LdRateType::create(['id'=>10,'name'=>'TFHEX UU']);
-			LdRateType::create(['id'=>11,'name'=>'SHINC']);
-			LdRateType::create(['id'=>12,'name'=>'SSHINC']);
+			LdRateType::create([
+				'id'=>1,
+				'name'=>'SHEX EIU'
+			]);
+			LdRateType::create([
+				'id'=>2,
+				'name'=>'SHEX UU'
+			]);
+			LdRateType::create([
+				'id'=>3,
+				'name'=>'SSHEX EIU'
+			]);
+			LdRateType::create([
+				'id'=>4,
+				'name'=>'SSHEX UU'
+			]);
+			LdRateType::create([
+				'id'=>5,
+				'name'=>'FHEX EIU'
+			]);
+			LdRateType::create([
+				'id'=>6,
+				'name'=>'FHEX UU'
+			]);
+			LdRateType::create([
+				'id'=>7,
+				'name'=>'FSHEX EIU'
+			]);
+			LdRateType::create([
+				'id'=>8,
+				'name'=>'FSHEX UU'
+			]);
+			LdRateType::create([
+				'id'=>9,
+				'name'=>'TFHEX EIU'
+			]);
+			LdRateType::create([
+				'id'=>10,
+				'name'=>'TFHEX UU'
+			]);
+			LdRateType::create([
+				'id'=>11,
+				'name'=>'SHINC'
+			]);
+			LdRateType::create([
+				'id'=>12,
+				'name'=>'SSHINC'
+			]);
 		}
 
 	}
@@ -128,17 +200,51 @@ class DatabaseSeeder extends Seeder {
 		
 		public function run(){
 			DB::table('ship_specializations')->delete();
-			ShipSpecialization::create(['id'=>1,'name'=>'Dry Bulk Carrier']);
-			ShipSpecialization::create(['id'=>2,'name'=>'Product Tanker']);
-			ShipSpecialization::create(['id'=>3,'name'=>'Containership']);
-			ShipSpecialization::create(['id'=>4,'name'=>'Oil Tanker']);
-			ShipSpecialization::create(['id'=>5,'name'=>'Multi Purpose Vessel']);
-			ShipSpecialization::create(['id'=>6,'name'=>'Refigerated-Cargo-Ship']);
-			ShipSpecialization::create(['id'=>7,'name'=>'Chemical Carrier']);
-			ShipSpecialization::create(['id'=>8,'name'=>'Vehicle carrier']);
-			ShipSpecialization::create(['id'=>9,'name'=>'Livestock Carrier']);
-			ShipSpecialization::create(['id'=>10,'name'=>'Hvy lift Vessel']);
-			ShipSpecialization::create(['id'=>11,'name'=>'Ro-ro Vessel']);
+
+			ShipSpecialization::create([
+				'id'=>1,
+				'name'=>'Dry Bulk Carrier'
+			]);
+			ShipSpecialization::create([
+				'id'=>2,
+				'name'=>'Product Tanker'
+			]);
+			ShipSpecialization::create([
+				'id'=>3,
+				'name'=>'Containership'
+			]);
+			ShipSpecialization::create([
+				'id'=>4,
+				'name'=>'Oil Tanker'
+			]);
+			ShipSpecialization::create([
+				'id'=>5,
+				'name'=>'Multi Purpose Vessel'
+			]);
+			ShipSpecialization::create([
+				'id'=>6,
+				'name'=>'Refigerated-Cargo-Ship'
+			]);
+			ShipSpecialization::create([
+				'id'=>7,
+				'name'=>'Chemical Carrier'
+			]);
+			ShipSpecialization::create([
+				'id'=>8,
+				'name'=>'Vehicle carrier'
+			]);
+			ShipSpecialization::create([
+				'id'=>9,
+				'name'=>'Livestock Carrier'
+			]);
+			ShipSpecialization::create([
+				'id'=>10,
+				'name'=>'Hvy lift Vessel'
+			]);
+			ShipSpecialization::create([
+				'id'=>11,
+				'name'=>'Ro-ro Vessel'
+			]);
 		}
 
 	}
@@ -150,11 +256,27 @@ class DatabaseSeeder extends Seeder {
 	{
 		public function run(){
 			DB::table('ship_types')->delete();
-			ShipType::create(['id'=>1,'name'=>'Coaster']);
-			ShipType::create(['id'=>2,'name'=>'Handysize']);
-			ShipType::create(['id'=>3,'name'=>'Handymax']);
-			ShipType::create(['id'=>4,'name'=>'Panamax']);
-			ShipType::create(['id'=>5,'name'=>'Capesize']);
+			
+			ShipType::create([
+				'id'=>1,
+				'name'=>'Coaster'
+			]);
+			ShipType::create([
+				'id'=>2,
+				'name'=>'Handysize'
+			]);
+			ShipType::create([
+				'id'=>3,
+				'name'=>'Handymax'
+			]);
+			ShipType::create([
+				'id'=>4,
+				'name'=>'Panamax'
+			]);
+			ShipType::create([
+				'id'=>5,
+				'name'=>'Capesize'
+			]);
 
 		}
 	}
@@ -167,9 +289,18 @@ class DatabaseSeeder extends Seeder {
 		
 		public function run(){
 			DB::table('stowage_factor_units')->delete();
-			StowageFactorUnit::create(['id'=>1,'unit'=>'FT/MT']);
-			StowageFactorUnit::create(['id'=>2,'unit'=>'M2/MT']);
-			StowageFactorUnit::create(['id'=>3,'unit'=>'DWCC']);
+			StowageFactorUnit::create([
+				'id'=>1,
+				'unit'=>'FT/MT'
+			]);
+			StowageFactorUnit::create([
+				'id'=>2,
+				'unit'=>'M2/MT'
+			]);
+			StowageFactorUnit::create([
+				'id'=>3,
+				'unit'=>'DWCC'
+			]);
 		}
 
 	}

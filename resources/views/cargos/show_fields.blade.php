@@ -4,16 +4,16 @@
     <p>{!! $cargo->id !!}</p>
 </div>
 
-<!-- Customer Id Field -->
-<div class="form-group">
-    {!! Form::label('customer_id', 'Customer Id:') !!}
-    <p>{!! $cargo->customer_id !!}</p>
-</div>
-
 <!-- Loading Port Field -->
 <div class="form-group">
     {!! Form::label('loading_port', 'Loading Port:') !!}
     <p>{!! $cargo->loading_port !!}</p>
+</div>
+
+<!-- Loading Port Manual Field -->
+<div class="form-group">
+    {!! Form::label('loading_port_manual', 'Loading Port Manual:') !!}
+    <p>{!! $cargo->loading_port_manual !!}</p>
 </div>
 
 <!-- Discharging Port Field -->
@@ -22,10 +22,22 @@
     <p>{!! $cargo->discharging_port !!}</p>
 </div>
 
+<!-- Discharging Port Manual Field -->
+<div class="form-group">
+    {!! Form::label('discharging_port_manual', 'Discharging Port Manual:') !!}
+    <p>{!! $cargo->discharging_port_manual !!}</p>
+</div>
+
 <!-- Laycan First Day Field -->
 <div class="form-group">
     {!! Form::label('laycan_first_day', 'Laycan First Day:') !!}
     <p>{!! $cargo->laycan_first_day !!}</p>
+</div>
+
+<!-- Laycan First Day Manual Field -->
+<div class="form-group">
+    {!! Form::label('laycan_first_day_manual', 'Laycan First Day Manual:') !!}
+    <p>{!! $cargo->laycan_first_day_manual !!}</p>
 </div>
 
 <!-- Laycan Last Day Field -->
@@ -34,10 +46,22 @@
     <p>{!! $cargo->laycan_last_day !!}</p>
 </div>
 
-<!-- Cargo Description Field -->
+<!-- Laycan Last Day Manual Field -->
 <div class="form-group">
-    {!! Form::label('cargo_description', 'Cargo Description:') !!}
-    <p>{!! $cargo->cargo_description !!}</p>
+    {!! Form::label('laycan_last_day_manual', 'Laycan Last Day Manual:') !!}
+    <p>{!! $cargo->laycan_last_day_manual !!}</p>
+</div>
+
+<!-- Cargo Type Id Field -->
+<div class="form-group">
+    {!! Form::label('cargo_type_id', 'Cargo Type Id:') !!}
+    <p>{!! $cargo->cargo_type_id !!}</p>
+</div>
+
+<!-- Cargo Type Id Manual Field -->
+<div class="form-group">
+    {!! Form::label('cargo_type_id_manual', 'Cargo Type Id Manual:') !!}
+    <p>{!! $cargo->cargo_type_id_manual !!}</p>
 </div>
 
 <!-- Stowage Factor Field -->
@@ -46,10 +70,22 @@
     <p>{!! $cargo->stowage_factor !!}</p>
 </div>
 
+<!-- Stowage Factor Manual Field -->
+<div class="form-group">
+    {!! Form::label('stowage_factor_manual', 'Stowage Factor Manual:') !!}
+    <p>{!! $cargo->stowage_factor_manual !!}</p>
+</div>
+
 <!-- Sf Unit Field -->
 <div class="form-group">
     {!! Form::label('sf_unit', 'Sf Unit:') !!}
     <p>{!! $cargo->sf_unit !!}</p>
+</div>
+
+<!-- Sf Unit Manual Field -->
+<div class="form-group">
+    {!! Form::label('sf_unit_manual', 'Sf Unit Manual:') !!}
+    <p>{!! $cargo->sf_unit_manual !!}</p>
 </div>
 
 <!-- Ship Specialization Id Field -->
@@ -58,10 +94,22 @@
     <p>{!! $cargo->ship_specialization_id !!}</p>
 </div>
 
+<!-- Ship Specialization Id Manual Field -->
+<div class="form-group">
+    {!! Form::label('ship_specialization_id_manual', 'Ship Specialization Id Manual:') !!}
+    <p>{!! $cargo->ship_specialization_id_manual !!}</p>
+</div>
+
 <!-- Quantity Measurement Id Field -->
 <div class="form-group">
     {!! Form::label('quantity_measurement_id', 'Quantity Measurement Id:') !!}
     <p>{!! $cargo->quantity_measurement_id !!}</p>
+</div>
+
+<!-- Quantity Measurement Id Manual Field -->
+<div class="form-group">
+    {!! Form::label('quantity_measurement_id_manual', 'Quantity Measurement Id Manual:') !!}
+    <p>{!! $cargo->quantity_measurement_id_manual !!}</p>
 </div>
 
 <!-- Quantity Field -->
@@ -70,10 +118,22 @@
     <p>{!! $cargo->quantity !!}</p>
 </div>
 
+<!-- Quantity Manual Field -->
+<div class="form-group">
+    {!! Form::label('quantity_manual', 'Quantity Manual:') !!}
+    <p>{!! $cargo->quantity_manual !!}</p>
+</div>
+
 <!-- Loading Rate Type Field -->
 <div class="form-group">
     {!! Form::label('loading_rate_type', 'Loading Rate Type:') !!}
     <p>{!! $cargo->loading_rate_type !!}</p>
+</div>
+
+<!-- Loading Rate Type Manual Field -->
+<div class="form-group">
+    {!! Form::label('loading_rate_type_manual', 'Loading Rate Type Manual:') !!}
+    <p>{!! $cargo->loading_rate_type_manual !!}</p>
 </div>
 
 <!-- Loading Rate Field -->
@@ -82,10 +142,22 @@
     <p>{!! $cargo->loading_rate !!}</p>
 </div>
 
+<!-- Loading Rate Manual Field -->
+<div class="form-group">
+    {!! Form::label('loading_rate_manual', 'Loading Rate Manual:') !!}
+    <p>{!! $cargo->loading_rate_manual !!}</p>
+</div>
+
 <!-- Discharging Rate Type Field -->
 <div class="form-group">
     {!! Form::label('discharging_rate_type', 'Discharging Rate Type:') !!}
     <p>{!! $cargo->discharging_rate_type !!}</p>
+</div>
+
+<!-- Discharging Rate Type Manual Field -->
+<div class="form-group">
+    {!! Form::label('discharging_rate_type_manual', 'Discharging Rate Type Manual:') !!}
+    <p>{!! $cargo->discharging_rate_type_manual !!}</p>
 </div>
 
 <!-- Discharging Rate Field -->
@@ -94,16 +166,10 @@
     <p>{!! $cargo->discharging_rate !!}</p>
 </div>
 
-<!-- Freight Idea Measurement Id Field -->
+<!-- Discharging Rate Manual Field -->
 <div class="form-group">
-    {!! Form::label('freight_idea_measurement_id', 'Freight Idea Measurement Id:') !!}
-    <p>{!! $cargo->freight_idea_measurement_id !!}</p>
-</div>
-
-<!-- Freight Idea Field -->
-<div class="form-group">
-    {!! Form::label('freight_idea', 'Freight Idea:') !!}
-    <p>{!! $cargo->freight_idea !!}</p>
+    {!! Form::label('discharging_rate_manual', 'Discharging Rate Manual:') !!}
+    <p>{!! $cargo->discharging_rate_manual !!}</p>
 </div>
 
 <!-- Extra Condition Field -->
@@ -112,10 +178,46 @@
     <p>{!! $cargo->extra_condition !!}</p>
 </div>
 
+<!-- Extra Condition Manual Field -->
+<div class="form-group">
+    {!! Form::label('extra_condition_manual', 'Extra Condition Manual:') !!}
+    <p>{!! $cargo->extra_condition_manual !!}</p>
+</div>
+
 <!-- Comission Field -->
 <div class="form-group">
     {!! Form::label('comission', 'Comission:') !!}
     <p>{!! $cargo->comission !!}</p>
+</div>
+
+<!-- Commision Manual Field -->
+<div class="form-group">
+    {!! Form::label('commision_manual', 'Commision Manual:') !!}
+    <p>{!! $cargo->commision_manual !!}</p>
+</div>
+
+<!-- Email Id Field -->
+<div class="form-group">
+    {!! Form::label('email_id', 'Email Id:') !!}
+    <p>{!! $cargo->email_id !!}</p>
+</div>
+
+<!-- Email Id Manual Field -->
+<div class="form-group">
+    {!! Form::label('email_id_manual', 'Email Id Manual:') !!}
+    <p>{!! $cargo->email_id_manual !!}</p>
+</div>
+
+<!-- Status Id Field -->
+<div class="form-group">
+    {!! Form::label('status_id', 'Status Id:') !!}
+    <p>{!! $cargo->status_id !!}</p>
+</div>
+
+<!-- Status Id Manual Field -->
+<div class="form-group">
+    {!! Form::label('status_id_manual', 'Status Id Manual:') !!}
+    <p>{!! $cargo->status_id_manual !!}</p>
 </div>
 
 <!-- Created At Field -->

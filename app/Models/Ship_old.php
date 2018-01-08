@@ -8,11 +8,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Ship
  * @package App\Models
- * @version January 8, 2018, 8:14 am UTC
+ * @version December 3, 2017, 3:00 pm UTC
  *
  * @property \App\Models\FuelType fuelType
  * @property \App\Models\ShipSpecialization shipSpecialization
  * @property \App\Models\ShipType shipType
+ * @property \Illuminate\Database\Eloquent\Collection Bdi
+ * @property \Illuminate\Database\Eloquent\Collection ShipPosition
  * @property string name
  * @property string imo
  * @property date year_of_build
@@ -20,7 +22,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property decimal max_holds_capacity
  * @property decimal ballast_draft
  * @property decimal max_laden_draft
- * @property decimal draft_per_tonnage
  * @property decimal speed_laden
  * @property decimal speed_ballast
  * @property integer fuel_type_id
@@ -53,7 +54,6 @@ class Ship extends Model
         'max_holds_capacity',
         'ballast_draft',
         'max_laden_draft',
-        'draft_per_tonnage',
         'speed_laden',
         'speed_ballast',
         'fuel_type_id',
@@ -116,5 +116,21 @@ class Ship extends Model
     public function shipType()
     {
         return $this->belongsTo(\App\Models\ShipType::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function bdis()
+    {
+        return $this->hasMany(\App\Models\Bdi::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function shipPositions()
+    {
+        return $this->hasMany(\App\Models\ShipPosition::class);
     }
 }

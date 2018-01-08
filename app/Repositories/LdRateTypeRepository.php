@@ -8,7 +8,7 @@ use InfyOm\Generator\Common\BaseRepository;
 /**
  * Class LdRateTypeRepository
  * @package App\Repositories
- * @version September 10, 2017, 9:46 pm UTC
+ * @version January 8, 2018, 8:11 am UTC
  *
  * @method LdRateType findWithoutFail($id, $columns = ['*'])
  * @method LdRateType find($id, $columns = ['*'])
@@ -20,7 +20,8 @@ class LdRateTypeRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
-        'name'
+        'name',
+        'rate_type_factor'
     ];
 
     /**

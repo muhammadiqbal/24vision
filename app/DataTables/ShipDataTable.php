@@ -4,7 +4,7 @@ namespace App\DataTables;
 
 use App\Models\Ship;
 use Form;
-use Yajra\DataTables\Services\DataTable;
+use Yajra\Datatables\Services\DataTable;
 
 class ShipDataTable extends DataTable
 {
@@ -14,7 +14,7 @@ class ShipDataTable extends DataTable
      */
     public function ajax()
     {
-        return datatables()
+        return $this->datatables
             ->eloquent($this->query())
             ->addColumn('action', 'ships.datatables_actions')
             ->make(true);
@@ -79,6 +79,7 @@ class ShipDataTable extends DataTable
             'max_holds_capacity' => ['name' => 'max_holds_capacity', 'data' => 'max_holds_capacity'],
             'ballast_draft' => ['name' => 'ballast_draft', 'data' => 'ballast_draft'],
             'max_laden_draft' => ['name' => 'max_laden_draft', 'data' => 'max_laden_draft'],
+            'draft_per_tonnage' => ['name' => 'draft_per_tonnage', 'data' => 'draft_per_tonnage'],
             'speed_laden' => ['name' => 'speed_laden', 'data' => 'speed_laden'],
             'speed_ballast' => ['name' => 'speed_ballast', 'data' => 'speed_ballast'],
             'fuel_type_id' => ['name' => 'fuel_type_id', 'data' => 'fuel_type_id'],

@@ -4,10 +4,10 @@
     <p>{!! $zonePoint->id !!}</p>
 </div>
 
-<!-- Port Id Field -->
+<!-- Zone Id Field -->
 <div class="form-group">
-    {!! Form::label('port_id', 'Port Id:') !!}
-    <p>{!! $zonePoint->port_id !!}</p>
+    {!! Form::label('zone_id', 'Zone Id:') !!}
+    <p>{!! $zonePoint->zone_id !!}</p>
 </div>
 
 <!-- Latitude Field -->
@@ -20,6 +20,12 @@
 <div class="form-group">
     {!! Form::label('longitude', 'Longitude:') !!}
     <p>{!! $zonePoint->longitude !!}</p>
+</div>
+
+<!-- Position Field -->
+<div class="form-group">
+    {!! Form::label('position', 'Position:') !!}
+    <p>{!! $zonePoint->position !!}</p>
 </div>
 
 <!-- Created At Field -->

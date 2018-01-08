@@ -8,13 +8,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class ZonePoint
  * @package App\Models
- * @version January 7, 2018, 3:45 pm UTC
+ * @version January 8, 2018, 8:14 am UTC
  *
- * @property \App\Models\Port port
- * @property \Illuminate\Database\Eloquent\Collection zonePorts
- * @property integer port_id
+ * @property \App\Models\Zone zone
+ * @property integer zone_id
  * @property decimal latitude
  * @property decimal longitude
+ * @property integer position
  */
 class ZonePoint extends Model
 {
@@ -30,9 +30,10 @@ class ZonePoint extends Model
 
 
     public $fillable = [
-        'port_id',
+        'zone_id',
         'latitude',
-        'longitude'
+        'longitude',
+        'position'
     ];
 
     /**
@@ -42,7 +43,8 @@ class ZonePoint extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'port_id' => 'integer'
+        'zone_id' => 'integer',
+        'position' => 'integer'
     ];
 
     /**
@@ -57,8 +59,8 @@ class ZonePoint extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function port()
+    public function zone()
     {
-        return $this->belongsTo(\App\Models\Port::class);
+        return $this->belongsTo(\App\Models\Zone::class);
     }
 }

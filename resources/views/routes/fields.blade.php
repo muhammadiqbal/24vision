@@ -1,19 +1,13 @@
-<!-- Zone1 Field -->
+<!-- Name Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('zone1', 'Zone1:') !!}
-    {!! Form::number('zone1', null, ['class' => 'form-control']) !!}
+    {!! Form::label('name', 'Name:') !!}
+    {!! Form::text('name', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Zone2 Field -->
+<!-- Bdi Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('zone2', 'Zone2:') !!}
-    {!! Form::number('zone2', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Zone3 Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('zone3', 'Zone3:') !!}
-    {!! Form::number('zone3', null, ['class' => 'form-control']) !!}
+    {!! Form::label('bdi_id', 'Bdi Id:') !!}
+    {!! Form::number('bdi_id', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

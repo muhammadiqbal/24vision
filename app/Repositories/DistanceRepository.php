@@ -8,7 +8,7 @@ use InfyOm\Generator\Common\BaseRepository;
 /**
  * Class DistanceRepository
  * @package App\Repositories
- * @version January 7, 2018, 3:46 pm UTC
+ * @version January 8, 2018, 10:03 am UTC
  *
  * @method Distance findWithoutFail($id, $columns = ['*'])
  * @method Distance find($id, $columns = ['*'])
@@ -22,8 +22,7 @@ class DistanceRepository extends BaseRepository
     protected $fieldSearchable = [
         'start_port',
         'end_port',
-        'distance',
-        'path_id'
+        'distance'
     ];
 
     /**

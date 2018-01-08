@@ -23,6 +23,7 @@ class CreateTableShips extends Migration
             $table->decimal('max_holds_capacity');
             $table->decimal('ballast_draft');
             $table->decimal('max_laden_draft');
+            $table->decimal('draft_per_tonnage');
             $table->decimal('speed_laden');
             $table->decimal('speed_ballast');
             $table->integer('fuel_type_id')->unsigned();

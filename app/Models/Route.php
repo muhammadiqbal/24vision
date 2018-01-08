@@ -8,16 +8,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Route
  * @package App\Models
- * @version January 7, 2018, 3:39 pm UTC
+ * @version January 8, 2018, 10:03 am UTC
  *
- * @property \App\Models\Zone zone
- * @property \App\Models\Zone zone
- * @property \App\Models\Zone zone
+ * @property \App\Models\Bdi bdi
+ * @property \Illuminate\Database\Eloquent\Collection distances
  * @property \Illuminate\Database\Eloquent\Collection Path
- * @property \Illuminate\Database\Eloquent\Collection zonePorts
- * @property integer zone1
- * @property integer zone2
- * @property integer zone3
+ * @property string name
+ * @property integer bdi_id
  */
 class Route extends Model
 {
@@ -33,9 +30,8 @@ class Route extends Model
 
 
     public $fillable = [
-        'zone1',
-        'zone2',
-        'zone3'
+        'name',
+        'bdi_id'
     ];
 
     /**
@@ -45,9 +41,8 @@ class Route extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'zone1' => 'integer',
-        'zone2' => 'integer',
-        'zone3' => 'integer'
+        'name' => 'string',
+        'bdi_id' => 'integer'
     ];
 
     /**
@@ -62,25 +57,9 @@ class Route extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function zone()
+    public function bdi()
     {
-        return $this->belongsTo(\App\Models\Zone::class);
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     **/
-    public function zone()
-    {
-        return $this->belongsTo(\App\Models\Zone::class);
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     **/
-    public function zone()
-    {
-        return $this->belongsTo(\App\Models\Zone::class);
+        return $this->belongsTo(\App\Models\Bdi::class);
     }
 
     /**

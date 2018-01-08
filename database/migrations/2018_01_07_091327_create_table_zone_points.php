@@ -16,10 +16,11 @@ class CreateTableZonePoints extends Migration
         //
          Schema::create('zone_points', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('port_id')->unsigned();
-            $table->foreign('port_id')->references('id')->on('ports');
+            $table->integer('zone_id')->unsigned();
+            $table->foreign('zone_id')->references('id')->on('zones');
             $table->decimal('latitude');
             $table->decimal('longitude');
+            $table->integer('position');
             $table->timestamps();
             $table->softDeletes();
         });

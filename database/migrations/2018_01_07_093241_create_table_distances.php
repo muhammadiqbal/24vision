@@ -20,9 +20,7 @@ class CreateTableDistances extends Migration
             $table->foreign('start_port')->references('id')->on('ports');
             $table->integer('end_port')->unsigned();
             $table->foreign('end_port')->references('id')->on('ports');
-            $table->decimal('distance');
-            $table->integer('path_id')->unsigned();
-            $table->foreign('path_id')->references('id')->on('paths');      
+            $table->decimal('distance');  
             $table->timestamps();
             $table->softDeletes();
         });

@@ -1,4 +1,14 @@
+<!-- Name Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('name', 'Name:') !!}
+    {!! Form::text('name', null, ['class' => 'form-control']) !!}
+</div>
 
+<!-- Standard Stowage Factor Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('standard_stowage_factor', 'Standard Stowage Factor:') !!}
+    {!! Form::number('standard_stowage_factor', null, ['class' => 'form-control']) !!}
+</div>
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">

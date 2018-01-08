@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\LdRateTypeDataTable;
+use App\Http\Requests;
 use App\Http\Requests\CreateLdRateTypeRequest;
 use App\Http\Requests\UpdateLdRateTypeRequest;
 use App\Repositories\LdRateTypeRepository;
-use App\Http\Controllers\AppBaseController;
-use Illuminate\Http\Request;
 use Flash;
-use Prettus\Repository\Criteria\RequestCriteria;
+use App\Http\Controllers\AppBaseController;
 use Response;
 
 class LdRateTypeController extends AppBaseController
@@ -24,16 +24,12 @@ class LdRateTypeController extends AppBaseController
     /**
      * Display a listing of the LdRateType.
      *
-     * @param Request $request
+     * @param LdRateTypeDataTable $ldRateTypeDataTable
      * @return Response
      */
-    public function index(Request $request)
+    public function index(LdRateTypeDataTable $ldRateTypeDataTable)
     {
-        $this->ldRateTypeRepository->pushCriteria(new RequestCriteria($request));
-        $ldRateTypes = $this->ldRateTypeRepository->all();
-
-        return view('ld_rate_types.index')
-            ->with('ldRateTypes', $ldRateTypes);
+        return $ldRateTypeDataTable->render('ld_rate_types.index');
     }
 
     /**

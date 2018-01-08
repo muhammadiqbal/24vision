@@ -4,6 +4,18 @@
     <p>{!! $cargoType->id !!}</p>
 </div>
 
+<!-- Name Field -->
+<div class="form-group">
+    {!! Form::label('name', 'Name:') !!}
+    <p>{!! $cargoType->name !!}</p>
+</div>
+
+<!-- Standard Stowage Factor Field -->
+<div class="form-group">
+    {!! Form::label('standard_stowage_factor', 'Standard Stowage Factor:') !!}
+    <p>{!! $cargoType->standard_stowage_factor !!}</p>
+</div>
+
 <!-- Created At Field -->
 <div class="form-group">
     {!! Form::label('created_at', 'Created At:') !!}

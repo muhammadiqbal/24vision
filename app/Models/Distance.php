@@ -8,16 +8,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Distance
  * @package App\Models
- * @version January 7, 2018, 3:46 pm UTC
+ * @version January 8, 2018, 10:03 am UTC
  *
  * @property \App\Models\Port port
- * @property \App\Models\Path path
  * @property \App\Models\Port port
- * @property \Illuminate\Database\Eloquent\Collection zonePorts
  * @property integer start_port
  * @property integer end_port
  * @property decimal distance
- * @property integer path_id
  */
 class Distance extends Model
 {
@@ -35,8 +32,7 @@ class Distance extends Model
     public $fillable = [
         'start_port',
         'end_port',
-        'distance',
-        'path_id'
+        'distance'
     ];
 
     /**
@@ -47,8 +43,7 @@ class Distance extends Model
     protected $casts = [
         'id' => 'integer',
         'start_port' => 'integer',
-        'end_port' => 'integer',
-        'path_id' => 'integer'
+        'end_port' => 'integer'
     ];
 
     /**
@@ -66,14 +61,6 @@ class Distance extends Model
     public function port()
     {
         return $this->belongsTo(\App\Models\Port::class);
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     **/
-    public function path()
-    {
-        return $this->belongsTo(\App\Models\Path::class);
     }
 
     /**

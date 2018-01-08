@@ -16,7 +16,8 @@ class CreateTableCargoType extends Migration
 
          Schema::create('cargo_types', function (Blueprint $table) {
             $table->increments('id');
-            
+            $table->string('name');
+            $table->integer('standard_stowage_factor');
             $table->timestamps();
             $table->softDeletes();
         });

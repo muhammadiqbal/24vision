@@ -4,7 +4,7 @@ namespace App\DataTables;
 
 use App\Models\Route;
 use Form;
-use Yajra\DataTables\Services\DataTable;
+use Yajra\Datatables\Services\DataTable;
 
 class RouteDataTable extends DataTable
 {
@@ -72,9 +72,8 @@ class RouteDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'zone1' => ['name' => 'zone1', 'data' => 'zone1'],
-            'zone2' => ['name' => 'zone2', 'data' => 'zone2'],
-            'zone3' => ['name' => 'zone3', 'data' => 'zone3']
+            'name' => ['name' => 'name', 'data' => 'name'],
+            'bdi_id' => ['name' => 'bdi_id', 'data' => 'bdi_id']
         ];
     }
 

@@ -46,6 +46,12 @@
     <p>{!! $ship->max_laden_draft !!}</p>
 </div>
 
+<!-- Draft Per Tonnage Field -->
+<div class="form-group">
+    {!! Form::label('draft_per_tonnage', 'Draft Per Tonnage:') !!}
+    <p>{!! $ship->draft_per_tonnage !!}</p>
+</div>
+
 <!-- Speed Laden Field -->
 <div class="form-group">
     {!! Form::label('speed_laden', 'Speed Laden:') !!}

@@ -52,16 +52,6 @@ Route::group(['middleware' => 'auth'], function()
 	Route::resource('customers', 'CustomerController');
 
 });
-//Route::resource('stowageFactorUnits', 'StowageFactorUnitController');
-
-//Route::resource('quantityMeasurements', 'QuantityMeasurementController');
-
-//Route::resource('ldRateTypes', 'LdRateTypeController');
-
-//Route::resource('freightIdeaMeasurements', 'FreightIdeaMeasurementController');
-
-
-
 
 Route::resource('bdis', 'BdiController');
 
@@ -86,3 +76,19 @@ Route::resource('paths', 'PathController');
 Route::resource('distances', 'DistanceController');
 
 Route::resource('zonePorts', 'ZonePortController');
+
+Route::resource('ldRateTypes', 'LdRateTypeController');
+
+Route::resource('routes', 'RouteController');
+
+Route::resource('ships', 'ShipController');
+
+Route::resource('zonePoints', 'ZonePointController');
+
+Route::resource('cargos', 'CargoController');
+
+Route::resource('cargoTypes', 'CargoTypeController');
+
+Route::resource('distances', 'DistanceController');
+
+Route::resource('routes', 'RouteController');

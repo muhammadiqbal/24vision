@@ -40,6 +40,12 @@
     {!! Form::number('max_laden_draft', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Draft Per Tonnage Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('draft_per_tonnage', 'Draft Per Tonnage:') !!}
+    {!! Form::number('draft_per_tonnage', null, ['class' => 'form-control']) !!}
+</div>
+
 <!-- Speed Laden Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('speed_laden', 'Speed Laden:') !!}
@@ -52,15 +58,10 @@
     {!! Form::number('speed_ballast', null, ['class' => 'form-control']) !!}
 </div>
 
-
-<!-- Fuel type Id Field -->
+<!-- Fuel Type Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('fuel_type_id', 'Fuel Type :') !!}
-        <select name="fuel_type_id" class="form-control">
-        @foreach($fuelTypes as $fuelType)
-            <option value="{{$fuelType->id}}">{{$fuelType->name}}</option>
-        @endforeach
-    </select>
+    {!! Form::label('fuel_type_id', 'Fuel Type Id:') !!}
+    {!! Form::number('fuel_type_id', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Fuel Consumption At Sea Field -->
@@ -84,23 +85,14 @@
 <!-- Ship Type Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('ship_type_id', 'Ship Type Id:') !!}
-    <select name="ship_type_id" class="form-control">
-        @foreach($shipTypes as $shipType)
-            <option value="{{$shipType->id}}">{{$shipType->name}}</option>
-        @endforeach
-    </select>
+    {!! Form::number('ship_type_id', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Ship Specialization Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('ship_specialization_id', 'Ship Specialization Id:') !!}
-        <select name="ship_specialization_id" class="form-control">
-        @foreach($shipSpecializations as $shipSpecialization)
-            <option value="{{$shipSpecialization->id}}">{{$shipSpecialization->name}}</option>
-        @endforeach
-    </select>
+    {!! Form::number('ship_specialization_id', null, ['class' => 'form-control']) !!}
 </div>
-
 
 <!-- Gear Onboard Field -->
 <div class="form-group col-sm-12 col-lg-12">

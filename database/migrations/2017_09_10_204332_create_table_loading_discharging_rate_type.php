@@ -18,6 +18,7 @@ class CreateTableLoadingDischargingRateType extends Migration
         {
             $table->increments('id');
             $table->string('name')->unique();
+            $table->decimal('rate_type_factor');
             $table->timestamps();
             $table->softDeletes();
         });

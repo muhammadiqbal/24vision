@@ -41,3 +41,19 @@ Route::resource('paths', 'PathAPIController');
 Route::resource('distances', 'DistanceAPIController');
 
 Route::resource('zone_ports', 'ZonePortAPIController');
+
+Route::resource('ld_rate_types', 'LdRateTypeAPIController');
+
+Route::resource('routes', 'RouteAPIController');
+
+Route::resource('ships', 'ShipAPIController');
+
+Route::resource('zone_points', 'ZonePointAPIController');
+
+Route::resource('cargos', 'CargoAPIController');
+
+Route::resource('cargo_types', 'CargoTypeAPIController');
+
+Route::resource('distances', 'DistanceAPIController');
+
+Route::resource('routes', 'RouteAPIController');

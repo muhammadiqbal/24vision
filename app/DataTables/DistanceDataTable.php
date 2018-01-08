@@ -4,7 +4,7 @@ namespace App\DataTables;
 
 use App\Models\Distance;
 use Form;
-use Yajra\DataTables\Services\DataTable;
+use Yajra\Datatables\Services\DataTable;
 
 class DistanceDataTable extends DataTable
 {
@@ -14,7 +14,7 @@ class DistanceDataTable extends DataTable
      */
     public function ajax()
     {
-        return datatables()
+        return $this->datatables
             ->eloquent($this->query())
             ->addColumn('action', 'distances.datatables_actions')
             ->make(true);
@@ -74,8 +74,7 @@ class DistanceDataTable extends DataTable
         return [
             'start_port' => ['name' => 'start_port', 'data' => 'start_port'],
             'end_port' => ['name' => 'end_port', 'data' => 'end_port'],
-            'distance' => ['name' => 'distance', 'data' => 'distance'],
-            'path_id' => ['name' => 'path_id', 'data' => 'path_id']
+            'distance' => ['name' => 'distance', 'data' => 'distance']
         ];
     }
 

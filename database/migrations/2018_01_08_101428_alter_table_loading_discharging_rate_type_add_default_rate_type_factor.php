@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableCustomers extends Migration
+class AlterTableLoadingDischargingRateTypeAddDefaultRateTypeFactor extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +14,10 @@ class CreateTableCustomers extends Migration
     public function up()
     {
         //
-        Schema::create('customers', function (Blueprint $table) 
+        Schema::table('loading_discharging_rate_type', function (Blueprint $table)
         {
-            $table->increments('id');
-            $table->string('name');
-            $table->timestamps();
-            $table->softDeletes();
+
+            $table->decimal('rate_type_factor')->default(1)->change();
         });
     }
 
@@ -31,6 +29,5 @@ class CreateTableCustomers extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('customers');
     }
 }

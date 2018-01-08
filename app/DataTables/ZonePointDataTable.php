@@ -4,7 +4,7 @@ namespace App\DataTables;
 
 use App\Models\ZonePoint;
 use Form;
-use Yajra\DataTables\Services\DataTable;
+use Yajra\Datatables\Services\DataTable;
 
 class ZonePointDataTable extends DataTable
 {
@@ -72,9 +72,10 @@ class ZonePointDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'port_id' => ['name' => 'port_id', 'data' => 'port_id'],
+            'zone_id' => ['name' => 'zone_id', 'data' => 'zone_id'],
             'latitude' => ['name' => 'latitude', 'data' => 'latitude'],
-            'longitude' => ['name' => 'longitude', 'data' => 'longitude']
+            'longitude' => ['name' => 'longitude', 'data' => 'longitude'],
+            'position' => ['name' => 'position', 'data' => 'position']
         ];
     }
 

@@ -4,22 +4,16 @@
     <p>{!! $route->id !!}</p>
 </div>
 
-<!-- Zone1 Field -->
+<!-- Name Field -->
 <div class="form-group">
-    {!! Form::label('zone1', 'Zone1:') !!}
-    <p>{!! $route->zone1 !!}</p>
+    {!! Form::label('name', 'Name:') !!}
+    <p>{!! $route->name !!}</p>
 </div>
 
-<!-- Zone2 Field -->
+<!-- Bdi Id Field -->
 <div class="form-group">
-    {!! Form::label('zone2', 'Zone2:') !!}
-    <p>{!! $route->zone2 !!}</p>
-</div>
-
-<!-- Zone3 Field -->
-<div class="form-group">
-    {!! Form::label('zone3', 'Zone3:') !!}
-    <p>{!! $route->zone3 !!}</p>
+    {!! Form::label('bdi_id', 'Bdi Id:') !!}
+    <p>{!! $route->bdi_id !!}</p>
 </div>
 
 <!-- Created At Field -->

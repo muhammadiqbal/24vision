@@ -8,7 +8,7 @@ use InfyOm\Generator\Common\BaseRepository;
 /**
  * Class ShipRepository
  * @package App\Repositories
- * @version December 3, 2017, 3:00 pm UTC
+ * @version January 8, 2018, 8:14 am UTC
  *
  * @method Ship findWithoutFail($id, $columns = ['*'])
  * @method Ship find($id, $columns = ['*'])
@@ -27,6 +27,7 @@ class ShipRepository extends BaseRepository
         'max_holds_capacity',
         'ballast_draft',
         'max_laden_draft',
+        'draft_per_tonnage',
         'speed_laden',
         'speed_ballast',
         'fuel_type_id',

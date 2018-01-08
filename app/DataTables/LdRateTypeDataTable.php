@@ -2,11 +2,11 @@
 
 namespace App\DataTables;
 
-use App\Models\CargoType;
+use App\Models\LdRateType;
 use Form;
-use Yajra\DataTables\Services\DataTable;
+use Yajra\Datatables\Services\DataTable;
 
-class CargoTypeDataTable extends DataTable
+class LdRateTypeDataTable extends DataTable
 {
 
     /**
@@ -16,7 +16,7 @@ class CargoTypeDataTable extends DataTable
     {
         return $this->datatables
             ->eloquent($this->query())
-            ->addColumn('action', 'cargo_types.datatables_actions')
+            ->addColumn('action', 'ld_rate_types.datatables_actions')
             ->make(true);
     }
 
@@ -27,9 +27,9 @@ class CargoTypeDataTable extends DataTable
      */
     public function query()
     {
-        $cargoTypes = CargoType::query();
+        $ldRateTypes = LdRateType::query();
 
-        return $this->applyScopes($cargoTypes);
+        return $this->applyScopes($ldRateTypes);
     }
 
     /**
@@ -73,7 +73,7 @@ class CargoTypeDataTable extends DataTable
     {
         return [
             'name' => ['name' => 'name', 'data' => 'name'],
-            'standard_stowage_factor' => ['name' => 'standard_stowage_factor', 'data' => 'standard_stowage_factor']
+            'rate_type_factor' => ['name' => 'rate_type_factor', 'data' => 'rate_type_factor']
         ];
     }
 
@@ -84,6 +84,6 @@ class CargoTypeDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'cargoTypes';
+        return 'ldRateTypes';
     }
 }

@@ -1,7 +1,7 @@
-<!-- Port Id Field -->
+<!-- Zone Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('port_id', 'Port Id:') !!}
-    {!! Form::number('port_id', null, ['class' => 'form-control']) !!}
+    {!! Form::label('zone_id', 'Zone Id:') !!}
+    {!! Form::number('zone_id', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Latitude Field -->
@@ -14,6 +14,12 @@
 <div class="form-group col-sm-6">
     {!! Form::label('longitude', 'Longitude:') !!}
     {!! Form::number('longitude', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Position Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('position', 'Position:') !!}
+    {!! Form::number('position', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

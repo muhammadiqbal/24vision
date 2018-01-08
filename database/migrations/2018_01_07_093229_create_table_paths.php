@@ -20,7 +20,7 @@ class CreateTablePaths extends Migration
             $table->foreign('route_id')->references('id')->on('routes');
             $table->integer('zone1')->unsigned();
             $table->foreign('zone1')->references('id')->on('zones');
-            $table->integer('zone2')->unsigned();
+            $table->integer('zone2')->unsigned()->nullable();
             $table->foreign('zone2')->references('id')->on('zones');
             $table->integer('zone3')->unsigned();
             $table->foreign('zone3')->references('id')->on('zones');         

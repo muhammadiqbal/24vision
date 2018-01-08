@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class CargoType
  * @package App\Models
- * @version January 7, 2018, 3:43 pm UTC
+ * @version January 8, 2018, 8:35 am UTC
  *
  * @property \Illuminate\Database\Eloquent\Collection Cargo
- * @property \Illuminate\Database\Eloquent\Collection zonePorts
+ * @property string name
+ * @property integer standard_stowage_factor
  */
 class CargoType extends Model
 {
@@ -27,7 +28,8 @@ class CargoType extends Model
 
 
     public $fillable = [
-        
+        'name',
+        'standard_stowage_factor'
     ];
 
     /**
@@ -36,7 +38,9 @@ class CargoType extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer'
+        'id' => 'integer',
+        'name' => 'string',
+        'standard_stowage_factor' => 'integer'
     ];
 
     /**

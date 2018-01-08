@@ -10,10 +10,6 @@ use App\Repositories\ShipRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
-use App\Models\FuelType;
-use App\Models\ShipType;
-use App\Models\ShipSpecialization;
-
 
 class ShipController extends AppBaseController
 {
@@ -43,12 +39,7 @@ class ShipController extends AppBaseController
      */
     public function create()
     {
-        $fuelTypes = FuelType::all();
-        $shipTypes = ShipType::all();
-        $shipSpecializations = ShipSpecialization::all();
-        return view('ships.create')->with('fuelTypes',$fuelTypes)
-                                   ->with('shipTypes',$shipTypes)
-                                   ->with('shipSpecializations',$shipSpecializations);
+        return view('ships.create');
     }
 
     /**
@@ -106,14 +97,7 @@ class ShipController extends AppBaseController
             return redirect(route('ships.index'));
         }
 
-        $fuelTypes = FuelType::all();
-        $shipTypes = ShipType::all();
-        $shipSpecializations = ShipSpecialization::all();
-
-        return view('ships.edit')->with('ship', $ship)
-                                 ->with('fuelTypes',$fuelTypes)
-                                 ->with('shipTypes',$shipTypes)
-                                 ->with('shipSpecializations',$shipSpecializations);;
+        return view('ships.edit')->with('ship', $ship);
     }
 
     /**

@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class LdRateType
  * @package App\Models
- * @version September 10, 2017, 9:46 pm UTC
+ * @version January 8, 2018, 8:11 am UTC
  *
  * @property \Illuminate\Database\Eloquent\Collection Cargo
  * @property \Illuminate\Database\Eloquent\Collection Cargo
- * @property \Illuminate\Database\Eloquent\Collection ships
  * @property string name
+ * @property decimal rate_type_factor
  */
 class LdRateType extends Model
 {
@@ -29,7 +29,8 @@ class LdRateType extends Model
 
 
     public $fillable = [
-        'name'
+        'name',
+        'rate_type_factor'
     ];
 
     /**
