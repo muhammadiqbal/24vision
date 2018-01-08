@@ -4,7 +4,7 @@ namespace App\DataTables;
 
 use App\Models\ZonePoint;
 use Form;
-use Yajra\Datatables\Services\DataTable;
+use Yajra\DataTables\Services\DataTable;
 
 class ZonePointDataTable extends DataTable
 {
@@ -14,7 +14,7 @@ class ZonePointDataTable extends DataTable
      */
     public function ajax()
     {
-        return $this->datatables
+        return datatables()
             ->eloquent($this->query())
             ->addColumn('action', 'zone_points.datatables_actions')
             ->make(true);

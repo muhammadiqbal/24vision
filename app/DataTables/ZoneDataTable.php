@@ -14,7 +14,7 @@ class ZoneDataTable extends DataTable
      */
     public function ajax()
     {
-        return $this->datatables
+        return datatables()
             ->eloquent($this->query())
             ->addColumn('action', 'zones.datatables_actions')
             ->make(true);

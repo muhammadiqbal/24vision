@@ -14,7 +14,7 @@ class PortDataTable extends DataTable
      */
     public function ajax()
     {
-        return $this->datatables
+        return datatables()
             ->eloquent($this->query())
             ->addColumn('action', 'ports.datatables_actions')
             ->make(true);

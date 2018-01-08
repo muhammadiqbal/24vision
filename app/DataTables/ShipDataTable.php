@@ -4,7 +4,7 @@ namespace App\DataTables;
 
 use App\Models\Ship;
 use Form;
-use Yajra\Datatables\Services\DataTable;
+use Yajra\DataTables\Services\DataTable;
 
 class ShipDataTable extends DataTable
 {
@@ -14,7 +14,7 @@ class ShipDataTable extends DataTable
      */
     public function ajax()
     {
-        return $this->datatables
+        return datatables()
             ->eloquent($this->query())
             ->addColumn('action', 'ships.datatables_actions')
             ->make(true);

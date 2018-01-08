@@ -4,7 +4,7 @@ namespace App\DataTables;
 
 use App\Models\LdRateType;
 use Form;
-use Yajra\Datatables\Services\DataTable;
+use Yajra\DataTables\Services\DataTable;
 
 class LdRateTypeDataTable extends DataTable
 {
@@ -14,7 +14,7 @@ class LdRateTypeDataTable extends DataTable
      */
     public function ajax()
     {
-        return $this->datatables
+        return datatables()
             ->eloquent($this->query())
             ->addColumn('action', 'ld_rate_types.datatables_actions')
             ->make(true);

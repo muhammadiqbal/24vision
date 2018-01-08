@@ -14,7 +14,7 @@ class CargoTypeDataTable extends DataTable
      */
     public function ajax()
     {
-        return $this->datatables
+        return datatables()
             ->eloquent($this->query())
             ->addColumn('action', 'cargo_types.datatables_actions')
             ->make(true);

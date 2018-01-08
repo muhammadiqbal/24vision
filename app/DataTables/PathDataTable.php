@@ -14,7 +14,7 @@ class PathDataTable extends DataTable
      */
     public function ajax()
     {
-        return $this->datatables
+        return datatables()
             ->eloquent($this->query())
             ->addColumn('action', 'paths.datatables_actions')
             ->make(true);
