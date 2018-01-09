@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal fade" id="modalMail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -55,7 +55,7 @@
             <ul>
               <li>
                 <a href="#" class="atch-thumb">
-                  <img src="https://lorempixel.com/128/100/nature/5">
+                  <img src="">
                 </a>
                 <div class="file-name">
                   image-name.jpg
@@ -68,7 +68,7 @@
               </li>
               <li>
                 <a href="#" class="atch-thumb">
-                  <img src="https://lorempixel.com/128/100/nature/4">
+                  <img src="">
                 </a>
                 <div class="file-name">
                   img_name.jpg
@@ -81,7 +81,7 @@
               </li>
               <li>
                 <a href="#" class="atch-thumb">
-                  <img src="https://lorempixel.com/128/100/nature/2">
+                  <img src="">
                 </a>
                 <div class="file-name">
                   img_name.jpg

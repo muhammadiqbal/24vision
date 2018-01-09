@@ -76,7 +76,7 @@ class CreateTableCargos extends Migration
             $table->boolean('commision_manual')->default(false)->nullable();
             $table->boolean('commision_constructed')->default(false)->nullable();
             
-            $table->integer('email_id')->unsigned();
+            $table->integer('email_id')->unsigned()->nullable();
             
             //$table->foreign('email_id')->references('id')->on('email');
             $table->integer('status_id')->unsigned()->nullable();

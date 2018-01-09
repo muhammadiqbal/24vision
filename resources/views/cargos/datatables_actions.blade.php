@@ -1,9 +1,9 @@
 {!! Form::open(['route' => ['cargos.destroy', $id], 'method' => 'delete']) !!}
 <div class='btn-group'>
-    <a href="{{ route('cargos.show', $id) }}" class='btn btn-default btn-xs'>
+    <a href="{{ route('voyages') }}" class='btn btn-default btn-xs'>
         <i class="glyphicon glyphicon-list-alt"></i>
     </a>
-    <a href="{{ route('cargos.show', $id) }}" class='btn btn-default btn-xs'>
+    <a data-toggle="modal" data-target="#modalMail">
         <i class="glyphicon glyphicon-envelope"></i>
     </a>
     <a href="{{ route('cargos.show', $id) }}" class='btn btn-default btn-xs'>
