@@ -3,19 +3,39 @@ namespace App\Library\Services;
   
 class Calculator
 {
+	
+		//Formular for calculating direct distance between two points with given latidude and longitude
+		// Based on: https://stackoverflow.com/questions/10053358/measuring-the-distance-between-two-coordinates-in-php	
+	protected function calculateDistance($lat1, $lon1, $lat2, $lon2) {
+
+		$theta = $lon1 - $lon2;
+  		$dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
+  		$dist = acos($dist);
+  		$dist = rad2deg($dist);
+  		$miles = $dist * 60 * 1.1515;
+		$nm = 0.868976 * $miles;
+		return $nm;
+	}
+	
     //Formular for calculating (and storing) the Distance to start, used for calculating TravelTimeToStart
 	public function calculateDistancetoStart(Port $port_ship, Cargo $cargo){
 		
 		// Receive parameters from objects
 		$port_ship_id =  $port_ship->id;
 		$port_start_id = $cargo->loading_port;
- 		
-		// Formular for result of the function
-*		if ("XXXThere is an entry in table 'distances' that has port_ship_id as start_port and port_start_id as end_port XXX") {
-*			$distance_to_start = "XXX function that calls 'distance' from table 'distances' based on the given port sXXX";
-		} else {
+		
+ 		// Formular for result of the function
+"*"		$distance_to_start = Distance:where('start_port',$port_ship_id)->where('end_port',$port_start_id)->get()[0]->distance;
+		// If not DB entry exist yet, calculate distance and store it in the database (2 entries: 2nd witch switched port positions)
+"*"		if ($distance_cargo == Null) {
+						
+			$lat1 = Port::find($port_ship_id)->latitude;
+			$lon1 = Port::find($port_ship_id)->longitude;
+			$lat2 = Port::find($port_start_id)->latitude;
+			$lon2 = Port::find($port_start_id)->longitude;
+	
+			$distance_to_start = calculateDistance($lat1, $lon1, $lat2, $lon2);
 			
-*			$distance_to_start = "XXXfunction that calls the distance calculator from Tsuang Hao with the 2 given ports XXX";;
 *			"XXX Insert the new calculated distances into the table 'distances', create 2 entries, the second withs witched ports XXX";
 		}
 
@@ -34,7 +54,12 @@ class Calculator
 *			$distance_cargo = "XXX function that calls 'distance' from table 'distances' based on the given port sXXX";
 		} else {
 			
-*			$distance_cargo = "XXXfunction that calls the distance calculator from Tsuang Hao with the 2 given ports XXX";;
+			$lat1 = Port::find($port_start_id)->latitude;
+			$lon1 = Port::find($port_start_id)->longitude;
+			$lat2 = Port::find($port_end_id)->latitude;
+			$lon2 = Port::find($port_end_id)->longitude;
+	
+			$distance_to_cargo = calculateDistance($lat1, $lon1, $lat2, $lon2);
 *			"XXX Insert the new calculated distances into the table 'distances', create 2 entries, the second withs witched ports XXX";
 		}
 
@@ -151,7 +176,7 @@ class Calculator
 		
 		// Formular for result of the function
 
-*		$fuel_price= "XXX Function that receive price from table 'fuel_price' based on $fuel_type_id and 'start_date'<$date_price<'end_date' XXX";
+*		$fuel_price= FuelPrice::where("XXX Function that receive price from table 'fuel_price' based on $fuel_type_id and 'start_date'<$date_price<'end_date' XXX";
 
         return $fuel_price;
     }

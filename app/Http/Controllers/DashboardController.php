@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Route;
 use App\Models\Ship;
 use App\Models\Region;
+use App\Models\Distance;
 use App\Models\Port;
 use App\Models\Bdi;
 use \League\Geotools\Coordinate\Coordinate;
@@ -67,9 +68,22 @@ class DashboardController extends Controller
 
         // // Defining all parameter for the formular
         // $distance_to_start = 0.868976 * $geotools->distance()->setFrom($coordinateStartA)->setTo($coordinateStartB)->in('mi')->haversine();
-        $email = new Email();
+        
+		
+		//$email = new Email();
 
-        return $email->getTableColumns();
+        //return $email->getTableColumns();
+		
+		
+		$port_ship_id =  "1";
+		$port_start_id = "2";
+		
+ 		// Formular for result of the function
+		$distance_to_start = Distance::where('start_port',$port_ship_id)->where('end_port',$port_start_id)->get()[0]->distance;
+		
+		return $distance_to_start;
+		
+		
     }
 
     /**
