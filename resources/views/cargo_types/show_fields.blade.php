@@ -10,10 +10,16 @@
     <p>{!! $cargoType->name !!}</p>
 </div>
 
-<!-- Standard Stowage Factor Field -->
+<!-- Stowage Factor Field -->
 <div class="form-group">
-    {!! Form::label('standard_stowage_factor', 'Standard Stowage Factor:') !!}
-    <p>{!! $cargoType->standard_stowage_factor !!}</p>
+    {!! Form::label('stowage_factor', 'Stowage Factor:') !!}
+    <p>{!! $cargoType->stowage_factor !!}</p>
+</div>
+
+<!-- Sf Unit Field -->
+<div class="form-group">
+    {!! Form::label('sf_unit', 'Sf Unit:') !!}
+    <p>{!! $cargoType->sf_unit !!}</p>
 </div>
 
 <!-- Created At Field -->

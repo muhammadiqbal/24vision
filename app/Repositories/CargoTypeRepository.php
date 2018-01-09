@@ -8,7 +8,7 @@ use InfyOm\Generator\Common\BaseRepository;
 /**
  * Class CargoTypeRepository
  * @package App\Repositories
- * @version January 8, 2018, 8:35 am UTC
+ * @version January 9, 2018, 7:26 pm UTC
  *
  * @method CargoType findWithoutFail($id, $columns = ['*'])
  * @method CargoType find($id, $columns = ['*'])
@@ -21,7 +21,8 @@ class CargoTypeRepository extends BaseRepository
      */
     protected $fieldSearchable = [
         'name',
-        'standard_stowage_factor'
+        'stowage_factor',
+        'sf_unit'
     ];
 
     /**

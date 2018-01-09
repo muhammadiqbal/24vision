@@ -4,10 +4,16 @@
     {!! Form::text('name', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Standard Stowage Factor Field -->
+<!-- Stowage Factor Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('standard_stowage_factor', 'Standard Stowage Factor:') !!}
-    {!! Form::number('standard_stowage_factor', null, ['class' => 'form-control']) !!}
+    {!! Form::label('stowage_factor', 'Stowage Factor:') !!}
+    {!! Form::number('stowage_factor', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Sf Unit Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('sf_unit', 'Sf Unit:') !!}
+    {!! Form::number('sf_unit', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

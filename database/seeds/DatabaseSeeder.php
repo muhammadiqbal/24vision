@@ -51,8 +51,7 @@ class DatabaseSeeder extends Seeder {
 			DB::table('cargo_types')->delete();
 			CargoType::create([
 				'id'=>1,
-				'name'=>'',
-				'standard_stowage_factor'=>0
+				'name'=>'test'
 			]);
 		}
 

@@ -73,7 +73,8 @@ class CargoTypeDataTable extends DataTable
     {
         return [
             'name' => ['name' => 'name', 'data' => 'name'],
-            'standard_stowage_factor' => ['name' => 'standard_stowage_factor', 'data' => 'standard_stowage_factor']
+            'stowage_factor' => ['name' => 'stowage_factor', 'data' => 'stowage_factor'],
+            'sf_unit' => ['name' => 'sf_unit', 'data' => 'sf_unit']
         ];
     }
 

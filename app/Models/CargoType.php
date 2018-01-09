@@ -8,11 +8,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class CargoType
  * @package App\Models
- * @version January 8, 2018, 8:35 am UTC
+ * @version January 9, 2018, 7:26 pm UTC
  *
+ * @property \App\Models\StowageFactorUnit stowageFactorUnit
  * @property \Illuminate\Database\Eloquent\Collection Cargo
+ * @property \Illuminate\Database\Eloquent\Collection distances
  * @property string name
- * @property integer standard_stowage_factor
+ * @property integer stowage_factor
+ * @property integer sf_unit
  */
 class CargoType extends Model
 {
@@ -29,7 +32,8 @@ class CargoType extends Model
 
     public $fillable = [
         'name',
-        'standard_stowage_factor'
+        'stowage_factor',
+        'sf_unit'
     ];
 
     /**
@@ -40,7 +44,8 @@ class CargoType extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
-        'standard_stowage_factor' => 'integer'
+        'stowage_factor' => 'integer',
+        'sf_unit' => 'integer'
     ];
 
     /**
@@ -51,6 +56,14 @@ class CargoType extends Model
     public static $rules = [
         
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function stowageFactorUnit()
+    {
+        return $this->belongsTo(\App\Models\StowageFactorUnit::class);
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

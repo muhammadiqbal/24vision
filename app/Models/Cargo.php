@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Cargo
  * @package App\Models
- * @version January 8, 2018, 8:15 am UTC
+ * @version January 8, 2018, 10:29 pm UTC
  *
  * @property \App\Models\CargoType cargoType
  * @property \App\Models\Port port
@@ -19,6 +19,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property \App\Models\StowageFactorUnit stowageFactorUnit
  * @property \App\Models\ShipSpecialization shipSpecialization
  * @property \App\Models\CargoStatus cargoStatus
+ * @property \Illuminate\Database\Eloquent\Collection distances
  * @property integer loading_port
  * @property boolean loading_port_manual
  * @property integer discharging_port
@@ -51,8 +52,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property boolean extra_condition_manual
  * @property decimal comission
  * @property boolean commision_manual
- * @property integer email_id
- * @property boolean email_id_manual
+ * @property integer emailId
+ * @property boolean emailId_manual
  * @property integer status_id
  * @property boolean status_id_manual
  */
@@ -102,8 +103,8 @@ class Cargo extends Model
         'extra_condition_manual',
         'comission',
         'commision_manual',
-        'email_id',
-        'email_id_manual',
+        'emailId',
+        'emailId_manual',
         'status_id',
         'status_id_manual'
     ];
@@ -146,8 +147,8 @@ class Cargo extends Model
         'extra_condition' => 'string',
         'extra_condition_manual' => 'boolean',
         'commision_manual' => 'boolean',
-        'email_id' => 'integer',
-        'email_id_manual' => 'boolean',
+        'emailId' => 'integer',
+        'emailId_manual' => 'boolean',
         'status_id' => 'integer',
         'status_id_manual' => 'boolean'
     ];
@@ -185,21 +186,21 @@ class Cargo extends Model
         return $this->belongsTo(\App\Models\LoadingDischargingRateType::class);
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     **/
-    public function port()
-    {
-        return $this->belongsTo(\App\Models\Port::class);
-    }
+    // /**
+    //  * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+    //  **/
+    // public function port()
+    // {
+    //     return $this->belongsTo(\App\Models\Port::class);
+    // }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     **/
-    public function loadingDischargingRateType()
-    {
-        return $this->belongsTo(\App\Models\LoadingDischargingRateType::class);
-    }
+    // /**
+    //  * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+    //  **/
+    // public function loadingDischargingRateType()
+    // {
+    //     return $this->belongsTo(\App\Models\LoadingDischargingRateType::class);
+    // }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

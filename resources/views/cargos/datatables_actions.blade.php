@@ -1,6 +1,15 @@
 {!! Form::open(['route' => ['cargos.destroy', $id], 'method' => 'delete']) !!}
 <div class='btn-group'>
     <a href="{{ route('cargos.show', $id) }}" class='btn btn-default btn-xs'>
+        <i class="glyphicon glyphicon-list-alt"></i>
+    </a>
+    <a href="{{ route('cargos.show', $id) }}" class='btn btn-default btn-xs'>
+        <i class="glyphicon glyphicon-envelope"></i>
+    </a>
+    <a href="{{ route('cargos.show', $id) }}" class='btn btn-default btn-xs'>
+        <i class="glyphicon glyphicon-search"></i>
+    </a>
+    <a href="{{ route('cargos.show', $id) }}" class='btn btn-default btn-xs'>
         <i class="glyphicon glyphicon-eye-open"></i>
     </a>
     <a href="{{ route('cargos.edit', $id) }}" class='btn btn-default btn-xs'>
@@ -13,3 +22,4 @@
     ]) !!}
 </div>
 {!! Form::close() !!}
+

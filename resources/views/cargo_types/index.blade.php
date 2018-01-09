@@ -18,6 +18,9 @@
                     @include('cargo_types.table')
             </div>
         </div>
+        <div class="text-center">
+        
+        </div>
     </div>
 @endsection
 

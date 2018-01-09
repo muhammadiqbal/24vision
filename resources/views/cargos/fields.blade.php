@@ -238,18 +238,18 @@
     </label>
 </div>
 
-<!-- Email Id Field -->
+<!-- Emailid Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('email_id', 'Email Id:') !!}
-    {!! Form::number('email_id', null, ['class' => 'form-control']) !!}
+    {!! Form::label('emailId', 'Emailid:') !!}
+    {!! Form::number('emailId', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Email Id Manual Field -->
+<!-- Emailid Manual Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('email_id_manual', 'Email Id Manual:') !!}
+    {!! Form::label('emailId_manual', 'Emailid Manual:') !!}
     <label class="checkbox-inline">
-        {!! Form::hidden('email_id_manual', false) !!}
-        {!! Form::checkbox('email_id_manual', '1', null) !!} 1
+        {!! Form::hidden('emailId_manual', false) !!}
+        {!! Form::checkbox('emailId_manual', '1', null) !!} 1
     </label>
 </div>
 

@@ -131,8 +131,7 @@ class DashboardController extends Controller
         }
 
        // Datatables::of($cargos)->make(true);
-        return view('calculator.index')->with('shipPosition',$shipPosition)
-                                       ->with('ship',$ship)
+        return view('calculator.index')->with('ship',$ship)
                                        ->with('cargos',$cargos)
                                        ->with('ships',$ships)
                                        ->with('regions',$regions)

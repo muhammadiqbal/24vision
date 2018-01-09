@@ -17,7 +17,9 @@ class CreateTableCargoType extends Migration
          Schema::create('cargo_types', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('standard_stowage_factor');
+            $table->integer('stowage_factor')->nullable();
+            $table->integer('sf_unit')->unsigned()->nullable();
+            $table->foreign('sf_unit')->references('id')->on('stowage_factor_units');
             $table->timestamps();
             $table->softDeletes();
         });

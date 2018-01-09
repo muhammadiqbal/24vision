@@ -196,16 +196,16 @@
     <p>{!! $cargo->commision_manual !!}</p>
 </div>
 
-<!-- Email Id Field -->
+<!-- Emailid Field -->
 <div class="form-group">
-    {!! Form::label('email_id', 'Email Id:') !!}
-    <p>{!! $cargo->email_id !!}</p>
+    {!! Form::label('emailId', 'Emailid:') !!}
+    <p>{!! $cargo->emailId !!}</p>
 </div>
 
-<!-- Email Id Manual Field -->
+<!-- Emailid Manual Field -->
 <div class="form-group">
-    {!! Form::label('email_id_manual', 'Email Id Manual:') !!}
-    <p>{!! $cargo->email_id_manual !!}</p>
+    {!! Form::label('emailId_manual', 'Emailid Manual:') !!}
+    <p>{!! $cargo->emailId_manual !!}</p>
 </div>
 
 <!-- Status Id Field -->
