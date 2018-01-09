@@ -14,7 +14,7 @@
 
         <div class="clearfix"></div>
         <div class="box box-primary">
-            <div class="box-body">
+            <div class="box-body  table-responsive">
                     @include('bdi_prices.table')
             </div>
         </div>

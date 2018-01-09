@@ -101,4 +101,3 @@ Route::get('testView', function(){
 
 
 
-Route::resource('cargoTypes', 'CargoTypeController');
