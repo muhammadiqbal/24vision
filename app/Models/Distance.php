@@ -63,11 +63,11 @@ class Distance extends Model
         return $this->belongsTo(\App\Models\Port::class);
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     **/
-    public function port()
-    {
-        return $this->belongsTo(\App\Models\Port::class);
-    }
+    // /**
+    //  * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+    //  **/
+    // public function port()
+    // {
+    //     return $this->belongsTo(\App\Models\Port::class);
+    // }
 }
