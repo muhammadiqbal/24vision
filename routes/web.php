@@ -25,7 +25,7 @@ Route::group(['middleware' => 'auth'], function()
 
 	Route::get('/testing', 'DashboardController@testing');
 
-	Route::get('/voyage/{$ship}/{$cargo}/{$port_ship}/{$date}', 'VoyageController@getVoyage');
+	Route::get('/voyage/{ship}/{cargo}/{port_ship}/{date}', 'VoyageController@getVoyage');
 
 	Route::resource('shipTypes', 'ShipTypeController');
 

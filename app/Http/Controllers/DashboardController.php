@@ -80,9 +80,16 @@ class DashboardController extends Controller
 		$port_start_id = "2";
 		
  		// Formular for result of the function
-		$distance_to_start = Distance::where('start_port',$port_ship_id)->where('end_port',$port_start_id)->get()[0]->distance;
+		$distance = Distance::where('start_port',$port_ship_id)->where('end_port',$port_start_id)->get();
+		//$distance = $distance->where('distance','150.00')->get();
+		//$distance_to_start = $distance[0]->distance;
 		
-		return $distance_to_start;
+		//$test = TRUE;
+		if($distance ->isEmpty()) {
+			$distance_to_start = "no value";
+			}
+		//return $distance_to_start;
+		return $distance;
 		
 		
     }

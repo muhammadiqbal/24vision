@@ -25,9 +25,11 @@ class Calculator
 		$port_start_id = $cargo->loading_port;
 		
  		// Formular for result of the function
-"*"		$distance_to_start = Distance:where('start_port',$port_ship_id)->where('end_port',$port_start_id)->get()[0]->distance;
+/**/	$distance = Distance:where('start_port',$port_ship_id)->where('end_port',$port_start_id)->get();
+
+
 		// If not DB entry exist yet, calculate distance and store it in the database (2 entries: 2nd witch switched port positions)
-"*"		if ($distance_cargo == Null) {
+/**/	if ($distance->isEmpty()) {
 						
 			$lat1 = Port::find($port_ship_id)->latitude;
 			$lon1 = Port::find($port_ship_id)->longitude;
@@ -37,6 +39,9 @@ class Calculator
 			$distance_to_start = calculateDistance($lat1, $lon1, $lat2, $lon2);
 			
 *			"XXX Insert the new calculated distances into the table 'distances', create 2 entries, the second withs witched ports XXX";
+		}
+		else {
+			distance_to_start = $distance[0]->distance;
 		}
 
         return $distance_to_start;
@@ -49,18 +54,23 @@ class Calculator
 		$port_start_id = $cargo->loading_port;
 		$port_end_id = $cargo->discharging_port;
  		
-		// Formular for result of the function
-*		if ("XXXThere is an entry in table 'distances' that has port_start_id as start_port and port_end_id as end_port XXX") {
-*			$distance_cargo = "XXX function that calls 'distance' from table 'distances' based on the given port sXXX";
-		} else {
+ 		// Formular for result of the function
+/**/	$distance = Distance:where('start_port',$port_ship_id)->where('end_port',$port_start_id)->get();
+
+
+		// If not DB entry exist yet, calculate distance and store it in the database (2 entries: 2nd witch switched port positions)
+/**/	if ($distance->isEmpty()) {
 			
 			$lat1 = Port::find($port_start_id)->latitude;
 			$lon1 = Port::find($port_start_id)->longitude;
 			$lat2 = Port::find($port_end_id)->latitude;
 			$lon2 = Port::find($port_end_id)->longitude;
 	
-			$distance_to_cargo = calculateDistance($lat1, $lon1, $lat2, $lon2);
+			$distance_cargo = calculateDistance($lat1, $lon1, $lat2, $lon2);
+			
 *			"XXX Insert the new calculated distances into the table 'distances', create 2 entries, the second withs witched ports XXX";
+		else {
+			distance_cargo = $distance[0]->distance;
 		}
 
         return $distance_cargo;
@@ -175,8 +185,17 @@ class Calculator
 		$date_price = $this->addDayswithdate($date, $travel_time_to_start); // The date when the ship arrives the start port is relevant
 		
 		// Formular for result of the function
-
-*		$fuel_price= FuelPrice::where("XXX Function that receive price from table 'fuel_price' based on $fuel_type_id and 'start_date'<$date_price<'end_date' XXX";
+		
+		// No price entry has an enddate older than the date_price -> use the latest entry with end date null
+/**/	if ($fuel_price_entry = FuelPrice::where('end_date','>',$date_price)->get()->isEmpty()) {
+			$fuel_price_entry = FuelPrice::where('end_date',null)->('fuel_type_id',$fuel_type_id)->get();
+		}
+		// price entries with an enddate older than the date_price found -> apply other filters
+		else {
+			$fuel_price_entry = FuelPrice::where('end_date','>',$date_price)->where('start_date','<',$date_price)->('fuel_type_id',$fuel_type_id)->get();
+		}
+		
+		$fuel_price = $fuel_price_entry[0]->price; 
 
         return $fuel_price;
     }
@@ -189,9 +208,17 @@ class Calculator
 		$date_price = $this->addDayswithdate($date, $travel_time_to_start);  // The date when the ship arrives the start port is relevant
 		
 		// Formular for result of the function
-
-*		$port_fee_load= "XXX Function that receive price from table 'fee_prices' based on $port_start_id and 'start_date'<$date_price<'end_date' XXX";
-
+		
+		// No price entry has an enddate older than the date_price -> use the latest entry with end date null
+/**/	if ($fee_price_entry = FeePrice::where('end_date','>',$date_price)->get()->isEmpty()) {
+			$fee_price_entry = FeePrice::where('end_date',null)->('port_id',$port_stat_id)->get();
+		}
+		// price entries with an enddate older than the date_price found -> apply other filters
+		else {
+			$fee_price_entry = FeePrice::where('end_date','>',$date_price)->where('start_date','<',$date_price)->('port_id',$port_start_id)->get();
+		}
+		$port_fee_load = $fee_price_entry[0]->price; 
+		
         return $port_fee_load;
     }
 
@@ -205,8 +232,19 @@ class Calculator
 		
 		// Formular for result of the function
 
-*		$port_fee_disch= "XXX Function that receive price from table 'fee_prices' based on $port_end_id and 'start_date'<$date_price<'end_date' XXX";
 
+		// No price entry has an enddate older than the date_price -> use the latest entry with end date null
+/**/	if ($fee_price_entry = FeePrice::where('end_date','>',$date_price)->get()->isEmpty()) {
+			$fee_price_entry = FeePrice::where('end_date',null)->('port_id',$port_end_id)->get();
+		}
+		// price entries with an enddate older than the date_price found -> apply other filters
+		else {
+			$fee_price_entry = FeePrice::where('end_date','>',$date_price)->where('start_date','<',$date_price)->('port_id',$port_end_id)->get();
+		}
+
+
+		$port_fee_disch = $fee_price_entry[0]->price; 
+		
         return $port_fee_disch;
     }
 	
@@ -236,26 +274,36 @@ class Calculator
 		
 		// Find the right bdi_id
 		// Step 1:  find matching path
-*		if ($port_ship_zone == $port_start_zone OR $port_start_zone == $port_end_zone ) {
-*			$paths = "XXX function that returns 'path_id' from table 'paths' based on $port_ship_zone =zone 1, Null= zone2 and $port_end_zone = zone 3   ";
+/**/	if ($port_ship_zone == $port_start_zone OR $port_start_zone == $port_end_zone ) {
+/**/		$paths = Path::where('zone1',$port_ship_zone)->where('zone2',null)->where('zone3',$port_end_zone)->get();
+
 		} else {
-*			$paths = "XXX function that returns 'path_id' from table 'paths' based on $port_ship_zone =zone 1, $port_start_zone= zone2 and $port_end_zone = zone 3   ";
+/**/		$paths = Path::where('zone1',$port_ship_zone)->where('zone2',$port_start_zone)->where('zone3',$port_end_zone)->get();
 		}
 		
 		// Step 1b: If no path is found, continue with the bdi_id for the average bdi price
-*		if ($paths=NULL){ "XXXrequires that if no paths is found with given combination of zones, it returns NULL instead of an error XXX" 
-			$bdi_id = 540666;
+*		if ($paths->isEmpty()){
+			$bdi_id = '540666';
 		) else {
 		// Step 2: determine route for path
-		$route = Paths::find($paths)->route_id;
+		$route = $paths[0]->route_id;
 		// Step 3: determine bdi_id for route
 		$bdi_id = Routes::find($route)->bdi_id;
 		}
 		
 		// Formular for result of the function
 
-*		$bdi= "XXX Function that receive price from table 'bdi_price' based on $bdi_id and 'start_date'<$date_price<'end_date' XXX";
 
+		// No price entry has an enddate older than the date_price -> use the latest entry with end date null
+/**/	if (BdiPrice::where('end_date','>',$date_price)->get()->isEmpty()) {
+			$bdi_entry = BdiPrice::where('end_date',null)->('bdi_id',$bdi_id)->get();
+		}
+		// price entries with an enddate older than the date_price found -> apply other filters
+		else {
+			$bdi_entry = BdiPrice::where('end_date','>',$date_price)->where('start_date','<',$date_price)->('bdi_id',$bdi_id)->get();
+		}
+		$bdi = $bdi_entry[0]->price; 
+		
         return $bdi;
     }	
 	
