@@ -27,7 +27,7 @@
 
         <div class="box box-primary">
             <div class="box box-primary">
-                       @include('calculator.table') 
+                   @include('cargos.table')
             </div>
         </div>
     </div>

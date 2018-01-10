@@ -27,7 +27,7 @@ class RouteDataTable extends DataTable
      */
     public function query()
     {
-        $routes = Route::query();
+        $routes = Route::with('bdi')->select('routes.*');
 
         return $this->applyScopes($routes);
     }
@@ -60,7 +60,17 @@ class RouteDataTable extends DataTable
                          ],
                     ],
                     'colvis'
-                ]
+                ],
+                'initComplete' => "function () {
+                            this.api().columns().every(function () {
+                                var column = this;
+                                var input = document.createElement(\"input\");
+                                $(input).appendTo($(column.footer()).empty())
+                                .on('change', function () {
+                                    column.search($(this).val(), false, false, true).draw();
+                                });
+                            });
+                        }",
             ]);
     }
 
@@ -73,7 +83,7 @@ class RouteDataTable extends DataTable
     {
         return [
             'name' => ['name' => 'name', 'data' => 'name'],
-            'bdi_id' => ['name' => 'bdi_id', 'data' => 'bdi_id']
+            'bdi_id' => ['name' => 'bdi.code', 'data' => 'bdi.code']
         ];
     }
 

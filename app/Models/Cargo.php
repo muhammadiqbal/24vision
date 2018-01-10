@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Cargo
  * @package App\Models
- * @version January 8, 2018, 10:29 pm UTC
+ * @version January 10, 2018, 9:27 am UTC
  *
  * @property \App\Models\CargoType cargoType
  * @property \App\Models\Port port
@@ -26,36 +26,37 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property boolean discharging_port_manual
  * @property date laycan_first_day
  * @property boolean laycan_first_day_manual
+ * @property boolean laycan_first_day_constructed
  * @property date laycan_last_day
  * @property boolean laycan_last_day_manual
+ * @property boolean laycan_last_day_constructed
  * @property integer cargo_type_id
  * @property boolean cargo_type_id_manual
- * @property integer stowage_factor
+ * @property decimal stowage_factor
  * @property boolean stowage_factor_manual
+ * @property boolean stowage_factor_constructed
  * @property integer sf_unit
- * @property boolean sf_unit_manual
  * @property integer ship_specialization_id
- * @property boolean ship_specialization_id_manual
  * @property integer quantity_measurement_id
- * @property boolean quantity_measurement_id_manual
  * @property integer quantity
  * @property boolean quantity_manual
+ * @property boolean quantity_constructed
  * @property integer loading_rate_type
  * @property boolean loading_rate_type_manual
  * @property integer loading_rate
  * @property boolean loading_rate_manual
+ * @property boolean loading_rate_constructed
  * @property integer discharging_rate_type
  * @property boolean discharging_rate_type_manual
  * @property integer discharging_rate
  * @property boolean discharging_rate_manual
+ * @property boolean discharging_rate_constructed
  * @property string extra_condition
- * @property boolean extra_condition_manual
- * @property decimal comission
+ * @property decimal commission
  * @property boolean commision_manual
- * @property integer emailId
- * @property boolean emailId_manual
+ * @property boolean commision_constructed
+ * @property integer email_id
  * @property integer status_id
- * @property boolean status_id_manual
  */
 class Cargo extends Model
 {
@@ -69,6 +70,13 @@ class Cargo extends Model
 
     protected $dates = ['deleted_at'];
 
+    /*START non db attributes */
+    protected $ntce;
+    protected $grossRate;
+    protected $ntc;
+    protected $route;
+    /*END non db attributes*/
+
 
     public $fillable = [
         'loading_port',
@@ -77,36 +85,37 @@ class Cargo extends Model
         'discharging_port_manual',
         'laycan_first_day',
         'laycan_first_day_manual',
+        'laycan_first_day_constructed',
         'laycan_last_day',
         'laycan_last_day_manual',
+        'laycan_last_day_constructed',
         'cargo_type_id',
         'cargo_type_id_manual',
         'stowage_factor',
         'stowage_factor_manual',
+        'stowage_factor_constructed',
         'sf_unit',
-        'sf_unit_manual',
         'ship_specialization_id',
-        'ship_specialization_id_manual',
         'quantity_measurement_id',
-        'quantity_measurement_id_manual',
         'quantity',
         'quantity_manual',
+        'quantity_constructed',
         'loading_rate_type',
         'loading_rate_type_manual',
         'loading_rate',
         'loading_rate_manual',
+        'loading_rate_constructed',
         'discharging_rate_type',
         'discharging_rate_type_manual',
         'discharging_rate',
         'discharging_rate_manual',
+        'discharging_rate_constructed',
         'extra_condition',
-        'extra_condition_manual',
-        'comission',
+        'commission',
         'commision_manual',
-        'emailId',
-        'emailId_manual',
-        'status_id',
-        'status_id_manual'
+        'commision_constructed',
+        'email_id',
+        'status_id'
     ];
 
     /**
@@ -122,35 +131,35 @@ class Cargo extends Model
         'discharging_port_manual' => 'boolean',
         'laycan_first_day' => 'date',
         'laycan_first_day_manual' => 'boolean',
+        'laycan_first_day_constructed' => 'boolean',
         'laycan_last_day' => 'date',
         'laycan_last_day_manual' => 'boolean',
+        'laycan_last_day_constructed' => 'boolean',
         'cargo_type_id' => 'integer',
         'cargo_type_id_manual' => 'boolean',
-        'stowage_factor' => 'integer',
         'stowage_factor_manual' => 'boolean',
+        'stowage_factor_constructed' => 'boolean',
         'sf_unit' => 'integer',
-        'sf_unit_manual' => 'boolean',
         'ship_specialization_id' => 'integer',
-        'ship_specialization_id_manual' => 'boolean',
         'quantity_measurement_id' => 'integer',
-        'quantity_measurement_id_manual' => 'boolean',
         'quantity' => 'integer',
         'quantity_manual' => 'boolean',
+        'quantity_constructed' => 'boolean',
         'loading_rate_type' => 'integer',
         'loading_rate_type_manual' => 'boolean',
         'loading_rate' => 'integer',
         'loading_rate_manual' => 'boolean',
+        'loading_rate_constructed' => 'boolean',
         'discharging_rate_type' => 'integer',
         'discharging_rate_type_manual' => 'boolean',
         'discharging_rate' => 'integer',
         'discharging_rate_manual' => 'boolean',
+        'discharging_rate_constructed' => 'boolean',
         'extra_condition' => 'string',
-        'extra_condition_manual' => 'boolean',
         'commision_manual' => 'boolean',
-        'emailId' => 'integer',
-        'emailId_manual' => 'boolean',
-        'status_id' => 'integer',
-        'status_id_manual' => 'boolean'
+        'commision_constructed' => 'boolean',
+        'email_id' => 'integer',
+        'status_id' => 'integer'
     ];
 
     /**
@@ -161,6 +170,42 @@ class Cargo extends Model
     public static $rules = [
         
     ];
+
+
+    /*START non db attribute setter and getter*/
+    public function setNtce($ntce){
+        $this->ntce = $ntce;
+    }
+
+    public function getNtce(){
+        return $this->ntce;
+    }
+
+    public function setGrossRate($grossRate){
+        $this->grossRate = $grossRate;
+    }
+
+    public function getGrossRate(){
+        return $this->grossRate;
+    }
+
+    public function setNtc($ntc){
+         $this->ntc = $ntc;
+    }
+
+    public function getNtc(){
+        return $this->ntc;
+    }
+
+    public function setRoute(Route $route){
+         $this->route = $route;
+    }
+
+    public function getRoute(){
+        return $this->route;
+    }
+    /*END non db attribute setter and getter*/
+
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -173,9 +218,17 @@ class Cargo extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function port()
+    public function loadingPort()
     {
-        return $this->belongsTo(\App\Models\Port::class);
+        return $this->belongsTo(\App\Models\Port::class,'loading_port');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function dischargingPort()
+    {
+        return $this->belongsTo(\App\Models\Port::class,'discharging_port');
     }
 
     /**
@@ -186,21 +239,13 @@ class Cargo extends Model
         return $this->belongsTo(\App\Models\LoadingDischargingRateType::class);
     }
 
-    // /**
-    //  * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-    //  **/
-    // public function port()
-    // {
-    //     return $this->belongsTo(\App\Models\Port::class);
-    // }
-
-    // /**
-    //  * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-    //  **/
-    // public function loadingDischargingRateType()
-    // {
-    //     return $this->belongsTo(\App\Models\LoadingDischargingRateType::class);
-    // }
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function loadingDischargingRateType()
+    {
+        return $this->belongsTo(\App\Models\LoadingDischargingRateType::class);
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -232,5 +277,13 @@ class Cargo extends Model
     public function cargoStatus()
     {
         return $this->belongsTo(\App\Models\CargoStatus::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     **/
+    public function email()
+    {
+        return $this->belongsTo(\App\Models\Email::class,'email_id');
     }
 }

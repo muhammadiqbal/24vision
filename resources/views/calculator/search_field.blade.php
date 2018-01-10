@@ -1,15 +1,11 @@
-{!! Form::model($shipPosition, ['url' => ['/home'], 'method' => 'get']) !!}
+{!! Form::model(['url' => ['/home'], 'method' => 'get']) !!}
 
 <!-- Ship Id Field -->
 <div class="form-group col-sm-8">
     {!! Form::label('ship_id', 'Ship:') !!}
     <select name="ship_id" class="form-control">
         @foreach($ships as $ship)
-            @if($ship->id == $shipPosition->ship->id)
-                <option value="{{$ship->id}}" selected="true">{{$ship->name}}</option>
-            @else
                 <option value="{{$ship->id}}">{{$ship->name}}</option>
-            @endif
         @endforeach
     </select>
 </div>
@@ -39,11 +35,7 @@
     {!! Form::label('port_id', 'Port:') !!}
     <select name="port_id" class="form-control">
         @foreach($ports as $port)
-            @if($port->id == $shipPosition->port_id )
-                <option value="{{$port->id}}" selected="true">{{$port->name}}</option>
-            @else
                 <option value="{{$port->id}}">{{$port->name}}</option>
-            @endif
         @endforeach
     </select>
 </div>
@@ -58,7 +50,7 @@
 <!-- Date Of Opening Field -->
 <div class="form-group col-sm-4">
     {!! Form::label('date_of_opening', 'Date Of Opening:') !!}
-    {!! Form::date('date_of_opening',date($shipPosition->date_of_opening), ['class' => 'form-control']) !!}
+    {!! Form::date('date_of_opening',null, ['class' => 'form-control']) !!}
 </div>
 
 
@@ -72,11 +64,6 @@
 <div class="form-group col-sm-4">
     {!! Form::label('current_draft', 'Current draft:') !!}
     {!! Form::number('current_draft',null, ['class' => 'form-control']) !!}
-</div>
-
-<div class="form-group col-sm-12">
-    {!! Form::label('ship_specialization', 'Ship specialization:') !!}
-    {{$shipPosition->ship->shipSpecialization->name}}
 </div>
 
 <!-- Submit Field -->

@@ -27,7 +27,7 @@ class BdiPriceDataTable extends DataTable
      */
     public function query()
     {
-        $bdiPrices = BdiPrice::query();
+        $bdiPrices = BdiPrice::with('bdi')->select('bdi_prices.*');
 
         return $this->applyScopes($bdiPrices);
     }
@@ -60,7 +60,17 @@ class BdiPriceDataTable extends DataTable
                          ],
                     ],
                     'colvis'
-                ]
+                ],
+                'initComplete' => "function () {
+                            this.api().columns().every(function () {
+                                var column = this;
+                                var input = document.createElement(\"input\");
+                                $(input).appendTo($(column.footer()).empty())
+                                .on('change', function () {
+                                    column.search($(this).val(), false, false, true).draw();
+                                });
+                            });
+                        }",
             ]);
     }
 
@@ -72,7 +82,7 @@ class BdiPriceDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'bdi_id' => ['name' => 'bdi_id', 'data' => 'bdi_id'],
+            'bdi' => ['name' => 'bdi.code', 'data' => 'bdi.code'],
             'price' => ['name' => 'price', 'data' => 'price'],
             'start_date' => ['name' => 'start_date', 'data' => 'start_date'],
             'end_date' => ['name' => 'end_date', 'data' => 'end_date']

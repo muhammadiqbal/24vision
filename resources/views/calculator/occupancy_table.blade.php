@@ -7,7 +7,7 @@
                 <th>Current occupancy</th>
                 <th>Remaining</th>
             </thead>
-            <tbody>
+            {{-- <tbody>
                 <tr>
                     <th>Size</th>
                     <td>{{$ship->max_holds_capacity}}</td>
@@ -26,7 +26,7 @@
                     <td>0</td>
                     <td>{{$ship->max_laden_draft - 0}}</td>
                 </tr>
-            </tbody>
+            </tbody> --}}
         </table>
     </div>
 </div>

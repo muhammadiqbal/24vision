@@ -15,6 +15,7 @@ use \League\Geotools\Coordinate\Coordinate;
 use \League\Geotools\Geotools;
 use App\Models\Email;
 use DB;
+use App\DataTables\CargoDataTable;
 
 
 class DashboardController extends Controller
@@ -91,64 +92,63 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index(Request $request, CargoDataTable $cargoDataTable)
     {
-        $shipId = $request->input('ship_id',1);
-        $dateOfOpening = $request->input('date_of_opening');
-        $portId = $request->input('port_id');
+         $shipId = $request->input('ship_id',1);
+       //  $dateOfOpening = $request->input('date_of_opening');
+       //  $portId = $request->input('port_id');
 
 
 
-        $shipPosition = ShipPosition::where('ship_id',$shipId)->first();
-        $ship = Ship::find($shipId);
-        $ships = Ship::whereIn('id',ShipPosition::all('ship_id'))->get();
-        $regions = Region::all();
-        $ports = Port::all();
-        $port_ship = $shipPosition->port;
+       //  $shipPosition = ShipPosition::where('ship_id',$shipId)->first();
+         $ship = Ship::find($shipId);
+         $ships = Ship::all();
+         $ports = Port::all();
+         $cargos = Cargo::all();
+       //  $port_ship = $shipPosition->port;
         
         
-        if(!empty($dateOfOpening) && !empty($portId)){
-            $cargos = Cargo::where('ship_specialization_id', 
-                                    $ship->ship_specialization_id)
-                            ->whereDate('laycan_first_day','>=',$dateOfOpening)
-                            ->where('discharging_port',$portId)
-                            ->get();
-        }else{
-            $cargos = Cargo::where('ship_specialization_id', 
-                                    $ship->ship_specialization_id)
-                            ->whereDate('laycan_first_day','<=',$shipPosition->date_of_opening)
-                            ->whereDate('laycan_last_day','>=',$shipPosition->date_of_opening)
-                            ->where('quantity','<=',$ship->max_holds_capacity - 0)
-                            //->where($ship->max_holds_capacity - 0,'>=','quantity')
-                            ->get();
-        }
+       //  if(!empty($dateOfOpening) && !empty($portId)){
+       //      $cargos = Cargo::where('ship_specialization_id', 
+       //                              $ship->ship_specialization_id)
+       //                      ->whereDate('laycan_first_day','>=',$dateOfOpening)
+       //                      ->where('discharging_port',$portId)
+       //                      ->get();
+       //  }else{
+       //      $cargos = Cargo::where('ship_specialization_id', 
+       //                              $ship->ship_specialization_id)
+       //                      ->whereDate('laycan_first_day','<=',$shipPosition->date_of_opening)
+       //                      ->whereDate('laycan_last_day','>=',$shipPosition->date_of_opening)
+       //                      ->where('quantity','<=',$ship->max_holds_capacity - 0)
+       //                      //->where($ship->max_holds_capacity - 0,'>=','quantity')
+       //                      ->get();
+       //  }
                         
-        $shipPositionGrossRate = ShipPosition::where('ship_id',1)->first();
+       //  $shipPositionGrossRate = ShipPosition::where('ship_id',1)->first();
 
-        foreach ($cargos as $cargo) {
-            $bdi = Bdi::find(1);
+       //  foreach ($cargos as $cargo) {
+       //      $bdi = Bdi::find(1);
             
-            $grossRate = $this->calculateGrossRate($cargo, $shipPositionGrossRate, 226, $bdi->price);
+       //      $grossRate = $this->calculateGrossRate($cargo, $shipPositionGrossRate, 226, $bdi->price);
 
-            $ntce = $this->calculateNTCE($cargo, $shipPosition,226, $grossRate);
+       //      $ntce = $this->calculateNTCE($cargo, $shipPosition,226, $grossRate);
             
-            $route = Route::where('area1',$cargo->loading_port)
-                          ->where('area3',$cargo->discharging_port)->first();
-            if($route == null){
-                $route = Route::find(1);
-            }
+       //      $route = Route::where('area1',$cargo->loading_port)
+       //                    ->where('area3',$cargo->discharging_port)->first();
+       //      if($route == null){
+       //          $route = Route::find(1);
+       //      }
             
-            $cargo->setNtce($ntce);
-            $cargo->setNtc($bdi->price);
-            $cargo->setGrossRate($grossRate);
-            $cargo->setRoute($route);
-        }
+       //      $cargo->setNtce($ntce);
+       //      $cargo->setNtc($bdi->price);
+       //      $cargo->setGrossRate($grossRate);
+       //      $cargo->setRoute($route);
+       //  }
 
-       // Datatables::of($cargos)->make(true);
-        return view('calculator.index')->with('ship',$ship)
+       // // Datatables::of($cargos)->make(true);
+        return $cargoDataTable->render('calculator.index')->with('ship',$ship)
                                        ->with('cargos',$cargos)
                                        ->with('ships',$ships)
-                                       ->with('regions',$regions)
                                        ->with('ports',$ports);
     }
 

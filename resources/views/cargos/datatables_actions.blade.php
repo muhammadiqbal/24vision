@@ -1,19 +1,22 @@
 {!! Form::open(['route' => ['cargos.destroy', $id], 'method' => 'delete']) !!}
 <div class='btn-group'>
-    <a href="{{ route('voyages') }}" class='btn btn-default btn-xs'>
+    <a class='btn btn-default btn-xs'>
         <i class="glyphicon glyphicon-list-alt"></i>
     </a>
-    <a data-toggle="modal" data-target="#modalMail">
-        <i class="glyphicon glyphicon-envelope"></i>
+    <a class='btn btn-default btn-xs'>
+        <i class="glyphicon glyphicon-envelope" data-toggle="modal" data-target="#modalMail"></i>
     </a>
-    <a href="{{ route('cargos.show', $id) }}" class='btn btn-default btn-xs'>
+    <a class='btn btn-default btn-xs'>
         <i class="glyphicon glyphicon-search"></i>
     </a>
-    <a href="{{ route('cargos.show', $id) }}" class='btn btn-default btn-xs'>
-        <i class="glyphicon glyphicon-eye-open"></i>
+    <a class='btn btn-default btn-xs'>
+        <i class="glyphicon glyphicon-warning-sign"></i>
     </a>
     <a href="{{ route('cargos.edit', $id) }}" class='btn btn-default btn-xs'>
         <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a href="{{ route('cargos.edit', $id) }}" class='btn btn-default btn-xs'>
+        <i class="glyphicon glyphicon-share"></i>
     </a>
     {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', [
         'type' => 'submit',

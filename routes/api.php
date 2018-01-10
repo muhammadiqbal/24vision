@@ -65,3 +65,5 @@ Route::resource('cargos', 'CargoAPIController');
 Route::resource('cargos', 'CargoAPIController');
 
 Route::resource('cargo_types', 'CargoTypeAPIController');
+
+Route::resource('cargos', 'CargoAPIController');

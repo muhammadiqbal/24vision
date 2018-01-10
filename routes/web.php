@@ -101,3 +101,6 @@ Route::get('testView', function(){
 
 
 
+
+
+Route::resource('cargos', 'CargoController');
