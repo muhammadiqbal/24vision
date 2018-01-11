@@ -36,7 +36,27 @@ class VoyageController extends Controller
 	$ntce = $calculator->calculateNTCE($cargo, $bdi, $voyage_time, $non_hire_costs, $rate);
 
     	return view('voyages.index')
+		->with('ship',$ship)
+		->with('cargo',$cargo)
+		->with('port_ship',$port_ship)
+		->with('date',$date)
+		->with('distance_to_start',$distance_to_start)
+		->with('distance_cargo',$distance_cargo)
+		->with('travel_time_to_start',$travel_time_to_start)
+		->with('travel_time_cargo',$travel_time_cargo)
+		->with('travel_time_sum',$travel_time_sum)
+		->with('port_time_load',$port_time_load)
+		->with('port_time_disch',$port_time_disch)
+		->with('port_time_sum',$port_time_sum)
+		->with('voyage_time',$voyage_time)
+		->with('fuel_consumption',$fuel_consumption)
+		->with('fuel_price',$fuel_price)
+		->with('port_fee_load',$port_fee_load)
+		->with('port_fee_disch',$port_fee_disch)
+		->with('non_hire_costs',$non_hire_costs)
+		->with('bdi',$bdi)
+		->with('gross_rate',$gross_rate)
 		->with('ntce',$ntce)
-		->with('ship',$ship);
+);
     }
 }
