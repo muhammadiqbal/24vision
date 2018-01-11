@@ -239,13 +239,13 @@ class Cargo extends Model
         return $this->belongsTo(\App\Models\LoadingDischargingRateType::class);
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     **/
-    public function loadingDischargingRateType()
-    {
-        return $this->belongsTo(\App\Models\LoadingDischargingRateType::class);
-    }
+    // /**
+     // * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     // **/
+    // public function loadingDischargingRateType()
+    // {
+        // return $this->belongsTo(\App\Models\LoadingDischargingRateType::class);
+    // }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
