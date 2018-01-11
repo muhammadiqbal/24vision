@@ -16,7 +16,7 @@ use \League\Geotools\Geotools;
 use App\Models\Email;
 use DB;
 use App\DataTables\CargoDataTable;
-
+use App\Services\Calculator;
 
 class DashboardController extends Controller
 {
@@ -31,7 +31,7 @@ class DashboardController extends Controller
     }
 
 
-    public function testing(){
+    public function testing(Calculator $calculator){
         // $cargo = Cargo::find(1);
         // $shipPosition =ShipPosition::find(1);
         // $ship = $shipPosition->ship;

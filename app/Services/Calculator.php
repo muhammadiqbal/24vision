@@ -1,5 +1,5 @@
 <?php
-namespace App\Library\Services;
+namespace App\Services;
   
 class Calculator
 {
@@ -25,7 +25,7 @@ class Calculator
 		$port_start_id = $cargo->loading_port;
 		
  		// Formular for result of the function
-/**/	$distance = Distance:where('start_port',$port_ship_id)->where('end_port',$port_start_id)->get();
+/**/	$distance = Distance::where('start_port',$port_ship_id)->where('end_port',$port_start_id)->get();
 
 
 		// If not DB entry exist yet, calculate distance and store it in the database (2 entries: 2nd witch switched port positions)
@@ -38,10 +38,11 @@ class Calculator
 	
 			$distance_to_start = calculateDistance($lat1, $lon1, $lat2, $lon2);
 			
-*			"XXX Insert the new calculated distances into the table 'distances', create 2 entries, the second withs witched ports XXX";
+/*			"XXX Insert the new calculated distances into the table 'distances', create 2 entries, the second withs witched ports XXX";
+*/
 		}
 		else {
-			distance_to_start = $distance[0]->distance;
+			$distance_to_start = $distance[0]->distance;
 		}
 
         return $distance_to_start;
@@ -55,7 +56,7 @@ class Calculator
 		$port_end_id = $cargo->discharging_port;
  		
  		// Formular for result of the function
-/**/	$distance = Distance:where('start_port',$port_ship_id)->where('end_port',$port_start_id)->get();
+/**/	$distance = Distance::where('start_port',$port_ship_id)->where('end_port',$port_start_id)->get();
 
 
 		// If not DB entry exist yet, calculate distance and store it in the database (2 entries: 2nd witch switched port positions)
@@ -68,9 +69,10 @@ class Calculator
 	
 			$distance_cargo = calculateDistance($lat1, $lon1, $lat2, $lon2);
 			
-*			"XXX Insert the new calculated distances into the table 'distances', create 2 entries, the second withs witched ports XXX";
-		else {
-			distance_cargo = $distance[0]->distance;
+/*			"XXX Insert the new calculated distances into the table 'distances', create 2 entries, the second withs witched ports XXX";
+*/
+		}else {
+			$distance_cargo = $distance[0]->distance;
 		}
 
         return $distance_cargo;
@@ -188,11 +190,11 @@ class Calculator
 		
 		// No price entry has an enddate older than the date_price -> use the latest entry with end date null
 /**/	if ($fuel_price_entry = FuelPrice::where('end_date','>',$date_price)->get()->isEmpty()) {
-			$fuel_price_entry = FuelPrice::where('end_date',null)->('fuel_type_id',$fuel_type_id)->get();
+			$fuel_price_entry = FuelPrice::where('end_date',null)->where('fuel_type_id',$fuel_type_id)->get();
 		}
 		// price entries with an enddate older than the date_price found -> apply other filters
 		else {
-			$fuel_price_entry = FuelPrice::where('end_date','>',$date_price)->where('start_date','<',$date_price)->('fuel_type_id',$fuel_type_id)->get();
+			$fuel_price_entry = FuelPrice::where('end_date','>',$date_price)->where('start_date','<',$date_price)->where('fuel_type_id',$fuel_type_id)->get();
 		}
 		
 		$fuel_price = $fuel_price_entry[0]->price; 
@@ -211,11 +213,11 @@ class Calculator
 		
 		// No price entry has an enddate older than the date_price -> use the latest entry with end date null
 /**/	if ($fee_price_entry = FeePrice::where('end_date','>',$date_price)->get()->isEmpty()) {
-			$fee_price_entry = FeePrice::where('end_date',null)->('port_id',$port_stat_id)->get();
+			$fee_price_entry = FeePrice::where('end_date',null)->where('port_id',$port_stat_id)->get();
 		}
 		// price entries with an enddate older than the date_price found -> apply other filters
 		else {
-			$fee_price_entry = FeePrice::where('end_date','>',$date_price)->where('start_date','<',$date_price)->('port_id',$port_start_id)->get();
+			$fee_price_entry = FeePrice::where('end_date','>',$date_price)->where('start_date','<',$date_price)->where('port_id',$port_start_id)->get();
 		}
 		$port_fee_load = $fee_price_entry[0]->price; 
 		
@@ -227,19 +229,21 @@ class Calculator
 
 		// Receive parameters from objects
 		$port_end_id = $cargo->discharching_port;
-		$days = $voyage_time - $port_time_disch
-		$date_price = $this->addDayswithdate($date, $days); // The date when the ship arrives the end port is relevant
+		$days = $voyage_time - $port_time_disch;
+		//$date_price =; // The date when the ship arrives the end port is relevant
 		
 		// Formular for result of the function
 
 
 		// No price entry has an enddate older than the date_price -> use the latest entry with end date null
-/**/	if ($fee_price_entry = FeePrice::where('end_date','>',$date_price)->get()->isEmpty()) {
-			$fee_price_entry = FeePrice::where('end_date',null)->('port_id',$port_end_id)->get();
+		
+
+/**/	if ($fee_price_entry == FeePrice::where('end_date','>', $date->addDays($days))) {
+			$fee_price_entry = FeePrice::where('end_date',null)->where('port_id',$port_end_id)->get();
 		}
 		// price entries with an enddate older than the date_price found -> apply other filters
 		else {
-			$fee_price_entry = FeePrice::where('end_date','>',$date_price)->where('start_date','<',$date_price)->('port_id',$port_end_id)->get();
+			$fee_price_entry = FeePrice::where('end_date','>',$date_price)->where('start_date','<',$date_price)->where('port_id',$port_end_id)->get();
 		}
 
 
@@ -282,9 +286,9 @@ class Calculator
 		}
 		
 		// Step 1b: If no path is found, continue with the bdi_id for the average bdi price
-*		if ($paths->isEmpty()){
+		if ($paths->isEmpty()){
 			$bdi_id = '540666';
-		) else {
+		} else {
 		// Step 2: determine route for path
 		$route = $paths[0]->route_id;
 		// Step 3: determine bdi_id for route
@@ -296,11 +300,11 @@ class Calculator
 
 		// No price entry has an enddate older than the date_price -> use the latest entry with end date null
 /**/	if (BdiPrice::where('end_date','>',$date_price)->get()->isEmpty()) {
-			$bdi_entry = BdiPrice::where('end_date',null)->('bdi_id',$bdi_id)->get();
+			$bdi_entry = BdiPrice::where('end_date',null)->where('bdi_id',$bdi_id)->get();
 		}
 		// price entries with an enddate older than the date_price found -> apply other filters
 		else {
-			$bdi_entry = BdiPrice::where('end_date','>',$date_price)->where('start_date','<',$date_price)->('bdi_id',$bdi_id)->get();
+			$bdi_entry = BdiPrice::where('end_date','>',$date_price)->where('start_date','<',$date_price)->where('bdi_id',$bdi_id)->get();
 		}
 		$bdi = $bdi_entry[0]->price; 
 		
