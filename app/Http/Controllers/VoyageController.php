@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Ship;
 use App\Models\Cargo;
 use App\Models\Port;
-use App\Library\Services\Calculator;
+use App\Services\Calculator;
 
  
 
