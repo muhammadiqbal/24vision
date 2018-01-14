@@ -17,6 +17,7 @@ use App\Models\Email;
 use DB;
 use App\DataTables\CargoDataTable;
 use App\Services\Calculator;
+use App\Models\LdRateType;
 
 class DashboardController extends Controller
 {
@@ -75,23 +76,57 @@ class DashboardController extends Controller
 
         //return $email->getTableColumns();
 		
+		$ship = Ship::find('2');
+        $port_ship = Port::find('1');
+        $cargo = Cargo::find('1');
+		$date = Cargo::find('1')->laycan_first_day;
 		
-		$port_ship_id =  "1";
-		$port_start_id = "2";
+		$distance_to_start = $calculator->calculateDistancetoStart($port_ship, $cargo, $calculator);
+		$distance_cargo =  $calculator->calculateDistancetoCargo($cargo, $calculator);
+		$distance_sum = $calculator->calculateDistanceSum($distance_to_start, $distance_cargo);
+		$travel_time_to_start = $calculator->calculateTravelTimeToStart($ship, $distance_to_start);
+		$travel_time_cargo =  $calculator->calculateTravelTimeCargo($ship, $distance_cargo);
+		$travel_time_sum = $calculator->calculateTravelTimeSum($travel_time_to_start, $travel_time_cargo);
+		$port_time_load = $calculator->calculatePortTimeLoad($cargo);
+		$port_time_disch = $calculator->calculatePortTimeDisch($cargo);
+		$port_time_sum = $calculator->calculatePortTimeSum($port_time_load, $port_time_disch);
+		$voyage_time = $calculator->calculateVoyageTime($port_time_sum, $travel_time_sum);
+	
+		$fuel_consumption = $calculator->calculateFuelConsumption($ship, $port_time_sum, $travel_time_sum);
+		$fuel_price =  $calculator->calculateFuelPrice($ship, $date, $travel_time_to_start);
+		$port_fee_load = $calculator->calculatePortFeeLoad($cargo, $date, $travel_time_to_start);
+		$port_fee_disch = $calculator->calculatePortFeeDisch($cargo, $date, $voyage_time, $port_time_disch);
+		$non_hire_costs =  $calculator->calculateNonHireCosts($fuel_consumption, $fuel_price, $port_fee_load, $port_fee_disch);
+
+		$bdi = $calculator->calculateBDI($port_ship, $cargo, $date, $travel_time_to_start);
+		$gross_rate = $calculator->calculateGrossRate($cargo, $bdi, $voyage_time, $non_hire_costs);
+		$ntce = $calculator->calculateNTCE($cargo, $bdi, $voyage_time, $non_hire_costs, $gross_rate);
 		
- 		// Formular for result of the function
-		$distance = Distance::where('start_port',$port_ship_id)->where('end_port',$port_start_id)->get();
-		//$distance = $distance->where('distance','150.00')->get();
-		//$distance_to_start = $distance[0]->distance;
 		
-		//$test = TRUE;
-		if($distance ->isEmpty()) {
-			$distance_to_start = "no value";
-			}
-		//return $distance_to_start;
-		return $distance;
-		
-		
+		$x = array(
+					$distance_to_start,
+					$distance_cargo,
+					$distance_sum,
+					$travel_time_to_start,
+					$travel_time_cargo,
+					$travel_time_sum,
+					$port_time_load, 
+					$port_time_disch,
+					$port_time_sum,
+					$voyage_time,
+					$fuel_consumption,
+					$fuel_price,
+					$port_fee_load,
+					$port_fee_disch,
+					$non_hire_costs,
+					$bdi,
+					$gross_rate,
+					$ntce 
+					);
+					
+		$load_factor = LdRateType::find($cargo->loading_rate_type)->rate_type_factor;
+		return $x;
+		//return $port_fee_disch;
     }
 
     /**

@@ -1,6 +1,21 @@
 <?php
 namespace App\Services;
-  
+use App\Models\ShipPosition;
+use App\Models\Cargo;
+use Illuminate\Http\Request;
+use App\Models\Route;
+use App\Models\Ship;
+use App\Models\Region;
+use App\Models\Distance;
+use App\Models\Port;
+use App\Models\Bdi;
+use App\Models\LdRateType;
+use App\Models\FuelPrice;   
+use App\Models\FeePrice;
+use App\Models\BdiPrice;
+use App\Models\Path;
+use App\Models\FuelType;
+ 
 class Calculator
 {
 	
@@ -18,28 +33,28 @@ class Calculator
 	}
 	
     //Formular for calculating (and storing) the Distance to start, used for calculating TravelTimeToStart
-	public function calculateDistancetoStart(Port $port_ship, Cargo $cargo){
+	public function calculateDistancetoStart(Port $port_ship, Cargo $cargo, Calculator $calculator){
 		
 		// Receive parameters from objects
 		$port_ship_id =  $port_ship->id;
 		$port_start_id = $cargo->loading_port;
 		
  		// Formular for result of the function
-/**/	$distance = Distance::where('start_port',$port_ship_id)->where('end_port',$port_start_id)->get();
+		$distance = Distance::where('start_port',$port_ship_id)->where('end_port',$port_start_id)->get();
 
 
 		// If not DB entry exist yet, calculate distance and store it in the database (2 entries: 2nd witch switched port positions)
-/**/	if ($distance->isEmpty()) {
+		if ($distance->isEmpty()) {
 						
 			$lat1 = Port::find($port_ship_id)->latitude;
 			$lon1 = Port::find($port_ship_id)->longitude;
 			$lat2 = Port::find($port_start_id)->latitude;
 			$lon2 = Port::find($port_start_id)->longitude;
 	
-			$distance_to_start = calculateDistance($lat1, $lon1, $lat2, $lon2);
+			$distance_to_start = $calculator->calculateDistance($lat1, $lon1, $lat2, $lon2);
 			
-/*			"XXX Insert the new calculated distances into the table 'distances', create 2 entries, the second withs witched ports XXX";
-*/
+//			"XXX Insert the new calculated distances into the table 'distances', create 2 entries, the second withs witched ports XXX";
+
 		}
 		else {
 			$distance_to_start = $distance[0]->distance;
@@ -49,34 +64,44 @@ class Calculator
     }
 
 	//Formular for calculating the Distance for cargo, used for calculating TravelTimeCargo
-	public function calculateDistancetoCargo(Cargo $cargo){
+	public function calculateDistancetoCargo(Cargo $cargo, Calculator $calculator){
 		
 		// Receive parameters from objects
 		$port_start_id = $cargo->loading_port;
 		$port_end_id = $cargo->discharging_port;
  		
  		// Formular for result of the function
-/**/	$distance = Distance::where('start_port',$port_ship_id)->where('end_port',$port_start_id)->get();
+		$distance = Distance::where('start_port',$port_start_id)->where('end_port',$port_end_id)->get();
 
 
 		// If not DB entry exist yet, calculate distance and store it in the database (2 entries: 2nd witch switched port positions)
-/**/	if ($distance->isEmpty()) {
+		if ($distance->isEmpty()) {
 			
 			$lat1 = Port::find($port_start_id)->latitude;
 			$lon1 = Port::find($port_start_id)->longitude;
 			$lat2 = Port::find($port_end_id)->latitude;
 			$lon2 = Port::find($port_end_id)->longitude;
 	
-			$distance_cargo = calculateDistance($lat1, $lon1, $lat2, $lon2);
+			$distance_cargo = $calculator->calculateDistance($lat1, $lon1, $lat2, $lon2);
 			
-/*			"XXX Insert the new calculated distances into the table 'distances', create 2 entries, the second withs witched ports XXX";
-*/
+//			"XXX Insert the new calculated distances into the table 'distances', create 2 entries, the second withs witched ports XXX";
+
 		}else {
 			$distance_cargo = $distance[0]->distance;
 		}
 
         return $distance_cargo;
     }
+	
+	//Formular for calculating the overall distance
+	public function calculateDistanceSum($distance_to_start, $distance_cargo){
+		
+		// Formular for result of the function
+		$distance__sum = $distance_to_start + $distance_cargo;
+
+        return $distance__sum;
+    }	
+	
 	
 	//Formular for calculating the Travel Time to start, used for calculating TravelTimeSum and extracting FuelPrice, BDI and PortFeeLoad
 	public function calculateTravelTimeToStart(Ship $ship, $distance_to_start){
@@ -97,7 +122,7 @@ class Calculator
 		$speed_laden = $ship->speed_laden;
  		
 		// Formular for result of the function
-		$ravel_time_cargo= $distance_cargo/$speed_laden/(24*0.95);
+		$travel_time_cargo= $distance_cargo/$speed_laden/(24*0.95);
 
         return $travel_time_cargo;
     }
@@ -118,7 +143,7 @@ class Calculator
 		
 		$quantity = $cargo->quantity;
 		$load_speed = $cargo->loading_rate;
-		$load_factor = Loading_disscharging_rate_type::find($cargo->loading_rate_type)->factor;
+		$load_factor = LdRateType::find($cargo->loading_rate_type)->rate_type_factor;
 	
 		
 		// Formular for result of the function
@@ -134,7 +159,7 @@ class Calculator
 		
 		$quantity = $cargo->quantity;
 		$disch_speed = $cargo->discharging_rate;
-		$disch_factor = Loading_disscharging_rate_type::find($cargo->discharging_rate_type)->factor;
+		$disch_factor = LdRateType::find($cargo->discharging_rate_type)->rate_type_factor;
 	
 		
 		// Formular for result of the function
@@ -165,7 +190,7 @@ class Calculator
     }
 
 	
-	//Formular for calculating Fuel Consumption, used for NonHireCostse 
+	//Formular for calculating Fuel Consumption, used for Fuel Costs
 	public function calculateFuelConsumption(Ship $ship, $port_time_sum, $travel_time_sum){
 
 		// Receive parameters from objects
@@ -179,17 +204,17 @@ class Calculator
         return $fuel_consumption;
     }
 	
-	//Formular for extract Fuel Price from table "fuel_prices", used for calculating NonHireCosts 
+	//Formular for extract Fuel Price from table "fuel_prices", used for calculating Fuel Costs 
 	public function calculateFuelPrice(Ship $ship, $date, $travel_time_to_start){
 
 		// Receive parameters from objects
 		$fuel_type_id = $ship->fuel_type_id;
-		$date_price = $this->addDayswithdate($date, $travel_time_to_start); // The date when the ship arrives the start port is relevant
+		$date_price = $date->addDays('10'); // The date when the ship arrives the start port is relevant
 		
 		// Formular for result of the function
 		
 		// No price entry has an enddate older than the date_price -> use the latest entry with end date null
-/**/	if ($fuel_price_entry = FuelPrice::where('end_date','>',$date_price)->get()->isEmpty()) {
+		if ($fuel_price_entry = FuelPrice::where('end_date','>',$date_price)->get()->isEmpty()) {
 			$fuel_price_entry = FuelPrice::where('end_date',null)->where('fuel_type_id',$fuel_type_id)->get();
 		}
 		// price entries with an enddate older than the date_price found -> apply other filters
@@ -201,23 +226,34 @@ class Calculator
 
         return $fuel_price;
     }
+
+	//Formular for calculating the Fuel Costs, used for calculating  the Non HireCosts
+    public function calculateFuelCosts($fuel_price,$fuel_consumption)
+    {
+	
+		// Formular for result of the function
+		$fuel_costs = $fuel_price*$fuel_consumption;
+
+        return $fuel_costs;
+    }	
+
 	
 	//Formular for extract Port Fee for Loading  from table "Fee_prices", used for calculating NonHireCosts  
 	public function calculatePortFeeLoad(Cargo $cargo, $date, $travel_time_to_start){
 
 		// Receive parameters from objects
 		$port_start_id = $cargo->loading_port;
-		$date_price = $this->addDayswithdate($date, $travel_time_to_start);  // The date when the ship arrives the start port is relevant
+		$date_price = $date->addDays($travel_time_to_start);  // The date when the ship arrives the start port is relevant
 		
 		// Formular for result of the function
 		
 		// No price entry has an enddate older than the date_price -> use the latest entry with end date null
-/**/	if ($fee_price_entry = FeePrice::where('end_date','>',$date_price)->get()->isEmpty()) {
+		if ($fee_price_entry = FeePrice::where('end_date','>',$date_price)->get()->isEmpty()) {
 			$fee_price_entry = FeePrice::where('end_date',null)->where('port_id',$port_stat_id)->get();
 		}
 		// price entries with an enddate older than the date_price found -> apply other filters
 		else {
-			$fee_price_entry = FeePrice::where('end_date','>',$date_price)->where('start_date','<',$date_price)->where('port_id',$port_start_id)->get();
+			$fee_price_entry = FeePrice::where('end_date','>',$date_price)->where('star_date','<',$date_price)->where('port_id',$port_start_id)->get();
 		}
 		$port_fee_load = $fee_price_entry[0]->price; 
 		
@@ -228,9 +264,9 @@ class Calculator
 	public function calculatePortFeeDisch(Cargo $cargo, $date, $voyage_time, $port_time_disch){
 
 		// Receive parameters from objects
-		$port_end_id = $cargo->discharching_port;
+		$port_end_id = $cargo->discharging_port;
 		$days = $voyage_time - $port_time_disch;
-		//$date_price =; // The date when the ship arrives the end port is relevant
+		$date_price = $date->addDays($days); // The date when the ship arrives the end port is relevant
 		
 		// Formular for result of the function
 
@@ -238,27 +274,30 @@ class Calculator
 		// No price entry has an enddate older than the date_price -> use the latest entry with end date null
 		
 
-/**/	if ($fee_price_entry == FeePrice::where('end_date','>', $date->addDays($days))) {
+		if ($fee_price_entry = FeePrice::where('end_date','>', $date_price)->get()->isEmpty()) {
 			$fee_price_entry = FeePrice::where('end_date',null)->where('port_id',$port_end_id)->get();
 		}
 		// price entries with an enddate older than the date_price found -> apply other filters
 		else {
-			$fee_price_entry = FeePrice::where('end_date','>',$date_price)->where('start_date','<',$date_price)->where('port_id',$port_end_id)->get();
+			$fee_price_entry = FeePrice::where('end_date','>',$date_price)->where('star_date','<',$date_price)->where('port_id',$port_end_id)->get();
 		}
 
 
 		$port_fee_disch = $fee_price_entry[0]->price; 
+ 
 		
         return $port_fee_disch;
     }
 	
 
+	
+	
 	//Formular for calculating the NonHireCosts, used for calculating Grossrate and NTCE 
-    public function calculateNonHireCosts($fuel_consumption, $fuel_price, $port_fee_load, $port_fee_disch)
+    public function calculateNonHireCosts($fuel_costs, $port_fee_load, $port_fee_disch)
     {
 	
 		// Formular for result of the function
-		$non_hire_costs = $port_fee_load + $port_fee_disch + $fuel_price * $fuel_consumption;
+		$non_hire_costs = $port_fee_load + $port_fee_disch + $fuel_costs;
 
         return $non_hire_costs;
     }	
@@ -268,7 +307,7 @@ class Calculator
 	public function calculateBDI(Port $port_ship, Cargo $cargo, $date, $travel_time_to_start){
 
 		// Receive parameters from objects
-		$date_price = $this->addDayswithdate($date, $travel_time_to_start); // The date when the ship arrives the start port is relevant
+		$date_price = $date->addDays($travel_time_to_start); // The date when the ship arrives the start port is relevant
 		
 		$port_ship_zone =  $port_ship->zone_id;
 		$port_start_id = $cargo->loading_port;
@@ -278,11 +317,11 @@ class Calculator
 		
 		// Find the right bdi_id
 		// Step 1:  find matching path
-/**/	if ($port_ship_zone == $port_start_zone OR $port_start_zone == $port_end_zone ) {
-/**/		$paths = Path::where('zone1',$port_ship_zone)->where('zone2',null)->where('zone3',$port_end_zone)->get();
+		if ($port_ship_zone == $port_start_zone OR $port_start_zone == $port_end_zone ) {
+			$paths = Path::where('zone1',$port_ship_zone)->where('zone2',null)->where('zone3',$port_end_zone)->get();
 
 		} else {
-/**/		$paths = Path::where('zone1',$port_ship_zone)->where('zone2',$port_start_zone)->where('zone3',$port_end_zone)->get();
+			$paths = Path::where('zone1',$port_ship_zone)->where('zone2',$port_start_zone)->where('zone3',$port_end_zone)->get();
 		}
 		
 		// Step 1b: If no path is found, continue with the bdi_id for the average bdi price
@@ -299,7 +338,7 @@ class Calculator
 
 
 		// No price entry has an enddate older than the date_price -> use the latest entry with end date null
-/**/	if (BdiPrice::where('end_date','>',$date_price)->get()->isEmpty()) {
+		if (BdiPrice::where('end_date','>',$date_price)->get()->isEmpty()) {
 			$bdi_entry = BdiPrice::where('end_date',null)->where('bdi_id',$bdi_id)->get();
 		}
 		// price entries with an enddate older than the date_price found -> apply other filters
@@ -307,6 +346,7 @@ class Calculator
 			$bdi_entry = BdiPrice::where('end_date','>',$date_price)->where('start_date','<',$date_price)->where('bdi_id',$bdi_id)->get();
 		}
 		$bdi = $bdi_entry[0]->price; 
+		
 		
         return $bdi;
     }	
@@ -336,4 +376,5 @@ class Calculator
 
         return $ntce;
     } 
+	
 }
