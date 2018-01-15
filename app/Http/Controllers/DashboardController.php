@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\ShipPosition;
 use App\Models\Cargo;
 use Illuminate\Http\Request;
@@ -10,6 +11,7 @@ use App\Models\Ship;
 use App\Models\Region;
 use App\Models\Distance;
 use App\Models\Port;
+use App\Models\FeePrice;
 use App\Models\Bdi;
 use \League\Geotools\Coordinate\Coordinate;
 use \League\Geotools\Geotools;
@@ -80,6 +82,8 @@ class DashboardController extends Controller
         $port_ship = Port::find('1');
         $cargo = Cargo::find('1');
 		$date = Cargo::find('1')->laycan_first_day;
+		$date = "20-08-2018";
+		$date = Carbon::parse($date);
 		
 		$distance_to_start = $calculator->calculateDistancetoStart($port_ship, $cargo, $calculator);
 		$distance_cargo =  $calculator->calculateDistancetoCargo($cargo, $calculator);
@@ -104,6 +108,7 @@ class DashboardController extends Controller
 		
 		
 		$x = array(
+					$port_fee_load,
 					$distance_to_start,
 					$distance_cargo,
 					$distance_sum,
@@ -116,7 +121,7 @@ class DashboardController extends Controller
 					$voyage_time,
 					$fuel_consumption,
 					$fuel_price,
-					$port_fee_load,
+
 					$port_fee_disch,
 					$non_hire_costs,
 					$bdi,
@@ -124,9 +129,33 @@ class DashboardController extends Controller
 					$ntce 
 					);
 					
-		$load_factor = LdRateType::find($cargo->loading_rate_type)->rate_type_factor;
-		return $x;
-		//return $port_fee_disch;
+	
+		
+		
+		//return $x;
+		$port_start_id = $cargo->loading_port;
+		$date_price = $date;//->addDays($travel_time_to_start);  // The date when the ship arrives the start port is relevant
+		
+		// Formular for result of the function
+		$fee_price_entry = FeePrice::where('end_date','>',$date_price)->get();
+		
+		return $fee_price_entry;
+		// No price entry has an enddate older than the date_price -> use the latest entry with end date null
+		if ($fee_price_entry = FeePrice::where('end_date','>',$date_price)->get()->isEmpty()) {
+
+			$fee_price_entry = FeePrice::where('end_date',null)->where('port_id',$port_start_id)->get();
+		}
+		// price entries with an enddate older than the date_price found -> apply other filters
+		else {
+			return 100;
+			$fee_price_entry = FeePrice::where('end_date','>',$date_price)->where('start_date','<',$date_price)->where('port_id',$port_start_id)->get();
+		}
+		$port_fee_load = $fee_price_entry[0]->price; 
+		
+        return $port_fee_load;
+    
+
+		
     }
 
     /**

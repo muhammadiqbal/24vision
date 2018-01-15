@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\Ship;
 use App\Models\Cargo;
@@ -11,29 +11,42 @@ use App\Models\FuelType;
 use App\Models\CargoType;
 use App\Models\Zone;
 use App\Models\LdRateType;
+use App\Models\QuantityMeasurement;
+use App\Models\BDI;
 
 class VoyageController extends Controller
 {
     //
 
+	
+	
     function getVoyage(Ship $ship, Cargo $cargo, Port $port_ship,$date, Calculator $calculator){
 		
 		
-		$ship = Ship::find('2');
-		$port_ship = Port::find('1');
-        $cargo = Cargo::find('1');
-		$date = Cargo::find('1')->laycan_first_day;
+		//$ship = Ship::find('2');
+		//$port_ship = Port::find('1');
+        //$cargo = Cargo::find('1');
+		
+		//$date = "20-12-2018";
+		$date = Carbon::parse($date);
+		//$date = Cargo::find('1')->laycan_first_day;
 		
 		$ship_fuel_type = FuelType::find($ship->fuel_type_id)->name;		
-		$cargo_name = CargoType::find($cargo->cargo_type_id)->name;	
+		$cargo_name = CargoType::find($cargo->cargo_type_id)->name;
+		$cargo_stowage = $calculator->findStowage($cargo);
+		//$cargo_quantity_type = QuantityMeasurement::find($cargo->quantity_measurement_id)->name;
 		
 		$port_start = Port::find($cargo->loading_port);
 		$port_end = Port::find($cargo->discharging_port);
 
 		$port_start_rate_type = LdRateType::find($cargo->loading_rate_type)->name;
+		$port_start_rate_factor = LdRateType::find($cargo->loading_rate_type)->rate_type_factor;
 		$port_start_zone = Zone::find($port_start->zone_id)->name;
 		$port_end_rate_type = LdRateType::find($cargo->discharging_rate_type)->name;
+		$port_end_rate_factor = LdRateType::find($cargo->loading_rate_type)->rate_type_factor;
 		$port_end_zone = Zone::find($port_end->zone_id)->name;
+		
+	
 
 
 		
@@ -60,6 +73,7 @@ class VoyageController extends Controller
 		$fuel_price =  $calculator->calculateFuelPrice($ship, $date, $travel_time_to_start);
 		$fuel_costs =  $calculator->calculateFuelCosts($fuel_price,$fuel_consumption);
 		$port_fee_load = $calculator->calculatePortFeeLoad($cargo, $date, $travel_time_to_start);
+		//$port_fee_load = 10000;
 		$port_fee_disch = $calculator->calculatePortFeeDisch($cargo, $date, $voyage_time, $port_time_disch);
 		$non_hire_costs =  $calculator->calculateNonHireCosts($fuel_costs, $port_fee_load, $port_fee_disch);
 		
@@ -67,13 +81,18 @@ class VoyageController extends Controller
 		$fuel_price_bdi =  $calculator->calculateFuelPrice($ship_bdi, $date, $travel_time_to_start_bdi);
 		$fuel_costs_bdi =  $calculator->calculateFuelCosts($fuel_price_bdi,$fuel_consumption_bdi);
 		$port_fee_load_bdi = $calculator->calculatePortFeeLoad($cargo, $date, $travel_time_to_start_bdi);
+		//$port_fee_load_bdi = 10000;
 		$port_fee_disch_bdi = $calculator->calculatePortFeeDisch($cargo, $date, $voyage_time_bdi, $port_time_disch);
 		$non_hire_costs_bdi =  $calculator->calculateNonHireCosts($fuel_costs_bdi, $port_fee_load_bdi, $port_fee_disch_bdi);
 		
-
-		$bdi = $calculator->calculateBDI($port_ship, $cargo, $date, $travel_time_to_start);
+		$bdi_id = $calculator->calculateBDIId($port_ship,$cargo);
+		$bdi = $calculator->calculateBDI($bdi_id, $date, $travel_time_to_start);
 		$gross_rate = $calculator->calculateGrossRate($cargo, $bdi, $voyage_time_bdi, $non_hire_costs_bdi);
 		$ntce = $calculator->calculateNTCE($cargo, $bdi, $voyage_time, $non_hire_costs, $gross_rate);
+		
+		$bdi_code= BDI::find($bdi_id)->code;
+		$bdi_name= BDI::find($bdi_id)->name;
+		//$route = $calculator->findRoute($route_id);
 
     	return view('voyages.index')
 		->with('ship',$ship)
@@ -83,12 +102,16 @@ class VoyageController extends Controller
 		
 		->with('ship_fuel_type',$ship_fuel_type)
 		->with('cargo_name',$cargo_name)
+		->with('cargo_stowage',$cargo_stowage)
+		//->with('cargo_quantity_type',$cargo_quantity_type )
 		
-		->with(	'port_start', $port_start)
-		->with(	'port_end',$port_end)
-		->with('port_start_rate_type',$port_start_rate_type )
+		->with('port_start', $port_start)
+		->with('port_end',$port_end)
+		->with('port_start_rate_type',$port_start_rate_type)
+		->with('port_start_rate_factor',$port_start_rate_factor)
 		->with('port_start_zone',$port_start_zone )
 		->with('port_end_rate_type',$port_end_rate_type )
+		->with('port_end_rate_factor',$port_end_rate_factor)
 		->with('port_end_zone',$port_end_zone )
 		
 		->with('distance_to_start',$distance_to_start)
@@ -110,6 +133,8 @@ class VoyageController extends Controller
 		->with('non_hire_costs',$non_hire_costs)
 		->with('bdi',$bdi)
 		->with('gross_rate',$gross_rate)
-		->with('ntce',$ntce);
+		->with('ntce',$ntce)
+		->with('bdi_code',$bdi_code)
+		->with('bdi_name',$bdi_name);
     }
 }
