@@ -50,20 +50,14 @@ Route::resource('ships', 'ShipAPIController');
 
 Route::resource('zone_points', 'ZonePointAPIController');
 
-Route::resource('cargos', 'CargoAPIController');
-
 Route::resource('cargo_types', 'CargoTypeAPIController');
 
 Route::resource('distances', 'DistanceAPIController');
 
 Route::resource('routes', 'RouteAPIController');
 
-Route::resource('cargos', 'CargoAPIController');
-
-Route::resource('cargos', 'CargoAPIController');
-
-Route::resource('cargos', 'CargoAPIController');
-
 Route::resource('cargo_types', 'CargoTypeAPIController');
 
 Route::resource('cargos', 'CargoAPIController');
+
+Route::resource('emails', 'EmailAPIController');

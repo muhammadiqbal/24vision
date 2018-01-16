@@ -7,26 +7,26 @@
                 <th>Current occupancy</th>
                 <th>Remaining</th>
             </thead>
-            {{-- <tbody>
+            <tbody>
                 <tr>
                     <th>Size</th>
-                    <td>{{$ship->max_holds_capacity}}</td>
+                    <td></td>
                     <td>0</td>
-                    <td>{{$ship->max_holds_capacity - 0}}</td>
+                    <td></td>
                 </tr>
                 <tr>
                     <th>Draft</th>
-                    <td>{{$ship->max_laden_draft}}</td>
-                    <td>{{$ship->ballast_draft}}</td>
-                    <td>{{$ship->max_laden_draft - $ship->ballast_draft}}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <th>Tonage</th>
-                    <td>{{$ship->dwcc}}</td>
+                    <td></td>
                     <td>0</td>
-                    <td>{{$ship->max_laden_draft - 0}}</td>
+                    <td></td>
                 </tr>
-            </tbody> --}}
+            </tbody>
         </table>
     </div>
 </div>

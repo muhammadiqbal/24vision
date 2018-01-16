@@ -27,7 +27,20 @@
 
         <div class="box box-primary">
             <div class="box box-primary">
-                   @include('cargos.table')
+                <div class="col-sm-12">
+                    <div class="col-sm-4">
+                        {!! Form::label('status', 'Status:') !!}
+                        <select id="statusoption" class="form-control">
+                            <option value="1">OK</option>
+                            <option value="2">Review</option>
+                            <option value="3">Unusable</option>
+                            <option value="4">Incomplete</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="box-body table-responsive">
+                    @include('calculator.table')
+                </div>
             </div>
         </div>
     </div>

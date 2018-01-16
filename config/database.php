@@ -56,17 +56,23 @@ return [
 
         'mysql2' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => '24v-azu-db001.mysql.database.azure.com',
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE2', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'database' => 'dev_dbpsbulkcargo',
+            'username' => 'dev_cargoinship_service@24v-azu-db001',
+            'password' => 'cM2ur5FdIqh6',
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
             'strict' => true,
             'engine' => null,
+            'sslmode' => env('DB_SSLMODE', 'prefer'),
+            'options'   => array(
+               // PDO::MYSQL_ATTR_SSL_KEY => '/path/to/client-key.pem',
+               // PDO::MYSQL_ATTR_SSL_CERT => '/path/to/client-cert.pem',
+                PDO::MYSQL_ATTR_SSL_CA => 'BaltimoreCyberTrustRoot.crt.pem'
+            ),
         ],
 
         'pgsql' => [

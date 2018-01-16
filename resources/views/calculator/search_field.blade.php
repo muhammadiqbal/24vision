@@ -16,20 +16,6 @@
     {!! Form::number('occupied_size',null, ['class' => 'form-control']) !!}
 </div>
 
-{{-- <!-- Region Id Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('region_id', 'Region:') !!}
-        <select name="region_id" class="form-control">
-        @foreach($regions as $region)
-            @if($region->id == $shipPosition->region_id)
-                <option value="{{$region->id}}" selected="true">{{$region->name}}</option>
-            @else
-                <option value="{{$region->id}}">{{$region->name}}</option>
-            @endif
-        @endforeach
-    </select>
-</div> --}}
-
 <!-- Port Id Field -->
 <div class="form-group col-sm-8">
     {!! Form::label('port_id', 'Port:') !!}
