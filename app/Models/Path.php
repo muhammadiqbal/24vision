@@ -74,7 +74,7 @@ class Path extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function zone()
+    public function zone1()
     {
         return $this->belongsTo(\App\Models\Zone::class);
     }
@@ -82,7 +82,7 @@ class Path extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function zone()
+    public function zone2()
     {
         return $this->belongsTo(\App\Models\Zone::class);
     }
@@ -90,7 +90,7 @@ class Path extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      **/
-    public function zone()
+    public function zone3()
     {
         return $this->belongsTo(\App\Models\Zone::class);
     }

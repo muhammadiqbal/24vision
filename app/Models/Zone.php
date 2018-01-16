@@ -64,21 +64,6 @@ class Zone extends Model
         return $this->hasMany(\App\Models\Path::class);
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     **/
-    public function paths()
-    {
-        return $this->hasMany(\App\Models\Path::class);
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     **/
-    public function paths()
-    {
-        return $this->hasMany(\App\Models\Path::class);
-    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
@@ -96,21 +81,7 @@ class Zone extends Model
         return $this->hasMany(\App\Models\Route::class);
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     **/
-    public function routes()
-    {
-        return $this->hasMany(\App\Models\Route::class);
-    }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     **/
-    public function routes()
-    {
-        return $this->hasMany(\App\Models\Route::class);
-    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
