@@ -61,3 +61,17 @@ Route::resource('cargo_types', 'CargoTypeAPIController');
 Route::resource('cargos', 'CargoAPIController');
 
 Route::resource('emails', 'EmailAPIController');
+
+Route::resource('ports', 'PortAPIController');
+
+Route::resource('cargooffers', 'CargoOfferAPIController');
+
+Route::resource('cargoofferextracted', 'CargoOfferExtractedAPIController');
+
+Route::resource('shipoffers', 'CargoOfferAPIController');
+
+Route::resource('shipofferextracted', 'ShipOfferExtractedAPIController');
+
+Route::resource('shiporders', 'CargoOfferAPIController');
+
+Route::resource('shiporderextracted', 'ShipOfferExtractedAPIController');

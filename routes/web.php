@@ -39,8 +39,6 @@ Route::group(['middleware' => 'auth'], function()
 
 	Route::resource('cargos', 'CargoController');
 
-	Route::resource('shipPositions', 'ShipPositionController');
-
 	Route::resource('routes', 'RouteController');
 
 	Route::resource('fuelTypes', 'FuelTypeController');
@@ -51,7 +49,7 @@ Route::group(['middleware' => 'auth'], function()
 
 	Route::resource('bdiCodes', 'BdiCodeController');
 
-	Route::resource('customers', 'CustomerController');
+	
 
 });
 
