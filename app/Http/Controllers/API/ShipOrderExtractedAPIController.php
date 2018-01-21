@@ -38,7 +38,7 @@ class ShipOrderExtractedAPIController extends AppBaseController
     {
         $this->shipOrderExtractedRepository->pushCriteria(new RequestCriteria($request));
         $this->shipOrderExtractedRepository->pushCriteria(new LimitOffsetCriteria($request));
-        $shipOrdersExtracted = $this->shipOrdersExtractedRepository->all();
+        $shipOrdersExtracted = $this->shipOrderExtractedRepository->all();
 
         return $this->sendResponse($shipOrdersExtracted->toArray(), 'Ship Orderes retrieved successfully');
     }
