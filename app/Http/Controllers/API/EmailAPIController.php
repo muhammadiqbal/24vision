@@ -126,4 +126,38 @@ class EmailAPIController extends AppBaseController
 
         return $this->sendResponse($id, 'Email deleted successfully');
     }
+
+    public function extra($filter, $limit){
+        $result = DB::connection('mysql2')->table('email');
+        
+        if ($filter == "classification") {
+            $result->select(['emailID', 'classification_manual', 'classification_automated', 'classification_automated_certainty' ])
+            ->where( 'classification_automated',  'Unknown')
+            ->limit ($limit);
+        }
+        if ($filter == "unclassified") {
+            $result->select(['emailID', 'subject', 'body', 'sender','receiver','cc', 'date', 'classification_manual', 'classification_automated', 'classification_automated_certainty']) 
+            ->where( 'classification_automated', 'Unknown') 
+            ->orWhere( 'classification_automated')
+            ->limit($limit);
+        }
+        if ($filter == "classificationtraining") {
+            $result->select(['emailID', 'subject', 'body', 'sender', 'receiver', 'cc', 'date', 'classification_manual', 'classification_automated', 'classification_automated_certainty'])
+            ->where('classification_manual' ,'!=',null)
+            ->limit($limit);
+        }
+        if ($filter == "classificationconfidence") {
+            $result->select(['emailID', 'subject', 'body', 'sender', 'receiver', 'cc', 'date', 'classification_manual', 'classification_automated', 'classification_automated_certainty'])
+            ->where( 'classification_automated_certainty' ,'!=',null,)
+            ->orderBy( 'classification_automated_certainty',asc)
+            ->limit($limit);;
+        }
+        if (in_array(strtolower($filter), array("ship", "cargo", "mix", "report", "spam", "unknown", "spam", "order"))) {
+            $result->select(['emailID', 'subject', 'body', 'sender', 'receiver', 'cc', 'date', 'classification_manual', 'classification_automated', 'classification_automated_certainty'])
+            ->where ('classification_manual', ucfirst(strtolower($filter)))
+            -> limit($limit);
+        }
+        return Response::json($result->get());
+    }
+
 }

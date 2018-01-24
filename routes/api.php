@@ -75,3 +75,5 @@ Route::resource('shipofferextracted', 'ShipOfferExtractedAPIController');
 Route::resource('shiporders', 'CargoOfferAPIController');
 
 Route::resource('shiporderextracted', 'ShipOfferExtractedAPIController');
+
+Route::get('emails/{filter}/{limit}', 'EmailAPIController@extra');
