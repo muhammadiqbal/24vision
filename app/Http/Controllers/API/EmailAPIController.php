@@ -148,8 +148,8 @@ class EmailAPIController extends AppBaseController
         }
         if ($filter == "classificationconfidence") {
             $result->select(['emailID', 'subject', 'body', 'sender', 'receiver', 'cc', 'date', 'classification_manual', 'classification_automated', 'classification_automated_certainty'])
-            ->where( 'classification_automated_certainty' ,'!=',null,)
-            ->orderBy( 'classification_automated_certainty',asc)
+            ->where( 'classification_automated_certainty' ,'!=',null)
+            ->orderBy( 'classification_automated_certainty','asc')
             ->limit($limit);;
         }
         if (in_array(strtolower($filter), array("ship", "cargo", "mix", "report", "spam", "unknown", "spam", "order"))) {
