@@ -38,7 +38,7 @@ class CargoOfferExtractedAPIController extends AppBaseController
     {
         $this->cargoOfferExtractedRepository->pushCriteria(new RequestCriteria($request));
         $this->cargoOfferExtractedRepository->pushCriteria(new LimitOffsetCriteria($request));
-        $cargoOffersExtracted = $this->cargoOffersExtractedRepository->all();
+        $cargoOffersExtracted = $this->cargoOfferExtractedRepository->all();
 
         return $this->sendResponse($cargoOffersExtracted->toArray(), 'Cargo Offeres retrieved successfully');
     }
