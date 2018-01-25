@@ -131,7 +131,6 @@ class EmailAPIController extends AppBaseController
 
     public function extra($filter, $limit){
         $result = DB::connection('mysql2')->table('email');
-        'SELECT email.emailID FROM email INNER JOIN cargo_offer_extracted on email.emailID = cargo_offer_extracted.emailID GROUP BY email.emailID'
         $sub_query = DB::connection('mysql2')->table('email')
                                              ->select(['email.emailID'])
                                              ->join('cargo_offer_extracted','email.emailID' ,'=', 'cargo_offer_extracted.emailID')
@@ -169,19 +168,19 @@ class EmailAPIController extends AppBaseController
         if ($filter == "unextracted-cargo") { 
             $result->whereNotIn('emailID',$sub_query) 
                 ->where('classification_automated','Cargo') 
-                ->orderBy ('_created_on', 'DESC')
+                ->orderBy ('_created_on', 'desc')
                 ->limit($limit);
         }
         if ($filter == "unextracted-ship") {
             $result->whereNotIn('emailID',$sub_query) 
                 ->where('classification_automated','Ship') 
-                ->orderBy ('_created_on', 'DESC')
+                ->orderBy ('_created_on', 'desc')
                 ->limit($limit);
         }
         if ($filter == "unextracted-order") {
             $result->whereNotIn('emailID',$sub_query) 
                 ->where('classification_automated','Order') 
-                ->orderBy ('_created_on', 'DESC')
+                ->orderBy ('_created_on', 'desc')
                 ->limit($limit);
         }
         //Filter that allows getting emails of a particular class. Not in use.
