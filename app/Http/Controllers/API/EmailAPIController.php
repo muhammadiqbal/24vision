@@ -129,7 +129,8 @@ class EmailAPIController extends AppBaseController
         return $this->sendResponse($id, 'Email deleted successfully');
     }
 
-    public function extra($filter, $limit){
+    public function extra($filter, $limit)
+    {
         $result = DB::connection('mysql2')->table('email');
         $sub_query = DB::connection('mysql2')->table('email')
                                              ->select(['email.emailID'])
@@ -190,7 +191,7 @@ class EmailAPIController extends AppBaseController
             $result->select(['emailID', 'subject', 'body', 'sender', 'receiver', 
                 'cc', 'date', 'classification_manual', 'classification_automated', 
                 'classification_automated_certainty'])
-                ->where( 'classification_manual',ucfirst(strtolower($filter))
+                ->where( 'classification_manual',ucfirst(strtolower($filter)))
                 ->limit($limit);
         }
         return Response::json($result->get());
