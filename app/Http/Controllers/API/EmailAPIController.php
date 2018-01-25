@@ -41,7 +41,8 @@ class EmailAPIController extends AppBaseController
         $this->emailRepository->pushCriteria(new LimitOffsetCriteria($request));
         $emails = $this->emailRepository->all();
 
-        return $this->sendResponse($emails->toArray(), 'Emails retrieved successfully');
+        return Response::json($emails);
+//        return $this->sendResponse($emails->toArray(), 'Emails retrieved successfully');
     }
 
     /**
