@@ -184,9 +184,13 @@ class EmailAPIController extends AppBaseController
                 ->limit($limit);
         }
         //Filter that allows getting emails of a particular class. Not in use.
-        if (in_array(strtolower($filter), array("ship", "cargo", "mix", "report", "spam", "unknown", "spam", "order"))) {
-            $result->select(['emailID', 'subject', 'body', 'sender', 'receiver', 'cc', 'date', 'classification_manual', 'classification_automated', 'classification_automated_certainty'])
-                -> where( 'classification_manual',ucfirst(strtolower($filter))
+        if (in_array(strtolower($filter), array("ship", "cargo", "mix", "report", "spam", "unknown", "spam", "order"))) 
+        {
+
+            $result->select(['emailID', 'subject', 'body', 'sender', 'receiver', 
+                'cc', 'date', 'classification_manual', 'classification_automated', 
+                'classification_automated_certainty'])
+                ->where( 'classification_manual',ucfirst(strtolower($filter))
                 ->limit($limit);
         }
         return Response::json($result->get());
