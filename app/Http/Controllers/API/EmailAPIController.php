@@ -131,6 +131,11 @@ class EmailAPIController extends AppBaseController
 
     public function extra($filter, $limit){
         $result = DB::connection('mysql2')->table('email');
+        $sub_query = DB::connection('mysql2')->table('email')
+                                             ->select(['email.emailID'])
+                                             ->join('cargo_offer_extracted','email.emailID' ,'=', 'cargo_offer_extracted.emailID')
+                                             ->groupBy('email.emailID')
+                                             ->get();
         
         if ($filter == "classification") {
             $result->select(['emailID', 'classification_manual', 'classification_automated', 'classification_automated_certainty' ])
@@ -158,6 +163,31 @@ class EmailAPIController extends AppBaseController
             $result->select(['emailID', 'subject', 'body', 'sender', 'receiver', 'cc', 'date', 'classification_manual', 'classification_automated', 'classification_automated_certainty'])
             ->where ('classification_manual', ucfirst(strtolower($filter)))
             -> limit($limit);
+        }
+        //3 Filters used by the 3 extraction scripts respectively to get unextracted emaisl. 
+        if ($filter == "unextracted-cargo") { 
+            $result->whereNotIn('emailID',$sub_query) 
+                ->where('classification_automated','Cargo') 
+                ->orderBy ('_created_on', 'desc')
+                ->limit($limit);
+        }
+        if ($filter == "unextracted-ship") {
+            $result->whereNotIn('emailID',$sub_query) 
+                ->where('classification_automated','Ship') 
+                ->orderBy ('_created_on', 'desc')
+                ->limit($limit);
+        }
+        if ($filter == "unextracted-order") {
+            $result->whereNotIn('emailID',$sub_query) 
+                ->where('classification_automated','Order') 
+                ->orderBy ('_created_on', 'desc')
+                ->limit($limit);
+        }
+        //Filter that allows getting emails of a particular class. Not in use.
+        if (in_array(strtolower($filter), array("ship", "cargo", "mix", "report", "spam", "unknown", "spam", "order"))) {
+            $result->select(['emailID', 'subject', 'body', 'sender', 'receiver', 'cc', 'date', 'classification_manual', 'classification_automated', 'classification_automated_certainty'])
+                -> where( 'classification_manual',ucfirst(strtolower($filter))
+                ->limit($limit);
         }
         return Response::json($result->get());
     }
