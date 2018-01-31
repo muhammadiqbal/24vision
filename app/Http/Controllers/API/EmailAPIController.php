@@ -184,6 +184,14 @@ class EmailAPIController extends AppBaseController
                 ->orderBy ('_created_on', 'desc')
                 ->limit($limit);
         }
+
+
+        //emails/cargoforcleaning/{limit}
+        if ($filter == "cargoforcleaning") {
+            $result->join('cargo_offer_extracted','email.emailID' ,'=', 'cargo_offer_extracted.emailID') 
+                ->select(['cargo_offer_extracted.*', 'email.date'])
+                ->limit($limit);
+        }
         //Filter that allows getting emails of a particular class. Not in use.
         if (in_array(strtolower($filter), array("ship", "cargo", "mix", "report", "spam", "unknown", "spam", "order"))) 
         {
