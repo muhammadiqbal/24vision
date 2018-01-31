@@ -15,16 +15,7 @@ class CargoOfferExtracted extends Model
     protected $primaryKey = '';
 
     public $fillable = [
-       
-    ];
-
-           /**
-     * Validation rules
-     *
-     * @var array
-     */
-    public static $rules = [
-    	"cargo_offer_extracted_ID",
+        "cargo_offer_extracted_ID",
 		"emailID",
 		"cargo_offerID",
 		"cargo",
@@ -39,7 +30,16 @@ class CargoOfferExtracted extends Model
 		"disch_place_lat",
 		"disch_place_lon",
 		"_created_on"
-        
+      
+    ];
+
+           /**
+     * Validation rules
+     *
+     * @var array
+     */
+    public static $rules = [
+
     ];
 
     public function getTableColumns() {
