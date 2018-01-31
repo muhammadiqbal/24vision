@@ -5,7 +5,7 @@ namespace App\Http\Requests\API;
 use App\Models\Email;
 use InfyOm\Generator\Request\APIRequest;
 
-class UpdateDistanceAPIRequest extends APIRequest
+class UpdateEmailAPIRequest extends APIRequest
 {
     /**
      * Determine if the user is authorized to make this request.
