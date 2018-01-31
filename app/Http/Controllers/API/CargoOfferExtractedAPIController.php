@@ -41,7 +41,7 @@ class CargoOfferExtractedAPIController extends AppBaseController
         $this->cargoOfferExtractedRepository->pushCriteria(new LimitOffsetCriteria($request));
         $cargoOffersExtracted = $this->cargoOfferExtractedRepository->all();
 
-        return $this->sendResponse($cargoOffersExtracted->toArray(), 'Cargo Offeres retrieved successfully');
+        return $this->sendResponse($cargoOffersExtracted->toArray(), 'Cargo Offers retrieved successfully');
     }
 
     /**
@@ -57,8 +57,9 @@ class CargoOfferExtractedAPIController extends AppBaseController
         $input = $request->all();
 
         //$cargoOffersExtracted = $this->cargoOfferExtractedRepository->create($input);
-        $cargoOffersExtracted = DB::connection('mysql2')->table('cargo_offer_extracted')->insert($input);
-        return $this->sendResponse($cargoOffersExtracted->toArray(), 'Cargo Offer saved successfully');
+        $cargoOffersExtracted = DB::connection('mysql2')->table('cargo_offer_extracted')->insertGetId($input);
+        return $this->sendResponse(CargoOfferExtrcted::find($cargoOffersExtracted)
+                        ->toArray(), 'Cargo Offer saved successfully');
     }
 
     /**
