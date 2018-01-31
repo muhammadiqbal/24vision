@@ -28,6 +28,15 @@ class Email extends Model
         'kibana_extracted'
     ];
 
+        /**
+     * Validation rules
+     *
+     * @var array
+     */
+    public static $rules = [
+        
+    ];
+
     public function getTableColumns() {
         return $this->getConnection()->getSchemaBuilder()->getColumnListing($this->getTable());
     }
