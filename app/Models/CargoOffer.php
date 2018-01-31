@@ -18,7 +18,15 @@ class CargoOffer extends Model
        
     ];
 
-           /**
+    /**
+     * The attributes that should be casted to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+    ];
+    
+    /**
      * Validation rules
      *
      * @var array
