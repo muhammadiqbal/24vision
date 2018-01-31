@@ -57,7 +57,7 @@ class EmailAPIController extends AppBaseController
     {
         $input = $request->all();
 
-        $emails = $this->EmailRepository->create($input);
+        $emails = $this->emailRepository->create($input);
 
         return $this->sendResponse($emails->toArray(), 'Email saved successfully');
     }
