@@ -8,6 +8,7 @@ class ShipOrderExtracted extends Model
 {
     //
     protected $connection = 'mysql2';
+    public $timestamps = false;
 
     public $table = 'ship_order_extracted';
 

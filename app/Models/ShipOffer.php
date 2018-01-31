@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ShipOffer extends Model
 {
     //
+    public $timestamps = false;
     protected $connection = 'mysql2';
 
     public $table = 'ship_offer';

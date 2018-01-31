@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class CargoOfferExtracted extends Model
 {
     //
+    public $timestamps = false;
     protected $connection = 'mysql2';
 
     public $table = 'cargo_offer_extracted';
