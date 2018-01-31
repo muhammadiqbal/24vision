@@ -14,7 +14,7 @@ class CargoOfferExtracted extends Model
 
     protected $primaryKey = '';
 
-        ];
+        
 
     /**
      * The attributes that should be casted to native types.
