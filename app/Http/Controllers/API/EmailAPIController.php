@@ -57,7 +57,7 @@ class EmailAPIController extends AppBaseController
     {
         $input = $request->all();
 
-        $emails = $this->EmailRepository->create($input);
+        $emails = $this->emailRepository->create($input);
 
         return $this->sendResponse($emails->toArray(), 'Email saved successfully');
     }
@@ -182,6 +182,14 @@ class EmailAPIController extends AppBaseController
             $result->whereNotIn('emailID',$sub_query) 
                 ->where('classification_automated','Order') 
                 ->orderBy ('_created_on', 'desc')
+                ->limit($limit);
+        }
+
+
+        //emails/cargoforcleaning/{limit}
+        if ($filter == "cargoforcleaning") {
+            $result->join('cargo_offer_extracted','email.emailID' ,'=', 'cargo_offer_extracted.emailID') 
+                ->select(['cargo_offer_extracted.*', 'email.date'])
                 ->limit($limit);
         }
         //Filter that allows getting emails of a particular class. Not in use.

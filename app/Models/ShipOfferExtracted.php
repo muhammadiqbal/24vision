@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ShipOfferExtracted extends Model
 {
     //
+    public $timestamps = false;
     protected $connection = 'mysql2';
 
     public $table = 'ship_offer_extracted';
@@ -15,6 +16,15 @@ class ShipOfferExtracted extends Model
 
     public $fillable = [
        
+    ];
+
+           /**
+     * Validation rules
+     *
+     * @var array
+     */
+    public static $rules = [
+        
     ];
 
     public function getTableColumns() {

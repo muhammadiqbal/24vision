@@ -8,6 +8,7 @@ class ShipOrderExtracted extends Model
 {
     //
     protected $connection = 'mysql2';
+    public $timestamps = false;
 
     public $table = 'ship_order_extracted';
 
@@ -15,6 +16,15 @@ class ShipOrderExtracted extends Model
 
     public $fillable = [
        
+    ];
+
+           /**
+     * Validation rules
+     *
+     * @var array
+     */
+    public static $rules = [
+        
     ];
 
     public function getTableColumns() {

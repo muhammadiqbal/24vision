@@ -13,6 +13,8 @@ class Email extends Model
 
     protected $primaryKey = 'emailID';
 
+    public $timestamps = false;
+
     public $fillable = [
         'subject',
         'body',
@@ -26,6 +28,15 @@ class Email extends Model
         '_created_on',
         'classification_automated_certainty',
         'kibana_extracted'
+    ];
+
+        /**
+     * Validation rules
+     *
+     * @var array
+     */
+    public static $rules = [
+        
     ];
 
     public function getTableColumns() {
