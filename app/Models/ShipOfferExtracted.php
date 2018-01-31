@@ -18,6 +18,15 @@ class ShipOfferExtracted extends Model
        
     ];
 
+           /**
+     * Validation rules
+     *
+     * @var array
+     */
+    public static $rules = [
+        
+    ];
+
     public function getTableColumns() {
         return $this->getConnection()->getSchemaBuilder()->getColumnListing($this->getTable());
     }
