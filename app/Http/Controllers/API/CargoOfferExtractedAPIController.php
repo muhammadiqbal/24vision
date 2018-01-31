@@ -4,7 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Requests\API\CreateCargoOfferExtractedAPIRequest;
 use App\Http\Requests\API\UpdateCargoOfferExtractedAPIRequest;
-use App\Models\CargoOfferExtrcted;
+use App\Models\CargoOfferExtracted;
 use App\Repositories\CargoOfferExtractedRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\AppBaseController;
