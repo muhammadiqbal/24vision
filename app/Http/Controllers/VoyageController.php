@@ -16,10 +16,8 @@ use App\Models\BDI;
 
 class VoyageController extends Controller
 {
-    //
 
-	
-	
+		
     function getVoyage(Ship $ship, Cargo $cargo, Port $port_ship,$date, Calculator $calculator){
 		
 		
@@ -29,26 +27,60 @@ class VoyageController extends Controller
 		
 		//$date = "20-12-2018";
 		$date = Carbon::parse($date);
-		//$date = Cargo::find('1')->laycan_first_day;
+		$laycan_first_day =$calculator->formatLaycanFirst($cargo);
+		$laycan_last_day =$calculator->formatLaycanLast($cargo);
 		
-		$ship_fuel_type = FuelType::find($ship->fuel_type_id)->name;		
+		$ship_fuel_type = FuelType::find($ship->fuel_type_id)->name;
+		if ($cargo->cargo_type_id != null) {	
 		$cargo_name = CargoType::find($cargo->cargo_type_id)->name;
+		} else { $cargo_name = "MISSING";}
 		$cargo_stowage = $calculator->findStowage($cargo);
 		//$cargo_quantity_type = QuantityMeasurement::find($cargo->quantity_measurement_id)->name;
 		
+		if ($cargo->loading_port != null) {
 		$port_start = Port::find($cargo->loading_port);
-		$port_end = Port::find($cargo->discharging_port);
-
+		$port_start_name = $port_start->name;
+		$port_start_max_laden_draft = $port_start->max_laden_draft;
+		$port_start_draft_factor = $port_start->draft_factor;
+		$port_start_zone = Zone::find($port_start->zone_id)->name;
+		} else { 
+		$port_start = null;
+		$port_start_name = "MISSING";
+		$port_start_max_laden_draft = null;
+		$port_start_draft_factor = null;
+		$port_start_zone = null;	
+		}
+		
+		if ($cargo->loading_rate_type != null) {
 		$port_start_rate_type = LdRateType::find($cargo->loading_rate_type)->name;
 		$port_start_rate_factor = LdRateType::find($cargo->loading_rate_type)->rate_type_factor;
-		$port_start_zone = Zone::find($port_start->zone_id)->name;
-		$port_end_rate_type = LdRateType::find($cargo->discharging_rate_type)->name;
-		$port_end_rate_factor = LdRateType::find($cargo->loading_rate_type)->rate_type_factor;
-		$port_end_zone = Zone::find($port_end->zone_id)->name;
+		} else {
+		$port_start_rate_type = "MISSING";
+		$port_start_rate_factor = 1;	
+		}
 		
-	
-
-
+		
+		if ($cargo->discharging_port != null) {
+		$port_end = Port::find($cargo->discharging_port);
+		$port_end_name = $port_end->name;
+		$port_end_max_laden_draft = $port_end->max_laden_draft;
+		$port_end_draft_factor = $port_end->draft_factor;
+		$port_end_zone = Zone::find($port_end->zone_id)->name;
+		} else { 
+		$port_end = null;
+		$port_end_name = "MISSING";
+		$port_end_max_laden_draft = null;
+		$port_end_draft_factor = null;
+		$port_end_zone = null;			
+		}
+		
+		if ($cargo->discharging_rate_type != null) {
+		$port_end_rate_type = LdRateType::find($cargo->discharging_rate_type)->name;
+		$port_end_rate_factor = LdRateType::find($cargo->discharging_rate_type)->rate_type_factor;
+		} else {
+		$port_end_rate_type = "MISSING";
+		$port_end_rate_factor = 1;	
+		}
 		
 		$ship_bdi = Ship::find('1'); // Reference Ship for calculating tje GrossRate
 		
@@ -90,8 +122,14 @@ class VoyageController extends Controller
 		$gross_rate = $calculator->calculateGrossRate($cargo, $bdi, $voyage_time_bdi, $non_hire_costs_bdi);
 		$ntce = $calculator->calculateNTCE($cargo, $bdi, $voyage_time, $non_hire_costs, $gross_rate);
 		
+		
+		if ($bdi_id != null) {
 		$bdi_code= BDI::find($bdi_id)->code;
 		$bdi_name= BDI::find($bdi_id)->name;
+		} else { 
+		$bdi_code = null;
+		$bdi_name = null;
+		}
 		//$route = $calculator->findRoute($route_id);
 
     	return view('voyages.index')
@@ -106,10 +144,16 @@ class VoyageController extends Controller
 		//->with('cargo_quantity_type',$cargo_quantity_type )
 		
 		->with('port_start', $port_start)
-		->with('port_end',$port_end)
+		->with('port_start_name',$port_start_name)
+		->with('port_start_max_laden_draft',$port_start_max_laden_draft)
+		->with('port_start_draft_factor',$port_start_draft_factor)
 		->with('port_start_rate_type',$port_start_rate_type)
 		->with('port_start_rate_factor',$port_start_rate_factor)
 		->with('port_start_zone',$port_start_zone )
+		->with('port_end',$port_end)
+		->with('port_end_name',$port_end_name)
+		->with('port_end_max_laden_draft',$port_end_max_laden_draft)
+		->with('port_end_draft_factor',$port_end_draft_factor)
 		->with('port_end_rate_type',$port_end_rate_type )
 		->with('port_end_rate_factor',$port_end_rate_factor)
 		->with('port_end_zone',$port_end_zone )
@@ -135,6 +179,12 @@ class VoyageController extends Controller
 		->with('gross_rate',$gross_rate)
 		->with('ntce',$ntce)
 		->with('bdi_code',$bdi_code)
-		->with('bdi_name',$bdi_name);
+		->with('bdi_name',$bdi_name)
+		->with('laycan_first_day',$laycan_first_day)
+		->with('laycan_last_day',$laycan_last_day);
     }
 }
+
+		$port_end_name = null;
+		$port_end_max_laden_draft = null;
+		$port_end_draft_factor = null;

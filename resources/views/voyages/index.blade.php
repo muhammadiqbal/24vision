@@ -2,7 +2,11 @@
 
 @section('content')
 <div>
-    Date: {{$date->format('m/d/Y')}}<br/>
+	Result for: <br/>
+	<b>Cargo:</b> {{$cargo->quantity}} {{$cargo_name}} from {{$port_start_name}} to {{$port_end_name}} (Status: ) [ID {{$cargo->id}}] <br/>
+	<b>Ship:</b> {{$ship->name}} [ID {{$ship->id}}] <br/>
+	<b>Start-Port:</b> {{$port_ship->name}} [ID {{$port_ship->id}}]<br/>
+    <b>Date:</b> {{$date->format('m/d/Y')}}<br/>
  
 </div>
  <div class="form-group col-sm-6" style="height:240px;">
@@ -73,11 +77,11 @@
   </tr>
     <tr>
     <th>LayCanFirst:</th>
-    <td style="text-align:right">{{$cargo->laycan_first_day->format('m/d/Y')}}</td> 
+    <td style="text-align:right">{{$laycan_first_day}}</td> 
   </tr>
   <tr>
     <th>LayCanLast:</th>
-    <td style="text-align:right">{{$cargo->laycan_last_day->format('m/d/Y')}}</td> 
+    <td style="text-align:right">{{$laycan_last_day}}</td> 
   </tr>
   <tr>
     <th>Commission:</th>
@@ -92,7 +96,7 @@
  <table style="min-width:300px">
   <tr>
     <th>Name:</th>
-    <td style="text-align:right">{{$port_start->name}}</td> 
+    <td style="text-align:right">{{$port_start_name}}</td> 
   </tr>
   <tr>
     <th>Zone:</th>
@@ -100,11 +104,11 @@
   </tr>
   <tr>
     <th>Max Laden Draft:</th>
-    <td style="text-align:right">{{$port_start->max_laden_draft}}</td> 
+    <td style="text-align:right">{{$port_start_max_laden_draft}}</td> 
   </tr>
     <tr>
     <th>Draft Factor:</th>
-    <td style="text-align:right">{{$port_start->draft_factor}}</td> 
+    <td style="text-align:right">{{$port_start_draft_factor}}</td> 
   </tr>
   <tr>
     <th>Load/Disch Rate:</</th>
@@ -131,7 +135,7 @@
  <table style="min-width:300px">
   <tr>
     <th>Name:</th>
-    <td style="text-align:right">{{$port_end->name}}</td> 
+    <td style="text-align:right">{{$port_end_name}}</td> 
   </tr>
   <tr>
     <th>Zone:</th>
@@ -139,11 +143,11 @@
   </tr>
   <tr>
     <th>Max Laden Draft:</th>
-    <td style="text-align:right">{{$port_end->max_laden_draft}}</td> 
+    <td style="text-align:right">{{$port_end_max_laden_draft}}</td> 
   </tr>
     <tr>
     <th>Draft Factor:</th>
-    <td style="text-align:right">{{$port_end->draft_factor}}</td> 
+    <td style="text-align:right">{{$port_end_draft_factor}}</td> 
   </tr>
   <tr>
     <th>Load/Disch Rate:</th>
@@ -151,7 +155,7 @@
   </tr>
   <tr>
     <th>Rate Type</th>
-    <td style="text-align:right">{{$port_start_rate_type}}</td> 
+    <td style="text-align:right">{{$port_end_rate_type}}</td> 
   </tr>
   <tr>
     <th>Rate Factor</th>
