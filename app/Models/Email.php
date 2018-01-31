@@ -13,6 +13,8 @@ class Email extends Model
 
     protected $primaryKey = 'emailID';
 
+    public $timestamps = false;
+
     public $fillable = [
         'subject',
         'body',
