@@ -22,7 +22,29 @@ use App\Models\StowageFactorUnit;
 class Calculator
 {
 
-
+	 //Format laycan_last_day for visualization and manage missing date
+	function formatLaycanFirst(Cargo $cargo){
+		if($cargo->laycan_first_day != null){ 
+		$laycan_first_day= $cargo->laycan_first_day->format('m/d/Y');
+		} 
+		else{
+		$laycan_first_day= null;
+		}
+		
+		return $laycan_first_day;	
+	}
+	
+    //Format laycan_last_day for visualization and manage missing date
+	function formatLaycanLast(Cargo $cargo){
+		if($cargo->laycan_last_day != null){ 
+		$laycan_last_day= $cargo->laycan_last_day->format('m/d/Y');
+		} 
+		else{
+		$laycan_last_day= null;
+		}
+		
+		return $laycan_last_day;	
+	}
 	
 
 	//Formular for finding Stowage an return attributes as array
@@ -32,10 +54,21 @@ class Calculator
 		$stowage_factor = $cargo->stowage_factor;
 		$stowage_factor_unit = $cargo->sf_unit;
 		
+		//Takes stowage factor from cargo type , if none is given by cargo entry
 		if ($stowage_factor==null OR $stowage_factor_unit==null ) {
-			$cargo_type = CargoType::find($cargo->cargo_type_id);	
-			$stowage_factor = $cargo_type->stowage_factor;
-			$stowage_factor_unit = $cargo_type->sf_unit;	
+			$cargo_type_id = $cargo->cargo_type_id;
+			// NULL handling (for attributes coming from cargo or calculated based on it)
+			if ($cargo_type_id==null ) {
+				$stowage_factor = null;
+				$stowage_factor_unit = null;
+				
+				$stowage = array ($stowage_factor,$stowage_factor_unit);
+ 		        return $stowage;
+			}else{
+				$cargo_type = CargoType::find($cargo_type_id);	
+				$stowage_factor = $cargo_type->stowage_factor;
+				$stowage_factor_unit = $cargo_type->sf_unit;
+			}			
 		}
 		// Receive parameters from objects
 		
@@ -63,10 +96,16 @@ class Calculator
     //Formular for calculating (and storing) the Distance to start, used for calculating TravelTimeToStart
 	public function calculateDistancetoStart(Port $port_ship, Cargo $cargo, Calculator $calculator){
 		
+		
 		// Receive parameters from objects
 		$port_ship_id =  $port_ship->id;
 		$port_start_id = $cargo->loading_port;
 		
+		// NULL handling (for attributes coming from cargo or calculated based on it)
+		if($port_start_id ==null){
+			$distance_to_start = null;
+			return $distance_to_start;
+		}
  		// Formular for result of the function
 		$distance = Distance::where('start_port',$port_ship_id)->where('end_port',$port_start_id)->get();
 
@@ -98,6 +137,12 @@ class Calculator
 		$port_start_id = $cargo->loading_port;
 		$port_end_id = $cargo->discharging_port;
  		
+		// NULL handling (for attributes coming from cargo or calculated based on it)
+		if($port_start_id ==null OR $port_end_id ==null){
+			$distance_cargo = null;
+			return $distance_cargo;
+		}
+		
  		// Formular for result of the function
 		$distance = Distance::where('start_port',$port_start_id)->where('end_port',$port_end_id)->get();
 
@@ -169,11 +214,27 @@ class Calculator
 
 	//Formular for calculating the Port Time for Loading, used for calculating PortTimeSum
     public function calculatePortTimeLoad(Cargo $cargo){
-		
+		// Receive parameters from objects	
 		$quantity = $cargo->quantity;
 		$load_speed = $cargo->loading_rate;
-		$load_factor = LdRateType::find($cargo->loading_rate_type)->rate_type_factor;
-	
+		$loading_rate_type = $cargo->loading_rate_type;
+		
+		
+		// NULL handling (for attributes coming from cargo or calculated based on it)
+		if($quantity ==null OR $load_speed ==null){
+			$port_time_load = null;
+			return $port_time_load;
+		}
+		if($loading_rate_type==null){
+			$load_factor = 1;
+		} else {
+			
+			// Determine loadinf factor of loading rate type
+			$load_factor = LdRateType::find($loading_rate_type)->rate_type_factor;	
+		}
+		
+		
+		
 		
 		// Formular for result of the function
         //+1 because there is one day extra for each port
@@ -185,11 +246,24 @@ class Calculator
 	
 	//Formular for calculating the Port Time for Discharging, used for calculating PortTimeSum and extracting PortFeeDisch
     public function calculatePortTimeDisch(Cargo $cargo){
-		
+		// Receive parameters from objects	
 		$quantity = $cargo->quantity;
 		$disch_speed = $cargo->discharging_rate;
-		$disch_factor = LdRateType::find($cargo->discharging_rate_type)->rate_type_factor;
-	
+		$discharging_rate_type = $cargo->discharging_rate_type;
+		
+		// NULL handling (for attributes coming from cargo or calculated based on it)
+		if($quantity ==null OR $disch_speed ==null){
+			$port_time_disch = null;
+			return $port_time_disch;
+		}
+		if($discharging_rate_type==null){
+			$disch_factor = 1;
+		} else {
+			
+			// Determine loadinf factor of loading rate type
+			$disch_factor  = LdRateType::find($discharging_rate_type)->rate_type_factor;	
+		}
+			
 		
 		// Formular for result of the function
         //+1 because there is one day extra for each port
@@ -274,6 +348,12 @@ class Calculator
 		$port_start_id = $cargo->loading_port;
 		$date_price = $date->copy()->addDays($travel_time_to_start);  // The date when the ship arrives the start port is relevant
 		
+		// NULL handling (for attributes coming from cargo or calculated based on it)
+		if($port_start_id ==null){
+			$port_fee_load = null;
+			return $port_fee_load;
+		}
+		
 		// Formular for result of the function
 		
 		// No price entry has an enddate older than the date_price -> use the latest entry with end date null
@@ -300,7 +380,11 @@ class Calculator
 		$date_price = $date->copy()->addDays($days); // The date when the ship arrives the end port is relevant
 		
 		// Formular for result of the function
-
+		// NULL handling (for attributes coming from cargo or calculated based on it)
+		if($port_end_id == null){
+			$port_fee_disch = null;
+			return $port_fee_disch;
+		}
 
 		// No price entry has an enddate older than the date_price -> use the latest entry with end date null
 		
@@ -341,10 +425,16 @@ class Calculator
 	
 		$port_ship_zone =  $port_ship->zone_id;
 		$port_start_id = $cargo->loading_port;
-		$port_start_zone = Port::find($port_start_id)->zone_id;
- 		$port_end_id = $cargo->discharging_port;
-		$port_end_zone = Port::find($port_end_id)->zone_id;
+		$port_end_id = $cargo->discharging_port;
 		
+		// NULL handling (for attributes coming from cargo or calculated based on it)
+		if($port_start_id ==null OR $port_end_id == null){
+			$bdi_id = null;
+			return $bdi_id;
+		}
+		
+		$port_start_zone = Port::find($port_start_id)->zone_id;
+		$port_end_zone = Port::find($port_end_id)->zone_id;
 		// Find the right bdi_id
 		// Step 1:  find matching path
 		if ($port_ship_zone == $port_start_zone OR $port_start_zone == $port_end_zone ) {
@@ -373,6 +463,11 @@ class Calculator
 		// Receive parameters from objects
 		$date_price = $date->copy()->addDays($travel_time_to_start); // The date when the ship arrives the start port is relevant
 		
+		// NULL handling (for attributes coming from cargo or calculated based on it)
+		if($bdi_id ==null){
+			$bdi = null;
+			return $bdi ;
+		}
 		
 		// Formular for result of the function
 
@@ -398,6 +493,12 @@ class Calculator
         $voy_comm = $cargo->comission/100;
         $quantity = $cargo->quantity;
 		
+		// NULL handling (for attributes coming from cargo or calculated based on it) <-- voy_comm may be null, calculation is still possible
+		if($quantity == null){  
+			$gross_rate = null;
+			return $gross_rate ;
+		}
+		
 		// Formular for result of the function
 		$gross_rate= ( $bdi * $voyage_time + $non_hire_costs) / ((1 - $voy_comm) * $quantity);
 
@@ -407,9 +508,16 @@ class Calculator
    //Formular for calculating the NTCE, used as final result 
   	public function calculateNTCE(Cargo $cargo, $bdi, $voyage_time, $non_hire_costs, $rate){
 		
+		
 		// Receive parameter from objects
         $voy_comm = $cargo->comission/100;
         $quantity = $cargo->quantity;
+		
+		// NULL handling (for attributes coming from cargo or calculated based on it) <-- voy_comm may be null, calculation is still possible
+		if($quantity == null OR $voyage_time == null){  
+			$ntce = null;
+			return $ntce ;
+		}
 		
 		// Formular for result of the function
 		$ntce= (((1 - $voy_comm) * $quantity * $rate) - $non_hire_costs ) / $voyage_time;

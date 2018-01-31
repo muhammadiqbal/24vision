@@ -78,7 +78,7 @@ class DashboardController extends Controller
 
         //return $email->getTableColumns();
 		
-		$ship = Ship::find('2');
+		/*$ship = Ship::find('2');
         $port_ship = Port::find('1');
         $cargo = Cargo::find('1');
 		$date = Cargo::find('1')->laycan_first_day;
@@ -152,9 +152,21 @@ class DashboardController extends Controller
 		$port_fee_load = $fee_price_entry[0]->price; 
 		
         return $port_fee_load;
-    
-
 		
+		
+		$x = null;
+		$y = 1;
+		$z = $y +$x ;
+		
+		
+		$load_factor = LdRateType::find(null)->rate_type_factor;
+		return $load_factor;*/
+		$cargo = Cargo::find(2);
+		if($cargo->laycan_last_day != null){ 
+		$x= $cargo->laycan_last_day->format('m/d/Y');
+		} else{$x= null;}
+		
+		return $x;
     }
 
     /**
