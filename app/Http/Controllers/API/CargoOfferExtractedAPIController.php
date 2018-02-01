@@ -57,9 +57,11 @@ class CargoOfferExtractedAPIController extends AppBaseController
         $input = $request->all();
 
         //$cargoOffersExtracted = $this->cargoOfferExtractedRepository->create($input);
-        $cargoOffersExtracted = DB::connection('mysql2')->table('cargo_offer_extracted')->insertGetId($input);
-        return $this->sendResponse(CargoOfferExtracted::find($cargoOffersExtracted)
-                        ->toArray(), 'Cargo Offer saved successfully');
+
+        $cargoOfferExtracted = new CargoOfferExtracted;
+        $cargoOfferExtracted->update($input);
+        $cargoOfferExtracted->save(); 
+        return $this->sendResponse($cargoOfferExtracted->toArray(), 'Cargo Offer saved successfully');
     }
 
     /**
