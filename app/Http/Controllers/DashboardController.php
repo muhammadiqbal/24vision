@@ -15,7 +15,7 @@ use App\Models\FeePrice;
 use App\Models\Bdi;
 use App\Models\CargoOffer;
 use App\Models\ShipOffer;
-use App\Models\ShipOfferExtracted
+use App\Models\ShipOfferExtracted;
 use App\Models\ShipOrder;
 use App\Models\ShipOrderExtracted;
 use \League\Geotools\Coordinate\Coordinate;
