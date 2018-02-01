@@ -13,16 +13,16 @@ class EmailController extends Controller
     	/** @var \Webklex\IMAP\Client $oClient */
 		$oClient = new Client([
 		    'host'          => 'outlook.office365.com:993/imap/ssl/user=MunsterUniversity@24Vision.Solutions\Chartering',
-		    'port'          => 993,
-		    'encryption'    => 'ssl',
-		    'validate_cert' => true,
+		   // 'port'          => 993,
+		   // 'encryption'    => 'ssl',
+		   // 'validate_cert' => true,
 		    'username'      => 'MunsterUniversity@24Vision.Solutions',
 		    'password'      => 'Mun@24V-112017',
 		]);
 		$oClient->connect();
 
 		/** @var \Webklex\IMAP\Folder $oFolder */
-		$oFolder = $oClient->getFolder('INBOX.name');
+		$oFolder = $oClient->getFolder('INBOX.24VisionChartering-');
 
 		return view('email.index')->with('emails', $oFolder->getMessages());
     }
