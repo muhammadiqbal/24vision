@@ -27,7 +27,7 @@ class ShipOffer extends Model
         
     ];
 
-    public static function getTableColumns() {
+    public function getTableColumns() {
         return $this->getConnection()->getSchemaBuilder()->getColumnListing($this->getTable());
     }
 }
