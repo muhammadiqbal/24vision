@@ -187,6 +187,7 @@ return [
         Cornford\Googlmapper\MapperServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
         Yajra\DataTables\ButtonsServiceProvider::class,
+        Webklex\IMAP\Providers\LaravelServiceProvider::class,
         //Toin0u\Geotools\GeotoolsServiceProvider::class,
 
     ],
@@ -242,6 +243,7 @@ return [
         'Flash'     => Laracasts\Flash\Flash::class,
         'Mapper'    => Cornford\Googlmapper\Facades\MapperFacade::class,
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
+        'Client' => Webklex\IMAP\Facades\Client::class
         //'Geotools' => Toin0u\Geotools\Facade\Geotools::class,
     ],
 

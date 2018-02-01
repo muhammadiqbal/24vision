@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f5d3ddbcb450ba257af33027d5f7b9ea",
+    "content-hash": "dd44228bdc4f3c374c075740c58c441e",
     "packages": [
         {
             "name": "cornford/googlmapper",
@@ -1980,6 +1980,7 @@
                 "xls",
                 "xlsx"
             ],
+            "abandoned": "phpoffice/phpspreadsheet",
             "time": "2015-05-01T07:00:55+00:00"
         },
         {
@@ -3771,6 +3772,57 @@
                 "environment"
             ],
             "time": "2016-09-01T10:05:43+00:00"
+        },
+        {
+            "name": "webklex/laravel-imap",
+            "version": "1.0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Webklex/laravel-imap.git",
+                "reference": "304bfc17a8839d6a4030635905b4e7da94f58797"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Webklex/laravel-imap/zipball/304bfc17a8839d6a4030635905b4e7da94f58797",
+                "reference": "304bfc17a8839d6a4030635905b4e7da94f58797",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": ">=5.0.0",
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Webklex\\IMAP\\": "src/IMAP"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Malte Goldenbaum",
+                    "email": "github@webklex.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel IMAP client",
+            "homepage": "https://github.com/webklex/laravel-imap",
+            "keywords": [
+                "imap",
+                "laravel",
+                "laravel-imap",
+                "mail",
+                "webklex"
+            ],
+            "time": "2018-01-28T19:04:26+00:00"
         },
         {
             "name": "willdurand/geocoder",

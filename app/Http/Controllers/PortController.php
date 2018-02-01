@@ -56,6 +56,7 @@ class PortController extends AppBaseController
     public function store(CreatePortRequest $request)
     {
         $input = $request->all();
+        $v = Validator::make($coordinate, ['coordonate' => 'inZone',]);
 
         $port = $this->portRepository->create($input);
 
