@@ -65,6 +65,6 @@ class CargoOfferExtracted extends Model
     ];
 
     public static function getTableColumns() {
-        return getConnection()->getSchemaBuilder()->getColumnListing(getTable());
+        return $this->getConnection()->getSchemaBuilder()->getColumnListing($this->getTable());
     }
 }
