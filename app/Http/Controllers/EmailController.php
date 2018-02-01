@@ -12,7 +12,7 @@ class EmailController extends Controller
     public function index(){
     	/** @var \Webklex\IMAP\Client $oClient */
 		$oClient = new Client([
-		    'host'          => 'outlook.office365.com:993/imap/ssl',
+		    'host'          => 'outlook.office365.com',
 		   // 'port'          => 993,
 		   // 'encryption'    => 'ssl',
 		   // 'validate_cert' => true,
