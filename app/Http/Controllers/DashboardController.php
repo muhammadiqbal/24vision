@@ -169,11 +169,11 @@ class DashboardController extends Controller
 
 
 
-        return [new CargoOffer->getTableColumns(), 
+        return array(new CargoOffer->getTableColumns(), 
                 new ShipOffer->getTableColumns(), 
                 new ShipOfferExtracted->getTableColumns(), 
                 new ShipOrder->getTableColumns(),
-                new ShipOrderExtracted->getTableColumns()];
+                new ShipOrderExtracted->getTableColumns());
 
 
 		$cargo = Cargo::find(2);
