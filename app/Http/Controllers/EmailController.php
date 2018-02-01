@@ -24,6 +24,6 @@ class EmailController extends Controller
 		/** @var \Webklex\IMAP\Folder $oFolder */
 		$oFolder = $oClient->getFolder('INBOX.24VisionChartering-');
 
-		return view('email.index')->with('emails', $oFolder->getMessages());
+		return view('emails.index')->with('emails', $oFolder->getMessages());
     }
 }
