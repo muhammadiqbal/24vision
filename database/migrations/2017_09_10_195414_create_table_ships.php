@@ -17,8 +17,8 @@ class CreateTableShips extends Migration
         Schema::create('ships', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('imo')->unique();
-            $table->date('year_of_build');
+            $table->string('imo')->unique()->nullable();
+            $table->date('year_of_build')->nullable();
             $table->integer('dwcc');
             $table->decimal('max_holds_capacity');
             $table->decimal('ballast_draft');
