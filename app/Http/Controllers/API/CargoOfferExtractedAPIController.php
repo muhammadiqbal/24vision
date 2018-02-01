@@ -59,7 +59,7 @@ class CargoOfferExtractedAPIController extends AppBaseController
         //$cargoOffersExtracted = $this->cargoOfferExtractedRepository->create($input);
 
         $cargoOfferExtracted = new CargoOfferExtracted;
-        $cargoOfferExtracted->update($input);
+        $cargoOfferExtracted->fill($input);
         $cargoOfferExtracted->save(); 
         return $this->sendResponse($cargoOfferExtracted->toArray(), 'Cargo Offer saved successfully');
     }
