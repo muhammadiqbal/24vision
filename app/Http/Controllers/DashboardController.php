@@ -167,13 +167,13 @@ class DashboardController extends Controller
 		$load_factor = LdRateType::find(null)->rate_type_factor;
 		return $load_factor;*/
 
+        $cargoOffer = new CargoOffer->getTableColumns(), 
+        $shipOffer = new ShipOffer->getTableColumns(), 
+        $shipOfferExtracted = new ShipOfferExtracted->getTableColumns(), 
+        $shipOrder = new ShipOrder->getTableColumns(),
+        $shipOrderExtracted = new ShipOrderExtracted->getTableColumns()
 
-
-        return array(new CargoOffer->getTableColumns(), 
-                new ShipOffer->getTableColumns(), 
-                new ShipOfferExtracted->getTableColumns(), 
-                new ShipOrder->getTableColumns(),
-                new ShipOrderExtracted->getTableColumns());
+        return array($cargoOffer, $shipOffer, $shipOfferExtracted, $shipOrder,$ShipOrderExtracted);
 
 
 		$cargo = Cargo::find(2);
