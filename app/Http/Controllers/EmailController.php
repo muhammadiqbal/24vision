@@ -22,7 +22,7 @@ class EmailController extends Controller
 		$oClient->connect();
 
 		/** @var \Webklex\IMAP\Folder $oFolder */
-		$oFolder = $oClient->getFolder('INBOX.24VisionChartering-');
+		$oFolder = $oClient->getFolder('24VisionChartering-');
 
 		return view('emails.index')->with('emails', $oFolder->getMessages());
     }
