@@ -49,7 +49,7 @@ Route::group(['middleware' => 'auth'], function()
 
 	Route::resource('bdiCodes', 'BdiCodeController');
 
-	
+	Route::get('emails','EmailController@index');
 
 });
 
