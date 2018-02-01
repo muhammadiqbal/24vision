@@ -25,7 +25,7 @@ class CargoOffer extends Model
      */
     protected $casts = [
     ];
-    
+
     /**
      * Validation rules
      *
@@ -35,7 +35,7 @@ class CargoOffer extends Model
         
     ];
 
-    public function getTableColumns() {
+    public static function getTableColumns() {
         return $this->getConnection()->getSchemaBuilder()->getColumnListing($this->getTable());
     }
 }

@@ -13,6 +13,11 @@ use App\Models\Distance;
 use App\Models\Port;
 use App\Models\FeePrice;
 use App\Models\Bdi;
+use App\Models\CargoOffer;
+use App\Models\ShipOffer;
+use App\Models\ShipOfferExtracted
+use App\Models\ShipOrder;
+use App\Models\ShipOrderExtracted;
 use \League\Geotools\Coordinate\Coordinate;
 use \League\Geotools\Geotools;
 use App\Models\Email;
@@ -161,6 +166,16 @@ class DashboardController extends Controller
 		
 		$load_factor = LdRateType::find(null)->rate_type_factor;
 		return $load_factor;*/
+
+
+
+        return [CargoOffer::getTableColumns(), 
+                ShipOffer::getTableColumns(), 
+                ShipOfferExtracted::getTableColumns(), 
+                ShipOrder::getTableColumns(),
+                ShipOrderExtracted::getTableColumns()];
+
+
 		$cargo = Cargo::find(2);
 		if($cargo->laycan_last_day != null){ 
 		$x= $cargo->laycan_last_day->format('m/d/Y');
