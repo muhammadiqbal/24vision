@@ -135,8 +135,7 @@ class EmailAPIController extends AppBaseController
         $sub_query = DB::connection('mysql2')->table('email')
                                              ->select(['email.emailID'])
                                              ->join('cargo_offer_extracted','email.emailID' ,'=', 'cargo_offer_extracted.emailID')
-                                             ->groupBy('email.emailID')
-                                             ->get();
+                                             ->groupBy('email.emailID');
         
         if ($filter == "classification") {
             $result->select(['emailID', 'classification_manual', 'classification_automated', 'classification_automated_certainty' ])

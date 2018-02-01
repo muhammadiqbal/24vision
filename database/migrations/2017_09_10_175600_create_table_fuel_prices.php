@@ -21,7 +21,7 @@ class CreateTableFuelPrices extends Migration
             $table->foreign('fuel_type_id')->references('id')->on('fuel_types');
             $table->decimal('price');
             $table->date('start_date');
-            $table->date('end_date');
+            $table->date('end_date')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

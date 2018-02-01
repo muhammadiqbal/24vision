@@ -20,7 +20,7 @@ class CreateTableBdi extends Migration
             $table->foreign('bdi_id')->references('id')->on('bdi');
             $table->decimal('price');
             $table->date('start_date');
-            $table->date('end_date');
+            $table->date('end_date')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
