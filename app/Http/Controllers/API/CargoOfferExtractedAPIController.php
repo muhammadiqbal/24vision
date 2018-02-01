@@ -59,7 +59,7 @@ class CargoOfferExtractedAPIController extends AppBaseController
         //$cargoOffersExtracted = $this->cargoOfferExtractedRepository->create($input);
 
         $cargoOfferExtracted = new CargoOfferExtracted;
-        $cargoOfferExtracted->fill($input);
+        //$cargoOfferExtracted->fill($input);
         $cargoOfferExtracted->cargo_offer_extracted_ID = $request->input("cargo_offer_extracted_ID");
         $cargoOfferExtracted->emailID = $request->input("emailID");
         $cargoOfferExtracted->cargo_offerID = $request->input("cargo_offerID");
