@@ -60,6 +60,21 @@ class CargoOfferExtractedAPIController extends AppBaseController
 
         $cargoOfferExtracted = new CargoOfferExtracted;
         $cargoOfferExtracted->fill($input);
+        $cargoOfferExtracted->cargo_offer_extracted_ID = $request->input("cargo_offer_extracted_ID");
+        $cargoOfferExtracted->emailID = $request->input("emailID");
+        $cargoOfferExtracted->cargo_offerID = $request->input("cargo_offerID");
+        $cargoOfferExtracted->cargo = $request->input("cargo");
+        $cargoOfferExtracted->load_place = $request->input("load_place");
+        $cargoOfferExtracted->disch_place = $request->input("disch_place");
+        $cargoOfferExtracted->laycan = $request->input("laycan");
+        $cargoOfferExtracted->terms = $request->input("terms");
+        $cargoOfferExtracted->commission = $request->input("commission");
+        $cargoOfferExtracted->kibana_extracted = $request->input("kibana_extracted");
+        $cargoOfferExtracted->load_place_lat = $request->input("load_place_lat");
+        $cargoOfferExtracted->load_place_lon = $request->input("load_place_lon");
+        $cargoOfferExtracted->disch_place_lat = $request->input("disch_place_lat");
+        $cargoOfferExtracted->disch_place_lon = $request->input("disch_place_lon");
+        $cargoOfferExtracted->_created_on = $request->input("_created_on");
         $cargoOfferExtracted->save(); 
         return $this->sendResponse($cargoOfferExtracted->toArray(), 'Cargo Offer saved successfully');
     }
