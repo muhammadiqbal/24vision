@@ -172,8 +172,8 @@ class DashboardController extends Controller
         $shipOfferExtracted = new ShipOfferExtracted; 
         $shipOrder = new ShipOrder;
         $shipOrderExtracted = new ShipOrderExtracted;
-        
-        return array($cargoOffer->getTableColumns(), $shipOffer->getTableColumns(), $shipOfferExtracted->getTableColumns(), $shipOrder->getTableColumns(),$ShipOrderExtracted->getTableColumns());
+
+        return array($cargoOffer->getTableColumns(), $shipOffer->getTableColumns(), $shipOfferExtracted->getTableColumns(), $shipOrder->getTableColumns(),$shipOrderExtracted->getTableColumns());
 
 
 		$cargo = Cargo::find(2);
