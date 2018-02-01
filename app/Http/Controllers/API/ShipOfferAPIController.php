@@ -55,9 +55,9 @@ class ShipOfferAPIController extends AppBaseController
     {
         $input = $request->all();
 
-        $shipOffers = $this->shipOfferRepository->create($input);
+        $shipOffer = $this->shipOfferRepository->create($input);
 
-        return $this->sendResponse($shipOffers->toArray(), 'Ship Offer saved successfully');
+        return $this->sendResponse($shipOffer->toArray(), 'Ship Offer saved successfully');
     }
 
     /**

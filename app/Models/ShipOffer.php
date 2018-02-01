@@ -12,10 +12,18 @@ class ShipOffer extends Model
 
     public $table = 'ship_offer';
 
-    protected $primaryKey = '';
+    protected $primaryKey = 'ship_offerID';
 
     public $fillable = [
-       
+        "ship_offerID",
+		"shipID",
+		"availability_time",
+		"availability_location_lat",
+		"avilability_location_lon",
+		"availability_port_ID",
+		"ownerID",
+		"owner_preferences",
+		"bunker_desc"
     ];
 
            /**
