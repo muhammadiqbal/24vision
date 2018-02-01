@@ -22,19 +22,19 @@ class CargoOfferExtracted extends Model
      * @var array
      */
     protected $casts = [
-  //   	"cargo_offer_extracted_ID"=>'string',
-		// "emailID"=>'integer',
-		// "cargo_offerID"=>'integer',
-		// "cargo"=>'string',
-		// "load_place"=>'string',
-		// "disch_place"=>'string',
-		// "laycan"=>'string',
-		// "terms"=>'string',
-		// "commission"=>'string',
-		// "kibana_extracted"=>'string',
-		// "disch_place_lat"=>'string',
-		// "disch_place_lon"=>'string',
-		// "_created_on"=>'date'
+    	"cargo_offer_extracted_ID"=>'string',
+		"emailID"=>'integer',
+		"cargo_offerID"=>'integer',
+		"cargo"=>'string',
+		"load_place"=>'string',
+		"disch_place"=>'string',
+		"laycan"=>'string',
+		"terms"=>'string',
+		"commission"=>'string',
+		"kibana_extracted"=>'string',
+		"disch_place_lat"=>'string',
+		"disch_place_lon"=>'string',
+		"_created_on"=>'date'
     ];
 
     public $fillable = [
