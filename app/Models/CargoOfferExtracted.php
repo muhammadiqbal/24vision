@@ -12,7 +12,7 @@ class CargoOfferExtracted extends Model
 
     public $table = 'cargo_offer_extracted';
 
-    protected $primaryKey = '';
+    protected $primaryKey = 'cargo_offer_extracted_ID';
 
         
 
