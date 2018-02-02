@@ -47,7 +47,7 @@ class DashboardDataTable extends DataTable
             })
             ->editColumn('loading_port',function(Cargo $cargo){
                 if ($cargo->loading_port_manual) {
-                    return '<b style=\'color:red;\'>'.$cargo->loading_port_manual.'</b>';
+                    return '<b style=\'color:red;\'>'.$cargo->loading_port.'</b>';
                 }
             })
             ->make(true)
