@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\PortDataTable;
+use App\Http\Requests;
 use App\Http\Requests\CreatePortRequest;
 use App\Http\Requests\UpdatePortRequest;
 use App\Repositories\PortRepository;
-use App\Http\Controllers\AppBaseController;
-use Illuminate\Http\Request;
 use Flash;
-use Prettus\Repository\Criteria\RequestCriteria;
+use App\Http\Controllers\AppBaseController;
 use Response;
 
 class PortController extends AppBaseController
@@ -24,16 +24,12 @@ class PortController extends AppBaseController
     /**
      * Display a listing of the Port.
      *
-     * @param Request $request
+     * @param PortDataTable $portDataTable
      * @return Response
      */
-    public function index(Request $request)
+    public function index(PortDataTable $portDataTable)
     {
-        $this->portRepository->pushCriteria(new RequestCriteria($request));
-        $ports = $this->portRepository->all();
-
-        return view('ports.index')
-            ->with('ports', $ports);
+        return $portDataTable->render('ports.index');
     }
 
     /**
@@ -56,7 +52,6 @@ class PortController extends AppBaseController
     public function store(CreatePortRequest $request)
     {
         $input = $request->all();
-        $v = Validator::make($coordinate, ['coordonate' => 'inZone',]);
 
         $port = $this->portRepository->create($input);
 

@@ -1,7 +1,7 @@
 <?php
     $selectedShip=$_GET['ship_id'];
-    $date_of_opening=$_GET['port_id'];
-    $ports=$_GET['date_of_opening'];
+    $ports=$_GET['port_id'];
+    $date_of_opening=$_GET['date_of_opening'];
 ?>
 <div class='btn-group'>
     <a class='btn btn-default btn-xs'>
