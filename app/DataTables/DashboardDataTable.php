@@ -40,14 +40,68 @@ class DashboardDataTable extends DataTable
             // })
             ->addColumn('action', 'calculator.datatables_actions')
             ->editColumn('laycan_first_day', function(Cargo $cargo){
+                if ($cargo->laycan_first_day_manual) {
+                    return '<b style=\'color:red;\'>'.date_format(date_create($cargo->laycan_first_day),'d-m-Y').'</b>';
+                } else {				
                return date_format(date_create($cargo->laycan_first_day),'d-m-Y');
+				}				
+
             })
             ->editColumn('laycan_last_day', function(Cargo $cargo){
+                if ($cargo->laycan_last_day_manual) {
+                    return '<b style=\'color:red;\'>'.date_format(date_create($cargo->laycan_last_day),'d-m-Y').'</b>';
+                } else {				
                return date_format(date_create($cargo->laycan_last_day),'d-m-Y');
+				}
             })
             ->editColumn('loading_port',function(Cargo $cargo){
                 if ($cargo->loading_port_manual) {
-                    return '<b style=\'color:red;\'>'.$cargo->loading_port_manual.'</b>';
+                    return '<b style=\'color:red;\'>'.$cargo->loading_port.'</b>';
+                }
+            })
+			 ->editColumn('loading_port',function(Cargo $cargo){
+                if ($cargo->loading_port_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->loading_port.'</b>';
+                }
+            })
+			 ->editColumn('discharge_port',function(Cargo $cargo){
+                if ($cargo->cargo_type_id_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->cargo_type_id.'</b>';
+                }
+            })
+			->editColumn('discharge_port',function(Cargo $cargo){
+                if ($cargo->stowage_factor_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->stowage_factor.'</b>';
+                }
+            })
+			->editColumn('discharge_port',function(Cargo $cargo){
+                if ($cargo->quantity_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->quantity.'</b>';
+                }
+            })
+			->editColumn('discharge_port',function(Cargo $cargo){
+                if ($cargo->loading_rate_type_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->loading_rate_type.'</b>';
+                }
+            })
+			->editColumn('discharge_port',function(Cargo $cargo){
+                if ($cargo->loading_rate_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->loading_rate.'</b>';
+                }
+            })
+			->editColumn('discharge_port',function(Cargo $cargo){
+                if ($cargo->discharging_rate_type_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->discharging_rate_type.'</b>';
+                }
+            })
+			->editColumn('discharge_port',function(Cargo $cargo){
+                if ($cargo->discharging_rate_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->discharging_rate_.'</b>';
+                }
+            })
+			->editColumn('discharge_port',function(Cargo $cargo){
+                if ($cargo->commision_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->commision.'</b>';
                 }
             })
             ->make(true)
