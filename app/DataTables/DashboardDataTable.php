@@ -23,6 +23,12 @@ class DashboardDataTable extends DataTable
             ->editColumn('laycan_last_day', function(Cargo $cargo){
                return date_format(date_create($cargo->laycan_last_day),'d-m-Y');
             })
+            // ->filterColumn('created_at', function ($query, $keyword) {
+            //     $query->whereRaw("DATE_FORMAT(created_at,'%m/%d/%Y') like ?", ["%$keyword%"]);
+            // })
+            // ->filterColumn('updated_at', function ($query, $keyword) {
+            //     $query->whereRaw("DATE_FORMAT(updated_at,'%Y/%m/%d') like ?", ["%$keyword%"]);
+            // })
             ->make(true)
               ;
     }
@@ -41,10 +47,10 @@ class DashboardDataTable extends DataTable
                         ->leftjoin('ports as p2', 'p2.id','discharging_port')
                         ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
         if ($this->request()->get('port_id')) {
-            $cagos->where('loading_port',$this->request()->get('port_id'));
+            $cargos->where('loading_port',$this->request()->get('port_id'));
         }
         if ($this->request()->get('date_of_opening')) {
-            $cagos->whereDate('laycan_first_day','>=',date($this->request()->get('date_of_opening')))
+            $cargos->whereDate('laycan_first_day','>=',date($this->request()->get('date_of_opening')))
                   ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')));
         }
         return $this->applyScopes($cargos);
