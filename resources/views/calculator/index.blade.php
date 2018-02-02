@@ -7,38 +7,46 @@
     <div class="content">
         <div class="clearfix"></div>
 
-        <div class="info-box">
-          <!-- Apply any bg-* class to to the icon to color it -->
-          <span class="info-box-icon bg-red"><i class="fa fa-envelope"></i></span>
-          <div class="info-box-content">
-            <span class="info-box-text">Mail</span>
-            <span class="info-box-number">{{$mailCount}}</span>
-          </div>
-          <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
+        <div class="row">
+            <div class="col-sm-4 col-xs-12">
+                <div class="info-box">
+                  <!-- Apply any bg-* class to to the icon to color it -->
+                  <span class="info-box-icon bg-red"><i class="fa fa-envelope"></i></span>
+                  <div class="info-box-content">
+                    <span class="info-box-text">Mail</span>
+                    <span class="info-box-number">{{$mailCount}}</span>
+                  </div>
+                  <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
 
-        <div class="info-box">
-          <!-- Apply any bg-* class to to the icon to color it -->
-          <span class="info-box-icon bg-red"><i class="fa fa-cubes"></i></span>
-          <div class="info-box-content">
-            <span class="info-box-text">Cargo</span>
-            <span class="info-box-number">{{$cargoCount}}</span>
-          </div>
-          <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
+            <div class="col-sm-4 col-xs-12">
+                <div class="info-box">
+                  <!-- Apply any bg-* class to to the icon to color it -->
+                  <span class="info-box-icon bg-red"><i class="fa fa-cubes"></i></span>
+                  <div class="info-box-content">
+                    <span class="info-box-text">Cargo</span>
+                    <span class="info-box-number">{{$cargoCount}}</span>
+                  </div>
+                  <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
 
-        <div class="info-box">
-          <!-- Apply any bg-* class to to the icon to color it -->
-          <span class="info-box-icon bg-red"><i class="fa fa-ship"></i></span>
-          <div class="info-box-content">
-            <span class="info-box-text">Ship</span>
-            <span class="info-box-number">{{$shipCount}}</span>
-          </div>
-          <!-- /.info-box-content -->
+            <div class="col-sm-4 col-xs-12">
+                <div class="info-box">
+                  <!-- Apply any bg-* class to to the icon to color it -->
+                  <span class="info-box-icon bg-red"><i class="fa fa-ship"></i></span>
+                  <div class="info-box-content">
+                    <span class="info-box-text">Ship</span>
+                    <span class="info-box-number">{{$shipCount}}</span>
+                  </div>
+                  <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
         </div>
-        <!-- /.info-box -->
 
         @include('flash::message')
 
