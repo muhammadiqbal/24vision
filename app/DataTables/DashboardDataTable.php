@@ -29,16 +29,16 @@ class DashboardDataTable extends DataTable
             ->addColumn('route',function(Cargo $cargo){
                 return ;
             })
-            ->addColumn('bdi',,function(Cargo $cargo){
+            ->addColumn('bdi',function(Cargo $cargo){
                 $bdi_id = $calculator->calculateBDIId($port_ship,$cargo);
                 $bdi = $calculator->calculateBDI($bdi_id, $date, $travel_time_to_start);
                 return ;
             })
-            ->addColumn('gross_rate',,function(Cargo $cargo){
+            ->addColumn('gross_rate',function(Cargo $cargo){
                 $gross_rate = $calculator->calculateGrossRate($cargo, $bdi, $voyage_time_bdi, $non_hire_costs_bdi);
                 return ;
             })
-            ->addColumn('ntce',,function(Cargo $cargo){
+            ->addColumn('ntce',function(Cargo $cargo){
                 $ntce = $calculator->calculateNTCE($cargo, $bdi, $voyage_time, $non_hire_costs, $gross_rate);
                 return ;
             })
