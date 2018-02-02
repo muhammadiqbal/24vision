@@ -19,8 +19,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class User extends Model
 {
-    use SoftDeletes;
-
+   
     public $table = 'users';
     
     const CREATED_AT = 'created_at';
