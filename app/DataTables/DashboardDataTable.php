@@ -30,7 +30,7 @@ class DashboardDataTable extends DataTable
                         ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
                         ->leftjoin('ports as p1', 'p1.id','loading_port')
                         ->leftjoin('ports as p2', 'p2.id','discharging_port')
-                        ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name', 'p2.name');
+                        ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
         return $this->applyScopes($cargos);
     }
 
@@ -88,8 +88,8 @@ class DashboardDataTable extends DataTable
             'quantity' => ['defaultContent' => 'NULL','name' => 'quantity', 'data' => 'quantity'],
             'laycan_first_day' => ['defaultContent' => 'NULL','name' => 'laycan_first_day', 'data' => 'laycan_first_day'],
             'laycan_last_day' => ['defaultContent' => 'NULL','name' => 'laycan_last_day', 'data' => 'laycan_last_day'],
-            'loading_port' => ['defaultContent' => 'NULL','name' => 'loading_port', 'data' => 'loading_port'],
-            'discharging_port' => ['defaultContent' => 'NULL','name' => 'discharging_port', 'data' => 'discharging_port'],
+            'loading_port' => ['defaultContent' => 'NULL','name' => 'load_port', 'data' => 'load_port'],
+            'discharging_port' => ['defaultContent' => 'NULL','name' => 'disch_port', 'data' => 'disch_port'],
             'email_id' => ['defaultContent' => 'NULL','name' => 'email_id', 'data' => 'email_id'],
             'status_id' => ['defaultContent' => 'NULL','name' => 'status', 'data' => 'status'],
             'distance_to_start'=>['defaultContent' => 'NULL','name'=>'','data' => ''],
