@@ -7,7 +7,6 @@ use Yajra\DataTables\Services\DataTable;
 use Carbon\Carbon;
 use \League\Geotools\Geotools;
 use \League\Geotools\Coordinate\Coordinate;
-use App\Services\Calculator;
 
 class DashboardDataTable extends DataTable
 {
@@ -16,10 +15,7 @@ class DashboardDataTable extends DataTable
      * @return \Illuminate\Http\JsonResponse
      */
     public function ajax()
-    {
-        $calculator = new Calculator;
-        
-        
+    { 
 
         return datatables()
             ->eloquent($this->query())
