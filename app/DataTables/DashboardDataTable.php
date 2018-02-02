@@ -95,7 +95,7 @@ class DashboardDataTable extends DataTable
      */
     public function query()
     {
-        $ship = Ship::($this->request()->get('ship_id'));
+        $ship = Ship::find($this->request()->get('ship_id'));
         $max_capacity = $ship->max_holds_capacity;
         $max_draft =  $ship->max_laden_draft;
         $max_tonage = $ship->dwcc;
