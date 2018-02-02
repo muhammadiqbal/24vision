@@ -114,7 +114,6 @@ class DashboardDataTable extends DataTable
                         ->where('loading_port',$this->request()->get('port_id'))
                         ->whereDate('laycan_first_day','>=',date($this->request()->get('date_of_opening')))
                         ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')));
-        }
         $cargos->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
         return $this->applyScopes($cargos);
     }
