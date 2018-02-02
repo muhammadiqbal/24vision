@@ -35,56 +35,56 @@ class DashboardDataTable extends DataTable
                     return date_format(date_create($cargo->laycan_last_day),'d-m-Y');
                 }
             })
-            // ->editColumn('loading_port',function(Cargo $cargo){
-            //     if ($cargo->loading_port_manual) {
-            //         return '<b style=\'color:red;\'>'.$cargo->loading_port.'</b>';
-            //     }
-            // })
-            //  ->editColumn('loading_port',function(Cargo $cargo){
-            //     if ($cargo->loading_port_manual) {
-            //         return '<b style=\'color:red;\'>'.$cargo->loading_port.'</b>';
-            //     }
-            // })
-            //  ->editColumn('discharge_port',function(Cargo $cargo){
-            //     if ($cargo->cargo_type_id_manual) {
-            //         return '<b style=\'color:red;\'>'.$cargo->cargo_type_id.'</b>';
-            //     }
-            // })
-            // ->editColumn('discharge_port',function(Cargo $cargo){
-            //     if ($cargo->stowage_factor_manual) {
-            //         return '<b style=\'color:red;\'>'.$cargo->stowage_factor.'</b>';
-            //     }
-            // })
-            // ->editColumn('discharge_port',function(Cargo $cargo){
-            //     if ($cargo->quantity_manual) {
-            //         return '<b style=\'color:red;\'>'.$cargo->quantity.'</b>';
-            //     }
-            // })
-            // ->editColumn('discharge_port',function(Cargo $cargo){
-            //     if ($cargo->loading_rate_type_manual) {
-            //         return '<b style=\'color:red;\'>'.$cargo->loading_rate_type.'</b>';
-            //     }
-            // })
-            // ->editColumn('discharge_port',function(Cargo $cargo){
-            //     if ($cargo->loading_rate_manual) {
-            //         return '<b style=\'color:red;\'>'.$cargo->loading_rate.'</b>';
-            //     }
-            // })
-            // ->editColumn('discharge_port',function(Cargo $cargo){
-            //     if ($cargo->discharging_rate_type_manual) {
-            //         return '<b style=\'color:red;\'>'.$cargo->discharging_rate_type.'</b>';
-            //     }
-            // })
-            // ->editColumn('discharge_port',function(Cargo $cargo){
-            //     if ($cargo->discharging_rate_manual) {
-            //         return '<b style=\'color:red;\'>'.$cargo->discharging_rate_.'</b>';
-            //     }
-            // })
-            // ->editColumn('discharge_port',function(Cargo $cargo){
-            //     if ($cargo->commision_manual) {
-            //         return '<b style=\'color:red;\'>'.$cargo->commision.'</b>';
-            //     }
-            // })
+            ->editColumn('loading_port',function(Cargo $cargo){
+                if ($cargo->loading_port_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->loading_port.'</b>';
+                }
+            })
+             ->editColumn('loading_port',function(Cargo $cargo){
+                if ($cargo->loading_port_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->loading_port.'</b>';
+                }
+            })
+             ->editColumn('discharge_port',function(Cargo $cargo){
+                if ($cargo->cargo_type_id_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->cargo_type_id.'</b>';
+                }
+            })
+            ->editColumn('discharge_port',function(Cargo $cargo){
+                if ($cargo->stowage_factor_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->stowage_factor.'</b>';
+                }
+            })
+            ->editColumn('discharge_port',function(Cargo $cargo){
+                if ($cargo->quantity_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->quantity.'</b>';
+                }
+            })
+            ->editColumn('discharge_port',function(Cargo $cargo){
+                if ($cargo->loading_rate_type_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->loading_rate_type.'</b>';
+                }
+            })
+            ->editColumn('discharge_port',function(Cargo $cargo){
+                if ($cargo->loading_rate_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->loading_rate.'</b>';
+                }
+            })
+            ->editColumn('discharge_port',function(Cargo $cargo){
+                if ($cargo->discharging_rate_type_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->discharging_rate_type.'</b>';
+                }
+            })
+            ->editColumn('discharge_port',function(Cargo $cargo){
+                if ($cargo->discharging_rate_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->discharging_rate_.'</b>';
+                }
+            })
+            ->editColumn('discharge_port',function(Cargo $cargo){
+                if ($cargo->commision_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->commision.'</b>';
+                }
+            })
             ->make(true);
     }
 
@@ -109,8 +109,8 @@ class DashboardDataTable extends DataTable
                         ->leftjoin('ports as p1', 'p1.id','loading_port')
                         ->leftjoin('ports as p2', 'p2.id','discharging_port')
                         ->where('quantity','<=', $remaining_tonage)
-                        ->where(DB::raw('quantity * stowage_factor AS size'),'<=', $remaining_size)
-                        ->where(DB::raw('quantity *'.$ship->ballast_draft),'<=', $remaining_draft)
+                        //->where(DB::raw('quantity * stowage_factor AS size'),'<=', $remaining_size)
+                        //->where(DB::raw('quantity *'.$ship->ballast_draft),'<=', $remaining_draft)
                         ->where('loading_port',$this->request()->get('port_id'))
                         ->whereDate('laycan_first_day','>=',date($this->request()->get('date_of_opening')))
                         ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')));
