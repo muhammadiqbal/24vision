@@ -2,11 +2,11 @@
 
 namespace App\DataTables;
 
-use App\Models\Port;
+use App\Models\User;
 use Form;
 use Yajra\Datatables\Services\DataTable;
 
-class PortDataTable extends DataTable
+class UserDataTable extends DataTable
 {
 
     /**
@@ -16,7 +16,7 @@ class PortDataTable extends DataTable
     {
         return $this->datatables
             ->eloquent($this->query())
-            ->addColumn('action', 'ports.datatables_actions')
+            ->addColumn('action', 'users.datatables_actions')
             ->make(true);
     }
 
@@ -27,10 +27,9 @@ class PortDataTable extends DataTable
      */
     public function query()
     {
-        $ports = Port::leftjoin('zones','ports.zone_id','zones.id')
-                    ->select('ports.*','zones.name as zone');
+        $users = User::query();
 
-        return $this->applyScopes($ports);
+        return $this->applyScopes($users);
     }
 
     /**
@@ -74,11 +73,10 @@ class PortDataTable extends DataTable
     {
         return [
             'name' => ['name' => 'name', 'data' => 'name'],
-            'zone_id' => ['name' => 'zone', 'data' => 'zone'],
-            'max_laden_draft' => ['name' => 'max_laden_draft', 'data' => 'max_laden_draft'],
-            'latitude' => ['name' => 'latitude', 'data' => 'latitude'],
-            'longitude' => ['name' => 'longitude', 'data' => 'longitude'],
-            'draft_factor' => ['name' => 'draft_factor', 'data' => 'draft_factor']
+            'email' => ['name' => 'email', 'data' => 'email'],
+            'password' => ['name' => 'password', 'data' => 'password'],
+            'role' => ['name' => 'role', 'data' => 'role'],
+            'remember_token' => ['name' => 'remember_token', 'data' => 'remember_token']
         ];
     }
 
@@ -89,6 +87,6 @@ class PortDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'ports';
+        return 'users';
     }
 }

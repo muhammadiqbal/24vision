@@ -36,6 +36,8 @@ Route::group(['middleware' => 'auth'], function()
 	Route::resource('regions', 'RegionController');
 
 	Route::resource('ports', 'PortController');
+	
+	Route::resource('zones', 'ZoneController');
 
 	Route::resource('cargos', 'CargoController');
 
@@ -49,7 +51,12 @@ Route::group(['middleware' => 'auth'], function()
 
 	Route::resource('bdiCodes', 'BdiCodeController');
 
-	Route::get('emails','EmailController@index');
+	Route::resource('ports', 'PortController');
 
+	Route::resource('users', 'UserController');
+
+	Route::get('emails','EmailController@index');
 });
+
+
 

@@ -8,7 +8,7 @@ use InfyOm\Generator\Common\BaseRepository;
 /**
  * Class PortRepository
  * @package App\Repositories
- * @version December 5, 2017, 1:40 pm UTC
+ * @version February 2, 2018, 9:58 pm UTC
  *
  * @method Port findWithoutFail($id, $columns = ['*'])
  * @method Port find($id, $columns = ['*'])
@@ -21,11 +21,11 @@ class PortRepository extends BaseRepository
      */
     protected $fieldSearchable = [
         'name',
-        'fee',
-        'region_id',
+        'zone_id',
         'max_laden_draft',
         'latitude',
-        'longitude'
+        'longitude',
+        'draft_factor'
     ];
 
     /**

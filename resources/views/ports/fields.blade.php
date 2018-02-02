@@ -4,16 +4,10 @@
     {!! Form::text('name', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Fee Field -->
+<!-- Zone Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('fee', 'Fee:') !!}
-    {!! Form::number('fee', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Region Id Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('region_id', 'Region Id:') !!}
-    {!! Form::number('region_id', null, ['class' => 'form-control']) !!}
+    {!! Form::label('zone_id', 'Zone Id:') !!}
+    {!! Form::number('zone_id', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Max Laden Draft Field -->
@@ -32,6 +26,12 @@
 <div class="form-group col-sm-6">
     {!! Form::label('longitude', 'Longitude:') !!}
     {!! Form::number('longitude', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Draft Factor Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('draft_factor', 'Draft Factor:') !!}
+    {!! Form::number('draft_factor', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

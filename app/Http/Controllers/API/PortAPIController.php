@@ -22,14 +22,14 @@ class PortAPIController extends AppBaseController
     /** @var  PortRepository */
     private $portRepository;
 
-    public function __construct(portRepository $portRepo)
+    public function __construct(PortRepository $portRepo)
     {
         $this->portRepository = $portRepo;
     }
 
     /**
      * Display a listing of the Port.
-     * GET|HEAD /Ports
+     * GET|HEAD /ports
      *
      * @param Request $request
      * @return Response
@@ -45,7 +45,7 @@ class PortAPIController extends AppBaseController
 
     /**
      * Store a newly created Port in storage.
-     * POST /Ports
+     * POST /ports
      *
      * @param CreatePortAPIRequest $request
      *
@@ -62,7 +62,7 @@ class PortAPIController extends AppBaseController
 
     /**
      * Display the specified Port.
-     * GET|HEAD /Ports/{id}
+     * GET|HEAD /ports/{id}
      *
      * @param  int $id
      *
@@ -70,10 +70,10 @@ class PortAPIController extends AppBaseController
      */
     public function show($id)
     {
-        /** @var Port $Port */
+        /** @var Port $port */
         $port = $this->portRepository->findWithoutFail($id);
 
-        if (empty($Port)) {
+        if (empty($port)) {
             return $this->sendError('Port not found');
         }
 
@@ -82,7 +82,7 @@ class PortAPIController extends AppBaseController
 
     /**
      * Update the specified Port in storage.
-     * PUT/PATCH /Ports/{id}
+     * PUT/PATCH /ports/{id}
      *
      * @param  int $id
      * @param UpdatePortAPIRequest $request
@@ -93,7 +93,7 @@ class PortAPIController extends AppBaseController
     {
         $input = $request->all();
 
-        /** @var Port $Port */
+        /** @var Port $port */
         $port = $this->portRepository->findWithoutFail($id);
 
         if (empty($port)) {
@@ -107,7 +107,7 @@ class PortAPIController extends AppBaseController
 
     /**
      * Remove the specified Port from storage.
-     * DELETE /Ports/{id}
+     * DELETE /ports/{id}
      *
      * @param  int $id
      *
@@ -115,10 +115,10 @@ class PortAPIController extends AppBaseController
      */
     public function destroy($id)
     {
-        /** @var Port $Port */
+        /** @var Port $port */
         $port = $this->portRepository->findWithoutFail($id);
 
-        if (empty($Port)) {
+        if (empty($port)) {
             return $this->sendError('Port not found');
         }
 

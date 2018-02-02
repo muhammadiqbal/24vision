@@ -10,16 +10,10 @@
     <p>{!! $port->name !!}</p>
 </div>
 
-<!-- Fee Field -->
+<!-- Zone Id Field -->
 <div class="form-group">
-    {!! Form::label('fee', 'Fee:') !!}
-    <p>{!! $port->fee !!}</p>
-</div>
-
-<!-- Region Id Field -->
-<div class="form-group">
-    {!! Form::label('region_id', 'Region Id:') !!}
-    <p>{!! $port->region_id !!}</p>
+    {!! Form::label('zone_id', 'Zone Id:') !!}
+    <p>{!! $port->zone_id !!}</p>
 </div>
 
 <!-- Max Laden Draft Field -->
@@ -38,6 +32,12 @@
 <div class="form-group">
     {!! Form::label('longitude', 'Longitude:') !!}
     <p>{!! $port->longitude !!}</p>
+</div>
+
+<!-- Draft Factor Field -->
+<div class="form-group">
+    {!! Form::label('draft_factor', 'Draft Factor:') !!}
+    <p>{!! $port->draft_factor !!}</p>
 </div>
 
 <!-- Created At Field -->
