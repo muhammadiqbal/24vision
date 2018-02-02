@@ -34,12 +34,12 @@
                         @endif
                     </td>
                     <td>
-                         @if($selectedShip && $occupied_tonnage)
+                         @if($selectedShip && $occupied_tonage)
                             {{$selectedShip->ballast_draft * $occupied_tonage}}
                         @endif
                     </td>
                     <td>
-                        @if($selectedShip && $occupied_tonnage)
+                        @if($selectedShip && $occupied_tonage)
                             {{$selectedShip->max_laden_draft-($selectedShip->ballast_draft * $occupied_tonage)}}
                         @endif
                     </td>
@@ -52,12 +52,12 @@
                         @endif
                     </td>
                     <td>
-                        @if($selectedShip && $occupied_tonnage)
+                        @if($selectedShip && $occupied_tonage)
                             {{$occupied_tonage}}
                         @endif
                     </td>
                     <td>
-                        @if($selectedShip && $occupied_tonnage)
+                        @if($selectedShip && $occupied_tonage)
                             {{$selectedShip->dwcc-$occupied_tonage}}
                         @endif
                     </td>
