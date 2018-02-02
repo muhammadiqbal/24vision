@@ -3,7 +3,7 @@
     <a class='btn btn-default btn-xs'>
         <i class="glyphicon glyphicon-list-alt"></i>
     </a>
-    <a href="{{url('/voyage/'.$id)}}" class='btn btn-default btn-xs'>
+    <a href="{{url('/voyage/'.$id.'/'.$selectedShip)}}" class='btn btn-default btn-xs'>
         <i class="glyphicon glyphicon-search"></i>
     </a>
     <a class='btn btn-default btn-xs'>
