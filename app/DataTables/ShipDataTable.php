@@ -31,8 +31,8 @@ class ShipDataTable extends DataTable
     public function query()
     {
         $ships = Ship::leftjoin('ship_type_id','=','ship_types')
-                       leftjoin('ship_specialization_id','=','ship_specializations')
-                       leftjoin('fuel_type_id','=','fuel_types')
+                       ->leftjoin('ship_specialization_id','=','ship_specializations')
+                       ->leftjoin('fuel_type_id','=','fuel_types')
                        ->select('ships.*','ship_types.name as type','ship_specializations.name as specialization', 'fuel_types.name as fuel');
 
         return $this->applyScopes($ships);
