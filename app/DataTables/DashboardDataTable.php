@@ -23,7 +23,9 @@ class DashboardDataTable extends DataTable
 
         return datatables()
             ->eloquent($this->query())
-            ->addColumn('distance_to_start',)
+            ->addColumn('distance_to_start',function(Cargo $cargo){
+                return ;
+            })
             ->addColumn('route',function(Cargo $cargo){
                 return ;
             })
