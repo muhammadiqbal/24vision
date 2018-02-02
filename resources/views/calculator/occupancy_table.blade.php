@@ -13,12 +13,15 @@
                     <td>
                         @if($selectedShip)
                             {{$selectedShip->max_hold_capacity}}
-                        @endif</td>
-                    <td>
-                        {{$occupied_size}}
+                        @endif
                     </td>
                     <td>
-                        @if($selectedShip)
+                        @if($selectedShip && $occupied_size)
+                            {{$occupied_size}}
+                        @endif
+                    </td>
+                    <td>
+                        @if($selectedShip && $occupied_size)
                             {{$selectedShip->max_hold_capacity-$occupied_size}}
                         @endif
                     </td>
@@ -31,10 +34,12 @@
                         @endif
                     </td>
                     <td>
+                         @if($selectedShip && $occupied_tonnage)
                             {{$selectedShip->ballast_draft * $occupied_tonnage}}
+                        @endif
                     </td>
                     <td>
-                        @if($selectedShip)
+                        @if($selectedShip && $occupied_tonnage)
                             {{$selectedShip->max_laden_draft-($selectedShip->ballast_draft * $occupied_tonnage)}}
                         @endif
                     </td>
@@ -47,10 +52,12 @@
                         @endif
                     </td>
                     <td>
-                        {{$selectedShip->dwcc-($selectedShip->ballast_draft * $occupied_tonnage)}}
+                        @if($selectedShip && $occupied_tonnage)
+                            {{$selectedShip->dwcc-$occupied_tonnage}}
+                        @endif
                     </td>
                     <td>
-                        @if($selectedShip)
+                        @if($selectedShip && $occupied_tonnage)
                             {{$selectedShip->dwcc-$occupied_tonnage}}
                         @endif
                     </td>
