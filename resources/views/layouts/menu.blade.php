@@ -6,7 +6,7 @@
       
       <!-- Optionally, you can add icons to the links -->
       <li 
-        @if( $route =='App\Http\Controllers\HomeController')
+        @if( $route =='App\Http\Controllers\DashboardController')
           class="active"
         @endif
         >
@@ -53,7 +53,13 @@
          @if( $route =='App\Http\Controllers\PortController')
           class="active"
         @endif
-        <a href="{{url('/ports')}}"><i class="fa fa-supports"></i> <span>Ports</span></a></li>
+        <a href="{{url('/ports')}}"><i class="fa fa-support"></i> <span>Ports</span></a></li>
+      </li>
+      <li>
+         @if( $route =='App\Http\Controllers\ZoneController')
+          class="active"
+        @endif
+        <a href="{{url('/ports')}}"><i class="fa fa-map"></i> <span>Zone</span></a></li>
       </li>
       {{-- <li
         @if( $route =='App\Http\Controllers\AgreementController')
