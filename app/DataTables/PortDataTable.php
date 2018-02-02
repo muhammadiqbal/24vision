@@ -4,7 +4,7 @@ namespace App\DataTables;
 
 use App\Models\Port;
 use Form;
-use Yajra\Datatables\Services\DataTable;
+use Yajra\DataTables\Services\DataTable;
 
 class PortDataTable extends DataTable
 {
@@ -14,7 +14,7 @@ class PortDataTable extends DataTable
      */
     public function ajax()
     {
-        return $this->datatables
+        return datatables()
             ->eloquent($this->query())
             ->addColumn('action', 'ports.datatables_actions')
             ->make(true);
