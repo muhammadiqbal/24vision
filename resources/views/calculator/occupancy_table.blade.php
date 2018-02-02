@@ -15,7 +15,11 @@
                             {{$selectedShip->max_laden_draft}}
                         @endif</td>
                     <td>0</td>
-                    <td></td>
+                    <td>
+                        @if($selectedShip)
+                            {{$selectedShip->max_laden_draft-0}}
+                        @endif
+                    </td>
                 </tr>
                 <tr>
                     <th>Draft</th>
@@ -24,8 +28,14 @@
                             {{$selectedShip->max_laden_draft}}
                         @endif
                     </td>
-                    <td></td>
-                    <td></td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        @if($selectedShip)
+                            {{$selectedShip->max_laden_draft-0}}
+                        @endif
+                    </td>
                 </tr>
                 <tr>
                     <th>Tonage</th>
@@ -35,7 +45,11 @@
                         @endif
                     </td>
                     <td>0</td>
-                    <td></td>
+                    <td>
+                        @if($selectedShip)
+                            {{$selectedShip->dwcc-0}}
+                        @endif
+                    </td>
                 </tr>
             </tbody>
         </table>
