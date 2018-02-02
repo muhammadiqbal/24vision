@@ -25,7 +25,7 @@
         >
         <a href="{{ url('/cargos') }}"><i class="fa fa-cubes"></i> <span>Cargo offers</span></a></li>
       <li
-        @if( $route =='App\Http\Controllers\CargoController')
+        @if( $route =='App\Http\Controllers\EmailController')
           class="active"
         @endif
         >
@@ -49,22 +49,22 @@
         >
         <a href="{{url('/bdis')}}"><i class="fa fa-area-chart"></i> <span>Bdi</span></a></li>
         </li>
-      <li>
+      <li
          @if( $route =='App\Http\Controllers\PortController')
           class="active"
-        @endif
+        @endif>
         <a href="{{url('/ports')}}"><i class="fa fa-support"></i> <span>Ports</span></a></li>
       </li>
-      <li>
+      <li
          @if( $route =='App\Http\Controllers\ZoneController')
           class="active"
-        @endif
+        @endif>
         <a href="{{url('/ports')}}"><i class="fa fa-map"></i> <span>Zone</span></a></li>
       </li>
-      <li>
+      <li
          @if( $route =='App\Http\Controllers\UserController')
           class="active"
-        @endif
+        @endif>
         <a href="{{url('/users')}}"><i class="fa fa-user"></i> <span>Users</span></a></li>
       </li>
       {{-- <li
