@@ -32,7 +32,7 @@ class CargoDataTable extends DataTable
                         ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
                         ->leftjoin('ports as p1', 'p1.id','loading_port')
                         ->leftjoin('ports as p2', 'p2.id','discharging_port')
-                        ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', , 'p1.name as load_port', 'p2.name as disch_port');
+                        ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
         //->with('loading_port')->with('discharging_port')->with('cargoType')->with('cargoStatus');
 
         foreach ($cargos as $cargo) {
