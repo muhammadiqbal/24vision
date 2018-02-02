@@ -195,7 +195,7 @@ class DashboardController extends Controller
          //$ship = Ship::find(1);
          $ships = Ship::all();
          $ports = Port::all();
-         $selectedShip = Ship::find($request->input('ship'));
+         $selectedShip = Ship::find($request->input('ship_id'));
          //$cargos = Cargo::all();
         return $dashboardDataTable->render('calculator.index',
                                             ['ships'=>$ships, 
