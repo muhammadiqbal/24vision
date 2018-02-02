@@ -5,6 +5,8 @@ namespace App\DataTables;
 use App\Models\Cargo;
 use Yajra\DataTables\Services\DataTable;
 use Carbon\Carbon;
+use \League\Geotools\Geotools;
+use \League\Geotools\Coordinate\Coordinate;
 
 class DashboardDataTable extends DataTable
 {
@@ -34,6 +36,9 @@ class DashboardDataTable extends DataTable
      */
     public function query()
     {
+        $ship_id = $this->request()->get('ship_id');
+        $ship = Ship::find($ship_id);
+        $range = $this->request()->get('range');
 
         $cargos = Cargo::leftjoin('cargo_status', 'cargo_status.id','cargo_status.id')
                         ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
@@ -47,8 +52,8 @@ class DashboardDataTable extends DataTable
             $cargos->whereDate('laycan_first_day','>=',date($this->request()->get('date_of_opening')))
                   ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')));
         }
-        if ($this->request()->get('ship_id')) {
-            $cargos->where('',$this->request()->get('ship_id'));
+        if ($this->request()->get('range')) {
+            $cargos->where('',$ship);
         }
         if ($this->request()->get('occupied_size')) {
             $cargos->where('',$this->request()->get('occupied_size'));

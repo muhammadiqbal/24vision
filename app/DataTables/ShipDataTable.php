@@ -17,6 +17,9 @@ class ShipDataTable extends DataTable
         return datatables()
             ->eloquent($this->query())
             ->addColumn('action', 'ships.datatables_actions')
+            ->editColumn('year_of_build', function(Ship $ship){
+               return date_format(date_create($ship->year_of_build),'Y');
+            })
             ->make(true);
     }
 
@@ -27,7 +30,10 @@ class ShipDataTable extends DataTable
      */
     public function query()
     {
-        $ships = Ship::query();
+        $ships = Ship::leftjoin('ship_type_id','=','ship_types')
+                       leftjoin('ship_specialization_id','=','ship_specializations')
+                       leftjoin('fuel_type_id','=','fuel_types')
+                       ->select('ships.*','ship_types.name as type','ship_specializations.name as specialization', 'fuel_types.name as fuel');
 
         return $this->applyScopes($ships);
     }
@@ -92,12 +98,12 @@ class ShipDataTable extends DataTable
             'draft_per_tonnage' => ['name' => 'draft_per_tonnage', 'data' => 'draft_per_tonnage'],
             'speed_laden' => ['name' => 'speed_laden', 'data' => 'speed_laden'],
             'speed_ballast' => ['name' => 'speed_ballast', 'data' => 'speed_ballast'],
-            'fuel_type_id' => ['name' => 'fuel_type_id', 'data' => 'fuel_type_id'],
+            'fuel_type_id' => ['name' => 'fuel', 'data' => 'fuel'],
             'fuel_consumption_at_sea' => ['name' => 'fuel_consumption_at_sea', 'data' => 'fuel_consumption_at_sea'],
             'fuel_consumption_in_port' => ['name' => 'fuel_consumption_in_port', 'data' => 'fuel_consumption_in_port'],
             'flag' => ['name' => 'flag', 'data' => 'flag'],
-            'ship_type_id' => ['name' => 'ship_type_id', 'data' => 'ship_type_id'],
-            'ship_specialization_id' => ['name' => 'ship_specialization_id', 'data' => 'ship_specialization_id'],
+            'ship_type_id' => ['name' => 'type', 'data' => 'type'],
+            'ship_specialization_id' => ['name' => 'specialization', 'data' => 'specialization'],
             'gear_onboard' => ['name' => 'gear_onboard', 'data' => 'gear_onboard'],
             'additional_information' => ['name' => 'additional_information', 'data' => 'additional_information']
         ];
