@@ -201,6 +201,9 @@ class DashboardController extends Controller
          $occupied_size = $request->input('occupied_size');
          $occupied_tonage = $request->input('occupied_tonage');
          $date_of_opening = $request->input('date_of_opening');
+         $mailCount = Email::count();
+         $cargoCount = Cargo::count();
+         $shipCount = Ship::count();
          //$cargos = Cargo::all();
         return $dashboardDataTable->render('calculator.index',
                                             ['ships'=>$ships, 
@@ -208,7 +211,10 @@ class DashboardController extends Controller
                                              'selectedShip'=>$selectedShip,
                                              'occupied_size'=>$occupied_size,
                                              'occupied_tonage'=>$occupied_tonage,
-                                             'date_of_opening'=>$date_of_opening
+                                             'date_of_opening'=>$date_of_opening,
+                                             'mailCount'=>$mailCount,
+                                             'cargoCount'=>$cargoCount,
+                                             'shipCount'=>$shipCount
                                             ]);
     }
 
