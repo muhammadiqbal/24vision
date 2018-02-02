@@ -200,13 +200,15 @@ class DashboardController extends Controller
          $selectedShip = Ship::find($request->input('ship_id'));
          $occupied_size = $request->input('occupied_size');
          $occupied_tonage = $request->input('occupied_tonage');
+         $date_of_opening = $request->input('date_of_opening');
          //$cargos = Cargo::all();
         return $dashboardDataTable->render('calculator.index',
                                             ['ships'=>$ships, 
                                              'ports'=>$ports,
                                              'selectedShip'=>$selectedShip,
                                              'occupied_size'=>$occupied_size,
-                                             'occupied_tonage'=>$occupied_tonage
+                                             'occupied_tonage'=>$occupied_tonage,
+                                             'date_of_opening'=>$date_of_opening
                                             ]);
     }
 
