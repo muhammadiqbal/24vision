@@ -15,9 +15,9 @@ class DashboardDataTable extends DataTable
     /**
      * @return \Illuminate\Http\JsonResponse
      */
-    public function ajax(Calculator $calculator)
+    public function ajax()
     {
-        
+        $calculator = new Calculator;
         
         
 
