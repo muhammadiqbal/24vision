@@ -28,23 +28,9 @@ class DashboardDataTable extends DataTable
     {
         $cargos = Cargo::leftjoin('cargo_status', 'cargo_status.id','cargo_status.id')
                         ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
-                        ->select('cargos.*','cargo_status.name as status','cargo_types.name as type');
-        //->with('loading_port')->with('discharging_port')->with('cargoType')->with('cargoStatus');
-
-        // foreach ($cargos as $cargo) {
-        //     $bdi = Bdi::find(1);
-               
-        //     $route = Route::find(1);
-        //     if($route == null){
-        //         $route = Route::find(1);
-        //     }
-            
-        //     $cargo->setNtce(12);
-        //     $cargo->setNtc($bdi->price);
-        //     $cargo->setGrossRate(234);
-        //     $cargo->setRoute($route);
-        // }
-
+                        ->leftjoin('ports as p1', 'p1.id','loading_port')
+                        ->leftjoin('ports as p2', 'p2.id','discharging_port')
+                        ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name', 'p2.name');
         return $this->applyScopes($cargos);
     }
 
@@ -98,7 +84,7 @@ class DashboardDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'cargo_type_id' => ['defaultContent' => 'NULL','name' => 'cargo_type_id', 'data' => 'cargo_type_id'],
+            'cargo_type_id' => ['defaultContent' => 'NULL','name' => 'type', 'data' => 'type'],
             'quantity' => ['defaultContent' => 'NULL','name' => 'quantity', 'data' => 'quantity'],
             'laycan_first_day' => ['defaultContent' => 'NULL','name' => 'laycan_first_day', 'data' => 'laycan_first_day'],
             'laycan_last_day' => ['defaultContent' => 'NULL','name' => 'laycan_last_day', 'data' => 'laycan_last_day'],

@@ -32,7 +32,7 @@ class FeePrice extends Model
 
     public $fillable = [
         'port_id',
-        'star_date',
+        'start_date',
         'end_date',
         'price'
     ];
