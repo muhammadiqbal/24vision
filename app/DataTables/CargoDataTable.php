@@ -17,6 +17,12 @@ class CargoDataTable extends DataTable
         return datatables()
             ->eloquent($this->query())
             ->addColumn('action', 'cargos.datatables_actions')
+            ->editColumn('laycan_first_day', function(Cargo $cargo){
+               return date_format(date_create($cargo->laycan_first_day),'d-m-Y');
+            })
+            ->editColumn('laycan_last_day', function(Cargo $cargo){
+               return date_format(date_create($cargo->laycan_last_day),'d-m-Y');
+            })
             ->make(true);
     }
 
