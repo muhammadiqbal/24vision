@@ -34,23 +34,18 @@
 
 
 <!-- Date Of Opening Field -->
-<div class="form-group col-sm-4">
+<div class="form-group col-sm-6">
     {!! Form::label('date_of_opening', 'Date Of Opening:') !!}
     {!! Form::date('date_of_opening',null, ['class' => 'form-control']) !!}
 </div>
 
 
 <!-- Date Of Opening Field -->
-<div class="form-group col-sm-4">
+<div class="form-group col-sm-6">
     {!! Form::label('Range', 'Range:') !!}
     {!! Form::number('range',null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Date Of Opening Field -->
-<div class="form-group col-sm-4">
-    {!! Form::label('current_draft', 'Current draft:') !!}
-    {!! Form::number('current_draft',null, ['class' => 'form-control']) !!}
-</div>
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">

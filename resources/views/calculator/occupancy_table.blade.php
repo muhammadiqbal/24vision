@@ -12,12 +12,14 @@
                     <th>Size</th>
                     <td>
                         @if($selectedShip)
-                            {{$selectedShip->max_laden_draft}}
+                            {{$selectedShip->max_hold_capacity}}
                         @endif</td>
-                    <td>0</td>
+                    <td>
+                        {{$occupied_size}}
+                    </td>
                     <td>
                         @if($selectedShip)
-                            {{$selectedShip->max_laden_draft-0}}
+                            {{$selectedShip->max_hold_capacity-$occupied_size}}
                         @endif
                     </td>
                 </tr>
@@ -29,11 +31,11 @@
                         @endif
                     </td>
                     <td>
-                        0
+                            {{$selectedShip->ballast_draft * $occupied_tonnage}}
                     </td>
                     <td>
                         @if($selectedShip)
-                            {{$selectedShip->max_laden_draft-0}}
+                            {{$selectedShip->max_laden_draft-($selectedShip->ballast_draft * $occupied_tonnage)}}
                         @endif
                     </td>
                 </tr>
@@ -44,10 +46,12 @@
                             {{$selectedShip->dwcc}}
                         @endif
                     </td>
-                    <td>0</td>
+                    <td>
+                        {{$selectedShip->dwcc-($selectedShip->ballast_draft * $occupied_tonnage)}}
+                    </td>
                     <td>
                         @if($selectedShip)
-                            {{$selectedShip->dwcc-0}}
+                            {{$selectedShip->dwcc-$occupied_tonnage}}
                         @endif
                     </td>
                 </tr>
