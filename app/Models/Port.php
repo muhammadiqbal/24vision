@@ -84,22 +84,6 @@ class Port extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      **/
-    public function cargos()
-    {
-        return $this->hasMany(\App\Models\Cargo::class);
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     **/
-    public function distances()
-    {
-        return $this->hasMany(\App\Models\Distance::class);
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     **/
     public function distances()
     {
         return $this->hasMany(\App\Models\Distance::class);
