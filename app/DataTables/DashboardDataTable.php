@@ -3,8 +3,8 @@
 namespace App\DataTables;
 
 use App\Models\Cargo;
+use App\Models\Ship;
 use Yajra\DataTables\Services\DataTable;
-use Carbon\Carbon;
 use \League\Geotools\Geotools;
 use \League\Geotools\Coordinate\Coordinate;
 
@@ -19,39 +19,73 @@ class DashboardDataTable extends DataTable
 
         return datatables()
             ->eloquent($this->query())
-            // ->addColumn('distance_to_start',function(Cargo $cargo){
-            //     return ;
-            // })
-            // ->addColumn('route',function(Cargo $cargo){
-            //     return ;
-            // })
-            // ->addColumn('bdi',function(Cargo $cargo){
-            //     $bdi_id = $calculator->calculateBDIId($port_ship,$cargo);
-            //     $bdi = $calculator->calculateBDI($bdi_id, $date, $travel_time_to_start);
-            //     return ;
-            // })
-            // ->addColumn('gross_rate',function(Cargo $cargo){
-            //     $gross_rate = $calculator->calculateGrossRate($cargo, $bdi, $voyage_time_bdi, $non_hire_costs_bdi);
-            //     return ;
-            // })
-            // ->addColumn('ntce',function(Cargo $cargo){
-            //     $ntce = $calculator->calculateNTCE($cargo, $bdi, $voyage_time, $non_hire_costs, $gross_rate);
-            //     return ;
-            // })
             ->addColumn('action', 'calculator.datatables_actions')
             ->editColumn('laycan_first_day', function(Cargo $cargo){
+                if ($cargo->laycan_first_day_manual) {
+                    return '<b style=\'color:red;\'>'.date_format(date_create($cargo->laycan_first_day),'d-m-Y').'</b>';
+                } else {                
                return date_format(date_create($cargo->laycan_first_day),'d-m-Y');
+                }               
+
             })
             ->editColumn('laycan_last_day', function(Cargo $cargo){
-               return date_format(date_create($cargo->laycan_last_day),'d-m-Y');
+                if ($cargo->laycan_last_day_manual) {
+                    return '<b style=\'color:red;\'>'.date_format(date_create($cargo->laycan_last_day),'d-m-Y').'</b>';
+                } else {                
+                    return date_format(date_create($cargo->laycan_last_day),'d-m-Y');
+                }
             })
             ->editColumn('loading_port',function(Cargo $cargo){
                 if ($cargo->loading_port_manual) {
                     return '<b style=\'color:red;\'>'.$cargo->loading_port.'</b>';
                 }
             })
-            ->make(true)
-              ;
+             ->editColumn('loading_port',function(Cargo $cargo){
+                if ($cargo->loading_port_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->loading_port.'</b>';
+                }
+            })
+             ->editColumn('discharge_port',function(Cargo $cargo){
+                if ($cargo->cargo_type_id_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->cargo_type_id.'</b>';
+                }
+            })
+            ->editColumn('discharge_port',function(Cargo $cargo){
+                if ($cargo->stowage_factor_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->stowage_factor.'</b>';
+                }
+            })
+            ->editColumn('discharge_port',function(Cargo $cargo){
+                if ($cargo->quantity_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->quantity.'</b>';
+                }
+            })
+            ->editColumn('discharge_port',function(Cargo $cargo){
+                if ($cargo->loading_rate_type_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->loading_rate_type.'</b>';
+                }
+            })
+            ->editColumn('discharge_port',function(Cargo $cargo){
+                if ($cargo->loading_rate_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->loading_rate.'</b>';
+                }
+            })
+            ->editColumn('discharge_port',function(Cargo $cargo){
+                if ($cargo->discharging_rate_type_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->discharging_rate_type.'</b>';
+                }
+            })
+            ->editColumn('discharge_port',function(Cargo $cargo){
+                if ($cargo->discharging_rate_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->discharging_rate_.'</b>';
+                }
+            })
+            ->editColumn('discharge_port',function(Cargo $cargo){
+                if ($cargo->commision_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->commision.'</b>';
+                }
+            })
+            ->make(true);
     }
 
     /**
@@ -61,31 +95,27 @@ class DashboardDataTable extends DataTable
      */
     public function query()
     {
+        $ship = Ship::($this->request()->get('ship_id'));
+        $max_capacity = $ship->max_holds_capacity;
+        $max_draft =  $ship->max_laden_draft;
+        $max_tonage = $ship->dwcc;
+        $occupied_tonage = $this->request()->get('occupied_tonage');
+        $occupied_size = $this->request()->get('occupied_size');
+        $remaining_tonage = $max_tonage - $occupied_tonage;
+        $remaining_size = $max_capacity - $occupied_size;
+        $remaining_draft = $max_draft - 
         $cargos = Cargo::leftjoin('cargo_status', 'cargo_status.id','cargo_status.id')
                         ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
                         ->leftjoin('ports as p1', 'p1.id','loading_port')
                         ->leftjoin('ports as p2', 'p2.id','discharging_port')
-                        ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
-        if ($this->request()->get('port_id')) {
-            $cargos->where('loading_port',$this->request()->get('port_id'));
+                        ->where('quantity','<=', $remaining_tonage)
+                        ->where(DB::raw('quantity * stowage_factor AS size'),'<=', $remaining_size)
+                        ->where(DB::raw('quantity *'.$ship->ballast_draft),'<=', $remaining_draft)
+                        ->where('loading_port',$this->request()->get('port_id'));
+                        ->whereDate('laycan_first_day','>=',date($this->request()->get('date_of_opening')))
+                        ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')));
         }
-        if ($this->request()->get('date_of_opening')) {
-            $cargos->whereDate('laycan_first_day','>=',date($this->request()->get('date_of_opening')))
-                  ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')));
-        }
-        // if ($this->request()->get('range')) {
-        //     $cargos->where('',$ship);
-        // }
-        // if ($this->request()->get('occupied_size')) {
-        //     $cargos->where('',$this->request()->get('occupied_size'));
-        // }
-        // if ($this->request()->get('occupied_tonnage')) {
-        //     $cargos->where('',$this->request()->get('occupied_tonnage')-$ship->dwcc);
-        // }
-        // if ($this->request()->get('current_draft')) {
-        //     $cargos->where('',$this->request()->get('current_draft'));
-        // }
-
+        $cargos->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
         return $this->applyScopes($cargos);
     }
 
