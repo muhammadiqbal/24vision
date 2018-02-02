@@ -10,19 +10,19 @@
             <tbody>
                 <tr>
                     <th>Size</th>
-                    <td></td>
+                    <td>{{$selectedShip->max_laden_draft}}</td>
                     <td>0</td>
                     <td></td>
                 </tr>
                 <tr>
                     <th>Draft</th>
-                    <td></td>
+                    <td>{{$selectedShip->max_laden_draft}}</td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <th>Tonage</th>
-                    <td></td>
+                    <td>{{$selectedShip->dwcc}}</td>
                     <td>0</td>
                     <td></td>
                 </tr>
