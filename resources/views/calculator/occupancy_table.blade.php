@@ -12,7 +12,7 @@
                     <th>Size</th>
                     <td>
                         @if($selectedShip)
-                            {{$selectedShip->max_hold_capacity}}
+                            {{$selectedShip->max_holds_capacity}}
                         @endif
                     </td>
                     <td>
@@ -22,7 +22,7 @@
                     </td>
                     <td>
                         @if($selectedShip && $occupied_size)
-                            {{$selectedShip->max_hold_capacity-$occupied_size}}
+                            {{$selectedShip->max_holds_capacity - $occupied_size}}
                         @endif
                     </td>
                 </tr>
@@ -53,7 +53,7 @@
                     </td>
                     <td>
                         @if($selectedShip && $occupied_tonnage)
-                            {{$selectedShip->dwcc-$occupied_tonnage}}
+                            {{$occupied_tonnage}}
                         @endif
                     </td>
                     <td>
