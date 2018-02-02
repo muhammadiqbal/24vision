@@ -23,6 +23,11 @@ class CargoDataTable extends DataTable
             ->editColumn('laycan_last_day', function(Cargo $cargo){
                return date_format(date_create($cargo->laycan_last_day),'d-m-Y');
             })
+            ->editColumn('loading_port',function(Cargo $cargo){
+                if ($cargo->loading_port_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->loading_port_manual.'</b>'
+                }
+            })
             ->make(true);
     }
 
@@ -47,7 +52,7 @@ class CargoDataTable extends DataTable
             $grossRate = $this->calculateGrossRate($cargo, $shipPositionGrossRate, 226, $bdi->price);
 
             $ntce = $this->calculateNTCE($cargo, $shipPosition,226, $grossRate);
-            
+
             $route = Route::where('area1',$cargo->loading_port)
                           ->where('area3',$cargo->discharging_port)
                           ->first();
