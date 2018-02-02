@@ -61,6 +61,12 @@
         @endif
         <a href="{{url('/ports')}}"><i class="fa fa-map"></i> <span>Zone</span></a></li>
       </li>
+      <li>
+         @if( $route =='App\Http\Controllers\UserController')
+          class="active"
+        @endif
+        <a href="{{url('/users')}}"><i class="fa fa-map"></i> <span>Users</span></a></li>
+      </li>
       {{-- <li
         @if( $route =='App\Http\Controllers\AgreementController')
           class="active"
