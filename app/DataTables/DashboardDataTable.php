@@ -76,15 +76,15 @@ class DashboardDataTable extends DataTable
         // if ($this->request()->get('range')) {
         //     $cargos->where('',$ship);
         // }
-        // if ($this->request()->get('occupied_size')) {
-        //     $cargos->where('',$this->request()->get('occupied_size'));
-        // }
-        // if ($this->request()->get('occupied_tonnage')) {
-        //     $cargos->where('',$this->request()->get('occupied_tonnage'));
-        // }
-        // if ($this->request()->get('current_draft')) {
-        //     $cargos->where('',$this->request()->get('current_draft'));
-        // }
+        if ($this->request()->get('occupied_size')) {
+            $cargos->where('',$this->request()->get('occupied_size'));
+        }
+        if ($this->request()->get('occupied_tonnage')) {
+            $cargos->where('',$this->request()->get('occupied_tonnage')-$ship->dwcc);
+        }
+        if ($this->request()->get('current_draft')) {
+            $cargos->where('',$this->request()->get('current_draft'));
+        }
 
         return $this->applyScopes($cargos);
     }
