@@ -7,6 +7,7 @@ use Yajra\DataTables\Services\DataTable;
 use Carbon\Carbon;
 use \League\Geotools\Geotools;
 use \League\Geotools\Coordinate\Coordinate;
+use App\Services\Calculator;
 
 class DashboardDataTable extends DataTable
 {
@@ -14,16 +15,42 @@ class DashboardDataTable extends DataTable
     /**
      * @return \Illuminate\Http\JsonResponse
      */
-    public function ajax()
+    public function ajax(Calculator $calculator)
     {
+        
+        
+        
+
         return datatables()
             ->eloquent($this->query())
+            ->addColumn('distance_to_start',)
+            ->addColumn('route',function(Cargo $cargo){
+                return ;
+            })
+            ->addColumn('bdi',,function(Cargo $cargo){
+                $bdi_id = $calculator->calculateBDIId($port_ship,$cargo);
+                $bdi = $calculator->calculateBDI($bdi_id, $date, $travel_time_to_start);
+                return ;
+            })
+            ->addColumn('gross_rate',,function(Cargo $cargo){
+                $gross_rate = $calculator->calculateGrossRate($cargo, $bdi, $voyage_time_bdi, $non_hire_costs_bdi);
+                return ;
+            })
+            ->addColumn('ntce',,function(Cargo $cargo){
+                $ntce = $calculator->calculateNTCE($cargo, $bdi, $voyage_time, $non_hire_costs, $gross_rate);
+                return ;
+            })
             ->addColumn('action', 'calculator.datatables_actions')
             ->editColumn('laycan_first_day', function(Cargo $cargo){
                return date_format(date_create($cargo->laycan_first_day),'d-m-Y');
             })
             ->editColumn('laycan_last_day', function(Cargo $cargo){
                return date_format(date_create($cargo->laycan_last_day),'d-m-Y');
+            })
+            ->editColumn('loading_port',function(Cargo $cargo){
+                if ($cargo->loading_port_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->loading_port_manual.'</b>';
+                }
             })
             ->make(true)
               ;
@@ -40,6 +67,9 @@ class DashboardDataTable extends DataTable
         $ship = Ship::find($ship_id);
         $range = $this->request()->get('range');
 
+        
+        
+
         $cargos = Cargo::leftjoin('cargo_status', 'cargo_status.id','cargo_status.id')
                         ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
                         ->leftjoin('ports as p1', 'p1.id','loading_port')
@@ -52,18 +82,18 @@ class DashboardDataTable extends DataTable
             $cargos->whereDate('laycan_first_day','>=',date($this->request()->get('date_of_opening')))
                   ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')));
         }
-        if ($this->request()->get('range')) {
-            $cargos->where('',$ship);
-        }
-        if ($this->request()->get('occupied_size')) {
-            $cargos->where('',$this->request()->get('occupied_size'));
-        }
-        if ($this->request()->get('occupied_tonnage')) {
-            $cargos->where('',$this->request()->get('occupied_tonnage'));
-        }
-        if ($this->request()->get('current_draft')) {
-            $cargos->where('',$this->request()->get('current_draft'));
-        }
+        // if ($this->request()->get('range')) {
+        //     $cargos->where('',$ship);
+        // }
+        // if ($this->request()->get('occupied_size')) {
+        //     $cargos->where('',$this->request()->get('occupied_size'));
+        // }
+        // if ($this->request()->get('occupied_tonnage')) {
+        //     $cargos->where('',$this->request()->get('occupied_tonnage'));
+        // }
+        // if ($this->request()->get('current_draft')) {
+        //     $cargos->where('',$this->request()->get('current_draft'));
+        // }
 
         return $this->applyScopes($cargos);
     }
@@ -126,11 +156,6 @@ class DashboardDataTable extends DataTable
             'discharging_port' => ['defaultContent' => 'NULL','name' => 'disch_port', 'data' => 'disch_port'],
             'email_id' => ['defaultContent' => 'NULL','name' => 'email_id', 'data' => 'email_id'],
             'status_id' => ['defaultContent' => 'NULL','name' => 'status', 'data' => 'status'],
-            'distance_to_start'=>['defaultContent' => 'NULL','name'=>'','data' => ''],
-            'route'=>['defaultContent' => 'NULL','name'=>'','data' => ''],
-            'bdi'=>['defaultContent' => 'NULL','name'=>'','data' => ''],
-            'gross_rate'=>['defaultContent' => 'NULL','name'=>'','data' => ''],
-            'ntce'=>['defaultContent' => 'NULL','name'=>'ntce','data' => 'ntce']
         ];
     }
 

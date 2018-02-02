@@ -179,7 +179,9 @@ class DashboardController extends Controller
 		$cargo = Cargo::find(2);
 		if($cargo->laycan_last_day != null){ 
 		  $x= $cargo->laycan_last_day->format('m/d/Y');
-		} else{$x= null;}
+		} else{
+            $x= null;
+        }
 		
 		return $x;
     }
