@@ -206,7 +206,7 @@ class DashboardController extends Controller
                                              'ports'=>$ports,
                                              'selectedShip'=>$selectedShip,
                                              'occupied_size'=>$occupied_size,
-                                             'occupied_tonnage'=>$occupied_tonnage;
+                                             'occupied_tonnage'=>$occupied_tonnage
                                             ]);
     }
 
