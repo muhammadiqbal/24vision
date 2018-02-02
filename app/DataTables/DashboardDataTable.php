@@ -111,7 +111,7 @@ class DashboardDataTable extends DataTable
                         ->where('quantity','<=', $remaining_tonage)
                         ->where(DB::raw('quantity * stowage_factor AS size'),'<=', $remaining_size)
                         ->where(DB::raw('quantity *'.$ship->ballast_draft),'<=', $remaining_draft)
-                        ->where('loading_port',$this->request()->get('port_id'));
+                        ->where('loading_port',$this->request()->get('port_id'))
                         ->whereDate('laycan_first_day','>=',date($this->request()->get('date_of_opening')))
                         ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')));
         }
