@@ -10,19 +10,30 @@
             <tbody>
                 <tr>
                     <th>Size</th>
-                    <td>{{$selectedShip->max_laden_draft}}</td>
+                    <td>
+                        @if($selectedShip)
+                            {{$selectedShip->max_laden_draft}}
+                        @endif</td>
                     <td>0</td>
                     <td></td>
                 </tr>
                 <tr>
                     <th>Draft</th>
-                    <td>{{$selectedShip->max_laden_draft}}</td>
+                    <td>
+                        @if($selectedShip)
+                            {{$selectedShip->max_laden_draft}}
+                        @endif
+                    </td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <th>Tonage</th>
-                    <td>{{$selectedShip->dwcc}}</td>
+                    <td>
+                        @if($selectedShip)
+                            {{$selectedShip->dwcc}}
+                        @endif
+                    </td>
                     <td>0</td>
                     <td></td>
                 </tr>
