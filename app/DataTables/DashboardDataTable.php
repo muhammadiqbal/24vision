@@ -4,6 +4,7 @@ namespace App\DataTables;
 
 use App\Models\Cargo;
 use Yajra\DataTables\Services\DataTable;
+use Carbon\Carbon;
 
 class DashboardDataTable extends DataTable
 {
@@ -16,7 +17,14 @@ class DashboardDataTable extends DataTable
         return datatables()
             ->eloquent($this->query())
             ->addColumn('action', 'calculator.datatables_actions')
-            ->make(true);
+            ->editColumn('laycan_first_day', function(Cargo $cargo){
+               return date_format(date_create($cargo->laycan_first_day),'d-m-Y');
+            })
+            ->editColumn('laycan_last_day', function(Cargo $cargo){
+               return date_format(date_create($cargo->laycan_last_day),'d-m-Y');
+            })
+            ->make(true)
+              ;
     }
 
     /**
