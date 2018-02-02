@@ -6,6 +6,7 @@ use App\Models\Cargo;
 use Form;
 use Yajra\DataTables\Services\DataTable;
 
+
 class CargoDataTable extends DataTable
 {
 
