@@ -30,7 +30,9 @@ class CargoDataTable extends DataTable
 
         $cargos = Cargo::leftjoin('cargo_status', 'cargo_status.id','cargo_status.id')
                         ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
-                        ->select('cargos.*','cargo_status.name as status','cargo_types.name as type');
+                        ->leftjoin('ports as p1', 'p1.id','loading_port')
+                        ->leftjoin('ports as p2', 'p2.id','discharging_port')
+                        ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', , 'p1.name as load_port', 'p2.name as disch_port');
         //->with('loading_port')->with('discharging_port')->with('cargoType')->with('cargoStatus');
 
         foreach ($cargos as $cargo) {
@@ -108,9 +110,9 @@ class CargoDataTable extends DataTable
     {
         return [
             
-            'loading_port' => ['defaultContent' => 'NULL', 'name' => 'loading_port', 'data' => 'loading_port'],
+            'loading_port' => ['defaultContent' => 'NULL', 'name' => 'load_port', 'data' => 'load_port'],
             //'loading_port_manual' => ['name' => 'loading_port_manual', 'data' => 'loading_port_manual'],
-            'discharging_port' => ['defaultContent' => 'NULL','name' => 'discharging_port', 'data' => 'discharging_port'],
+            'discharging_port' => ['defaultContent' => 'NULL','name' => 'disch_port', 'data' => 'disch_port'],
             //'discharging_port_manual' => ['name' => 'discharging_port_manual', 'data' => 'discharging_port_manual'],
             'laycan_first_day' => ['defaultContent' => 'NULL','name' => 'laycan_first_day', 'data' => 'laycan_first_day'],
             //'laycan_first_day_manual' => ['name' => 'laycan_first_day_manual', 'data' => 'laycan_first_day_manual'],
