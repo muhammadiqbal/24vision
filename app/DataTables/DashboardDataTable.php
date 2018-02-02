@@ -41,11 +41,11 @@ class DashboardDataTable extends DataTable
                         ->leftjoin('ports as p2', 'p2.id','discharging_port')
                         ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
         if ($this->request()->get('port_id')) {
-            $cagos->where('loading_port',$this->request()->get('port_id'))
+            $cagos->where('loading_port',$this->request()->get('port_id'));
         }
         if ($this->request()->get('date_of_opening')) {
             $cagos->whereDate('laycan_first_day','>=',date($this->request()->get('date_of_opening')))
-                  ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening'))
+                  ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening'));
         }
         return $this->applyScopes($cargos);
     }
