@@ -56,7 +56,7 @@ class UserController extends AppBaseController
         $user= User::create([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
-            'password' => bcrypt($request->input('password'),
+            'password' => bcrypt($request->input('password')),
             'role'=>$request->input('role')
         ]);
 
@@ -126,7 +126,7 @@ class UserController extends AppBaseController
         $user = $user->update([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
-            'password' => bcrypt($request->input('password'),
+            'password' => bcrypt($request->input('password')),
             'role'=>$request->input('role')
         ]);
 
