@@ -17,6 +17,9 @@ class EmailDataTable extends DataTable
         return datatables()
             ->eloquent($this->query())
             ->addColumn('action', 'emails.datatables_actions')
+            ->editColumn('laycan_last_day', function(Email $email){
+                    return date_format(date_create($email->date),'d-m-Y');
+            })
             ->make(true);
     }
 
@@ -73,7 +76,7 @@ class EmailDataTable extends DataTable
     {
         return [
             'subject' => ['name' => 'subject', 'data' => 'subject'],
-            'body' => ['name' => 'body', 'data' => 'body'],
+            //'body' => ['name' => 'body', 'data' => 'body'],
             'sender' => ['name' => 'sender', 'data' => 'sender'],
             //'receiver' => ['name' => 'receiver', 'data' => 'receiver'],
             //'cc' => ['name' => 'cc', 'data' => 'cc'],
