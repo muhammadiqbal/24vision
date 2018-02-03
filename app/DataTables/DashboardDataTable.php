@@ -11,9 +11,10 @@ use \League\Geotools\Coordinate\Coordinate;
 class DashboardDataTable extends DataTable
 {
      protected $ship;
-    // protected $occupied_tonage;
-    // protected $occupied_size;
-    // protected $port;
+    protected $occupied_tonage;
+    protected $occupied_size;
+    protected $port;
+    protected $date_of_opening;
 
 
     public function forShip(Ship $ship){
@@ -21,20 +22,25 @@ class DashboardDataTable extends DataTable
         return $this;
     }
 
-    // public function forOccSize($occupied_size){
-    //     $this->occupied_size = $occupied_size;
-    //     return $this;
-    // }
+    public function forOccSize($occupied_size){
+        $this->occupied_size = $occupied_size;
+        return $this;
+    }
 
     public function forOccTonnage($occupied_tonage){
         $this->occupied_tonage = $occupied_tonage;
         return $this;
     }
 
-    // public function forPort($port){
-    //     $this->port = $port;
-    //     return $this;
-    // }
+    public function forPort($port){
+        $this->port = $port;
+        return $this;
+    }
+
+    public function forDateOfOpening($dop){
+        $this->date_of_opening = $dop;
+        return $this;
+    }
 
 
 

@@ -216,12 +216,13 @@ class DashboardController extends Controller
          $mailCount = Email::count();
          $cargoCount = Cargo::count();
          $shipCount = Ship::count();
-         //$cargos = Cargo::all();
+
         return $dashboardDataTable
                                   ->forOccTonnage($occupied_tonage)
-                                  //->forOccSize($occupied_size)
+                                  ->forOccSize($occupied_size)
                                   ->forShip($selectedShip)
-                                  // ->forPort($port)
+                                  ->forPort($port)
+                                  ->forDateOfOpening($date_of_opening)
                                   ->render('calculator.index',
                                             ['ships'=>$ships, 
                                              'ports'=>$ports,

@@ -2,11 +2,10 @@
     <a class='btn btn-default btn-xs'>
         <i class="glyphicon glyphicon-list-alt"></i>
     </a>
-    <a href="{{url('/voyage/')}}" class='btn btn-default btn-xs'>
-    {{-- '.$selectedShip.'/'.$id.'/'.$ports.'/'.$date_of_opening --}}
+    <a href="{{url('/voyage/'.$ship.'/'.$id.'/'.$port.'/'.$date_of_opening)}}" class='btn btn-default btn-xs'>
         <i class="glyphicon glyphicon-search"></i>
     </a>
-    <a class='btn btn-default btn-xs'>
+    <a href="{{url('/emails/'.$emailID)}}" class='btn btn-default btn-xs'>
         <i class="glyphicon glyphicon-envelope" data-toggle="modal" data-target="#modalMail"></i>
     </a>
     <a class='btn btn-default btn-xs'>
