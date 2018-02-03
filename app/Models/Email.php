@@ -30,13 +30,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Email extends Model
 {
-    use SoftDeletes;
+    //use SoftDeletes;
 
     public $table = 'email';
-    
-    const CREATED_AT = 'created_at';
-    const UPDATED_AT = 'updated_at';
 
+    protected $primaryKey = 'emailID';
+
+    public $timestamps = false;
 
     protected $dates = ['deleted_at'];
 
