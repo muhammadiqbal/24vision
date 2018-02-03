@@ -217,10 +217,11 @@ class DashboardController extends Controller
          $cargoCount = Cargo::count();
          $shipCount = Ship::count();
          //$cargos = Cargo::all();
-        return $dashboardDataTable->forOccTonnage($occupied_tonage)
-                                  ->forOccSize($occupied_size)
-                                  ->forShip($selectedShip)
-                                  ->forPort($port)
+        return $dashboardDataTable
+                                  // ->forOccTonnage($occupied_tonage)
+                                  // ->forOccSize($occupied_size)
+                                  // ->forShip($selectedShip)
+                                  // ->forPort($port)
                                   ->render('calculator.index',
                                             ['ships'=>$ships, 
                                              'ports'=>$ports,
