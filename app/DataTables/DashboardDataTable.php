@@ -13,6 +13,7 @@ class DashboardDataTable extends DataTable
     protected $ship;
     protected $occupied_tonage;
     protected $occupied_size;
+    protected $port;
 
 
     public function forShip(Ship $ship){
@@ -27,6 +28,11 @@ class DashboardDataTable extends DataTable
 
     public function forOccTonnage($occupied_tonage){
         $this->occupied_tonage = $occupied_tonage;
+        return $this;
+    }
+
+    public function forPort($port){
+        $this->port = $port;
         return $this;
     }
 
@@ -128,7 +134,7 @@ class DashboardDataTable extends DataTable
                         // ->where(DB::raw('quantity *'.$this->ship->ballast_draft),
                         //                 '<=', 
                         //                 ($this->ship->max_laden_draft-($this->ship->ballast_draft * $this->occupied_tonage)))
-                        ->where('loading_port',$this->request()->get('port_id'))
+                        ->where('loading_port',$this->port)
                         ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
 
                         if($this->request()->get('date_of_opening')){
