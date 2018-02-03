@@ -4,7 +4,7 @@ namespace App\DataTables;
 
 use App\Models\Email;
 use Form;
-use Yajra\Datatables\Services\DataTable;
+use Yajra\DataTables\Services\DataTable;
 
 class EmailDataTable extends DataTable
 {
@@ -14,7 +14,7 @@ class EmailDataTable extends DataTable
      */
     public function ajax()
     {
-        return $this->datatables
+        return datatables()
             ->eloquent($this->query())
             ->addColumn('action', 'emails.datatables_actions')
             ->make(true);
