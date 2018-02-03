@@ -15,7 +15,7 @@
         <div class="clearfix"></div>
         <div class="box box-primary">
         <div class="col-sm-12">
-            {{-- <div class="col-sm-3">
+           {{--  <div class="col-sm-3">
                 {!! Form::label('status', 'Status:') !!}
                 <select id="statusoption" class="form-control">
                     <option value="1">OK</option>
@@ -35,6 +35,8 @@
                 {!! Form::label('laycan_last_day', 'Laycan Last Day:') !!}
                 {!! Form::date('laycan_last_day', null, ['class' => 'form-control']) !!}
             </div>
+
+        </div>
             <div class="box-body table-responsive">
                     @include('cargos.table')
             </div>
