@@ -1,8 +1,3 @@
-<?php
-    $selectedShip=$_GET['ship_id'];
-    $ports=$_GET['port_id'];
-    $date_of_opening=$_GET['date_of_opening'];
-?>
 <div class='btn-group'>
     <a class='btn btn-default btn-xs'>
         <i class="glyphicon glyphicon-list-alt"></i>
