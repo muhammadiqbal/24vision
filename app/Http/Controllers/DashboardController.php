@@ -203,9 +203,16 @@ class DashboardController extends Controller
             $selectedShip = Ship::first();
          }
 
+         if($request->input('port_id')){
+            $port = Port::find($request->input('port_id'));;
+         }else{
+            Port::first();
+         }
+
          $occupied_size = $request->input('occupied_size',0);
          $occupied_tonage = $request->input('occupied_tonage',0);
          $date_of_opening = $request->input('date_of_opening',date('d-m-y'));
+
          $mailCount = Email::count();
          $cargoCount = Cargo::count();
          $shipCount = Ship::count();
@@ -213,6 +220,7 @@ class DashboardController extends Controller
         return $dashboardDataTable->forOccTonnage($occupied_tonage)
                                   ->forOccSize($occupied_size)
                                   ->forShip($selectedShip)
+                                  ->forPort($port)
                                   ->render('calculator.index',
                                             ['ships'=>$ships, 
                                              'ports'=>$ports,
