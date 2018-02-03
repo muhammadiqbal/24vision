@@ -122,11 +122,11 @@ class DashboardDataTable extends DataTable
                         ->leftjoin('ports as p1', 'p1.id','loading_port')
                         ->leftjoin('ports as p2', 'p2.id','discharging_port')
                         ->where('quantity','<=', ($this->$ship->dwcc - $this->$occupied_tonage))
-                        ->where(DB::raw('quantity * stowage_factor AS size'),'<=',  ($this->$ship->max_holds_capacity - $this->$occupied_size))
-                        ->where(DB::raw('quantity *'.$this->$ship->ballast_draft),'<=', ($ship->max_laden_draft-($ship->ballast_draft * $this->occupied_tonage)))
-                        ->where('loading_port',$this->request()->get('port_id'))
-                        ->whereDate('laycan_first_day','>=',date($this->request()->get('date_of_opening')))
-                        ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')))
+                        // ->where(DB::raw('quantity * stowage_factor AS size'),'<=',  ($this->$ship->max_holds_capacity - $this->$occupied_size))
+                        // ->where(DB::raw('quantity *'.$this->$ship->ballast_draft),'<=', ($ship->max_laden_draft-($ship->ballast_draft * $this->occupied_tonage)))
+                        // ->where('loading_port',$this->request()->get('port_id'))
+                        // ->whereDate('laycan_first_day','>=',date($this->request()->get('date_of_opening')))
+                        // ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')))
                         ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
         return $this->applyScopes($cargos);
     }
