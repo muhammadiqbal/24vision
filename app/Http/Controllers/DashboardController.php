@@ -220,7 +220,7 @@ class DashboardController extends Controller
         return $dashboardDataTable
                                   // ->forOccTonnage($occupied_tonage)
                                   // ->forOccSize($occupied_size)
-                                  // ->forShip($selectedShip)
+                                  ->forShip($selectedShip)
                                   // ->forPort($port)
                                   ->render('calculator.index',
                                             ['ships'=>$ships, 
