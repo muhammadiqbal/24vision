@@ -17,7 +17,7 @@ class EmailDataTable extends DataTable
         return datatables()
             ->eloquent($this->query())
             ->addColumn('action', 'emails.datatables_actions')
-            ->editColumn('laycan_last_day', function(Email $email){
+            ->editColumn('date', function(Email $email){
                     return date_format(date_create($email->date),'d-m-Y');
             })
             ->make(true);
@@ -30,7 +30,7 @@ class EmailDataTable extends DataTable
      */
     public function query()
     {
-        $emails = Email::query();
+        $emails = Email::sortBy('date','desc');
 
         return $this->applyScopes($emails);
     }
@@ -75,13 +75,13 @@ class EmailDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'subject' => ['name' => 'subject', 'data' => 'subject'],
+            'subject' => ['defaultContent' => 'NULL','name' => 'subject', 'data' => 'subject'],
             //'body' => ['name' => 'body', 'data' => 'body'],
-            'sender' => ['name' => 'sender', 'data' => 'sender'],
+            'sender' => ['defaultContent' => 'NULL','name' => 'sender', 'data' => 'sender'],
             //'receiver' => ['name' => 'receiver', 'data' => 'receiver'],
             //'cc' => ['name' => 'cc', 'data' => 'cc'],
             //'classification_manual' => ['name' => 'classification_manual', 'data' => 'classification_manual'],
-            'date' => ['name' => 'date', 'data' => 'date'],
+            'date' => ['defaultContent' => 'NULL','name' => 'date', 'data' => 'date'],
             //'classification_automated' => ['name' => 'classification_automated', 'data' => 'classification_automated'],
             //'IMAPUID' => ['name' => 'IMAPUID', 'data' => 'IMAPUID'],
             //'IMAPFolderID' => ['name' => 'IMAPFolderID', 'data' => 'IMAPFolderID'],
