@@ -21,7 +21,7 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function() 
 {
-	Route::get('/home', 'DashboardController@index');
+	Route::get('/home/{ship_id?}/{port_id?}/{date_of_opening?}/{occupied_size?}/{occupied_tonage?}/{range?}', 'DashboardController@index');
 
 	Route::get('/testing', 'DashboardController@testing');
 
