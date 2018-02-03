@@ -1,4 +1,4 @@
-{!! Form::model(['url' => ['/home'], 'method' => 'get']) !!}
+{!! Form::model(['url' => ['/home']]) !!}
 
 <!-- Ship Id Field -->
 <div class="form-group col-sm-8">
