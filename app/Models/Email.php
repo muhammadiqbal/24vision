@@ -31,7 +31,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Email extends Model
 {
     //use SoftDeletes;
-
+    protected $connection = 'mysql2';
     public $table = 'email';
 
     protected $primaryKey = 'emailID';
