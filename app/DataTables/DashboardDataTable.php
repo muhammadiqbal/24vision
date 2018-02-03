@@ -117,8 +117,6 @@ class DashboardDataTable extends DataTable
      */
     public function query()
     {
-        
-        $remaining_draft = $max_draft - 
         $cargos = Cargo::leftjoin('cargo_status', 'cargo_status.id','cargo_status.id')
                         ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
                         ->leftjoin('ports as p1', 'p1.id','loading_port')
@@ -128,8 +126,8 @@ class DashboardDataTable extends DataTable
                         ->where(DB::raw('quantity *'.$this->$ship->ballast_draft),'<=', ($ship->max_laden_draft-($ship->ballast_draft * $this->occupied_tonage)))
                         ->where('loading_port',$this->request()->get('port_id'))
                         ->whereDate('laycan_first_day','>=',date($this->request()->get('date_of_opening')))
-                        ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')));
-        $cargos->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
+                        ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')))
+                        ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
         return $this->applyScopes($cargos);
     }
 
