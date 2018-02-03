@@ -206,7 +206,7 @@ class DashboardController extends Controller
          if($request->input('port_id')){
             $port = Port::find($request->input('port_id'));;
          }else{
-            Port::first();
+            $port = Port::first();
          }
 
          $occupied_size = $request->input('occupied_size',0);
