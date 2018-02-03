@@ -53,7 +53,14 @@ class DashboardDataTable extends DataTable
 
         return datatables()
             ->eloquent($this->query())
-            ->addColumn('action', 'calculator.datatables_actions')
+            ->addColumn('action', function($row) {
+                    $ship = $this->ship;
+                    $port = $this->port;
+                    $date_of_opening = $this->date_of_opening;
+
+                    return view('calculator.datatables_actions', 
+                        compact('ship','port','date_of_opening'))->render();
+            })
             ->editColumn('laycan_first_day', function(Cargo $cargo){
                 if ($cargo->laycan_first_day_manual) {
                     return '<b style=\'color:red;\'>'.date_format(date_create($cargo->laycan_first_day),'d-m-Y').'</b>';
