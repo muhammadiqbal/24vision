@@ -75,16 +75,16 @@ class EmailDataTable extends DataTable
             'subject' => ['name' => 'subject', 'data' => 'subject'],
             'body' => ['name' => 'body', 'data' => 'body'],
             'sender' => ['name' => 'sender', 'data' => 'sender'],
-            'receiver' => ['name' => 'receiver', 'data' => 'receiver'],
-            'cc' => ['name' => 'cc', 'data' => 'cc'],
-            'classification_manual' => ['name' => 'classification_manual', 'data' => 'classification_manual'],
+            //'receiver' => ['name' => 'receiver', 'data' => 'receiver'],
+            //'cc' => ['name' => 'cc', 'data' => 'cc'],
+            //'classification_manual' => ['name' => 'classification_manual', 'data' => 'classification_manual'],
             'date' => ['name' => 'date', 'data' => 'date'],
-            'classification_automated' => ['name' => 'classification_automated', 'data' => 'classification_automated'],
-            'IMAPUID' => ['name' => 'IMAPUID', 'data' => 'IMAPUID'],
-            'IMAPFolderID' => ['name' => 'IMAPFolderID', 'data' => 'IMAPFolderID'],
-            '_created_on' => ['name' => '_created_on', 'data' => '_created_on'],
-            'classification_automated_certainty' => ['name' => 'classification_automated_certainty', 'data' => 'classification_automated_certainty'],
-            'kibana_extracted' => ['name' => 'kibana_extracted', 'data' => 'kibana_extracted']
+            //'classification_automated' => ['name' => 'classification_automated', 'data' => 'classification_automated'],
+            //'IMAPUID' => ['name' => 'IMAPUID', 'data' => 'IMAPUID'],
+            //'IMAPFolderID' => ['name' => 'IMAPFolderID', 'data' => 'IMAPFolderID'],
+            //'_created_on' => ['name' => '_created_on', 'data' => '_created_on'],
+            //'classification_automated_certainty' => ['name' => 'classification_automated_certainty', 'data' => 'classification_automated_certainty'],
+            //'kibana_extracted' => ['name' => 'kibana_extracted', 'data' => 'kibana_extracted']
         ];
     }
 
