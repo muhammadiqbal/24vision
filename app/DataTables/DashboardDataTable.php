@@ -32,7 +32,7 @@ class DashboardDataTable extends DataTable
         return $this;
     }
 
-    public function forPort($port){
+    public function forPort(Port $port){
         $this->port = $port;
         return $this;
     }
