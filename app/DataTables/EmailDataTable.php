@@ -30,7 +30,7 @@ class EmailDataTable extends DataTable
      */
     public function query()
     {
-        $emails = Email::orderBy('date','desc')->select('emails.*');
+        $emails = Email::orderBy('date','desc')->select('email.*');
 
         return $this->applyScopes($emails);
     }
