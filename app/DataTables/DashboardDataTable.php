@@ -4,13 +4,14 @@ namespace App\DataTables;
 
 use App\Models\Cargo;
 use App\Models\Ship;
+use App\Models\Port;
 use Yajra\DataTables\Services\DataTable;
 use \League\Geotools\Geotools;
 use \League\Geotools\Coordinate\Coordinate;
 
 class DashboardDataTable extends DataTable
 {
-     protected $ship;
+    protected $ship;
     protected $occupied_tonage;
     protected $occupied_size;
     protected $port;
