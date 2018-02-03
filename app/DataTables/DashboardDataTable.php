@@ -10,6 +10,31 @@ use \League\Geotools\Coordinate\Coordinate;
 
 class DashboardDataTable extends DataTable
 {
+    protected $ship;
+    protected $occupied_tonage;
+    protected $occupied_size;
+    $max_capacity = $ship->max_holds_capacity;
+    $max_draft =  $ship->max_laden_draft;
+    $max_tonage = $ship->dwcc;
+    $remaining_tonage = $max_tonage - $occupied_tonage;
+    $remaining_size = $max_capacity - $occupied_size;
+
+
+    public function forShip(Ship $ship){
+        $this->ship = $ship;
+        return $this;
+    }
+
+    public function forOccSize($occupied_size){
+        $this->occupied_size = $occupied_size;
+        return $this;
+    }
+
+    public function forOccTonnage($occupied_tonage){
+        $this->occupied_tonage = $occupied_tonage;
+        return $this;
+    }
+
 
     /**
      * @return \Illuminate\Http\JsonResponse
@@ -24,7 +49,7 @@ class DashboardDataTable extends DataTable
                 if ($cargo->laycan_first_day_manual) {
                     return '<b style=\'color:red;\'>'.date_format(date_create($cargo->laycan_first_day),'d-m-Y').'</b>';
                 } else {                
-               return date_format(date_create($cargo->laycan_first_day),'d-m-Y');
+                    return date_format(date_create($cargo->laycan_first_day),'d-m-Y');
                 }               
 
             })
@@ -95,22 +120,15 @@ class DashboardDataTable extends DataTable
      */
     public function query()
     {
-        $ship = Ship::find($this->request()->get('ship_id'));
-        $max_capacity = $ship->max_holds_capacity;
-        $max_draft =  $ship->max_laden_draft;
-        $max_tonage = $ship->dwcc;
-        $occupied_tonage = $this->request()->get('occupied_tonage');
-        $occupied_size = $this->request()->get('occupied_size');
-        $remaining_tonage = $max_tonage - $occupied_tonage;
-        $remaining_size = $max_capacity - $occupied_size;
+        
         $remaining_draft = $max_draft - 
         $cargos = Cargo::leftjoin('cargo_status', 'cargo_status.id','cargo_status.id')
                         ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
                         ->leftjoin('ports as p1', 'p1.id','loading_port')
                         ->leftjoin('ports as p2', 'p2.id','discharging_port')
-                        ->where('quantity','<=', $remaining_tonage)
-                        //->where(DB::raw('quantity * stowage_factor AS size'),'<=', $remaining_size)
-                        //->where(DB::raw('quantity *'.$ship->ballast_draft),'<=', $remaining_draft)
+                        ->where('quantity','<=', $this->remaining_tonage)
+                        ->where(DB::raw('quantity * stowage_factor AS size'),'<=', $remaining_size)
+                        ->where(DB::raw('quantity *'.$ship->ballast_draft),'<=', $this->remaining_draft)
                         ->where('loading_port',$this->request()->get('port_id'))
                         ->whereDate('laycan_first_day','>=',date($this->request()->get('date_of_opening')))
                         ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')));
