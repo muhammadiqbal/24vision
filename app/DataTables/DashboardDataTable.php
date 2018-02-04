@@ -182,11 +182,11 @@ class DashboardDataTable extends DataTable
         return $this->builder()
             ->columns($this->getColumns())
             ->addAction(['width' => '10%'])
-            ->addColumn(['defaultContent' => '',
-                        'data' => 'bdi',
-                        'name' => 'bdi',
-                        'title' => 'bdi'
-                        ])
+            // ->addColumn(['defaultContent' => '',
+            //             'data' => 'bdi',
+            //             'name' => 'bdi',
+            //             'title' => 'bdi'
+            //             ])
             ->ajax('')
             ->parameters([
                 'dom' => 'Bfrtip',
@@ -234,7 +234,7 @@ class DashboardDataTable extends DataTable
             'loading_port' => ['defaultContent' => 'NULL','name' => 'load_port', 'data' => 'load_port'],
             'discharging_port' => ['defaultContent' => 'NULL','name' => 'disch_port', 'data' => 'disch_port'],
             'email_id' => ['defaultContent' => 'NULL','name' => 'email_id', 'data' => 'email_id'],
-            //'bdi' => ['defaultContent'=>'NULL', 'name'=>'bdi', 'data'=>'bdi'],
+            'bdi' => ['defaultContent'=>'NULL', 'name'=>'bdi', 'data'=>'bdi', 'title'=>'bdi'],
             'ntce' => ['defaultContent'=>'NULL', 'name'=>'', 'data'=>''],
             'gross_rate' => ['defaultContent'=>'NULL', 'name'=>'', 'data'=>''],
             'status_id' => ['defaultContent' => 'NULL','name' => 'status', 'data' => 'status'],
