@@ -61,12 +61,12 @@ class DashboardDataTable extends DataTable
 
         return datatables()
             ->eloquent($this->query())
-            ->editColumn('bdi', function(Cargo $cargo){
-                // $distance_to_start = $this->calculator->calculateDistancetoStart($this->port, $cargo, $this->calculator);
-                // $travel_time_to_start = $this->calculator->calculateTravelTimeToStart($this->ship, $distance_to_start);
-                // $bdi_id = $this->calculator->calculateBDIId($this->port,$cargo);
-                // $bdi = $this->calculator->calculateBDI($bdi_id, $this->date_of_opening, $travel_time_to_start);
-                // return $bdi;
+            ->addColumn('bdi', function(Cargo $cargo){
+                $distance_to_start = $this->calculator->calculateDistancetoStart($this->port, $cargo, $this->calculator);
+                $travel_time_to_start = $this->calculator->calculateTravelTimeToStart($this->ship, $distance_to_start);
+                $bdi_id = $this->calculator->calculateBDIId($this->port,$cargo);
+                $bdi = $this->calculator->calculateBDI($bdi_id, $this->date_of_opening, $travel_time_to_start);
+                return $bdi;
                 return 'blas';
             })
             // ->addColumn('ntce', function(Cargo $cargo){
@@ -246,6 +246,8 @@ class DashboardDataTable extends DataTable
             ->columns($this->getColumns())
             ->addAction(['width' => '10%'])
             ->ajax('')
+            ->rawColumns(['bdi','ntce','gross_rate'])
+            ->withTrashed()
             ->parameters([
                 'dom' => 'Bfrtip',
                 'scrollX' => true,
