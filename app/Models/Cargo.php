@@ -177,38 +177,6 @@ class Cargo extends Model
 
     /*START non db attribute setter and getter*/
     public function setNtce($port, $ship, $date_of_opening){
-        $ship_bdi = Ship::first();
-        $distance_to_start = $this->calculator->calculateDistancetoStart($port, $this, $calculator);
-        $travel_time_to_start = $calculator->calculateTravelTimeToStart($ship, $distance_to_start);
-        $bdi_id = $calculator->calculateBDIId($port,$this);
-        $bdi = $calculator->calculateBDI($bdi_id, $date_of_opening, $travel_time_to_start);
-        
-        $port_time_load = $calculator->calculatePortTimeLoad($this);
-        $port_time_disch = $calculator->calculatePortTimeDisch($this);
-        $port_time_sum = $calculator->calculatePortTimeSum($port_time_load, $port_time_disch);
-        
-        $travel_time_to_start_bdi = $calculator->calculateTravelTimeToStart($ship_bdi, $distance_to_start);
-        $travel_time_cargo_bdi =  $calculator->calculateTravelTimeCargo($ship_bdi, $distance_cargo);
-        $travel_time_sum_bdi = $calculator->calculateTravelTimeSum($travel_time_to_start_bdi, $travel_time_cargo_bdi);      
-        $voyage_time_bdi = $calculator->calculateVoyageTime($port_time_sum, $travel_time_sum_bdi);
-
-        $travel_time_to_start = $calculator->calculateTravelTimeToStart($ship, $distance_to_start);
-        $travel_time_cargo =  $calculator->calculateTravelTimeCargo($ship, $distance_cargo);
-        $travel_time_sum = $calculator->calculateTravelTimeSum($travel_time_to_start, $travel_time_cargo);
-        $port_time_load = $calculator->calculatePortTimeLoad($this);
-        $port_time_disch = $calculator->calculatePortTimeDisch($this);
-        $port_time_sum = $calculator->calculatePortTimeSum($port_time_load, $port_time_disch);
-        $voyage_time = $calculator->calculateVoyageTime($port_time_sum, $travel_time_sum);
-
-        $fuel_consumption = $calculator->calculateFuelConsumption($ship, $port_time_sum, $travel_time_sum);
-        $fuel_price =  $calculator->calculateFuelPrice($ship, $date_of_opening, $travel_time_to_start);
-        $fuel_costs =  $calculator->calculateFuelCosts($fuel_price,$fuel_consumption);
-        $port_fee_load_bdi = $calculator->calculatePortFeeLoad($this, $date_of_opening, $travel_time_to_start_bdi);
-        $port_fee_disch_bdi = $calculator->calculatePortFeeDisch($this, $date_of_opening, $voyage_time_bdi, $port_time_disch);
-        $gross_rate = $calculator->calculateGrossRate($this, $bdi, $voyage_time_bdi, $non_hire_costs_bdi);
-        
-        $ntce = $calculator->calculateNTCE($this, $bdi, $voyage_time, $non_hire_costs, $gross_rate);
-        return $this->ntce;
     }
 
     public function getNtce(){
@@ -216,28 +184,6 @@ class Cargo extends Model
     }
 
     public function setGrossRate($port, $ship, $date_of_opening){
-        $ship_bdi = Ship::first();
-        $distance_to_start = $calculator->calculateDistancetoStart($port, $cargo, $calculator);
-        $travel_time_to_start = $calculator->calculateTravelTimeToStart($ship, $distance_to_start);
-        $bdi_id = $calculator->calculateBDIId($port,$cargo);
-        $bdi = $calculator->calculateBDI($bdi_id, $date_of_opening, $travel_time_to_start);
-        
-        $port_time_load = $calculator->calculatePortTimeLoad($this);
-        $port_time_disch = $calculator->calculatePortTimeDisch($this);
-        $port_time_sum = $calculator->calculatePortTimeSum($port_time_load, $port_time_disch);
-        
-        $travel_time_to_start_bdi = $calculator->calculateTravelTimeToStart($ship_bdi, $distance_to_start);
-        $travel_time_cargo_bdi =  $calculator->calculateTravelTimeCargo($ship_bdi, $distance_cargo);
-        $travel_time_sum_bdi = $calculator->calculateTravelTimeSum($travel_time_to_start_bdi, $travel_time_cargo_bdi);      
-        $voyage_time_bdi = $calculator->calculateVoyageTime($port_time_sum, $travel_time_sum_bdi);
-
-        $fuel_consumption = $calculator->calculateFuelConsumption($ship, $port_time_sum, $travel_time_sum);
-        $fuel_price =  $calculator->calculateFuelPrice($ship, $date_of_opening, $travel_time_to_start);
-        $fuel_costs =  $calculator->calculateFuelCosts($fuel_price,$fuel_consumption);
-        $port_fee_load_bdi = $calculator->calculatePortFeeLoad($this, $date_of_opening, $travel_time_to_start_bdi);
-        $port_fee_disch_bdi = $calculator->calculatePortFeeDisch($this, $date_of_opening, $voyage_time_bdi, $port_time_disch);
-        $gross_rate = $calculator->calculateGrossRate($this, $bdi, $voyage_time_bdi, $non_hire_costs_bdi);
-        
         return $gross_rate;
     }
 
@@ -254,7 +200,7 @@ class Cargo extends Model
     }
 
     public function setBdi(Port $port,Ship $ship, $date_of_opening){
-        $distance_to_start = $this->calculateDistancetoStart($port, $this, $calculator);
+        $distance_to_start = $this->calculateDistancetoStart($port, $this);
         $travel_time_to_start = $this->calculateTravelTimeToStart($ship, $distance_to_start);
         $bdi_id = $this->calculateBDIId($port,$this);
         $this->bdi = $this->calculateBDI($bdi_id, $date_of_opening, $travel_time_to_start);
