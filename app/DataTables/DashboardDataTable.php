@@ -201,6 +201,8 @@ class DashboardDataTable extends DataTable
                     return '<b style=\'color:red;\'>'.$cargo->commision.'</b>';
                 }
             })
+            ->rawColumns(['bdi','ntce','gross_rate'])
+            ->withTrashed()
             ->make(true);
     }
 
@@ -246,8 +248,6 @@ class DashboardDataTable extends DataTable
             ->columns($this->getColumns())
             ->addAction(['width' => '10%'])
             ->ajax('')
-            ->rawColumns(['bdi','ntce','gross_rate'])
-            ->withTrashed()
             ->parameters([
                 'dom' => 'Bfrtip',
                 'scrollX' => true,
