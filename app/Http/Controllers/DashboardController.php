@@ -197,15 +197,33 @@ class DashboardController extends Controller
          //$ship = Ship::find(1);
          $ships = Ship::all();
          $ports = Port::all();
-         $selectedShip = Ship::find($request->input('ship_id'));
-         $occupied_size = $request->input('occupied_size');
-         $occupied_tonage = $request->input('occupied_tonage');
-         $date_of_opening = $request->input('date_of_opening');
+         if($request->input('ship_id')){
+            $selectedShip = Ship::find($request->input('ship_id'));
+         }else {
+            $selectedShip = Ship::first();
+         }
+
+         if($request->input('port_id')){
+            $port = Port::find($request->input('port_id'));;
+         }else{
+            $port = Port::first();
+         }
+
+         $occupied_size = $request->input('occupied_size',0);
+         $occupied_tonage = $request->input('occupied_tonage',0);
+         $date_of_opening = $request->input('date_of_opening',date('d-m-y'));
+
          $mailCount = Email::count();
          $cargoCount = Cargo::count();
          $shipCount = Ship::count();
-         //$cargos = Cargo::all();
-        return $dashboardDataTable->render('calculator.index',
+
+        return $dashboardDataTable
+                                  ->forOccTonnage($occupied_tonage)
+                                  ->forOccSize($occupied_size)
+                                  ->forShip($selectedShip)
+                                  ->forPort($port)
+                                  ->forDateOfOpening($date_of_opening)
+                                  ->render('calculator.index',
                                             ['ships'=>$ships, 
                                              'ports'=>$ports,
                                              'selectedShip'=>$selectedShip,

@@ -6,9 +6,9 @@ use App\Models\Email;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
- * Class DistanceRepository
+ * Class EmailRepository
  * @package App\Repositories
- * @version January 8, 2018, 10:03 am UTC
+ * @version February 3, 2018, 10:15 am UTC
  *
  * @method Email findWithoutFail($id, $columns = ['*'])
  * @method Email find($id, $columns = ['*'])
@@ -23,9 +23,10 @@ class EmailRepository extends BaseRepository
         'subject',
         'body',
         'sender',
-        'cc',
         'receiver',
+        'cc',
         'classification_manual',
+        'date',
         'classification_automated',
         'IMAPUID',
         'IMAPFolderID',

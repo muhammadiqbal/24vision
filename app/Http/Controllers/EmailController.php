@@ -2,42 +2,150 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Webklex\IMAP\Client;
+use App\DataTables\EmailDataTable;
+use App\Http\Requests;
+use App\Http\Requests\CreateEmailRequest;
+use App\Http\Requests\UpdateEmailRequest;
+use App\Repositories\EmailRepository;
+use Flash;
+use App\Http\Controllers\AppBaseController;
+use Response;
 
-class EmailController extends Controller
+class EmailController extends AppBaseController
 {
-    //
+    /** @var  EmailRepository */
+    private $emailRepository;
 
-    public function index(){
-    	/** @var \Webklex\IMAP\Client $oClient */
-		$oClient = new Client([
-		    'host'          => 'outlook.office365.com',
-		   // 'port'          => 993,
-		   // 'encryption'    => 'ssl',
-		   // 'validate_cert' => true,
-		    'username'      => 'MunsterUniversity@24Vision.Solutions',
-		    'password'      => 'Mun@24V-112017',
-		]);
-		$oClient->connect();
+    public function __construct(EmailRepository $emailRepo)
+    {
+        $this->emailRepository = $emailRepo;
+    }
 
-		$mbox = imap_open("{outlook.office365.com}", "MunsterUniversity@24Vision.Solutions", "Mun@24V-112017", OP_HALFOPEN)
-      or die("can't connect: " . imap_last_error());
-		//Get all Mailboxes
-		$list = imap_getmailboxes($mbox, '{outlook.office365.com}', 'INBOX/24VisionChartering-*');
-		if (is_array($list)) {
-		    foreach ($list as $key => $val) {
-		        echo "($key) ";
-		        echo imap_utf7_decode($val->name) . ",";
-		        echo "'" . $val->delimiter . "',";
-		        echo $val->attributes . "<br />\n";
-		    }
-		} else {
-		    echo "imap_getmailboxes failed: " . imap_last_error() . "\n";
-		}
+    /**
+     * Display a listing of the Email.
+     *
+     * @param EmailDataTable $emailDataTable
+     * @return Response
+     */
+    public function index(EmailDataTable $emailDataTable)
+    {
+        return $emailDataTable->render('emails.index');
+    }
 
-		  
-		//return var_dump();
-		//return view('emails.index')->with('emails', $oFolder->getMessages());
+    /**
+     * Show the form for creating a new Email.
+     *
+     * @return Response
+     */
+    public function create()
+    {
+        return view('emails.create');
+    }
+
+    /**
+     * Store a newly created Email in storage.
+     *
+     * @param CreateEmailRequest $request
+     *
+     * @return Response
+     */
+    public function store(CreateEmailRequest $request)
+    {
+        $input = $request->all();
+
+        $email = $this->emailRepository->create($input);
+
+        Flash::success('Email saved successfully.');
+
+        return redirect(route('emails.index'));
+    }
+
+    /**
+     * Display the specified Email.
+     *
+     * @param  int $id
+     *
+     * @return Response
+     */
+    public function show($id)
+    {
+        $email = $this->emailRepository->findWithoutFail($id);
+
+        if (empty($email)) {
+            Flash::error('Email not found');
+
+            return redirect(route('emails.index'));
+        }
+
+        return view('emails.show')->with('email', $email);
+    }
+
+    /**
+     * Show the form for editing the specified Email.
+     *
+     * @param  int $id
+     *
+     * @return Response
+     */
+    public function edit($id)
+    {
+        $email = $this->emailRepository->findWithoutFail($id);
+
+        if (empty($email)) {
+            Flash::error('Email not found');
+
+            return redirect(route('emails.index'));
+        }
+
+        return view('emails.edit')->with('email', $email);
+    }
+
+    /**
+     * Update the specified Email in storage.
+     *
+     * @param  int              $id
+     * @param UpdateEmailRequest $request
+     *
+     * @return Response
+     */
+    public function update($id, UpdateEmailRequest $request)
+    {
+        $email = $this->emailRepository->findWithoutFail($id);
+
+        if (empty($email)) {
+            Flash::error('Email not found');
+
+            return redirect(route('emails.index'));
+        }
+
+        $email = $this->emailRepository->update($request->all(), $id);
+
+        Flash::success('Email updated successfully.');
+
+        return redirect(route('emails.index'));
+    }
+
+    /**
+     * Remove the specified Email from storage.
+     *
+     * @param  int $id
+     *
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        $email = $this->emailRepository->findWithoutFail($id);
+
+        if (empty($email)) {
+            Flash::error('Email not found');
+
+            return redirect(route('emails.index'));
+        }
+
+        $this->emailRepository->delete($id);
+
+        Flash::success('Email deleted successfully.');
+
+        return redirect(route('emails.index'));
     }
 }
