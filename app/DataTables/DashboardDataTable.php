@@ -55,13 +55,14 @@ class DashboardDataTable extends DataTable
 
         return datatables()
             ->eloquent($this->query())
-            // ->addColumn('bdi', function(Cargo $cargo){
-            //     $ship = $this->ship;
-            //         $port = $this->port;
-            //         $date_of_opening = $this->date_of_opening;
-            //     return view('calculator.bdi', 
-            //             compact('cargo','ship','port','date_of_opening'))->render();
-            // })
+            ->addColumn('bdi', function(Cargo $cargo){
+                $ship = $this->ship;
+                    $port = $this->port;
+                    $date_of_opening = $this->date_of_opening;
+                    $cargo = Cargo::find($cargo->id);
+                return view('calculator.bdi', 
+                        compact('cargo','ship','port','date_of_opening'))->render();
+            })
             ->addColumn('action', function(Cargo $cargo) {
                     $ship = $this->ship;
                     $port = $this->port;
@@ -183,7 +184,7 @@ class DashboardDataTable extends DataTable
             ->columns($this->getColumns())
             ->addAction(['width' => '10%'])
             ->addColumn(['defaultContent' => '',
-                        'data' => $cargo->setBdi($port, $ship,$date_of_opening),
+                        'data' => 'bdi',
                         'name' => 'bdi',
                         'title' => 'bdi'
                         ])
