@@ -393,7 +393,7 @@ class Cargo extends Model
             $lat2 = Port::find($port_start_id)->latitude;
             $lon2 = Port::find($port_start_id)->longitude;
     
-            $distance_to_start = $calculateDistance($lat1, $lon1, $lat2, $lon2);
+            $distance_to_start = $this->calculateDistance($lat1, $lon1, $lat2, $lon2);
             
 //          "XXX Insert the new calculated distances into the table 'distances', create 2 entries, the second withs witched ports XXX";
 
@@ -430,7 +430,7 @@ class Cargo extends Model
             $lat2 = Port::find($port_end_id)->latitude;
             $lon2 = Port::find($port_end_id)->longitude;
     
-            $distance_cargo = $calculateDistance($lat1, $lon1, $lat2, $lon2);
+            $distance_cargo = $this->calculateDistance($lat1, $lon1, $lat2, $lon2);
             
 //          "XXX Insert the new calculated distances into the table 'distances', create 2 entries, the second withs witched ports XXX";
 
