@@ -55,7 +55,7 @@ class DashboardDataTable extends DataTable
 
         return datatables()
             ->eloquent($this->query())
-            ->addColumn('action', function(Cargo $cargo) {
+            ->addColumn('action', function($cargo) {
                     $ship = $this->ship;
                     $port = $this->port;
                     $date_of_opening = $this->date_of_opening;
@@ -63,7 +63,7 @@ class DashboardDataTable extends DataTable
                     return view('calculator.datatables_actions', 
                         compact('cargo','ship','port','date_of_opening'))->render();
             })
-            ->addColumn('bdi', function(Cargo $cargo){
+            ->addColumn('bdi', function($cargo){
                 $ship = $this->ship;
                     $port = $this->port;
                     $date_of_opening = $this->date_of_opening;
