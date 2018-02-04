@@ -55,9 +55,8 @@ class DashboardDataTable extends DataTable
 
         return datatables()
             ->eloquent($this->query())
-            ->addColumn('bdi', function(Cargo $cargo){
-               // return $cargo->getBdi();
-                return 'asd';
+            ->editColumn('bdi', function(Cargo $cargo){
+                return $cargo->setBdi($this->port,$this->ship, $this->date_of_opening);
             })
             ->addColumn('action', function(Cargo $cargo) {
                     $ship = $this->ship;
@@ -154,7 +153,6 @@ class DashboardDataTable extends DataTable
                         //                 '<=', 
                         //                 ($this->ship->max_laden_draft-($this->ship->ballast_draft * $this->occupied_tonage)))
                         ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port')
-                        ->setBdi($this->port,$this->ship, $this->date_of_opening);
                         if($this->request()->get('port_id')){
                             $cargos->where('loading_port',$this->request()->get('port_id'));
                         }
