@@ -67,9 +67,31 @@ class DashboardDataTable extends DataTable
                 $ship = $this->ship;
                 $port = $this->port;
                 $date_of_opening = $this->date_of_opening;
-                
+                //waiting for debugging calculator in model
+                //$bdi = $cargo->setBdi($port, $ship, $date_of_opening);
+                $bdi = 123;
                 return view('calculator.bdi', 
-                        compact('cargo','ship','port','date_of_opening'))->render();
+                        compact('bdi'))->render();
+            })
+            ->addColumn('ntce', function(Cargo $cargo){
+                $ship = $this->ship;
+                $port = $this->port;
+                $date_of_opening = $this->date_of_opening;
+                //waiting for debugging calculator in model
+                //$bdi = $cargo->setBdi($port, $ship, $date_of_opening);
+                $ntce = 123;
+                return view('calculator.ntce', 
+                        compact('ntce'))->render();
+            })
+            ->addColumn('gross_rate', function(Cargo $cargo){
+                $ship = $this->ship;
+                $port = $this->port;
+                $date_of_opening = $this->date_of_opening;
+                //waiting for debugging calculator in model
+                //$bdi = $cargo->setBdi($port, $ship, $date_of_opening);
+                $gross_rate = 123;
+                return view('calculator.grossRate', 
+                        compact('gross_rate'))->render();
             })
             ->editColumn('laycan_first_day', function(Cargo $cargo){
                 if ($cargo->laycan_first_day_manual) {
