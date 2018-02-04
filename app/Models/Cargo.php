@@ -262,7 +262,7 @@ class Cargo extends Model
     }
 
     public function getBdi(){
-        return $this->bdi;
+        return 123;
     }
     /*END non db attribute setter and getter*/
 
