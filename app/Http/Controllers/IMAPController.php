@@ -35,7 +35,10 @@ class IMAPController extends Controller
 		$mail = $mailbox->getMail($mailsIds[0]);
 
 		print_r($mail);
-		echo "\n\nAttachments:\n";
+        print_r($mail->subject);
+        print_r($mail->from);
+        print_r($mail->to);
+		print_r($mail->cc);
 		print_r($mail->getAttachments());
     }
 }
