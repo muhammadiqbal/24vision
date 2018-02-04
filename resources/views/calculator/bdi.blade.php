@@ -1,1 +1,1 @@
-<p>{{$cargo}}{{$port}} {{$ship}} {{$date_of_opening}}</p>
+<p>{{$bdi}}</p>

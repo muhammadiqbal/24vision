@@ -67,9 +67,10 @@ class DashboardDataTable extends DataTable
                 $ship = $this->ship;
                 $port = $this->port;
                 $date_of_opening = $this->date_of_opening;
+                $bdi = $cargo->setBdi($port, $ship, $date_of_opening);
 
                 return view('calculator.bdi', 
-                        compact('cargo','ship','port','date_of_opening'))->render();
+                        compact('bdi'))->render();
             })
             ->editColumn('laycan_first_day', function(Cargo $cargo){
                 if ($cargo->laycan_first_day_manual) {
