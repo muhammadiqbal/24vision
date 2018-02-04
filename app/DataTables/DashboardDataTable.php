@@ -62,7 +62,7 @@ class DashboardDataTable extends DataTable
         return datatables()
             ->eloquent($this->query())
             ->addColumn('bdi', function(Cargo $cargo){
-                $distance_to_start = $calculator->calculateDistancetoStart($this->port, $cargo, $this->calculator);
+                $distance_to_start = $this->calculator->calculateDistancetoStart($this->port, $cargo, $this->calculator);
                 $travel_time_to_start = $this->calculator->calculateTravelTimeToStart($this->ship, $distance_to_start);
                 $bdi_id = $this->calculator->calculateBDIId($this->port,$cargo);
                 $bdi = $this->calculator->calculateBDI($bdi_id, $this->date_of_opening, $travel_time_to_start);
@@ -84,13 +84,13 @@ class DashboardDataTable extends DataTable
                 $travel_time_sum_bdi = $this->calculator->calculateTravelTimeSum($travel_time_to_start_bdi, $travel_time_cargo_bdi);      
                 $voyage_time_bdi = $this->calculator->calculateVoyageTime($port_time_sum, $travel_time_sum_bdi);
 
-                $travel_time_to_start = $calculator->calculateTravelTimeToStart($this->ship, $distance_to_start);
-                $travel_time_cargo =  $calculator->calculateTravelTimeCargo($this->ship, $distance_cargo);
-                $travel_time_sum = $calculator->calculateTravelTimeSum($travel_time_to_start, $travel_time_cargo);
-                $port_time_load = $calculator->calculatePortTimeLoad($cargo);
-                $port_time_disch = $calculator->calculatePortTimeDisch($cargo);
-                $port_time_sum = $calculator->calculatePortTimeSum($port_time_load, $port_time_disch);
-                $voyage_time = $calculator->calculateVoyageTime($port_time_sum, $travel_time_sum);
+                $travel_time_to_start = $this->calculator->calculateTravelTimeToStart($this->ship, $distance_to_start);
+                $travel_time_cargo =  $this->calculator->calculateTravelTimeCargo($this->ship, $distance_cargo);
+                $travel_time_sum = $this->calculator->calculateTravelTimeSum($travel_time_to_start, $travel_time_cargo);
+                $port_time_load = $this->calculator->calculatePortTimeLoad($cargo);
+                $port_time_disch = $this->calculator->calculatePortTimeDisch($cargo);
+                $port_time_sum = $this->calculator->calculatePortTimeSum($port_time_load, $port_time_disch);
+                $voyage_time = $this->calculator->calculateVoyageTime($port_time_sum, $travel_time_sum);
 
                 $fuel_consumption = $this->calculator->calculateFuelConsumption($this->ship, $port_time_sum, $travel_time_sum);
                 $fuel_price =  $this->calculator->calculateFuelPrice($this->ship, $this->date_of_opening, $travel_time_to_start);
