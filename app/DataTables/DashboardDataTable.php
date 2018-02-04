@@ -142,7 +142,7 @@ class DashboardDataTable extends DataTable
                         ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
                         ->leftjoin('ports as p1', 'p1.id','loading_port')
                         ->leftjoin('ports as p2', 'p2.id','discharging_port')
-                        ->where('quantity','<=', ($this->ship->dwcc - $this->occupied_tonage))
+                        ->where('quantity','<=', ($this->ship->dwcc - $this->occupied_tonage));
                         // ->where(DB::raw('quantity * stowage_factor AS size'),
                         //                 '<=',
                         //                 ($this->ship->max_holds_capacity - $this->occupied_size))
@@ -159,7 +159,7 @@ class DashboardDataTable extends DataTable
                         }
 
         foreach ($cargos => $cargo) {
-            $cago->setBdi($this->port,$this->ship, $this->date_of_opening);
+            $cargo->setBdi($this->port,$this->ship, $this->date_of_opening);
         }
                         
         return $this->applyScopes($cargos);
