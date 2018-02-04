@@ -182,7 +182,11 @@ class DashboardDataTable extends DataTable
         return $this->builder()
             ->columns($this->getColumns())
             ->addAction(['width' => '10%'])
-            ->addColumn(['bdi'])
+            ->addColumn(['defaultContent' => '',
+                        'data' => 'bdi',
+                        'name' => 'bdi',
+                        'title' => 'bdi'
+                        ])
             ->ajax('')
             ->parameters([
                 'dom' => 'Bfrtip',
