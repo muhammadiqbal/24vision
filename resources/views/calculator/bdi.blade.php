@@ -1,1 +1,1 @@
-<p>{{$bdi}}</p>
+<p>{{$cargo->setBdi($port, $ship,$date_of_opening)}}</p>
