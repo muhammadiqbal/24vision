@@ -77,7 +77,7 @@ class Cargo extends Model
     protected $ntce;
     protected $grossRate;
     protected $route;
-    protected $bdi;
+    protected $bdi = 123;
     /*END non db attributes*/
 
     public $fillable = [
@@ -262,7 +262,7 @@ class Cargo extends Model
     }
 
     public function getBdi(){
-        return 123;
+        return $this->bdi;
     }
     /*END non db attribute setter and getter*/
 
