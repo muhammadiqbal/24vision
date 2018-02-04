@@ -66,7 +66,7 @@ class DashboardDataTable extends DataTable
             ->addColumn('bdi', function(Cargo $cargo){
                 $ship = $this->ship;
                 $port = $this->port;
-                //$date_of_opening = $this->date_of_opening;
+                $date_of_opening = $this->date_of_opening;
                 //waiting for debugging calculator in model
                 $bdi = $cargo->setBdi($port, $ship, $date_of_opening);
                 //$bdi =123;
