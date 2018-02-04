@@ -17,6 +17,7 @@
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.4.0",
         "league/geotools": "@stable",
+        "php-imap/php-imap": "^3.0",
         "toin0u/geocoder-laravel": "^1.1",
         "webklex/laravel-imap": "^1.0",
         "yajra/laravel-datatables-buttons": "3.*",
