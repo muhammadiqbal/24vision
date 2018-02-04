@@ -253,7 +253,8 @@ class Cargo extends Model
         return $this->route;
     }
 
-    public function setBdi($port, $ship, $date_of_opening, Calculator $calculator){
+    public function setBdi($port, $ship, $date_of_opening){
+        $calculator = new Calculator;
         $distance_to_start = $calculator->calculateDistancetoStart($port, $cargo, $calculator);
         $travel_time_to_start = $calculator->calculateTravelTimeToStart($ship, $distance_to_start);
         $bdi_id = $calculator->calculateBDIId($port,$cargo);
