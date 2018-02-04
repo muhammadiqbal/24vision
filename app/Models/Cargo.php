@@ -173,14 +173,7 @@ class Cargo extends Model
         
     ];
 
-    public function __construct(array $attributes = array())
-    {
-        parent::__construct($attributes);
-
-        $this->setNtce = $this->setNtce();
-        $this->grossRate = $this->grossRate();
-        $this->bdi = $this->setBdi();
-    }
+ 
 
     /*START non db attribute setter and getter*/
     public function setNtce($port, $ship, $date_of_opening){
