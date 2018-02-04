@@ -1,1 +1,1 @@
-<p>{{$port, $ship,$date_of_opening}}</p>
+<p>{{$cargo}}{{$port}} {{$ship}} {{$date_of_opening}}</p>
