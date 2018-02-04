@@ -18,7 +18,7 @@ class CreateTableFeePrices extends Migration
             $table->increments('id');
             $table->integer('port_id')->unsigned();
             $table->foreign('port_id')->references('id')->on('ports');
-            $table->date('star_date');
+            $table->date('start_date');
             $table->date('end_date')->nullable();
             $table->decimal('price');
             $table->timestamps();

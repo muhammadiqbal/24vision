@@ -12,7 +12,7 @@ use App\Models\CargoType;
 use App\Models\Zone;
 use App\Models\LdRateType;
 use App\Models\QuantityMeasurement;
-use App\Models\BDI;
+use App\Models\Bdi;
 
 class VoyageController extends Controller
 {
@@ -124,8 +124,8 @@ class VoyageController extends Controller
 		
 		
 		if ($bdi_id != null) {
-		$bdi_code= BDI::find($bdi_id)->code;
-		$bdi_name= BDI::find($bdi_id)->name;
+		$bdi_code= Bdi::find($bdi_id)->code;
+		$bdi_name= Bdi::find($bdi_id)->name;
 		} else { 
 		$bdi_code = null;
 		$bdi_name = null;
