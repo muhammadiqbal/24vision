@@ -99,9 +99,8 @@ class DashboardDataTable extends DataTable
                 $port_fee_disch_bdi = $this->calculator->calculatePortFeeDisch($cargo, $this->date_of_opening, $voyage_time_bdi, $port_time_disch);
                 $gross_rate = $this->calculator->calculateGrossRate($cargo, $bdi, $voyage_time_bdi, $non_hire_costs_bdi);
                 
-                return $gross_rate;
                 $ntce = $this->calculator->calculateNTCE($cargo, $bdi, $voyage_time, $non_hire_costs, $gross_rate);
-                return $this->calculateBDI();
+                return $ntce;
             })
             ->addColumn('gross_rate', function(Cargo $cargo){
                 $ship_bdi = Ship::first();
