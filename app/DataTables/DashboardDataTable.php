@@ -61,13 +61,12 @@ class DashboardDataTable extends DataTable
 
         return datatables()
             ->eloquent($this->query())
-            ->addColumn('bdi', function(Cargo $cargo){
-                // $distance_to_start = $this->calculator->calculateDistancetoStart($this->port, $cargo, $this->calculator);
-                // $travel_time_to_start = $this->calculator->calculateTravelTimeToStart($this->ship, $distance_to_start);
-                // $bdi_id = $this->calculator->calculateBDIId($this->port,$cargo);
-                // $bdi = $this->calculator->calculateBDI($bdi_id, $this->date_of_opening, $travel_time_to_start);
-                // return $bdi;
-                return 'bla';
+            ->editColumn('bdi', function(Cargo $cargo){
+                $distance_to_start = $this->calculator->calculateDistancetoStart($this->port, $cargo, $this->calculator);
+                $travel_time_to_start = $this->calculator->calculateTravelTimeToStart($this->ship, $distance_to_start);
+                $bdi_id = $this->calculator->calculateBDIId($this->port,$cargo);
+                $bdi = $this->calculator->calculateBDI($bdi_id, $this->date_of_opening, $travel_time_to_start);
+                return $bdi;
             })
             // ->addColumn('ntce', function(Cargo $cargo){
             //     $ship_bdi = Ship::first();
@@ -292,6 +291,9 @@ class DashboardDataTable extends DataTable
             'loading_port' => ['defaultContent' => 'NULL','name' => 'load_port', 'data' => 'load_port'],
             'discharging_port' => ['defaultContent' => 'NULL','name' => 'disch_port', 'data' => 'disch_port'],
             'email_id' => ['defaultContent' => 'NULL','name' => 'email_id', 'data' => 'email_id'],
+            'bdi' => ['defaultContent'=>'NULL', 'name'=>'', 'data'=>''],
+            'ntce' => ['defaultContent'=>'NULL', 'name'=>'', 'data'=>''],
+            'gross_rate' => ['defaultContent'=>'NULL', 'name'=>'', 'data'=>''],
             'status_id' => ['defaultContent' => 'NULL','name' => 'status', 'data' => 'status'],
         ];
     }
