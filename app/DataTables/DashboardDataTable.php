@@ -59,7 +59,7 @@ class DashboardDataTable extends DataTable
                     $ship = $this->ship;
                     $port = $this->port;
                     $date_of_opening = $this->date_of_opening;
-                    $bdi = $cargo->setBdi($port, $ship, $date_of_opening);
+                    
                     return view('calculator.datatables_actions', 
                         compact('cargo','ship','port','date_of_opening'))->render();
             })
