@@ -56,8 +56,8 @@ class DashboardDataTable extends DataTable
         return datatables()
             ->eloquent($this->query())
             ->addColumn('bdi', function(Cargo $cargo){
-                return $cargo->getBdi();
-                //return 'asd';
+               // return $cargo->getBdi();
+                return 'asd';
             })
             ->addColumn('action', function(Cargo $cargo) {
                     $ship = $this->ship;
