@@ -62,9 +62,9 @@ class DashboardDataTable extends DataTable
         return datatables()
             ->eloquent($this->query())
             ->addColumn('bdi', function(Cargo $cargo){
-                $distance_to_start = $this->calculator->calculateDistancetoStart($this->port, $cargo, $this->calculator);
+                $distance_to_start = $this->calculator->calculateDistancetoStart($this->port, $cargo->id, $this->calculator);
                 $travel_time_to_start = $this->calculator->calculateTravelTimeToStart($this->ship, $distance_to_start);
-                $bdi_id = $this->calculator->calculateBDIId($this->port,$cargo);
+                $bdi_id = $this->calculator->calculateBDIId($this->port,$cargo->id);
                 $bdi = $this->calculator->calculateBDI($bdi_id, $this->date_of_opening, $travel_time_to_start);
                 return $bdi;
                 return 'blas';
