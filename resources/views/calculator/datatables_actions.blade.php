@@ -12,6 +12,5 @@
     <a href="{{ route('cargos.edit', $cargo->id) }}" class='btn btn-default btn-xs'>
         <i class="glyphicon glyphicon-share"></i>
     </a>
-    <b>{{$cargo->setBdi($port,$ship,$date_of_opening)}}</b>
 </div>
 
