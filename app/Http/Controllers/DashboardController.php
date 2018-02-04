@@ -191,7 +191,7 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request, DashboardDataTable $dashboardDataTable)
+    public function index(Request $request, DashboardDataTable $dashboardDataTable, Calculator $calculator)
     {
          //$shipId = $request->input('ship_id',1);
          //$ship = Ship::find(1);
@@ -223,6 +223,7 @@ class DashboardController extends Controller
                                   ->forShip($selectedShip)
                                   ->forPort($port)
                                   ->forDateOfOpening($date_of_opening)
+                                  ->forCalculator($calculator)
                                   ->render('calculator.index',
                                             ['ships'=>$ships, 
                                              'ports'=>$ports,
