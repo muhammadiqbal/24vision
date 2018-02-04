@@ -62,8 +62,7 @@ class DashboardDataTable extends DataTable
         return datatables()
             ->eloquent($this->query())
             ->addColumn('bdi', function(Cargo $cargo){
-                $distance_to_start = 8;
-                //$this->calculator->calculateDistancetoStart($this->port, $cargo->id, $this->calculator);
+                //$distance_to_start = $this->calculator->calculateDistancetoStart($this->port, $cargo->id, $this->calculator);
                 // $travel_time_to_start = $this->calculator->calculateTravelTimeToStart($this->ship, $distance_to_start);
                 // $bdi_id = $this->calculator->calculateBDIId($this->port,$cargo->id);
                 // $bdi = $this->calculator->calculateBDI($bdi_id, $this->date_of_opening, $travel_time_to_start);
@@ -249,35 +248,36 @@ class DashboardDataTable extends DataTable
             ->columns($this->getColumns())
             ->addAction(['width' => '10%'])
             ->ajax('')
-            ->parameters([
-                'dom' => 'Bfrtip',
-                'scrollX' => true,
-                'buttons' => [
-                    'print',
-                    'reset',
-                    'reload',
-                    [
-                         'extend'  => 'collection',
-                         'text'    => '<i class="fa fa-download"></i> Export',
-                         'buttons' => [
-                             'csv',
-                             'excel',
-                             'pdf',
-                         ],
-                    ],
-                    'colvis'
-                ],
-                'initComplete' => "function () {
-                            this.api().columns().every(function () {
-                                var column = this;
-                                var input = document.createElement(\"input\");
-                                $(input).appendTo($(column.footer()).empty())
-                                .on('change', function () {
-                                    column.search($(this).val(), false, false, true).draw();
-                                });
-                            });
-                        }",
-            ]);
+            ->parameters($this->getBuilderParameters());
+            // ->parameters([
+            //     'dom' => 'Bfrtip',
+            //     'scrollX' => true,
+            //     'buttons' => [
+            //         'print',
+            //         'reset',
+            //         'reload',
+            //         [
+            //              'extend'  => 'collection',
+            //              'text'    => '<i class="fa fa-download"></i> Export',
+            //              'buttons' => [
+            //                  'csv',
+            //                  'excel',
+            //                  'pdf',
+            //              ],
+            //         ],
+            //         'colvis'
+            //     ],
+            //     'initComplete' => "function () {
+            //                 this.api().columns().every(function () {
+            //                     var column = this;
+            //                     var input = document.createElement(\"input\");
+            //                     $(input).appendTo($(column.footer()).empty())
+            //                     .on('change', function () {
+            //                         column.search($(this).val(), false, false, true).draw();
+            //                     });
+            //                 });
+            //             }",
+            // ]);
     }
 
     /**
