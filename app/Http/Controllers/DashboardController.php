@@ -211,7 +211,7 @@ class DashboardController extends Controller
 
          $occupied_size = $request->input('occupied_size',0);
          $occupied_tonage = $request->input('occupied_tonage',0);
-         $date_of_opening = $request->input('date_of_opening',date('d-m-y'));
+         $date_of_opening = $request->input('date_of_opening',date('d-m-Y'));
 
          $mailCount = Email::count();
          $cargoCount = Cargo::count();
