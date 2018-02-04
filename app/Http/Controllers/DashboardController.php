@@ -223,7 +223,6 @@ class DashboardController extends Controller
                                   ->forShip($selectedShip)
                                   ->forPort($port)
                                   ->forDateOfOpening($date_of_opening)
-                                  ->forCalculator($calculator)
                                   ->render('calculator.index',
                                             ['ships'=>$ships, 
                                              'ports'=>$ports,
