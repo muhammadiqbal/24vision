@@ -460,7 +460,7 @@ class Cargo extends Model
     }
 
     //Formular for calculating the Distance for cargo, used for calculating TravelTimeCargo
-    public function calculateDistancetoCargo(Cargo $cargo, Calculator $calculator){
+    public function calculateDistancetoCargo(Cargo $cargo){
         
         // Receive parameters from objects
         $port_start_id = $cargo->loading_port;
