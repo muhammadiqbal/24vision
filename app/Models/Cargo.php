@@ -411,7 +411,7 @@ class Cargo extends Model
     
         //Formular for calculating direct distance between two points with given latidude and longitude
         // Based on: https://stackoverflow.com/questions/10053358/measuring-the-distance-between-two-coordinates-in-php 
-    protected function calculateDistance($lat1, $lon1, $lat2, $lon2) {
+    public function calculateDistance($lat1, $lon1, $lat2, $lon2) {
 
         $theta = $lon1 - $lon2;
         $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
