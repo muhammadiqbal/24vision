@@ -1,4 +1,5 @@
 <div class='btn-group'>
+    <b>{{$cargo->bdi}}</b>
     <a href="{{url('/voyage/'.$ship->id.'/'.$cargo->id.'/'.$port->id.'/'.$date_of_opening)}}" class='btn btn-default btn-xs'>
         <i class="glyphicon glyphicon-search"></i>
     </a>
