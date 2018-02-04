@@ -157,6 +157,10 @@ class DashboardDataTable extends DataTable
                             $cargos->whereDate('laycan_first_day','>=',date($this->request()->get('date_of_opening')))
                                    ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')));
                         }
+
+        foreach ($cargos => $cargo) {
+            $cago->setBdi($this->port,$this->ship, $this->date_of_opening);
+        }
                         
         return $this->applyScopes($cargos);
     }
@@ -218,7 +222,7 @@ class DashboardDataTable extends DataTable
             'loading_port' => ['defaultContent' => 'NULL','name' => 'load_port', 'data' => 'load_port'],
             'discharging_port' => ['defaultContent' => 'NULL','name' => 'disch_port', 'data' => 'disch_port'],
             'email_id' => ['defaultContent' => 'NULL','name' => 'email_id', 'data' => 'email_id'],
-            'bdi' => ['defaultContent'=>'NULL', 'name'=>'bdi', 'data'=>''],
+            'bdi' => ['defaultContent'=>'NULL', 'name'=>'bdi', 'data'=>'bdi'],
             'ntce' => ['defaultContent'=>'NULL', 'name'=>'', 'data'=>''],
             'gross_rate' => ['defaultContent'=>'NULL', 'name'=>'', 'data'=>''],
             'status_id' => ['defaultContent' => 'NULL','name' => 'status', 'data' => 'status'],
