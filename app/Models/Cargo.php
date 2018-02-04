@@ -423,7 +423,7 @@ class Cargo extends Model
     }
     
     //Formular for calculating (and storing) the Distance to start, used for calculating TravelTimeToStart
-    public function calculateDistancetoStart(Port $port_ship, Cargo $cargo, Calculator $calculator){
+    public function calculateDistancetoStart(Port $port_ship, Cargo $cargo){
         
         
         // Receive parameters from objects
@@ -447,7 +447,7 @@ class Cargo extends Model
             $lat2 = Port::find($port_start_id)->latitude;
             $lon2 = Port::find($port_start_id)->longitude;
     
-            $distance_to_start = $calculator->calculateDistance($lat1, $lon1, $lat2, $lon2);
+            $distance_to_start = $calculateDistance($lat1, $lon1, $lat2, $lon2);
             
 //          "XXX Insert the new calculated distances into the table 'distances', create 2 entries, the second withs witched ports XXX";
 
@@ -484,7 +484,7 @@ class Cargo extends Model
             $lat2 = Port::find($port_end_id)->latitude;
             $lon2 = Port::find($port_end_id)->longitude;
     
-            $distance_cargo = $calculator->calculateDistance($lat1, $lon1, $lat2, $lon2);
+            $distance_cargo = $calculateDistance($lat1, $lon1, $lat2, $lon2);
             
 //          "XXX Insert the new calculated distances into the table 'distances', create 2 entries, the second withs witched ports XXX";
 
