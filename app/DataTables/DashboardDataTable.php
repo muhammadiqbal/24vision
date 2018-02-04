@@ -55,6 +55,13 @@ class DashboardDataTable extends DataTable
 
         return datatables()
             ->eloquent($this->query())
+            ->addColumn('bdi', function(Cargo $cargo){
+                $ship = $this->ship;
+                    $port = $this->port;
+                    $date_of_opening = $this->date_of_opening;
+                return view('calculator.bdi', 
+                        compact('cargo','ship','port','date_of_opening'))->render();
+            })
             ->addColumn('action', function(Cargo $cargo) {
                     $ship = $this->ship;
                     $port = $this->port;
