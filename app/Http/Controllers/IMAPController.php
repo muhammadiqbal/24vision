@@ -43,7 +43,7 @@ class IMAPController extends Controller
                     'receiver'=> @$email->to,
                     'cc'=> @$email->cc,
                     'classification_manual'=>null,
-                    'date'=> Carbon\Carbon::parse(@$email->date),
+                    'date'=> \Carbon\Carbon::parse(@$email->date),
                     'classification_automated'=>null,
                     'IMAPUID'=> @$email->uid,
                     'IMAPFolderID'=>null,
