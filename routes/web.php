@@ -38,6 +38,8 @@ Route::group(['middleware' => 'auth'], function()
 	Route::resource('ports', 'PortController');
 	
 	Route::resource('zones', 'ZoneController');
+	
+	Route::resource('zonePoints', 'ZonePointController');
 
 	Route::resource('cargos', 'CargoController');
 

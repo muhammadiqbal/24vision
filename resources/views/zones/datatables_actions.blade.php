@@ -12,4 +12,6 @@
         'onclick' => "return confirm('Are you sure?')"
     ]) !!}
 </div>
+
+
 {!! Form::close() !!}

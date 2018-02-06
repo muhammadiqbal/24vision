@@ -90,4 +90,12 @@ class Zone extends Model
     {
         return $this->hasMany(\App\Models\ZonePort::class);
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     **/
+    public function zonePoints()
+    {
+        return $this->hasMany(\App\Models\ZonePoint::class);
+    }
 }
