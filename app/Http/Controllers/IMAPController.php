@@ -44,7 +44,7 @@ class IMAPController extends Controller
             
 
             $input = ['subject'=>$email->subject,
-                    'body'=>$mailbox->getMail($email->uid,false),
+                    'body'=> @$mailbox->getMail($email->uid,false),
                     'sender'=>$email->from,
                     'receiver'=>$email->to,
                     'cc'=>$email->cc,
