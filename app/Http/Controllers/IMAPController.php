@@ -42,7 +42,7 @@ class IMAPController extends Controller
             $email = $mailbox->getMail($mailId);
 
             $input = ['subject'=>$email->subject,
-                    'body'=>imap_body($mailbox, $mailId, FT_UID),
+                    'body'=>imap_fetchbody($mailbox, $mailId, 1.1),
                     'sender'=>$email->from,
                     'receiver'=>$email->to,
                     'cc'=>$email->cc,
