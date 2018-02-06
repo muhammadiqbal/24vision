@@ -80,33 +80,7 @@
                     </div>
                 </div>
                 <div class="box-body table-responsive">
-                    {{-- @include('calculator.table') --}}
-
-                    @section('css')
-                    @include('layouts.datatables_css')
-                    @endsection
-
-                    <table class="table dataTable" id="dataTable">
-                        <th>
-                            
-                        </th>
-                        @foreach($cargos as $cargo)
-                            <td>{{$cargo->type}}</td>
-                            <td>{{$cargo->quantity}}</td>
-                            <td>{{$cargo->laycan_first_day}}</td>
-                            <td>{{$cargo->laycan_last_day}}</td>
-                        @endforeach
-                    </table>
-
-                    @section('scripts')
-                        {{-- @include('layouts.datatables_js') --}}
-                        {!! $dataTable->scripts() !!}
-                    <script type="text/javascript">
-                    $(document).ready( function () {
-                        $('#dataTable').DataTable();
-                    } );
-                    </script>
-                    @endsection
+                    @include('calculator.table')
                 </div>
             </div>
         </div>

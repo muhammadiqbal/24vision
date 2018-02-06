@@ -213,28 +213,12 @@ class DashboardController extends Controller
          $occupied_tonage = $request->input('occupied_tonage',0);
          $date_of_opening = $request->input('date_of_opening',date('d-m-Y'));
 
-         $mailCount = Email::count();
-         $cargoCount = Cargo::count();
-         $shipCount = Ship::count();
-         $cargos = Cargo::leftjoin('cargo_status', 'cargo_status.id','cargo_status.id')
-                        ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
-                        ->leftjoin('ports as p1', 'p1.id','loading_port')
-                        ->leftjoin('ports as p2', 'p2.id','discharging_port')
-                        ->where('quantity','<=', ($selectedShip->dwcc - $occupied_tonage))
-                        ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
-                        if($request->get('port_id')){
-                            $cargos->where('loading_port',$port);
-                        }
-                        if($request->get('date_of_opening')){
-                            $cargos->whereDate('laycan_first_day','>=',$date_of_opening)
-                                   ->whereDate('laycan_last_day','<=',$date_of_opening);
-                        }
         return $dashboardDataTable
-                                  // ->forOccTonnage($occupied_tonage)
-                                  // ->forOccSize($occupied_size)
-                                  // ->forShip($selectedShip)
-                                  // ->forPort($port)
-                                  // ->forDateOfOpening($date_of_opening)
+                                  ->forOccTonnage($occupied_tonage)
+                                  ->forOccSize($occupied_size)
+                                  ->forShip($selectedShip)
+                                  ->forPort($port)
+                                  ->forDateOfOpening($date_of_opening)
                                   ->render('calculator.index',
                                             ['ships'=>$ships, 
                                              'ports'=>$ports,
@@ -244,8 +228,7 @@ class DashboardController extends Controller
                                              'date_of_opening'=>$date_of_opening,
                                              'mailCount'=>$mailCount,
                                              'cargoCount'=>$cargoCount,
-                                             'shipCount'=>$shipCount,
-                                             'cargos'=>$cargos,
+                                             'shipCount'=>$shipCount
                                             ]);
     }
 
