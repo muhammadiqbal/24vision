@@ -2,10 +2,12 @@
 
 
 @section('content')
-Select script ot be executed:
-<div class="box">	
+
+<div class="box primary">
+<div class="box-body">	
 	<div class="row">
 		<div class="form-group col-sm-6">
+		<b>Select script ot be executed</b>
 	    {!! Form::label('script', 'Script:') !!}
 	        <select name="script" id="script" class="form-control">
 	            <option value="python3 execute_cargo_extraction.py">Cargo extraction</option>
@@ -16,9 +18,10 @@ Select script ot be executed:
 		<button id="execute" class="form-control">execute</button>
 	</div>
 </div>
+</div>
 
 
-<div class="box">
+<div class="box box-priamry">
   <div class="box-header with-border">
     <h3 class="box-title">Execution result</h3>
     <div class="box-tools pull-right">
