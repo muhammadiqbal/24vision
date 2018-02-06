@@ -213,12 +213,15 @@ class DashboardController extends Controller
          $occupied_tonage = $request->input('occupied_tonage',0);
          $date_of_opening = $request->input('date_of_opening',date('d-m-Y'));
 
+         $mailCount = Email::count();
+         $cargoCount = Cargo::count();
+         $shipCount = Ship::count();
         return $dashboardDataTable
-                                  ->forOccTonnage($occupied_tonage)
-                                  ->forOccSize($occupied_size)
-                                  ->forShip($selectedShip)
-                                  ->forPort($port)
-                                  ->forDateOfOpening($date_of_opening)
+                                  // ->forOccTonnage($occupied_tonage)
+                                  // ->forOccSize($occupied_size)
+                                  // ->forShip($selectedShip)
+                                  // ->forPort($port)
+                                  // ->forDateOfOpening($date_of_opening)
                                   ->render('calculator.index',
                                             ['ships'=>$ships, 
                                              'ports'=>$ports,
@@ -228,7 +231,8 @@ class DashboardController extends Controller
                                              'date_of_opening'=>$date_of_opening,
                                              'mailCount'=>$mailCount,
                                              'cargoCount'=>$cargoCount,
-                                             'shipCount'=>$shipCount
+                                             'shipCount'=>$shipCount,
+                                             'cargos'=>$cargos,
                                             ]);
     }
 
