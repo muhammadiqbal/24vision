@@ -38,7 +38,7 @@ class IMAPController extends Controller
      
         foreach ($emails as $email) {
             $input = ['subject'=> @$email->subject,
-                    'body'=> @$mailbox->getMail($email->uid,false),
+                    'body'=> @$mailbox->getMail($email->uid,false)->textPlain,
                     'sender'=> @$email->from,
                     'receiver'=> @$email->to,
                     'cc'=> @$email->cc,
