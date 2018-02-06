@@ -2,7 +2,7 @@
 
 @section('content')
 <div>
-	Result for: <br/>
+	TEST Result for: <br/>
 	<b>Cargo:</b> {{$cargo->quantity}} {{$cargo_name}} from {{$port_start_name}} to {{$port_end_name}} (Status: ) [ID {{$cargo->id}}] <br/>
 	<b>Ship:</b> {{$ship->name}} [ID {{$ship->id}}] <br/>
 	<b>Start-Port:</b> {{$port_ship->name}} [ID {{$port_ship->id}}]<br/>
