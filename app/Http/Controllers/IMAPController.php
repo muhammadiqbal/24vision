@@ -39,7 +39,7 @@ class IMAPController extends Controller
 		}
 
         foreach ($mailbox->searchMailbox('ALL') as $mailId) {
-            $email = $mailbox->getMail($mailId);
+            $email = $mailbox->getMailsInfo($mailId);
 
             $input = ['subject'=>$email->subject,
                     'body'=>quoted_printable_decode(imap_fetchbody($mailbox, $mailId, FT_UID)),
