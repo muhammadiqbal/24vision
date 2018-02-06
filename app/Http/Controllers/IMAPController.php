@@ -21,37 +21,33 @@ class IMAPController extends Controller
     // Port: 993
     // User Name: MunsterUniversity@24Vision.Solutions\Chartering
     // SMTP server: smtp.office365.com
-    	$mailbox = new Mailbox('{outlook.office365.com}', 'MunsterUniversity@24Vision.Solutions', 'Mun@24V-112017', __DIR__);
+    	$mailbox = new Mailbox('{outlook.office365.com}INBOX', 'MunsterUniversity@24Vision.Solutions', 'Mun@24V-112017', __DIR__);
            // 'Mun@24V-112017', __DIR__);
 
 
     	$mailboxes = $mailbox->getMailboxes($search = "*");
-    	if($mailboxes){
-    		foreach($mailboxes as $mBox){
-    			print_r($mBox);
-    		}
-    	}
 
     	// Read all messaged into an array:
 		$mailsIds = $mailbox->searchMailbox('ALL');
 		if(!$mailsIds) {
-			die('Mailbox is empty');
+			$request->session()->flash('error', '$saveCount successfully fetched into database!');
 		}
 
         $emails = $mailbox->getMailsInfo($mailsIds);
         $saveCount = 0;
+        return $emails[0]->to;
         foreach ($emails as $email) {
             
 
-            $input = ['subject'=>$email->subject,
+            $input = ['subject'=> @$email->subject,
                     'body'=> @$mailbox->getMail($email->uid,false),
-                    'sender'=>$email->from,
-                    'receiver'=>$email->to,
-                    'cc'=>$email->cc,
+                    'sender'=> @$email->from,
+                    'receiver'=> @$email->to,
+                    'cc'=> @$email->cc,
                     'classification_manual'=>null,
-                    'date'=>$email->date,
+                    'date'=> @$email->date,
                     'classification_automated'=>null,
-                    'IMAPUID'=>$email->uid,
+                    'IMAPUID'=> @$email->uid,
                     'IMAPFolderID'=>null,
                     '_created_on'=>date('Y-m-d'),
                     'classification_automated_certainty'=>null,
@@ -62,7 +58,7 @@ class IMAPController extends Controller
             }
         }
 		$request->session()->flash('status', '$saveCount successfully fetched into database!');
-        return redirect(route('emails.index'));
+       //return redirect(route('emails.index'));
 
     }
 }
