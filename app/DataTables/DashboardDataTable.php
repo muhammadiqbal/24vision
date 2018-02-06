@@ -40,7 +40,7 @@ class DashboardDataTable extends DataTable
     public function ajax()
     { 
         return datatables()
-            ->eloquent($this->query())
+            ->eloquent($this->query()) //change this to collection apply the bdi set in query
             ->addColumn('action', function(Cargo $cargo) {
                     $ship = $this->ship;
                     $port = $this->port;
