@@ -86,7 +86,7 @@
                     @include('layouts.datatables_css')
                     @endsection
 
-                    <table class="table dataTable" id="dataTableBuilder">
+                    <table class="table dataTable" id="dataTable">
                         <th>
                             
                         </th>
@@ -99,8 +99,13 @@
                     </table>
 
                     @section('scripts')
-                        @include('layouts.datatables_js')
+                        {{-- @include('layouts.datatables_js') --}}
                         {!! $dataTable->scripts() !!}
+                    <script type="text/javascript">
+                    $(document).ready( function () {
+                        $('#dataTable').DataTable();
+                    } );
+                    </script>
                     @endsection
                 </div>
             </div>
