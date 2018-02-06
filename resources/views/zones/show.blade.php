@@ -11,6 +11,11 @@
             <div class="box-body">
                 <div class="row" style="padding-left: 20px">
                     @include('zones.show_fields')
+                    <h1>Zone Point</h1>
+                    @foreach($zone->zonePoints() as $point)
+                        <p>latitude: <b>{{$point->latitude}}</b></p>
+                        <p>longitude: <b>{{$point->longitude}}</b></p>
+                    @endforeach
                     <a href="{!! route('zones.index') !!}" class="btn btn-default">Back</a>
                 </div>
             </div>
