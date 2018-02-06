@@ -63,7 +63,7 @@ class IMAPController extends Controller
             }
         }
 		$request->session()->flash('status', '$saveCount successfully fetched into database!');
-        return ;
+        return redirect(route('emails.index'));
 
     }
 }
