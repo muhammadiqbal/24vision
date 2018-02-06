@@ -3,15 +3,21 @@
 
 @section('content')
 Select script ot be executed:
-	<div class="form-group col-sm-6">
-    {!! Form::label('script', 'Script:') !!}
-        <select name="script" id="script" class="form-control">
-            <option value="python3 execute_cargo_extraction.py">Cargo extraction</option>
-            <option value="python3 execute_ship_extraction.py">Ship extraction</option>
-            <option value="python3 execute_order_extraction.py">Order extraction</option>
-        </select>
+<div class="box">	
+	<div class="row">
+		<div class="form-group col-sm-6">
+	    {!! Form::label('script', 'Script:') !!}
+	        <select name="script" id="script" class="form-control">
+	            <option value="python3 execute_cargo_extraction.py">Cargo extraction</option>
+	            <option value="python3 execute_ship_extraction.py">Ship extraction</option>
+	            <option value="python3 execute_order_extraction.py">Order extraction</option>
+	        </select>
+		</div>
+		<button id="execute" class="form-control">execute</button>
 	</div>
-	<button id="execute">execute</button>
+</div>
+
+
 <div class="box">
   <div class="box-header with-border">
     <h3 class="box-title">Execution result</h3>
@@ -26,7 +32,7 @@ Select script ot be executed:
   <div class="box-body" id="terminal">
   </div>
   <!-- /.box-body -->
-
+</div>
 
 @endsection
 
