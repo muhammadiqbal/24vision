@@ -58,7 +58,7 @@ class IMAPController extends Controller
                     '_created_on'=>,
                     'classification_automated_certainty'=>,
                     'kibana_extracted'=>false];
-            $email = $emailRepo->create($input);
+          //  $email = $emailRepo->create($input);
 
 
 
