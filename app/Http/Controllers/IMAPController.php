@@ -38,18 +38,19 @@ class IMAPController extends Controller
 			die('Mailbox is empty');
 		}
 
-        foreach ($mailbox->searchMailbox('ALL') as $mail) {
-            print_r($mail);
-            print_r($mail->subject);
-            print_r($mail->from);
-            print_r($mail->to);
-            print_r($mail->cc);
-            print_r($mail->getAttachments());
-            $input = ['subject'=>$mail->subject,
-                    'body'=>$mail,
-                    'sender'=>$mail->from,
-                    'receiver'=>$mail->to,
-                    'cc'=>$mail->cc,
+        foreach ($mailbox->searchMailbox('ALL') as $mailId) {
+            $email = $mailbox->getMail($mailId);
+            print_r($email);
+            print_r($email->subject);
+            print_r($email->from);
+            print_r($email->to);
+            print_r($email->cc);
+            print_r($email->getAttachments());
+            $input = ['subject'=>$email->subject,
+                    'body'=>$email,
+                    'sender'=>$email->from,
+                    'receiver'=>$email->to,
+                    'cc'=>$email->cc,
                     'classification_manual'=>null,
                     'date'=>null,
                     'classification_automated'=>null,
