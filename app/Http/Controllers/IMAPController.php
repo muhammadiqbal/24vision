@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use PhpImap\Mailbox;
-use App\Http\Requests\CreateEmailRequest;
+use App\Repositories\EmailRepository;
 
 class IMAPController extends Controller
 {
