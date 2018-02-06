@@ -16,6 +16,36 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     @yield('css')
+    <style type="text/css">
+        .glyphicon-stack {
+        position: relative;
+        display: inline-block;
+        width: 2em;
+        height: 2em;
+        line-height: 2em;
+        vertical-align: middle;
+        }
+
+        .glyphicon-circle{
+        position: relative;
+        border-radius: 50%;
+        width: 100%;
+        height: auto;
+        padding-top: 100%;
+        background: black;
+        }
+
+        .glyphicon-stack-1x {
+        line-height: inherit;
+        }
+
+        .glyphicon-stack-1x, .glyphicon-stack-2x {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        }
+    </style>
 </head>
 
 <body class="skin-red-light sidebar-mini">
