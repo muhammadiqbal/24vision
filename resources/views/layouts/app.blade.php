@@ -16,36 +16,6 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     @yield('css')
-    <style type="text/css">
-        .glyphicon-stack {
-        position: relative;
-        display: inline-block;
-        width: 2em;
-        height: 2em;
-        line-height: 2em;
-        vertical-align: middle;
-        }
-
-        .glyphicon-circle{
-        position: relative;
-        border-radius: 50%;
-        width: 100%;
-        height: auto;
-        padding-top: 100%;
-        background: black;
-        }
-
-        .glyphicon-stack-1x {
-        line-height: inherit;
-        }
-
-        .glyphicon-stack-1x, .glyphicon-stack-2x {
-        position: absolute;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        }
-    </style>
 </head>
 
 <body class="skin-red-light sidebar-mini">
@@ -66,28 +36,6 @@
                     <span class="sr-only">Toggle navigation</span>
                 </a>
 
-
-{{--                    <div class="col-xs-6 col-xs-offset-2" style="margin-top: 5px;">
-                        <div class="input-group">
-                            <div class="input-group-btn search-panel">
-                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                    <span id="search_concept">Filter by</span> <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu" role="menu">
-                                  <li><a href="#contains">Cargo</a></li>
-                                  <li><a href="#its_equal">Ship</a></li>
-                                  <li><a href="#greather_than">Position</a></li>
-                                </ul>
-                            </div>
-                            <input type="hidden" name="search_param" value="all" id="search_param">         
-                            <input type="text" class="form-control" name="x" placeholder="Search term...">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
-                            </span>
-                        </div>
-                    </div> --}}
-
-                <!-- Navbar Right Menu -->
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
                         

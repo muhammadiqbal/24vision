@@ -53,7 +53,8 @@ class IMAPController extends Controller
                     '_created_on'=>date('Y-m-d'),
                     'classification_automated_certainty'=>null,
                     'kibana_extracted'=>false];
-            $storeEmail = $emailRepo->create($input);
+            $storeEmail = Email::firstOrNew($input);
+            $storeEmail->save();
             if ($storeEmail) {
                 $saveCount++;
             }
