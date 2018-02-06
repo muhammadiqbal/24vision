@@ -54,7 +54,7 @@ class IMAPController extends Controller
                     '_created_on'=>date('Y-m-d'),
                     'classification_automated_certainty'=>null,
                     'kibana_extracted'=>false];
-            if(Email::where('IMAPUID',@$email->uid)->firstOrFail() == false){
+            if(Email::where('IMAPUID',@$email->uid)->first() == null){
                 $storeEmail = $emailRepo->create($input);
                 if ($storeEmail) {
                     $saveCount++;
