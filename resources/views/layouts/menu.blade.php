@@ -24,9 +24,11 @@
         @endif
         >
         <a href="{{ url('/cargos') }}"><i class="fa fa-cubes"></i> <span>Cargo offers</span></a></li>
-      <li  class= "treeview 
+      <li  
         @if( $route =='App\Http\Controllers\EmailController')
-          {{active}}
+          {{'class = "active"'}}
+        @else
+          {{'class= "treeview"'}}
         @endif
         "
         >
