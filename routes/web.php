@@ -58,12 +58,15 @@ Route::group(['middleware' => 'auth'], function()
 	Route::resource('users', 'UserController');
 
 	Route::get('emails','EmailController@index');
+
+	Route::get('controlPanel','DashboardController@controlPanel');
 	
+	Route::get('imap','IMAPController@inbox');
+
+	Route::resource('emails', 'EmailController');
 	
 });
 
 
 
 
-Route::get('imap','IMAPController@inbox');
-Route::resource('emails', 'EmailController');

@@ -92,6 +92,10 @@ class DashboardController extends Controller
                                             ]);
     }
 
+    public function controlPanel(){
+      return view('control_panel.terminal');
+    }
+
 }
 
 
