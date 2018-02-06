@@ -40,25 +40,21 @@ class IMAPController extends Controller
 
         foreach ($mailbox->searchMailbox('ALL') as $mailId) {
             $email = $mailbox->getMail($mailId);
-            print_r($email);
-            print_r($email->subject);
-            print_r($email->from);
-            print_r($email->to);
-            print_r($email->cc);
-            print_r($email->getAttachments());
+
             $input = ['subject'=>$email->subject,
-                    'body'=>$email,
+                    'body'=>$mailbox->getRawMail($mailId),
                     'sender'=>$email->from,
                     'receiver'=>$email->to,
                     'cc'=>$email->cc,
                     'classification_manual'=>null,
-                    'date'=>null,
+                    'date'=>$email->date,
                     'classification_automated'=>null,
-                    'IMAPUID'=>null,
+                    'IMAPUID'=>$email->uid,
                     'IMAPFolderID'=>null,
-                    '_created_on'=>null,
+                    '_created_on'=>date('Y-m-d'),
                     'classification_automated_certainty'=>null,
                     'kibana_extracted'=>false];
+            print_r($input);
           //  $email = $emailRepo->create($input);
 
 
