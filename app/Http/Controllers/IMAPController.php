@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use PhpImap\Mailbox;
+use App\Repositories\EmailRepository;
 use DB;
-use App\Models\Email;
+use 
 
 class IMAPController extends Controller
 {
     //
 
-    public function inbox(){
+    public function inbox(EmailRepository $emailRepo){
 
 //     	[15:47, 2/1/2018] +49 172 4517715: $hostname = '{user=MunsterUniversity@24Vision.Solutions\Chartering}';
 // $username = ;
@@ -53,10 +54,11 @@ class IMAPController extends Controller
                     '_created_on'=>date('Y-m-d'),
                     'classification_automated_certainty'=>null,
                     'kibana_extracted'=>false];
-            $storeEmail = Email::firstOrNew($input);
-            $storeEmail->save();
-            if ($storeEmail) {
-                $saveCount++;
+            if(Email::where('IMAPUID',@$email->uid)->firstOrFail() == false){
+                $storeEmail = $emailRepo->create($input);
+                if ($storeEmail) {
+                    $saveCount++;
+                }
             }
         }
 		$request->session()->flash('status', '$saveCount successfully fetched into database!');
