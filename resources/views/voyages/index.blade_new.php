@@ -2,7 +2,7 @@
 
 @section('content')
 <div>
-	TEST Result for: <br/>
+	Result for: <br/>
 	<b>Cargo:</b> {{$cargo->quantity}} {{$cargo_name}} from {{$port_start_name}} to {{$port_end_name}} (Status: ) [ID {{$cargo->id}}] <br/>
 	<b>Ship:</b> {{$ship->name}} [ID {{$ship->id}}] <br/>
 	<b>Start-Port:</b> {{$port_ship->name}} [ID {{$port_ship->id}}]<br/>
@@ -14,7 +14,7 @@
  <div class="voyage_box_title">Ship</div>
  <table style="min-width:300px">
   <tr>
-    <th>Name:</th>
+    <th>Name: TEST </th>
     <td style="text-align:right">{{$ship->name}}</td> 
   </tr>
   <tr>
