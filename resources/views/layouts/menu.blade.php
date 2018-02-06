@@ -38,13 +38,13 @@
               <a href="{{url('/emails')."?type=Cargo"}}"><i class="fa fa-cubes "></i>Extracted mails</a>
             </li>
             <li>
-              <a href="{{url('/emails')."?type=Ship"}}"><i class="glyphicon glyphicon-ship"></i>Ship offer mail</a>
+              <a href="{{url('/emails')."?type=Ship"}}"><i class="fa fa-ship"></i>Ship offer mail</a>
             </li>
             <li>
-              <a href="{{url('/emails')."?type=Order"}}"> <i class="glyphicon glyphicon-ship"></i>Ship order mail</a>
+              <a href="{{url('/emails')."?type=Order"}}"> <i class="fa fa-ship"></i>Ship order mail</a>
             </li>
             <li>
-              <a href="{{url('/emails')}}"> <i class="glyphicon glyphicon-star"></i>All mails</a>
+              <a href="{{url('/emails')}}"> <i class="fa fa-star"></i>All mails</a>
             </li>
           </ul>
       </li>

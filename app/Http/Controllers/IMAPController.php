@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use PhpImap\Mailbox;
-use App\Repositories\EmailRepository;
 use DB;
+use App\Models\Email;
 
 class IMAPController extends Controller
 {
@@ -53,7 +53,8 @@ class IMAPController extends Controller
                     '_created_on'=>date('Y-m-d'),
                     'classification_automated_certainty'=>null,
                     'kibana_extracted'=>false];
-            $storeEmail = $emailRepo->create($input);
+            $storeEmail = Email::firstOrNew($input);
+            $storeEmail->save();
             if ($storeEmail) {
                 $saveCount++;
             }
