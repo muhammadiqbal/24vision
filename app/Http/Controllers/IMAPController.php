@@ -38,11 +38,12 @@ class IMAPController extends Controller
 			die('Mailbox is empty');
 		}
 
-        foreach ($mailbox->searchMailbox('ALL') as $mailId) {
-            $email = $mailbox->getMailsInfo($mailId);
+        $emails = $mailbox->getMailsInfo($mailsIds);
+        foreach ($emails as $email) {
+            
 
             $input = ['subject'=>$email->subject,
-                    'body'=>quoted_printable_decode(imap_fetchbody($mailbox, $mailId, FT_UID)),
+                    'body'=>$mailbox->getMail($email->message_Id),
                     'sender'=>$email->from,
                     'receiver'=>$email->to,
                     'cc'=>$email->cc,
