@@ -45,7 +45,7 @@
 
 
 @section('scripts')
-
+<script type="text/javascript">
 $('#execute').click(function() {
     var data = "";
     $.ajax({
@@ -63,4 +63,5 @@ $('#execute').click(function() {
         }
     });
 });
+</script>
 @endsection
