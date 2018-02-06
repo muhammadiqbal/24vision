@@ -43,7 +43,7 @@ class IMAPController extends Controller
                     'receiver'=> @$email->to,
                     'cc'=> @$email->cc,
                     'classification_manual'=>null,
-                    'date'=> @$email->date,
+                    'date'=> date('Y-m-d',@$email->date),
                     'classification_automated'=>null,
                     'IMAPUID'=> @$email->uid,
                     'IMAPFolderID'=>null,
