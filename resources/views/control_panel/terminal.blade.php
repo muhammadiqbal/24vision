@@ -15,7 +15,7 @@
 	            <option value="python3 execute_order_extraction.py">Order extraction</option>
 	        </select>
 		</div>
-		<button id="execute" class="form-control">execute</button>
+		<button id="execute" class="">execute</button>
 	</div>
 </div>
 </div>
