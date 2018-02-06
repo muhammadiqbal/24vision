@@ -1,5 +1,8 @@
 {!! Form::open(['route' => ['zones.destroy', $id], 'method' => 'delete']) !!}
 <div class='btn-group'>
+    <a href="{{ route('onePoints.create', $id) }}" class='btn btn-default btn-xs'>
+        <i class="glyphicon glyphicon-map-marker"></i>
+    </a>
     <a href="{{ route('zones.show', $id) }}" class='btn btn-default btn-xs'>
         <i class="glyphicon glyphicon-eye-open"></i>
     </a>
@@ -12,4 +15,6 @@
         'onclick' => "return confirm('Are you sure?')"
     ]) !!}
 </div>
+
+
 {!! Form::close() !!}
