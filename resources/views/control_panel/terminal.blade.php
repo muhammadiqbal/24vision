@@ -11,19 +11,33 @@ Select script ot be executed:
             <option value="python3 execute_order_extraction.py">Order extraction</option>
         </select>
 	</div>
-	<textarea id="terminal">
-		
-	</textarea>
+	<button id="execute">execute</button>
+<div class="box">
+  <div class="box-header with-border">
+    <h3 class="box-title">Execution result</h3>
+    <div class="box-tools pull-right">
+      <!-- Buttons, labels, and many other things can be placed here! -->
+      <!-- Here is a label for example -->
+      <span class="label label-primary"></span>
+    </div>
+    <!-- /.box-tools -->
+  </div>
+  <!-- /.box-header -->
+  <div class="box-body" id="terminal">
+  </div>
+  <!-- /.box-body -->
+
+
 @endsection
 
 
 @section('script')
 
-$('#script').change(function() {
+$('#execute').click(function() {
     var data = "";
     $.ajax({
         type:"GET",
-        url : "{{url('/api/controlPanel/')}}" + $(this).val(),
+        url : "{{url('/api/controlPanel/')}}" + $('#script').val(),
         data : 
         async: false,
         success : function(response) {
