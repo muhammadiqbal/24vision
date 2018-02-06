@@ -35,20 +35,16 @@
         <a href="{{url('/emails')}}"><i class="fa fa-envelope"></i> <span>Cargo Mail</span></a>
           <ul class="treeview-menu">
             <li>
-                <i class="glyphicon glyphicon-cubes "></i>
-              <a href="{{url('/emails')."?type=Cargo"}}">Cargo mail</a>
+              <a href="{{url('/emails')."?type=Cargo"}}"><i class="fa fa-cubes "></i>Extracted mails</a>
             </li>
             <li>
-                <i class="glyphicon glyphicon-ship"></i>
-              <a href="{{url('/emails')."?type=Ship"}}">Ship offer mail</a>
+              <a href="{{url('/emails')."?type=Ship"}}"><i class="glyphicon glyphicon-ship"></i>Ship offer mail</a>
             </li>
             <li>
-                <i class="glyphicon glyphicon-ship"></i>
-              <a href="{{url('/emails')."?type=Order"}}">Ship order mail</a>
+              <a href="{{url('/emails')."?type=Order"}}"> <i class="glyphicon glyphicon-ship"></i>Ship order mail</a>
             </li>
             <li>
-                <i class="glyphicon glyphicon-star"></i>
-              <a href="{{url('/emails')}}">All mails</a>
+              <a href="{{url('/emails')}}"> <i class="glyphicon glyphicon-star"></i>All mails</a>
             </li>
           </ul>
       </li>
