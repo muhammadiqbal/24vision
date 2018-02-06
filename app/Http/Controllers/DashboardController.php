@@ -251,7 +251,7 @@ class DashboardController extends Controller
                                              'mailCount'=>$mailCount,
                                              'cargoCount'=>$cargoCount,
                                              'shipCount'=>$shipCount,
-                                             'cargos'=>$cargos
+                                             'cargos'=>$cargos,
                                             ]);
     }
 
@@ -260,7 +260,7 @@ class DashboardController extends Controller
 
 
         //Formular for calculating the GrossRate for a cargo and given ship position, fuel price and bdi. Uses Standardized BDI Ship (ID 1)
-    protected function calculateGrossRate(Cargo $cargo, ShipPosition $ship_position, $fuel_price, $bdi){
+    public function calculateGrossRate(Cargo $cargo, ShipPosition $ship_position, $fuel_price, $bdi){
         
         $ship = $ship_position->ship;
         $port_ship = $ship_position->port;
@@ -281,7 +281,7 @@ class DashboardController extends Controller
     }
 
         //Formular for calculating the Voyagage Time (for NTCE or Grossrate ) based on given cargo, ship and ship_position 
-    protected function calculateVoyageTime(Cargo $cargo, Ship $ship, Port $port_ship){
+    public function calculateVoyageTime(Cargo $cargo, Ship $ship, Port $port_ship){
         
         $port_start = $cargo->loading_port;
         $port_end = $cargo->discharging_port;
@@ -298,7 +298,7 @@ class DashboardController extends Controller
 
 	
 	//Formular for calculating the NTCE for a cargo and given ship, ship position, fuel price and rate. 
-	protected function calculateNTCE(Cargo $cargo, ShipPosition $ship_position, $fuel_price, $rate){
+	public function calculateNTCE(Cargo $cargo, ShipPosition $ship_position, $fuel_price, $rate){
 		
         $ship = $ship_position->ship;
         $port_ship = $ship_position->port;
@@ -326,7 +326,7 @@ class DashboardController extends Controller
 
 
 	//Formular for calculating NonHireCosts (for NTCE or GrossRate) based on given cargo, ship, ship_position and fuel price
-    protected function calculateNonHireCosts(Cargo $cargo, Ship $ship, Port $port_ship, $fuel_price)
+    public function calculateNonHireCosts(Cargo $cargo, Ship $ship, Port $port_ship, $fuel_price)
     {
 		
         $port_fee_load = $cargo->loadingPort->fee;
@@ -341,7 +341,7 @@ class DashboardController extends Controller
     }	
 	
 	//Formular for calculating Fuel Consumption (for Non Hire Costse) based on given cargo, ship and ship_position 
-	protected function calculateFuelConsumption(Cargo $cargo, Ship $ship, Port $port_ship){
+	public function calculateFuelConsumption(Cargo $cargo, Ship $ship, Port $port_ship){
 		
         $port_start = $cargo->loading_port;
         $port_end = $cargo->discharging_port;
@@ -361,7 +361,7 @@ class DashboardController extends Controller
 	
 	
 	//Formular for calculating the Port Time (for Voyage Time and Fuel Consumption ) based on conrete attributes from a given cargo  
-    protected function calculatePortTime($quantity,$load_speed,$load_factor,$disch_speed,$disch_factor){
+    public function calculatePortTime($quantity,$load_speed,$load_factor,$disch_speed,$disch_factor){
 	
 		// Formular for result of the function
         //+2 because there is one day extra for each port
@@ -371,7 +371,7 @@ class DashboardController extends Controller
     }		
 	
 	//Formular for calculating the Travel Time (for Voyage Time and Fuel Consumption )based on given ports of cargo and ship and concrete attributes from ship   
-	protected function calculateTravelTime(Port $port_ship, Cargo $cargo, $speed_ballast,$speed_laden){
+	public function calculateTravelTime(Port $port_ship, Cargo $cargo, $speed_ballast,$speed_laden){
 		
         $port_start = $cargo->loadingPort;
         $port_end = $cargo->dischargingPort;
@@ -397,7 +397,7 @@ class DashboardController extends Controller
 	
 		//Formular for calculating direct distance between two points with given latidude and longitude
 		// Based on: https://stackoverflow.com/questions/10053358/measuring-the-distance-between-two-coordinates-in-php
-	protected function calculateDistance($lat1, $lon1, $lat2, $lon2) {
+	public function calculateDistance($lat1, $lon1, $lat2, $lon2) {
 
 		$theta = $lon1 - $lon2;
   		$dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
