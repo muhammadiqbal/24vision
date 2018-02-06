@@ -50,13 +50,13 @@ class IMAPController extends Controller
                     'sender'=>$mail->from,
                     'receiver'=>$mail->to,
                     'cc'=>$mail->cc,
-                    'classification_manual'=>,
-                    'date'=>,
-                    'classification_automated'=>,
-                    'IMAPUID'=>,
-                    'IMAPFolderID'=>,
-                    '_created_on'=>,
-                    'classification_automated_certainty'=>,
+                    'classification_manual'=>null,
+                    'date'=>null,
+                    'classification_automated'=>null,
+                    'IMAPUID'=>null,
+                    'IMAPFolderID'=>null,
+                    '_created_on'=>null,
+                    'classification_automated_certainty'=>null,
                     'kibana_extracted'=>false];
           //  $email = $emailRepo->create($input);
 
