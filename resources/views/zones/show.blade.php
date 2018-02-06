@@ -12,6 +12,9 @@
                 <div class="row" style="padding-left: 20px">
                     @include('zones.show_fields')
                     <h1>Zone Point</h1>
+                    <h1 class="pull-right">
+                       <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('zonePoints.create') !!}">Add Zone Points</a>
+                    </h1>
                     @foreach($zone->zonePoints() as $point)
                         <p>latitude: <b>{{$point->latitude}}</b></p>
                         <p>longitude: <b>{{$point->longitude}}</b></p>
