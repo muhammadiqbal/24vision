@@ -3,49 +3,13 @@
 namespace App\DataTables;
 
 use App\Models\Cargo;
-use App\Models\Ship;
-use App\Models\Port;
 use Yajra\DataTables\Services\DataTable;
+use Carbon\Carbon;
 use \League\Geotools\Geotools;
 use \League\Geotools\Coordinate\Coordinate;
-use App\Services\Calculator;
 
 class DashboardDataTable extends DataTable
 {
-    protected $ship;
-    protected $occupied_tonage;
-    protected $occupied_size;
-    protected $port;
-    protected $date_of_opening;
-
-
-    public function forShip(Ship $ship){
-        $this->ship = $ship;
-        return $this;
-    }
-
-    public function forOccSize($occupied_size){
-        $this->occupied_size = $occupied_size;
-        return $this;
-    }
-
-    public function forOccTonnage($occupied_tonage){
-        $this->occupied_tonage = $occupied_tonage;
-        return $this;
-    }
-
-    public function forPort(Port $port){
-        $this->port = $port;
-        return $this;
-    }
-
-    public function forDateOfOpening($dop){
-        $this->date_of_opening = $dop;
-        return $this;
-    }    
-
-
-
 
     /**
      * @return \Illuminate\Http\JsonResponse
@@ -55,110 +19,93 @@ class DashboardDataTable extends DataTable
 
         return datatables()
             ->eloquent($this->query())
-            ->addColumn('action', function(Cargo $cargo) {
-                    $ship = $this->ship;
-                    $port = $this->port;
-                    $date_of_opening = $this->date_of_opening;
-
-                    return view('calculator.datatables_actions', 
-                        compact('cargo','ship','port','date_of_opening'))->render();
-            })
-            ->addColumn('bdi', function(Cargo $cargo){
-                $ship = $this->ship;
-                $port = $this->port;
-                $date_of_opening = $this->date_of_opening;
-                //waiting for debugging calculator in model
-                //$bdi = $cargo->setBdi($port, $ship, $date_of_opening);
-                $bdi =123;
-                return view('calculator.bdi', 
-                        compact('bdi'))->render();
-            })
-            ->addColumn('ntce', function(Cargo $cargo){
-                $ship = $this->ship;
-                $port = $this->port;
-                $date_of_opening = $this->date_of_opening;
-                //waiting for debugging calculator in model
-                //$bdi = $cargo->setBdi($port, $ship, $date_of_opening);
-                $ntce = 123;
-                return view('calculator.ntce', 
-                        compact('ntce'))->render();
-            })
-            ->addColumn('gross_rate', function(Cargo $cargo){
-                $ship = $this->ship;
-                $port = $this->port;
-                $date_of_opening = $this->date_of_opening;
-                //waiting for debugging calculator in model
-                //$bdi = $cargo->setBdi($port, $ship, $date_of_opening);
-                $gross_rate = 123;
-                return view('calculator.grossRate', 
-                        compact('gross_rate'))->render();
-            })
+            // ->addColumn('distance_to_start',function(Cargo $cargo){
+            //     return ;
+            // })
+            // ->addColumn('route',function(Cargo $cargo){
+            //     return ;
+            // })
+            // ->addColumn('bdi',function(Cargo $cargo){
+            //     $bdi_id = $calculator->calculateBDIId($port_ship,$cargo);
+            //     $bdi = $calculator->calculateBDI($bdi_id, $date, $travel_time_to_start);
+            //     return ;
+            // })
+            // ->addColumn('gross_rate',function(Cargo $cargo){
+            //     $gross_rate = $calculator->calculateGrossRate($cargo, $bdi, $voyage_time_bdi, $non_hire_costs_bdi);
+            //     return ;
+            // })
+            // ->addColumn('ntce',function(Cargo $cargo){
+            //     $ntce = $calculator->calculateNTCE($cargo, $bdi, $voyage_time, $non_hire_costs, $gross_rate);
+            //     return ;
+            // })
+            ->addColumn('action', 'calculator.datatables_actions')
             ->editColumn('laycan_first_day', function(Cargo $cargo){
                 if ($cargo->laycan_first_day_manual) {
                     return '<b style=\'color:red;\'>'.date_format(date_create($cargo->laycan_first_day),'d-m-Y').'</b>';
-                } else {                
-                    return date_format(date_create($cargo->laycan_first_day),'d-m-Y');
-                }               
+                } else {				
+               return date_format(date_create($cargo->laycan_first_day),'d-m-Y');
+				}				
 
             })
             ->editColumn('laycan_last_day', function(Cargo $cargo){
                 if ($cargo->laycan_last_day_manual) {
                     return '<b style=\'color:red;\'>'.date_format(date_create($cargo->laycan_last_day),'d-m-Y').'</b>';
-                } else {                
-                    return date_format(date_create($cargo->laycan_last_day),'d-m-Y');
-                }
+                } else {				
+               return date_format(date_create($cargo->laycan_last_day),'d-m-Y');
+				}
             })
             ->editColumn('loading_port',function(Cargo $cargo){
                 if ($cargo->loading_port_manual) {
                     return '<b style=\'color:red;\'>'.$cargo->loading_port.'</b>';
                 }
             })
-             ->editColumn('loading_port',function(Cargo $cargo){
+			 ->editColumn('loading_port',function(Cargo $cargo){
                 if ($cargo->loading_port_manual) {
                     return '<b style=\'color:red;\'>'.$cargo->loading_port.'</b>';
                 }
             })
-             ->editColumn('discharge_port',function(Cargo $cargo){
+			 ->editColumn('discharge_port',function(Cargo $cargo){
                 if ($cargo->cargo_type_id_manual) {
                     return '<b style=\'color:red;\'>'.$cargo->cargo_type_id.'</b>';
                 }
             })
-            ->editColumn('discharge_port',function(Cargo $cargo){
+			->editColumn('discharge_port',function(Cargo $cargo){
                 if ($cargo->stowage_factor_manual) {
                     return '<b style=\'color:red;\'>'.$cargo->stowage_factor.'</b>';
                 }
             })
-            ->editColumn('discharge_port',function(Cargo $cargo){
+			->editColumn('discharge_port',function(Cargo $cargo){
                 if ($cargo->quantity_manual) {
                     return '<b style=\'color:red;\'>'.$cargo->quantity.'</b>';
                 }
             })
-            ->editColumn('discharge_port',function(Cargo $cargo){
+			->editColumn('discharge_port',function(Cargo $cargo){
                 if ($cargo->loading_rate_type_manual) {
                     return '<b style=\'color:red;\'>'.$cargo->loading_rate_type.'</b>';
                 }
             })
-            ->editColumn('discharge_port',function(Cargo $cargo){
+			->editColumn('discharge_port',function(Cargo $cargo){
                 if ($cargo->loading_rate_manual) {
                     return '<b style=\'color:red;\'>'.$cargo->loading_rate.'</b>';
                 }
             })
-            ->editColumn('discharge_port',function(Cargo $cargo){
+			->editColumn('discharge_port',function(Cargo $cargo){
                 if ($cargo->discharging_rate_type_manual) {
                     return '<b style=\'color:red;\'>'.$cargo->discharging_rate_type.'</b>';
                 }
             })
-            ->editColumn('discharge_port',function(Cargo $cargo){
+			->editColumn('discharge_port',function(Cargo $cargo){
                 if ($cargo->discharging_rate_manual) {
                     return '<b style=\'color:red;\'>'.$cargo->discharging_rate_.'</b>';
                 }
             })
-            ->editColumn('discharge_port',function(Cargo $cargo){
+			->editColumn('discharge_port',function(Cargo $cargo){
                 if ($cargo->commision_manual) {
                     return '<b style=\'color:red;\'>'.$cargo->commision.'</b>';
                 }
             })
-            ->make(true);
+            ->make(true)
+              ;
     }
 
     /**
@@ -172,26 +119,27 @@ class DashboardDataTable extends DataTable
                         ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
                         ->leftjoin('ports as p1', 'p1.id','loading_port')
                         ->leftjoin('ports as p2', 'p2.id','discharging_port')
-                        ->where('quantity','<=', ($this->ship->dwcc - $this->occupied_tonage))
-                        // ->where(DB::raw('quantity * stowage_factor AS size'),
-                        //                 '<=',
-                        //                 ($this->ship->max_holds_capacity - $this->occupied_size))
-                        // ->where(DB::raw('quantity *'.$this->ship->ballast_draft),
-                        //                 '<=', 
-                        //                 ($this->ship->max_laden_draft-($this->ship->ballast_draft * $this->occupied_tonage)))
                         ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
-                        if($this->request()->get('port_id')){
-                            $cargos->where('loading_port',$this->request()->get('port_id'));
-                        }
-                        if($this->request()->get('date_of_opening')){
-                            $cargos->whereDate('laycan_first_day','>=',date($this->request()->get('date_of_opening')))
-                                   ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')));
-                        }
-
-        foreach ($cargos as $cargo) {
-            $cargo->setBdi($this->port,$this->ship, $this->date_of_opening);
+        if ($this->request()->get('port_id')) {
+            $cargos->where('loading_port',$this->request()->get('port_id'));
         }
-                        
+        if ($this->request()->get('date_of_opening')) {
+            $cargos->whereDate('laycan_first_day','>=',date($this->request()->get('date_of_opening')))
+                  ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')));
+        }
+        // if ($this->request()->get('range')) {
+        //     $cargos->where('',$ship);
+        // }
+        // if ($this->request()->get('occupied_size')) {
+        //     $cargos->where('',$this->request()->get('occupied_size'));
+        // }
+        // if ($this->request()->get('occupied_tonnage')) {
+        //     $cargos->where('',$this->request()->get('occupied_tonnage')-$ship->dwcc);
+        // }
+        // if ($this->request()->get('current_draft')) {
+        //     $cargos->where('',$this->request()->get('current_draft'));
+        // }
+
         return $this->applyScopes($cargos);
     }
 
@@ -205,11 +153,6 @@ class DashboardDataTable extends DataTable
         return $this->builder()
             ->columns($this->getColumns())
             ->addAction(['width' => '10%'])
-            // ->addColumn(['defaultContent' => '',
-            //             'data' => 'bdi',
-            //             'name' => 'bdi',
-            //             'title' => 'bdi'
-            //             ])
             ->ajax('')
             ->parameters([
                 'dom' => 'Bfrtip',
@@ -257,9 +200,6 @@ class DashboardDataTable extends DataTable
             'loading_port' => ['defaultContent' => 'NULL','name' => 'load_port', 'data' => 'load_port'],
             'discharging_port' => ['defaultContent' => 'NULL','name' => 'disch_port', 'data' => 'disch_port'],
             'email_id' => ['defaultContent' => 'NULL','name' => 'email_id', 'data' => 'email_id'],
-            'bdi' => ['defaultContent'=>'NULL', 'name'=>'bdi', 'data'=>'bdi', 'title'=>'bdi'],
-            'ntce' => ['defaultContent'=>'NULL', 'name'=>'', 'data'=>''],
-            'gross_rate' => ['defaultContent'=>'NULL', 'name'=>'', 'data'=>''],
             'status_id' => ['defaultContent' => 'NULL','name' => 'status', 'data' => 'status'],
         ];
     }
