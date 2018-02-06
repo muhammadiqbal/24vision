@@ -232,7 +232,6 @@ class DashboardController extends Controller
                                              'mailCount'=>$mailCount,
                                              'cargoCount'=>$cargoCount,
                                              'shipCount'=>$shipCount,
-                                             'cargos'=>$cargos,
                                             ]);
     }
 
