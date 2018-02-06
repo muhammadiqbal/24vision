@@ -38,7 +38,7 @@ class IMAPController extends Controller
 			die('Mailbox is empty');
 		}
 
-        foreach ($mailbox->searchMailbox('ALL'); as $mail) {
+        foreach ($mailbox->searchMailbox('ALL') as $mail) {
             print_r($mail);
             print_r($mail->subject);
             print_r($mail->from);
