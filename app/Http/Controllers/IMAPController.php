@@ -15,7 +15,13 @@ class IMAPController extends Controller
 // $username = ;
 // $password = ;
 // $inboxprefix = "24VisionChartering-";
-    	$mailbox = new Mailbox('{outlook.office365.com}', 'MunsterUniversity@24Vision.Solutions', 'Mun@24V-112017', __DIR__);
+    // Email: Chartering@24Vision.Solutions
+    // Imap Server: outlook.office365.com
+    // Port: 993
+    // User Name: MunsterUniversity@24Vision.Solutions\Chartering
+    // SMTP server: smtp.office365.com
+    	$mailbox = new Mailbox('{outlook.office365.com}\INBOX', 'MunsterUniversity@24Vision.Solutions', 'Mun@24V-112017', __DIR__);
+           // 'Mun@24V-112017', __DIR__);
 
 
     	$mailboxes = $mailbox->getMailboxes($search = "*");
