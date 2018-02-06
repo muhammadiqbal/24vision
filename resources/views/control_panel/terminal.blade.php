@@ -44,7 +44,7 @@
 @endsection
 
 
-@section('script')
+@section('scripts')
 
 $('#execute').click(function() {
     var data = "";
