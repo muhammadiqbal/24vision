@@ -45,7 +45,7 @@ class FeePrice extends Model
     protected $casts = [
         'id' => 'integer',
         'port_id' => 'integer',
-        'star_date' => 'date',
+        'start_date' => 'date',
         'end_date' => 'date'
     ];
 
