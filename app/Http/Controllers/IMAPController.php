@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use PhpImap\Mailbox;
 use App\Repositories\EmailRepository;
 use DB;
-use 
+use App\Models\Email;
 
 class IMAPController extends Controller
 {
