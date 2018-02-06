@@ -21,7 +21,7 @@ class IMAPController extends Controller
     // Port: 993
     // User Name: MunsterUniversity@24Vision.Solutions\Chartering
     // SMTP server: smtp.office365.com
-    	$mailbox = new Mailbox('{outlook.office365.com}', 'MunsterUniversity@24Vision.Solutions\Chartering', 'Mun@24V-112017', __DIR__);
+    	$mailbox = new Mailbox('{outlook.office365.com}', 'MunsterUniversity@24Vision.Solutions', 'Mun@24V-112017', __DIR__);
            // 'Mun@24V-112017', __DIR__);
 
 
