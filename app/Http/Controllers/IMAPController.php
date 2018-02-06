@@ -35,10 +35,8 @@ class IMAPController extends Controller
 
         $emails = $mailbox->getMailsInfo($mailsIds);
         $saveCount = 0;
-        return $emails[0]->to;
+     
         foreach ($emails as $email) {
-            
-
             $input = ['subject'=> @$email->subject,
                     'body'=> @$mailbox->getMail($email->uid,false),
                     'sender'=> @$email->from,
