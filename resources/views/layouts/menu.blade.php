@@ -46,6 +46,10 @@
                 <i class="glyphicon glyphicon-ship"></i>
               <a href="{{url('/emails')."?type=Order"}}">Ship order mail</a>
             </li>
+            <li>
+                <i class="glyphicon glyphicon-star"></i>
+              <a href="{{url('/emails')}}">All mails</a>
+            </li>
           </ul>
       </li>
       <li
