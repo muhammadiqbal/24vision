@@ -3,6 +3,8 @@
 namespace App\DataTables;
 
 use App\Models\Cargo;
+use App\Models\Ship;
+use App\Models\Port;
 use Yajra\DataTables\Services\DataTable;
 use Carbon\Carbon;
 use \League\Geotools\Geotools;
@@ -140,30 +142,25 @@ class DashboardDataTable extends DataTable
      */
     public function query()
     {
-        $cargos = Cargo::leftjoin('cargo_status', 'cargo_status.id','cargo_status.id')
+          $cargos = Cargo::leftjoin('cargo_status', 'cargo_status.id','cargo_status.id')
                         ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
                         ->leftjoin('ports as p1', 'p1.id','loading_port')
                         ->leftjoin('ports as p2', 'p2.id','discharging_port')
+                        ->where('quantity','<=', ($this->ship->dwcc - $this->occupied_tonage))
+                        // ->where(DB::raw('quantity * stowage_factor AS size'),
+                        //                 '<=',
+                        //                 ($this->ship->max_holds_capacity - $this->occupied_size))
+                        // ->where(DB::raw('quantity *'.$this->ship->ballast_draft),
+                        //                 '<=', 
+                        //                 ($this->ship->max_laden_draft-($this->ship->ballast_draft * $this->occupied_tonage)))
                         ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
-        if ($this->request()->get('port_id')) {
+        if($this->request()->get('port_id')){
             $cargos->where('loading_port',$this->request()->get('port_id'));
         }
-        if ($this->request()->get('date_of_opening')) {
+        if($this->request()->get('date_of_opening')){
             $cargos->whereDate('laycan_first_day','>=',date($this->request()->get('date_of_opening')))
-                  ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')));
+                   ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')));
         }
-        // if ($this->request()->get('range')) {
-        //     $cargos->where('',$ship);
-        // }
-        // if ($this->request()->get('occupied_size')) {
-        //     $cargos->where('',$this->request()->get('occupied_size'));
-        // }
-        // if ($this->request()->get('occupied_tonnage')) {
-        //     $cargos->where('',$this->request()->get('occupied_tonnage')-$ship->dwcc);
-        // }
-        // if ($this->request()->get('current_draft')) {
-        //     $cargos->where('',$this->request()->get('current_draft'));
-        // }
 
         return $this->applyScopes($cargos);
     }
