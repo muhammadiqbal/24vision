@@ -223,11 +223,11 @@ class DashboardController extends Controller
                         ->where('quantity','<=', ($selectedShip->dwcc - $occupied_tonage))
                         ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
                         if($request()->get('port_id')){
-                            $cargos->where('loading_port',$request()->get('port_id'));
+                            $cargos->where('loading_port',$request->get('port_id'));
                         }
                         if($request()->get('date_of_opening')){
-                            $cargos->whereDate('laycan_first_day','>=',date($request()->get('date_of_opening')))
-                                   ->whereDate('laycan_last_day','<=',date($request()->get('date_of_opening')));
+                            $cargos->whereDate('laycan_first_day','>=',date($request->get('date_of_opening')))
+                                   ->whereDate('laycan_last_day','<=',date($request->get('date_of_opening')));
                         }
         return $dashboardDataTable
                                   // ->forOccTonnage($occupied_tonage)
