@@ -24,12 +24,19 @@
         @endif
         >
         <a href="{{ url('/cargos') }}"><i class="fa fa-cubes"></i> <span>Cargo offers</span></a></li>
-      <li
+      <li  class= "treeview 
         @if( $route =='App\Http\Controllers\EmailController')
-          class="active"
+          {{active}}
         @endif
+        "
         >
-        <a href="{{url('/emails')}}"><i class="fa fa-envelope"></i> <span>Cargo Mail</span></a></li>
+        <a href="{{url('/emails')}}"><i class="fa fa-envelope"></i> <span>Cargo Mail</span></a>
+          <ul class="treeview-menu">
+            <li><a href="{{-- {{ url('/cargoMail') }} --}}">Cargo mail</a></li>
+            <li><a href="{{-- {{ url('/shipOfferMail') }} --}}">Ship offer mail</a></li>
+            <li><a href="{{-- {{ url('/shipOrderMail') }} --}}">Ship order mail</a></li>
+          </ul>
+      </li>
       <li
         @if( $route =='App\Http\Controllers\FuelPriceController')
           class="active"
