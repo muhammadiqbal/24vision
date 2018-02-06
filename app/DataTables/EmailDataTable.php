@@ -31,6 +31,9 @@ class EmailDataTable extends DataTable
     public function query()
     {
         $emails = Email::orderBy('date','desc')->select('email.*');
+        if ($this->request()->get('type')) {
+            $emails->where('classification_automated',$this->request()->get('type'));
+        }
 
         return $this->applyScopes($emails);
     }
