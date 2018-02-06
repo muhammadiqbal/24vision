@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use PhpImap\Mailbox;
 use App\Repositories\EmailRepository;
+use DB;
 
 class IMAPController extends Controller
 {
@@ -38,7 +39,9 @@ class IMAPController extends Controller
      
         foreach ($emails as $email) {
             $input = ['subject'=> @$email->subject,
-                    'body'=> DB::connection('mysql2')->getPdo()->quote(@$mailbox->getMail($email->uid,false)->textPlain)),
+                    'body'=> DB::connection('mysql2')
+                                    ->getPdo()
+                                    ->quote(@$mailbox->getMail($email->uid,false)->textPlain),
                     'sender'=> @$email->from,
                     'receiver'=> @$email->to,
                     'cc'=> @$email->cc,
