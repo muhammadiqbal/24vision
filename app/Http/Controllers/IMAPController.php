@@ -39,6 +39,7 @@ class IMAPController extends Controller
 		}
 
         $emails = $mailbox->getMailsInfo($mailsIds);
+        $saveCount = 0;
         foreach ($emails as $email) {
             
 
@@ -56,12 +57,13 @@ class IMAPController extends Controller
                     'classification_automated_certainty'=>null,
                     'kibana_extracted'=>false];
             print_r($input);
-          //  $email = $emailRepo->create($input);
-
-
-
+            $storeEmail = $emailRepo->create($input);
+            if ($storeEmail) {
+                $saveCount++;
+            }
         }
-		
+		$request->session()->flash('status', '$saveCount successfully fetched into database!');
+        return ;
 
     }
 }
