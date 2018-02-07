@@ -53,7 +53,7 @@ class DashboardDataTable extends DataTable
                 $port = $this->port;
                 $date_of_opening = $this->date_of_opening;
                 //waiting for debugging calculator in model
-                $cargo->setBdi($port, $ship, $date_of_opening);
+                //$cargo->setBdi($port, $ship, $date_of_opening);
                 return $cargo->bdi;
                 
                 return view('calculator.bdi', 
