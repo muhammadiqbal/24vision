@@ -737,8 +737,9 @@ class Cargo extends Model
     //Formular for extract BDI Price from table "bdi_prices", used for calculating Grossrate and NTCE 
     public function calculateBDI($bdi_id, $date, $travel_time_to_start){
 
+        $date = new \Carbon\Carbon($date);
         // Receive parameters from objects
-        $date_price = $date->copy()->addDays($travel_time_to_start); // The date when the ship arrives the start port is relevant
+        $date_price = $date->addDays($travel_time_to_start); // The date when the ship arrives the start port is relevant
         
         // NULL handling (for attributes coming from cargo or calculated based on it)
         if($bdi_id ==null){
