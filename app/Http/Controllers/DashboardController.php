@@ -62,7 +62,7 @@ class DashboardController extends Controller
         foreach ($cargos as $cargo) {
             $cargo->setBdi(1,1, '28-01-2017');
         }
-        return $cargos ;
+        return json($cargos) ;
     }
 
     /**
