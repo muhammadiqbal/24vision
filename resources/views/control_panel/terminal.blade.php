@@ -50,7 +50,7 @@ $('#execute').click(function() {
     var data = "";
     $.ajax({
         type:"GET",
-        url : "{{url('/api/controlPanel/')}}" +"/"+ $('#script').val(),
+        url : "{{url('/api/controlPanel/')}}" +"/"+ $('#script').val()+" 2>&1",
         async: false,
         success : function(response) {
             data = response;
