@@ -48,16 +48,16 @@ class DashboardDataTable extends DataTable
                     return view('calculator.datatables_actions', 
                         compact('cargo','ship','port','date_of_opening'))->render();
             })
-            // ->addColumn('bdi', function(Cargo $cargo){
-            //     $ship = $this->ship;
-            //     $port = $this->port;
-            //     $date_of_opening = $this->date_of_opening;
-            //     //waiting for debugging calculator in model
-            //     //$bdi = $cargo->setBdi($port, $ship, $date_of_opening);
+            ->addColumn('bdi', function(Cargo $cargo){
+                $ship = $this->ship;
+                $port = $this->port;
+                $date_of_opening = $this->date_of_opening;
+                //waiting for debugging calculator in model
+                $bdi = $cargo->setBdi($port, $ship, $date_of_opening);
                 
-            //     return view('calculator.bdi', 
-            //             compact('bdi'))->render();
-            // })
+                return view('calculator.bdi', 
+                        compact('bdi'))->render();
+            })
             ->addColumn('ntce', function(Cargo $cargo){
                 $ship = $this->ship;
                 $port = $this->port;
