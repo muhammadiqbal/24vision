@@ -73,9 +73,9 @@ class EmailAPIController extends AppBaseController
     public function show($id)
     {
         /** @var Email $Email */
-        $email = Email::where('emailID',$id);
+        $email = $this->emailRepository->findWithoutFail($id);
 
-        if (empty($Email)) {
+        if (empty($email)) {
             return $this->sendError('Email not found');
         }
 
@@ -96,9 +96,9 @@ class EmailAPIController extends AppBaseController
         $input = $request->all();
 
         /** @var Email $Email */
-        $email = Email::where('emailID',$id);
+        $email = $this->emailRepository->findWithoutFail($id);
 
-        if (empty($Email)) {
+        if (empty($email)) {
             return $this->sendError('Email not found');
         }
 
@@ -118,7 +118,8 @@ class EmailAPIController extends AppBaseController
     public function destroy($id)
     {
         /** @var Email $Email */
-        $email = Email::where('emailID',$id);
+        $email = $this->emailRepository->findWithoutFail($id);
+
         if (empty($email)) {
             return $this->sendError('Email not found');
         }
