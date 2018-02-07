@@ -39,7 +39,7 @@ class DashboardController extends Controller
     }
 
 
-    public function testing(Calculator $calculator){
+    public function testing(Request $request,Calculator $calculator){
     		$cargos = Cargo::leftjoin('cargo_status', 'cargo_status.id','cargo_status.id')
                         ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
                         ->leftjoin('ports as p1', 'p1.id','loading_port')
