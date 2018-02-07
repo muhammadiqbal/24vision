@@ -180,7 +180,7 @@ class Cargo extends Model
     /*START non db attribute setter and getter*/
     public function setNtce($port, $ship, $date_of_opening){
         $ship_bdi = Ship::find('1'); // Reference Ship for calculating tje GrossRate
-        
+        $date_of_opening = new \Carbon\Carbon($date_of_opening);
         $distance_to_start = $this->calculateDistancetoStart($port, $this);
         $distance_cargo =  $this->calculateDistancetoCargo($this);
         $distance_sum = $this->calculateDistanceSum($distance_to_start, $distance_cargo);
@@ -227,7 +227,7 @@ class Cargo extends Model
 
     public function setGrossRate($port, $ship, $date_of_opening){
         $ship_bdi = Ship::find('1'); // Reference Ship for calculating tje GrossRate
-        
+        $date_of_opening = new \Carbon\Carbon($date_of_opening);
         $distance_to_start = $this->calculateDistancetoStart($port, $this);
         $distance_cargo =  $this->calculateDistancetoCargo($this);
         $distance_sum = $this->calculateDistanceSum($distance_to_start, $distance_cargo);
