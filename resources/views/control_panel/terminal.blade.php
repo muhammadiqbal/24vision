@@ -61,7 +61,7 @@ $('#execute').click(function() {
         success : function(response) {
             data = response;
             $('#terminal').text("<p>"+data+"</p>");
-            alert("command/script executed");
+            alert("command/script executed. result:"+data);
             return response;
         },
         error: function() {
