@@ -170,7 +170,6 @@ class DashboardDataTable extends DataTable
                             $cargos->whereDate('laycan_first_day','>=',date($this->request()->get('date_of_opening')))
                                    ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')));
                         }
-        $cargos->get();
         // foreach ($cargos as $cargo) {
         //     $cargo->setBdi($this->port,$this->ship, $this->date_of_opening);
         // }
