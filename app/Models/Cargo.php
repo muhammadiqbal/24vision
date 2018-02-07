@@ -206,7 +206,7 @@ class Cargo extends Model
         $travel_time_to_start = $this->calculateTravelTimeToStart($ship, $distance_to_start);
         $bdi_id = $this->calculateBDIId($port,$this);
         $this->bdi = $this->calculateBDI($bdi_id, $date_of_opening, $travel_time_to_start);
-       // return $this->bdi;
+        return $this->bdi;
     }
 
     public function getBdi(){
