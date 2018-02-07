@@ -63,7 +63,7 @@ class DashboardController extends Controller
         }
        
         foreach ($cargos as $cargo) {
-            $cargo->setBdi(Port::find(1),Ship::find(1), '28-01-2017');
+            $cargo->setNtce(Port::find(1),Ship::find(1), '28-01-2017');
         }
         return Response::json($cargos) ;
     }
