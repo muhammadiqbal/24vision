@@ -25,6 +25,7 @@ use DB;
 use App\DataTables\DashboardDataTable;
 use App\Services\Calculator;
 use App\Models\LdRateType;
+use Response;
 
 class DashboardController extends Controller
 {
@@ -62,7 +63,7 @@ class DashboardController extends Controller
         foreach ($cargos as $cargo) {
             $cargo->setBdi(1,1, '28-01-2017');
         }
-        return json($cargos) ;
+        return Response::json($cargos) ;
     }
 
     /**
