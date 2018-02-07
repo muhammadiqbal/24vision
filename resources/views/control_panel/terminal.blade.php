@@ -8,13 +8,13 @@
 	<div class="row">
 		<div class="form-group col-sm-6">
 		<b>Select script ot be executed</b>
-	    {!! Form::label('script', 'Script:') !!}
+	    {{-- {!! Form::label('script', 'Script:') !!}
 	        <select name="script" id="script" class="form-control">
 	            <option value="python3 execute_cargo_extraction.py">Cargo extraction</option>
 	            <option value="python3 execute_ship_extraction.py">Ship extraction</option>
 	            <option value="python3 execute_order_extraction.py">Order extraction</option>
 	        </select>
-		</div>
+		</div> --}}
 		<div class="form-group col-sm-12">
 		<b>OR Type the shell command</b>
 	    {!! Form::label('script', 'command:') !!}
@@ -57,7 +57,6 @@ $('#execute').click(function() {
     $.ajax({
         type:"GET",
         url : "{{url('/api/controlPanel/')}}" +"/"+ $('#script').val(),
-        async: false,
         success : function(response) {
             data = response;
             $('#terminal').text("<p>"+data+"</p>");
