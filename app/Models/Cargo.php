@@ -714,14 +714,14 @@ class Cargo extends Model
         // No price entry has an enddate older than the date_price -> use the latest entry with end date null
         if ($fee_price_entry = FeePrice::where('end_date','>=',$date_price)->get()->isEmpty()) {
 
-            $fee_price_entry = FeePrice::where('end_date',null)->where('port_id',$port_start_id)->get();
+            $fee_price_entry = FeePrice::where('end_date',null)->where('port_id',$port_start_id)->first();
         }
         // price entries with an enddate older than the date_price found -> apply other filters
         else {
             
-            $fee_price_entry = FeePrice::where('end_date','>=',$date_price)->where('start_date','<=',$date_price)->where('port_id',$port_start_id)->get();
+            $fee_price_entry = FeePrice::where('end_date','>=',$date_price)->where('start_date','<=',$date_price)->where('port_id',$port_start_id)->first();
         }
-        $port_fee_load = $fee_price_entry[0]->price; 
+        $port_fee_load = $fee_price_entry->price; 
         
         return $port_fee_load;
     }
