@@ -41,31 +41,6 @@ class DashboardController extends Controller
 
 
     public function testing(Request $request,Calculator $calculator){
-    		$cargos = Cargo::all();
-        // leftjoin('cargo_status', 'cargo_status.id','cargo_status.id')
-        //                 ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
-        //                 ->leftjoin('ports as p1', 'p1.id','loading_port')
-        //                 ->leftjoin('ports as p2', 'p2.id','discharging_port')
-        //                 ->where('quantity','<=', (1002000))
-        //                 // ->where(DB::raw('quantity * stowage_factor AS size'),
-        //                 //                 '<=',
-        //                 //                 ($this->ship->max_holds_capacity - $this->occupied_size))
-        //                 // ->where(DB::raw('quantity *'.$this->ship->ballast_draft),
-        //                 //                 '<=', 
-        //                 //                 ($this->ship->max_laden_draft-($this->ship->ballast_draft * $this->occupied_tonage)))
-        //                 ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
-        if($request->input('port_id')){
-            $cargos->where('loading_port',3);
-        }
-        if($request->input('date_of_opening')){
-            $cargos->whereDate('laycan_first_day','>=',date())
-                   ->whereDate('laycan_last_day','<=',date());
-        }
-       
-        foreach ($cargos as $cargo) {
-            $cargo->setNtce(Port::find(1),Ship::find(1), '28-01-2017');
-        }
-        return Response::json($cargos) ;
     }
 
     /**
@@ -94,6 +69,7 @@ class DashboardController extends Controller
          $occupied_size = $request->input('occupied_size',0);
          $occupied_tonage = $request->input('occupied_tonage',0);
          $date_of_opening = $request->input('date_of_opening',date('d-m-Y'));
+         $range = $request->input('range');
 
          $mailCount = Email::count();
          $cargoCount = Cargo::count();
@@ -114,6 +90,8 @@ class DashboardController extends Controller
                                              'mailCount'=>$mailCount,
                                              'cargoCount'=>$cargoCount,
                                              'shipCount'=>$shipCount,
+                                             'range'=>$range,
+                                             'selectedPort'=>$port
                                             ]);
     }
 

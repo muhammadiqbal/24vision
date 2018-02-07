@@ -3,9 +3,14 @@
 <!-- Ship Id Field -->
 <div class="form-group col-sm-8">
     {!! Form::label('ship_id', 'Ship:') !!}
-    <select name="ship_id" class="form-control">
+    <select name="ship_id" class="form-control" required="true">
         @foreach($ships as $ship)
-                <option value="{{$ship->id}}">{{$ship->name}}</option>
+                <option 
+                    @if($selectedShip->id == $ship->id)
+                        {{'selected="true"'}}
+                    @endif
+                    value="{{$ship->id}}">{{$ship->name}}
+                </option>
         @endforeach
     </select>
 </div>
@@ -13,15 +18,20 @@
 <!-- Date Of Opening Field -->
 <div class="form-group col-sm-4">
     {!! Form::label('occupied_size', 'Occupied size:') !!}
-    {!! Form::number('occupied_size',null, ['class' => 'form-control']) !!}
+    {!! Form::number('occupied_size',null, ['class' => 'form-control', 'value'=>$occupied_size]) !!}
 </div>
 
 <!-- Port Id Field -->
 <div class="form-group col-sm-8">
     {!! Form::label('port_id', 'Port:') !!}
-    <select name="port_id" class="form-control">
+    <select name="port_id" class="form-control" required="true">
         @foreach($ports as $port)
-                <option value="{{$port->id}}">{{$port->name}}</option>
+                <option 
+                    @if($selectedPort->id == $port->id)
+                        {{'selected="true"'}}
+                    @endif
+                    value="{{$port->id}}">{{$port->name}}
+                </option>
         @endforeach
     </select>
 </div>
@@ -29,21 +39,21 @@
 <!-- Date Of Opening Field -->
 <div class="form-group col-sm-4">
     {!! Form::label('occupied_tonage', 'Occupied tonage:') !!}
-    {!! Form::number('occupied_tonage',null, ['class' => 'form-control']) !!}
+    {!! Form::number('occupied_tonage',null, ['class' => 'form-control', 'value'=>$occupied_tonage]) !!}
 </div>
 
 
 <!-- Date Of Opening Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('date_of_opening', 'Date Of Opening:') !!}
-    {!! Form::date('date_of_opening',null, ['class' => 'form-control']) !!}
+    {!! Form::date('date_of_opening',null, ['class' => 'form-control', 'required'=>'true', 'value'=>$date_of_opening]) !!}
 </div>
 
 
 <!-- Date Of Opening Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('Range', 'Range:') !!}
-    {!! Form::number('range',null, ['class' => 'form-control']) !!}
+    {!! Form::number('range',null, ['class' => 'form-control', 'value'=>$range]) !!}
 </div>
 
 
