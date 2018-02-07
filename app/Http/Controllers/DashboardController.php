@@ -60,7 +60,7 @@ class DashboardController extends Controller
                    ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')));
         }
         foreach ($cargos as $cargo) {
-            $cargo->setBdi($this->port,$this->ship, $this->date_of_opening);
+            $cargo->setBdi(1,1, '28-01-2017');
         }
         return $cargos ;
     }
