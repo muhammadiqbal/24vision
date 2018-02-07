@@ -60,14 +60,14 @@ class DashboardDataTable extends DataTable
                 $port = $this->port;
                 $date_of_opening = $this->date_of_opening;
 
-                return $cargo->setNtce($port, $ship, $date_of_opening)
+                return $cargo->setNtce($port, $ship, $date_of_opening);
             })
             ->addColumn('gross_rate', function(Cargo $cargo){
                 $ship = $this->ship;
                 $port = $this->port;
                 $date_of_opening = $this->date_of_opening;
 
-                return $cargo->setBdi($port, $ship, $date_of_opening)
+                return $cargo->setBdi($port, $ship, $date_of_opening);
             })
             ->editColumn('laycan_first_day', function(Cargo $cargo){
                 if ($cargo->laycan_first_day_manual) {
@@ -226,8 +226,8 @@ class DashboardDataTable extends DataTable
             'discharging_port' => ['defaultContent' => 'NULL','name' => 'disch_port', 'data' => 'disch_port'],
             'email_id' => ['defaultContent' => 'NULL','name' => 'email_id', 'data' => 'email_id'],
             'bdi' => ['defaultContent'=>'NULL', 'name'=>'bdi', 'data'=>'bdi', 'title'=>'bdi'],
-            'ntce' => ['defaultContent'=>'NULL', 'name'=>'', 'data'=>''],
-            'gross_rate' => ['defaultContent'=>'NULL', 'name'=>'', 'data'=>''],
+            'ntce' => ['defaultContent'=>'NULL', 'name'=>'', 'data'=>'ntce',  'title'=>'ntce'],
+            'gross_rate' => ['defaultContent'=>'NULL', 'name'=>'', 'data'=>'gross_rate', 'title'=>'gross_rate'],
             'status_id' => ['defaultContent' => 'NULL','name' => 'status', 'data' => 'status'],
         ];
     }
