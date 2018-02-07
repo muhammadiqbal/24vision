@@ -51,7 +51,7 @@ $('#execute').click(function() {
     $.ajax({
         type:"GET",
         url : "{{url('/api/controlPanel/')}}" + $('#script').val(),
-        data : 
+        data : [script : $('#script').val(),],
         async: false,
         success : function(response) {
             data = response;
