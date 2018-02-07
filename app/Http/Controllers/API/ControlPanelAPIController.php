@@ -15,7 +15,8 @@ use Illuminate\Http\Request;
 class ControlPanelAPIController extends AppBaseController
 {
 
-	public function execute($script) {
+	public function execute(Request $request) {
+		$script = $request->input('script');
 		$command = escapeshellcmd($script);
 		$output = shell_exec($command);
 		return response($output, 200)

@@ -80,4 +80,4 @@ Route::get('emails/{filter}/{limit}', 'EmailAPIController@extra');
 
 Route::resource('ports', 'PortAPIController');
 
-Route::get('controlPanel/{script}', 'ControlPanelAPIController@execute');
+Route::get('controlPanel', 'ControlPanelAPIController@execute');
