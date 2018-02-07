@@ -174,7 +174,7 @@ class DashboardDataTable extends DataTable
         foreach ($cargos as $cargo) {
             $cargo->setBdi($this->port,$this->ship, $this->date_of_opening);
         }
-        print_r($cargos);
+        
         return $this->applyScopes($cargos);
     }
     /**
