@@ -3,7 +3,7 @@
     <a class='btn btn-default btn-xs'>
         <i class="glyphicon glyphicon-list-alt"></i>
     </a>
-    <a class='btn btn-default btn-xs'>
+    <a href="{{url('/emails/'.$cargo->email_id)}}" class='btn btn-default btn-xs'>
         <i class="glyphicon glyphicon-envelope" data-toggle="modal" data-target="#modalMail"></i>
     </a>
     <a class='btn btn-default btn-xs'>
