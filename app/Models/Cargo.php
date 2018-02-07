@@ -181,8 +181,8 @@ class Cargo extends Model
     public function setNtce($port, $ship, $date_of_opening){
         $ship_bdi = Ship::find('1'); // Reference Ship for calculating tje GrossRate
         
-        $distance_to_start = calculateDistancetoStart($port_ship, $cargo, $calculator);
-        $distance_cargo =  calculateDistancetoCargo($cargo, $calculator);
+        $distance_to_start = calculateDistancetoStart($port_ship, $cargo);
+        $distance_cargo =  calculateDistancetoCargo($cargo);
         $distance_sum = calculateDistanceSum($distance_to_start, $distance_cargo);
         $travel_time_to_start = calculateTravelTimeToStart($ship, $distance_to_start);
         $travel_time_cargo =  calculateTravelTimeCargo($ship, $distance_cargo);
@@ -228,8 +228,8 @@ class Cargo extends Model
     public function setGrossRate($port, $ship, $date_of_opening){
         $ship_bdi = Ship::find('1'); // Reference Ship for calculating tje GrossRate
         
-        $distance_to_start = calculateDistancetoStart($port_ship, $cargo, $calculator);
-        $distance_cargo =  calculateDistancetoCargo($cargo, $calculator);
+        $distance_to_start = calculateDistancetoStart($port_ship, $cargo);
+        $distance_cargo =  calculateDistancetoCargo($cargo);
         $distance_sum = calculateDistanceSum($distance_to_start, $distance_cargo);
         $travel_time_to_start = calculateTravelTimeToStart($ship, $distance_to_start);
         $travel_time_cargo =  calculateTravelTimeCargo($ship, $distance_cargo);
