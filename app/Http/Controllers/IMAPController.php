@@ -32,7 +32,7 @@ class IMAPController extends Controller
     	// Read all messaged into an array:
 		$mailsIds = $mailbox->searchMailbox('ALL');
 		if(!$mailsIds) {
-			$request->session()->flash('error', '$saveCount successfully fetched into database!');
+			$request->session()->flash('error', 'mailbox is empty!');
 		}
 
         $emails = $mailbox->getMailsInfo($mailsIds);
