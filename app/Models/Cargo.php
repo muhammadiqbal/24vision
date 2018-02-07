@@ -74,10 +74,10 @@ class Cargo extends Model
     protected $dates = ['deleted_at'];
 
     /*START non db attributes */
-    protected $ntce;
-    protected $grossRate;
-    protected $route;
-    protected $bdi = 123;
+    public $ntce;
+    public $grossRate;
+    public $route;
+    public $bdi;
     /*END non db attributes*/
 
     public $fillable = [
@@ -117,7 +117,8 @@ class Cargo extends Model
         'commision_manual',
         'commision_constructed',
         'email_id',
-        'status_id'
+        'status_id',
+        'bdi'
     ];
 
     /**
@@ -161,7 +162,8 @@ class Cargo extends Model
         'commision_manual' => 'boolean',
         'commision_constructed' => 'boolean',
         'email_id' => 'integer',
-        'status_id' => 'integer'
+        'status_id' => 'integer',
+        'bdi'
     ];
 
     /**
@@ -204,7 +206,7 @@ class Cargo extends Model
         $travel_time_to_start = $this->calculateTravelTimeToStart($ship, $distance_to_start);
         $bdi_id = $this->calculateBDIId($port,$this);
         $this->bdi = $this->calculateBDI($bdi_id, $date_of_opening, $travel_time_to_start);
-        return $this->bdi;
+       // return $this->bdi;
     }
 
     public function getBdi(){
