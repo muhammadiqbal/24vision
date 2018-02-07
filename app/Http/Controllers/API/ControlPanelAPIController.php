@@ -18,7 +18,7 @@ class ControlPanelAPIController extends AppBaseController
 	public function execute($script) {
 		$command = escapeshellcmd($script);
 		$output = shell_exec($command);
-		return json($output);
+		return Response::json($output);
 	}
 
 }
