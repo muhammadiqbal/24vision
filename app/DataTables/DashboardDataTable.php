@@ -54,7 +54,7 @@ class DashboardDataTable extends DataTable
                 $date_of_opening = $this->date_of_opening;
                 //waiting for debugging calculator in model
                 //$cargo->setBdi($port, $ship, $date_of_opening);
-                return Cargo::find($cargo->id)->setBdi($port, $ship, $date_of_opening);
+                return $cargo->bdi;
                 
                 return view('calculator.bdi', 
                         compact('bdi'))->render();
@@ -171,9 +171,9 @@ class DashboardDataTable extends DataTable
             $cargos->whereDate('laycan_first_day','>=',date($this->request()->get('date_of_opening')))
                    ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')));
         }
-        // foreach ($cargos as $cargo) {
-        //     $cargo->setBdi($this->port,$this->ship, $this->date_of_opening);
-        // }
+        foreach ($cargos as $cargo) {
+            $cargo->setBdi($this->port,$this->ship, $this->date_of_opening);
+        }
         return $this->applyScopes($cargos);
     }
     /**
