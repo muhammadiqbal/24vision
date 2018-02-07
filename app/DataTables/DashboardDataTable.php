@@ -48,12 +48,12 @@ class DashboardDataTable extends DataTable
                     return view('calculator.datatables_actions', 
                         compact('cargo','ship','port','date_of_opening'))->render();
             })
-            ->addColumn('bdi', function(Cargo $cargo){
+            ->editColumn('bdi', function(Cargo $cargo){
                 $ship = $this->ship;
                 $port = $this->port;
                 $date_of_opening = $this->date_of_opening;
                 //waiting for debugging calculator in model
-                $bdi = $cargo->setBdi($port, $ship, $date_of_opening);
+                return $cargo->setBdi($port, $ship, $date_of_opening);
                 
                 return view('calculator.bdi', 
                         compact('bdi'))->render();
@@ -163,13 +163,13 @@ class DashboardDataTable extends DataTable
                         //                 '<=', 
                         //                 ($this->ship->max_laden_draft-($this->ship->ballast_draft * $this->occupied_tonage)))
                         ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
-                        if($this->request()->get('port_id')){
-                            $cargos->where('loading_port',$this->request()->get('port_id'));
-                        }
-                        if($this->request()->get('date_of_opening')){
-                            $cargos->whereDate('laycan_first_day','>=',date($this->request()->get('date_of_opening')))
-                                   ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')));
-                        }
+        if($this->request()->get('port_id')){
+            $cargos->where('loading_port',$this->request()->get('port_id'));
+        }
+        if($this->request()->get('date_of_opening')){
+            $cargos->whereDate('laycan_first_day','>=',date($this->request()->get('date_of_opening')))
+                   ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')));
+        }
         // foreach ($cargos as $cargo) {
         //     $cargo->setBdi($this->port,$this->ship, $this->date_of_opening);
         // }
