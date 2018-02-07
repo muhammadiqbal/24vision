@@ -60,7 +60,7 @@ $('#execute').click(function() {
         async: false,
         success : function(response) {
             data = response;
-            $('#terminal').text(response);
+            $('#terminal').text("<p>"+response+"</p>");
             alert("command/script executed");
             return response;
         },
