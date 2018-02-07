@@ -133,7 +133,7 @@ class DashboardDataTable extends DataTable
                     return '<b style=\'color:red;\'>'.$cargo->commision.'</b>';
                 }
             })
-            ->filterColumn('status', 'whereRaw', "?", ["$1"]);
+            //->filterColumn('status', 'whereRaw', "?", ["$1"])
             ->make(true);
     }
     /**
