@@ -15,6 +15,12 @@
 	            <option value="python3 execute_order_extraction.py">Order extraction</option>
 	        </select>
 		</div>
+		<div class="form-group col-sm-12">
+		<b>OR Type the shell command</b>
+	    {!! Form::label('script', 'command:') !!}
+	        <input type="text" name="script" id="script">
+		</div>
+
 		<!-- Submit Field -->
 		<div class="form-group col-sm-12">
 		  
@@ -50,11 +56,12 @@ $('#execute').click(function() {
     var data = "";
     $.ajax({
         type:"GET",
-        url : "{{url('/api/controlPanel/')}}" +"/"+ $('#script').val()+" 2>&1",
+        url : "{{url('/api/controlPanel/')}}" +"/"+ $('#script').val(),
         async: false,
         success : function(response) {
             data = response;
             $('terminal').append(response);
+            alert("command/script executed");
             return response;
         },
         error: function() {
