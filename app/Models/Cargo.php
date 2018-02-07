@@ -721,9 +721,12 @@ class Cargo extends Model
             
             $fee_price_entry = FeePrice::where('end_date','>=',$date_price)->where('start_date','<=',$date_price)->where('port_id',$port_start_id)->first();
         }
-        $port_fee_load = $fee_price_entry->price; 
-        
-        return $port_fee_load;
+        if ($fee_price_entry) {
+            return $fee_price_entry->price; 
+        }
+        else{
+            return 0;
+        }
     }
 
     //Formular for extract Port Fee for Discharging from table "Fee_prices", used for calculating NonHireCosts 
