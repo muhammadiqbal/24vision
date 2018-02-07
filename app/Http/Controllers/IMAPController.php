@@ -12,7 +12,7 @@ class IMAPController extends Controller
 {
     //
 
-    public function inbox(EmailRepository $emailRepo){
+    public function inbox(Request $request, EmailRepository $emailRepo){
 
 //     	[15:47, 2/1/2018] +49 172 4517715: $hostname = '{user=MunsterUniversity@24Vision.Solutions\Chartering}';
 // $username = ;
