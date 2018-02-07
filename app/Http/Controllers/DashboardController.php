@@ -52,10 +52,10 @@ class DashboardController extends Controller
                         //                 '<=', 
                         //                 ($this->ship->max_laden_draft-($this->ship->ballast_draft * $this->occupied_tonage)))
                         ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
-        if($this->request()->get('port_id')){
+        if($request->input('port_id')){
             $cargos->where('loading_port',3);
         }
-        if($this->request()->get('date_of_opening')){
+        if($request->input('date_of_opening')){
             $cargos->whereDate('laycan_first_day','>=',date())
                    ->whereDate('laycan_last_day','<=',date());
         }
