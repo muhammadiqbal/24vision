@@ -60,6 +60,7 @@ class DashboardController extends Controller
             $cargos->whereDate('laycan_first_day','>=',date())
                    ->whereDate('laycan_last_day','<=',date());
         }
+        $cargos->get();
         foreach ($cargos as $cargo) {
             $cargo->setBdi(1,1, '28-01-2017');
         }
