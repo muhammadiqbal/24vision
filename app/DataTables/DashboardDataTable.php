@@ -67,7 +67,7 @@ class DashboardDataTable extends DataTable
                 $port = $this->port;
                 $date_of_opening = $this->date_of_opening;
 
-                return $cargo->setBdi($port, $ship, $date_of_opening);
+                return $cargo->setGrossRate($port, $ship, $date_of_opening);
             })
             ->editColumn('laycan_first_day', function(Cargo $cargo){
                 if ($cargo->laycan_first_day_manual) {

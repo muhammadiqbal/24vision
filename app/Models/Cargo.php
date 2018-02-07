@@ -199,23 +199,23 @@ class Cargo extends Model
         
         
         $fuel_consumption = calculateFuelConsumption($ship, $port_time_sum, $travel_time_sum);
-        $fuel_price =  calculateFuelPrice($ship, $date, $travel_time_to_start);
+        $fuel_price =  calculateFuelPrice($ship, $date_of_opening, $travel_time_to_start);
         $fuel_costs =  calculateFuelCosts($fuel_price,$fuel_consumption);
-        $port_fee_load = calculatePortFeeLoad($cargo, $date, $travel_time_to_start);
+        $port_fee_load = calculatePortFeeLoad($cargo, $date_of_opening, $travel_time_to_start);
         //$port_fee_load = 10000;
-        $port_fee_disch = calculatePortFeeDisch($cargo, $date, $voyage_time, $port_time_disch);
+        $port_fee_disch = calculatePortFeeDisch($cargo, $date_of_opening, $voyage_time, $port_time_disch);
         $non_hire_costs =  calculateNonHireCosts($fuel_costs, $port_fee_load, $port_fee_disch);
         
         $fuel_consumption_bdi = calculateFuelConsumption($ship_bdi, $port_time_sum, $travel_time_sum_bdi);
-        $fuel_price_bdi =  calculateFuelPrice($ship_bdi, $date, $travel_time_to_start_bdi);
+        $fuel_price_bdi =  calculateFuelPrice($ship_bdi, $date_of_opening, $travel_time_to_start_bdi);
         $fuel_costs_bdi =  calculateFuelCosts($fuel_price_bdi,$fuel_consumption_bdi);
-        $port_fee_load_bdi = calculatePortFeeLoad($cargo, $date, $travel_time_to_start_bdi);
+        $port_fee_load_bdi = calculatePortFeeLoad($cargo, $date_of_opening, $travel_time_to_start_bdi);
         //$port_fee_load_bdi = 10000;
-        $port_fee_disch_bdi = calculatePortFeeDisch($cargo, $date, $voyage_time_bdi, $port_time_disch);
+        $port_fee_disch_bdi = calculatePortFeeDisch($cargo, $date_of_opening, $voyage_time_bdi, $port_time_disch);
         $non_hire_costs_bdi =  calculateNonHireCosts($fuel_costs_bdi, $port_fee_load_bdi, $port_fee_disch_bdi);
         
         $bdi_id = calculateBDIId($port_ship,$cargo);
-        $bdi = calculateBDI($bdi_id, $date, $travel_time_to_start);
+        $bdi = calculateBDI($bdi_id, $date_of_opening, $travel_time_to_start);
         $gross_rate = calculateGrossRate($cargo, $bdi, $voyage_time_bdi, $non_hire_costs_bdi);
         $ntce = calculateNTCE($cargo, $bdi, $voyage_time, $non_hire_costs, $gross_rate);
         return $ntce;
@@ -246,23 +246,23 @@ class Cargo extends Model
         
         
         $fuel_consumption = calculateFuelConsumption($ship, $port_time_sum, $travel_time_sum);
-        $fuel_price =  calculateFuelPrice($ship, $date, $travel_time_to_start);
+        $fuel_price =  calculateFuelPrice($ship, $date_of_opening, $travel_time_to_start);
         $fuel_costs =  calculateFuelCosts($fuel_price,$fuel_consumption);
-        $port_fee_load = calculatePortFeeLoad($cargo, $date, $travel_time_to_start);
+        $port_fee_load = calculatePortFeeLoad($cargo, $date_of_opening, $travel_time_to_start);
         //$port_fee_load = 10000;
-        $port_fee_disch = calculatePortFeeDisch($cargo, $date, $voyage_time, $port_time_disch);
+        $port_fee_disch = calculatePortFeeDisch($cargo, $date_of_opening, $voyage_time, $port_time_disch);
         $non_hire_costs =  calculateNonHireCosts($fuel_costs, $port_fee_load, $port_fee_disch);
         
         $fuel_consumption_bdi = calculateFuelConsumption($ship_bdi, $port_time_sum, $travel_time_sum_bdi);
-        $fuel_price_bdi =  calculateFuelPrice($ship_bdi, $date, $travel_time_to_start_bdi);
+        $fuel_price_bdi =  calculateFuelPrice($ship_bdi, $date_of_opening, $travel_time_to_start_bdi);
         $fuel_costs_bdi =  calculateFuelCosts($fuel_price_bdi,$fuel_consumption_bdi);
-        $port_fee_load_bdi = calculatePortFeeLoad($cargo, $date, $travel_time_to_start_bdi);
+        $port_fee_load_bdi = calculatePortFeeLoad($cargo, $date_of_opening, $travel_time_to_start_bdi);
         //$port_fee_load_bdi = 10000;
-        $port_fee_disch_bdi = calculatePortFeeDisch($cargo, $date, $voyage_time_bdi, $port_time_disch);
+        $port_fee_disch_bdi = calculatePortFeeDisch($cargo, $date_of_opening, $voyage_time_bdi, $port_time_disch);
         $non_hire_costs_bdi =  calculateNonHireCosts($fuel_costs_bdi, $port_fee_load_bdi, $port_fee_disch_bdi);
         
         $bdi_id = calculateBDIId($port_ship,$cargo);
-        $bdi = calculateBDI($bdi_id, $date, $travel_time_to_start);
+        $bdi = calculateBDI($bdi_id, $date_of_opening, $travel_time_to_start);
         $gross_rate = calculateGrossRate($cargo, $bdi, $voyage_time_bdi, $non_hire_costs_bdi);
         return $gross_rate;
     }
