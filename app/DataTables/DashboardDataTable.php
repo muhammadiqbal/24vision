@@ -40,7 +40,7 @@ class DashboardDataTable extends DataTable
     public function ajax()
     { 
         return datatables()
-            ->eloquent($this->query()) //change this to collection apply the bdi set in query
+            ->collection($this->query()) //change this to collection apply the bdi set in query
             ->addColumn('action', function(Cargo $cargo) {
                     $ship = $this->ship;
                     $port = $this->port;
@@ -48,16 +48,16 @@ class DashboardDataTable extends DataTable
                     return view('calculator.datatables_actions', 
                         compact('cargo','ship','port','date_of_opening'))->render();
             })
-            ->addColumn('bdi', function(Cargo $cargo){
-                $ship = $this->ship;
-                $port = $this->port;
-                $date_of_opening = $this->date_of_opening;
-                //waiting for debugging calculator in model
-                //$bdi = $cargo->setBdi($port, $ship, $date_of_opening);
+            // ->addColumn('bdi', function(Cargo $cargo){
+            //     $ship = $this->ship;
+            //     $port = $this->port;
+            //     $date_of_opening = $this->date_of_opening;
+            //     //waiting for debugging calculator in model
+            //     //$bdi = $cargo->setBdi($port, $ship, $date_of_opening);
                 
-                return view('calculator.bdi', 
-                        compact('bdi'))->render();
-            })
+            //     return view('calculator.bdi', 
+            //             compact('bdi'))->render();
+            // })
             ->addColumn('ntce', function(Cargo $cargo){
                 $ship = $this->ship;
                 $port = $this->port;
@@ -170,6 +170,10 @@ class DashboardDataTable extends DataTable
                             $cargos->whereDate('laycan_first_day','>=',date($this->request()->get('date_of_opening')))
                                    ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')));
                         }
+        $cargos->get();
+        foreach ($cargos as $cargo) {
+            $cargo->setBdi($this->port,$this->ship, $this->date_of_opening);
+        }
         return $this->applyScopes($cargos);
     }
     /**
