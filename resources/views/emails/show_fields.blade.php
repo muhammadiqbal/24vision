@@ -13,7 +13,7 @@
 <!-- Body Field -->
 <div class="form-group">
     {!! Form::label('body', 'Body:') !!}
-    {!! Form::textarea('body', null, ['class' => 'form-control', 'read-only'=>true, 'value'=>"{!! $email->body !!}"]) !!}   
+    <textarea class="form-control" readonly="true">{!! $email->body !!}</textarea>
 </div>
 
 <!-- Sender Field -->
