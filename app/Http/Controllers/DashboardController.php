@@ -71,7 +71,8 @@ class DashboardController extends Controller
          $date_of_opening = $request->input('date_of_opening',date('d-m-Y'));
          $range = $request->input('range');
 
-         $mailCount = Email::count();
+         //$mailCount = Email::count();
+         $mailCount =($selectedShip->max_laden_draft/$selectedShip->ballast_draft) -$occupied_tonage;
          $cargoCount = Cargo::count();
          $shipCount = Ship::count();
         return $dashboardDataTable
