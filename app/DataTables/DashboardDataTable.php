@@ -147,7 +147,6 @@ class DashboardDataTable extends DataTable
                         ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
                         ->leftjoin('ports as p1', 'p1.id','loading_port')
                         ->leftjoin('ports as p2', 'p2.id','discharging_port')
-                        ->join('ships', )
                         ->Where('quantity','<=', ($this->ship->dwcc - $this->occupied_tonage))
                         // ->where('quantity','<=',
                         //                 DB::raw(($this->ship->max_holds_capacity - $this->occupied_size).'/ stowage_factor'))
