@@ -150,7 +150,7 @@ class DashboardDataTable extends DataTable
                         ->where('quantity','<=', ($this->ship->dwcc - $this->occupied_tonage))
                         ->where('loading_port',$this->request()->get('port_id'))
                         ->whereDate('laycan_first_day','>=',date($this->request()->get('date_of_opening')))
-                        ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')));
+                        ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')))
                         ->whereRaw(DB::raw('quantity * stowage_factor AS size'),
                                         '<=',
                                         ($this->ship->max_holds_capacity - $this->occupied_size))
