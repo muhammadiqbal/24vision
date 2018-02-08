@@ -159,7 +159,7 @@ class DashboardDataTable extends DataTable
                                         ($this->ship->max_laden_draft-($this->ship->ballast_draft * $this->occupied_tonage)))
                         ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
         if($this->request()->get('cargo_status')){
-            $cargos->where('cargos.cargo_status_id', $this->request()->get('cargo_status');
+            $cargos->where('cargos.cargo_status_id', $this->request()->get('cargo_status'));
         }
         return $this->applyScopes($cargos);
     }
