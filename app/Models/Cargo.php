@@ -117,8 +117,7 @@ class Cargo extends Model
         'commision_manual',
         'commision_constructed',
         'email_id',
-        'status_id',
-        'bdi'
+        'status_id'
     ];
 
     /**
@@ -162,8 +161,7 @@ class Cargo extends Model
         'commision_manual' => 'boolean',
         'commision_constructed' => 'boolean',
         'email_id' => 'integer',
-        'status_id' => 'integer',
-        'bdi'
+        'status_id' => 'integer''
     ];
 
     /**
