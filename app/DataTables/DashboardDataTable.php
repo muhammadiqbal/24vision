@@ -148,8 +148,6 @@ class DashboardDataTable extends DataTable
                         ->leftjoin('ports as p1', 'p1.id','loading_port')
                         ->leftjoin('ports as p2', 'p2.id','discharging_port')
                         ->Where('quantity','<=', ($this->ship->dwcc - $this->occupied_tonage))
-                        ->whereDate('laycan_first_day','<=',date($this->request()->get('date_of_opening')))
-                        ->whereDate('laycan_last_day','>=',date($this->request()->get('date_of_opening')))
                         // ->where('quantity','<=',
                         //                 DB::raw(($this->ship->max_holds_capacity - $this->occupied_size).'/ stowage_factor'))
                         ->Where('quantity','<=', 
@@ -161,6 +159,10 @@ class DashboardDataTable extends DataTable
 
         if($this->request()->get('port_id')){
             $cargos->Where('loading_port',$this->request()->get('port_id'));
+        }
+        if($this->request()->get('date_of_opening')){
+            $cargos->whereDate('laycan_first_day','<=',date($this->request()->get('date_of_opening')))
+            ->whereDate('laycan_last_day','>=',date($this->request()->get('date_of_opening')));
         }
         return $this->applyScopes($cargos);
     }
