@@ -2,7 +2,7 @@
 
 <!-- Ship Id Field -->
 <div class="form-group col-sm-8">
-    {!! Form::label('ship_id', 'Ship:') !!}
+    {!! Form::label('ship_id', 'Ship*:') !!}
     <select name="ship_id" class="form-control" required="true">
         @foreach($ships as $ship)
                 <option 
@@ -23,7 +23,7 @@
 
 <!-- Port Id Field -->
 <div class="form-group col-sm-8">
-    {!! Form::label('port_id', 'Port:') !!}
+    {!! Form::label('port_id', 'Port*:') !!}
     <select name="port_id" class="form-control" required="true">
         @foreach($ports as $port)
                 <option 
@@ -42,10 +42,21 @@
     {!! Form::number('occupied_tonage',null, ['class' => 'form-control', 'value'=>$occupied_tonage]) !!}
 </div>
 
+ <div class="col-sm-4">
+    {!! Form::label('status', 'Cargo status:') !!}
+    <select id="statusoption" class="form-control">
+        <option >All</option>
+        <option value="1">OK</option>
+        <option value="2">Review</option>
+        <option value="3">Unusable</option>
+        <option value="4">Incomplete</option>
+    </select>
+</div>
+
 
 <!-- Date Of Opening Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('date_of_opening', 'Date Of Opening:') !!}
+    {!! Form::label('date_of_opening', 'Date Of Opening*:') !!}
     {!! Form::date('date_of_opening',null, ['class' => 'form-control', 'required'=>'true', 'value'=>$date_of_opening]) !!}
 </div>
 

@@ -42,7 +42,8 @@
     <!-- /.box-tools -->
   </div>
   <!-- /.box-header -->
-  <div class="box-body" id="terminal">
+  <div class="box-body" >
+  <textarea id="terminal"></textarea>
   </div>
   <!-- /.box-body -->
 </div>
@@ -60,7 +61,7 @@ $('#execute').click(function() {
         data :{script:$('#script').val()},
         success : function(response) {
             data = response;
-            $('#terminal').text("<p>"+data+"</p>");
+            $('#terminal').text(data);
             alert("command/script executed. result:"+data);
             return response;
         },
