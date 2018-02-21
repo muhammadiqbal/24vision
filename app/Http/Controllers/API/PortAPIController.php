@@ -39,8 +39,8 @@ class PortAPIController extends AppBaseController
         $this->portRepository->pushCriteria(new RequestCriteria($request));
         $this->portRepository->pushCriteria(new LimitOffsetCriteria($request));
         $ports = $this->portRepository->all();
-
-        return $this->sendResponse($ports->toArray(), 'Ports retrieved successfully');
+        return Response::json($ports);
+        //return $this->sendResponse($ports->toArray(), 'Ports retrieved successfully');
     }
 
     /**
