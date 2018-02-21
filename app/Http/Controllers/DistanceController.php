@@ -10,6 +10,7 @@ use App\Repositories\DistanceRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
+use App\Models\Port;
 
 class DistanceController extends AppBaseController
 {
@@ -39,7 +40,8 @@ class DistanceController extends AppBaseController
      */
     public function create()
     {
-        return view('distances.create');
+        $ports= Port::all();
+        return view('distances.create')->with($ports);
     }
 
     /**
