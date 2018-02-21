@@ -40,7 +40,8 @@ class LdRateTypeAPIController extends AppBaseController
         $this->ldRateTypeRepository->pushCriteria(new LimitOffsetCriteria($request));
         $ldRateTypes = $this->ldRateTypeRepository->all();
 
-        return $this->sendResponse($ldRateTypes->toArray(), 'Ld Rate Types retrieved successfully');
+        //return $this->sendResponse($ldRateTypes->toArray(), 'Ld Rate Types retrieved successfully');
+        return Response::json($ldRateTypes);
     }
 
     /**

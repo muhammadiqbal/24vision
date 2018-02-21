@@ -40,7 +40,8 @@ class CargoTypeAPIController extends AppBaseController
         $this->cargoTypeRepository->pushCriteria(new LimitOffsetCriteria($request));
         $cargoTypes = $this->cargoTypeRepository->all();
 
-        return $this->sendResponse($cargoTypes->toArray(), 'Cargo Types retrieved successfully');
+       // return $this->sendResponse($cargoTypes->toArray(), 'Cargo Types retrieved successfully');
+        return Response::json($cargoTypes);
     }
 
     /**
