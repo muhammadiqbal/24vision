@@ -55,6 +55,8 @@ Route::group(['middleware' => 'auth'], function()
 
 	Route::resource('ports', 'PortController');
 
+	Route::resource('distances', 'DistanceController');
+
 	Route::resource('users', 'UserController');
 
 	Route::get('emails','EmailController@index');
