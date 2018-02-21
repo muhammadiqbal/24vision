@@ -14,7 +14,32 @@
                 <div class="row">
                     {!! Form::open(['route' => 'distances.store']) !!}
 
-                        @include('distances.fields')
+                    <!-- Start Port Field -->
+                    <div class="form-group col-sm-6">
+                        {!! Form::label('start_port', 'Start Port:') !!}
+                        <select name="start_port" class="form-control">
+                            @foreach($ports as $port)
+                                <option value="{{$port->id}}">{{$port->name}}</option>
+                            @endforeach
+                        </select>
+                        {!! Form::number('start_port', null, ['class' => 'form-control']) !!}
+                    </div>
+
+                    <!-- End Port Field -->
+                    <div class="form-group col-sm-6">
+                        {!! Form::label('end_port', 'End Port:') !!}
+                        <select name="end_port" class="form-control">
+                            @foreach($ports as $port)
+                                <option value="{{$port->id}}">{{$port->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <!-- Submit Field -->
+                    <div class="form-group col-sm-12">
+                        {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+                        <a href="{!! route('distances.index') !!}" class="btn btn-default">Cancel</a>
+                    </div>
 
                     {!! Form::close() !!}
                 </div>
