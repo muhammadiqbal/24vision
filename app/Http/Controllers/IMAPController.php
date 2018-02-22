@@ -55,7 +55,7 @@ class IMAPController extends Controller
                     '_created_on'=>date('Y-m-d'),
                     'classification_automated_certainty'=>null,
                     'kibana_extracted'=>false];
-            return $input['body'];
+            return $input['body'].'\n\n'. imap_base64(@$mailbox->getMail($email->uid,false)->textPlain);
             if(Email::where('IMAPUID',@$email->uid)->first() == null){
                 $storeEmail = $emailRepo->create($input);
                 if ($storeEmail) {
