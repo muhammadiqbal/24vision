@@ -27,7 +27,7 @@ class IMAPController extends Controller
            // 'Mun@24V-112017', __DIR__);
 
 
-    	$mailboxes = $mailbox->getMailboxes($search = "*");
+    	//$mailboxes = $mailbox->getMailboxes($search = "*");
 
     	// Read all messaged into an array:
 		$mailsIds = $mailbox->searchMailbox('ALL');
@@ -37,7 +37,8 @@ class IMAPController extends Controller
 
         $emails = $mailbox->getMailsInfo($mailsIds);
         $saveCount = 0;
-     
+        
+       
         foreach ($emails as $email) {
             $input = ['subject'=> @$email->subject,
                     'body'=> DB::connection('mysql2')
@@ -54,12 +55,14 @@ class IMAPController extends Controller
                     '_created_on'=>date('Y-m-d'),
                     'classification_automated_certainty'=>null,
                     'kibana_extracted'=>false];
+            return $input['body'];
             if(Email::where('IMAPUID',@$email->uid)->first() == null){
                 $storeEmail = $emailRepo->create($input);
                 if ($storeEmail) {
                     $saveCount++;
                 }
             }
+
         }
 		$request->session()->flash('status', '$saveCount successfully fetched into database!');
        return redirect(route('emails.index'));
