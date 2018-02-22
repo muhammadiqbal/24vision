@@ -10,6 +10,9 @@ use App\Repositories\PortRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
+use App\Models\Zone;
+use \League\Geotools\Polygon\Polygon;
+
 
 class PortController extends AppBaseController
 {
@@ -52,6 +55,21 @@ class PortController extends AppBaseController
     public function store(CreatePortRequest $request)
     {
         $input = $request->all();
+
+        $zone = Zone::find($request->get('zone_id'));
+        $zonePoints = $zone->zonePoints();
+        $polygon = new Polygon($zonePoints);
+
+        $latitude = $request->get('latitude');
+        $longitude = $request->get('longitude');
+        
+        if (!$polygon->pointInPolygon(new \League\Geotools\Coordinate\Coordinate([$latitude, $longitude]));) {
+           Flash::success('ERROR: Port location is not in the zone!');
+           return redirect(route('/ports/create'));
+        }
+
+        $zonePort = $this->zonePortRepository->create($input);
+
 
         $port = $this->portRepository->create($input);
 
@@ -111,6 +129,19 @@ class PortController extends AppBaseController
     public function update($id, UpdatePortRequest $request)
     {
         $port = $this->portRepository->findWithoutFail($id);
+
+        $zone = Zone::find($request->get('zone_id'));
+        $zonePoints = $zone->zonePoints();
+        $polygon = new Polygon($zonePoints);
+
+        $latitude = $request->get('latitude');
+        $longitude = $request->get('longitude');
+        
+        if (!$polygon->pointInPolygon(new \League\Geotools\Coordinate\Coordinate([$latitude, $longitude]));) {
+           Flash::success('ERROR: Port location is not in the zone!');
+           return redirect(route('/ports/create'));
+        }
+
 
         if (empty($port)) {
             Flash::error('Port not found');
