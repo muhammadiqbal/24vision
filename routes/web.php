@@ -63,12 +63,12 @@ Route::group(['middleware' => 'auth'], function()
 
 	Route::get('controlPanel','DashboardController@controlPanel');
 	
-	Route::get('imap','IMAPController@inbox');
 
 	Route::resource('emails', 'EmailController');
 	
 });
 
+	Route::get('imap','IMAPController@inbox');
 
 
 
