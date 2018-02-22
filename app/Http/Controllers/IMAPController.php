@@ -13,8 +13,11 @@ class IMAPController extends Controller
     //
 
     public function inbox(Request $request, EmailRepository $emailRepo){
-
-    	$mailbox = new Mailbox('{outlook.office365.com}INBOX', 'MunsterUniversity@24Vision.Solutions', 'Mun@24V-112017', __DIR__);
+        $hostname = '{outlook.office365.com:993/imap/ssl/user=MunsterUniversity@24Vision.Solutions\Chartering}';
+        $username = 'MunsterUniversity@24Vision.Solutions\Chartering';
+        $password = 'CHa-062017';
+    	//$mailbox = new Mailbox('{outlook.office365.com}INBOX', 'MunsterUniversity@24Vision.Solutions', 'Mun@24V-112017', __DIR__);
+        $mailbox = new Mailbox('{'.$hostname.'}INBOX', $username, 'Mun@24V-112017', __DIR__);
 
 		$mailsIds = $mailbox->searchMailbox('ALL');
 		if(!$mailsIds) {
@@ -23,7 +26,7 @@ class IMAPController extends Controller
 
         $emails = $mailbox->getMailsInfo($mailsIds);
         $saveCount = 0;
-               
+          return 'yeah';     
         foreach ($emails as $email) {
             $input = ['subject'=> @$email->subject,
                     'body'=> quoted_printable_decode(@$mailbox->getMail($email->uid,false)->textPlain),
