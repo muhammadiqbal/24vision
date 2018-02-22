@@ -17,7 +17,7 @@ class IMAPController extends Controller
         $username = 'MunsterUniversity@24Vision.Solutions\Chartering';
         $password = 'CHa-062017';
     	//$mailbox = new Mailbox('{outlook.office365.com}INBOX', 'MunsterUniversity@24Vision.Solutions', 'Mun@24V-112017', __DIR__);
-        $mailbox = new Mailbox('{'.$hostname.'}INBOX', $username, 'Mun@24V-112017', __DIR__);
+        $mailbox = new Mailbox('{'.$hostname.'}INBOX', $username, 'CHa-062017', __DIR__);
 
 		$mailsIds = $mailbox->searchMailbox('ALL');
 		if(!$mailsIds) {
