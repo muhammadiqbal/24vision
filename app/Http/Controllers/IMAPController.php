@@ -13,12 +13,7 @@ class IMAPController extends Controller
     //
 
     public function inbox(Request $request, EmailRepository $emailRepo){
-        $hostname = 'outlook.office365.com:993/imap/ssl/user=MunsterUniversity@24Vision.Solutions\Chartering';
-        $username = 'MunsterUniversity@24Vision.Solutions\Chartering';
-        $password = 'CHa-062017';
-    	//$mailbox = new Mailbox('{outlook.office365.com}INBOX', 'MunsterUniversity@24Vision.Solutions', 'Mun@24V-112017', __DIR__);
-        $mailbox = new Mailbox('{'.$hostname.'}INBOX', $username, 'CHa-062017', __DIR__);
-
+    	$mailbox = new Mailbox('{outlook.office365.com}INBOX', 'MunsterUniversity@24Vision.Solutions', 'Mun@24V-112017', __DIR__);
 		$mailsIds = $mailbox->searchMailbox('ALL');
 		if(!$mailsIds) {
 			$request->session()->flash('error', 'mailbox is empty!');
