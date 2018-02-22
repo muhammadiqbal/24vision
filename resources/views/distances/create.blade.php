@@ -22,7 +22,6 @@
                                 <option value="{{$port->id}}">{{$port->name}}</option>
                             @endforeach
                         </select>
-                        {!! Form::number('start_port', null, ['class' => 'form-control']) !!}
                     </div>
 
                     <!-- End Port Field -->
