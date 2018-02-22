@@ -13,7 +13,7 @@ class IMAPController extends Controller
     //
 
     public function inbox(Request $request, EmailRepository $emailRepo){
-        $hostname = '{outlook.office365.com:993/imap/ssl/user=MunsterUniversity@24Vision.Solutions\Chartering}';
+        $hostname = '{outlook.office365.com}';
         $username = 'MunsterUniversity@24Vision.Solutions';
         $password = 'Yoz39332';
         //$inboxprefix = "24VisionChartering-";
