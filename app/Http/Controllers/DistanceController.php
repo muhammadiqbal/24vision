@@ -40,8 +40,9 @@ class DistanceController extends AppBaseController
      */
     public function create()
     {
-        $ports= Port::all();
-        return view('distances.create')->with($ports);
+        $ports = Port::all();
+
+        return view('distances.create')->with('ports',$ports);
     }
 
     /**
