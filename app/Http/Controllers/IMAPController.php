@@ -21,7 +21,7 @@ class IMAPController extends Controller
 
         $emails = $mailbox->getMailsInfo($mailsIds);
         $saveCount = 0;
-          return 'yeah';     
+    
         foreach ($emails as $email) {
             $input = ['subject'=> @$email->subject,
                     'body'=> quoted_printable_decode(@$mailbox->getMail($email->uid,false)->textPlain),
