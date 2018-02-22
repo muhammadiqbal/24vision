@@ -13,7 +13,12 @@ class IMAPController extends Controller
     //
 
     public function inbox(Request $request, EmailRepository $emailRepo){
-    	$mailbox = new Mailbox('{outlook.office365.com}INBOX', 'MunsterUniversity@24Vision.Solutions', 'Mun@24V-112017', __DIR__);
+        $hostname = '{outlook.office365.com:993/imap/ssl/user=MunsterUniversity@24Vision.Solutions\Chartering}';
+        $username = 'MunsterUniversity@24Vision.Solutions';
+        $password = 'Yoz39332';
+        //$inboxprefix = "24VisionChartering-";
+
+    	$mailbox = new Mailbox($hostname, $username, $password, __DIR__);
 		$mailsIds = $mailbox->searchMailbox('ALL');
 		if(!$mailsIds) {
 			$request->session()->flash('error', 'mailbox is empty!');
@@ -31,12 +36,12 @@ class IMAPController extends Controller
                     'classification_manual'=>null,
                     'date'=> \Carbon\Carbon::parse(@$email->date),
                     'classification_automated'=>null,
-                    'IMAPUID'=> @$email->uid,
+                    'IMAPUID'=> $email->uid,
                     'IMAPFolderID'=>null,
                     '_created_on'=>date('Y-m-d'),
                     'classification_automated_certainty'=>null,
                     'kibana_extracted'=>false];
-            if(Email::where('IMAPUID',@$email->uid)->first() == null){
+            if(Email::where('IMAPUID',$email->uid)->first() == null){
                 $storeEmail = $emailRepo->create($input);
                 if ($storeEmail) {
                     $saveCount++;
