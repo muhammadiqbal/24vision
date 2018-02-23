@@ -55,8 +55,8 @@ class DistanceController extends AppBaseController
     public function store(CreateDistanceRequest $request)
     {
 
-        $startPort = Port::find();
-        $endPort = Port::find();
+        $startPort = Port::find($request->('start_port'));
+        $endPort = Port::find($request->('end_port'));
 
         $script = 'python3 PyTools/DistanceCalculator.py '.$startPort->id.' '.$endPort->id.' '.$startPort->latitude.' '.$startPort->longitude.' '.$endPort->latitude.' '.$endPort->longitude;
         $command = escapeshellcmd($script);
