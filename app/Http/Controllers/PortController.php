@@ -12,6 +12,7 @@ use App\Http\Controllers\AppBaseController;
 use Response;
 use App\Models\Zone;
 use \League\Geotools\Polygon\Polygon;
+use \League\Geotools\Coordinate\Coordinate;
 
 
 class PortController extends AppBaseController
@@ -63,7 +64,7 @@ class PortController extends AppBaseController
         $latitude = $request->get('latitude');
         $longitude = $request->get('longitude');
         
-        if (!$polygon->pointInPolygon(new \League\Geotools\Coordinate\Coordinate([$latitude, $longitude]));) {
+        if (!$polygon->pointInPolygon(new Coordinate([$latitude, $longitude]))) {
            Flash::success('ERROR: Port location is not in the zone!');
            return redirect(route('/ports/create'));
         }
@@ -137,7 +138,7 @@ class PortController extends AppBaseController
         $latitude = $request->get('latitude');
         $longitude = $request->get('longitude');
         
-        if (!$polygon->pointInPolygon(new \League\Geotools\Coordinate\Coordinate([$latitude, $longitude]));) {
+        if (!$polygon->pointInPolygon(new Coordinate([$latitude, $longitude]));) {
            Flash::success('ERROR: Port location is not in the zone!');
            return redirect(route('/ports/create'));
         }
