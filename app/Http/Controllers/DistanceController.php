@@ -54,9 +54,13 @@ class DistanceController extends AppBaseController
      */
     public function store(CreateDistanceRequest $request)
     {
-        $input = $request->all();
 
-        $distance = $this->distanceRepository->create($input);
+        $startPort = Port::find();
+        $endPort = Port::find();
+
+        $script = 'python3 PyTools/DistanceCalculator.py '.$startPort->id.' '.$endPort->id.' '.$startPort->latitude.' '.$startPort->longitude.' '.$endPort->latitude.' '.$endPort->longitude;
+        $command = escapeshellcmd($script);
+        $output = exec($command);
 
         Flash::success('Distance saved successfully.');
 
