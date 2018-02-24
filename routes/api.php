@@ -81,3 +81,5 @@ Route::get('emails/{filter}/{limit}', 'EmailAPIController@extra');
 Route::resource('ports', 'PortAPIController');
 
 Route::get('controlPanel', 'ControlPanelAPIController@execute');
+
+Route::put('setCleaned/{id}', 'CargoOfferExtractedAPIController@setCleaned');

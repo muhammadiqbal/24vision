@@ -127,4 +127,12 @@ class CargoOfferExtractedAPIController extends AppBaseController
 
         return $this->sendResponse($id, 'Cargo Offer Extracted deleted successfully');
     }
+
+    public function setCleaned($id){
+        $cargoOfferExtracted = CargoOfferExtracted::find($id);
+        $cargoOfferExtracted->cleaned = true;
+        $cargoOfferExtracted->save()
+
+        return $this->sendResponse($id, 'Cargo Offer Extracted cleaned successfully');
+    }
 }
