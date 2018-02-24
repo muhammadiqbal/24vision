@@ -34,7 +34,8 @@ class CargoOfferExtracted extends Model
 		"kibana_extracted"=>'string',
 		"disch_place_lat"=>'string',
 		"disch_place_lon"=>'string',
-		"_created_on"=>'date'
+		"_created_on"=>'date',
+		"cleaned" =>false
     ];
 
     public $fillable = [
@@ -53,6 +54,7 @@ class CargoOfferExtracted extends Model
 		"disch_place_lat",
 		"disch_place_lon",
 		"_created_on",
+		"cleaned",
     ];
 
            /**
