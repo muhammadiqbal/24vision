@@ -81,6 +81,12 @@
         <a href="{{url('/ports')}}"><i class="fa fa-support"></i> <span>Ports</span></a></li>
       </li>
       <li
+         @if( $route =='App\Http\Controllers\DistanceController')
+          class="active"
+        @endif>
+        <a href="{{url('/distances')}}"><i class="fa fa-support"></i> <span>Ports</span></a></li>
+      </li>
+      <li
          @if( $route =='App\Http\Controllers\ZoneController')
           class="active"
         @endif>
