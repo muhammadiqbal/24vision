@@ -29,7 +29,7 @@ class DistanceDataTable extends DataTable
     {
         $distances = Distance::leftjoin('ports as p1', 'p1.id','start_port')
                         ->leftjoin('ports as p2', 'p2.id','end_port')
-                        ->select('distances.*', 'p1.name as start_port', 'p2.name as end_port');
+                        ->select('distances.*', 'p1.name as start', 'p2.name as end');
 
         return $this->applyScopes($distances);
     }
@@ -74,8 +74,8 @@ class DistanceDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'start_port' => ['name' => 'start_port', 'data' => 'start_port'],
-            'end_port' => ['name' => 'end_port', 'data' => 'end_port'],
+            'start_port' => ['name' => 'start_port', 'data' => 'start'],
+            'end_port' => ['name' => 'end_port', 'data' => 'end'],
             'distance' => ['name' => 'distance', 'data' => 'distance']
         ];
     }
