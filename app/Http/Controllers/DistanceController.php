@@ -62,7 +62,7 @@ class DistanceController extends AppBaseController
         $command = escapeshellcmd($script);
         $output = exec($command);
 
-        Flash::success('Distance saved successfully.');
+        Flash::success($output);
 
         return redirect(route('distances.index'));
     }
