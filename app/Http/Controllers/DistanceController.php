@@ -60,7 +60,7 @@ class DistanceController extends AppBaseController
 
         $script = 'python3 /PyTools/DistanceCalculator.py '.$startPort->id.' '.$endPort->id.' '.$startPort->latitude.' '.$startPort->longitude.' '.$endPort->latitude.' '.$endPort->longitude;
         $command = escapeshellcmd($script);
-        $output = exec($command);
+        $output = shell_exec($command); 
 
         Flash::success($output);
 
