@@ -8,7 +8,7 @@
         <div class="clearfix"></div>
 
         <div class="row">
-            <div class="col-sm-4 col-xs-12">
+            <div class="col-sm-3 col-xs-12">
                 <div class="info-box">
                   <!-- Apply any bg-* class to to the icon to color it -->
                   <span class="info-box-icon bg-red"><i class="fa fa-envelope"></i></span>
@@ -21,7 +21,7 @@
                 <!-- /.info-box -->
             </div>
 
-            <div class="col-sm-4 col-xs-12">
+            <div class="col-sm-3 col-xs-12">
                 <div class="info-box">
                   <!-- Apply any bg-* class to to the icon to color it -->
                   <span class="info-box-icon bg-red"><i class="fa fa-cubes"></i></span>
@@ -34,13 +34,26 @@
                 <!-- /.info-box -->
             </div>
 
-            <div class="col-sm-4 col-xs-12">
+            <div class="col-sm-3 col-xs-12">
                 <div class="info-box">
                   <!-- Apply any bg-* class to to the icon to color it -->
                   <span class="info-box-icon bg-red"><i class="fa fa-ship"></i></span>
                   <div class="info-box-content">
                     <span class="info-box-text">Ship</span>
                     <span class="info-box-number">{{$shipCount}}</span>
+                  </div>
+                  <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+            </div>
+
+
+            <div class="col-sm-3 col-xs-12">
+                <div class="info-box">
+                  <!-- Apply any bg-* class to to the icon to color it -->
+                  <span class="info-box-icon bg-red"><i class="fa fa-magic"></i></span>
+                  <div class="info-box-content">
+                    <a href="{{url('/execBCT')}}"><button class="btn-primary">Run BCT</button></a>
                   </div>
                   <!-- /.info-box-content -->
                 </div>

@@ -70,7 +70,7 @@ class DistanceController extends AppBaseController
                               ->Where('end_port',$endPort)
                               ->get();
         if($existing != null){
-            Flash::error('ERROR: Distance from'.$startPort.' to'. $endPort.' is already calculated!');
+            Flash::error('ERROR: Distance from'.$startPort->name.' to'. $endPort->name.' is already calculated!');
              return redirect(route('distances.create'));
         }
 

@@ -2,30 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
-use App\Models\ShipPosition;
-use App\Models\Cargo;
-use Illuminate\Http\Request;
-use App\Models\Route;
-use App\Models\Ship;
-use App\Models\Region;
-use App\Models\Distance;
-use App\Models\Port;
-use App\Models\FeePrice;
-use App\Models\Bdi;
-use App\Models\CargoOffer;
-use App\Models\ShipOffer;
-use App\Models\ShipOfferExtracted;
-use App\Models\ShipOrder;
-use App\Models\ShipOrderExtracted;
-use \League\Geotools\Coordinate\Coordinate;
-use \League\Geotools\Geotools;
-use App\Models\Email;
-use DB;
 use App\DataTables\DashboardDataTable;
 use App\Services\Calculator;
-use App\Models\LdRateType;
+use App\Models\Cargo;
+use App\Models\Ship;
+use App\Models\Port;
+use App\Models\Email;
+use Illuminate\Http\Request;
+use Symfony\Component\Process\Process;
+use Symfony\Component\Process\Exception\ProcessFailedException;
 use Response;
+
 
 class DashboardController extends Controller
 {
@@ -39,10 +26,6 @@ class DashboardController extends Controller
         $this->middleware('auth');
     }
 
-
-    public function testing(Request $request,Calculator $calculator){
-    }
-
     /**
      * Show the application dashboard.
      *
@@ -50,31 +33,28 @@ class DashboardController extends Controller
      */
     public function index(Request $request, DashboardDataTable $dashboardDataTable, Calculator $calculator)
     {
-         //$shipId = $request->input('ship_id',1);
-         //$ship = Ship::find(1);
-         $ships = Ship::all();
-         $ports = Port::all();
-         if($request->input('ship_id')){
-            $selectedShip = Ship::find($request->input('ship_id'));
-         }else {
-            $selectedShip = Ship::first();
-         }
+        $ships = Ship::all();
+        $ports = Port::all();
+        if($request->input('ship_id')){
+           $selectedShip = Ship::find($request->input('ship_id'));
+        }else {
+           $selectedShip = Ship::first();
+        }
 
-         if($request->input('port_id')){
-            $port = Port::find($request->input('port_id'));;
-         }else{
-            $port = Port::first();
-         }
+        if($request->input('port_id')){
+           $port = Port::find($request->input('port_id'));;
+        }else{
+           $port = Port::first();
+        }
 
-         $occupied_size = $request->input('occupied_size',0);
-         $occupied_tonage = $request->input('occupied_tonage',0);
-         $date_of_opening = $request->input('date_of_opening',date('d-m-Y'));
-         $range = $request->input('range');
+        $occupied_size = $request->input('occupied_size',0);
+        $occupied_tonage = $request->input('occupied_tonage',0);
+        $date_of_opening = $request->input('date_of_opening',date('d-m-Y'));
+        $range = $request->input('range');
 
-         $mailCount = Email::count();
-         //$mailCount =($selectedShip->max_laden_draft/$selectedShip->ballast_draft) -$occupied_tonage;
-         $cargoCount = Cargo::count();
-         $shipCount = Ship::count();
+        $mailCount = Email::count();
+        $cargoCount = Cargo::count();
+        $shipCount = Ship::count();
         return $dashboardDataTable
                                   ->forOccTonnage($occupied_tonage)
                                   ->forOccSize($occupied_size)
@@ -98,6 +78,21 @@ class DashboardController extends Controller
 
     public function controlPanel(){
       return view('control_panel.terminal');
+    }
+
+    public function execBCT(){
+        $script = 'python3 ../PyTools/bulkcargotools/run.py ';
+        $process = new Process($script);
+        $process->run();
+
+        // executes after the command finishes
+        if (!$process->isSuccessful()) {
+            throw new ProcessFailedException($process);
+        }
+
+        Flash::success($script.' executed with result: '.$process->getOutput());
+
+        return redirect(url('/home'));
     }
 
 }
