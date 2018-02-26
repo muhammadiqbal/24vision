@@ -6,13 +6,14 @@ use App\DataTables\DistanceDataTable;
 use App\Http\Requests;
 use App\Http\Requests\CreateDistanceRequest;
 use App\Http\Requests\UpdateDistanceRequest;
-use App\Repositories\DistanceRepository;
-use Flash;
 use App\Http\Controllers\AppBaseController;
-use Response;
 use App\Models\Port;
+use App\Models\Distance;
+use App\Repositories\DistanceRepository;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
+use Response;
+use Flash;
 
 class DistanceController extends AppBaseController
 {
