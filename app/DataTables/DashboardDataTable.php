@@ -215,17 +215,17 @@ class DashboardDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'cargo_type_id' => ['defaultContent' => 'NULL','name' => 'type', 'data' => 'type'],
-            'quantity' => ['defaultContent' => 'NULL','name' => 'quantity', 'data' => 'quantity'],
-            'laycan_first_day' => ['defaultContent' => 'NULL','name' => 'laycan_first_day', 'data' => 'laycan_first_day'],
-            'laycan_last_day' => ['defaultContent' => 'NULL','name' => 'laycan_last_day', 'data' => 'laycan_last_day'],
-            'loading_port' => ['defaultContent' => 'NULL','name' => 'load_port', 'data' => 'load_port'],
-            'discharging_port' => ['defaultContent' => 'NULL','name' => 'disch_port', 'data' => 'disch_port'],
-            'email_id' => ['defaultContent' => 'NULL','name' => 'email_id', 'data' => 'email_id'],
-            'bdi' => ['defaultContent'=>'NULL', 'name'=>'bdi', 'data'=>'bdi', 'title'=>'bdi'],
-            'ntce' => ['defaultContent'=>'NULL', 'name'=>'', 'data'=>'ntce',  'title'=>'ntce'],
-            'gross_rate' => ['defaultContent'=>'NULL', 'name'=>'', 'data'=>'gross_rate', 'title'=>'gross_rate'],
-            'status_id' => ['defaultContent' => 'NULL','name' => 'status', 'data' => 'status'],
+            'cargo_type_id' => ['defaultContent' => 'NULL','name' => 'type', 'data' => 'type','title'=>],
+            'quantity' => ['defaultContent' => 'NULL','name' => 'quantity', 'data' => 'quantity','title'=>],
+            'laycan_first_day' => ['defaultContent' => 'NULL','name' => 'laycan_first_day', 'data' => 'laycan_first_day','title'=>],
+            'laycan_last_day' => ['defaultContent' => 'NULL','name' => 'laycan_last_day', 'data' => 'laycan_last_day','title'=>],
+            'loading_port' => ['defaultContent' => 'NULL','name' => 'load_port', 'data' => 'load_port','title'=>],
+            'discharging_port' => ['defaultContent' => 'NULL','name' => 'disch_port', 'data' => 'disch_port','title'=>],
+            'email_id' => ['defaultContent' => 'NULL','name' => 'email_id', 'data' => 'email_id','title'=>],
+            'bdi' => ['defaultContent'=>'NULL', 'name'=>'bdi', 'data'=>'bdi', 'title'=>'bdi','title'=>],
+            'ntce' => ['defaultContent'=>'NULL', 'name'=>'', 'data'=>'ntce',  'title'=>'ntce','title'=>],
+            'gross_rate' => ['defaultContent'=>'NULL', 'name'=>'', 'data'=>'gross_rate', 'title'=>'gross_rate','title'=>],
+            'status_id' => ['defaultContent' => 'NULL','name' => 'status', 'data' => 'status','title'=>],
         ];
     }
     /**

@@ -138,7 +138,7 @@ class PortController extends AppBaseController
         $latitude = $request->get('latitude');
         $longitude = $request->get('longitude');
         
-        if (!$polygon->pointInPolygon(new Coordinate([$latitude, $longitude]));) {
+        if (!$polygon->pointInPolygon(new Coordinate([$latitude, $longitude]))) {
            Flash::success('ERROR: Port location is not in the zone!');
            return redirect(route('/ports/create'));
         }
