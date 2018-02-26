@@ -67,7 +67,7 @@ class DistanceController extends AppBaseController
         }
 
         $existing = Distance::where('startPort',$startPort)
-                              ->andWhere('endPort',$endPort)
+                              ->Where('endPort',$endPort)
                               ->get();
         if($existing != null){
             lash::error('ERROR: Distance from'.$startPort.' to'. $endPort.' is already calculated!');
