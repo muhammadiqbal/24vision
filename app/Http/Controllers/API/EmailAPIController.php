@@ -189,6 +189,7 @@ class EmailAPIController extends AppBaseController
         if ($filter == "cargoforcleaning") {
             $result->join('cargo_offer_extracted','email.emailID' ,'=', 'cargo_offer_extracted.emailID') 
                 ->select(['cargo_offer_extracted.*', 'email.date'])
+                ->where('cleaned',false)
                 ->limit($limit);
         }
         //Filter that allows getting emails of a particular class. Not in use.
