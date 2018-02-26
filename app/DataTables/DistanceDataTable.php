@@ -27,7 +27,9 @@ class DistanceDataTable extends DataTable
      */
     public function query()
     {
-        $distances = Distance::query();
+        $distances = Distance::leftjoin('ports as p1', 'p1.id','start_port')
+                        ->leftjoin('ports as p2', 'p2.id','end_port')
+                        ->select('distances.*', 'p1.name as start_port', 'p2.name as end_port');
 
         return $this->applyScopes($distances);
     }
@@ -61,16 +63,6 @@ class DistanceDataTable extends DataTable
                     ],
                     'colvis'
                 ],
-                'initComplete' => "function () {
-                            this.api().columns().every(function () {
-                                var column = this;
-                                var input = document.createElement(\"input\");
-                                $(input).appendTo($(column.footer()).empty())
-                                .on('change', function () {
-                                    column.search($(this).val(), false, false, true).draw();
-                                });
-                            });
-                        }",
             ]);
     }
 
