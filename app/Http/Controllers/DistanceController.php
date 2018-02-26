@@ -69,7 +69,7 @@ class DistanceController extends AppBaseController
             throw new ProcessFailedException($process);
         }
 
-        Flash::success($command.' executed with result: '.$process->getOutput());
+        Flash::success($script.' executed with result: '.$process->getOutput());
 
         return redirect(route('distances.index'));
     }
