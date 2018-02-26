@@ -63,8 +63,6 @@ class DistanceController extends AppBaseController
 
 
         $script = 'python3 /var/www/24vision/PyTools/DistanceCalculator.py '.$startPort->id.' '.$endPort->id.' '.$startPort->latitude.' '.$startPort->longitude.' '.$endPort->latitude.' '.$endPort->longitude;
-        // $command = escapeshellcmd($script);
-        // $output = shell_exec($command); 
 
         $process = new Process($script);
         $process->run();
