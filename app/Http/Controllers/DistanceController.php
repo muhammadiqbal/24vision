@@ -11,6 +11,8 @@ use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
 use App\Models\Port;
+use Symfony\Component\Process\Process;
+use Symfony\Component\Process\Exception\ProcessFailedException;
 
 class DistanceController extends AppBaseController
 {
@@ -58,11 +60,21 @@ class DistanceController extends AppBaseController
         $startPort = Port::find($request->get('start_port'));
         $endPort = Port::find($request->get('end_port'));
 
-        $script = 'python3 /var/www/24vision/PyTools/DistanceCalculator.py '.$startPort->id.' '.$endPort->id.' '.$startPort->latitude.' '.$startPort->longitude.' '.$endPort->latitude.' '.$endPort->longitude;
-        $command = escapeshellcmd($script);
-        $output = shell_exec($command); 
 
-        Flash::success($command.' executed with result: '.$output);
+
+        $script = 'python3 /var/www/24vision/PyTools/DistanceCalculator.py '.$startPort->id.' '.$endPort->id.' '.$startPort->latitude.' '.$startPort->longitude.' '.$endPort->latitude.' '.$endPort->longitude;
+        // $command = escapeshellcmd($script);
+        // $output = shell_exec($command); 
+
+        $process = new Process($script);
+        $process->run();
+
+        // executes after the command finishes
+        if (!$process->isSuccessful()) {
+            throw new ProcessFailedException($process);
+        }
+
+        Flash::success($command.' executed with result: '.$process->getOutput());
 
         return redirect(route('distances.index'));
     }
