@@ -60,10 +60,12 @@ class DistanceController extends AppBaseController
         $startPort = Port::find($request->get('start_port'));
         $endPort = Port::find($request->get('end_port'));
 
-        $script = 'source activate laravelenv && python3 /var/www/24vision/PyTools/DistanceCalculator.py '.$startPort->id.' '.$endPort->id.' '.$startPort->latitude.' '.$startPort->longitude.' '.$endPort->latitude.' '.$endPort->longitude;
+        $set_env = shell_exec('source activate laravelenv ');
+        $script = 'python3 /var/www/24vision/PyTools/DistanceCalculator.py '.$startPort->id.' '.$endPort->id.' '.$startPort->latitude.' '.$startPort->longitude.' '.$endPort->latitude.' '.$endPort->longitude;
 
         $process = new Process($script);
         $process->run();
+        $deactivate_env = shell_exec('source deactivate');
 
         // executes after the command finishes
         if (!$process->isSuccessful()) {
