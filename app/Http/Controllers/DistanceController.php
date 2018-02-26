@@ -60,6 +60,10 @@ class DistanceController extends AppBaseController
         $startPort = Port::find($request->get('start_port'));
         $endPort = Port::find($request->get('end_port'));
 
+        if(){
+            Flash::error('startPort and endPort must be different!');
+        }
+
         $script = 'python3 /var/www/24vision/PyTools/DistanceCalculator.py '.$startPort->id.' '.$endPort->id.' '.$startPort->latitude.' '.$startPort->longitude.' '.$endPort->latitude.' '.$endPort->longitude;
         $process = new Process($script);
         $process->run();
