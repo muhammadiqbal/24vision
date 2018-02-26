@@ -6,6 +6,7 @@
             Distance
         </h1>
     </section>
+     @include('flash::message')
     <div class="content">
         @include('adminlte-templates::common.errors')
         <div class="box box-primary">
