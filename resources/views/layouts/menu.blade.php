@@ -12,13 +12,13 @@
         >
         <a href="{{ url('/home') }}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
       </li>
-      <li 
+     {{--  <li 
         @if( $route =='App\Http\Controllers\DashboardController')
           class="active"
         @endif
         >
         <a href="{{ url('/controlPanel') }}"><i class="fa fa-adjust"></i> <span>Control Panel</span></a>
-      </li>
+      </li> --}}
       <li
         @if( $route =='App\Http\Controllers\ShipController')
           class="active"
@@ -84,7 +84,7 @@
          @if( $route =='App\Http\Controllers\DistanceController')
           class="active"
         @endif>
-        <a href="{{url('/distances')}}"><i class="fa fa-road"></i> <span>Ports</span></a></li>
+        <a href="{{url('/distances')}}"><i class="fa fa-road"></i> <span>Distances</span></a></li>
       </li>
       <li
          @if( $route =='App\Http\Controllers\ZoneController')

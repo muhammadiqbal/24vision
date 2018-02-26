@@ -65,6 +65,14 @@ class DistanceController extends AppBaseController
              return redirect(route('distances.create'));
         }
 
+        $existing = Distance::where('startPort',$startPort)
+                              ->andWhere('endPort',$endPort)
+                              ->get();
+        if($existing != null){
+            lash::error('ERROR: Distance from'.$startPort.' to'. $endPort.' is already calculated!');
+             return redirect(route('distances.create'));
+        }
+
         $script = 'python3 ../PyTools/DistanceCalculator.py '.$startPort->id.' '.$endPort->id.' '.$startPort->latitude.' '.$startPort->longitude.' '.$endPort->latitude.' '.$endPort->longitude;
         $process = new Process($script);
         $process->run();
