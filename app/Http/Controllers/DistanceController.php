@@ -65,7 +65,7 @@ class DistanceController extends AppBaseController
              return redirect(route('distances.create'));
         }
 
-        $script = 'python3 /var/www/24vision/PyTools/DistanceCalculator.py '.$startPort->id.' '.$endPort->id.' '.$startPort->latitude.' '.$startPort->longitude.' '.$endPort->latitude.' '.$endPort->longitude;
+        $script = 'python3 ../PyTools/DistanceCalculator.py '.$startPort->id.' '.$endPort->id.' '.$startPort->latitude.' '.$startPort->longitude.' '.$endPort->latitude.' '.$endPort->longitude;
         $process = new Process($script);
         $process->run();
 
