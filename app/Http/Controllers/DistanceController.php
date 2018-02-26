@@ -61,7 +61,7 @@ class DistanceController extends AppBaseController
         $endPort = Port::find($request->get('end_port'));
 
         if($startPort == $endPort){
-            Flash::error('startPort and endPort must be different!');
+            Flash::error('ERROR: startPort and endPort must be different!');
              return redirect(route('distances.create'));
         }
 
