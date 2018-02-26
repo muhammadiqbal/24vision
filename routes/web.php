@@ -64,6 +64,8 @@ Route::group(['middleware' => 'auth'], function()
 	Route::get('controlPanel','DashboardController@controlPanel');
 	
 	Route::get('imap','IMAPController@inbox');
+	
+	Route::get('execBCT','DashboardController@execBCT');
 
 	Route::resource('emails', 'EmailController');
 	
