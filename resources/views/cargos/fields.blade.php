@@ -3,7 +3,7 @@
     {!! Form::label('loading_port', 'Loading Port:') !!}
     <select name="loading_port" class="form-control">
         @foreach($ports as $port)
-            @if($cargo->loading_port == $port->id)
+            @if(!empty($cargo) && $cargo->loading_port == $port->id)
                 <option value="{{$port->id}}" selected="true">{{$port->name}}</option>
             @else
                 <option value="{{$port->id}}">{{$port->name}}</option>
@@ -16,7 +16,7 @@
 <div class="form-group col-sm-6">
     {!! Form::label('discharging_port', 'Discharging Port:') !!}
     <select name="discharging_port" class="form-control">
-        @if($cargo->discharging_port == $port->id)
+        @if(!empty($cargo) && $cargo->discharging_port == $port->id)
             <option value="{{$port->id}}" selected="true">{{$port->name}}</option>
         @else
             <option value="{{$port->id}}">{{$port->name}}</option>
@@ -41,7 +41,7 @@
     {!! Form::label('cargo_type_id', 'Cargo Type Id:') !!}
     <select name="cargo_type_id" class="form-control">
         @foreach($cargo_types as $cargo_type)
-            @if($cargo->cargo_type_id == $cargo_type->id)
+            @if(!empty($cargo) && $cargo->cargo_type_id == $cargo_type->id)
                 <option value="{{$cargo_type->id}}" selected="true">{{$cargo_type->name}}</option>
             @else
                 <option value="{{$cargo_type->id}}">{{$cargo_type->name}}</option>
@@ -61,7 +61,7 @@
     {!! Form::label('sf_unit', 'Sf Unit:') !!}
     <select name="sf_unit" class="form-control">
         @foreach($sf_units as $sf_unit)
-            @if($cargo->sf_unit == $sf_unit->id)
+            @if(!empty($cargo) && $cargo->sf_unit == $sf_unit->id)
                 <option value="{{$sf_unit->id}}" selected="true">{{$sf_unit->unit}}</option>
             @else
                 <option value="{{$sf_unit->id}}">{{$sf_unit->unit}}</option>
@@ -75,7 +75,7 @@
     {!! Form::label('ship_specialization_id', 'Ship Specialization Id:') !!}
     <select name="ship_specialization_id" class="form-control">
         @foreach($ship_specializations as $ship_specialization)
-            @if($cargo->ship_specialization_id == $ship_specialization->id)
+            @if(!empty($cargo) && $cargo->ship_specialization_id == $ship_specialization->id)
                 <option value="{{$ship_specialization->id}}">{{$ship_specialization->name}}</option>
             @else
                 <option value="{{$ship_specialization->id}}" selected="true">{{$ship_specialization->name}}</option>
@@ -90,7 +90,7 @@
     {!! Form::label('quantity_measurement_id', 'Quantity Measurement Id:') !!}
     <select name="quantity_measurement_id" class="form-control">
         @foreach($quantity_measurements as $quantity_measurement)
-            @if($cargo->quantity_measurement_id == $quantity_measurement->id)
+            @if(!empty($cargo) && $cargo->quantity_measurement_id == $quantity_measurement->id)
                 <option value="{{$quantity_measurement->id}}" selected="true">{{$quantity_measurement->name}}</option>
             @else
                 <option value="{{$quantity_measurement->id}}">{{$quantity_measurement->name}}</option>
@@ -110,7 +110,7 @@
     {!! Form::label('loading_rate_type', 'Loading Rate Type:') !!}
     <select name="loading_rate_type" class="form-control">
         @foreach($ld_rate_types as $ld_rate_type)
-            @if($cargo->loading_rate_type == $ld_rate_type->id)
+            @if(!empty($cargo) && $cargo->loading_rate_type == $ld_rate_type->id)
                 <option value="{{$ld_rate_type->id}}" selected="true">{{$ld_rate_type->name}}</option>
             @else
                 <option value="{{$ld_rate_type->id}}">{{$ld_rate_type->name}}</option>
@@ -131,7 +131,7 @@
     {!! Form::label('discharging_rate_type', 'Discharging Rate Type:') !!}
     <select name="discharging_rate_type" class="form-control">
         @foreach($ld_rate_types as $ld_rate_type)
-            @if($cargo->discharging_rate_type == $ld_rate_type->id)
+            @if(!empty($cargo) && $cargo->discharging_rate_type == $ld_rate_type->id)
                 <option value="{{$ld_rate_type->id}}">{{$ld_rate_type->name}}</option>
             @else
                 <option value="{{$ld_rate_type->id}}">{{$ld_rate_type->name}}</option>
@@ -170,7 +170,7 @@
     {!! Form::label('status_id', 'Status Id:') !!}
     <select name="status_id" class="form-control">
         @foreach($cargo_statuses as $cargo_status)
-            @if($cargo->status_id == $cargo_status->id)
+            @if(!empty($cargo) && $cargo->status_id == $cargo_status->id)
                 <option value="{{$cargo_status->id}}" selected="true">{{$cargo_status->name}}</option>
             @else
                 <option value="{{$cargo_status->id}}">{{$cargo_status->name}}</option>
