@@ -9,6 +9,7 @@ use App\Models\Ship;
 use App\Models\Port;
 use App\Models\Email;
 use Illuminate\Http\Request;
+use PhpImap\Mailbox;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Response;
@@ -81,6 +82,43 @@ class DashboardController extends Controller
     }
 
     public function execBCT(){
+        $hostname = '{outlook.office365.com}Test_IMAP';
+        $username = 'MunsterUniversity@24Vision.Solutions';
+        $password = 'Yoz39332';
+        //$inboxprefix = "24VisionChartering-";
+
+        $mailbox = new Mailbox($hostname, $username, $password, __DIR__);
+        $mailsIds = $mailbox->searchMailbox('ALL');
+        if(!$mailsIds) {
+            $request->session()->flash('error', 'mailbox is empty!');
+        }
+
+        $emails = $mailbox->getMailsInfo($mailsIds);
+        $saveCount = 0;
+    
+        foreach ($emails as $email) {
+            $input = ['subject'=> @$email->subject,
+                    'body'=> quoted_printable_decode(@$mailbox->getMail($email->uid,false)->textPlain),
+                    'sender'=> @$email->from,
+                    'receiver'=> @$email->to,
+                    'cc'=> @$email->cc,
+                    'classification_manual'=>null,
+                    'date'=> \Carbon\Carbon::parse(@$email->date),
+                    'classification_automated'=>null,
+                    'IMAPUID'=> $email->uid,
+                    'IMAPFolderID'=>null,
+                    '_created_on'=>date('Y-m-d'),
+                    'classification_automated_certainty'=>null,
+                    'kibana_extracted'=>false];
+            if(Email::where('IMAPUID',$email->uid)->first() == null){
+                $storeEmail = $emailRepo->create($input);
+                if ($storeEmail) {
+                    $saveCount++;
+                }
+            }
+
+        }
+
         $script = 'python3 ../PyTools/bulkcargotools/run.py ';
         $process = new Process($script);
         $process->run();
@@ -96,6 +134,3 @@ class DashboardController extends Controller
     }
 
 }
-
-
-
