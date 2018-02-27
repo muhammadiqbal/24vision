@@ -148,4 +148,28 @@ class EmailController extends AppBaseController
 
         return redirect(route('emails.index'));
     }
+
+    /**
+     * Reclassify the specified Email from storage.
+     *
+     * @param  int $id
+     *
+     * @return Response
+     */
+    public function reclassify($id)
+    {
+        $email = $this->emailRepository->findWithoutFail($id);
+
+        if (empty($email)) {
+            Flash::error('Email not found');
+
+            return redirect(route('emails.index'));
+        }
+
+        $this->emailRepository->update(['classification_manual'=>null,'classification_automated'=>null],$id);
+
+        Flash::success('Email updated successfully.');
+
+        return redirect(url('/home'));
+    }
 }

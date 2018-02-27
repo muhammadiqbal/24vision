@@ -49,14 +49,9 @@
 
 
             <div class="col-sm-3 col-xs-12">
-                <div class="info-box">
-                  <!-- Apply any bg-* class to to the icon to color it -->
-                  <span class="info-box-icon bg-red"><i class="fa fa-magic"></i></span>
-                  <div class="info-box-content">
-                    <a href="{{url('/execBCT')}}"><button class="btn-primary">Run BCT</button></a>
-                  </div>
-                  <!-- /.info-box-content -->
-                </div>
+                
+                    <a href="{{url('/execBCT')}}"><button class="btn-success" data-toggle="tooltip" title="Execute BulkCargoTool"><i class="fa fa-magic">Run BCT</i></button></a>
+                  
                 <!-- /.info-box -->
             </div>
         </div>
