@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\DataTables\ShipDataTable;
 use App\Http\Requests;
+use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreateShipRequest;
 use App\Http\Requests\UpdateShipRequest;
+use App\Models\ShipType;
+use App\Models\ShipSpecialization;
 use App\Repositories\ShipRepository;
 use Flash;
-use App\Http\Controllers\AppBaseController;
 use Response;
 
 class ShipController extends AppBaseController
@@ -39,7 +41,10 @@ class ShipController extends AppBaseController
      */
     public function create()
     {
-        return view('ships.create');
+        $ship_types = ShipType::all();
+        $ship_specializations = ShipSpecialization::all();
+        return view('ships.create')->with('ship_types',$ship_types)
+                                   ->with('ship_specializations',$ship_specializations);
     }
 
     /**
@@ -97,7 +102,11 @@ class ShipController extends AppBaseController
             return redirect(route('ships.index'));
         }
 
-        return view('ships.edit')->with('ship', $ship);
+        $ship_types = ShipType::all();
+        $ship_specializations = ShipSpecialization::all();
+        return view('ships.edit')->with('ship', $ship)
+                                 ->with('ship_types',$ship_types)
+                                 ->with('ship_specializations',$ship_specializations);
     }
 
     /**
