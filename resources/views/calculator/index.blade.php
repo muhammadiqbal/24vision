@@ -49,7 +49,7 @@
 
             <div class="col-sm-3 col-xs-12">
                 
-                    <a href="{{url('/execBCT')}}"><button class="btn-success" data-toggle="tooltip" title="Execute BulkCargoTool"><i class="fa fa-magic">Run BCT</i></button></a>
+                    <a href="{{url('/execBCT')}}"><button class="btn-lg btn-success" data-toggle="tooltip" title="Execute BulkCargoTool"><i class="fa fa-magic">Run BCT</i></button></a>
                   
                 <!-- /.info-box -->
             </div>
