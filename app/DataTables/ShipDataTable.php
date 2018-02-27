@@ -15,10 +15,10 @@ class ShipDataTable extends DataTable
     {
         return datatables()
             ->eloquent($this->query())
-            // ->addColumn('action', 'ships.datatables_actions')
-            // ->editColumn('year_of_build', function(Ship $ship){
-            //    return date_format(date_create($ship->year_of_build),'Y');
-            // })
+            ->addColumn('action', 'ships.datatables_actions')
+            ->editColumn('year_of_build', function(Ship $ship){
+               return date_format(date_create($ship->year_of_build),'Y');
+            })
             ->make(true);
     }
 
@@ -30,10 +30,8 @@ class ShipDataTable extends DataTable
     public function query()
     {
         $ships = Ship::leftjoin('ship_types','ship_type_id','=','ship_types.id')
-                      // ->leftjoin('ship_specializations','ship_specialization_id','=','ship_specializations.id')
-                      // ->leftjoin('fuel_types','fuel_type_id','=','fuel_types.id')
-                       ->select('ships.*','ship_types.name as type','ship_specializations.name as specialization', 'fuel_types.name as fuel');
-        $ships = Ship::query();
+                      ->leftjoin('ship_specializations','ship_specialization_id','=','ship_specializations.id')
+                      ->select('ships.*','ship_types.name as type','ship_specializations.name as specialization');
 
         return $this->applyScopes($ships);
     }
