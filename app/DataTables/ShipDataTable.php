@@ -3,7 +3,6 @@
 namespace App\DataTables;
 
 use App\Models\Ship;
-use Form;
 use Yajra\DataTables\Services\DataTable;
 
 class ShipDataTable extends DataTable
@@ -30,10 +29,11 @@ class ShipDataTable extends DataTable
      */
     public function query()
     {
-        $ships = Ship::leftjoin('ship_types','ship_type_id','=','ship_types.id')
-                       ->leftjoin('ship_specializations','ship_specialization_id','=','ship_specializations.id')
-                       ->leftjoin('fuel_types','fuel_type_id','=','fuel_types.id')
-                       ->select('ships.*','ship_types.name as type','ship_specializations.name as specialization', 'fuel_types.name as fuel');
+        // $ships = Ship::leftjoin('ship_types','ship_type_id','=','ship_types.id')
+        //                ->leftjoin('ship_specializations','ship_specialization_id','=','ship_specializations.id')
+        //                ->leftjoin('fuel_types','fuel_type_id','=','fuel_types.id')
+        //                ->select('ships.*','ship_types.name as type','ship_specializations.name as specialization', 'fuel_types.name as fuel');
+        $ships = Ship::query();
 
         return $this->applyScopes($ships);
     }
