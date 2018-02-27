@@ -53,12 +53,14 @@ class CargoController extends AppBaseController
         $ship_specializations = ShipSpecialization::all();
         $sf_units = StowageFactorUnit::all();
         $quantity_measurements = QuantityMeasurement::all();
+
         return view('cargos.create')->with('cargo_statuses',$cargo_statuses)
                                     ->with('cargo_types',$cargo_types)
                                     ->with('ld_rate_types',$ld_rate_types)
                                     ->with('ports',$ports)
                                     ->with('ship_specializations', $ship_specializations)
-                                    ->with('sf_units', $sf_units);
+                                    ->with('sf_units', $sf_units)
+                                    ->with('quantity_measurements', $quantity_measurements);
     }
 
     /**
@@ -130,7 +132,8 @@ class CargoController extends AppBaseController
                                     ->with('ld_rate_types',$ld_rate_types)
                                     ->with('ports',$ports)
                                     ->with('ship_specializations', $ship_specializations)
-                                    ->with('sf_units', $sf_units);
+                                    ->with('sf_units', $sf_units)
+                                    ->with('quantity_measurements', $quantity_measurements);
     }
 
     /**
