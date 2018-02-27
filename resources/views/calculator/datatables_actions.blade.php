@@ -1,4 +1,4 @@
-<div class='btn-group'>
+<div class='btn-group' style="display: inline-flex;"
 
     <a href="{{url('/voyage/'.$ship->id.'/'.$cargo->id.'/'.$port->id.'/'.$date_of_opening)}}" target="_blank" class='btn btn-default btn-xs' data-toggle="tooltip" title="View Voyage">
         <i class="glyphicon glyphicon-search"></i>

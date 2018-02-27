@@ -1,4 +1,4 @@
-\<div class='btn-group' style="display: inline-flex;">
+<div class='btn-group' style="display: inline-flex;">
     <a href="{{url('/emails/'.$email_id)}}"  target="_blank" class='btn btn-default btn-xs' data-toggle="tooltip" title="View mail">
         <i class="glyphicon glyphicon-envelope"></i>
     </a>
