@@ -57,7 +57,7 @@ class CargoController extends AppBaseController
                                     ->with('cargo_types',$cargo_types)
                                     ->with('ld_rate_types',$ld_rate_types)
                                     ->with('ports',$ports)
-                                    ->with('ship_specializaions', $ship_specializations)
+                                    ->with('ship_specializations', $ship_specializations)
                                     ->with('sf_units', $sf_units);
     }
 
