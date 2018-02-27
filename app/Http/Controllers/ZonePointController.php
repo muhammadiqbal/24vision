@@ -39,7 +39,8 @@ class ZonePointController extends AppBaseController
      */
     public function create()
     {
-        return view('zone_points.create');
+        $zones = Zone::all();
+        return view('zone_points.create')->with('zones', $zones);
     }
 
     /**
@@ -97,7 +98,10 @@ class ZonePointController extends AppBaseController
             return redirect(route('zonePoints.index'));
         }
 
-        return view('zone_points.edit')->with('zonePoint', $zonePoint);
+        $zones = Zone::all();
+        
+        return view('zone_points.edit')->with('zonePoint', $zonePoint)
+                                       ->with('zones', $zones);
     }
 
     /**
