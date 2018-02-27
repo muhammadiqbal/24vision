@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreateShipRequest;
 use App\Http\Requests\UpdateShipRequest;
+use App\Models\FuelType;
 use App\Models\ShipType;
 use App\Models\ShipSpecialization;
 use App\Repositories\ShipRepository;
