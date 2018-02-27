@@ -43,8 +43,10 @@ class ShipController extends AppBaseController
     {
         $ship_types = ShipType::all();
         $ship_specializations = ShipSpecialization::all();
+        $fuel_types = FuelType::all();
         return view('ships.create')->with('ship_types',$ship_types)
-                                   ->with('ship_specializations',$ship_specializations);
+                                   ->with('ship_specializations',$ship_specializations)
+                                   ->with('fuel_types', $fuel_types);
     }
 
     /**
@@ -104,9 +106,11 @@ class ShipController extends AppBaseController
 
         $ship_types = ShipType::all();
         $ship_specializations = ShipSpecialization::all();
+        $fuel_types = FuelType::all();
         return view('ships.edit')->with('ship', $ship)
                                  ->with('ship_types',$ship_types)
-                                 ->with('ship_specializations',$ship_specializations);
+                                 ->with('ship_specializations',$ship_specializations)
+                                 ->with('fuel_types', $fuel_types);
     }
 
     /**

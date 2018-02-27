@@ -61,7 +61,15 @@
 <!-- Fuel Type Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('fuel_type_id', 'Fuel Type Id:') !!}
-    {!! Form::number('fuel_type_id', null, ['class' => 'form-control']) !!}
+    <select name="fuel_type_id" class="form-control">
+        @foreach($fuel_types as $fuel_type)
+            @if(!empty($ship) && $ship->fuel_type_id == $fuel_type->id)
+                <option value="{{$fuel_type->id}}" selected="true">{{$fuel_type->name}}</option>
+            @else
+                <option value="{{$fuel_type->id}}">{{$fuel_type->name}}</option>
+            @endif
+        @endforeach
+    </select>
 </div>
 
 <!-- Fuel Consumption At Sea Field -->
@@ -328,7 +336,7 @@
 <!-- Ship Type Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('ship_type_id', 'Ship Type Id:') !!}
-    <select>
+    <select name="ship_type_id" class="form-control">
         @foreach($ship_types as $ship_type)
             @if(!empty($ship) && $ship->ship_type_id == $ship_type->id)
                 <option value="{{$ship_type->id}}" selected="true">{{$ship_type->name}}</option>
@@ -342,8 +350,7 @@
 <!-- Ship Specialization Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('ship_specialization_id', 'Ship Specialization Id:') !!}
-    {!! Form::number('ship_specialization_id', null, ['class' => 'form-control']) !!}
-     <select>
+     <select name="ship_specialization_id" class="form-control">
         @foreach($ship_specializations as $ship_specialization)
             @if(!empty($ship) && $ship->ship_specialization_id == $ship_specialization->id)
                 <option value="{{$ship_specialization->id}}" selected="true">{{$ship_specialization->name}}</option>
