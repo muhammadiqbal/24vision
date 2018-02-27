@@ -15,7 +15,7 @@
     </select>
 </div>
 
-<!-- Date Of Opening Field -->
+<!-- Occupied size Field -->
 <div class="form-group col-sm-4">
     {!! Form::label('occupied_size', 'Occupied size:') !!}
     {!! Form::number('occupied_size',null, ['class' => 'form-control', 'value'=>$occupied_size]) !!}
@@ -53,20 +53,17 @@
     </select>
 </div>
 
-
-<!-- Date Of Opening Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('date_of_opening', 'Date Of Opening*:') !!}
-    {!! Form::date('date_of_opening',null, ['class' => 'form-control', 'required'=>'true', 'value'=>$date_of_opening]) !!}
-</div>
-
-
-<!-- Date Of Opening Field -->
-<div class="form-group col-sm-6">
+<!-- Range Field -->
+<div class="form-group col-sm-4">
     {!! Form::label('Range', 'Range:') !!}
     {!! Form::number('range',null, ['class' => 'form-control', 'value'=>$range]) !!}
 </div>
 
+<!-- Date Of Opening Field -->
+<div class="form-group col-sm-4">
+    {!! Form::label('date_of_opening', 'Date Of Opening*:') !!}
+    {!! Form::date('date_of_opening',null, ['class' => 'form-control', 'required'=>'true', 'value'=>$date_of_opening]) !!}
+</div>
 
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
