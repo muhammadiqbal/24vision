@@ -6,9 +6,10 @@ use App\DataTables\RouteDataTable;
 use App\Http\Requests;
 use App\Http\Requests\CreateRouteRequest;
 use App\Http\Requests\UpdateRouteRequest;
+use App\Http\Controllers\AppBaseController;
+use App\Models\Bdi;
 use App\Repositories\RouteRepository;
 use Flash;
-use App\Http\Controllers\AppBaseController;
 use Response;
 
 class RouteController extends AppBaseController
@@ -38,8 +39,9 @@ class RouteController extends AppBaseController
      * @return Response
      */
     public function create()
-    {
-        return view('routes.create');
+    {   
+        $bdis = Bdi::all();
+        return view('routes.create')->with('bdis', $bdis);
     }
 
     /**
@@ -96,8 +98,11 @@ class RouteController extends AppBaseController
 
             return redirect(route('routes.index'));
         }
+        
+        $bdis = Bdi::all();
 
-        return view('routes.edit')->with('route', $route);
+        return view('routes.edit')->with('route', $route)
+                                  ->with('bdis', $bdis);
     }
 
     /**
