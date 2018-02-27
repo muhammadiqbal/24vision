@@ -43,8 +43,8 @@
 </div>
 
  <div class="col-sm-4">
-    {!! Form::label('status', 'Cargo status:') !!}
-    <select name="cargo_status" id="statusoption" class="form-control">
+    {!! Form::label('cargo_status', 'Cargo status:') !!}
+    <select name="cargo_status" class="form-control">
         <option >All</option>
         <option value="1">OK</option>
         <option value="2">Review</option>
