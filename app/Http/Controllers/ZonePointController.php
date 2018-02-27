@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use App\DataTables\ZonePointDataTable;
 use App\Http\Requests;
+use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreateZonePointRequest;
 use App\Http\Requests\UpdateZonePointRequest;
+use App\Models\Zone;
 use App\Repositories\ZonePointRepository;
 use Flash;
-use App\Http\Controllers\AppBaseController;
 use Response;
 
 class ZonePointController extends AppBaseController
@@ -99,7 +100,7 @@ class ZonePointController extends AppBaseController
         }
 
         $zones = Zone::all();
-        
+
         return view('zone_points.edit')->with('zonePoint', $zonePoint)
                                        ->with('zones', $zones);
     }
