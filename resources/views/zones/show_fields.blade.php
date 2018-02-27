@@ -10,6 +10,15 @@
     <p>{!! $zone->name !!}</p>
 </div>
 
+<!-- Deleted At Field -->
+<div class="form-group">
+    {!! Form::label('zone_points', 'Zone Points:') !!}
+    @foreach($zone->zonePoints as $zone_point)
+        <p>{!! $zone_point->latitude !!}, {!! $zone_point->longitude !!}</p>
+    @endforeach
+</div>
+
+
 <!-- Created At Field -->
 <div class="form-group">
     {!! Form::label('created_at', 'Created At:') !!}
