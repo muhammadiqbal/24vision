@@ -6,9 +6,16 @@ use App\DataTables\CargoDataTable;
 use App\Http\Requests;
 use App\Http\Requests\CreateCargoRequest;
 use App\Http\Requests\UpdateCargoRequest;
+use App\Http\Controllers\AppBaseController;
+use App\Models\CargoStatus;
+use App\Models\CargoType;
+use App\Models\LdRateType;
+use App\Models\Port;
+use App\Models\ShipSpecialization;
+use App\Models\StowageFactorUnit;
+use App\Models\QuantityMeasurement;
 use App\Repositories\CargoRepository;
 use Flash;
-use App\Http\Controllers\AppBaseController;
 use Response;
 
 class CargoController extends AppBaseController
@@ -39,7 +46,19 @@ class CargoController extends AppBaseController
      */
     public function create()
     {
-        return view('cargos.create');
+        $cargo_statuses = CargoStatus::all();
+        $cargo_types = CargoType::all();
+        $ld_rate_types = LdRateType::all();
+        $ports = Port::all();
+        $ship_specializaions = ShipSpecialization::all();
+        $sf_units = StowageFactorUnit::all();
+        $quantity_measurements = QuantityMeasurement::all();
+        return view('cargos.create')->with('cargo_statuses',$cargo_statuses)
+                                    ->with('cargo_types',$cargo_types)
+                                    ->with('ld_rate_types',$ld_rate_types)
+                                    ->with('ports',$ports)
+                                    ->with('ship_specializaions', $ship_specializaions)
+                                    ->with('sf_units', $sf_units);
     }
 
     /**
@@ -97,7 +116,21 @@ class CargoController extends AppBaseController
             return redirect(route('cargos.index'));
         }
 
-        return view('cargos.edit')->with('cargo', $cargo);
+        $cargo_statuses = CargoStatus::all();
+        $cargo_types = CargoType::all();
+        $ld_rate_types = LdRateType::all();
+        $ports = Port::all();
+        $ship_specializaions = ShipSpecialization::all();
+        $sf_units = StowageFactorUnit::all();
+        $quantity_measurements = QuantityMeasurement::all();
+
+        return view('cargos.edit')->with('cargo',$cargo)
+                                    ->with('cargo_statuses',$cargo_statuses)
+                                    ->with('cargo_types',$cargo_types)
+                                    ->with('ld_rate_types',$ld_rate_types)
+                                    ->with('ports',$ports)
+                                    ->with('ship_specializaions', $ship_specializaions)
+                                    ->with('sf_units', $sf_units);
     }
 
     /**
