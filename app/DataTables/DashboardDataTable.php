@@ -134,7 +134,7 @@ class DashboardDataTable extends DataTable
                         ->where('quantity','<=', ($this->ship->dwcc - $this->occupied_tonage))
                         ->where('quantity','<=',
                                         DB::raw(($this->ship->max_holds_capacity - $this->occupied_size).'/ stowage_factor'))
-                        ->where('loading_port',$this->request()->get('port_id'));
+                        ->where('loading_port',$this->request()->get('port_id'))
                         // ->where('quantity','<=', 
                         //                 ($this->ship->max_laden_draft -$this->occupied_tonage)/$this->ship->ballast_draft)
                         ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
