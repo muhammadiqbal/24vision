@@ -15,10 +15,10 @@ class ShipDataTable extends DataTable
     {
         return datatables()
             ->eloquent($this->query())
-            ->addColumn('action', 'ships.datatables_actions')
-            ->editColumn('year_of_build', function(Ship $ship){
-               return date_format(date_create($ship->year_of_build),'Y');
-            })
+            // ->addColumn('action', 'ships.datatables_actions')
+            // ->editColumn('year_of_build', function(Ship $ship){
+            //    return date_format(date_create($ship->year_of_build),'Y');
+            // })
             ->make(true);
     }
 
@@ -81,8 +81,8 @@ class ShipDataTable extends DataTable
             'name' => ['name' => 'name', 'data' => 'name'],
             'imo' => ['name' => 'imo', 'data' => 'imo'],
             'year_of_build' => ['name' => 'year_of_build', 'data' => 'year_of_build'],
-            'dwcc' => ['name' => 'dwcc', 'data' => 'dwcc'],
-            'max_holds_capacity' => ['name' => 'max_holds_capacity', 'data' => 'max_holds_capacity'],
+            //'dwcc' => ['name' => 'dwcc', 'data' => 'dwcc'],
+            //'max_holds_capacity' => ['name' => 'max_holds_capacity', 'data' => 'max_holds_capacity'],
             //'ballast_draft' => ['name' => 'ballast_draft', 'data' => 'ballast_draft'],
             //'max_laden_draft' => ['name' => 'max_laden_draft', 'data' => 'max_laden_draft'],
             //'draft_per_tonnage' => ['name' => 'draft_per_tonnage', 'data' => 'draft_per_tonnage'],
