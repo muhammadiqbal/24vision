@@ -8,10 +8,12 @@
     </a>
 
     {!! Form::open(['url'=>url('/emails/reclassify/'.$email_id), 'method' => 'put']) !!}
-    {!! Form::button('<i class="glyphicon glyphicon-cogs"></i>', [
+    {!! Form::button('<i class="fas fa-cogs"></i>', [
         'type' => 'submit',
         'class' => 'btn btn-warning btn-xs',
-        'onclick' => "return confirm('Reclassify this email?')"
+        'onclick' => "return confirm('Reclassify this email?')",
+        'data-toggle'=>"tooltip", 
+        'title'=>"View mail"
     ]) !!}
     {!! Form::close() !!}
     
@@ -23,14 +25,14 @@
     <a href="{{ route('cargos.edit', $id) }}" class='btn btn-default btn-xs'>
         <i class="glyphicon glyphicon-edit"></i>
     </a>
-    <a href="{{ route('cargos.edit', $id) }}" class='btn btn-default btn-xs'>
-        <i class="glyphicon glyphicon-share"></i>
-    </a>
+
     {!! Form::open(['route' => ['cargos.destroy', $id], 'method' => 'delete']) !!}
     {!! Form::button('<i class="glyphicon glyphicon-trash"></i>', [
         'type' => 'submit',
         'class' => 'btn btn-danger btn-xs',
-        'onclick' => "return confirm('Are you sure?')"
+        'onclick' => "return confirm('Are you sure?')",
+        'data-toggle'=>"tooltip", 
+        'title'=>"Delete cargo offer entry"
     ]) !!}
     {!! Form::close() !!}
 </div>

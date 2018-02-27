@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\EmailRepository;
+use App\Models\Email;
 use Illuminate\Http\Request;
 use PhpImap\Mailbox;
-use App\Repositories\EmailRepository;
 use DB;
-use App\Models\Email;
 
 class IMAPController extends Controller
 {

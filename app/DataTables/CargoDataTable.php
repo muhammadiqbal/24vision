@@ -79,7 +79,7 @@ class CargoDataTable extends DataTable
     {
         return $this->builder()
             ->columns($this->getColumns())
-            ->addAction(['width' => '20%'])
+            ->addAction(['width' => '15%'])
             ->ajax('')
             ->parameters([
                 'dom' => 'Bfrtip',
