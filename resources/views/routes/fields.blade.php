@@ -7,7 +7,11 @@
 <!-- Bdi Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('bdi_id', 'Bdi Id:') !!}
-    {!! Form::number('bdi_id', null, ['class' => 'form-control']) !!}
+    <select name="bdi_id" class="form-control">
+    	@foreach($bdis as $bdi)
+    		<option value="{{$bdi->id}}">{{$bdi->name}}</option>
+    	@endforeach
+    </select>
 </div>
 
 <!-- Submit Field -->
