@@ -2,7 +2,7 @@
 <div class="form-group col-sm-6">
     {!! Form::label('zone_id', 'Zone :') !!}
     <select name="zone_id" ="" class="form-control" 
-    @if ($_GET['id']) {{'read-only="true"'}}>
+    @if ($_GET['id']) {{'read-only="true"'}} @endif>
         @foreach($zones as $zone)
             @if(!empty($zone_point) && $zone_point->zone_id == $zone->id)
                 <option value="{{$zone->id}}" selected="true">{{$zone->name}}</option>
