@@ -12,6 +12,7 @@ class DashboardDataTable extends DataTable
     protected $ship;
     protected $occupied_tonage;
     protected $occupied_size;
+    protected $occupied_draft;
     protected $port;
     protected $date_of_opening;
     public function forShip(Ship $ship){
@@ -32,6 +33,10 @@ class DashboardDataTable extends DataTable
     }
     public function forDateOfOpening($dop){
         $this->date_of_opening = $dop;
+        return $this;
+    }
+    public function forOccupiedDraft($occupied_draft){
+        $this->occupied_draft = $occupied_draft;
         return $this;
     }    
     /**
@@ -69,6 +74,20 @@ class DashboardDataTable extends DataTable
 
                 return $cargo->setGrossRate($port, $ship, $date_of_opening);
             })
+            ->editColumn('cargo_type_id', function(Cargo $cargo){
+                if ($cargo->laycan_first_day_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->type.'</b>';
+                } else {                
+                    return $cargo->type;
+                }               
+            })
+            ->editColumn('quantity', function(Cargo $cargo){
+                if ($cargo->quantity_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->quantity.'</b>';
+                } else {                
+                    return $cargo->quantity;
+                }               
+            })
             ->editColumn('laycan_first_day', function(Cargo $cargo){
                 if ($cargo->laycan_first_day_manual) {
                     return '<b style=\'color:red;\'>'.date_format(date_create($cargo->laycan_first_day),'d-m-Y').'</b>';
@@ -86,52 +105,17 @@ class DashboardDataTable extends DataTable
             ->editColumn('loading_port',function(Cargo $cargo){
                 if ($cargo->loading_port_manual) {
                     return '<b style=\'color:red;\'>'.$cargo->loading_port.'</b>';
+                }else{
+                    return $cargo->loading_port;
                 }
             })
-             ->editColumn('loading_port',function(Cargo $cargo){
-                if ($cargo->loading_port_manual) {
-                    return '<b style=\'color:red;\'>'.$cargo->loading_port.'</b>';
-                }
-            })
-             ->editColumn('discharge_port',function(Cargo $cargo){
-                if ($cargo->cargo_type_id_manual) {
-                    return '<b style=\'color:red;\'>'.$cargo->cargo_type_id.'</b>';
-                }
-            })
-            ->editColumn('discharge_port',function(Cargo $cargo){
-                if ($cargo->stowage_factor_manual) {
-                    return '<b style=\'color:red;\'>'.$cargo->stowage_factor.'</b>';
-                }
-            })
-            ->editColumn('discharge_port',function(Cargo $cargo){
-                if ($cargo->quantity_manual) {
-                    return '<b style=\'color:red;\'>'.$cargo->quantity.'</b>';
-                }
-            })
-            ->editColumn('discharge_port',function(Cargo $cargo){
-                if ($cargo->loading_rate_type_manual) {
-                    return '<b style=\'color:red;\'>'.$cargo->loading_rate_type.'</b>';
-                }
-            })
-            ->editColumn('discharge_port',function(Cargo $cargo){
-                if ($cargo->loading_rate_manual) {
-                    return '<b style=\'color:red;\'>'.$cargo->loading_rate.'</b>';
-                }
-            })
-            ->editColumn('discharge_port',function(Cargo $cargo){
-                if ($cargo->discharging_rate_type_manual) {
-                    return '<b style=\'color:red;\'>'.$cargo->discharging_rate_type.'</b>';
-                }
-            })
-            ->editColumn('discharge_port',function(Cargo $cargo){
-                if ($cargo->discharging_rate_manual) {
-                    return '<b style=\'color:red;\'>'.$cargo->discharging_rate_.'</b>';
-                }
-            })
-            ->editColumn('discharge_port',function(Cargo $cargo){
+            ->editColumn('discharging_port',function(Cargo $cargo){
                 if ($cargo->commision_manual) {
                     return '<b style=\'color:red;\'>'.$cargo->commision.'</b>';
+                }else{
+                    return $cargo->commision;
                 }
+
             })
             //->filterColumn('status', 'whereRaw', "?", ["$1"])
             ->make(true);
@@ -148,17 +132,14 @@ class DashboardDataTable extends DataTable
                         ->leftjoin('ports as p1', 'p1.id','loading_port')
                         ->leftjoin('ports as p2', 'p2.id','discharging_port')
                         ->where('quantity','<=', ($this->ship->dwcc - $this->occupied_tonage))
-                        // ->where('quantity','<=',
-                        //                 DB::raw(($this->ship->max_holds_capacity - $this->occupied_size).'/ stowage_factor'))
+                        ->where('quantity','<=',
+                                        DB::raw(($this->ship->max_holds_capacity - $this->occupied_size).'/ stowage_factor'))
+                        ->where('loading_port',$this->request()->get('port_id'));
                         // ->where('quantity','<=', 
                         //                 ($this->ship->max_laden_draft -$this->occupied_tonage)/$this->ship->ballast_draft)
                         ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
         if($this->request()->get('cargo_status')){
             $cargos->where('cargos.status_id', $this->request()->get('cargo_status'));
-        }
-
-        if($this->request()->get('port_id')){
-            $cargos->where('loading_port',$this->request()->get('port_id'));
         }
         if($this->request()->get('date_of_opening')){
             $cargos->whereDate('laycan_first_day','<=',date($this->request()->get('date_of_opening')))
@@ -166,6 +147,7 @@ class DashboardDataTable extends DataTable
         }
         return $this->applyScopes($cargos);
     }
+
     /**
      * Optional method if you want to use html builder.
      *

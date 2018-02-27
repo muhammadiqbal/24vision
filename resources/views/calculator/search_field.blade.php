@@ -44,7 +44,7 @@
 
  <div class="col-sm-4">
     {!! Form::label('status', 'Cargo status:') !!}
-    <select id="statusoption" class="form-control">
+    <select name="cargo_status" id="statusoption" class="form-control">
         <option >All</option>
         <option value="1">OK</option>
         <option value="2">Review</option>
