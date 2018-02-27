@@ -119,24 +119,25 @@ class DashboardDataTable extends DataTable
      */
     public function query()
     {
-        $cargos = Cargo::leftjoin('cargo_status', 'cargo_status.id','cargo_status.id')
-                        ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
-                        ->leftjoin('ports as p1', 'p1.id','loading_port')
-                        ->leftjoin('ports as p2', 'p2.id','discharging_port')
-                        ->where('quantity','<=', ($this->ship->dwcc - $this->occupied_tonage))
-                        ->where('quantity','<=',
-                                        DB::raw(($this->ship->max_holds_capacity - $this->occupied_size).'/ stowage_factor'))
-                        ->where('loading_port',$this->request()->get('port_id'))
-                        // ->where('quantity','<=', 
-                        //                 ($this->ship->max_laden_draft -$this->occupied_tonage)/$this->ship->ballast_draft)
-                        ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
-        if($this->request()->get('cargo_status')){
-            $cargos->where('cargos.status_id', $this->request()->get('cargo_status'));
-        }
-        if($this->request()->get('date_of_opening')){
-            $cargos->whereDate('laycan_first_day','<=',date($this->request()->get('date_of_opening')))
-            ->whereDate('laycan_last_day','>=',date($this->request()->get('date_of_opening')));
-        }
+        // $cargos = Cargo::leftjoin('cargo_status', 'cargo_status.id','cargo_status.id')
+        //                 ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
+        //                 ->leftjoin('ports as p1', 'p1.id','loading_port')
+        //                 ->leftjoin('ports as p2', 'p2.id','discharging_port')
+        //                 ->where('quantity','<=', ($this->ship->dwcc - $this->occupied_tonage))
+        //                 ->where('quantity','<=',
+        //                                 DB::raw(($this->ship->max_holds_capacity - $this->occupied_size).'/ stowage_factor'))
+        //                 ->where('loading_port',$this->request()->get('port_id'))
+        //                 // ->where('quantity','<=', 
+        //                 //                 ($this->ship->max_laden_draft -$this->occupied_tonage)/$this->ship->ballast_draft)
+        //                 ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
+        // if($this->request()->get('cargo_status')){
+        //     $cargos->where('cargos.status_id', $this->request()->get('cargo_status'));
+        // }
+        // if($this->request()->get('date_of_opening')){
+        //     $cargos->whereDate('laycan_first_day','<=',date($this->request()->get('date_of_opening')))
+        //     ->whereDate('laycan_last_day','>=',date($this->request()->get('date_of_opening')));
+        // }
+        $cargos = Cargo::query();
         return $this->applyScopes($cargos);
     }
 
@@ -169,16 +170,6 @@ class DashboardDataTable extends DataTable
                     ],
                     'colvis'
                 ],
-                'initComplete' => "function () {
-                            this.api().columns().every(function () {
-                                var column = this;
-                                var input = document.createElement(\"input\");
-                                $(input).appendTo($(column.footer()).empty())
-                                .on('change', function () {
-                                    column.search($(this).val(), false, false, true).draw();
-                                });
-                            });
-                        }",
             ]);
     }
     /**
