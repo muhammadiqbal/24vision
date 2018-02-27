@@ -7,6 +7,7 @@ use App\Http\Requests;
 use App\Http\Requests\CreateCargoRequest;
 use App\Http\Requests\UpdateCargoRequest;
 use App\Http\Controllers\AppBaseController;
+use App\Models\Cargo;
 use App\Models\CargoStatus;
 use App\Models\CargoType;
 use App\Models\LdRateType;
@@ -146,7 +147,7 @@ class CargoController extends AppBaseController
      */
     public function update($id, UpdateCargoRequest $request)
     {
-        $cargo = $this->cargoRepository->findWithoutFail($id);
+        $cargo = Cargo::findWithoutFail($id);
 
         if (empty($cargo)) {
             Flash::error('Cargo not found');
@@ -154,7 +155,44 @@ class CargoController extends AppBaseController
             return redirect(route('cargos.index'));
         }
 
-        $cargo = $this->cargoRepository->update($request->all(), $id);
+        if($cargo->loading_port != $request->input('loading_port')){
+            $cargo->loading_port_manual = true;
+        }
+        if($cargo->discharging_port != $request->input('discharging_port')){
+            $cargo->discharging_port_manual = true;
+        }
+        if($cargo->laycan_first_day != $request->input('laycan_first_day')){
+            $cargo->laycan_first_day_manual = true;
+        }
+        if($cargo->laycan_last_day != $request->input('laycan_last_day')){
+            $cargo->laycan_last_day_manual = true;
+        }
+        if($cargo->cargo_type_id != $request->input('cargo_type_id')){
+            $cargo->cargo_type_id_manual = true;
+        }
+        if($cargo->stowage_factor != $request->input('stowage_factor')){
+            $cargo->stowage_factor_manual = true;
+        }
+        if($cargo->quantity != $request->input('quantity')){
+            $cargo->quantity_manual = true;
+        }
+        if($cargo->loading_rate_type != $request->input('loading_rate_type')){
+            $cargo->loading_rate_type_manual = true;
+        }
+        if($cargo->loading_rate_type != $request->input('loading_rate')){
+            $cargo->loading_rate_manual = true;
+        }
+        if ($cargo->discharging_rate_type != $request->input('discharging_rate_type')){
+            $cargo->discharging_rate_type_manual = true;
+        }
+        if($cargo->discharging_rate != $request->input('discharging_rate')){
+            $cargo->discharging_rate_manual = true;
+        }
+        if($cargo->commission != $request->input('commission')){
+            $cargo->commision_manual = true;
+        }
+
+        $cargo->update($request->all());
 
         Flash::success('Cargo updated successfully.');
 

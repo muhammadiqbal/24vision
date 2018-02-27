@@ -16,59 +16,55 @@ Route::get('/', [
   'uses' => 'Auth\LoginController@showLoginForm'
 ]);
 
-
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function() 
 {
-	Route::get('/home/{ship_id?}/{port_id?}/{date_of_opening?}/{occupied_size?}/{occupied_tonage?}/{range?}', 'DashboardController@index');
-
-	Route::get('/testing', 'DashboardController@testing');
-
-	Route::get('/voyage/{ship}/{cargo}/{port_ship}/{date}', 'VoyageController@getVoyage');
-
-	Route::resource('shipTypes', 'ShipTypeController');
-
-	Route::resource('shipSpecializations', 'ShipSpecializationController');
-
-	Route::resource('ships', 'ShipController');
-
-	Route::resource('regions', 'RegionController');
-
-	Route::resource('ports', 'PortController');
-	
-	Route::resource('zones', 'ZoneController');
-	
-	Route::resource('zonePoints', 'ZonePointController');
-
-	Route::resource('cargos', 'CargoController');
-
-	Route::resource('routes', 'RouteController');
-
-	Route::resource('fuelTypes', 'FuelTypeController');
-
-	Route::resource('fuelPrices', 'FuelPriceController');
-
-	Route::resource('bdis', 'BdiController');
 
 	Route::resource('bdiCodes', 'BdiCodeController');
 
-	Route::resource('ports', 'PortController');
+	Route::resource('bdis', 'BdiController');
+
+	Route::resource('cargos', 'CargoController');
 
 	Route::resource('distances', 'DistanceController');
 
+	Route::resource('emails', 'EmailController');	
+
+	Route::resource('fuelPrices', 'FuelPriceController');
+
+	Route::resource('ports', 'PortController');
+
+	Route::resource('routes', 'RouteController');
+
+	Route::resource('ships', 'ShipController');
+
 	Route::resource('users', 'UserController');
 
-	Route::get('emails','EmailController@index');
-
-	Route::get('controlPanel','DashboardController@controlPanel');
+	Route::resource('zones', 'ZoneController');
 	
-	Route::get('imap','IMAPController@inbox');
+	Route::resource('zonePoints', 'ZonePointController');
+	
+	Route::get('emails','EmailController@index');
 	
 	Route::get('execBCT','DashboardController@execBCT');
 
-	Route::resource('emails', 'EmailController');
+	Route::get('imap','IMAPController@inbox');
 	
+	Route::put('/emails/reclassify/{id}','EmailController@reclassify');
+	
+	Route::get('/home/{ship_id?}/{port_id?}/{date_of_opening?}/{occupied_size?}/{occupied_tonage?}/{range?}', 'DashboardController@index');
+
+	Route::get('/voyage/{ship}/{cargo}/{port_ship}/{date}', 'VoyageController@getVoyage');
+
+	//Route::resource('shipSpecializations', 'ShipSpecializationController');
+
+	//Route::resource('fuelTypes', 'FuelTypeController');
+	
+	//Route::resource('shipTypes', 'ShipTypeController');
+
+	//Route::get('controlPanel','DashboardController@controlPanel');
+
 });
 
 
