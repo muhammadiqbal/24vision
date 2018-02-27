@@ -1,8 +1,6 @@
 
 <div class='btn-group'>
-    <a class='btn btn-default btn-xs'>
-        <i class="glyphicon glyphicon-list-alt"></i>
-    </a>
+
     <a href="{{url('/emails/'.$email_id)}}"  target="_blank" class='btn btn-default btn-xs' data-toggle="tooltip" title="View mail">
         <i class="glyphicon glyphicon-envelope"></i>
     </a>
@@ -13,7 +11,7 @@
         'class' => 'btn btn-warning btn-xs',
         'onclick' => "return confirm('Reclassify this email?')",
         'data-toggle'=>"tooltip", 
-        'title'=>"View mail"
+        'title'=>"reclassify"
     ]) !!}
     {!! Form::close() !!}
     
