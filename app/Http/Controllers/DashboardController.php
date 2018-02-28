@@ -29,19 +29,19 @@ class DashboardController extends Controller
     }
 
     public function testing(){
-        $cargo = Cargo::select('cargos.*',
-                                  'cargo_status.name as status',
-                                  'cargo_types.name as type',
-                                  'p1.name as load_port',
-                                  'p2.name as disch_port',
-                                  DB::raw('(quantity * 2) AS draft'),
-                                  DB::raw('(cargos.quantity * cargo_types.stowage_factor) AS size')
-                                )
-                         ->leftjoin('cargo_status', 'cargos.status_id','cargo_status.id')
-                         ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
-                         ->leftjoin('ports as p1', 'p1.id','loading_port')
-                         ->leftjoin('ports as p2', 'p2.id','discharging_port')
-                         ;
+        $cargo = DB::table('cargos')->select(['cargos.*',
+                                      'cargo_status.name as status',
+                                      'cargo_types.name as type',
+                                      'p1.name as load_port',
+                                      'p2.name as disch_port',
+                                      DB::raw('(quantity * 2) AS draft'),
+                                      DB::raw('(cargos.quantity * cargo_types.stowage_factor) AS size')
+                                    ])
+                             ->leftjoin('cargo_status', 'cargos.status_id','cargo_status.id')
+                             ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
+                             ->leftjoin('ports as p1', 'p1.id','loading_port')
+                             ->leftjoin('ports as p2', 'p2.id','discharging_port')
+                             ;
         return Response::json($cargo);
     }
 
