@@ -46,9 +46,9 @@ class DashboardDataTable extends DataTable
     public function ajax()
     { 
         return datatables()
-            ->eloquent($this->query()) //change this to collection apply the bdi set in query
-            ->where('loading_port',$this->port->id)
-            ->where('quantity','<=',  $this->remaining_tonage)
+            ->of($this->query()) //change this to collection apply the bdi set in query
+            // ->where('loading_port',$this->port->id)
+            // ->where('quantity','<=',  $this->remaining_tonage)
             // ->having('size','<=',$this->remaining_size)
             // ->having('draft','<=',$this->remaining_draft)
             ->addColumn('action', function(Cargo $cargo) {
@@ -160,17 +160,17 @@ class DashboardDataTable extends DataTable
                                     LEFT JOIN cargo_types ON cargos.cargo_type_id = cargo_types.id
                                     LEFT JOIN ports as p1 ON cargos.loading_port = p1.id
                                     LEFT JOIN ports as p2 ON cargos.discharging_port = p2.id
-                                        WHERE cargos.loading_port = :loading_port
-                                        AND WHERE cargos.quantity <= :remaining_tonage?
-                                        AND HAVING (size <= :remaining_size)
-                                        AND HAVING (draft <= :remaining_draft) 
+                                        -- WHERE cargos.loading_port = :loading_port
+                                        -- AND WHERE cargos.quantity <= :remaining_tonage?
+                                        -- AND HAVING (size <= :remaining_size)
+                                        -- AND HAVING (draft <= :remaining_draft) 
                                             GROUP BY cargos.id  
                                     ",
                                     ['ballast_draft' => $this->ship->ballast_draft,
                                      'loaing_port' => $this->port->id,
                                      'remaining_tonage' => $this->remaining_tonage,
                                      'remaining_size' => $this->remaining_size,
-                                     'remaining_draft' => $this->remaining_draft]);
+                                     'remaining_draft' => $this->remaining_draft])->get();
 
         if($this->request()->get('cargo_status')){
             $cargo->where('cargos.status_id', $this->request()->get('cargo_status'));
