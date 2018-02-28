@@ -146,7 +146,6 @@ class DashboardDataTable extends DataTable
                              ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
                              ->leftjoin('ports as p1', 'p1.id','loading_port')
                              ->leftjoin('ports as p2', 'p2.id','discharging_port')
-                             ->get()
          //                 // ST_Distance_Sphere() only supported in mysql 5.7
          //                 //  ->havingRaw('ST_Distance_Sphere(ST_GeomFromText(POINT($port->latitude $port->longitude), ST_GeomFromText(POINT(latitude longitude))',<= $this->request()->get('radius'))
                          ;
