@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use PhpImap\Mailbox;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
+use DB;
 use Response;
 
 

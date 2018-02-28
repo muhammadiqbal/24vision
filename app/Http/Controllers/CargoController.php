@@ -19,6 +19,7 @@ use App\Repositories\CargoRepository;
 use Flash;
 use Response;
 
+
 class CargoController extends AppBaseController
 {
     /** @var  CargoRepository */
