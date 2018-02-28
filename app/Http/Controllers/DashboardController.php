@@ -34,7 +34,7 @@ class DashboardController extends Controller
                                   'cargo_types.name as type',
                                   'p1.name as load_port',
                                   'p2.name as disch_port',
-                                  DB::raw('quantity * '.$this->ship->ballast_draft.' AS draft'),
+                                  DB::raw('(quantity * 2) AS draft'),
                                   DB::raw('(cargos.quantity * cargo_types.stowage_factor) AS size')
                                 )
                          ->leftjoin('cargo_status', 'cargos.status_id','cargo_status.id')
