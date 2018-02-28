@@ -20,7 +20,8 @@ Auth::routes();
 
 Route::group(['middleware' => 'auth'], function() 
 {
-
+	Route::get('testing', 'DashboardController@testing');
+	
 	Route::resource('bdiCodes', 'BdiCodeController');
 
 	Route::resource('bdis', 'BdiController');

@@ -27,6 +27,23 @@ class DashboardController extends Controller
         $this->middleware('auth');
     }
 
+    public function testing(){
+        $cargo = Cargo::select('cargos.*',
+                                  'cargo_status.name as status',
+                                  'cargo_types.name as type',
+                                  'p1.name as load_port',
+                                  'p2.name as disch_port',
+                                  DB::raw('quantity * '.$this->ship->ballast_draft.' AS draft'),
+                                  DB::raw('(cargos.quantity * cargo_types.stowage_factor) AS size')
+                                )
+                         ->leftjoin('cargo_status', 'cargos.status_id','cargo_status.id')
+                         ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
+                         ->leftjoin('ports as p1', 'p1.id','loading_port')
+                         ->leftjoin('ports as p2', 'p2.id','discharging_port')
+                         ;
+        return $cargo;
+    }
+
     /**
      * Show the application dashboard.
      *
