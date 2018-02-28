@@ -10,21 +10,21 @@ use App\Services\Calculator;
 class DashboardDataTable extends DataTable
 {
     protected $ship;
-    protected $occupied_tonage;
-    protected $occupied_size;
-    //protected $occupied_draft;
+    protected $remaining_tonage;
+    protected $remaining_size;
+    //protected $remaining_draft;
     protected $port;
     protected $date_of_opening;
     public function forShip(Ship $ship){
         $this->ship = $ship;
         return $this;
     }
-    public function forOccSize($occupied_size){
-        $this->occupied_size = $occupied_size;
+    public function forRemainingSize($remaining_size){
+        $this->remaining_size = $remaining_size;
         return $this;
     }
-    public function forOccTonnage($occupied_tonage){
-        $this->occupied_tonage = $occupied_tonage;
+    public function forRemainingTonnage($remaining_tonage){
+        $this->remaining_tonage = $remaining_tonage;
         return $this;
     }
     public function forPort(Port $port){
@@ -35,10 +35,10 @@ class DashboardDataTable extends DataTable
         $this->date_of_opening = $dop;
         return $this;
     }
-    // public function forOccupiedDraft($occupied_draft){
-    //     $this->occupied_draft = $occupied_draft;
-    //     return $this;
-    // }    
+    public function forRemainingDraft($remaining_draft){
+        $this->remaining_draft = $remaining_draft;
+        return $this;
+    }    
     /**
      * @return \Illuminate\Http\JsonResponse
      */
@@ -119,26 +119,28 @@ class DashboardDataTable extends DataTable
      */
     public function query()
     {
-        $cargos = Cargo::leftjoin('cargo_status', 'cargo_status.id','cargo_status.id')
+        $cargo = Cargo::leftjoin('cargo_status', 'cargo_status.id','cargo_status.id')
                         ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
                         ->leftjoin('ports as p1', 'p1.id','loading_port')
                         ->leftjoin('ports as p2', 'p2.id','discharging_port')
-                        ->where('quantity','<=', ($this->ship->dwcc - $this->occupied_tonage))
-                        // ->where('quantity','<=',
-                        //                 DB::raw(($this->ship->max_holds_capacity - $this->occupied_size).'/ stowage_factor'))
                         ->where('loading_port',$this->request()->get('port_id'))
-                        // ->where('quantity','<=', 
+                        ->where('quantity','<=',  $this->remaining_tonage)
+                        ->havingRaw(DB::raw(('quantity * stowage_factor'),'<=',$this->remaining_size)
+                        //->where('quantity','<=', 
                         //                 ($this->ship->max_laden_draft -$this->occupied_tonage)/$this->ship->ballast_draft)
+                        ->whereDate('laycan_first_day','>=',date($this->request()->get('date_of_opening')))
+                        ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')));
+                        //ST_DISTANCE_SPHERE only supported in mysql 5.7
+                        // ->havingRaw('ST_Distance_Sphere(ST_GeomFromText(POINT($port->latitude $port->longitude), ST_GeomFromText(POINT(latitude longitude))',<= $this->request()->get('radius'))
                         ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
         if($this->request()->get('cargo_status')){
             $cargos->where('cargos.status_id', $this->request()->get('cargo_status'));
         }
         if($this->request()->get('date_of_opening')){
-            $cargos->whereDate('laycan_first_day','<=',date($this->request()->get('date_of_opening')))
-            ->whereDate('laycan_last_day','>=',date($this->request()->get('date_of_opening')));
+            $cargos
         }
-        // $cargos = Cargo::query();
-        return $this->applyScopes($cargos);
+
+        return $this->applyScopes($cargo);
     }
 
     /**
