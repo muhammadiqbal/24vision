@@ -128,23 +128,45 @@ class DashboardDataTable extends DataTable
      */
     public function query()
     {
-        $cargo = Cargo::leftjoin('cargo_status', 'cargo_status.id','cargo_status.id')
-                        ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
-                        ->leftjoin('ports as p1', 'p1.id','loading_port')
-                        ->leftjoin('ports as p2', 'p2.id','discharging_port')
-                        ->select('cargos.*',
-                                 'cargo_status.name as status',
-                                 'cargo_types.name as type',
-                                 'p1.name as load_port',
-                                 'p2.name as disch_port'
-                                )
-                        ->where('loading_port',$this->port->id)
-                        ->where('quantity','<=',  $this->remaining_tonage)
-                        ->having('(cargos.quantity * cargo_types.stowage_factor)','<=',$this->remaining_size)
-                        //->having(DB::raw('quantity * '.$this->ship->ballast_draft.' as draft'),'<=',$this->remaining_draft)
-                        //ST_Distance_Sphere() only supported in mysql 5.7
-                        // ->havingRaw('ST_Distance_Sphere(ST_GeomFromText(POINT($port->latitude $port->longitude), ST_GeomFromText(POINT(latitude longitude))',<= $this->request()->get('radius'))
-                        ;
+        // $cargo = Cargo::leftjoin('cargo_status', 'cargo_status.id','cargo_status.id')
+        //                 ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
+        //                 ->leftjoin('ports as p1', 'p1.id','loading_port')
+        //                 ->leftjoin('ports as p2', 'p2.id','discharging_port')
+        //                 ->select('cargos.*',
+        //                          'cargo_status.name as status',
+        //                          'cargo_types.name as type',
+        //                          'p1.name as load_port',
+        //                          'p2.name as disch_port'
+        //                         )
+        //                 ->where('loading_port',$this->port->id)
+        //                 ->where('quantity','<=',  $this->remaining_tonage)
+        //                 //->having('(cargos.quantity * cargo_types.stowage_factor)','<=',$this->remaining_size)
+        //                 //->having(DB::raw('quantity * '.$this->ship->ballast_draft.' as draft'),'<=',$this->remaining_draft)
+        //                 //ST_Distance_Sphere() only supported in mysql 5.7
+        //                 // ->havingRaw('ST_Distance_Sphere(ST_GeomFromText(POINT($port->latitude $port->longitude), ST_GeomFromText(POINT(latitude longitude))',<= $this->request()->get('radius'))
+        //                 ;
+
+        $cargo = Cargo::select("SELECT cargos.*,
+                                 cargo_status.name as status,
+                                 cargo_types.name as type,
+                                 p1.name as load_port,
+                                 p2.name as disch_port,
+                                 (cargos.quantity * cargo_types.stowage_factor) AS size,
+                                 (cargos.quantity * ?) AS draft
+                                    LEFT JOIN cargo_status ON cargos.cargo_status_id = cargo_status.id
+                                    LEFT JOIN cargo_types ON cargos.cargo_type_id = cargo_types.id
+                                    LEFT JOIN ports as p1 ON cargos.loading_port = p1.id
+                                    LEFT JOIN ports as p2 ON cargos.discharging_port = p2.id
+                                        WHERE cargos.loading_port = ?
+                                        AND WHERE cargos.quantity <= ?
+                                        HAVING (size <= ?)
+                                        AND HAVING (draft <= ?)  
+                                    ",[$this->ship->ballast_draft,
+                                       $this->port->id,
+                                       $this->remaining_tonage,
+                                       $this->remaining_size,
+                                       $this->remaining_draft]);
+
         if($this->request()->get('cargo_status')){
             $cargo->where('cargos.status_id', $this->request()->get('cargo_status'));
         }
