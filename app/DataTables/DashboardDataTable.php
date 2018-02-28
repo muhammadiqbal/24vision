@@ -140,7 +140,7 @@ class DashboardDataTable extends DataTable
                                   DB::raw('quantity * '.$this->ship->ballast_draft.' AS draft'),
                                   DB::raw('(cargos.quantity * cargo_types.stowage_factor) AS size')
                                 )
-                         ->leftjoin('cargo_status', 'cargos.status_id','cargo_status.id')
+                         //->leftjoin('cargo_status', 'cargos.status_id','cargo_status.id')
                          ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
                          ->leftjoin('ports as p1', 'p1.id','loading_port')
                          ->leftjoin('ports as p2', 'p2.id','discharging_port')
