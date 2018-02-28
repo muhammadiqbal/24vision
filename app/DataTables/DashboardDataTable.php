@@ -132,6 +132,7 @@ class DashboardDataTable extends DataTable
                         //ST_DISTANCE_SPHERE only supported in mysql 5.7
                         // ->havingRaw('ST_Distance_Sphere(ST_GeomFromText(POINT($port->latitude $port->longitude), ST_GeomFromText(POINT(latitude longitude))',<= $this->request()->get('radius'))
                         ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
+                        
         if($this->request()->get('cargo_status')){
             $cargos->where('cargos.status_id', $this->request()->get('cargo_status'));
         }
