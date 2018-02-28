@@ -15,6 +15,7 @@ class DashboardDataTable extends DataTable
     protected $remaining_draft;
     protected $port;
     protected $date_of_opening;
+
     public function forShip(Ship $ship){
         $this->ship = $ship;
         return $this;
@@ -126,8 +127,7 @@ class DashboardDataTable extends DataTable
      */
     public function query()
     {
-        $cargo = DB::table('cargos')
-                        ->leftjoin('cargo_status', 'cargo_status.id','cargo_status.id')
+        $cargo = Cargo::leftjoin('cargo_status', 'cargo_status.id','cargo_status.id')
                         ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
                         ->leftjoin('ports as p1', 'p1.id','loading_port')
                         ->leftjoin('ports as p2', 'p2.id','discharging_port')
@@ -136,13 +136,11 @@ class DashboardDataTable extends DataTable
                                  'cargo_types.name as type',
                                  'p1.name as load_port',
                                  'p2.name as disch_port'
-
-                                // DB::raw('quantity * '.$this->ship->ballast_draft.' as draft')
                                 )
                         ->where('loading_port',$this->port->id)
                         ->where('quantity','<=',  $this->remaining_tonage)
                         //->having('quantity * stowage_factor','<=',$this->remaining_size)
-                        // ->having('draft','<=',$this->remaining_draft)
+                        //->having(DB::raw('quantity * '.$this->ship->ballast_draft.' as draft'),'<=',$this->remaining_draft)
                         //ST_Distance_Sphere() only supported in mysql 5.7
                         // ->havingRaw('ST_Distance_Sphere(ST_GeomFromText(POINT($port->latitude $port->longitude), ST_GeomFromText(POINT(latitude longitude))',<= $this->request()->get('radius'))
                         ;
