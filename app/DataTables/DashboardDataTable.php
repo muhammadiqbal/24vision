@@ -134,7 +134,7 @@ class DashboardDataTable extends DataTable
      */
     public function query()
     {
-        $cargo = DB::table('cargos')->select(['cargos.*',
+        $cargo = Cargo::select(['cargos.*',
                                       'cargo_status.name as status',
                                       'cargo_types.name as type',
                                       'p1.name as load_port',
