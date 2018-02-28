@@ -7,7 +7,7 @@ use Yajra\DataTables\Services\DataTable;
 use \League\Geotools\Geotools;
 use \League\Geotools\Coordinate\Coordinate;
 use App\Services\Calculator;
-use DB;
+use \DB;
 
 class DashboardDataTable extends DataTable
 {
