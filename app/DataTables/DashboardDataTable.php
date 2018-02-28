@@ -140,7 +140,7 @@ class DashboardDataTable extends DataTable
                                 )
                         ->where('loading_port',$this->port->id)
                         ->where('quantity','<=',  $this->remaining_tonage)
-                        //->having('quantity * stowage_factor','<=',$this->remaining_size)
+                        ->having('(quantity * cargo_types.stowage_factor)','<=',$this->remaining_size)
                         //->having(DB::raw('quantity * '.$this->ship->ballast_draft.' as draft'),'<=',$this->remaining_draft)
                         //ST_Distance_Sphere() only supported in mysql 5.7
                         // ->havingRaw('ST_Distance_Sphere(ST_GeomFromText(POINT($port->latitude $port->longitude), ST_GeomFromText(POINT(latitude longitude))',<= $this->request()->get('radius'))
