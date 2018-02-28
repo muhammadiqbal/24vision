@@ -136,12 +136,12 @@ class DashboardDataTable extends DataTable
                                  'cargo_types.name as type',
                                  'p1.name as load_port',
                                  'p2.name as disch_port',
-                                 DB::raw('quantity * stowage_factor as size')
+
                                 // DB::raw('quantity * '.$this->ship->ballast_draft.' as draft')
                                 )
                         ->where('loading_port',$this->port->id)
                         ->where('quantity','<=',  $this->remaining_tonage)
-                        // ->having('size','<=',$this->remaining_size)
+                        ->having('quantity * stowage_factor','<=',$this->remaining_size)
                         // ->having('draft','<=',$this->remaining_draft)
                         //ST_Distance_Sphere() only supported in mysql 5.7
                         // ->havingRaw('ST_Distance_Sphere(ST_GeomFromText(POINT($port->latitude $port->longitude), ST_GeomFromText(POINT(latitude longitude))',<= $this->request()->get('radius'))
