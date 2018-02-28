@@ -137,7 +137,7 @@ class DashboardDataTable extends DataTable
             $cargos->whereDate('laycan_first_day','<=',date($this->request()->get('date_of_opening')))
             ->whereDate('laycan_last_day','>=',date($this->request()->get('date_of_opening')));
         }
-        $cargos = Cargo::query();
+        // $cargos = Cargo::query();
         return $this->applyScopes($cargos);
     }
 
