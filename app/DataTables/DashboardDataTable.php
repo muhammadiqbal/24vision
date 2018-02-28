@@ -46,7 +46,7 @@ class DashboardDataTable extends DataTable
     public function ajax()
     { 
         return datatables()
-            ->of($this->query()) //change this to collection apply the bdi set in query
+            ->eloquent($this->query()) //change this to collection apply the bdi set in query
             ->where('loading_port',$this->port->id)
             ->where('quantity','<=',  $this->remaining_tonage)
             // ->having('size','<=',$this->remaining_size)
@@ -138,14 +138,13 @@ class DashboardDataTable extends DataTable
                                   'p1.name as load_port',
                                   'p2.name as disch_port',
                                   //DB::raw('quantity * '.$this->ship->ballast_draft.' AS draft'),
-                                  DB::raw('(cargos.quantity * cargo_types.stowage_factor) AS size')
+                                  //DB::raw('(cargos.quantity * cargo_types.stowage_factor) AS size')
                                 ])
                          ->leftjoin('cargo_status', 'cargo_status.id','cargo_status.id')
                          ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
                          ->leftjoin('ports as p1', 'p1.id','loading_port')
                          ->leftjoin('ports as p2', 'p2.id','discharging_port')
                          ->groupBy('cargos.id')
-                         ->get()
                          // ST_Distance_Sphere() only supported in mysql 5.7
                          //  ->havingRaw('ST_Distance_Sphere(ST_GeomFromText(POINT($port->latitude $port->longitude), ST_GeomFromText(POINT(latitude longitude))',<= $this->request()->get('radius'))
                          ;
