@@ -147,7 +147,7 @@ class CargoController extends AppBaseController
      */
     public function update($id, UpdateCargoRequest $request)
     {
-        $cargo = Cargo::findWithoutFail($id);
+        $cargo = Cargo::find($id);
 
         if (empty($cargo)) {
             Flash::error('Cargo not found');
@@ -192,6 +192,10 @@ class CargoController extends AppBaseController
             $cargo->commision_manual = true;
         }
 
+        //save manual boolean
+        $cargo->save();
+
+        //update cargo
         $cargo->update($request->all());
 
         Flash::success('Cargo updated successfully.');
