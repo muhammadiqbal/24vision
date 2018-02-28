@@ -133,7 +133,7 @@ class DashboardDataTable extends DataTable
                         ->where('loading_port',$this->request()->get('port_id'))
                         ->where('quantity','<=',  $this->remaining_tonage)
                         ->havingRaw(DB::raw('quantity * stowage_factor'),'<=',$this->remaining_size)
-                        ->havingRaw(DB::raw('quantity * '.$this->ship->ballast_draft),'<=',$this->remaining_draft)
+                        //->havingRaw(DB::raw('quantity * '.$this->ship->ballast_draft),'<=',$this->remaining_draft)
                         ->whereDate('laycan_first_day','>=',date($this->request()->get('date_of_opening')))
                         ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')))
                         //ST_Distance_Sphere() only supported in mysql 5.7
