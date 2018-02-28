@@ -137,14 +137,13 @@ class DashboardDataTable extends DataTable
                                   'cargo_types.name as type',
                                   'p1.name as load_port',
                                   'p2.name as disch_port',
-                                  //DB::raw('quantity * '.$this->ship->ballast_draft.' AS draft'),
-                                  //DB::raw('(cargos.quantity * cargo_types.stowage_factor) AS size')
+                                  DB::raw('quantity * '$this->ship->ballast_draft' AS draft'),
+                                  DB::raw('(cargos.quantity * cargo_types.stowage_factor) AS size')
                                 )
                          ->leftjoin('cargo_status', 'cargos.status_id','cargo_status.id')
                          ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
                          ->leftjoin('ports as p1', 'p1.id','loading_port')
                          ->leftjoin('ports as p2', 'p2.id','discharging_port')
-                         ->groupBy('cargos.id')
          //                 // ST_Distance_Sphere() only supported in mysql 5.7
          //                 //  ->havingRaw('ST_Distance_Sphere(ST_GeomFromText(POINT($port->latitude $port->longitude), ST_GeomFromText(POINT(latitude longitude))',<= $this->request()->get('radius'))
                          ;
