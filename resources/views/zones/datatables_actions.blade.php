@@ -1,6 +1,6 @@
 {!! Form::open(['route' => ['zones.destroy', $id], 'method' => 'delete']) !!}
 <div class='btn-group'>
-    <a href="{{ url('/zonePonts/create'.'?id='.$id) }}" class='btn btn-default btn-xs' data-toggle="tooltip" title="Add Zone Points.">
+    <a href="{{ url('/zonePoints/create'.'?id='.$id) }}" class='btn btn-default btn-xs' data-toggle="tooltip" title="Add Zone Points.">
         <i class="glyphicon glyphicon-map-marker"></i>
     </a>
     <a href="{{ route('zones.show', $id) }}" class='btn btn-default btn-xs'>
