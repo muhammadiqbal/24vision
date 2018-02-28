@@ -42,7 +42,7 @@ class DashboardController extends Controller
                          ->leftjoin('ports as p1', 'p1.id','loading_port')
                          ->leftjoin('ports as p2', 'p2.id','discharging_port')
                          ;
-        return $cargo;
+        return Response::json($cargo);
     }
 
     /**
