@@ -141,7 +141,7 @@ class DashboardDataTable extends DataTable
                                 )
                         ->where('loading_port',$this->port->id)
                         ->where('quantity','<=',  $this->remaining_tonage)
-                        ->having('quantity * stowage_factor','<=',$this->remaining_size)
+                        //->having('quantity * stowage_factor','<=',$this->remaining_size)
                         // ->having('draft','<=',$this->remaining_draft)
                         //ST_Distance_Sphere() only supported in mysql 5.7
                         // ->havingRaw('ST_Distance_Sphere(ST_GeomFromText(POINT($port->latitude $port->longitude), ST_GeomFromText(POINT(latitude longitude))',<= $this->request()->get('radius'))
@@ -154,8 +154,8 @@ class DashboardDataTable extends DataTable
                   ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')));
 
         }
-        return ($cargo);
-        //return $this->applyScopes($cargo);
+
+        return $this->applyScopes($cargo);
     }
 
     /**
