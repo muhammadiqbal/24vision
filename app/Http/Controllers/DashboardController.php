@@ -53,12 +53,17 @@ class DashboardController extends Controller
         $date_of_opening = $request->input('date_of_opening',date('d-m-Y'));
         $range = $request->input('range');
 
+        $remainingSize = $selectedShip->max_holds_capacity - $occupied_size;     
+        $remainingDraft = $selectedShip->max_laden_draft-($selectedShip->ballast_draft * $occupied_tonage);
+        $remainingTonnage = $selectedShip->dwcc-$occupied_tonage
+
         $mailCount = Email::count();
         $cargoCount = Cargo::count();
         $shipCount = Ship::count();
         return $dashboardDataTable
-                                  ->forOccTonnage($occupied_tonage)
-                                  ->forOccSize($occupied_size)
+                                  ->forRemainingTonnage($remainingTonnage)
+                                  ->forRemainingSize($remainingSize)
+                                  ->forRemainingDraft($remainingDraft)
                                   ->forShip($selectedShip)
                                   ->forPort($port)
                                   ->forDateOfOpening($date_of_opening)
