@@ -49,10 +49,10 @@ class DashboardDataTable extends DataTable
     { 
         return datatables()
             ->of($this->query()) //change this to collection apply the bdi set in query
-            // ->where('loading_port',$this->port->id)
-            // ->where('quantity','<=',  $this->remaining_tonage)
-            // ->having('size','<=',$this->remaining_size)
-            // ->having('draft','<=',$this->remaining_draft)
+            ->where('loading_port',$this->port->id)
+            ->where('quantity','<=',  $this->remaining_tonage)
+            ->having('size','<=',$this->remaining_size)
+            ->having('draft','<=',$this->remaining_draft)
             ->addColumn('action', function(Cargo $cargo) {
                     $ship = $this->ship;
                     $port = $this->port;
