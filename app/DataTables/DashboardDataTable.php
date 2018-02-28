@@ -49,10 +49,6 @@ class DashboardDataTable extends DataTable
     { 
         return datatables()
             ->of($this->query()) //change this to collection apply the bdi set in query
-            ->where('loading_port',$this->port->id)
-            ->where('quantity','<=',  $this->remaining_tonage)
-            ->having('size','<=',$this->remaining_size)
-            ->having('draft','<=',$this->remaining_draft)
             ->addColumn('action', function(Cargo $cargo) {
                     $ship = $this->ship;
                     $port = $this->port;
@@ -142,10 +138,14 @@ class DashboardDataTable extends DataTable
                                       DB::raw('(quantity * 2) AS draft'),
                                       DB::raw('(cargos.quantity * cargo_types.stowage_factor) AS size')
                                     ])
-                             ->leftjoin('cargo_status', 'cargos.status_id','cargo_status.id')
-                             ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
-                             ->leftjoin('ports as p1', 'p1.id','loading_port')
-                             ->leftjoin('ports as p2', 'p2.id','discharging_port')
+                            ->leftjoin('cargo_status', 'cargos.status_id','cargo_status.id')
+                            ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
+                            ->leftjoin('ports as p1', 'p1.id','loading_port')
+                            ->leftjoin('ports as p2', 'p2.id','discharging_port')
+                            ->where('loading_port',$this->port->id)
+                            ->where('quantity','<=',  $this->remaining_tonage)
+                            ->having('size','<=',$this->remaining_size)
+                            ->having('draft','<=',$this->remaining_draft)
          //                 // ST_Distance_Sphere() only supported in mysql 5.7
          //                 //  ->havingRaw('ST_Distance_Sphere(ST_GeomFromText(POINT($port->latitude $port->longitude), ST_GeomFromText(POINT(latitude longitude))',<= $this->request()->get('radius'))
                          ;
