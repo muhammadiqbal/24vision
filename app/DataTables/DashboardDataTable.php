@@ -126,7 +126,8 @@ class DashboardDataTable extends DataTable
      */
     public function query()
     {
-        $cargo = Cargo::leftjoin('cargo_status', 'cargo_status.id','cargo_status.id')
+        $cargo = DB::table('cargos')
+                        ->leftjoin('cargo_status', 'cargo_status.id','cargo_status.id')
                         ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
                         ->leftjoin('ports as p1', 'p1.id','loading_port')
                         ->leftjoin('ports as p2', 'p2.id','discharging_port')
