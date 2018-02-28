@@ -104,9 +104,16 @@ class DashboardDataTable extends DataTable
             })
             ->editColumn('loading_port',function(Cargo $cargo){
                 if ($cargo->loading_port_manual) {
-                    return '<b style=\'color:red;\'>'.$cargo->loading_port.'</b>';
+                    return '<b style=\'color:red;\'>'.$cargo->load_port.'</b>';
                 }else{
-                    return $cargo->loading_port;
+                    return $cargo->load_port;
+                }
+            })
+            ->editColumn('discharging_port',function(Cargo $cargo){
+                if ($cargo->discharging_port_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->disch_port.'</b>';
+                }else{
+                    return $cargo->disch_port;
                 }
             })
             //->filterColumn('status', 'whereRaw', "?", ["$1"])
@@ -135,9 +142,6 @@ class DashboardDataTable extends DataTable
 
         if($this->request()->get('cargo_status')){
             $cargos->where('cargos.status_id', $this->request()->get('cargo_status'));
-        }
-        if($this->request()->get('date_of_opening')){
-            $cargos
         }
 
         return $this->applyScopes($cargo);
