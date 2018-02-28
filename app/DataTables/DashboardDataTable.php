@@ -136,7 +136,7 @@ class DashboardDataTable extends DataTable
                                  'cargo_types.name as type',
                                  'p1.name as load_port',
                                  'p2.name as disch_port',
-                                 DB::raw('quantity * stowage_factor as size'),
+                                 DB::raw('quantity * stowage_factor as size')
                                 // DB::raw('quantity * '.$this->ship->ballast_draft.' as draft')
                                 )
                         ->where('loading_port',$this->port->id)
