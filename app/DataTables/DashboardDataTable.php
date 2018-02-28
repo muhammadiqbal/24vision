@@ -117,6 +117,7 @@ class DashboardDataTable extends DataTable
                     return $cargo->disch_port;
                 }
             })
+            ->rawColumns(['cargo_type_id', 'quantity','laycan_first_day','laycan_last_day','loading_port','discharging_port'])
             //->filterColumn('status', 'whereRaw', "?", ["$1"])
             ->make(true);
     }
