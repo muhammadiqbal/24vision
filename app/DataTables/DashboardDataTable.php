@@ -47,8 +47,8 @@ class DashboardDataTable extends DataTable
     { 
         return datatables()
             ->eloquent($this->query()) //change this to collection apply the bdi set in query
-            ->where('loading_port',$this->port->id)
-            ->where('quantity','<=',  $this->remaining_tonage)
+            // ->where('loading_port',$this->port->id)
+            // ->where('quantity','<=',  $this->remaining_tonage)
             // ->having('size','<=',$this->remaining_size)
             // ->having('draft','<=',$this->remaining_draft)
             ->addColumn('action', function(Cargo $cargo) {
@@ -170,7 +170,7 @@ class DashboardDataTable extends DataTable
                                      'loaing_port' => $this->port->id,
                                      'remaining_tonage' => $this->remaining_tonage,
                                      'remaining_size' => $this->remaining_size,
-                                     'remaining_draft' => $this->remaining_draft]);
+                                     'remaining_draft' => $this->remaining_draft])->get();
 
         if($this->request()->get('cargo_status')){
             $cargo->where('cargos.status_id', $this->request()->get('cargo_status'));
