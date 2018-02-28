@@ -154,8 +154,8 @@ class DashboardDataTable extends DataTable
                   ->whereDate('laycan_last_day','<=',date($this->request()->get('date_of_opening')));
 
         }
-
-        return $this->applyScopes($cargo);
+        return ($cargo);
+        //return $this->applyScopes($cargo);
     }
 
     /**
