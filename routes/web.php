@@ -21,7 +21,7 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function() 
 {
 	Route::get('testing', 'DashboardController@testing');
-	
+
 	Route::resource('bdiCodes', 'BdiCodeController');
 
 	Route::resource('bdis', 'BdiController');
@@ -45,8 +45,6 @@ Route::group(['middleware' => 'auth'], function()
 	Route::resource('zones', 'ZoneController');
 	
 	Route::resource('zonePoints', 'ZonePointController');
-	
-	Route::get('emails','EmailController@index');
 	
 	Route::get('execBCT','DashboardController@execBCT');
 
