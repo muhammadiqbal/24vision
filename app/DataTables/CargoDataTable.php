@@ -29,6 +29,10 @@ class CargoDataTable extends DataTable
                     return '<b style=\'color:red;\'>'.$cargo->loading_port_manual.'</b>';
                 }
             })
+            ->filterColumn('status', 'whereRaw', " like ? ", ["$1"])
+            ->filterColumn('loading_port', 'whereRaw', " like ? ", ["$1"])
+            ->filterColumn('discharging_port', 'whereRaw', " like ? ", ["$1"])
+            ->filterColumn('type', 'whereRaw', " like ? ", ["$1"])
             ->make(true);
     }
 
