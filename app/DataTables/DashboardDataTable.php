@@ -138,7 +138,7 @@ class DashboardDataTable extends DataTable
                                       DB::raw('(quantity * '.$this->ship->ballast_draft.') AS draft'),
                                       DB::raw('(quantity / '.$this->ship->dwcc.')*('.$this->ship->max_laden_draft - $this->ship->ballast_draft.') AS draft'),
                                      
-                                      DB::raw('SUM(cargos.quantity * cargo_types.stowage_factor) AS size'),
+                                      DB::raw('cargos.quantity * cargo_types.stowage_factor AS size'),
                                       // DB::raw('ST_Distance_Sphere(
                                       //   ST_GeomFromText(
                                       //       POINT( $port->latitude $port->longitude), 
