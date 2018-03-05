@@ -16,7 +16,7 @@ class CargoDataTable extends DataTable
     public function ajax()
     {
         return datatables()
-            ->eloquent($this->query())
+            ->of($this->query())
             ->addColumn('action', 'cargos.datatables_actions')
             ->editColumn('laycan_first_day', function(Cargo $cargo){
                return date_format(date_create($cargo->laycan_first_day),'d-m-Y');
@@ -29,7 +29,18 @@ class CargoDataTable extends DataTable
                     return '<b style=\'color:red;\'>'.$cargo->loading_port_manual.'</b>';
                 }
             })
-
+            ->filterColumn('status', function($query, $keyword) {
+                $query->whereRaw("status like ?", ["%{$keyword}%"]);
+            })
+            ->filterColumn('type', function($query, $keyword) {
+                $query->whereRaw("type like ?", ["%{$keyword}%"]);
+            })
+            ->filterColumn('status', function($query, $keyword) {
+                $query->whereRaw("p1.name like ?", ["%{$keyword}%"]);
+            })
+            ->filterColumn('status', function($query, $keyword) {
+                $query->whereRaw("p1.name like ?", ["%{$keyword}%"]);
+            })
 
             ->make(true);
     }
