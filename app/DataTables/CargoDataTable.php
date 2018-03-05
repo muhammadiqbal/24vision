@@ -36,10 +36,10 @@ class CargoDataTable extends DataTable
                 $query->whereRaw("type like ?", ["%{$keyword}%"]);
             })
             ->filterColumn('status', function($query, $keyword) {
-                $query->whereRaw("load_port like ?", ["%{$keyword}%"]);
+                $query->whereRaw("p1.name like ?", ["%{$keyword}%"]);
             })
             ->filterColumn('status', function($query, $keyword) {
-                $query->whereRaw("disch_port like ?", ["%{$keyword}%"]);
+                $query->whereRaw("p1.name like ?", ["%{$keyword}%"]);
             })
 
             ->make(true);
@@ -58,7 +58,7 @@ class CargoDataTable extends DataTable
                         ->leftjoin('ports as p1', 'p1.id','loading_port')
                         ->leftjoin('ports as p2', 'p2.id','discharging_port')
                         ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
-                        
+
         return $this->applyScopes($cargos);
     }
 
