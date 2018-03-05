@@ -36,10 +36,10 @@ class CargoDataTable extends DataTable
                 $query->whereRaw("type like ?", ["%{$keyword}%"]);
             })
             ->filterColumn('status', function($query, $keyword) {
-                $query->whereRaw("loading_port like ?", ["%{$keyword}%"]);
+                $query->whereRaw("load_port like ?", ["%{$keyword}%"]);
             })
             ->filterColumn('status', function($query, $keyword) {
-                $query->whereRaw("discharging_port like ?", ["%{$keyword}%"]);
+                $query->whereRaw("disch_port like ?", ["%{$keyword}%"]);
             })
 
             ->make(true);
@@ -58,28 +58,7 @@ class CargoDataTable extends DataTable
                         ->leftjoin('ports as p1', 'p1.id','loading_port')
                         ->leftjoin('ports as p2', 'p2.id','discharging_port')
                         ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
-        //->with('loading_port')->with('discharging_port')->with('cargoType')->with('cargoStatus');
-
-        // foreach ($cargos as $cargo) {
-        //     $bdi = Bdi::find(1);
-            
-        //     $grossRate = $this->calculateGrossRate($cargo, $shipPositionGrossRate, 226, $bdi->price);
-
-        //     $ntce = $this->calculateNTCE($cargo, $shipPosition,226, $grossRate);
-
-        //     $route = Route::where('area1',$cargo->loading_port)
-        //                   ->where('area3',$cargo->discharging_port)
-        //                   ->first();
-        //     if($route == null){
-        //         $route = Route::find(1);
-        //     }
-            
-        //     $cargo->setRoute($ntce);
-        //     $cargo->setBdi($bdi->price);
-        //     $cargo->setGrossRate($grossRate);
-        //     $cargo->setNtce($ntce);
-        // }
-
+                        
         return $this->applyScopes($cargos);
     }
 
