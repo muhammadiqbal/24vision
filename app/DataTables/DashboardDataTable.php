@@ -149,7 +149,7 @@ class DashboardDataTable extends DataTable
                             ->where('loading_port',$this->port->id)
                             ->where('quantity','<=',  $this->remaining_tonage)
                             ->having('size','<=',$this->remaining_size)
-                            ->having('draft','<=',$this->remaining_draft)
+                            ->having('draft','<=',$this->remaining_draft);
 
         if($this->request()->get('cargo_status')){
             $cargo->where('cargos.status_id', $this->request()->get('cargo_status'));
