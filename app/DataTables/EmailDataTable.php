@@ -16,7 +16,7 @@ class EmailDataTable extends DataTable
     {
         return datatables()
             ->eloquent($this->query())
-            //->addColumn('action', 'emails.datatables_actions')
+            ->addColumn('action', 'emails.datatables_actions')
             ->editColumn('date', function(Email $email){
                     return date_format(date_create($email->date),'d-m-Y');
             })
@@ -79,18 +79,8 @@ class EmailDataTable extends DataTable
     {
         return [
             'subject' => ['defaultContent' => 'NULL','name' => 'subject', 'data' => 'subject'],
-            //'body' => ['name' => 'body', 'data' => 'body'],
             'sender' => ['defaultContent' => 'NULL','name' => 'sender', 'data' => 'sender'],
-            //'receiver' => ['name' => 'receiver', 'data' => 'receiver'],
-            //'cc' => ['name' => 'cc', 'data' => 'cc'],
-            //'classification_manual' => ['name' => 'classification_manual', 'data' => 'classification_manual'],
             'date' => ['defaultContent' => 'NULL','name' => 'date', 'data' => 'date'],
-            //'classification_automated' => ['name' => 'classification_automated', 'data' => 'classification_automated'],
-            //'IMAPUID' => ['name' => 'IMAPUID', 'data' => 'IMAPUID'],
-            //'IMAPFolderID' => ['name' => 'IMAPFolderID', 'data' => 'IMAPFolderID'],
-            //'_created_on' => ['name' => '_created_on', 'data' => '_created_on'],
-            //'classification_automated_certainty' => ['name' => 'classification_automated_certainty', 'data' => 'classification_automated_certainty'],
-            //'kibana_extracted' => ['name' => 'kibana_extracted', 'data' => 'kibana_extracted']
         ];
     }
 
