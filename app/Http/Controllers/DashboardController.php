@@ -72,7 +72,9 @@ class DashboardController extends Controller
         $range = $request->input('range');
 
         $remainingSize = $selectedShip->max_holds_capacity - $occupied_size;     
-        $remainingDraft = $selectedShip->max_laden_draft-($occupied_tonage / $selectedShip->ballast_draft);
+        $remainingDraft = $selectedShip->max_laden_draft - $selectedShip->ballast_draft 
+                            -(($occupied_tonage/$selectedShip->dwcc)*
+                                ($selectedShip->max_laden_draft - $selectedShip->ballast_draft));
         $remainingTonnage = $selectedShip->dwcc-$occupied_tonage;
 
         $mailCount = Email::count();
