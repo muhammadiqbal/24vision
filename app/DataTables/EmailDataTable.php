@@ -16,7 +16,7 @@ class EmailDataTable extends DataTable
     {
         return datatables()
             ->eloquent($this->query())
-            ->addColumn('action', 'emails.datatables_actions')
+            //->addColumn('action', 'emails.datatables_actions')
             ->editColumn('date', function(Email $email){
                     return date_format(date_create($email->date),'d-m-Y');
             })
