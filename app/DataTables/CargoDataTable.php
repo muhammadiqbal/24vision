@@ -29,10 +29,19 @@ class CargoDataTable extends DataTable
                     return '<b style=\'color:red;\'>'.$cargo->loading_port_manual.'</b>';
                 }
             })
-            ->filterColumn('status', 'whereRaw', " like ? ", ["$1"])
-            ->filterColumn('loading_port', 'whereRaw', " like ? ", ["$1"])
-            ->filterColumn('discharging_port', 'whereRaw', " like ? ", ["$1"])
-            ->filterColumn('type', 'whereRaw', " like ? ", ["$1"])
+            ->filterColumn('status', function($query, $keyword) {
+                $query->whereRaw("status like ?", ["%{$keyword}%"]);
+            })
+            ->filterColumn('type', function($query, $keyword) {
+                $query->whereRaw("type like ?", ["%{$keyword}%"]);
+            })
+            ->filterColumn('status', function($query, $keyword) {
+                $query->whereRaw("loading_port like ?", ["%{$keyword}%"]);
+            })
+            ->filterColumn('status', function($query, $keyword) {
+                $query->whereRaw("discharging_port like ?", ["%{$keyword}%"]);
+            })
+
             ->make(true);
     }
 
@@ -51,25 +60,25 @@ class CargoDataTable extends DataTable
                         ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port');
         //->with('loading_port')->with('discharging_port')->with('cargoType')->with('cargoStatus');
 
-        foreach ($cargos as $cargo) {
-            $bdi = Bdi::find(1);
+        // foreach ($cargos as $cargo) {
+        //     $bdi = Bdi::find(1);
             
-            $grossRate = $this->calculateGrossRate($cargo, $shipPositionGrossRate, 226, $bdi->price);
+        //     $grossRate = $this->calculateGrossRate($cargo, $shipPositionGrossRate, 226, $bdi->price);
 
-            $ntce = $this->calculateNTCE($cargo, $shipPosition,226, $grossRate);
+        //     $ntce = $this->calculateNTCE($cargo, $shipPosition,226, $grossRate);
 
-            $route = Route::where('area1',$cargo->loading_port)
-                          ->where('area3',$cargo->discharging_port)
-                          ->first();
-            if($route == null){
-                $route = Route::find(1);
-            }
+        //     $route = Route::where('area1',$cargo->loading_port)
+        //                   ->where('area3',$cargo->discharging_port)
+        //                   ->first();
+        //     if($route == null){
+        //         $route = Route::find(1);
+        //     }
             
-            $cargo->setRoute($ntce);
-            $cargo->setBdi($bdi->price);
-            $cargo->setGrossRate($grossRate);
-            $cargo->setNtce($ntce);
-        }
+        //     $cargo->setRoute($ntce);
+        //     $cargo->setBdi($bdi->price);
+        //     $cargo->setGrossRate($grossRate);
+        //     $cargo->setNtce($ntce);
+        // }
 
         return $this->applyScopes($cargos);
     }
