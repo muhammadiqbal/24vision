@@ -126,7 +126,7 @@ class CargoDataTable extends DataTable
             //'laycan_last_day_constructed' => ['name' => 'laycan_last_day_constructed', 'data' => 'laycan_last_day_constructed'],
             'cargo_type_id' => ['defaultContent' => 'NULL','name' => 'type', 'data' => 'type', 'searchable'=> false],
             //'cargo_type_id_manual' => ['name' => 'cargo_type_id_manual', 'data' => 'cargo_type_id_manual'],
-            'stowage_factor' => ['defaultContent' => 'NULL','name' => 'stowage_factor', 'data' => 'stowage_factor', , 'searchable'=> false],
+            'stowage_factor' => ['defaultContent' => 'NULL','name' => 'stowage_factor', 'data' => 'stowage_factor' ],
             //'stowage_factor_manual' => ['name' => 'stowage_factor_manual', 'data' => 'stowage_factor_manual'],
             //'stowage_factor_constructed' => ['name' => 'stowage_factor_constructed', 'data' => 'stowage_factor_constructed'],
             //'sf_unit' => ['name' => 'sf_unit', 'data' => 'sf_unit'],
@@ -150,7 +150,7 @@ class CargoDataTable extends DataTable
             //'commision_manual' => ['name' => 'commision_manual', 'data' => 'commision_manual'],
             //'commision_constructed' => ['name' => 'commision_constructed', 'data' => 'commision_constructed'],
             'email_id' => ['defaultContent' => 'NULL','name' => 'email_id', 'data' => 'email_id'],
-            'status_id' => ['defaultContent' => 'NULL','name' => 'status', 'data' => 'status']
+            'status_id' => ['defaultContent' => 'NULL','name' => 'status', 'data' => 'status','searchable'=> false]
         ];
     }
 
