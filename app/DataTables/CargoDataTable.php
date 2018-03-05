@@ -124,7 +124,7 @@ class CargoDataTable extends DataTable
             'laycan_last_day' => ['defaultContent' => 'NULL','name' => 'laycan_last_day', 'data' => 'laycan_last_day'],
             //'laycan_last_day_manual' => ['name' => 'laycan_last_day_manual', 'data' => 'laycan_last_day_manual'],
             //'laycan_last_day_constructed' => ['name' => 'laycan_last_day_constructed', 'data' => 'laycan_last_day_constructed'],
-            'cargo_type_id' => ['defaultContent' => 'NULL','name' => 'type', 'data' => 'type', , 'searchable'=> false],
+            'cargo_type_id' => ['defaultContent' => 'NULL','name' => 'type', 'data' => 'type', 'searchable'=> false],
             //'cargo_type_id_manual' => ['name' => 'cargo_type_id_manual', 'data' => 'cargo_type_id_manual'],
             'stowage_factor' => ['defaultContent' => 'NULL','name' => 'stowage_factor', 'data' => 'stowage_factor', , 'searchable'=> false],
             //'stowage_factor_manual' => ['name' => 'stowage_factor_manual', 'data' => 'stowage_factor_manual'],
