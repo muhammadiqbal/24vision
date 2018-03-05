@@ -29,18 +29,7 @@ class CargoDataTable extends DataTable
                     return '<b style=\'color:red;\'>'.$cargo->loading_port_manual.'</b>';
                 }
             })
-            ->filterColumn('status', function($query, $keyword) {
-                $query->whereRaw("status like ?", ["%{$keyword}%"]);
-            })
-            ->filterColumn('type', function($query, $keyword) {
-                $query->whereRaw("type like ?", ["%{$keyword}%"]);
-            })
-            ->filterColumn('status', function($query, $keyword) {
-                $query->whereRaw("p1.name like ?", ["%{$keyword}%"]);
-            })
-            ->filterColumn('status', function($query, $keyword) {
-                $query->whereRaw("p1.name like ?", ["%{$keyword}%"]);
-            })
+
 
             ->make(true);
     }
