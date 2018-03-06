@@ -15,7 +15,8 @@
         <div class="clearfix"></div>
         <div class="box box-primary">
         <div class="col-sm-12">
-            <div class="col-sm-3">
+        <form method="GET" id="search-form" class="form-inline" role="form">
+            <div class="form-group col-sm-3">
                 {!! Form::label('status', 'Status:') !!}
                 <select name="statusoption" id="statusoption" class="form-control">
                     <option value="1">OK</option>
@@ -35,6 +36,8 @@
                 {!! Form::label('laycan_last_day', 'Laycan Last Day:') !!}
                 {!! Form::date('laycan_last_day', null, ['class' => 'form-control']) !!}
             </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
 
         </div>
             <div class="box-body table-responsive">
