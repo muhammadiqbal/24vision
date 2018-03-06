@@ -61,6 +61,19 @@ class CargoDataTable extends DataTable
                         ->leftjoin('ports as p2', 'p2.id','discharging_port')
                         ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port', 'load_type.name as l_type', 'disch_type.name as d_type');
 
+        if($this->request()->get('laycan_first_day')){
+            $cargos->orWhere('laycan_first_day','<=',$this->request()->get('laycan_first_day' )
+        }
+
+        if($this->request()->get('laycan_last_day')){
+            $cargos->orWhere('laycan_last_day','<=',$this->request()->get('laycan_last_day' )
+        }
+
+        if($this->request()->get('status_id')){
+            $cargos->orWhere('status','=',$this->request()->get('statusoption' )
+        }
+
+
         return $this->applyScopes($cargos);
     }
 
@@ -74,11 +87,15 @@ class CargoDataTable extends DataTable
         return $this->builder()
             ->columns($this->getColumns())
             ->addAction(['width' => '20%'])
-            ->ajax('')
+            ->ajax('', 
+                data: function (d) {
+                d.laycan_first_day = $('input[name=laycan_first_day]').val();
+                d.laycan_last_day = $('input[name=laycan_last_day]').val();
+                d.statusoption = $('input[name=statusoption]').val();
+                
+            })
             ->parameters([
-                'dom' => 'Bfrtip' + "<'row'<'col-xs-12'<'col-xs-6'l><'col-xs-6'p>>r>"+
-            "<'row'<'col-xs-12't>>"+
-            "<'row'<'col-xs-12'<'col-xs-6'i><'col-xs-6'p>>>",
+                'dom' => 'Bfrtip',
                 'scrollX' => true,
                 'buttons' => [
                     'print',
@@ -96,16 +113,6 @@ class CargoDataTable extends DataTable
                     'colvis'
                 ],
                 //"defaultContent": "<i>Not set</i>",
-                'initComplete' => "function () {
-                            this.api().columns([10]).every(function () {
-                                var column = this;
-                                
-                                $('#statusoption')
-                                .on('change', function () {
-                                    column.search($(this).val(), false, false, true).draw();
-                                });
-                            });
-                        }",
             ]);
     }
 
