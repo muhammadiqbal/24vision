@@ -88,12 +88,12 @@ class CargoDataTable extends DataTable
             ->columns($this->getColumns())
             ->addAction(['width' => '20%'])
             ->ajax('', 
-                data: function (d) {
+                "data: function (d) {
                 d.laycan_first_day = $('input[name=laycan_first_day]').val();
                 d.laycan_last_day = $('input[name=laycan_last_day]').val();
                 d.statusoption = $('input[name=statusoption]').val();
                 
-            })
+            }")
             ->parameters([
                 'dom' => 'Bfrtip',
                 'scrollX' => true,
