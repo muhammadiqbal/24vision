@@ -15,15 +15,15 @@
         <div class="clearfix"></div>
         <div class="box box-primary">
         <div class="col-sm-12">
-           {{--  <div class="col-sm-3">
+            <div class="col-sm-3">
                 {!! Form::label('status', 'Status:') !!}
-                <select id="statusoption" class="form-control">
+                <select name="statusoption" id="statusoption" class="form-control">
                     <option value="1">OK</option>
                     <option value="2">Review</option>
                     <option value="3">Unusable</option>
                     <option value="4">Incomplete</option>
                 </select>
-            </div> --}}
+            </div>
             
             <!-- Laycan First Day Field -->
             <div class="form-group col-sm-3">
