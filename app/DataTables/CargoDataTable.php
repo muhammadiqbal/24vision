@@ -113,12 +113,7 @@ class CargoDataTable extends DataTable
                     'colvis'
                 ],
                 //"defaultContent": "<i>Not set</i>",
-                'initComplete' => "function () {
-                            $('#search-form').on('submit', function(e) {
-                                oTable.draw();
-                                e.preventDefault();
-                            });
-                        }",
+               
             ]);
     }
 
