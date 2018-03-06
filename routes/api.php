@@ -17,69 +17,71 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::group(['middleware' => 'auth:api'], function() 
+{
+	Route::resource('bdis', 'BdiAPIController');
 
-Route::resource('bdis', 'BdiAPIController');
+	Route::resource('zones', 'ZoneAPIController');
 
-Route::resource('zones', 'ZoneAPIController');
+	Route::resource('routes', 'RouteAPIController');
 
-Route::resource('routes', 'RouteAPIController');
+	Route::resource('cargo_statuses', 'CargoStatusAPIController');
 
-Route::resource('cargo_statuses', 'CargoStatusAPIController');
+	Route::resource('cargo_types', 'CargoTypeAPIController');
 
-Route::resource('cargo_types', 'CargoTypeAPIController');
+	Route::resource('bdi_prices', 'BdiPriceAPIController');
 
-Route::resource('bdi_prices', 'BdiPriceAPIController');
+	Route::resource('fee_prices', 'FeePriceAPIController');
 
-Route::resource('fee_prices', 'FeePriceAPIController');
+	Route::resource('zone_points', 'ZonePointAPIController');
 
-Route::resource('zone_points', 'ZonePointAPIController');
+	Route::resource('zone_ports', 'ZonePortsAPIController');
 
-Route::resource('zone_ports', 'ZonePortsAPIController');
+	Route::resource('paths', 'PathAPIController');
 
-Route::resource('paths', 'PathAPIController');
+	Route::resource('distances', 'DistanceAPIController');
 
-Route::resource('distances', 'DistanceAPIController');
+	Route::resource('zone_ports', 'ZonePortAPIController');
 
-Route::resource('zone_ports', 'ZonePortAPIController');
+	Route::resource('ld_rate_types', 'LdRateTypeAPIController');
 
-Route::resource('ld_rate_types', 'LdRateTypeAPIController');
+	Route::resource('routes', 'RouteAPIController');
 
-Route::resource('routes', 'RouteAPIController');
+	Route::resource('ships', 'ShipAPIController');
 
-Route::resource('ships', 'ShipAPIController');
+	Route::resource('zone_points', 'ZonePointAPIController');
 
-Route::resource('zone_points', 'ZonePointAPIController');
+	Route::resource('cargo_types', 'CargoTypeAPIController');
 
-Route::resource('cargo_types', 'CargoTypeAPIController');
+	Route::resource('distances', 'DistanceAPIController');
 
-Route::resource('distances', 'DistanceAPIController');
+	Route::resource('routes', 'RouteAPIController');
 
-Route::resource('routes', 'RouteAPIController');
+	Route::resource('cargo_types', 'CargoTypeAPIController');
 
-Route::resource('cargo_types', 'CargoTypeAPIController');
+	Route::resource('cargos', 'CargoAPIController');
 
-Route::resource('cargos', 'CargoAPIController');
+	Route::resource('emails', 'EmailAPIController');
 
-Route::resource('emails', 'EmailAPIController');
+	Route::resource('ports', 'PortAPIController');
 
-Route::resource('ports', 'PortAPIController');
+	Route::resource('cargooffers', 'CargoOfferAPIController');
 
-Route::resource('cargooffers', 'CargoOfferAPIController');
+	Route::resource('cargoofferextracted', 'CargoOfferExtractedAPIController');
 
-Route::resource('cargoofferextracted', 'CargoOfferExtractedAPIController');
+	Route::resource('shipoffers', 'CargoOfferAPIController');
 
-Route::resource('shipoffers', 'CargoOfferAPIController');
+	Route::resource('shipofferextracted', 'ShipOfferExtractedAPIController');
 
-Route::resource('shipofferextracted', 'ShipOfferExtractedAPIController');
+	Route::resource('shiporders', 'CargoOfferAPIController');
 
-Route::resource('shiporders', 'CargoOfferAPIController');
+	Route::resource('shiporderextracted', 'ShipOfferExtractedAPIController');
 
-Route::resource('shiporderextracted', 'ShipOfferExtractedAPIController');
+	Route::get('emails/{filter}/{limit}', 'EmailAPIController@extra');
 
-Route::get('emails/{filter}/{limit}', 'EmailAPIController@extra');
+	Route::resource('ports', 'PortAPIController');
 
-Route::resource('ports', 'PortAPIController');
+	Route::get('controlPanel', 'ControlPanelAPIController@execute');
 
-Route::get('controlPanel', 'ControlPanelAPIController@execute');
-
-Route::put('setCleaned/{id}', 'CargoOfferExtractedAPIController@setCleaned');
+	Route::put('setCleaned/{id}', 'CargoOfferExtractedAPIController@setCleaned');
+});
