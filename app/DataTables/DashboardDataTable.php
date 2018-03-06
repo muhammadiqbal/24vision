@@ -212,7 +212,7 @@ class DashboardDataTable extends DataTable
             'bdi' => ['defaultContent'=>'NULL', 'name'=>'bdi', 'data'=>'bdi', 'title'=>'bdi','title'=>'bdi'],
             'ntce' => ['defaultContent'=>'NULL', 'name'=>'', 'data'=>'ntce',  'title'=>'ntce','title'=>'ntce'],
             'gross_rate' => ['defaultContent'=>'NULL', 'name'=>'', 'data'=>'gross_rate', 'title'=>'gross_rate','title'=>'gross_rate'],
-            'status_id' => ['defaultContent' => 'NULL','name' => 'status', 'data' => 'status','title'=>'status_id',,'searchable'=> false],
+            'status_id' => ['defaultContent' => 'NULL','name' => 'status', 'data' => 'status','title'=>'status_id','searchable'=> false],
         ];
     }
     /**
