@@ -76,7 +76,9 @@ class CargoDataTable extends DataTable
             ->addAction(['width' => '20%'])
             ->ajax('')
             ->parameters([
-                'dom' => 'Bfrtip',
+                'dom' => 'Bfrtip' + "<'row'<'col-xs-12'<'col-xs-6'l><'col-xs-6'p>>r>"+
+            "<'row'<'col-xs-12't>>"+
+            "<'row'<'col-xs-12'<'col-xs-6'i><'col-xs-6'p>>>",
                 'scrollX' => true,
                 'buttons' => [
                     'print',
