@@ -87,8 +87,8 @@ class CargoDataTable extends DataTable
         return $this->builder()
             ->columns($this->getColumns())
             ->addAction(['width' => '20%'])
-            ->ajax('', 
-                "data: function (d) {
+            ->ajax(''," 
+                data: function (d) {
                 d.laycan_first_day = $('input[name=laycan_first_day]').val();
                 d.laycan_last_day = $('input[name=laycan_last_day]').val();
                 d.statusoption = $('input[name=statusoption]').val();
@@ -113,6 +113,12 @@ class CargoDataTable extends DataTable
                     'colvis'
                 ],
                 //"defaultContent": "<i>Not set</i>",
+                'initComplete' => "function () {
+                            $('#search-form').on('submit', function(e) {
+                                oTable.draw();
+                                e.preventDefault();
+                            });
+                        }",
             ]);
     }
 
