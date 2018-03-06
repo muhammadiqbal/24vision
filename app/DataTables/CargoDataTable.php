@@ -62,15 +62,15 @@ class CargoDataTable extends DataTable
                         ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port', 'load_type.name as l_type', 'disch_type.name as d_type');
 
         if($this->request()->get('laycan_first_day')){
-            $cargos->orWhere('laycan_first_day','<=',$this->request()->get('laycan_first_day' );
+            $cargos->orWhere('laycan_first_day','<=',$this->request()->get('laycan_first_day' ));
         }
 
         if($this->request()->get('laycan_last_day')){
-            $cargos->orWhere('laycan_last_day','<=',$this->request()->get('laycan_last_day' );
+            $cargos->orWhere('laycan_last_day','<=',$this->request()->get('laycan_last_day' ));
         }
 
         if($this->request()->get('status_id')){
-            $cargos->orWhere('status','=',$this->request()->get('statusoption' );
+            $cargos->orWhere('status','=',$this->request()->get('statusoption' ));
         }
 
 
