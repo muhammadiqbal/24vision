@@ -124,8 +124,8 @@ class CargoDataTable extends DataTable
             'laycan_last_day' => ['defaultContent' => 'NULL','name' => 'laycan_last_day', 'data' => 'laycan_last_day'],
             'loading_rate' => ['defaultContent' => 'NULL','name' => 'loading_rate', 'data' => 'loading_rate'],
             'loading_rate_type' => ['defaultContent' => 'NULL','name' => 'l_type', 'data' => 'l_type', 'searchable'=> false],
-            'discharging_rate'=>['defaultContent' => 'NULL','name' => 'discharging_rate', 'data' => 'discharging_rate']
-            'discharging_rate_type'=>['defaultContent' => 'NULL','name' => 'd_type', 'data' => 'd_type', 'searchable'=> false]
+            'discharging_rate'=>['defaultContent' => 'NULL','name' => 'discharging_rate', 'data' => 'discharging_rate'],
+            'discharging_rate_type'=>['defaultContent' => 'NULL','name' => 'd_type', 'data' => 'd_type', 'searchable'=> false],
             'stowage_factor' => ['defaultContent' => 'NULL','name' => 'stowage_factor', 'data' => 'stowage_factor' ],
             'commission' => ['defaultContent' => 'NULL','name' => 'commission', 'data' => 'commission'],
             'email_id' => ['defaultContent' => 'NULL','name' => 'email_id', 'data' => 'email_id'],
