@@ -70,7 +70,7 @@ class CargoDataTable extends DataTable
         }
 
         if($this->request()->get('statusoption')){
-            $cargos->where('status','=',$this->request()->get('statusoption' ));
+            $cargos->where('status_id','=',$this->request()->get('statusoption' ));
         }
 
 
