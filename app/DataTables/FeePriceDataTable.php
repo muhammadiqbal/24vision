@@ -17,11 +17,11 @@ class FeePriceDataTable extends DataTable
         return datatables()
             ->eloquent($this->query())
             ->addColumn('action', 'fee_prices.datatables_actions')
-            ->editColumn('start_date', function(FuelPrice $fuelPrice){
-               return date_format(date_create($fuelPrice->start_date),'d-m-Y');
+            ->editColumn('start_date', function(FeePrice $fee_price){
+               return date_format(date_create($fee_price->start_date),'d-m-Y');
             })
             ->editColumn('end_date', function(FuelPrice $fuelPrice){
-               return date_format(date_create($fuelPrice->end_date),'d-m-Y');
+               return date_format(date_create($fee_price->end_date),'d-m-Y');
             })
             ->make(true);
     }

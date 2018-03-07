@@ -17,11 +17,11 @@ class BdiPriceDataTable extends DataTable
         return datatables()
             ->eloquent($this->query())
             ->addColumn('action', 'bdi_prices.datatables_actions')
-            ->editColumn('start_date', function(FuelPrice $fuelPrice){
-               return date_format(date_create($fuelPrice->start_date),'d-m-Y');
+            ->editColumn('start_date', function(BdiPrice $bdi_price){
+               return date_format(date_create($bdi_price->start_date),'d-m-Y');
             })
-            ->editColumn('end_date', function(FuelPrice $fuelPrice){
-               return date_format(date_create($fuelPrice->end_date),'d-m-Y');
+            ->editColumn('end_date', function(BdiPrice $fuelPrice){
+               return date_format(date_create($bdi_price->end_date),'d-m-Y');
             })
             ->make(true);
     }
