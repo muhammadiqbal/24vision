@@ -41,11 +41,11 @@ return [
 
           'mysql' => [
             'driver' => 'mysql',
-            'host' => '24v-azu-db001.mysql.database.azure.com',
+            'host' => env('DB_HOST', '24v-azu-db001.mysql.database.azure.com'),
             'port' => env('DB_PORT', '3306'),
-            'database' => 'dev_cargo',
-            'username' => 'dev_cargoinship_service@24v-azu-db001',
-            'password' => 'cM2ur5FdIqh6',
+            'database' => env('DB_DATABASE', 'dev_cargo'),
+            'username' => env('DB_USERNAME', 'dev_cargoinship_service@24v-azu-db001'),
+            'password' => env('DB_PASSWORD', 'cM2ur5FdIqh6'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
@@ -54,19 +54,17 @@ return [
             'engine' => null,
             'sslmode' => env('DB_SSLMODE', 'prefer'),
             'options'   => array(
-               // PDO::MYSQL_ATTR_SSL_KEY => '/path/to/client-key.pem',
-               // PDO::MYSQL_ATTR_SSL_CERT => '/path/to/client-cert.pem',
                 PDO::MYSQL_ATTR_SSL_CA => base_path('ssl/BaltimoreCyberTrustRoot.crt.pem')
             ),
         ],
 
         'mysql2' => [
             'driver' => 'mysql',
-            'host' => '24v-azu-db001.mysql.database.azure.com',
-            'port' => env('DB_PORT', '3306'),
-            'database' => 'dev_dbpsbulkcargo',
-            'username' => 'dev_cargoinship_service@24v-azu-db001',
-            'password' => 'cM2ur5FdIqh6',
+            'host' => env('DB2_HOST', '24v-azu-db001.mysql.database.azure.com'),
+            'port' => env('DB2_PORT', '3306'),
+            'database' => env('DB2_DATABASE', 'dev_dbpsbulkcargo'),
+            'username' => env('DB2_USERNAME', 'dev_cargoinship_service@24v-azu-db001'),
+            'password' => env('DB2_PASSWORD', 'cM2ur5FdIqh6'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
@@ -75,8 +73,6 @@ return [
             'engine' => null,
             'sslmode' => env('DB_SSLMODE', 'prefer'),
             'options'   => array(
-               // PDO::MYSQL_ATTR_SSL_KEY => '/path/to/client-key.pem',
-               // PDO::MYSQL_ATTR_SSL_CERT => '/path/to/client-cert.pem',
                 PDO::MYSQL_ATTR_SSL_CA => base_path('ssl/BaltimoreCyberTrustRoot.crt.pem')
             ),
         ],

@@ -22,7 +22,8 @@
         "webklex/laravel-imap": "^1.0",
         "yajra/laravel-datatables-buttons": "3.*",
         "yajra/laravel-datatables-html": "3.*",
-        "yajra/laravel-datatables-oracle": "8.*"
+        "yajra/laravel-datatables-oracle": "8.*",
+        "khill/lavacharts" : "3.0.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -51,7 +52,8 @@
         ],
         "post-install-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postInstall",
-            "php artisan optimize"
+            "php artisan optimize",
+            "pip3 install PyTools/requirements.txt"
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",

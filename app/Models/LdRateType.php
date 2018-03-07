@@ -49,7 +49,7 @@ class LdRateType extends Model
      * @var array
      */
     public static $rules = [
-        
+        'name' => 'required|string'
     ];
 
     /**

@@ -53,7 +53,8 @@ class ZonePoint extends Model
      * @var array
      */
     public static $rules = [
-        
+        'zone_id' => 'required|integer',
+        'position' => 'integer'
     ];
 
     /**

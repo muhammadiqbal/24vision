@@ -57,7 +57,11 @@ class User extends Model
      * @var array
      */
     public static $rules = [
-        
+        'name' => 'required|string',
+        'email' => 'required|string',
+        'password' => 'required|string',
+        'role' => 'string',
+        'remember_token' => 'string'
     ];
 
     

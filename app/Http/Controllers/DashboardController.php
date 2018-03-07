@@ -28,7 +28,8 @@ class DashboardController extends Controller
         $this->middleware('auth');
     }
 
-    public function testing(){
+    public function testing()
+    {
         $cargo = DB::table('cargos')->select(['cargos.*',
                                       'cargo_status.name as status',
                                       'cargo_types.name as type',
@@ -102,14 +103,19 @@ class DashboardController extends Controller
                                             ]);
     }
 
-    public function controlPanel(){
+    public function controlPanel()
+    {
       return view('control_panel.terminal');
     }
 
-    public function execBCT(){
-        $hostname = '{outlook.office365.com}Test_IMAP';
-        $username = 'MunsterUniversity@24Vision.Solutions';
-        $password = 'Yoz39332';
+    public function execBCT()
+    {
+
+        //read Imap config from .env file
+        $hostname = env('IMAP_HOST', '{outlook.office365.com}Test_IMAP');
+        $username = env('IMAP_USERNAME', 'MunsterUniversity@24Vision.Solutions');
+        $password = env('IMAP_PASSWORD', 'Yoz39332');
+
         //$inboxprefix = "24VisionChartering-";
 
         $mailbox = new Mailbox($hostname, $username, $password, __DIR__);

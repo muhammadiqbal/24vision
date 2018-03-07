@@ -50,7 +50,8 @@ class Bdi extends Model
      * @var array
      */
     public static $rules = [
-        
+        'code' => 'requred|string',
+        'name' => 'requred|string'
     ];
 
     /**

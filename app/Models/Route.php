@@ -51,7 +51,8 @@ class Route extends Model
      * @var array
      */
     public static $rules = [
-        
+        'name' => 'required|string',
+        'bdi_id' => 'required|integer'
     ];
 
     /**
