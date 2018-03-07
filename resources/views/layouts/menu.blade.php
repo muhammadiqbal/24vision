@@ -73,12 +73,24 @@
         @endif
         >
         <a href="{{url('/bdis')}}"><i class="fa fa-area-chart"></i> <span>Bdi</span></a></li>
-        </li>
+      </li>
+      <li
+         @if( $route =='App\Http\Controllers\BdiPriceController')
+          class="active"
+        @endif>
+        <a href="{{url('/bdiPrices')}}"><i class="fa fa-usd"></i> <span>Bdi Price</span></a></li>
+      </li>
       <li
          @if( $route =='App\Http\Controllers\PortController')
           class="active"
         @endif>
         <a href="{{url('/ports')}}"><i class="fa fa-support"></i> <span>Ports</span></a></li>
+      </li>
+      <li
+         @if( $route =='App\Http\Controllers\UserController')
+          class="active"
+        @endif>
+        <a href="{{url('/feePrices')}}"><i class="fa fa-usd"></i> <span>Port Fees</span></a></li>
       </li>
       <li
          @if( $route =='App\Http\Controllers\DistanceController')
