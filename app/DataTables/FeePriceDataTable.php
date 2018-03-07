@@ -84,7 +84,7 @@ class FeePriceDataTable extends DataTable
     {
         return [
             'port_id' => ['name' => 'port', 'data' => 'port', 'searchable'=>false],
-            'star_date' => ['name' => 'star_date', 'data' => 'star_date'],
+            'start_date' => ['name' => 'start_date', 'data' => 'start_date'],
             'end_date' => ['name' => 'end_date', 'data' => 'end_date'],
             'price' => ['name' => 'price', 'data' => 'price']
         ];
