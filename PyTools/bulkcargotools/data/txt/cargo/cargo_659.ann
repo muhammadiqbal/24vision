@@ -1,0 +1,11 @@
+T1	Load_Place 253 264	MANFREDONIA
+T2	Disch_Place 267 291	UPPER ADRIATIC – EU FLAG
+T3	Cargo 292 309	7000/10.000 WHEAT
+T4	Terms 313 322	2000/4000
+T5	Laycan 324 333	8 MAY ONW
+T6	Commission 335 343	2,5% TTL
+R1	From Arg1:T3 Arg2:T1	
+R2	Commission Arg1:T3 Arg2:T6	
+R3	When Arg1:T3 Arg2:T5	
+R4	How Arg1:T3 Arg2:T4	
+R5	To Arg1:T3 Arg2:T2	

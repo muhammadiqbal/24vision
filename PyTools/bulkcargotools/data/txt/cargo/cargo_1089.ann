@@ -1,0 +1,25 @@
+T1	Commission 556 561;566 585	6.25% both plus 1.25 mbbc
+T2	Terms 463 503;505 554	1500 mt thurs noon/sat 0800 ntc eiu load 3,000 mt chopt 4,000 mt fri 1700/mon 0800 ntc eiu
+T3	Load_Place 376 386	Port Sudan
+T4	Disch_Place 387 420	Black Sea,Adriatic,Spain,Portugal
+T5	Cargo 422 445	30,000 mt 5% bulk sugar
+T6	Laycan 447 461	27 April/5 May
+T7	Cargo 239 262	36/40,000 mt bulk sugar
+T8	Laycan 264 272	8/15 May
+T9	Commission 317 322	6.25%
+T10	Terms 274 315	8000/6000 sat noon/mon 0800 ntc eiu bends
+T11	Load_Place 192 201	Paranagua
+T12	Disch_Place 210 217	Bizerte
+T13	Commodity 114 119	SUGAR
+R1	When Arg1:T5 Arg2:T6	
+R2	How Arg1:T5 Arg2:T2	
+R3	Commission Arg1:T5 Arg2:T1	
+R4	From Arg1:T5 Arg2:T3	
+R5	To Arg1:T5 Arg2:T4	
+R6	When Arg1:T7 Arg2:T8	
+R7	How Arg1:T7 Arg2:T10	
+R8	Commission Arg1:T7 Arg2:T9	
+R9	From Arg1:T7 Arg2:T11	
+R10	To Arg1:T7 Arg2:T12	
+R11	Including Arg1:T7 Arg2:T13	
+R12	Including Arg1:T5 Arg2:T13	

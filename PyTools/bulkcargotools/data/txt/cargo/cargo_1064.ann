@@ -1,0 +1,11 @@
+T1	Cargo 227 265	abt 28,000mt Bulk Harmless Fertilizers
+T2	Laycan 356 370	03-05 May 2017
+T3	Commission 573 589	2.50% ADDCOM PUS
+T4	Terms 283 338	4,500sshex / 7,000c at Paranagua and 6,000c at Antonina
+T5	Load_Place 151 160	Barcelona
+T6	Disch_Place 177 209	Paranagua chopt Antonina, Brazil
+R1	How Arg1:T1 Arg2:T4	
+R2	To Arg1:T1 Arg2:T6	
+R3	From Arg1:T1 Arg2:T5	
+R4	When Arg1:T1 Arg2:T2	
+R5	Commission Arg1:T1 Arg2:T3	

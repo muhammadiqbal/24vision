@@ -1,0 +1,9 @@
+T1	Load_Place 405 412	Isdemir
+T2	Disch_Place 415 431	Sagunto –  SPAIN
+T3	Cargo 435 486	in chopt  Min. / Max. 15.113 / 16.705 M.Tons of HRC
+T4	Terms 511 541	6.500 Shinc / 5 days Sshex-eiu
+T5	Laycan 490 508	20 – 21 April 2017
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T5	
+R4	How Arg1:T3 Arg2:T4	

@@ -1,0 +1,67 @@
+T1	Load_Place 550 556	MERSIN
+T2	Load_Place 741 751	Constantza
+T3	Load_Place 995 1003	Shanghai
+T4	Load_Place 1241 1250	Cartagena
+T5	Load_Place 1711 1721	ISKENDERUN
+T6	Load_Place 1812 1819	MARMARA
+T7	Load_Place 1937 1944	Kherson
+T8	Disch_Place 1948 1955	Marmara
+T9	Cargo 1958 1972	3000/10 WBP 54
+T10	Terms 1977 1991	1000/1000 x be
+T11	Laycan 1992 2000	05-07.04
+T12	Commission 2001 2010	3.75% IAC
+T13	Disch_Place 1823 1830	T.BASHI
+T14	Cargo 1833 1885	UP TO FCC GENERALS U/O DECK  (NEED ARND 220-240 CBF)
+T15	Laycan 1890 1903	10-15/04/2017
+T16	Terms 1908 1916	TTL DAYS
+T17	Commission 1917 1930	TTL 3.75% IAC
+T18	Disch_Place 1725 1732	ANTWERP
+T19	Cargo 1735 1762	ABT 1850 MTS STEEL PRODUCTS
+T20	Terms 1763 1769	900 BE
+T21	Laycan 1770 1781	16/22 APRIL
+T22	Commission 1782 1791	3.75% IAC
+T23	Disch_Place 1253 1262	Djen Djen
+T24	Cargo 1263 1330	ttl  10 voyages with abt 150 pipes but not all on consecutive basis
+T25	Commission 1482 1490	5.0% iac
+T27	Laycan 1051 1073	starting sept/oct 2017
+T28	Commission 1192 1200	5.0% iac
+T29	Cargo 1149 1187	620/650 pipes = abt   6.820 / 7.150 mt
+T30	Disch_Place 756 770	Fort De France
+T31	Cargo 771 804	1 radiation + 1 convection module
+T32	Commission 980 988	5.0% iac
+T33	Laycan 925 975	as fm  31/07/17  dely at dischport latest 01/09/17
+T34	Disch_Place 560 565	TAMPA
+T35	Cargo 568 581	83 STEELPIPES
+T36	Laycan 604 614	10TH APRIL
+T37	Terms 631 646	TTL W  900MTONS
+R1	To Arg1:T35 Arg2:T34	
+R2	From Arg1:T35 Arg2:T1	
+R3	When Arg1:T35 Arg2:T36	
+R4	How Arg1:T35 Arg2:T37	
+R5	To Arg1:T31 Arg2:T30	
+R6	From Arg1:T31 Arg2:T2	
+R7	When Arg1:T31 Arg2:T33	
+R8	Commission Arg1:T31 Arg2:T32	
+R9	When Arg1:T29 Arg2:T27	
+R10	From Arg1:T29 Arg2:T3	
+T26	Disch_Place 1007 1017	Chittagong
+R11	To Arg1:T29 Arg2:T26	
+R12	Commission Arg1:T29 Arg2:T28	
+R13	To Arg1:T24 Arg2:T23	
+R14	From Arg1:T24 Arg2:T4	
+R15	Commission Arg1:T24 Arg2:T25	
+R16	To Arg1:T19 Arg2:T18	
+R17	From Arg1:T19 Arg2:T5	
+R18	How Arg1:T19 Arg2:T20	
+R19	When Arg1:T19 Arg2:T21	
+R20	Commission Arg1:T19 Arg2:T22	
+R21	To Arg1:T14 Arg2:T13	
+R22	From Arg1:T14 Arg2:T6	
+R23	When Arg1:T14 Arg2:T15	
+R24	How Arg1:T14 Arg2:T16	
+R25	Commission Arg1:T14 Arg2:T17	
+R26	To Arg1:T9 Arg2:T8	
+R27	From Arg1:T9 Arg2:T7	
+R28	How Arg1:T9 Arg2:T10	
+R29	When Arg1:T9 Arg2:T11	
+R30	Commission Arg1:T9 Arg2:T12	

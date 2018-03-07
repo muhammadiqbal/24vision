@@ -1,0 +1,11 @@
+T1	Laycan 268 272	SPOT
+T2	Cargo 220 248	1,500 MTS OF BGD CGO SLINGED
+T3	Load_Place 249 253	SFAX
+T4	Disch_Place 256 263	TARTOUS
+T5	Terms 273 282	4 TTL DYS
+T6	Commission 287 295	1.25 TTL
+R1	Commission Arg1:T2 Arg2:T6	
+R2	How Arg1:T2 Arg2:T5	
+R3	When Arg1:T2 Arg2:T1	
+R4	From Arg1:T2 Arg2:T3	
+R5	To Arg1:T2 Arg2:T4	

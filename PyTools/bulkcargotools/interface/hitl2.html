@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+
+<html>
+<html lang="en-US">
+<head>
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+jQuery 3.2.1 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
+
+<!--Bootstrap Framework 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+
+<!-- Own Styles and scripts 
+<link rel="stylesheet" type="text/css" href="style.css">-->
+<style>
+	.btn.active {
+		background-color: #df2825;
+		color: #fff;
+	}
+	
+	#classification-buttons {
+	margin-bottom: 3em; 
+	}
+	
+	#textarea-body {
+			width: 100%;
+	}
+	
+	.col-centered{
+			float: none;
+			margin: 0 auto;
+		}
+</style>
+<script>
+	jQuery("#classification-buttons .btn").on("click", function(){
+		jQuery("#classification-buttons .btn").removeClass("active");
+		jQuery(this).addClass("active");
+	});
+</script>
+ </head>
+
+<body>
+
+<div class="container">
+	<div class="page-header">
+	  <h1>24Vision <small>Human in the Loop - Correct the Classification</small></h1>
+	</div>
+ </div>
+ <br>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<span class="label label-warning" style="font-size: 120%; display: block; padding-top: 5px; padding-bottom: 5px; margin-top: 5px; float: left;">Auto: Ship - Confidence: 35%</span>
+		</div>
+		<div class="col-md-6">
+				<div class="btn-group" id="classification-buttons" role="group" aria-label="Classification Options" style="margin-bottom: 10px;">
+					  <button type="button" id="classification-btn-ship" class="btn btn-secondary active">Ship</button>
+					  <button type="button" id="classification-btn-cargo" class="btn btn-secondary">Cargo</button>
+					  <button type="button" id="classification-btn-order" class="btn btn-secondary">Order</button>
+					  <button type="button" id="classification-btn-report" class="btn btn-secondary">Report</button>
+					  <button type="button" id="classification-btn-spam" class="btn btn-secondary">Spam</button>
+				</div> 
+		</div>
+		<div class="col-md-3">
+				 <button type="button" style="float: right;" class="btn btn-primary" onclick="alert('Hello World!')">Next Email</button>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+		
+			<textarea name="Email" id="textarea-body" rows="20" align ="right">Email Body</textarea> 
+		</div>
+		<div class="col-md-3">
+		
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

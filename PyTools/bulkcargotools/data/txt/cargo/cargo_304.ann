@@ -1,0 +1,13 @@
+T1	Commodity 102 116	sunflower meal
+T2	Load_Place 621 629	Bordeaux
+T3	Disch_Place 633 652	KInsale belfast rge
+T4	Cargo 655 702	Fm 2500 up to 3200 MT sunflower meal stw abt 62
+T5	Terms 703 712	2000/2000
+T6	Laycan 713 720	Week 16
+T7	Commission 721 730	3.75% iac
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T2	
+R3	How Arg1:T4 Arg2:T5	
+R4	When Arg1:T4 Arg2:T6	
+R5	Commission Arg1:T4 Arg2:T7	
+R6	Including Arg1:T4 Arg2:T1	

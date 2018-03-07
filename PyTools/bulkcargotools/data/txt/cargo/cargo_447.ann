@@ -1,0 +1,17 @@
+T1	Commodity 130 146	WHITE LIME STONE
+T2	Quantity 122 129	21000MT
+R1	What Arg1:T2 Arg2:T1	
+T3	Cargo 431 458	21,000 Mts White lime stone
+T4	Laycan 535 546	1-5th April
+T5	Load_Place 465 482	Nghi son, Vietnam
+T6	Disch_Place 487 507	Chittagong anchorage
+T7	Terms 517 526	5500/2000
+T8	Port_No 562 565	1/1
+T9	Commission 592 600	2.5% pus
+R2	From Arg1:T3 Arg2:T5	
+R3	To Arg1:T3 Arg2:T6	
+R4	How Arg1:T3 Arg2:T7	
+R5	When Arg1:T3 Arg2:T4	
+R6	No_Of_Ports Arg1:T3 Arg2:T8	
+R7	Commission Arg1:T3 Arg2:T9	
+R8	Content Arg1:T3 Arg2:T2	

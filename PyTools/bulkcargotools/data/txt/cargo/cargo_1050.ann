@@ -1,0 +1,11 @@
+T2	Terms 406 450	6000 sshinc/3000 sshinc - laytime reversible
+T3	Laycan 385 402	25/30 april, 2017
+T4	Disch_Place 331 337	Kandla
+T5	Cargo 143 184;208 247	19-19,500 mts in owns option clay in bulk + 300-400 mts in chopt clay in big-bags
+T1	Commission 454 476	2.5adc + 1.25 pct Bery
+R1	To Arg1:T5 Arg2:T4	
+R2	When Arg1:T5 Arg2:T3	
+R3	How Arg1:T5 Arg2:T2	
+R4	Commission Arg1:T5 Arg2:T1	
+T6	Load_Place 272 281	Nika-Tera
+R5	From Arg1:T5 Arg2:T6	

@@ -1,0 +1,11 @@
+T1	Load_Place 642 650	Klaipeda
+T2	Disch_Place 654 668	New Castle, UK
+T3	Cargo 671 691	Cable Reels, 2 units
+T4	Laycan 791 805	16-19 APR 2017
+T5	Terms 810 839	12 hrs sshinc / 12 hrs sshinc
+T6	Commission 873 882	2.5 % ttl
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	

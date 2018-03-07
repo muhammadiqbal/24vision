@@ -1,0 +1,13 @@
+T2	Laycan 978 986	May 2017
+T3	Terms 957 971	5000 mts bends
+T4	Load_Place 836 881	Argentina (Bahia Blanca or Necochea in chopt)
+T5	Disch_Place 885 891	Lisbon
+T6	Cargo 894 947	min 7000 upto max 15000 mts Sunflower Seeds (abt 85')
+R1	To Arg1:T6 Arg2:T5	
+R2	From Arg1:T6 Arg2:T4	
+R3	How Arg1:T6 Arg2:T3	
+R4	When Arg1:T6 Arg2:T2	
+T7	Commodity 180 195	Sunflower Seeds
+R6	Including Arg1:T6 Arg2:T7	
+T1	Commission 993 1001	5.0% iac
+R5	Commission Arg1:T6 Arg2:T1	

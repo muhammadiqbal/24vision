@@ -1,0 +1,13 @@
+T2	Cargo 322 334;344 366	Steel Billet 15,000MT (+/-5% MOLCO)
+T3	Load_Place 385 396	Sohar, Oman
+T4	Disch_Place 435 453	Jakarta, Indonesia
+T5	Laycan 475 493	1st - 5th May 2017
+T7	Commission 1403 1412	3.75% ttl
+R1	From Arg1:T2 Arg2:T3	
+T1	Commodity 94 106	Steel Billet
+R2	To Arg1:T2 Arg2:T4	
+R3	When Arg1:T2 Arg2:T5	
+T6	Terms 671 774;778 799	Loading rate : 5,000 MT (with 4 x 30 MT SWL Cranes)  OR 4,000 MT (with 4 x 25 MT SWL Cranes) PDPR PWWD. Discharing rate : CQD
+R4	How Arg1:T2 Arg2:T6	
+R5	Commission Arg1:T2 Arg2:T7	
+R6	Including Arg1:T2 Arg2:T1	

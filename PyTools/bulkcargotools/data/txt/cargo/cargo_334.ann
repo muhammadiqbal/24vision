@@ -1,0 +1,13 @@
+T1	Commodity 83 87	coal
+T2	Load_Place 588 600	Novorossiysk
+T3	Disch_Place 604 613	Zonguldak
+T4	Cargo 616 636	7500 10% coal, sf 45
+T5	Terms 637 654	3000c12tt/1500xuu
+T6	Laycan 655 666	28.04/02.05
+T7	Commission 667 676	3.75% iac
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T2	
+R3	How Arg1:T4 Arg2:T5	
+R4	When Arg1:T4 Arg2:T6	
+R5	Commission Arg1:T4 Arg2:T7	
+R6	Including Arg1:T4 Arg2:T1	

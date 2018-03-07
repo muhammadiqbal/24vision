@@ -1,0 +1,11 @@
+T1	Cargo 221 259;289 333	about 11,000/35,000 mtons singledecker for loading bulk humanitarian food aid cargo
+T2	Load_Place 361 371	Port Sudan
+T4	Laycan 733 741;772 784	28 April / 5 May 2017
+T6	Commission 1110 1121	2.5 pct ttl
+R1	From Arg1:T1 Arg2:T2	
+T3	Disch_Place 446 460;463 515	in Charterers’ option out of Berbera and/or Djibouti and/or Mombasa
+R2	To Arg1:T1 Arg2:T3	
+R3	When Arg1:T1 Arg2:T4	
+T5	Terms 819 847;862 902;905 965;979 1030	LOADRATE    2,500 mtons pwwd DISCH RATE  Berbera     2,500 mtons pwwd Djibouti    5,000 mtons pwwd chopt 4,000 or 2,000 mtons pwwd Mombasa     9,000 mtons pwwd choot 3,800 mtons pwwd
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	

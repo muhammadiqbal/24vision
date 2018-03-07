@@ -1,0 +1,11 @@
+T1	Cargo 146 197	41,500/10pct moloo ferts (34/10 MAP + 7,500/10 DAP)
+T2	Load_Place 198 210	Ras Al Khair
+T3	Disch_Place 213 232	Rio Grande + Itaqui
+T4	Terms 233 266	12,000 fhex uu / 5000sc + 2,500sc
+T5	Laycan 267 275	14-16Apr
+T6	Commission 276 290	2.5adcom pstus
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	How Arg1:T1 Arg2:T4	
+R4	When Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	

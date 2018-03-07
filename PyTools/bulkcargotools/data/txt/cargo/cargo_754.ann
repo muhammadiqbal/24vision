@@ -1,0 +1,15 @@
+T3	Load_Place 367 376	Constanta
+T4	Disch_Place 417 424	Mukalla
+T5	Terms 456 500	3000/1500 Tons Pwwd Sshex/Fhex Bss Eiu Bends
+T6	Laycan 509 527	15 – 30 April 2017
+T7	Port_No 588 591	1/1
+T1	Commodity 177 182	WHEAT
+T2	Cargo 298 355	12000 Tons +/- 5Pct Of Bulk Milling Wheat (Stwf Abt = 46)
+T8	Commission 672 688	2.5% Ttl Com Iac
+R1	From Arg1:T2 Arg2:T3	
+R2	To Arg1:T2 Arg2:T4	
+R3	How Arg1:T2 Arg2:T5	
+R4	When Arg1:T2 Arg2:T6	
+R5	No_Of_Ports Arg1:T2 Arg2:T7	
+R6	Commission Arg1:T2 Arg2:T8	
+R7	Including Arg1:T2 Arg2:T1	

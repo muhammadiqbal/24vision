@@ -1,0 +1,7 @@
+T1	Cargo 209 220;237 297	ANIMAL FEED : 25,000 ~ 30,000 MT / SHIPMENT (IN BULK OR 1,000KG BIG BAG)
+T3	Disch_Place 183 197	AMSTERDAM (NL)
+T2	Load_Place 158 175	TUBARAO (ES - BR)
+T4	Commission 483 492	4 pct ttl
+R1	Commission Arg1:T1 Arg2:T4	
+R2	To Arg1:T1 Arg2:T3	
+R3	From Arg1:T1 Arg2:T2	

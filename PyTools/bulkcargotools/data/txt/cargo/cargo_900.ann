@@ -1,0 +1,61 @@
+T1	Cargo 216 242	5,400mt/10% Molco HR Coils
+T5	Cargo 601 628	Abt 25,000mt Steel HRC/Slab
+T6	Cargo 409 434	5,000mt/5% Molco HR Coils
+T7	Port_No 401 404	1/1
+T8	Port_No 591 594	1/1
+T9	Port_No 745 748	1/2
+T11	Port_No 890 893	1/2
+T12	Port_No 1074 1077	1/2
+T13	Commission 1161 1177	2.50% AddCom PUS
+T16	Load_Place 319 333	Kashima, Japan
+T17	Disch_Place 341 353	Ulsan, Korea
+T18	Terms 376 385	CQD bends
+T19	Terms 566 575	CQD bends
+T20	Terms 720 729	CQD bends
+T21	Load_Place 504 519	Fukuyama, Japan
+T22	Disch_Place 527 543	Kwangyang, Korea
+T23	Load_Place 632 646	Dangjin, Korea
+T10	Cargo 753 777	Abt 9,000mt Steel Plates
+T25	Load_Place 781 800	Cigading, Indonesia
+T27	Terms 872 878	CQD be
+T28	Cargo 932 956	Abt 14,000mt Steel Prods
+T29	Load_Place 960 979	Cigading, Indonesia
+T30	Disch_Place 1004 1012;983 993	-Bangkok Kohsichang
+T31	Terms 1056 1062	CQD be
+T24	Disch_Place 650 658;663 672;676 687	Cigading -Surabaya , Indonesia
+T26	Disch_Place 804 810;816 823;829 839	Mumbai -Kandla , WC India
+T2	Laycan 1035 1054	16th/17th Apr. 2017
+R1	From Arg1:T28 Arg2:T29	
+R2	To Arg1:T28 Arg2:T30	
+R3	When Arg1:T28 Arg2:T2	
+R4	How Arg1:T28 Arg2:T31	
+R5	No_Of_Ports Arg1:T28 Arg2:T12	
+R6	Commission Arg1:T28 Arg2:T13	
+R7	From Arg1:T10 Arg2:T25	
+R8	To Arg1:T10 Arg2:T26	
+T14	Laycan 851 870	12th/13th Apr. 2017
+R9	When Arg1:T10 Arg2:T14	
+R10	How Arg1:T10 Arg2:T27	
+R11	No_Of_Ports Arg1:T10 Arg2:T11	
+R12	Commission Arg1:T10 Arg2:T13	
+T4	Laycan 699 718	12th/15th Apr. 2017
+R13	From Arg1:T5 Arg2:T23	
+R14	To Arg1:T5 Arg2:T24	
+R15	When Arg1:T5 Arg2:T4	
+R16	How Arg1:T5 Arg2:T20	
+R17	No_Of_Ports Arg1:T5 Arg2:T9	
+R18	Commission Arg1:T5 Arg2:T13	
+T3	Laycan 457 476	11th/12th Apr. 2017
+R19	When Arg1:T6 Arg2:T3	
+R20	From Arg1:T6 Arg2:T21	
+R21	To Arg1:T6 Arg2:T22	
+R22	How Arg1:T6 Arg2:T19	
+R23	No_Of_Ports Arg1:T6 Arg2:T8	
+T15	Laycan 265 279	04th Apr. 2017
+R24	When Arg1:T1 Arg2:T15	
+R25	From Arg1:T1 Arg2:T16	
+R26	To Arg1:T1 Arg2:T17	
+R27	No_Of_Ports Arg1:T1 Arg2:T7	
+R28	How Arg1:T1 Arg2:T18	
+R29	Commission Arg1:T1 Arg2:T13	
+R30	Commission Arg1:T6 Arg2:T13	

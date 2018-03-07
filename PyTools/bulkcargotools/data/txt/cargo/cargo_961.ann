@@ -1,0 +1,11 @@
+T1	Cargo 178 234	10,000 wmt +/- 3 % in shipper’s ops of Cu concs, in bulk
+T2	Load_Place 235 241	Agadir
+T4	Laycan 269 280	20-27 April
+T5	Terms 281 321	3’000 wmt/WWD SSHEX / 3500t pwwd satshex
+R2	From Arg1:T1 Arg2:T2	
+R3	When Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+T3	Disch_Place 244 268	Aratu or Salvador inchop
+R1	To Arg1:T1 Arg2:T3	
+T6	Commission 322 342	2,5 pct add comm pus
+R5	Commission Arg1:T1 Arg2:T6	

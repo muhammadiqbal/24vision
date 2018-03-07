@@ -1,0 +1,13 @@
+T1	Commission 917 926	3.75% iac
+T2	Terms 877 900	7 TTL DAYS SSHEX / FHEX
+T3	Laycan 866 875	5-8 APRIL
+T4	Load_Place 681 689	Tekirdag
+T5	Disch_Place 693 712	Bejaia & Mostaganem
+T6	Cargo 715 769	Abt 3400 mts chipboard bundles ( TOTAL CBM ABT 5000  )
+R1	To Arg1:T6 Arg2:T5	
+R2	From Arg1:T6 Arg2:T4	
+R3	When Arg1:T6 Arg2:T3	
+R4	How Arg1:T6 Arg2:T2	
+R5	Commission Arg1:T6 Arg2:T1	
+T8	Commodity 141 158	chipboard bundles
+R6	Including Arg1:T6 Arg2:T8	

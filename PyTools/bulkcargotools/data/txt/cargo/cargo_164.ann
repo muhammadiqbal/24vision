@@ -1,0 +1,11 @@
+T1	Commission 876 884	2.5% ttl
+T2	Terms 756 787	15,000/20,000 SHINC – 12 hrs TT
+T3	Laycan 741 749	8/12 May
+T4	Load_Place 683 691	WC INDIA
+T5	Disch_Place 699 706	S.KOREA
+T6	Cargo 709 733	50,000 mt 10% Moloo bulk
+R1	To Arg1:T6 Arg2:T5	
+R2	From Arg1:T6 Arg2:T4	
+R3	When Arg1:T6 Arg2:T3	
+R4	How Arg1:T6 Arg2:T2	
+R5	Commission Arg1:T6 Arg2:T1	

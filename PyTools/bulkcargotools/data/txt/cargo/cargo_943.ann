@@ -1,0 +1,11 @@
+T1	Cargo 178 203	15,000t +/-5% of Cu Concs
+T2	Laycan 405 423	April 24th – May 4
+T3	Commission 424 444	2,5 pct add comm pus
+T4	Terms 281 404	900 WMT PWWD PER WORKABLE HOOK PER WORKABLE HOLD/HATCH FHEX (THU NOON/SAT 8AM) UU IUHATUTC / 3.000 WMT PWWD SHEX UU IUATUTC
+T5	Load_Place 229 241	BANDAR ABBAS
+T6	Disch_Place 250 280	Isabel, Leyte, the Philippines
+R1	From Arg1:T1 Arg2:T5	
+R2	To Arg1:T1 Arg2:T6	
+R3	How Arg1:T1 Arg2:T4	
+R4	When Arg1:T1 Arg2:T2	
+R5	Commission Arg1:T1 Arg2:T3	

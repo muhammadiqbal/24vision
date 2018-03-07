@@ -1,0 +1,7 @@
+T1	Cargo 149 186	43000 mt +/- 10 pct in OO of bulk MOP
+T2	Load_Place 261 280	Klaipeda, Lithuania
+T3	Disch_Place 439 456	Gresik, Indonesia
+T4	Commission 935 955	2.5 pct add comm PUS
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	Commission Arg1:T1 Arg2:T4	

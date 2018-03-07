@@ -1,0 +1,15 @@
+T1	Commodity 57 61	Clay
+T2	Quantity 46 56	26-30k mts
+T3	Cargo 110 134	26/30.000 TONS BULK CLAY
+T4	Load_Place 136 147	CHERNOMORSK
+T5	Disch_Place 150 170	RAVENNA OR CASTELLON
+T6	Laycan 171 186	15 APRIL ONWARD
+T7	Terms 187 193	7 TTLD
+T8	Commission 210 222	CGN 3.75 ttl
+R1	What Arg1:T2 Arg2:T1	
+R2	Content Arg1:T3 Arg2:T2	
+R3	From Arg1:T3 Arg2:T4	
+R4	To Arg1:T3 Arg2:T5	
+R5	When Arg1:T3 Arg2:T6	
+R6	How Arg1:T3 Arg2:T7	
+R7	Commission Arg1:T3 Arg2:T8	

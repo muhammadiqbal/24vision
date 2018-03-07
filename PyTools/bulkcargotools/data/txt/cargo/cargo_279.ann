@@ -1,0 +1,13 @@
+T1	Commission 719 727	5.0% IAC
+T2	Load_Place 733 752	CMT LOUISIANA U.S.A
+T3	Disch_Place 756 766	ISKENDERUN
+T4	Cargo 767 799	55000 MTS, 5% MOLOO COAL IN BULK
+T5	Terms 805 826	50000 MTS / 20000 MTS
+T6	Laycan 833 840	WEEK 18
+T7	Commodity 148 152	COAL
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T2	
+R3	Commission Arg1:T4 Arg2:T1	
+R4	How Arg1:T4 Arg2:T5	
+R5	When Arg1:T4 Arg2:T6	
+R6	Including Arg1:T4 Arg2:T7	

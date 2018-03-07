@@ -1,0 +1,15 @@
+T1	Cargo 216 280	50000 mts bulk aggregate 10-20 mm in size +/- 10% carrier option
+T2	Load_Place 288 294	Kandla
+T3	Disch_Place 330 342	PAYRA BANDAR
+T4	Laycan 363 387	Prompt-Can ntry vsl date
+T6	Commission 468 487	Ttl 2.5% addcom pus
+<<<<<<< HEAD
+T5	Terms 389 417;419 449;451 466	10000 mts pwwd shinc ld rate 3000 mts pwwd fhinc disch rate 12 hrs tt bends
+=======
+T5	Terms 389 417;419 449;451 466	10000 mts pwwd shinc ld rate 3000 mts pwwd fhinc disch rate 12 hrs tt bends
+>>>>>>> a62d00c0e4f470d5d17bb524118d708c933d55c7
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	When Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	

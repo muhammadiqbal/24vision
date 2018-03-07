@@ -1,0 +1,26 @@
+T1	Commodity 130 138	iron ore
+T2	Cargo 282 309	max 25K MT iron ore in bulk
+T3	Laycan 318 330	20-30th, Apr
+T4	Load_Place 351 359	Iran Bik
+T5	Disch_Place 382 399	China  RIVER PORT
+T6	Terms 411 434;436 462	loading rate 5000 fhinc discharge rate 10000 shinc
+T7	Commission 468 478	2.5pct pus
+T8	Cargo 538 564	35000MT.+_10% coal in bulk
+T9	Laycan 573 584	16-19th May
+T10	Load_Place 604 640	MUARA JAWA anchorage east kalimantan
+T11	Disch_Place 665 672	S.China
+T12	Terms 684 706;709 734	Loading rate 8000shinc Discharge rate 12000shinc
+T13	Commission 740 750	2.5pct pus
+R1	Including Arg1:T2 Arg2:T1	
+R2	When Arg1:T2 Arg2:T3	
+R3	From Arg1:T2 Arg2:T4	
+R4	To Arg1:T2 Arg2:T5	
+R5	How Arg1:T2 Arg2:T6	
+R6	Commission Arg1:T2 Arg2:T7	
+R7	When Arg1:T8 Arg2:T9	
+R8	From Arg1:T8 Arg2:T10	
+T14	Commodity 159 163	coal
+R9	To Arg1:T8 Arg2:T11	
+R10	How Arg1:T8 Arg2:T12	
+R11	Commission Arg1:T8 Arg2:T13	
+R12	Including Arg1:T8 Arg2:T14	

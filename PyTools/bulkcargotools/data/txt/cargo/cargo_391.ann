@@ -1,0 +1,27 @@
+T1	Load_Place 552 568	VARNA OR BOURGAS
+T2	Disch_Place 574 581	TUNISIE
+T3	Cargo 582 597	5500/7500 WHEAT
+T4	Terms 602 611	2000/1500
+T5	Commission 625 633	2.5% TTL
+T6	Laycan 614 622	PPT  ONW
+R1	From Arg1:T3 Arg2:T1	
+R2	To Arg1:T3 Arg2:T2	
+R3	How Arg1:T3 Arg2:T4	
+R4	When Arg1:T3 Arg2:T6	
+R5	Commission Arg1:T3 Arg2:T5	
+T7	Load_Place 765 771	Yuzhny
+T8	Disch_Place 775 801	Casablanca  or Jorf Lasfar
+T9	Cargo 804 831	9/11000 mt agriproducts 60’
+T10	Commission 863 872	3.75% iac
+T12	Commission 895 903	2.5% ttl
+T13	Cargo 915 946	60,000 +/- 10% MT MOLOO BAUXITE
+T14	Laycan 955 978	28’April’17 to 4’May’17
+R6	When Arg1:T13 Arg2:T14	
+R7	Commission Arg1:T13 Arg2:T12	
+R10	To Arg1:T9 Arg2:T8	
+R11	From Arg1:T9 Arg2:T7	
+R13	Commission Arg1:T9 Arg2:T10	
+T15	Terms 1006 1031;1032 1060;979 1005	Vizag, VPT- 8000 MT/day + Gangavaram, GPL-12000 MT/day Port Rhoades-14,000 MT/day
+R8	How Arg1:T13 Arg2:T15	
+T11	Laycan 832 852	ppt onw – vssl dates
+R9	When Arg1:T9 Arg2:T11	

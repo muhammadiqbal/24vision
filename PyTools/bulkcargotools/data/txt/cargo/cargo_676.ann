@@ -1,0 +1,18 @@
+T1	Cargo 266 333	5 Shipments of each 45.000-50.000 mts Olivine sand in bulk, stw dwt
+T2	Load_Place 375 392	Aaheim, WC Norway
+T3	Disch_Place 436 450	Kotka, Finland
+T4	Terms 634 662;665 697	Loading 24,000 mts sshinc wp - Discharge 20,000 mts sshinc wp
+T5	Commission 817 824	2,5 pct
+T6	Cargo 1209 1268	11 Shipments of each 20.000-25.000 mts Olivine sand in bulk
+T7	Load_Place 1319 1336	Aaheim, WC Norway
+T8	Disch_Place 1380 1395	Mukran, Germany
+T9	Terms 1595 1623;1626 1658	Loading 24,000 mts sshinc wp - Discharge 20,000 mts sshinc wp
+T10	Commission 1778 1785	2,5 pct
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	How Arg1:T1 Arg2:T4	
+R4	Commission Arg1:T1 Arg2:T5	
+R5	From Arg1:T6 Arg2:T7	
+R6	To Arg1:T6 Arg2:T8	
+R7	How Arg1:T6 Arg2:T9	
+R8	Commission Arg1:T6 Arg2:T10	

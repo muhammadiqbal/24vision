@@ -1,0 +1,15 @@
+T1	Quantity 130 140	5.000mtons
+T2	Commission 704 718	5.0% IAC 3.75%
+T3	Load_Place 720 732	Novorossiysk
+T4	Disch_Place 745 753	Damietta
+T6	Terms 786 795	2500/2500
+T7	Laycan 797 808	spot/prompt
+T8	Commodity 141 144	hrc
+R1	What Arg1:T1 Arg2:T8	
+T5	Cargo 756 770	5.000mtons hrc
+R2	To Arg1:T5 Arg2:T4	
+R3	From Arg1:T5 Arg2:T3	
+R4	How Arg1:T5 Arg2:T6	
+R5	When Arg1:T5 Arg2:T7	
+R6	Commission Arg1:T5 Arg2:T2	
+R7	Content Arg1:T5 Arg2:T1	

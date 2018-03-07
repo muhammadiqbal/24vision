@@ -1,0 +1,15 @@
+T1	Quantity 130 135	30kmt
+T2	Commodity 136 142	gypsum
+R1	What Arg1:T1 Arg2:T2	
+T3	Cargo 257 278	30,000 MT Bulk Gypsum
+T4	Load_Place 280 292	Bandar Abbas
+T5	Disch_Place 297 306	Indonesia
+T6	Terms 308 347	8000 mt pwwd fhinc / 4000 mt pwwd shinc
+T7	Laycan 349 371	Spot / ppt - try dates
+T8	Commission 373 387	2.5% adcom pus
+R2	From Arg1:T3 Arg2:T4	
+R3	To Arg1:T3 Arg2:T5	
+R4	How Arg1:T3 Arg2:T6	
+R5	When Arg1:T3 Arg2:T7	
+R6	Commission Arg1:T3 Arg2:T8	
+R7	Content Arg1:T3 Arg2:T1	

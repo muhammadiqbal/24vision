@@ -1,0 +1,17 @@
+T1	Cargo 434 470	21000mts white lime stone size 1-5cm
+T2	Load_Place 472 480	Nghi son
+T3	Disch_Place 482 492	Chittagong
+T4	Laycan 525 537	5-10th April
+T5	Commission 571 579	2.5% pus
+T6	Terms 505 516	5,500/2,000
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	How Arg1:T1 Arg2:T6	
+R4	When Arg1:T1 Arg2:T4	
+R5	Commission Arg1:T1 Arg2:T5	
+T7	Port_No 560 563	1/1
+T8	Commodity 130 146	WHITE LIME STONE
+T9	Quantity 122 129	21000MT
+R6	What Arg1:T9 Arg2:T8	
+R7	Content Arg1:T1 Arg2:T9	
+R8	No_Of_Ports Arg1:T1 Arg2:T7	

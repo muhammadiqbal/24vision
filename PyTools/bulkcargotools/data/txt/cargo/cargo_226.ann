@@ -1,0 +1,25 @@
+T1	Load_Place 658 679	Houston + Missi River
+T2	Disch_Place 683 688	Aqaba
+T3	Cargo 696 757	25000 mt 10pct bulk wheat 43’ + 25.000 mt 10pct bulk corn 47’
+T4	Laycan 759 763	spot
+T5	Terms 765 776	8000 / 4000
+T6	Commission 780 789	3.75% iac
+T7	Load_Place 802 809	Houston
+T8	Disch_Place 813 819	Jeddah
+T9	Cargo 822 847	60.000 mt 10pct wheat 43’
+T10	Laycan 849 858	1/10  May
+T11	Terms 860 870	10000/4000
+T12	Commission 874 883	3.75% iac
+T13	Commodity 122 127	GRAIN
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+R6	To Arg1:T9 Arg2:T8	
+R7	From Arg1:T9 Arg2:T7	
+R8	When Arg1:T9 Arg2:T10	
+R9	How Arg1:T9 Arg2:T11	
+R10	Commission Arg1:T9 Arg2:T12	
+R11	Including Arg1:T3 Arg2:T13	
+R12	Including Arg1:T9 Arg2:T13	

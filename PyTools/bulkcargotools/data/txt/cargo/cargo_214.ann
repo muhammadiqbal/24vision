@@ -1,0 +1,15 @@
+T1	Commission 408 416	5.0% iac
+T2	Laycan 399 405	prompt
+T3	Terms 370 396	5000 mt pwwd//2500 mt pwwd
+T4	Load_Place 333 351	Rosario, Argentina
+T5	Disch_Place 355 368	Saleef, Yemen
+T7	Quantity 132 143	30/40000 mt
+T8	Commodity 148 153	grain
+R1	What Arg1:T7 Arg2:T8	
+T6	Cargo 288 296;313 331	30-40000 mt blk grain sf 72
+R2	To Arg1:T6 Arg2:T5	
+R3	From Arg1:T6 Arg2:T4	
+R4	How Arg1:T6 Arg2:T3	
+R5	When Arg1:T6 Arg2:T2	
+R6	Commission Arg1:T6 Arg2:T1	
+R7	Content Arg1:T6 Arg2:T7	

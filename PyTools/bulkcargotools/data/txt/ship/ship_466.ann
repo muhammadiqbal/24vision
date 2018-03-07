@@ -1,0 +1,9 @@
+T1	Ship 446 461	M/V KUMANO LILY
+T2	Loading_Place 470 479	DJEN DJEN
+T3	Open_Date 484 502	12-14TH APRIL 2017
+T4	Year 514 518	2009
+T5	DWT 678 684	32,292
+R1	Built Arg1:T1 Arg2:T4	
+R2	Located Arg1:T1 Arg2:T2	
+R3	When Arg1:T1 Arg2:T3	
+R4	Contain Arg1:T1 Arg2:T5	

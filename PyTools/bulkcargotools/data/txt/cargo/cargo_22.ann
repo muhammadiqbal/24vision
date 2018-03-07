@@ -1,0 +1,13 @@
+T1	Load_Place 784 788	Novo
+T2	Disch_Place 792 797	Varna
+T3	Cargo 800 829	3.500 mts 2% chopt alum prods
+T4	Terms 832 856	1500 sshinc / 1000 sshex
+T5	Commission 878 886	2.5% ttl
+T6	Laycan 858 876	12 / 14 April 2017
+T7	Commodity 131 141	alum prods
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	How Arg1:T3 Arg2:T4	
+R4	When Arg1:T3 Arg2:T6	
+R5	Commission Arg1:T3 Arg2:T5	
+R6	Including Arg1:T3 Arg2:T7	

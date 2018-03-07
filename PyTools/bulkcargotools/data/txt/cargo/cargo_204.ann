@@ -1,0 +1,13 @@
+T1	Load_Place 699 715	Valencia (Spain)
+T2	Disch_Place 719 736	Kherson (Ukraine)
+T4	Terms 814 835	ttl days sshex eiu be
+T5	Laycan 841 849	May 2017
+T6	Commission 851 860	3.75% iac
+T7	Commodity 147 162	sodium sulphate
+T3	Cargo 739 773	abt 1500 mts sodium sulphate in bb
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	How Arg1:T3 Arg2:T4	
+R4	When Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+R6	Including Arg1:T3 Arg2:T7	

@@ -1,0 +1,11 @@
+T1	Load_Place 243 251	Luderitz
+T2	Disch_Place 258 269	Porto Vesme
+T3	Terms 288 332	4000 ssinc hols excl/ 3000 sshex fr 17/mo 08
+T4	Commission 333 348	2.5 add com pus
+T5	Laycan 229 238	20-27 apr
+T6	Cargo 186 228	11’000 wmt 3pcs molchopt  zn concs in bulk
+R1	When Arg1:T6 Arg2:T5	
+R2	To Arg1:T6 Arg2:T2	
+R3	From Arg1:T6 Arg2:T1	
+R4	How Arg1:T6 Arg2:T3	
+R5	Commission Arg1:T6 Arg2:T4	

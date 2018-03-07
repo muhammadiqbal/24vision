@@ -1,0 +1,15 @@
+T1	Quantity 119 131	10/17000 DWT
+T2	Load_Place 683 691	MISURATA
+T3	Disch_Place 695 705	ISKENDERUN
+T4	Cargo 708 741	10/17000 DWT F+C CC SCRAP IN BULK
+T5	Laycan 744 748	SPOT
+T6	Terms 750 758	TTL DAYS
+T7	Commission 760 768	2.5% TTL
+T8	Commodity 139 144	SCRAP
+R1	What Arg1:T1 Arg2:T8	
+R2	To Arg1:T4 Arg2:T3	
+R3	From Arg1:T4 Arg2:T2	
+R4	When Arg1:T4 Arg2:T5	
+R5	How Arg1:T4 Arg2:T6	
+R6	Commission Arg1:T4 Arg2:T7	
+R7	Including Arg1:T4 Arg2:T8	

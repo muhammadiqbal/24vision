@@ -1,0 +1,13 @@
+T1	Commodity 93 106	milling wheat
+T2	Cargo 674 715	About 133,334 +/ -5 % mt of milling wheat
+T3	Load_Place 846 864;876 897;906 930;942 960;972 989	Ukraine     Odessa Romania     Constanta Russia      Novorossiysk Russia      Tuapse Russia      Taman
+T4	Disch_Place 789 797	Djibouti
+T5	Terms 1390 1413;1414 1445	Load Rate: 6000MT SSHEX -  Discharge Rate :2750mt FHINC
+T6	Commission 1458 1466	5.0% IAC
+R1	To Arg1:T2 Arg2:T4	
+R2	From Arg1:T2 Arg2:T3	
+R3	How Arg1:T2 Arg2:T5	
+R4	Commission Arg1:T2 Arg2:T6	
+T7	Laycan 1227 1239;1267 1281;1309 1322	1-7 may 2017 14-20 may 2017 1-7 June 2017
+R5	When Arg1:T2 Arg2:T7	
+R6	Including Arg1:T2 Arg2:T1	

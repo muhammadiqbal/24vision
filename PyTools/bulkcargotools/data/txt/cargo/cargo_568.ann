@@ -1,0 +1,11 @@
+T1	Commodity 124 128	Urea
+T2	Cargo 288 302;314 329	Urea – Prilled 30,000 mt +/-5%
+T3	Load_Place 342 361	Meiseed port, Qatar
+T4	Disch_Place 404 422	vizag OR kakkinada
+T5	Laycan 467 481	1-5th may 2017
+T6	Commission 493 501	2.5% pus
+R1	Including Arg1:T2 Arg2:T1	
+R2	From Arg1:T2 Arg2:T3	
+R3	To Arg1:T2 Arg2:T4	
+R4	When Arg1:T2 Arg2:T5	
+R5	Commission Arg1:T2 Arg2:T6	

@@ -1,0 +1,11 @@
+T2	Cargo 192 221	34000/5% mol avg stow abt 50'
+T3	Load_Place 229 238	missriver
+T5	Terms 292 327	8000sshex/3000spmsx + 5000c + 5000c
+T6	Laycan 329 336	ppt onw
+T7	Commission 339 347	1.25 pas
+R2	Commission Arg1:T2 Arg2:T7	
+R3	From Arg1:T2 Arg2:T3	
+R4	When Arg1:T2 Arg2:T6	
+R5	How Arg1:T2 Arg2:T5	
+T1	Disch_Place 246 259;265 276;281 290	pto cabello + cristobal + sta marta
+R1	To Arg1:T2 Arg2:T1	

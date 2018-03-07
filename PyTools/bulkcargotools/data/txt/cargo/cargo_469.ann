@@ -1,0 +1,11 @@
+T1	Commodity 132 139	PETCOKE
+T2	Cargo 388 408;419 447	Pet Coke as per MSDS 12000 mt +/- 10 Pct choption
+T3	Laycan 458 467	7/9 APRIL
+T4	Commission 611 618	2.5 pus
+T5	Disch_Place 571 581	SOHAR/OMAN
+T6	Load_Place 480 535	YASREF/ KING FAHAD INDISTRIAL PORT, YAMBU, SAUDI ARABIA
+R1	When Arg1:T2 Arg2:T3	
+R2	From Arg1:T2 Arg2:T6	
+R3	To Arg1:T2 Arg2:T5	
+R4	Commission Arg1:T2 Arg2:T4	
+R5	Including Arg1:T2 Arg2:T1	

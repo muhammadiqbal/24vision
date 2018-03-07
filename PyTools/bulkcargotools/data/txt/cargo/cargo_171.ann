@@ -1,0 +1,11 @@
+T1	Commission 752 761	3.75% IAC
+T2	Terms 740 750	8000/ 8000
+T3	Laycan 717 738	25th April / 10th May
+T4	Load_Place 657 663	Turkey
+T5	Disch_Place 667 672	China
+T6	Cargo 675 715	Any 15/50.000 MTS harmless bulk minerals
+R1	To Arg1:T6 Arg2:T5	
+R2	From Arg1:T6 Arg2:T4	
+R3	When Arg1:T6 Arg2:T3	
+R4	How Arg1:T6 Arg2:T2	
+R5	Commission Arg1:T6 Arg2:T1	

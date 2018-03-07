@@ -1,0 +1,15 @@
+T1	Commodity 77 83	STEELS
+T2	Quantity 65 73	4000 MTS
+T3	Load_Place 577 585	TSIGGELI
+T4	Disch_Place 589 593	CTZA
+T5	Cargo 596 614	4000 MTS OF STEELS
+T6	Laycan 623 633	9/11 APRIL
+T7	Terms 634 646	4,5 TTL DAYS
+T8	Commission 647 655	5.0% IAC
+R1	Commission Arg1:T5 Arg2:T8	
+R2	How Arg1:T5 Arg2:T7	
+R3	When Arg1:T5 Arg2:T6	
+R4	To Arg1:T5 Arg2:T4	
+R5	From Arg1:T5 Arg2:T3	
+R6	Content Arg1:T5 Arg2:T2	
+R7	What Arg1:T2 Arg2:T1	

@@ -91,7 +91,23 @@ class Ship extends Model
      * @var array
      */
     public static $rules = [
-        
+        'name' => 'required|string',
+        'imo' => 'string',
+        'year_of_build' => 'date',
+        'dwcc' => 'integer',
+        'fuel_type_id' => 'integer',
+        'flag' => 'string',
+        'ship_type_id' => 'integer',
+        'ship_specialization_id' => 'integer',
+        'gear_onboard' => 'string',
+        'additional_information' => 'string',
+        'fuel_consumption_at_sea'=> 'numeric',
+        'fuel_consumption_in_port'=>'numeric',
+        'ballast_draft'=>'numeric',
+        'max_laden_draft'=>'numeric',
+        'draft_per_tonnage'=>'numeric',
+        'speed_laden'=>'numeric',
+        'speed_ballast'=>'numeric'
     ];
 
     /**

@@ -1,0 +1,11 @@
+T1	Commodity 100 110	STEEL PROD
+T2	Load_Place 609 611	PG
+T3	Disch_Place 619 628	CONTINENT
+T4	Cargo 631 669	ABT 2,500 MT (+/- 5% chopt) STEEL PROD
+T6	Commission 745 754	3.75% IAC
+T5	Terms 716 744	BENDS, fshex eiu / sshex eiu
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T2	
+R3	How Arg1:T4 Arg2:T5	
+R4	Commission Arg1:T4 Arg2:T6	
+R5	Including Arg1:T4 Arg2:T1	

@@ -1,0 +1,27 @@
+T1	Open_Date 399 405	16 Apr
+T2	Loading_Place 387 397	Iskenderen
+T3	Ship 377 385	In Iwagi
+T4	Open_Date 328 337	13-14 Apr
+T5	Loading_Place 318 326	New York
+T6	Ship 299 316	Captain Andreadis
+T7	Ship 226 232	Samsun
+T8	Loading_Place 234 241	Navlaki
+T9	Open_Date 243 249	11 Apr
+T10	Year 510 519	2012/2013
+T11	DWT 521 527	63,250
+T12	Year 3987 3991	2014
+T13	DWT 4014 4020	61,411
+T14	DWT 1397 1403	58,760
+T15	Year 1437 1441	2008
+R1	Built Arg1:T3 Arg2:T12	
+R2	Contain Arg1:T3 Arg2:T13	
+R3	Located Arg1:T3 Arg2:T2	
+R4	When Arg1:T3 Arg2:T1	
+R5	Contain Arg1:T6 Arg2:T14	
+R6	Built Arg1:T6 Arg2:T15	
+R7	Located Arg1:T6 Arg2:T5	
+R8	When Arg1:T6 Arg2:T4	
+R9	Contain Arg1:T7 Arg2:T11	
+R10	Built Arg1:T7 Arg2:T10	
+R11	Located Arg1:T7 Arg2:T8	
+R12	When Arg1:T7 Arg2:T9	

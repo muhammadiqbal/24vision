@@ -1,0 +1,53 @@
+T1	Load_Place 550 568	HAIFA OR ASHDOD OO
+T2	Disch_Place 572 577	IZMIR
+T3	Cargo 580 616	ABT 1600 CBM - 450 MTS GENERAL CARGO
+T4	Terms 628 651	4 TTL DAYS XX EIU BENDS
+T5	Commission 729 737	2.5% TTL
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	How Arg1:T3 Arg2:T4	
+R4	Commission Arg1:T3 Arg2:T5	
+T6	Load_Place 754 764	ISKENDERUN
+T7	Disch_Place 768 775	ANTWERP
+T8	Cargo 778 800	900 MTS STEEL PRODUCTS
+T9	Laycan 801 811	3/15 APRIL
+T10	Terms 812 822	2 TTL DAYS
+T11	Commission 823 832	3.75% IAC
+R5	To Arg1:T8 Arg2:T7	
+R6	From Arg1:T8 Arg2:T6	
+R7	When Arg1:T8 Arg2:T9	
+R8	How Arg1:T8 Arg2:T10	
+R9	Commission Arg1:T8 Arg2:T11	
+T12	Load_Place 841 847	Aveiro
+T13	Disch_Place 853 859	Sousse
+T14	Cargo 862 903	abt 3400nett cbm of Chipboard in packages
+T15	Laycan 905 914	4-5 April
+T16	Commission 983 991	2.5% ttl
+T17	Load_Place 1008 1013	NADOR
+T18	Disch_Place 1017 1024	TUNISIA
+T19	Cargo 1027 1050	5000 mts 5% kaolin clay
+T20	Laycan 1051 1062	03/09 April
+T21	Terms 1063 1074	3500c/3000c
+T22	Commission 1075 1083	2.5% TTL
+R10	To Arg1:T19 Arg2:T18	
+R11	From Arg1:T19 Arg2:T17	
+R12	When Arg1:T19 Arg2:T20	
+R13	How Arg1:T19 Arg2:T21	
+R14	Commission Arg1:T19 Arg2:T22	
+T23	Terms 941 962	5 Ttlwwdays sshex eiu
+R15	To Arg1:T14 Arg2:T13	
+R16	From Arg1:T14 Arg2:T12	
+R17	When Arg1:T14 Arg2:T15	
+R18	How Arg1:T14 Arg2:T23	
+R19	Commission Arg1:T14 Arg2:T16	
+T24	Commission 1115 1123	5.0% IAC
+T25	Load_Place 1125 1130	AQABA
+T26	Disch_Place 1136 1143	MARMARA
+T27	Cargo 1146 1173	5000/10 MOLOO BULK DAP  DWT
+T28	Laycan 1174 1184	1/10 APRIL
+T29	Terms 1185 1205	3000 FHEX/2500 SSHEX
+R20	Commission Arg1:T27 Arg2:T24	
+R21	To Arg1:T27 Arg2:T26	
+R22	From Arg1:T27 Arg2:T25	
+R23	When Arg1:T27 Arg2:T28	
+R24	How Arg1:T27 Arg2:T29	

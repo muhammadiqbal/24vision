@@ -1,0 +1,7 @@
+T1	Cargo 240 302	25,000 mts +/- 10% OO wood pellets in bulk 1:1, SF abt 55 cuft
+T2	Laycan 316 324	5-11 May
+T3	Terms 327 380;382 442	Load: Riga RCT terminal, 6,000 mt SSHINC WWD 12HRS TT Discharge: Tyne OR Immingham, 10,000 mt SSHINC WWD 12 HRS TT
+T4	Commission 465 471	3.75pu
+R1	When Arg1:T1 Arg2:T2	
+R2	How Arg1:T1 Arg2:T3	
+R3	Commission Arg1:T1 Arg2:T4	

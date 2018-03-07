@@ -1,0 +1,13 @@
+T2	Load_Place 695 699	Riga
+T5	Laycan 799 805	Prompt
+T6	Terms 807 823	4200 / 1700 c be
+T7	Commission 825 833	5.0% IAC
+T8	Commodity 154 164	birch logs
+T1	Cargo 727 797	25.000 ts 10pct moloo small birch logs (min. 38.000 cbm bale in holds)
+T3	Load_Place 718 724	Turkey
+R1	From Arg1:T1 Arg2:T3	
+R2	From Arg1:T1 Arg2:T2	
+R3	When Arg1:T1 Arg2:T5	
+R4	How Arg1:T1 Arg2:T6	
+R5	Commission Arg1:T1 Arg2:T7	
+R6	Including Arg1:T1 Arg2:T8	

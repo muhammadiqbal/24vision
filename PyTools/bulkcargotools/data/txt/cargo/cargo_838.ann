@@ -1,0 +1,15 @@
+T1	Commission 311 321	3.75 % TTL
+T2	Quantity 27 39	2000/2500 mt
+T3	Cargo 263 288	2000/2500 TNS AGRI STW 75
+T4	Terms 290 299	1000/1000
+T5	Laycan 301 309	SPOT PPT
+T6	Load_Place 236 252	P.LAGOS (GREECE)
+T7	Disch_Place 255 262	RAVENNA
+R1	From Arg1:T3 Arg2:T6	
+R2	To Arg1:T3 Arg2:T7	
+R3	Content Arg1:T3 Arg2:T2	
+R4	How Arg1:T3 Arg2:T4	
+R5	When Arg1:T3 Arg2:T5	
+R6	Commission Arg1:T3 Arg2:T1	
+T8	Commodity 40 44	agri
+R7	What Arg1:T2 Arg2:T8	

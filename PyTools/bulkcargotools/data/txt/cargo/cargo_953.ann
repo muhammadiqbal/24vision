@@ -1,0 +1,11 @@
+T1	Cargo 186 228	11’000 wmt 3pcs molchopt  zn concs in bulk
+T2	Laycan 229 238	20-27 apr
+T3	Commission 333 348	2.5 add com pus
+T4	Load_Place 243 251	Luderitz
+T5	Disch_Place 258 269	Porto Vesme
+T6	Terms 288 332	4000 ssinc hols excl/ 3000 sshex fr 17/mo 08
+R1	When Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T5	
+R3	From Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T6	
+R5	Commission Arg1:T1 Arg2:T3	

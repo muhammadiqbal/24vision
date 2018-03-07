@@ -1,0 +1,11 @@
+T1	Loading_Place 122 130	BRINDISI
+T2	Open_Date 131 139	18 APRIL
+T3	Destination 152 165	ATLANTIC ONLY
+T4	Ship 189 203	M.V. HONG HING
+T5	Year 233 237	2010
+T6	DWT 251 257	76,549
+R1	Built Arg1:T4 Arg2:T5	
+R2	Contain Arg1:T4 Arg2:T6	
+R3	When Arg1:T4 Arg2:T2	
+R4	Located Arg1:T4 Arg2:T1	
+R5	To Arg1:T4 Arg2:T3	

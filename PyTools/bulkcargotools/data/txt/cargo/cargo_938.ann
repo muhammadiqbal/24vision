@@ -1,0 +1,11 @@
+T1	Cargo 182 225	11600 wmt 3pcs molchopt zn calcines in bulk
+T2	Load_Place 230 239	Baltimore
+T3	Disch_Place 246 252	Aviles
+T4	Terms 253 281	4000 or in chopt 8000 / 5000
+T5	Laycan 282 308	April dates, try early May
+R1	To Arg1:T1 Arg2:T3	
+R2	From Arg1:T1 Arg2:T2	
+R3	How Arg1:T1 Arg2:T4	
+R4	When Arg1:T1 Arg2:T5	
+T6	Commission 342 362	2,5 pct add comm pus
+R5	Commission Arg1:T1 Arg2:T6	

@@ -1,0 +1,6 @@
+*/15 * * * *  cd /home/munsteruniversity/bulk_cargo_tool/; python3 execute_classification.py >> /home/munsteruniversity/log/log_predictor.txt
+0 */6 * * * cd /home/munsteruniversity/bulk_cargo_tool/; python3 train_classification.py >> /home/munsteruniversity/log/log_classification.txt
+*/10 * * * * cd /home/munsteruniversity/bulk_cargo_tool/; python3 imap_caller.py >> /home/munsteruniversity/log/log_imap.txt
+*/13 * * * * cd /home/munsteruniversity/bulk_cargo_tool/; python3 execute_cargo_extraction.py "cargo" >> /home/munsteruniversity/log/log_extraction.txt
+*/14 * * * * cd /home/munsteruniversity/bulk_cargo_tool/; python3 execute_ship_extraction.py "ship" >> /home/munsteruniversity/log/log_extraction.txt
+*/15 * * * * python3 /home/munsteruniversity/bulk_cargo_tool/imap_caller.py >> /home/munsteruniversity/log/log_imap2.txt

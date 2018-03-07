@@ -1,0 +1,25 @@
+T1	Commodity 122 131	AGGREGATE
+T2	Cargo 432 473	50.000 mt Aggregates in bulk +/-10% MOLCO
+T3	Load_Place 496 513	Cam Pha, Viet Nam
+T4	Disch_Place 543 571	Chittagong,Mongla Bangladesh
+T5	Terms 575 619;621 671	Loading rate: 6.000Tons per day pwwd SHEX UU - Discharging rate: 3.000Tons per day pwwd FHEX UU
+T6	Laycan 767 789	PPT  10-15 days notice
+T7	Commission 800 809	1.25% pus
+T8	Cargo 1031 1057	Aggregates 50000  Mt +-10%
+T9	Load_Place 1074 1079	Sohar
+T10	Disch_Place 1101 1111	Chittagong
+T11	Terms 1116 1140;1145 1173	Load rate : 12000ton/day Discharge rate : 3000ton/day
+T12	Laycan 1186 1199	10th-15th May
+T13	Commission 1290 1298	2.5% iac
+R1	From Arg1:T8 Arg2:T9	
+R2	To Arg1:T8 Arg2:T10	
+R3	How Arg1:T8 Arg2:T11	
+R4	When Arg1:T8 Arg2:T12	
+R5	Commission Arg1:T8 Arg2:T13	
+R6	From Arg1:T2 Arg2:T3	
+R7	To Arg1:T2 Arg2:T4	
+R8	How Arg1:T2 Arg2:T5	
+R9	When Arg1:T2 Arg2:T6	
+R10	Commission Arg1:T2 Arg2:T7	
+R11	Including Arg1:T2 Arg2:T1	
+R12	Including Arg1:T8 Arg2:T1	

@@ -1,0 +1,11 @@
+T2	Load_Place 228 234	Odessa
+T3	Disch_Place 238 247	Zhenjiang
+T4	Laycan 248 259	15-20 April
+T5	Terms 290 305	4500 c / 7000 c
+T6	Commission 306 314	5.0% IAC
+T1	Cargo 184 218	20 000 mts of ore in bulk, stw=dwt
+R1	To Arg1:T1 Arg2:T3	
+R2	From Arg1:T1 Arg2:T2	
+R3	When Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	

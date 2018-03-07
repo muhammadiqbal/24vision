@@ -1,0 +1,138 @@
+@font-face {
+    font-family: LiberationSans;
+    src: url(font/LiberationSans-Regular.ttf);
+}
+
+body {
+	font-family: LiberationSans;
+}
+
+.toptabs {
+	margin-bottom: 2em;
+}
+
+.toptab {
+	text-align: center;
+	padding: 5px 20px;
+	border: 2px solid #df2825;
+	color: #000;
+}
+
+.toptab.active {
+	background-color: #df2825;
+	color: #fff;
+}
+
+.toptab:hover {
+	background-color: #df2825;
+	color: #fff;
+}
+
+.search {margin-bottom: 1em; }
+.pagination li {
+  display:inline-block;
+}
+
+
+.list {
+  font-family: LiberationSans;
+}
+td {
+  padding:10px; 
+  border:solid 1px #eee;
+}
+
+input {
+  border:solid 1px #ccc;
+  border-radius: 5px;
+  padding:7px 14px;
+  margin-bottom:10px
+}
+input:focus {
+  outline:none;
+  border-color:#aaa;
+}
+.sort {
+  padding:4px 15px;
+  border:none;
+  color:#fff;
+  text-decoration: none;
+  height:30px;
+}
+.sort:hover {
+  text-decoration: none;
+}
+.sort:focus {
+  outline:none;
+}
+.sort:after {
+  display:inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  content:"";
+  position: relative;
+  top:-10px;
+  right:-5px;
+}
+.sort.asc:after {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #fff;
+  content:"";
+  position: relative;
+  top:4px;
+  right:-5px;
+}
+.sort.desc:after {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #fff;
+  content:"";
+  position: relative;
+  top:-4px;
+  right:-5px;
+}
+
+thead td {
+	background-color: #df2825;
+	color: #fff;
+	border: none;
+}
+
+th, td {
+    border-bottom: 1px solid #df2825;
+}
+
+.pagination >.active > a {
+	background-color: #df2825;
+	border-color: #df2825;
+	color: #fff;
+}
+
+.pagination > li > a {
+	color: #df2825;
+	border-color: #df2825;
+}
+
+.flow-aside > div{
+	position: fixed;
+	right: 20px;
+	top: 0px;
+	border: 2px solid #df2825;
+	border-top: none;
+	padding: 20px;
+	background-color: #fff;
+	color: #000;
+}
+
+.flow-aside > .active {
+	background-color: #df2825;
+	color: #fff;
+}

@@ -1,0 +1,11 @@
+T1	Cargo 270 309	abt 25,000 mt Bulk Harmless Fertilizers
+T2	Laycan 388 404	09-12.April 2017
+T3	Commission 492 508	2.50% Addcom PUS
+T4	Terms 329 370	7,000 Shex / 5,000(SFDS) 2,500(PoA) Shinc
+T5	Load_Place 154 160	Ashdod
+T6	Disch_Place 205 249	Sao Francisco do Sul & Porto Alegre , Brazil
+R1	To Arg1:T1 Arg2:T6	
+R2	From Arg1:T1 Arg2:T5	
+R3	How Arg1:T1 Arg2:T4	
+R4	When Arg1:T1 Arg2:T2	
+R5	Commission Arg1:T1 Arg2:T3	

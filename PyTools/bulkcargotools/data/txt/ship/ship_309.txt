@@ -1,0 +1,400 @@
+Nilesh/Jesai <chart@jesaishipping.com>
+Nilesh <chart@jesaishipping.com>
+dir handies
+Direct
+
+ 
+
+aa. mv Sea Melody open 13 Apr CJK, China.   
+
+bb. mv DD Vogue open 20-24 Apr Hochiminh, Vietnam. 
+
+ 
+
+ 
+
+/////
+
+ 
+
+aa. mv Sea Melody 
+
+Flag: Malta
+
+Port of Registry: Valletta
+
+Built: November, 2010
+
+Builder: SPP SHIPBUILDING CO., LTD., Korea
+
+Official No.: 9580118 
+
+IMO No.: 9580118
+
+MMSI No.: 248775000
+
+Call Sign: 9HA2508
+
+Type of Vessel: Bulk Carrier
+
+Classification Society: Korean Register of Shipping (KRS)
+
+Class: KRS1 -Bulk Carrier ESP (CSR)
+
+BC-A(Holds Nos. 2 and 4 may be empty) GRAB(20)
+
+IWS, CDG, ENV(IBWM, IAFS, ISPP, IGPP, IAPP), PSPC, CHA LI
+
+KRM1 -UMA STCM
+
+ 
+
+DWT: 34,467.5 MT at S.L.W.L. 9.917M (SUMMER LOAD DRAFT)
+
+LOA/LBP/BREADTH/DEPTH (m) : 180.00/172.00/30.00/14.70 
+
+GRT/NRT: 23453/11522 
+
+Holds/Hatches: 5/5
+
+TTL capacity (grain incl. hatch coaming): 48765,8 CBM
+
+Holds tank top dimensions (Lm x Wm x Hm): 
+
+No.1 24,80 x 8,40(FWD)/19,80(AFT) x 13,10(Upper Deck)/15,10(Hatch Cover)
+
+No.2 24,80 x 20,70(FWD)/22,00(AFT) x 13,10(Upper Deck)/15,10(Hatch Cover)
+
+No.3 24,80 x 22,00 x 13,10(Upper Deck)/15,10(Hatch Cover)
+
+No.4 24,80 x 22,00 x 13,10(Upper Deck)/15,10(Hatch Cover)
+
+No.5 25,60 x 22,00(FWD)/13,00(AFT) x 13,10(Upper Deck)/15,10(Hatch Cover)
+
+ 
+
+All cargo holds equipped with mechanical explosion proof type exhaust ventilation 
+
+(2 ventilators (each 50%) for each hold), with rate 6 air changes per hour. 
+
+-CO2 fitted: Engine room, each cargo hold. 
+
+–Ladders: Australian type. 
+
+–Strength of the tank top: No.1- 17 ton/m2, No2.- 14 ton/m2, No.3- 17 ton/m2, 
+
+No.4- 14 ton/m2, No.5- 17 ton/m2.
+
+Heavy cargoes of S.F. 12 CFT/LT (0.34 CBM/LT) in holds Nos. 1, 3 & 5 and Nos.2 & 4 empty 
+
+may be loaded at full scantling draft and holds Nos.2 & 4 designed for loading of S.F. 35CFT/LT. 
+
+5 Hatch covers: MACGREGOR, weather tight, electro-hydraulic fore & aft 
+
+folding type, operated by external hydraulic cylinders.
+
+Hatch coves top strength: 2,5 ton/m2
+
+Hatch cover size (Lm x Bm)
+
+-------------------------------
+
+No.1 16,70 x 14,00/18,70
+
+Nos. 2~5 19,50 x 20,50
+
+ 
+
+Hatch No. & Nominal opening size (Lm x Bm)
+
+-------- ------------------------------
+
+No.1 16.40 x 13.70/18.40
+
+Nos. 2~5 19.20 x 20.20
+
+ 
+
+Cranes: 4 x SWL 35 MT, MACGREGOR, installed in center on upper deck between each holds.
+
+Main engine: MAN-B&W 5S50MC-C MK7. MCR 10750 BHP x 127 RPM
+
+Generator engine: 3 x YANMAR 6EY18AL x 600 KW x 900 RPM, 440V, 60HZ 
+
+M/E & G/E Fuel Oil:
+
+-HFO RMG35 380 CST/50 C in accordance with ISO 8217:2010 with Calculated Carbon Aromaticity Index (C.C.A.I.) 
+
+not exceeds 850. Fuel must not contain any used lubricating oil or other waste chemicals. 
+
+-MGO(DMA), MDO(DMB) in accordance with ISO 8217:2010 with Sulfur content according to current Sulfur Regulations IMO,
+
+EU, California State areas and viscosity above 3 cSt at 40 degrees Celsius. 
+
+Vessel’s Speed/Bunker consumption (assumption):
+
+Sea Speed (laden/ballast) about 13/13,5 Knots.
+
+Daily fuel oil consumption of Main Engine appx. 22.0 Mt/Day plus 2.0 Mt/Day GE
+
+For maneuver: appx. 600 kg/hr MGO(DMA), MDO/DMB - for purpose of reliable engine operation and in accordance 
+
+with current Sulphur Regulations IMO, EU, California State areas.
+
+The above stated speed and bunker consumption figures at sea 
+
+are stated provided the absence of (adverse) coming current and/or negative 
+
+influence of swell, i.e. when good weather conditions - wind maximum Beaufort
+
+force 2 (up to 3.5 m/sec), calm (SWH upto 0.5 M) and deep sea and provided
+
+vessel's underwater hull and propeller are clean from fouling. 
+
+Vessel's M/E burns MGO(DMA), MDO(DMB) 
+
+when maneuvering in/approaches narrow or restricted waters including canals/rivers/shallow 
+
+waters/fog conditions and also when ME/GE cold start applicable.
+
+Bunker consumption in port:
+
+In port w/o cargo operations – 1.5 MT HFO 380 CST per day plus Boiler consumption:
+
+a) 1.5 MT HFO 380 CST per day when outside temperature above 15 degrees Celsius
+
+b) 2.5 MT HFO 380 CST per day when outside temperature from 10 and upto 15degrees Celsius
+
+c) 3.5 MT HFO 380 CST per day when outside temperature from 0 and upto 10 degrees Celsius
+
+d) 5 MT HFO 380 CST per day when outside temperature below 0 degrees Celsius
+
+In port with cargo operations – 3.5 Mt HFO 380 CST per day plus Boiler consumption:
+
+a) 1.5 MT HFO 380 CST per day when outside temperature above 15 degrees Celsius
+
+b) 2.5 MT HFO 380 CST per day when outside temperature from 10 and upto 15degrees Celsius
+
+c) 3.5 MT HFO 380 CST per day when outside temperature from 0 and upto 10 degrees Celsius
+
+d) 5 MT HFO 380 CST per day when outside temperature below 0 degrees Celsius
+
+Owners P & I club: JAPAN P & I CLUB
+
+H+M Insurance Company: Lloyds,London
+
+Ada wog.
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+bb. mv DD Vogue
+
+Flag: Panama,
+
+Port of Registry: Panama
+
+Built: 2/2008/Korea
+
+Official No: 36773-PEXT
+
+IMO No: 9357420
+
+Call Sign: 3EPG4
+
+Type of Vessel: Bulk Carrier
+
+Classification Society: KOREAN REGISTER OF SHIPPING
+
+Class: +KRS1 - Bulk Carrier 'ESP', BC-A {Hold Nos. 2 and 4 may be empty},
+
+IC, GRAB, CDG, ENV (IAFS, IOPP, ISPP, IGPP, IAPP), LI, CHA, IWS
+
++KRM1 - UMA.
+
+DWT 26,495 MT
+
+LOA/LBP/BREADTH/DEPTH/DRAFT: 159.00/151.09/27.00/14.00/9.90 M
+
+GRT/NRT: 16,993/8,917 MT
+
+Holds/Hatches: 5/5
+
+TTL capacity grain / bale: 1.220.285 CBF (34.552 CBM) / 1.159.270 CBF
+
+(32.825 CBM)
+
+5 Holds (Length x Width), in meters
+
+1) 22.4 x (16.0 FD - 26.4 AFT)
+
+2) 22.4 x 26.4
+
+3) 24.0 x 26.4
+
+4) 24.0 x 26.4
+
+5) 22.4 x 26.4
+
+5 Hatches (Weather tight, Hydraulic Fore & Aft folding type operated by
+
+external hydraulic
+
+cylinders)
+
+Hatch size:
+
+Hatch No. Nominal opening size (Lm x Bm)
+
+No.1 12.00 (L) x 14.40 (B)
+
+Nos.2~5 16.00 (L) x 19.20 (B)
+
+Cranes: 4 x SWL 30 MT installed in center on upper deck between each holds.
+
+OUTREACH (METRES) OF GEAR -
+
+A. BEYOND SHIP'S RAIL 8.5
+
+B. BEYOND SHIP'S RAIL WITH MAXIMUM CARGO LIFT ON HOOK 8.5 Supplied by 4grabs
+
+(radiooperated):
+
+Filling volume (m3)Pilled density
+
+(t/m3)Adm.lifitingcapacity/SWL(t)V1=10,01,515,0V2=8,01,814,4V3=6,02,515,0-CO
+
+2 fitted.
+
+-Logs fitted, but w/o stationary stanchions.
+
+-Lakes fitted - no. 
+
+ -Ladders: Australian type. 
+
+ -Strength of the top tanks:
+
+22 tons/sq.m for Holds Nos.1, 3 & 5
+
+16 tons/sq.m for Holds Nos.2 & 4
+
+-vessel has exhaust mechanical ventilation in the holds, with rate 6 air
+
+changes per hour.
+
+-Ice Class: IS3 (Korean Register Classification) -Main engine: B&W
+
+6S42MC-MK7 6480 KWT x 136 RPM. 
+
+ - Generator engine: 3 x YANMAR 6 NI8AL-UV x 500 KW Vessel's speed and bunker
+
+consumption:
+
+Sea Speed (laden/ballast)/ Consumption atSea(IFO380CST):
+
+12.7/13.2 Knots - 17.0 Mt/Day ME plus 2.2Mt/DayGE
+
+M/E&G/EFuel: HFO RMG 35 380 CST/50 C in accordance withISO8217:2010, BS6843,
+
+CIMAC-H55 with calculated carbonaromaticityindex not more than 850.
+
+Fuel must not contain any automotivelubricating oilor other wastechemicals.
+
+For maneuver: 600 kg/hr MDO/DMB (inaccordancewith ISO 8217:2010) -for
+
+purpose of reliableengine operation.
+
+For Incinerator: 100 kg/day MDO/DMB (in accordance with ISO 8217:2010) - for
+
+purpose of fuel sludge and garbage incineration (MARPOL Annex VI).
+
+Vessel'sM/E burns MDO/DMB whenmaneuvering in/approachesnarrow or restricted
+
+watersincludingcanals/rivers/shallow waters/fogconditions.
+
+The above stated speed and bunker consumption figures at sea 
+
+are stated provided the absence of (adverse) coming current and/or negative 
+
+influence of swell, i.e. when good weather conditions - wind maximum Beaufort
+
+force 2 (up to 3.5 m/sec), calm (SWH upto 0.5 M) and deep sea and provided
+
+vessel's underwater hull and propeller are clean from fouling. 
+
+ generator engine consumption in port:
+
+a) with cargo operations - 4.0 mt ifo 380 cst per day
+
+b) w/o cargo operations - 2.0 mt ifo 380 cst per day
+
+ 
+
+ boiler consumption in port or without motion:
+
+a) 1.5 mt hfo 380 cst per day when outside temperature above 15 degrees celsius
+
+b) 2.0 mt hfo 380 cst per day when outside temperature from 10 and upto 15 degrees celsius
+
+c) 3.0 mt hfo 380 cst per day when outside temperature from 0 and upto 10 degrees celsius
+
+d) 4.0 mt hfo 380 cst per day when outside temperature below 0 degrees celsius
+
+ada wog.
+
+owners p&i club: japan p&i club
+
+h+m insuarance company: lloyds
+
+ 
+
+ 
+
+end
+
+ 
+
+ 
+
+ 
+
+ 
+
+Thanks & Brgds
+
+Nilesh Rebello
+
+ 
+
+Jesai Shipping Lines
+
+(As Brokers Only)
+
+Bimco Member Reg. No. 168794
+
+ 
+
+Office Ph: +91 7218 987487 / 7798 017126
+
+Mobile: +91 9321192487 / 9890192487
+
+Email: chart@jesaishipping.com <mailto:chart@jesaishipping.com> 
+
+Skype: nrebels
+
+ 
+
+
+ <https://www.avast.com/sig-email?utm_medium=email&utm_source=link&utm_campaign=sig-email&utm_content=emailclient> 	 Virus-free. www.avast.com <https://www.avast.com/sig-email?utm_medium=email&utm_source=link&utm_campaign=sig-email&utm_content=emailclient>  	
+

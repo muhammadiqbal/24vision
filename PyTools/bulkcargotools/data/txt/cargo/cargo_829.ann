@@ -1,0 +1,13 @@
+T1	Commodity 35 46	kaolin clay
+T2	Disch_Place 244 251	TUNISIA
+T3	Load_Place 236 241	NADOR
+T4	Cargo 252 275	5000 mts 5% kaolin clay
+T5	Laycan 276 280	spot
+T6	Terms 281 292	3500c/3000c
+T7	Commission 293 305	2,50 pct ttl
+R1	When Arg1:T4 Arg2:T5	
+R2	How Arg1:T4 Arg2:T6	
+R3	Commission Arg1:T4 Arg2:T7	
+R4	From Arg1:T4 Arg2:T3	
+R5	To Arg1:T4 Arg2:T2	
+R6	Including Arg1:T4 Arg2:T1	

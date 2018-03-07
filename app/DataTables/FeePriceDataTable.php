@@ -27,7 +27,8 @@ class FeePriceDataTable extends DataTable
      */
     public function query()
     {
-        $feePrices = FeePrice::query();
+        $feePrices = FeePrice::leftjoin('ports', 'fee_prices.port_id','ports.id')
+                               ->select('fee_prices.*', 'ports.name as port');
 
         return $this->applyScopes($feePrices);
     }
@@ -82,7 +83,7 @@ class FeePriceDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'port_id' => ['name' => 'port_id', 'data' => 'port_id'],
+            'port_id' => ['name' => 'port', 'data' => 'port', 'searchable'=>false],
             'star_date' => ['name' => 'star_date', 'data' => 'star_date'],
             'end_date' => ['name' => 'end_date', 'data' => 'end_date'],
             'price' => ['name' => 'price', 'data' => 'price']

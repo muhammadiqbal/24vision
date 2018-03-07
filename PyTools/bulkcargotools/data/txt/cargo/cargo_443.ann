@@ -1,0 +1,13 @@
+T1	Commodity 122 130	IRON ORE
+T2	Cargo 481 508	max 25K MT iron ore in bulk
+T3	Laycan 517 529	20-30th, Apr
+T4	Load_Place 550 558	Iran Bik
+T5	Disch_Place 581 598	China  RIVER PORT
+T6	Terms 610 633;635 661	loading rate 5000 fhinc discharge rate 10000 shinc
+T7	Commission 667 677	2.5pct pus
+R1	When Arg1:T2 Arg2:T3	
+R2	From Arg1:T2 Arg2:T4	
+R3	To Arg1:T2 Arg2:T5	
+R4	How Arg1:T2 Arg2:T6	
+R5	Commission Arg1:T2 Arg2:T7	
+R6	Including Arg1:T2 Arg2:T1	

@@ -1,0 +1,22 @@
+T1	Load_Place 550 569	Ust-Donetsk, Russia
+T2	Disch_Place 573 587	Abu Qir, Egypt
+T3	Cargo 590 617	abt 6500 tns sulfur in bulk
+T4	Terms 643 651	ttl days
+T5	Laycan 655 689	cgo ready depends on river opening
+T6	Commission 709 718	3.75% iac
+T7	Load_Place 776 802	NEA KARVALI + THESSALONIKI
+T8	Disch_Place 808 812	ADRI
+T9	Cargo 815 834	ANY 11/15.000 WHEAT
+T10	Terms 839 852	3.000 / 4.000
+T11	Laycan 855 863	PPT  ONW
+T12	Commission 866 874	2.5% TTL
+R1	How Arg1:T9 Arg2:T10	
+R2	When Arg1:T9 Arg2:T11	
+R3	Commission Arg1:T9 Arg2:T12	
+R4	To Arg1:T9 Arg2:T8	
+R5	From Arg1:T9 Arg2:T7	
+R6	To Arg1:T3 Arg2:T2	
+R7	From Arg1:T3 Arg2:T1	
+R8	How Arg1:T3 Arg2:T4	
+R9	When Arg1:T3 Arg2:T5	
+R10	Commission Arg1:T3 Arg2:T6	

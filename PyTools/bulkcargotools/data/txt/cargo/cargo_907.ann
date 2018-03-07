@@ -1,0 +1,89 @@
+T1	Cargo 278 300	2,000~2,500mt HR Coils
+T2	Laycan 323 337	16th Apr. 2017
+T3	Cargo 345 367	2,500~3,000mt HR Coils
+T4	Laycan 390 404	21st Apr. 2017
+T5	Load_Place 432 447	Fukuyama, Japan
+T6	Disch_Place 455 473	Kwangyang, S.Korea
+T7	Terms 496 505	CQD bends
+T8	Port_No 521 524	1/1
+R1	When Arg1:T1 Arg2:T2	
+R2	When Arg1:T3 Arg2:T4	
+R3	From Arg1:T1 Arg2:T5	
+R4	To Arg1:T1 Arg2:T6	
+R5	How Arg1:T1 Arg2:T7	
+R6	No_Of_Ports Arg1:T1 Arg2:T8	
+R7	From Arg1:T3 Arg2:T5	
+R8	To Arg1:T3 Arg2:T6	
+R9	How Arg1:T3 Arg2:T7	
+R10	No_Of_Ports Arg1:T3 Arg2:T8	
+T9	Cargo 529 555	5,050mt/10% Molco HR Coils
+T10	Laycan 578 592	21st Apr. 2017
+T11	Load_Place 620 634	Kashima, Japan
+T12	Disch_Place 645 671	Kwangyang-Dangjin, S.Korea
+T13	Terms 694 703	CQD bends
+T14	Port_No 719 722	1/1
+R11	When Arg1:T9 Arg2:T10	
+R12	From Arg1:T9 Arg2:T11	
+R13	To Arg1:T9 Arg2:T12	
+R14	How Arg1:T9 Arg2:T13	
+R15	No_Of_Ports Arg1:T9 Arg2:T14	
+T15	Cargo 727 753	5,100mt/10% Molco HR Coils
+T16	Laycan 776 790	21st Apr. 2017
+T17	Load_Place 818 829	Oita, Japan
+T18	Disch_Place 837 851	Dangjin, Korea
+T19	Terms 874 883	CQD bends
+T20	Port_No 899 902	1/1
+R16	When Arg1:T15 Arg2:T16	
+R17	From Arg1:T15 Arg2:T17	
+R18	To Arg1:T15 Arg2:T18	
+R19	How Arg1:T15 Arg2:T19	
+R20	No_Of_Ports Arg1:T15 Arg2:T20	
+T21	Cargo 907 933	5,500mt/10% Molco HR Coils
+T22	Laycan 956 970	23rd Apr. 2017
+T23	Load_Place 998 1009	South Japan
+T24	Disch_Place 1017 1029	TBN, S.Korea
+T25	Terms 1052 1061	CQD bends
+T26	Port_No 1077 1080	1/1
+R21	When Arg1:T21 Arg2:T22	
+R22	From Arg1:T21 Arg2:T23	
+R23	To Arg1:T21 Arg2:T24	
+R24	How Arg1:T21 Arg2:T25	
+R25	No_Of_Ports Arg1:T21 Arg2:T26	
+T27	Cargo 1086 1111	Abt 2,500 mt Steel H-Beam
+T28	Laycan 1134 1154	28th/30th Apr. 2017,
+T29	Load_Place 1176 1189	Pohang, Korea
+T30	Disch_Place 1200 1207;1214 1223;1229 1237	Keelung Kaohsiung , Taiwan
+R26	When Arg1:T27 Arg2:T28	
+R27	From Arg1:T27 Arg2:T29	
+R28	To Arg1:T27 Arg2:T30	
+T32	Cargo 1318 1342	Abt 14,000mt Steel Prods
+T33	Load_Place 1346 1365	Cigading, Indonesia
+T34	Disch_Place 1369 1379;1391 1398	Kohsichang Bangkok
+T35	Laycan 1421 1440	16th/17th Apr. 2017
+T36	Terms 1442 1451	CQD bends
+T37	Port_No 1463 1466	1/2
+T38	Cargo 1505 1529	Abt 6,000mt Steel plates
+T39	Load_Place 1533 1552	Cigading, Indonesia
+T40	Disch_Place 1556 1572	VungTau, Vietnam
+T41	Laycan 1579 1598	22nd/23rd Apr. 2017
+T42	Terms 1622 1631	CQD bends
+T43	Commission 1728 1744	2.50% AddCom PUS
+R30	From Arg1:T32 Arg2:T33	
+R32	To Arg1:T32 Arg2:T34	
+R31	When Arg1:T32 Arg2:T35	
+R33	How Arg1:T32 Arg2:T36	
+R34	No_Of_Ports Arg1:T32 Arg2:T37	
+R35	From Arg1:T38 Arg2:T39	
+R36	To Arg1:T38 Arg2:T40	
+R37	When Arg1:T38 Arg2:T41	
+R38	How Arg1:T38 Arg2:T42	
+R39	Commission Arg1:T38 Arg2:T43	
+R40	Commission Arg1:T32 Arg2:T43	
+R41	Commission Arg1:T27 Arg2:T43	
+R42	Commission Arg1:T21 Arg2:T43	
+R43	Commission Arg1:T15 Arg2:T43	
+R44	Commission Arg1:T9 Arg2:T43	
+R45	Commission Arg1:T3 Arg2:T43	
+R46	Commission Arg1:T1 Arg2:T43	
+T31	Terms 1258 1264	CQD be
+R29	How Arg1:T27 Arg2:T31	

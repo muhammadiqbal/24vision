@@ -1,0 +1,13 @@
+T1	Commodity 35 41	rebars
+T2	Quantity 27 34	2000 mt
+T3	Disch_Place 265 274	CAPE TOWN
+T4	Load_Place 245 262	MARINA DI CARRARA
+T5	Cargo 275 291	2,000 MT RE-BARS
+T6	Laycan 307 325	PROMPT - TRY LATER
+T7	Commission 363 368	3.75%
+R1	When Arg1:T5 Arg2:T6	
+R2	Commission Arg1:T5 Arg2:T7	
+R3	From Arg1:T5 Arg2:T4	
+R4	To Arg1:T5 Arg2:T3	
+R5	Content Arg1:T5 Arg2:T2	
+R6	What Arg1:T2 Arg2:T1	

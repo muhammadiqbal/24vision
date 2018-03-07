@@ -1,0 +1,15 @@
+T1	Commission 641 650	3.75% pus
+T2	Terms 446 495	6000 mt pwdd shinc basis workable holds and hooks
+T3	Disch_Place 422 429	n.china
+T4	Load_Place 381 401	Visakhapatnam, India
+T5	Laycan 339 360	25 May -1ST June 2017
+T6	Cargo 285 330	18/20,000 mt chopt ilmenite harmless minerals
+T7	Quantity 126 137	18/20,000MT
+T8	Commodity 144 170	ilmenite harmless minerals
+R1	What Arg1:T7 Arg2:T8	
+R2	Content Arg1:T6 Arg2:T7	
+R3	When Arg1:T6 Arg2:T5	
+R4	From Arg1:T6 Arg2:T4	
+R5	To Arg1:T6 Arg2:T3	
+R6	How Arg1:T6 Arg2:T2	
+R7	Commission Arg1:T6 Arg2:T1	

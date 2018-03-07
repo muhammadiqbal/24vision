@@ -1,0 +1,11 @@
+T1	Cargo 160 242	19,200 mt 10% moloo bulk ferts 4 grades + 1,500 mt m/m Nitrabor in 1200kg big bags
+T2	Load_Place 253 259	Heroya
+T3	Disch_Place 262 271	Vera Cruz
+T4	Laycan 280 296	27 April / 1 May
+T5	Terms 298 331	3000 shex load / 4000 shinc disch
+T6	Commission 360 375	2.5% addcom pus
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	When Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	

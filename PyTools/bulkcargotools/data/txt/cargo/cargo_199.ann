@@ -1,0 +1,13 @@
+T1	Load_Place 703 708	YEISK
+T2	Disch_Place 712 719	MARMARA
+T3	Cargo 722 738;756 780	UP TO FCC TIMBER ( ABOUT  2000-2400 CBM )
+T4	Laycan 787 800	20-22/04/2017
+T5	Terms 806 814	TTL DAYS
+T6	Commission 817 826	3.75% IAC
+T7	Commodity 123 129	TIMBER
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+R6	Including Arg1:T3 Arg2:T7	

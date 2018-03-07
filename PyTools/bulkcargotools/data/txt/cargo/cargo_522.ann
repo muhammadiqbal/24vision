@@ -1,0 +1,15 @@
+T1	Commission 629 638	1.25% ttl
+T2	Port_No 619 622	2/2
+T3	Laycan 542 548	Propmt
+T4	Terms 464 492;494 531	Load rate: 12 days SSHEX EIU Dis rate: 12 days FHEX (incl Sat) EIU
+T5	Load_Place 397 425	Penang and Bintulu, malaysia
+T6	Disch_Place 438 462	Aden and Hodeidah, yemen
+T7	Cargo 189 290;291 362	FULL LOAD OF 5200 CBM MEDIUM-DENSITY FIBREBOARD (MDF) IN CRATES S.F. 3 CBM WOG STRICTLY UNDERDECK AND AND BALANCE 2000-3000 BUNDLES OF SAWN TIMBER PACKED IN BUNDLES SF 3 CBM
+T8	Commodity 68 87	MDF and Sawn timber
+R1	Including Arg1:T7 Arg2:T8	
+R2	From Arg1:T7 Arg2:T5	
+R3	To Arg1:T7 Arg2:T6	
+R4	How Arg1:T7 Arg2:T4	
+R5	When Arg1:T7 Arg2:T3	
+R6	No_Of_Ports Arg1:T7 Arg2:T2	
+R7	Commission Arg1:T7 Arg2:T1	

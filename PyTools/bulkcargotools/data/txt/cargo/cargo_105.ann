@@ -1,0 +1,13 @@
+T1	Load_Place 674 691	Ochakov anchorage
+T2	Disch_Place 695 700	Izmir
+T3	Cargo 703 723	m/m 12000 Barley 56'
+T4	Terms 725 734	4500/2500
+T5	Laycan 736 747	06.04/09.04
+T6	Commission 749 758	3.75% iac
+T7	Quantity 127 132	12000
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	How Arg1:T3 Arg2:T4	
+R4	When Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+R6	Content Arg1:T3 Arg2:T7	

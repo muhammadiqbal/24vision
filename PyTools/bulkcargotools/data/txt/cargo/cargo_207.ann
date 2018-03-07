@@ -1,0 +1,13 @@
+T1	Commission 821 830	3.75% iac
+T2	Terms 800 819	depending on intake
+T3	Laycan 773 794	prompt, try vsl dates
+T4	Load_Place 686 701	Kherson,Ukraine
+T5	Disch_Place 707 716	Spain Med
+T7	Commodity 143 153	agri prods
+T6	Cargo 719 753	7000/10%tns blk agri prods, sf 54`
+R1	To Arg1:T6 Arg2:T5	
+R2	From Arg1:T6 Arg2:T4	
+R3	When Arg1:T6 Arg2:T3	
+R4	How Arg1:T6 Arg2:T2	
+R5	Commission Arg1:T6 Arg2:T1	
+R6	Including Arg1:T6 Arg2:T7	

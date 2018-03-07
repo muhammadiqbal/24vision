@@ -1,0 +1,13 @@
+T1	Commodity 129 139	steam coal
+T2	Cargo 527 580	25,000mt +/- 10% CHOPT of Sakhalin Steam Coal in bulk
+T3	Laycan 1034 1055	May 04 - May 10, 2017
+T4	Port_No 1114 1117	1/1
+T5	Load_Place 608 635	Uglegorsk, Sakhalin, Russia
+T6	Disch_Place 893 911;961 982	Cam Pha (Vietnam)/ Ho Chi Minh (Vietnam)
+T7	Commission 1420 1429	1.25% pus
+R1	Including Arg1:T2 Arg2:T1	
+R2	From Arg1:T2 Arg2:T5	
+R3	To Arg1:T2 Arg2:T6	
+R4	When Arg1:T2 Arg2:T3	
+R5	No_Of_Ports Arg1:T2 Arg2:T4	
+R6	Commission Arg1:T2 Arg2:T7	

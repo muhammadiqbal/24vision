@@ -1,0 +1,11 @@
+T1	Cargo 431 512	15,000 mt - 5 pct. more or less in charterer's option – Calcined Pet Coke in Bulk
+T2	Load_Place 526 550	Chalmette, US – Rain CII
+T3	Disch_Place 551 572	Vila do Conde, Brasil
+T4	Laycan 595 617	30 April - 05 May 2017
+T5	Terms 1087 1176	12 total ww days shinc  for loading and discharging - local holidays excluded unless used
+T6	Commission 2876 2885	ttl 1.25%
+R1	To Arg1:T1 Arg2:T3	
+R2	From Arg1:T1 Arg2:T2	
+R3	When Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	

@@ -1,0 +1,9 @@
+T1	Ship 67 77	MV SEPHORA
+T2	Loading_Place 241 251	CHITTAGONG
+T3	Open_Date 252 262	15TH APRIL
+T4	DWT 314 320	55,866
+T5	Year 279 283	2007
+R1	Contain Arg1:T1 Arg2:T4	
+R2	Built Arg1:T1 Arg2:T5	
+R3	Located Arg1:T1 Arg2:T2	
+R4	When Arg1:T1 Arg2:T3	

@@ -1,0 +1,11 @@
+T1	Cargo 210 240	22,000/30,000 nmt bagged sugar
+T2	Load_Place 241 250	P.Quetzal
+T3	Disch_Place 255 292;303 326	West Africa (Nouakchott-Namibe range) opt Libya opt Egypt Med
+T4	Laycan 327 337	18/24 Apri
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	When Arg1:T1 Arg2:T4	
+T5	Commission 360 381	6.25 pct add comm pus
+R4	Commission Arg1:T1 Arg2:T5	
+T6	Terms 339 359	1500/1000 (1500 Med)
+R5	How Arg1:T1 Arg2:T6	

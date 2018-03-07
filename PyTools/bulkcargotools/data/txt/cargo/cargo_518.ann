@@ -1,0 +1,15 @@
+T1	Commission 521 530	2.50% ttl
+T2	Port_No 511 514	2/2
+T3	Laycan 426 432	Propmt
+T4	Terms 348 376;378 415	Load rate: 15 days SSHEX EIU Dis rate: 20 days FHEX (incl Sat) EIU
+T5	Disch_Place 290 301	Aden, yemen
+T6	Load_Place 249 277	Penang and Bintulu, malaysia
+T7	Cargo 155 194;225 229;230 235	5200 -15,000 CBM Plywood MDF and timber S.F. 3 CBM
+T8	Commodity 59 81	Plywood MDF and timber
+R1	From Arg1:T7 Arg2:T6	
+R2	To Arg1:T7 Arg2:T5	
+R3	How Arg1:T7 Arg2:T4	
+R4	When Arg1:T7 Arg2:T3	
+R5	No_Of_Ports Arg1:T7 Arg2:T2	
+R6	Including Arg1:T7 Arg2:T8	
+R7	Commission Arg1:T7 Arg2:T1	

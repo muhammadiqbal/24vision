@@ -1,0 +1,13 @@
+T1	Commodity 140 149	agriprods
+T2	Cargo 253 278;282 301	abt 25000 mts - agriprods sf abt 62 / in bulk
+T3	Load_Place 305 313	Nikolaev
+T4	Disch_Place 317 326	Tutikorin
+T5	Terms 328 349	3000 / 3000 sshex eiu
+T6	Laycan 357 371	12-15 April'17
+T7	Commission 376 394	2.50% add comm pus
+R1	From Arg1:T2 Arg2:T3	
+R2	To Arg1:T2 Arg2:T4	
+R3	How Arg1:T2 Arg2:T5	
+R4	When Arg1:T2 Arg2:T6	
+R5	Commission Arg1:T2 Arg2:T7	
+R6	Including Arg1:T2 Arg2:T1	

@@ -1,0 +1,13 @@
+T1	Load_Place 803 811	Bandirma
+T2	Disch_Place 815 830	Inkoo +Szczecin
+T3	Cargo 833 872	4.000.00  MT +/-5 pct blk harmless mins
+T4	Laycan 874 885	24/27 APRIL
+T5	Terms 892 900	TTL DAYS
+T6	Commission 902 910	2.5% ttl
+T7	Commodity 149 162	harmless mins
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+R6	Including Arg1:T3 Arg2:T7	

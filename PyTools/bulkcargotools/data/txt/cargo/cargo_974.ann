@@ -1,0 +1,9 @@
+T1	Cargo 143 178	32000 – 35650 mt  in OO of bulk MOP
+T2	Laycan 624 637	10-12/04/2017
+T3	Load_Place 670 689	Klaipeda, Lithuania
+T4	Disch_Place 870 888;926 948	Belawan, Indonesia Koh Si Chang, Thailand
+T5	Commission 1201 1221	2.5 pct add comm pus
+R1	When Arg1:T1 Arg2:T2	
+R2	From Arg1:T1 Arg2:T3	
+R3	To Arg1:T1 Arg2:T4	
+R4	Commission Arg1:T1 Arg2:T5	

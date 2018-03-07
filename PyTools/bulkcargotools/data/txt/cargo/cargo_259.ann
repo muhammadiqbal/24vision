@@ -1,0 +1,13 @@
+T1	Commission 616 627	2.5 add pus
+T2	Terms 503 529	8000/3000 Pwwd Shinc Bends
+T3	Laycan 445 461	20-27 April 2017
+T4	Disch_Place 405 434	Chittagong port of Bangladesh
+T5	Load_Place 358 381	Cigading port Indonesia
+T6	Cargo 271 284;308 333	42000 -46,000 Mts Slag  in bulk sf: 1.0
+R1	From Arg1:T6 Arg2:T5	
+R2	To Arg1:T6 Arg2:T4	
+R3	When Arg1:T6 Arg2:T3	
+R4	How Arg1:T6 Arg2:T2	
+T7	Port_No 577 580	1.1
+R5	No_Of_Ports Arg1:T6 Arg2:T7	
+R6	Commission Arg1:T6 Arg2:T1	

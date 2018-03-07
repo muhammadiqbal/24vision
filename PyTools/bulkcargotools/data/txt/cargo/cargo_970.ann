@@ -1,0 +1,11 @@
+T2	Quantity 62 65	33k
+T3	Load_Place 254 273	Klaipeda, Lithuania
+T4	Laycan 331 344	07-09/04/2017
+T5	Disch_Place 387 396;421 429	Paranagua , Brazil
+T6	Commission 707 727	2.5 pct add comm pus
+T1	Cargo 133 184	Min/Max 33000 mts of MOP in bulk, STW abt 1.0 m3/mt
+R1	From Arg1:T1 Arg2:T3	
+R2	Content Arg1:T1 Arg2:T2	
+R3	When Arg1:T1 Arg2:T4	
+R4	To Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	

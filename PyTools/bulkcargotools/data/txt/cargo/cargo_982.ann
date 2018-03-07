@@ -1,0 +1,13 @@
+T1	Cargo 218 280	abt 25.600mt fertilizers, 4 grades bulk and 1 grade in bigbags
+T2	Quantity 58 66	26,500mt
+T3	Load_Place 293 321	Heroya+ Ternheuzen+ Sluiskil
+T4	Disch_Place 324 346	San Nicolas, Argentina
+T5	Laycan 357 368	April 10-14
+T6	Terms 401 475;479 523	loadspeed Heroya 6000sshex , Ternheuzen 1 day sshex , Sluiskil 9000 sshex, discharge speed 4000sshex San Nicolas NAABSA
+T7	Commission 527 543	2.5 % addcom pus
+R1	From Arg1:T1 Arg2:T3	
+R2	To Arg1:T1 Arg2:T4	
+R3	When Arg1:T1 Arg2:T5	
+R4	How Arg1:T1 Arg2:T6	
+R5	Commission Arg1:T1 Arg2:T7	
+R6	Content Arg1:T1 Arg2:T2	

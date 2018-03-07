@@ -1,0 +1,13 @@
+T1	Cargo 348 363	15.000/10% CORN
+T3	Load_Place 272 281	NIKOLAYEV
+T4	Disch_Place 309 346	POZZALLO + TORRE ANNUNZIATA OR SOUSSE
+T5	Terms 365 376	10 TTL DAYS
+T6	Laycan 378 389	5 APRIL ONW
+T7	Commission 391 397	5% PUS
+R1	To Arg1:T1 Arg2:T4	
+R2	From Arg1:T1 Arg2:T3	
+R4	How Arg1:T1 Arg2:T5	
+R5	When Arg1:T1 Arg2:T6	
+R6	Commission Arg1:T1 Arg2:T7	
+T8	Commodity 37 41	corn
+R3	Including Arg1:T1 Arg2:T8	

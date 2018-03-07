@@ -1,0 +1,11 @@
+T4	Laycan 1231 1252	26.04.2017-29.04.2017
+T5	Commission 3002 3010	2.5% ttl
+T6	Cargo 314 325;576 595	STEEL PIPES 650 tns 5% molchopt
+T1	Load_Place 206 241	Constanza (Romania), Socep terminal
+T2	Disch_Place 261 292	Setubal (Portugal), Alstom quay
+R1	To Arg1:T6 Arg2:T2	
+R2	From Arg1:T6 Arg2:T1	
+R3	When Arg1:T6 Arg2:T4	
+R5	Commission Arg1:T6 Arg2:T5	
+T3	Terms 1304 1358;1393 1423;1943 1971	Constanza (Romania), Charterer’s berth (UMEX terminal) 900 tons per gang pwwday SSINC - Discharge terms: LINER OUT
+R4	How Arg1:T6 Arg2:T3	

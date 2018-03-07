@@ -1,0 +1,15 @@
+T1	Quantity 133 143	9/11000 mt
+T2	Load_Place 801 807	Yuzhny
+T3	Disch_Place 811 837	Casablanca  or Jorf Lasfar
+T4	Cargo 840 867	9/11000 mt agriproducts 60’
+T5	Laycan 869 876	ppt onw
+T6	Terms 891 900	2000 bnds
+T7	Commission 902 911	3.75% iac
+T8	Commodity 144 156	agriproducts
+R1	What Arg1:T1 Arg2:T8	
+R2	To Arg1:T4 Arg2:T3	
+R3	From Arg1:T4 Arg2:T2	
+R4	When Arg1:T4 Arg2:T5	
+R5	How Arg1:T4 Arg2:T6	
+R6	Commission Arg1:T4 Arg2:T7	
+R7	Content Arg1:T4 Arg2:T1	

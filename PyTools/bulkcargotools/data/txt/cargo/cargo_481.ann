@@ -1,0 +1,9 @@
+T1	Cargo 364 399	abt 1500/1600 ts hr coils max 24 ts
+T2	Load_Place 402 409	antwerp
+T3	Disch_Place 410 416	mumbai
+T4	Laycan 419 437	24th april onwards
+T5	Commission 459 466	2,5 pus
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	When Arg1:T1 Arg2:T4	
+R4	Commission Arg1:T1 Arg2:T5	

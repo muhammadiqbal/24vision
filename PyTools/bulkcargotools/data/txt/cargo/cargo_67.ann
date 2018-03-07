@@ -1,0 +1,11 @@
+T2	Load_Place 190 211	Durban Fruit Terminal
+T3	Disch_Place 215 239	Tanjung Langsak Terminal
+T4	Terms 251 260	CQD bends
+T5	Laycan 278 289	spot/prompt
+T6	Commission 290 299	3.75% ttl
+T1	Cargo 154 175	10,000mts steel coils
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	How Arg1:T1 Arg2:T4	
+R4	When Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	

@@ -1,0 +1,15 @@
+T1	Quantity 75 85	18000 TONS
+T2	Commodity 86 99	MARBLE BLOCKS
+R1	What Arg1:T1 Arg2:T2	
+T3	Load_Place 593 599	LISBON
+T4	Disch_Place 603 619	SHENZHEN + XIUYU
+T5	Cargo 622 646	18000 TONS MARBLE BLOCKS
+T6	Laycan 647 653	PROMPT
+T7	Terms 656 665	2500/2500
+T8	Commission 690 694	2,5%
+R2	To Arg1:T5 Arg2:T4	
+R3	From Arg1:T5 Arg2:T3	
+R4	When Arg1:T5 Arg2:T6	
+R5	How Arg1:T5 Arg2:T7	
+R6	Commission Arg1:T5 Arg2:T8	
+R7	Content Arg1:T5 Arg2:T1	

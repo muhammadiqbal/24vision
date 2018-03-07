@@ -1,0 +1,11 @@
+T1	Ship 262 285	MV 'Vsevolod Beletskiy'
+T2	DWT 328 334	33,324
+T3	Loading_Place 219 226	Antwerp
+T4	Open_Date 227 234	2-3 May
+T5	Destination 247 257	within Atl
+T6	Year 322 326	2010
+R1	Built Arg1:T1 Arg2:T6	
+R2	Contain Arg1:T1 Arg2:T2	
+R3	To Arg1:T1 Arg2:T5	
+R4	Located Arg1:T1 Arg2:T3	
+R5	When Arg1:T1 Arg2:T4	

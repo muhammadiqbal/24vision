@@ -1,0 +1,15 @@
+T1	Commission 317 329	2,50 PCT TTL
+T2	Terms 308 316	TTL DAYS
+T3	Laycan 303 307	SPOT
+T4	Load_Place 283 291	MISURATA
+T5	Disch_Place 292 302	ISKENDERUN
+T6	Cargo 248 281	10/17000 DWT F+C CC SCRAP IN BULK
+T7	Quantity 27 38	10/17000 mt
+R1	To Arg1:T6 Arg2:T5	
+R2	From Arg1:T6 Arg2:T4	
+R3	When Arg1:T6 Arg2:T3	
+R4	How Arg1:T6 Arg2:T2	
+R5	Commission Arg1:T6 Arg2:T1	
+R6	Content Arg1:T6 Arg2:T7	
+T8	Commodity 39 44	scrap
+R7	What Arg1:T7 Arg2:T8	

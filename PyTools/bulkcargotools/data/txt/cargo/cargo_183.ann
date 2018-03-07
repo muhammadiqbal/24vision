@@ -1,0 +1,13 @@
+T1	Load_Place 675 681	Gdynia
+T2	Disch_Place 685 694	Terkirdag
+T3	Cargo 697 725	15.000 mts 10 pct wheat  46’
+T4	Laycan 727 745	ppt onw –early may
+T5	Terms 748 757	5000 bnds
+T6	Commission 759 768	3.75% iac
+T7	Commodity 134 139	wheat
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+R6	Including Arg1:T3 Arg2:T7	

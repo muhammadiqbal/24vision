@@ -1,0 +1,7 @@
+T1	Ship 634 642	mv Evita
+T3	Open_Date 705 716	05-06 April
+T4	Loading_Place 720 727	Crotone
+T5	Destination 737 785	Pref dir. Baltic or short voy.inside Med.invited
+R1	To Arg1:T1 Arg2:T5	
+R3	When Arg1:T1 Arg2:T3	
+R4	Located Arg1:T1 Arg2:T4	

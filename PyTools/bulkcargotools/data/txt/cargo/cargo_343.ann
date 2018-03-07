@@ -1,0 +1,22 @@
+T1	Load_Place 644 661	Kwinana / Bunbury
+T2	Disch_Place 665 671	Safaga
+T3	Cargo 674 708	30,000 mt bulk alumina 5 pct moloo
+T4	Laycan 709 718	22/26 apr
+T5	Commission 753 762	3.75% iac
+T6	Terms 719 744	14.000 shinc/12.000 fhinc
+T7	Load_Place 810 819	Australia
+T8	Disch_Place 827 835	EC INDIA
+T9	Cargo 838 876	2 X 30,000 mt bulk alumina 5 pct moloo
+T10	Laycan 911 924;958 971	1-07 May 2017 6-10 May 2017
+T11	Terms 1024 1075;1076 1128;1130 1192;1210 1250;1251 1289;984 1023	Bunbury(Berth No 4) - 18000 MT / 24 hours WWDSSHINC Worsley (Berth No 6) - 20000 MT / 24 hours WWDSSHINC Including official Western Australian Gazetted Public Holidays Gangavaram - 3500 MT / 24 hours WWDSHINC Kakinada - 7500 MT / 24 hours WWDSHINC Kwinana - 14000 MT / 24 hours WWDSSHINC
+T12	Commission 1291 1299	2.5% TTL
+R1	To Arg1:T9 Arg2:T8	
+R2	From Arg1:T9 Arg2:T7	
+R3	When Arg1:T9 Arg2:T10	
+R4	How Arg1:T9 Arg2:T11	
+R5	Commission Arg1:T9 Arg2:T12	
+R6	To Arg1:T3 Arg2:T2	
+R7	From Arg1:T3 Arg2:T1	
+R8	When Arg1:T3 Arg2:T4	
+R9	How Arg1:T3 Arg2:T6	
+R10	Commission Arg1:T3 Arg2:T5	

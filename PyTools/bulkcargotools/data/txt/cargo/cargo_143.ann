@@ -1,0 +1,15 @@
+T1	Quantity 129 138	10.000mts
+T2	Load_Place 685 689	SAFI
+T3	Disch_Place 693 713	VARIOUS DESTINATIONS
+T4	Cargo 716 745	TTL 10.000mts CuConcs in Bulk
+T6	Laycan 1036 1047	15/30 April
+T7	Commission 1064 1072	5.0% IAC
+T8	Commodity 139 146	CuConcs
+R1	What Arg1:T1 Arg2:T8	
+R2	To Arg1:T4 Arg2:T3	
+R3	From Arg1:T4 Arg2:T2	
+T5	Terms 750 774;776 780;802 828;830 851;853 873;875 902;906 931;933 995;997 1031	Pol: Safi, MA (4000fhex) Pod: - Pori/ronskar(5000 sshex) - Bourgas(5000 sshex) - Huelva(5000 sshex) - Brunsbuettel (5000 sshex) Aratu, Brazil (3000 shex) - Main North Chinese Port/ Main South Chinese Port(3000 sshex) - Isabel, Philippines (3000 sshex)
+R4	How Arg1:T4 Arg2:T5	
+R5	When Arg1:T4 Arg2:T6	
+R6	Commission Arg1:T4 Arg2:T7	
+R7	Content Arg1:T4 Arg2:T1	

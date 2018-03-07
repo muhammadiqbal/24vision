@@ -1,0 +1,15 @@
+T1	Commodity 97 100	HRC
+T2	Quantity 86 96	11.000 mts
+R1	What Arg1:T2 Arg2:T1	
+T3	Load_Place 594 601	Isdemir
+T4	Disch_Place 605 631	Antwerp + Gdansk or Gdynia
+T5	Terms 710 750	6.500 Shinc / 3.500 Sshex at disch ports
+T6	Cargo 634 648	11.000 mts HRC
+T7	Laycan 752 763	April dates
+T8	Commission 785 792	2.5 ttl
+R2	Commission Arg1:T6 Arg2:T8	
+R3	When Arg1:T6 Arg2:T7	
+R4	How Arg1:T6 Arg2:T5	
+R5	To Arg1:T6 Arg2:T4	
+R6	From Arg1:T6 Arg2:T3	
+R7	Content Arg1:T6 Arg2:T2	

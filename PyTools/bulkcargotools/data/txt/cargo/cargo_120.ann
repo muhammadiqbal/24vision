@@ -1,0 +1,15 @@
+T1	Commission 708 717	3.75% IAC
+T2	Load_Place 726 730	PETE
+T3	Disch_Place 734 744	NEMRUT BAY
+T4	Cargo 747 792	15.000 MTS HMS1+2 ABT 61/62' - 2 pct molchopt
+T5	Terms 794 823	3.000 SHINC / 5.000 SSHEX EIU
+T6	Laycan 825 842	s p o t /20 april
+T7	Quantity 119 129	15.000 MTS
+T8	Commodity 130 136	HMS1+2
+R1	What Arg1:T7 Arg2:T8	
+R2	To Arg1:T4 Arg2:T3	
+R3	From Arg1:T4 Arg2:T2	
+R4	Commission Arg1:T4 Arg2:T1	
+R5	How Arg1:T4 Arg2:T5	
+R6	When Arg1:T4 Arg2:T6	
+R7	Content Arg1:T4 Arg2:T7	

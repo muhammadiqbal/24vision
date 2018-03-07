@@ -1,0 +1,11 @@
+T1	Load_Place 245 259	manzanillo, mx
+T2	Disch_Place 265 275	aviles, es
+T3	Terms 276 306	10’000 satnoonshex/ 3’000 shex
+T4	Commission 307 326	2.5 pcs add com pus
+T5	Laycan 230 239	20-30 apr
+T6	Cargo 196 229	11’500 wmt 3pcs molchopt zn concs
+R1	When Arg1:T6 Arg2:T5	
+R2	To Arg1:T6 Arg2:T2	
+R3	From Arg1:T6 Arg2:T1	
+R4	How Arg1:T6 Arg2:T3	
+R5	Commission Arg1:T6 Arg2:T4	

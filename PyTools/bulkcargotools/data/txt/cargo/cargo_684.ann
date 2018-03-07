@@ -1,0 +1,13 @@
+T2	Cargo 155 184	35,000 mt bulk coal 10% moloo
+T3	Load_Place 186 201	East Kalimantan
+T4	Disch_Place 204 209	China
+T5	Terms 211 223	8000 / 12000
+T6	Laycan 225 234	16-19 may
+T7	Commission 236 240	3.75
+R2	Commission Arg1:T2 Arg2:T7	
+R3	When Arg1:T2 Arg2:T6	
+R4	How Arg1:T2 Arg2:T5	
+R5	From Arg1:T2 Arg2:T3	
+R6	To Arg1:T2 Arg2:T4	
+T1	Commodity 58 62	coal
+R1	Including Arg1:T2 Arg2:T1	

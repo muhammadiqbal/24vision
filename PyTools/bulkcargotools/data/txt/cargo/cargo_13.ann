@@ -1,0 +1,7 @@
+T1	Commission 907 915	2.5% TTL
+T2	Cargo 756 783	1X (45,000-60,000) MT MOLOO
+T3	Laycan 792 818	20’April’17 to 26’April’17
+T4	Terms 819 856;857 872;873 889;890 906	Load Rate: Sherbo River -7,000 MT/day Discharge Rate: VPT- 8000 MT/day GPL-12000 MT/day
+R1	When Arg1:T2 Arg2:T3	
+R2	How Arg1:T2 Arg2:T4	
+R3	Commission Arg1:T2 Arg2:T1	

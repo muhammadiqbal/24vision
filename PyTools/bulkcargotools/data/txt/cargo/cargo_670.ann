@@ -1,0 +1,11 @@
+T1	Cargo 190 215	40.000 mt cement in bbags
+T2	Load_Place 217 227	Iskenderun
+T3	Disch_Place 228 259	Cartagen, Co chopt Barranquilla
+T4	Terms 323 342	4,000c/96hrs sshinc
+T5	Laycan 344 353	1-10 June
+T6	Commission 355 362	2.5% pu
+R1	Commission Arg1:T1 Arg2:T6	
+R2	To Arg1:T1 Arg2:T3	
+R3	From Arg1:T1 Arg2:T2	
+R4	How Arg1:T1 Arg2:T4	
+R5	When Arg1:T1 Arg2:T5	

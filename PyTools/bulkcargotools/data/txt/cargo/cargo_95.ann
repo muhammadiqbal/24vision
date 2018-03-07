@@ -1,0 +1,13 @@
+T2	Load_Place 792 797	Raahe
+T3	Disch_Place 815 824	Amsterdam
+T4	Cargo 827 849	10.000ts 10pct coke 70
+T5	Laycan 855 864	ppt/onwds
+T6	Terms 888 917	4.000ts sshex - 4.000ts shinc
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T2	
+R3	When Arg1:T4 Arg2:T5	
+R4	How Arg1:T4 Arg2:T6	
+T1	Commodity 144 148	coke
+R6	Including Arg1:T4 Arg2:T1	
+T7	Commission 926 935	3.75% iac
+R5	Commission Arg1:T4 Arg2:T7	

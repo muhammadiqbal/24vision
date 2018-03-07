@@ -1,0 +1,13 @@
+T1	Commodity 36 41	wheat
+T2	Load_Place 230 236	ANCONA
+T3	Disch_Place 237 242	ROUEN
+T4	Terms 261 270	3000/4000
+T5	Cargo 244 259	12.000/5% WHEAT
+T6	Laycan 272 279	PPT ONW
+T7	Commission 281 287	5% TTL
+R1	To Arg1:T5 Arg2:T3	
+R2	From Arg1:T5 Arg2:T2	
+R3	Including Arg1:T5 Arg2:T1	
+R4	How Arg1:T5 Arg2:T4	
+R5	When Arg1:T5 Arg2:T6	
+R6	Commission Arg1:T5 Arg2:T7	

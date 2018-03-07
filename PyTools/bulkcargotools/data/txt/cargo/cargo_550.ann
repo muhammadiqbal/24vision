@@ -1,0 +1,13 @@
+T1	Commodity 123 133	mill scale
+T2	Cargo 227 266	10,000 mt +/- 10% mol mill scale in blk
+T3	Load_Place 271 276	Vizag
+T4	Disch_Place 277 284	nanjing
+T5	Terms 286 306;309 333	load  7k bss 4 hooks disg rate 8k bss 4 hooks
+T6	Laycan 342 350	ppt spot
+T7	Commission 352 364	ttl 2.5% pus
+R1	From Arg1:T2 Arg2:T3	
+R2	To Arg1:T2 Arg2:T4	
+R3	How Arg1:T2 Arg2:T5	
+R4	When Arg1:T2 Arg2:T6	
+R5	Commission Arg1:T2 Arg2:T7	
+R6	Including Arg1:T2 Arg2:T1	

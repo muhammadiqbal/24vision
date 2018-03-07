@@ -1,0 +1,11 @@
+T1	Cargo 203 222	16/19000 MT hydrate
+T2	Load_Place 225 238	Vila Do Conde
+T3	Disch_Place 241 261	Savannah + Baltimore
+T4	Laycan 271 282	22/25 April
+T5	Terms 285 301	6 ttl days shinc
+T6	Commission 314 323	ttl 1.25%
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	When Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	

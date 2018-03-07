@@ -1,0 +1,15 @@
+T1	Commodity 57 67	aggregates
+T2	Cargo 151 191	50,000 - 55,000 mt of aggregates in bulk
+T3	Load_Place 204 209	Sohar
+T4	Disch_Place 228 249	Chittagong and Mongla
+T5	Terms 250 279;281 314	Load rate : 10,000 mt fhex uu Discharge rate : 2,500 mt fhex uu
+T6	Laycan 324 347	Prompt (7 Days notices)
+T7	Port_No 386 389	1/2
+T8	Commission 390 398	2.5% ttl
+R1	From Arg1:T2 Arg2:T3	
+R2	To Arg1:T2 Arg2:T4	
+R3	How Arg1:T2 Arg2:T5	
+R4	Including Arg1:T2 Arg2:T1	
+R5	When Arg1:T2 Arg2:T6	
+R6	No_Of_Ports Arg1:T2 Arg2:T7	
+R7	Commission Arg1:T2 Arg2:T8	

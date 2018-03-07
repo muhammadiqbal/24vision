@@ -1,0 +1,15 @@
+T1	Quantity 112 125	3500/5000 M/T
+T2	Load_Place 234 240	ROSTOV
+T3	Disch_Place 242 249	TARTOUS
+T4	Cargo 252 281	3500/5000 M/T WHEAT BULK (46)
+T5	Laycan 291 294	PPM
+T6	Terms 310 323	(  8 )TTL DAY
+T7	Commission 374 383	2.5 % TTL
+T8	Commodity 126 131	WHEAT
+R1	What Arg1:T1 Arg2:T8	
+R2	To Arg1:T4 Arg2:T3	
+R3	From Arg1:T4 Arg2:T2	
+R4	When Arg1:T4 Arg2:T5	
+R5	How Arg1:T4 Arg2:T6	
+R6	Commission Arg1:T4 Arg2:T7	
+R7	Content Arg1:T4 Arg2:T1	

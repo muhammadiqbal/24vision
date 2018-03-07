@@ -1,0 +1,13 @@
+T1	Port_No 516 519	1/1
+T2	Load_Place 436 441	BUSAN
+T3	Disch_Place 444 467	VLADIVOSTOK OR NAKHODKA
+T4	Laycan 476 491	15TH - 18TH APR
+T5	Commission 521 524	2.5
+T6	Cargo 387 416	S/PIPE 4,326 CBM NONSTACKABLE
+R1	From Arg1:T6 Arg2:T2	
+R2	To Arg1:T6 Arg2:T3	
+R3	When Arg1:T6 Arg2:T4	
+R4	No_Of_Ports Arg1:T6 Arg2:T1	
+R5	Commission Arg1:T6 Arg2:T5	
+T7	Terms 493 499	CQD BE
+R6	How Arg1:T6 Arg2:T7	

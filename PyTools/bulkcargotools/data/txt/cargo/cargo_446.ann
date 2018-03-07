@@ -1,0 +1,15 @@
+T1	Commodity 146 152	CEMENT
+T2	Quantity 139 145	20-29K
+T3	Cargo 441 469	20000mt -29000MT  bag cement
+T4	Laycan 499 512	4TH-6TH,APRIL
+T5	Load_Place 544 558	hongai Vietnam
+T6	Disch_Place 574 583	KTC,DAVAO
+T7	Terms 586 610;612 637	l/rate:5000mt pwwd shinc -d/rate:3000MT PWWD SHINC
+T8	Commission 705 713	2.5% iac
+R1	When Arg1:T3 Arg2:T4	
+R2	From Arg1:T3 Arg2:T5	
+R3	To Arg1:T3 Arg2:T6	
+R4	How Arg1:T3 Arg2:T7	
+R5	Commission Arg1:T3 Arg2:T8	
+R6	Content Arg1:T3 Arg2:T2	
+R7	What Arg1:T2 Arg2:T1	

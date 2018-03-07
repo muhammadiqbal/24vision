@@ -1,0 +1,15 @@
+T1	Commission 857 865	2.5% TTL
+T2	Terms 846 855	2000/2500
+T3	Laycan 809 844	END APRIL/BEG MAY TRY ANY VSL DATES
+T4	Load_Place 771 776	GABES
+T5	Disch_Place 780 787	HOUSTON
+T6	Cargo 790 807	5000 CEMENT IN BB
+R1	When Arg1:T6 Arg2:T3	
+R2	How Arg1:T6 Arg2:T2	
+R3	Commission Arg1:T6 Arg2:T1	
+R4	To Arg1:T6 Arg2:T5	
+R5	From Arg1:T6 Arg2:T4	
+T7	Quantity 113 117	5000
+T8	Commodity 118 124	CEMENT
+R6	What Arg1:T7 Arg2:T8	
+R7	Content Arg1:T6 Arg2:T7	

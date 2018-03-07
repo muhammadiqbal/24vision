@@ -1,0 +1,33 @@
+T1	Load_Place 635 640	Izmir
+T2	Disch_Place 644 646	UK
+T3	Cargo 649 669	5000 mt %10 minerals
+T4	Terms 672 680	ttl days
+T5	Laycan 682 695	10 / 13 April
+T6	Commission 698 706	5.0% iac
+T7	Load_Place 719 724	NADOR
+T8	Disch_Place 728 735	TUNISIA
+T9	Cargo 738 761	5000 mts 5% kaolin clay
+T10	Laycan 763 767	spot
+T11	Terms 769 780	3500c/3000c
+T12	Commission 782 790	2.5% TTL
+T13	Load_Place 813 820	ADABIYA
+T14	Disch_Place 824 838	ALBANIA DURRES
+T15	Cargo 841 866	M/M 6000 MTS STEEL SF=DWT
+T16	Laycan 869 877	VSL DATE
+T17	Terms 896 906	10 TTL DAY
+T18	Commission 945 954	3.75% IAC
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	How Arg1:T3 Arg2:T4	
+R4	When Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+R6	To Arg1:T9 Arg2:T8	
+R7	From Arg1:T9 Arg2:T7	
+R8	When Arg1:T9 Arg2:T10	
+R9	How Arg1:T9 Arg2:T11	
+R10	Commission Arg1:T9 Arg2:T12	
+R11	To Arg1:T15 Arg2:T14	
+R12	From Arg1:T15 Arg2:T13	
+R13	When Arg1:T15 Arg2:T16	
+R14	How Arg1:T15 Arg2:T17	
+R15	Commission Arg1:T15 Arg2:T18	

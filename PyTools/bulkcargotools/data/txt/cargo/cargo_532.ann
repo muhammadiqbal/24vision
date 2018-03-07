@@ -1,0 +1,15 @@
+T1	Commodity 138 142	coal
+T2	Cargo 257 287	30000mt coal in bulk 10% molco
+T3	Load_Place 308 345	muara sabak anchorage,jambi,indonesia
+T4	Disch_Place 370 407	south port of china(intend fangcheng)
+T5	Terms 410 440;442 477	loading rate:8000mt pwwd shinc discharging rate:12000mt pwwd shinc
+T6	Laycan 486 508	10th-20th., april,2017
+T7	Port_No 541 544	1/1
+T8	Commission 551 563	2.5% ttl pus
+R1	From Arg1:T2 Arg2:T3	
+R2	To Arg1:T2 Arg2:T4	
+R3	How Arg1:T2 Arg2:T5	
+R4	When Arg1:T2 Arg2:T6	
+R5	No_Of_Ports Arg1:T2 Arg2:T7	
+R6	Commission Arg1:T2 Arg2:T8	
+R7	Including Arg1:T2 Arg2:T1	

@@ -1,0 +1,9 @@
+T1	Cargo 182 241	Min 26600 - Max 29400 mts of MOP in bulk, STW abt 1.0 m3/mt
+T2	Load_Place 311 330	Klaipeda, Lithuania
+T3	Laycan 386 399	11-13/04/2017
+T4	Disch_Place 441 448;482 504	Vitoria , Brazil
+  or in CHOPT
+T5	Commission 765 785	2.5 pct add comm pus
+R1	From Arg1:T1 Arg2:T2	
+R2	When Arg1:T1 Arg2:T3	
+R3	Commission Arg1:T1 Arg2:T5	

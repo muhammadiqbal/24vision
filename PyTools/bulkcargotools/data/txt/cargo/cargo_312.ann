@@ -1,0 +1,15 @@
+T1	Quantity 81 91	3,765 tons
+T2	Commodity 92 98	STEELS
+R1	What Arg1:T1 Arg2:T2	
+T3	Load_Place 592 600	Nikolaev
+T4	Disch_Place 609 624	Beirut, Lebanon
+T5	Cargo 627 644	3,765 tons STEELS
+T6	Laycan 657 663	Prompt
+T7	Terms 645 656	2000x/1500x
+T8	Commission 664 672	2.5% ttl
+R2	To Arg1:T5 Arg2:T4	
+R3	From Arg1:T5 Arg2:T3	
+R4	How Arg1:T5 Arg2:T7	
+R5	When Arg1:T5 Arg2:T6	
+R6	Commission Arg1:T5 Arg2:T8	
+R7	Content Arg1:T5 Arg2:T1	

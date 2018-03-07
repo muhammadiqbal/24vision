@@ -1,0 +1,15 @@
+T1	Quantity 140 153	40/55.000 MTS
+T2	Commission 717 723	2.5%TL
+T3	Load_Place 733 745	BANDAR ABBAS
+T4	Disch_Place 753 769	PARADIP + HALDIA
+T5	Cargo 772 804	M/M 40/55.000 MTS OF BULK GYPSUM
+T6	Terms 808 830	000 / 10000  EIU BENDS
+T7	Laycan 840 851	17-25 APRIL
+T8	Commodity 162 168	GYPSUM
+R1	What Arg1:T1 Arg2:T8	
+R2	To Arg1:T5 Arg2:T4	
+R3	From Arg1:T5 Arg2:T3	
+R4	Commission Arg1:T5 Arg2:T2	
+R5	How Arg1:T5 Arg2:T6	
+R6	When Arg1:T5 Arg2:T7	
+R7	Content Arg1:T5 Arg2:T1	

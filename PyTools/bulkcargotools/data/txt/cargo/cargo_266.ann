@@ -1,0 +1,15 @@
+T1	Quantity 124 133	13580 MTS
+T2	Load_Place 781 788	RAVENNA
+T3	Disch_Place 792 808	HAMILTON+CHICAGO
+T4	Cargo 811 827	13580 MTS STEELS
+T5	Laycan 829 840	24/28 APRIL
+T6	Terms 842 850	2000/CQD
+T7	Commission 852 860	2.5% TTL
+T8	Commodity 134 140	STEELS
+R1	What Arg1:T1 Arg2:T8	
+R2	To Arg1:T4 Arg2:T3	
+R3	From Arg1:T4 Arg2:T2	
+R4	When Arg1:T4 Arg2:T5	
+R5	How Arg1:T4 Arg2:T6	
+R6	Commission Arg1:T4 Arg2:T7	
+R7	Content Arg1:T4 Arg2:T1	

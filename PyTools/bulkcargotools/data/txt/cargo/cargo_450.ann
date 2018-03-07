@@ -1,0 +1,22 @@
+T1	Cargo 378 411	30,000MTS +/- 10% CLINKER IN BULK
+T2	Load_Place 420 453	CAM PHA OR 1SBP NGHI SON, VIETNAM
+T3	Disch_Place 461 479	MONGLA, BANGLADESH
+T4	Terms 481 506	7,000/3,000MTS PWWD FHINC
+T5	Laycan 516 523	MID APR
+T6	Commission 525 548	TOTAL 1.25% ADDCOMM PUS
+T7	Cargo 554 601	2 shipments Limestone Chip 50000 mt +-10% moolo
+T8	Laycan 635 659	5-10 April + 15-20 April
+T9	Load_Place 607 614	Cam Pha
+T10	Disch_Place 616 626	Chittagong
+T11	Terms 670 685	8000/3000 Shinc
+T12	Commission 691 699	2.5% pus
+R1	To Arg1:T7 Arg2:T10	
+R2	From Arg1:T7 Arg2:T9	
+R3	When Arg1:T7 Arg2:T8	
+R4	How Arg1:T7 Arg2:T11	
+R5	Commission Arg1:T7 Arg2:T12	
+R6	From Arg1:T1 Arg2:T2	
+R7	To Arg1:T1 Arg2:T3	
+R8	How Arg1:T1 Arg2:T4	
+R9	Commission Arg1:T1 Arg2:T6	
+R10	When Arg1:T1 Arg2:T5	

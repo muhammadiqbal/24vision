@@ -1,0 +1,9 @@
+T1	Load_Place 204 220	saint petersburg
+T2	Disch_Place 224 229	vizag
+T3	Laycan 239 256	25th - 30th April
+T4	Commission 258 275	add comm 3.75 PUS
+T5	Cargo 135 177	12,000-20,000 mt amm nitrate in Jumbo bags
+R1	From Arg1:T5 Arg2:T1	
+R2	To Arg1:T5 Arg2:T2	
+R3	When Arg1:T5 Arg2:T3	
+R4	Commission Arg1:T5 Arg2:T4	

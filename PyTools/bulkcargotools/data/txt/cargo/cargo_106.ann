@@ -1,0 +1,11 @@
+T1	Load_Place 694 696	PG
+T2	Disch_Place 704 713	CONTINENT
+T3	Cargo 716 754	ABT 2,500 MT (+/- 5% chopt) STEEL PROD
+T4	Terms 757 813;815 872	Free in - 500 mt per hook per day, max 2 hooks fshex eiu Free out - 500 mt per hook per day, max 2 hooks sshex eiu
+T5	Commission 874 883	3.75% IAC
+T6	Commodity 148 158	STEEL PROD
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	How Arg1:T3 Arg2:T4	
+R4	Commission Arg1:T3 Arg2:T5	
+R5	Including Arg1:T3 Arg2:T6	

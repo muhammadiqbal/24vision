@@ -1,0 +1,9 @@
+T1	Ship 226 243	MV OCCITAN BARSAC
+T2	Year 290 294	2003
+T3	DWT 300 306	27,112
+R1	Built Arg1:T1 Arg2:T2	
+R2	Contain Arg1:T1 Arg2:T3	
+T4	Loading_Place 203 210	iItaqui
+T5	Open_Date 211 221	April 18th
+R3	Located Arg1:T1 Arg2:T4	
+R4	When Arg1:T1 Arg2:T5	

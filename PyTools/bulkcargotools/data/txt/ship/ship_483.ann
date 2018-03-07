@@ -1,0 +1,7 @@
+T1	Loading_Place 314 320	Santos
+T2	Open_Date 327 337	28th March
+T3	Ship 410 424	MV “N SCHELDE”
+T4	Year 468 472	2013
+R1	Located Arg1:T3 Arg2:T1	
+R2	When Arg1:T3 Arg2:T2	
+R3	Built Arg1:T3 Arg2:T4	

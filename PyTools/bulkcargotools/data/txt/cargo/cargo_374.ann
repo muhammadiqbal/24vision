@@ -1,0 +1,13 @@
+T1	Commodity 77 88	SAWN TIMBER
+T2	Load_Place 582 591	SOLIKAMSK
+T3	Disch_Place 595 601	GEMLIK
+T4	Cargo 604 624	3500 CBM SAWN TIMBER
+T5	Laycan 625 633	5/10 MAY
+T6	Terms 634 642	7TTLDAYS
+T7	Commission 643 652	3.75% IAC
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T2	
+R3	When Arg1:T4 Arg2:T5	
+R4	How Arg1:T4 Arg2:T6	
+R5	Commission Arg1:T4 Arg2:T7	
+R6	Including Arg1:T4 Arg2:T1	

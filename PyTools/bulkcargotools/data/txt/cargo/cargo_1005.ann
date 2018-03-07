@@ -1,0 +1,11 @@
+T1	Commission 800 820	2.5 pct add comm pus
+T2	Cargo 154 188	50000 – 55000 mt in OO of bulk MOP
+T3	Laycan 247 260	19-21/04/2017
+T4	Load_Place 293 301	Klaipeda
+T5	Disch_Place 410 427	WC or EC of India
+T6	Terms 483 517;518 577	Loading rate: 10000 mt pwwd sshinc - DISCHARGE RATE:  10000 mt pwwd shex eiu (Sat 12 - Mon 08)
+R1	When Arg1:T2 Arg2:T3	
+R2	From Arg1:T2 Arg2:T4	
+R3	To Arg1:T2 Arg2:T5	
+R4	How Arg1:T2 Arg2:T6	
+R5	Commission Arg1:T2 Arg2:T1	

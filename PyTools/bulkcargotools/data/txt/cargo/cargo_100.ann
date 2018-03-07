@@ -1,0 +1,15 @@
+T1	Quantity 128 137	3.000 TON
+T2	Load_Place 682 687	PLOCE
+T3	Disch_Place 691 713	EFESAN PORT ( MARMARA)
+T4	Cargo 716 774	3.000 TON BIGBAGLI SODA ( 500 ton + 1.150 ton + 1350 ton )
+T5	Laycan 785 801	05-06 APRIL 2017
+T6	Terms 808 856	1000/1000 ton gün —SHEX EIU (Laytime Reversible)
+T7	Commission 859 867	2.5% TTL
+T8	Commodity 147 151	SODA
+R1	What Arg1:T1 Arg2:T8	
+R2	To Arg1:T4 Arg2:T3	
+R3	From Arg1:T4 Arg2:T2	
+R4	When Arg1:T4 Arg2:T5	
+R5	How Arg1:T4 Arg2:T6	
+R6	Commission Arg1:T4 Arg2:T7	
+R7	Content Arg1:T4 Arg2:T1	

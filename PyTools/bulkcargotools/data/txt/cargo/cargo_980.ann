@@ -1,0 +1,9 @@
+T1	Commission 352 360	1.25 ttl
+T2	Terms 213 239;241 346	Load      Mesaieed 8k FHEX Disc        Beira 1.25k SSHEX (abt 4-5k) + Durban 5k Shinc (abt 19-20k) + Cape Town 2.5k Shinc (abt 7-8k)
+T3	Laycan 195 211	10-15 April 2017
+T4	Cargo 133 181	30-33k Urea (10k Prilled balance Granular) in OO
+R1	When Arg1:T4 Arg2:T3	
+R2	How Arg1:T4 Arg2:T2	
+R3	Commission Arg1:T4 Arg2:T1	
+T5	Quantity 75 81	30-30k
+R4	Content Arg1:T4 Arg2:T5	

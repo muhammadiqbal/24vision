@@ -1,0 +1,9 @@
+T2	Cargo 128 166	29000 mt +/-  10 pct in OO of bulk MOP
+T3	Load_Place 341 360	Klaipeda, Lithuania
+T4	Laycan 449 462	04-06/04/2017
+R2	From Arg1:T2 Arg2:T3	
+R3	When Arg1:T2 Arg2:T4	
+T1	Disch_Place 545 553;555 582	Vietnam. Intention: Ho Chi Minh City
+T5	Commission 1159 1179	2.5 pct add comm pus
+R1	To Arg1:T2 Arg2:T1	
+R4	Commission Arg1:T2 Arg2:T5	

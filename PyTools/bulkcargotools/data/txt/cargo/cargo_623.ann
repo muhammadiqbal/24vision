@@ -1,0 +1,9 @@
+T1	Cargo 158 185	About 40,500 mts bulk ferts
+T2	Load_Place 197 209;271 279	Uusikaupunki Sluiskil
+T3	Disch_Place 386 396;509 529	Rio Grande São Francisco do Sul
+T4	Laycan 581 590	May 01/05
+T5	Commission 620 633	2,5 adcom pus
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	Commission Arg1:T1 Arg2:T5	
+R4	When Arg1:T1 Arg2:T4	

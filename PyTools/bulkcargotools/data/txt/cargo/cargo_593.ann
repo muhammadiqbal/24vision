@@ -1,0 +1,13 @@
+T1	Commodity 134 145	stone chips
+T2	Cargo 309 343;355 381	Stone Chips of 20 mm to 25 mm ?max : 29000mts to 30000mts Max
+T3	Laycan 420 441	SPOT to 17th April 17
+T4	Load_Place 246 263	Kandla Port India
+T5	Disch_Place 278 299	Chittagong Bangladesh
+T6	Terms 604 623;627 650	Load Rate: 10000mts Discharge rate: 3000Mts
+T7	Commission 1132 1141	1.25% pus
+R1	To Arg1:T2 Arg2:T5	
+R2	From Arg1:T2 Arg2:T4	
+R3	Including Arg1:T2 Arg2:T1	
+R4	When Arg1:T2 Arg2:T3	
+R5	How Arg1:T2 Arg2:T6	
+R6	Commission Arg1:T2 Arg2:T7	

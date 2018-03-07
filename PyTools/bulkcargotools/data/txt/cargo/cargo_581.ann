@@ -1,0 +1,13 @@
+T1	Commodity 143 153	aggregates
+T2	Cargo 249 279;293 303	20,000/10% molco aggregates in jumbo bags
+T3	Load_Place 309 312	uae
+T4	Disch_Place 321 329	maldives
+T5	Terms 331 343	2000 / 1000t
+T6	Laycan 369 385	prompt / onwards
+T7	Commission 387 401	2.5pct add pus
+R1	Including Arg1:T2 Arg2:T1	
+R2	From Arg1:T2 Arg2:T3	
+R3	To Arg1:T2 Arg2:T4	
+R4	How Arg1:T2 Arg2:T5	
+R5	When Arg1:T2 Arg2:T6	
+R6	Commission Arg1:T2 Arg2:T7	

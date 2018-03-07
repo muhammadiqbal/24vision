@@ -1,0 +1,9 @@
+T1	Cargo 274 294;308 327	10,000 OR 15,000 Mts : Ukraine ball clay
+T2	Laycan 621 637	End of June-2017
+T3	Commission 757 764	2.50pct
+T4	Disch_Place 448 457	Abu Dhabi
+T5	Load_Place 345 356	Chornomorsk
+R1	From Arg1:T1 Arg2:T5	
+R2	To Arg1:T1 Arg2:T4	
+R3	When Arg1:T1 Arg2:T2	
+R4	Commission Arg1:T1 Arg2:T3	

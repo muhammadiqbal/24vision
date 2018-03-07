@@ -1,0 +1,13 @@
+T1	Commodity 106 114	AGRIPROD
+T2	Cargo 255 285;286 304;313 341	Min 10.500 mts  +/-  %10 chopt 7.500 mts flour in bags + 3.000 mts sugar in bb
+T3	Laycan 388 397	15-20 May
+T4	Commission 410 421	2,5 ADD PUS
+T5	Terms 398 409	30 ttl days
+T6	Load_Place 354 360	Mersin
+T7	Disch_Place 363 383	Mogadishu ( Somali )
+R1	Including Arg1:T2 Arg2:T1	
+R2	To Arg1:T2 Arg2:T7	
+R3	From Arg1:T2 Arg2:T6	
+R4	When Arg1:T2 Arg2:T3	
+R5	How Arg1:T2 Arg2:T5	
+R6	Commission Arg1:T2 Arg2:T4	

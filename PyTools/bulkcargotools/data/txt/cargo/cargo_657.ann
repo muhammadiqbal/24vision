@@ -1,0 +1,11 @@
+T1	Load_Place 195 200	LAGOS
+T2	Disch_Place 203 210	RAVENNA
+T4	Terms 239 248	1000/1000
+T5	Laycan 250 258	SPOT PPT
+T6	Commission 260 270	3,75 % TTL
+T3	Cargo 211 237	2300/2500 TNS AGRI  STW 75
+R1	Commission Arg1:T3 Arg2:T6	
+R2	When Arg1:T3 Arg2:T5	
+R3	How Arg1:T3 Arg2:T4	
+R4	From Arg1:T3 Arg2:T1	
+R5	To Arg1:T3 Arg2:T2	

@@ -1,0 +1,209 @@
+T1	Load_Place 603 613	Iskenderun
+T2	Disch_Place 617 623	Dnipro
+T3	Cargo 636 672	abt 3000 mts marble chips in bigbags
+T4	Terms 677 687	6 ttl days
+T5	Laycan 692 707	4-10 April 2017
+T6	Commission 708 717	3.75% iac
+T7	Load_Place 724 734	Ilyichevsk
+T8	Disch_Place 738 753	Kroman + Martas
+T10	Laycan 815 828	04-05.04.2017
+T11	Terms 829 838	1000/1000
+T12	Commission 839 847	2.5% ttl
+T13	Commission 880 894	5.0% IAC 3.75%
+T14	Load_Place 895 907	Novorossiysk
+T15	Disch_Place 920 928	Damietta
+T17	Terms 960 969	2500/2500
+T18	Laycan 970 981	spot/prompt
+T19	Load_Place 1068 1079	Chornomorsk
+T20	Disch_Place 1083 1090	Psachna
+T21	Cargo 1093 1111	9000 MTS SOYABEANS
+T22	Terms 1113 1132	2500/3000 sshex eiu
+T23	Laycan 1134 1138	Spot
+T24	Commission 1139 1148	3.75% iac
+T25	Cargo 1161 1220	min 13,000. mts 5 pct more in chopt bulk copper concentrate
+T26	Laycan 1396 1413	05/09 april, 2017
+T29	Terms 1806 1905	4000 mt pwwd of 24 consec hrs wwd satshex uu iuatc be fri 1700 / mon 0800 hrs not to count UU bends
+T30	Commission 1970 1979	3.75% iac
+T31	Commission 2030 2038	2.5% TTL
+T34	Cargo 2060 2114;2119 2159	11.000 upto 35.000 tons dwat singledecker / bukcarrier to load humanitarian food aid bulk cargo
+T35	Laycan 2245 2255	5/15 APRIL
+T36	Commission 2458 2466	2.5% TTL
+T37	Cargo 2498 2535	14.100 MTS BULK WHEAT PLUS EMPTY BAGS
+T38	Load_Place 2561 2572	CHERNOMORSK
+T40	Laycan 2894 2912	15 / 20 APRIL 2017
+T43	Load_Place 3151 3165	Eregli, Turkey
+T44	Disch_Place 3169 3198	Valleyfield + Windsor, Canada
+T45	Cargo 3201 3240	12.500 / 15.800 tons chopt steel plates
+T46	Terms 3242 3252	2500 / CQD
+T47	Laycan 3253 3264	10-11 April
+T48	Commission 3265 3273	2.5% ttl
+T49	Load_Place 3290 3297	Isdemir
+T50	Disch_Place 3301 3308	Sagunto
+T51	Cargo 3311 3347	M/M 15.113/16.705 mts of HRC inchopt
+T52	Laycan 3349 3358	12-13 Apr
+T53	Terms 3359 3387	6.500 Shinc/5 days Sshex-eiu
+T54	Commission 3407 3415	2.5% ttl
+T57	Load_Place 3967 3991	Dahej, Gujarat, WC INDIA
+T58	Disch_Place 4044 4073	DUQUM Port, Sultanate of Oman
+T61	Commission 4881 4889	2.5% ttl
+T62	Load_Place 4906 4914	Nikolaev
+T63	Disch_Place 4918 4927	Tuticorin
+T64	Cargo 4930 4968	abt 25000 mts bulk agriprods sf abt 62
+T65	Terms 4969 4990	3000 / 3000 sshex eiu
+T66	Laycan 4997 5011	12-15 April'17
+T67	Commission 5015 5023	5.0% iac
+T68	Terms 5345 5361	5.000 / 3.500 MT
+T69	Commission 5362 5371	3.75% IAC
+T70	Load_Place 5275 5287	RICHARDS BAY
+T71	Disch_Place 5290 5310	MERSIN OR ISKENDERUN
+T72	Laycan 5318 5340	STARTING FM APRIL 2017
+T73	Cargo 5181 5209;5212 5249	COA 150.000 MT BULK CHROMITE EACH TRIP (EVERY 2 MONTHS)  +/- 20 CO
+T74	Commission 5394 5408	3.75% IAC 2.5%
+T75	Commission 5686 5700	3.75% IAC 2.5%
+T77	Cargo 5420 5439;5451 5472	Stone chips in bulk 55,000mt +/-10% MOLOO
+T78	Load_Place 5489 5512	Mundra or Kandla, India
+T79	Disch_Place 5534 5554	Chittagong or Mongla
+T80	Laycan 5564 5568	Spot
+T83	Cargo 5711 5728;5740 5761	Limestone in bulk 45,000mt +/-10% MOLOO
+T84	Load_Place 5779 5796	Cam Pha, Viet Nam
+T85	Disch_Place 5818 5840	Chittagong, Bangladesh
+T87	Laycan 5849 5865	10-15April, 2017
+T88	Commission 5982 5996	3.75% IAC 2.5%
+T90	Cargo 6005 6022;6028 6062	Woodchips in bulk 10,000BDMT +/-10% MOLOO (S/f: 5.4)
+T91	Load_Place 6083 6091	Chan May
+T92	Disch_Place 6097 6110	Rizhao, China
+T93	Laycan 6119 6135	15-20April, 2017
+T94	Commission 6184 6198	3.75% IAC 2.5%
+T96	Cargo 6209 6221;6233 6255	COAL in bulk 100,000mt +/-10% MOLOO
+T97	Load_Place 6273 6287	Baltimore, USA
+T98	Disch_Place 6319 6330	Kandla, WCI
+T99	Laycan 6338 6358	Early of April, 2017
+T101	Commission 6473 6487	3.75% IAC 2.5%
+T102	Load_Place 6489 6504	Campha, Vietnam
+T103	Disch_Place 6508 6530	Chittagong, Bangladesh
+T104	Cargo 6533 6564	45,000 MT 10% OO Bulk Limestone
+T105	Terms 6565 6601	7000 MT / 2500 MT , pwwd shinc bends
+T107	Commission 6665 6674	3.75% IAC
+T108	Cargo 6676 6720	MIN 54.000 / MAX 56.000 SLABS - QTY IN CHOPT
+T109	Disch_Place 6731 6739	PRACHUAP
+T110	Load_Place 6721 6728	B.ABBAS
+T111	Laycan 6740 6764	SPOT/5 APRIL (TRY LATER)
+T112	Terms 6765 6792	4.000 FHEX UU / 10.000SHINC
+T113	Laycan 7012 7035	28’April’17 to 4’May’17
+T116	Cargo 6977 7003	1X 60,000 +/- 10% MT MOLOO
+T117	Commission 7568 7576	2.5% ttl
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	How Arg1:T3 Arg2:T4	
+R4	When Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+R16	To Arg1:T21 Arg2:T20	
+R17	From Arg1:T21 Arg2:T19	
+R18	How Arg1:T21 Arg2:T22	
+R19	When Arg1:T21 Arg2:T23	
+R20	Commission Arg1:T21 Arg2:T24	
+R21	When Arg1:T25 Arg2:T26	
+R24	How Arg1:T25 Arg2:T29	
+R25	Commission Arg1:T25 Arg2:T30	
+T41	Terms 2258 2272;2274 2304;2307 2356;2359 2376	2500 TONS LOAD - 2500  TONS DISCHARGE BERBERA 5000  TONS OPTION 4000 OPTION  2000 TONS DJIBOUTI 9000 TONS MOMBASA
+R26	Commission Arg1:T34 Arg2:T31	
+R29	When Arg1:T34 Arg2:T35	
+R30	How Arg1:T34 Arg2:T41	
+T39	Disch_Place 2635 2649;2651 2692;2693 2735	IN CHARTERERS’ OPTION OUT OF HODEIDAH AND/OR ADEN AND/OR PORT SALEEF AND/OR BERBERA AND/OR DJIBOUTI
+R31	Commission Arg1:T37 Arg2:T36	
+R32	From Arg1:T37 Arg2:T38	
+R33	To Arg1:T37 Arg2:T39	
+R34	When Arg1:T37 Arg2:T40	
+T42	Terms 2915 2941;2946 2986;3000 3028;3042 3106	LOADRATE    4.000 MTS PWWD DISCH RATE  YEMEN       - 2.500 MTS PWWD BERBERA     - 2.500 MTS PWWD DJIBOUTI    - 6.000 MTS PWWD CHOPT 5.000 MTS/4.000 MTS/2.000 MTS
+R35	How Arg1:T37 Arg2:T42	
+R36	To Arg1:T45 Arg2:T44	
+R37	From Arg1:T45 Arg2:T43	
+R38	How Arg1:T45 Arg2:T46	
+R39	When Arg1:T45 Arg2:T47	
+R40	Commission Arg1:T45 Arg2:T48	
+R41	To Arg1:T51 Arg2:T50	
+R42	From Arg1:T51 Arg2:T49	
+R43	When Arg1:T51 Arg2:T52	
+R44	How Arg1:T51 Arg2:T53	
+R45	Commission Arg1:T51 Arg2:T54	
+T60	Terms 4242 4304;4307 4362	Load Rate                                : 6,000 Mt PWWD SHINC Discharge Rate                     : 5,000 Mt PWWD FHEX
+R52	To Arg1:T64 Arg2:T63	
+R53	From Arg1:T64 Arg2:T62	
+R54	How Arg1:T64 Arg2:T65	
+R55	When Arg1:T64 Arg2:T66	
+R56	Commission Arg1:T64 Arg2:T67	
+R57	To Arg1:T73 Arg2:T71	
+R58	From Arg1:T73 Arg2:T70	
+R59	When Arg1:T73 Arg2:T72	
+R60	How Arg1:T73 Arg2:T68	
+R61	Commission Arg1:T73 Arg2:T69	
+R62	Commission Arg1:T77 Arg2:T74	
+R63	From Arg1:T77 Arg2:T78	
+R64	To Arg1:T77 Arg2:T79	
+R65	When Arg1:T77 Arg2:T80	
+T76	Terms 5569 5600;5601 5632	Load Rate - 10,000mt pwwd shinc Disch Rate - 3,000mt pwwd fhinc
+R66	How Arg1:T77 Arg2:T76	
+R67	Commission Arg1:T83 Arg2:T75	
+R68	From Arg1:T83 Arg2:T84	
+R69	To Arg1:T83 Arg2:T85	
+R70	When Arg1:T83 Arg2:T87	
+T81	Terms 5866 5896;5897 5928	Load Rate - 8,000mt pwwd shinc Disch Rate - 3,000mt pwwd fhinc
+R71	How Arg1:T83 Arg2:T81	
+R72	Commission Arg1:T90 Arg2:T88	
+R73	From Arg1:T90 Arg2:T91	
+R74	To Arg1:T90 Arg2:T92	
+R75	When Arg1:T90 Arg2:T93	
+R76	Commission Arg1:T96 Arg2:T94	
+R77	From Arg1:T96 Arg2:T97	
+R78	To Arg1:T96 Arg2:T98	
+R79	When Arg1:T96 Arg2:T99	
+T82	Terms 6359 6390;6391 6423	Load Rate - 40,000mt pwwd shinc Disch Rate - 25,000mt pwwd shinc
+R80	How Arg1:T96 Arg2:T82	
+R81	To Arg1:T104 Arg2:T103	
+R82	Commission Arg1:T104 Arg2:T101	
+R83	From Arg1:T104 Arg2:T102	
+R84	How Arg1:T104 Arg2:T105	
+R86	Commission Arg1:T108 Arg2:T107	
+R87	To Arg1:T108 Arg2:T109	
+R88	From Arg1:T108 Arg2:T110	
+R89	How Arg1:T108 Arg2:T112	
+R90	When Arg1:T108 Arg2:T111	
+R91	When Arg1:T116 Arg2:T113	
+T86	Terms 7036 7046;7048 7074;7075 7089;7090 7106;7107 7123	Load Rate: Port Rhoades-14,000 MT/day Discharge Rate VPT- 8000 MT/day GPL-12000 MT/day
+R92	How Arg1:T116 Arg2:T86	
+R93	Commission Arg1:T116 Arg2:T117	
+T27	Load_Place 1449 1462	Poti, Georgia
+T28	Disch_Place 1704 1717	Beihai, China
+R22	From Arg1:T25 Arg2:T27	
+R23	To Arg1:T25 Arg2:T28	
+T33	Disch_Place 2205 2242	out of BERBERA, DJIBOUTI  AND MOMBASA
+R28	To Arg1:T34 Arg2:T33	
+T32	Load_Place 2174 2184	PORT SUDAN
+R27	From Arg1:T34 Arg2:T32	
+T55	Cargo 3473 3494;3811 3853	Copper Slag (in bulk) : 24000 MT + 10 % CHOP COPPER SLAG IN BULK
+R46	From Arg1:T55 Arg2:T57	
+R47	To Arg1:T55 Arg2:T58	
+R49	How Arg1:T55 Arg2:T60	
+R50	Commission Arg1:T55 Arg2:T61	
+T56	Terms 6602 6618	Spot / try dates
+R51	How Arg1:T104 Arg2:T56	
+T59	Laycan 4114 4131	10- 15 April 2017
+R6	When Arg1:T55 Arg2:T59	
+T89	Port_No 5656 5659	1/2
+R7	No_Of_Ports Arg1:T77 Arg2:T89	
+T95	Port_No 5952 5955	1/2
+R8	No_Of_Ports Arg1:T83 Arg2:T95	
+T100	Port_No 6447 6450	1/2
+R9	No_Of_Ports Arg1:T96 Arg2:T100	
+T16	Cargo 931 945	5.000mtons hrc
+T9	Cargo 756 806	3000 mts of ferrosilicomanganese in bulk , stw=dwt
+R10	To Arg1:T9 Arg2:T8	
+R11	From Arg1:T9 Arg2:T7	
+R12	When Arg1:T9 Arg2:T10	
+R13	How Arg1:T9 Arg2:T11	
+R14	Commission Arg1:T9 Arg2:T12	
+R15	To Arg1:T16 Arg2:T15	
+R48	From Arg1:T16 Arg2:T14	
+R85	Commission Arg1:T16 Arg2:T13	
+R94	How Arg1:T16 Arg2:T17	
+R95	When Arg1:T16 Arg2:T18	

@@ -1,0 +1,13 @@
+T1	Quantity 119 128	12000 MTS
+T2	Load_Place 788 790	PG
+T3	Disch_Place 798 806	THAILAND
+T4	Cargo 809 833	12000 MTS BULK, 68 / 70'
+T5	Terms 839 868	2000 FHEX EIU / 2000 SHEX EIU
+T6	Laycan 874 881	WEEK 20
+T7	Commission 883 891	5.0% IAC
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T2	
+R3	How Arg1:T4 Arg2:T5	
+R4	When Arg1:T4 Arg2:T6	
+R5	Commission Arg1:T4 Arg2:T7	
+R6	Content Arg1:T4 Arg2:T1	

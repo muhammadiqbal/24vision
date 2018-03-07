@@ -1,0 +1,9 @@
+T1	Ship 231 249	MV  WESTERN DURBAN
+T2	Year 251 255	2015
+T3	DWT 284 290	39.266
+T4	Loading_Place 208 214	EREGLI
+T5	Open_Date 215 226	16-18 APRIL
+R1	Located Arg1:T1 Arg2:T4	
+R2	When Arg1:T1 Arg2:T5	
+R3	Built Arg1:T1 Arg2:T2	
+R4	Contain Arg1:T1 Arg2:T3	

@@ -1,0 +1,13 @@
+T1	Commission 836 849	Genc 2.5% ttl
+T2	Terms 796 817	5 Ttlwwdays sshex eiu
+T3	Laycan 757 766	4-5 April
+T4	Load_Place 691 697	Aveiro
+T5	Disch_Place 703 709	Sousse
+T6	Cargo 712 753	abt 3400nett cbm of Chipboard in packages
+R1	To Arg1:T6 Arg2:T5	
+R2	From Arg1:T6 Arg2:T4	
+R3	When Arg1:T6 Arg2:T3	
+R4	How Arg1:T6 Arg2:T2	
+R5	Commission Arg1:T6 Arg2:T1	
+T7	Commodity 137 146	Chipboard
+R6	Including Arg1:T6 Arg2:T7	

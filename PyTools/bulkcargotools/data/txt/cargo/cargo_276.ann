@@ -1,0 +1,13 @@
+T2	Load_Place 677 687	Iskenderun
+T3	Disch_Place 691 702	Aden, Yemen
+T4	Cargo 705 728	50,000 mts/10pc clinker
+T5	Laycan 730 739	10-17 May
+T6	Terms 741 753	11000c/8000x
+T7	Commission 755 763	2.5% TTL
+T8	Commodity 139 146	clinker
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T2	
+R3	When Arg1:T4 Arg2:T5	
+R4	How Arg1:T4 Arg2:T6	
+R5	Commission Arg1:T4 Arg2:T7	
+R6	Including Arg1:T4 Arg2:T8	

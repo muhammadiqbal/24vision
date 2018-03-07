@@ -1,0 +1,15 @@
+T1	Load_Place 688 695	DANGJIN
+T2	Disch_Place 699 715	PHU MY (TUNG HO)
+T3	Cargo 719 787	10,000MT 10% MOLCO SCRAP IN BULK (S/F ABT 2.2 FOR SD OR 2.4 FOR TWD)
+T4	Laycan 790 806	07/14TH APR 2017
+T5	Terms 809 820	2000 UU/CQD
+T6	Commission 894 903	3.75% IAC
+T7	Commodity 144 149	SCRAP
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+R6	Including Arg1:T3 Arg2:T7	
+T8	Port_No 847 850	1/1
+R7	No_Of_Ports Arg1:T3 Arg2:T8	

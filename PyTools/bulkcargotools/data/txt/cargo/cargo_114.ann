@@ -1,0 +1,9 @@
+T1	Load_Place 184 192	Balakovo
+T2	Disch_Place 195 202	Marmara
+T3	Cargo 203 241	3,000 mtons Sunflowerhuskpellets 85/90
+T4	Laycan 242 253	20-30 April
+T5	Terms 284 309	1,000 / 1,000 sshex bends
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	

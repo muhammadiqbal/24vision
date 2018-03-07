@@ -1,0 +1,15 @@
+T2	Load_Place 234 241	RAVENNA
+T3	Disch_Place 244 249	MALTA
+T5	Commission 295 300	3.75%
+T6	Laycan 285 293	SPOT PPT
+T7	Terms 272 284	3.5 TTL DAYS
+T8	Commodity 40 44	agri
+T4	Cargo 250 271	ABT 1200/1300 AGRI 60
+T1	Quantity 27 39	1200/1300 mt
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T2	
+R3	Content Arg1:T4 Arg2:T1	
+R4	What Arg1:T1 Arg2:T8	
+R5	How Arg1:T4 Arg2:T7	
+R6	When Arg1:T4 Arg2:T6	
+R7	Commission Arg1:T4 Arg2:T5	

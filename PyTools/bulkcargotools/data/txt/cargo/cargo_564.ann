@@ -1,0 +1,15 @@
+T1	Quantity 126 133	45000mt
+T2	Commodity 134 145	silica sand
+T3	Cargo 288 307	45000mt silica sand
+T4	Laycan 319 333	25-30 May 2017
+T5	Load_Place 358 372	Adabiya, Egypt
+T6	Disch_Place 396 410	chennai, india
+T7	Terms 415 443;448 475	Loadrate: 5000 mt pwwd fhinc disrate: 5000 mt pwwd shinc
+T8	Commission 488 497	3.75% pus
+R1	When Arg1:T3 Arg2:T4	
+R2	From Arg1:T3 Arg2:T5	
+R3	To Arg1:T3 Arg2:T6	
+R4	How Arg1:T3 Arg2:T7	
+R5	Commission Arg1:T3 Arg2:T8	
+R6	Content Arg1:T3 Arg2:T1	
+R7	What Arg1:T1 Arg2:T2	

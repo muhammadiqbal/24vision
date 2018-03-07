@@ -1,0 +1,15 @@
+T2	Load_Place 738 755	TUBARAO (ES - BR)
+T3	Disch_Place 759 773	AMSTERDAM (NL)
+T5	Commission 1034 1042	5.0% TTL
+T6	Commodity 186 197	ANIMAL FEED
+T4	Cargo 776 841	25/30.000 MTS PER SHIPMENT IN BULK OR 1,000KG BIG BAG ANIMAL FEED
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T2	
+R3	Commission Arg1:T4 Arg2:T5	
+<<<<<<< HEAD
+T1	Quantity 132 145	25/30.000 MTS
+R4	What Arg1:T1 Arg2:T6	
+R5	Content Arg1:T4 Arg2:T1	
+=======
+R4	Including Arg1:T4 Arg2:T6	
+>>>>>>> a62d00c0e4f470d5d17bb524118d708c933d55c7

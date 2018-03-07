@@ -1,0 +1,37 @@
+T1	Load_Place 668 675	Marmara
+T2	Disch_Place 679 694	Hamilton,Canada
+T3	Cargo 697 733	Abt 4000 mts Steel Coils, Max 1 tier
+T4	Laycan 735 748	Ready to load
+T5	Terms 750 778	2 days sshex eiu / Liner Out
+T6	Commission 780 788	2.5% TTL
+T7	Load_Place 818 825	Marmara
+T8	Load_Place 961 968	Marmara
+T9	Disch_Place 829 844	Altamira,Mexico
+T10	Cargo 847 884	Abt 2250 mts Steel Coils, Max 2 tiers
+T11	Laycan 886 899	ready to load
+T12	Terms 901 921	Ttl 4 days sshex eiu
+T13	Commission 923 931	2.5% TTL
+T14	Disch_Place 972 983	Houston,USA
+T15	Cargo 986 1023	Abt 1700 mts Steel Coils, Max 2 tiers
+T16	Laycan 1025 1038	ready to load
+T17	Terms 1040 1068	2 days sshex eiu / Liner out
+T18	Commission 1070 1078	2.5% TTL
+T19	Commodity 101 112	STEEL COILS
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+R6	To Arg1:T10 Arg2:T9	
+R7	From Arg1:T10 Arg2:T7	
+R8	When Arg1:T10 Arg2:T11	
+R9	How Arg1:T10 Arg2:T12	
+R10	Commission Arg1:T10 Arg2:T13	
+R11	To Arg1:T15 Arg2:T14	
+R12	From Arg1:T15 Arg2:T8	
+R13	When Arg1:T15 Arg2:T16	
+R14	How Arg1:T15 Arg2:T17	
+R15	Commission Arg1:T15 Arg2:T18	
+R16	Including Arg1:T15 Arg2:T19	
+R17	Including Arg1:T3 Arg2:T19	
+R18	Including Arg1:T10 Arg2:T19	

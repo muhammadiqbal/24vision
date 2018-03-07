@@ -1,0 +1,13 @@
+T1	Load_Place 801 808	Marmara
+T2	Disch_Place 812 822	Port Sudan
+T4	Laycan 870 881	Cargo ready
+T5	Terms 883 894	1750x/1500x
+T6	Commission 896 905	3.75% iac
+T7	Commodity 136 147	wheat flour
+T3	Cargo 825 868	12.500mts 10pct wheat flour in bags stw 55'
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+R6	Including Arg1:T3 Arg2:T7	

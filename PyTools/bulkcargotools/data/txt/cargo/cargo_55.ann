@@ -1,0 +1,15 @@
+T1	Quantity 126 134	3000 mts
+T2	Load_Place 697 707	Ilyichevsk
+T3	Disch_Place 711 726	Kroman + Martas
+T5	Laycan 789 802	04-05.04.2017
+T6	Terms 804 813	1000/1000
+T7	Commission 815 823	2.5% ttl
+T8	Commodity 138 158	ferrosilicomanganese
+R1	What Arg1:T1 Arg2:T8	
+T4	Cargo 729 779	3000 mts of ferrosilicomanganese in bulk , stw=dwt
+R2	To Arg1:T4 Arg2:T3	
+R3	From Arg1:T4 Arg2:T2	
+R4	When Arg1:T4 Arg2:T5	
+R5	How Arg1:T4 Arg2:T6	
+R6	Commission Arg1:T4 Arg2:T7	
+R7	Content Arg1:T4 Arg2:T1	

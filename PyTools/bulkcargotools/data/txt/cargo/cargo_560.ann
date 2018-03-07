@@ -1,0 +1,15 @@
+T1	Commodity 138 147	Millscale
+T2	Quantity 130 137	20000mt
+T3	Cargo 287 297;302 311	Mill Scale : 20000MT
+T4	Load_Place 322 335	Kandla, India
+T5	Disch_Place 338 362	Nanjing or Nantong CHOPT
+T6	Terms 382 402	5000/5000 PWWD SHINC
+T7	Laycan 446 470	early may, try vsl dates
+T8	Commission 478 490	2.5% add pus
+R1	From Arg1:T3 Arg2:T4	
+R2	To Arg1:T3 Arg2:T5	
+R3	How Arg1:T3 Arg2:T6	
+R4	When Arg1:T3 Arg2:T7	
+R5	Commission Arg1:T3 Arg2:T8	
+R6	Content Arg1:T3 Arg2:T2	
+R7	What Arg1:T2 Arg2:T1	

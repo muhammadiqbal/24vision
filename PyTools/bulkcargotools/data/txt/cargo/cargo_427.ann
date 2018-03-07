@@ -1,0 +1,15 @@
+T1	Load_Place 603 620	Dikili (T.Aegean)
+T2	Quantity 75 84	3/3500 mt
+T3	Disch_Place 624 630	Dammam
+T4	Cargo 633 667	3/3500 mt harmless min in big bags
+T5	Laycan 675 686	15/20 April
+T6	Terms 700 710	1500 sshex
+T7	Commission 712 721	3.75% iac
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T1	
+R3	When Arg1:T4 Arg2:T5	
+R4	How Arg1:T4 Arg2:T6	
+R5	Commission Arg1:T4 Arg2:T7	
+T8	Commodity 85 97	harmless min
+R6	What Arg1:T2 Arg2:T8	
+R7	Content Arg1:T4 Arg2:T2	

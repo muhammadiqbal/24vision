@@ -1,0 +1,11 @@
+T1	Cargo 157 190	28500-33500 mt  in OO of bulk MOP
+T2	Laycan 247 258	spot, promt
+T3	Load_Place 292 300	Klaipeda
+T4	Disch_Place 410 425;457 478;543 575	WC or EC India, Intention: Dighi, WCI + 1 port on  East coast of India
+T5	Terms 688 721;723 740;744 795;797 901	Loading rate: 8000 mt pwwd sshinc - Discharge rate: Dighi - 3500 mt pwwd   sshex eiu ( sat 12 - mon 08) Other ports - 8000 mt pwwd   sshex eiu ( sat 12 - mon 08) for 4  hatches and pro rata apply in case less
+T6	Commission 1046 1066	2.5 pct add comm pus
+R1	When Arg1:T1 Arg2:T2	
+R2	From Arg1:T1 Arg2:T3	
+R3	To Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	

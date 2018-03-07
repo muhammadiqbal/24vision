@@ -1,0 +1,13 @@
+T2	Cargo 258 294	abt 4/6,000 mt blk harmless Minerals
+T3	Load_Place 302 312	Iskenderun
+T4	Disch_Place 320 335	Ashdod or Haifa
+T5	Terms 338 370	4.5 Ttl dap load/disch sshex eiu
+T6	Laycan 373 387	Prompt / April
+T7	Commission 390 402	3.75 add pus
+R2	From Arg1:T2 Arg2:T3	
+R3	To Arg1:T2 Arg2:T4	
+R4	How Arg1:T2 Arg2:T5	
+R5	When Arg1:T2 Arg2:T6	
+R6	Commission Arg1:T2 Arg2:T7	
+T1	Commodity 116 124	Minerals
+R1	Including Arg1:T2 Arg2:T1	

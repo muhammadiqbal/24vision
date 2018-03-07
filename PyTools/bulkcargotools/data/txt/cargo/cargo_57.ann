@@ -1,0 +1,13 @@
+T2	Load_Place 1237 1261	Dahej, Gujarat, WC INDIA
+T3	Disch_Place 1318 1346	UQUM Port, Sultanate of Oman
+T6	Commission 2185 2193	2.5% ttl
+T5	Terms 1522 1584;1590 1645	Load Rate                                : 6,000 Mt PWWD SHINC Discharge Rate                     : 5,000 Mt PWWD FHEX
+T7	Commodity 115 126	COPPER SLAG
+T4	Laycan 1390 1407	10- 15 April 2017
+T1	Cargo 1080 1120	24000 MT + 10 % CHOP COPPER SLAG IN BULK
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	When Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+R5	Including Arg1:T1 Arg2:T7	
+R6	Commission Arg1:T1 Arg2:T6	

@@ -1,0 +1,15 @@
+T1	Quantity 116 124	5000 MTS
+T2	Load_Place 786 792	MALAGA
+T3	Disch_Place 798 805	TUNISIA
+T4	Cargo 808 837	5000 MTS MARBLE CHIPS IN BULK
+T5	Laycan 839 843	SPOT
+T6	Terms 845 857	60 TTL HOURS
+T7	Commission 859 867	2.5% ttl
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T2	
+R3	When Arg1:T4 Arg2:T5	
+R4	How Arg1:T4 Arg2:T6	
+R5	Commission Arg1:T4 Arg2:T7	
+R6	Content Arg1:T4 Arg2:T1	
+T8	Commodity 125 137	MARBLE CHIPS
+R7	What Arg1:T1 Arg2:T8	

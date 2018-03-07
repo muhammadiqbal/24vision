@@ -170,7 +170,41 @@ class Cargo extends Model
      * @var array
      */
     public static $rules = [
-        
+        'loading_port' => 'integer',
+        'loading_port_manual' => 'boolean',
+        'discharging_port' => 'integer',
+        'discharging_port_manual' => 'boolean',
+        'laycan_first_day' => 'date',
+        'laycan_first_day_manual' => 'boolean',
+        'laycan_first_day_constructed' => 'boolean',
+        'laycan_last_day' => 'date',
+        'laycan_last_day_manual' => 'boolean',
+        'laycan_last_day_constructed' => 'boolean',
+        'cargo_type_id' => 'integer',
+        'cargo_type_id_manual' => 'boolean',
+        'stowage_factor_manual' => 'boolean',
+        'stowage_factor_constructed' => 'boolean',
+        'sf_unit' => 'integer',
+        'ship_specialization_id' => 'integer',
+        'quantity_measurement_id' => 'integer',
+        'quantity' => 'integer',
+        'quantity_manual' => 'boolean',
+        'quantity_constructed' => 'boolean',
+        'loading_rate_type' => 'integer',
+        'loading_rate_type_manual' => 'boolean',
+        'loading_rate' => 'integer',
+        'loading_rate_manual' => 'boolean',
+        'loading_rate_constructed' => 'boolean',
+        'discharging_rate_type' => 'integer',
+        'discharging_rate_type_manual' => 'boolean',
+        'discharging_rate' => 'integer',
+        'discharging_rate_manual' => 'boolean',
+        'discharging_rate_constructed' => 'boolean',
+        'extra_condition' => 'string',
+        'commision_manual' => 'boolean',
+        'commision_constructed' => 'boolean',
+        'email_id' => 'integer',
+        'status_id' => 'integer'
     ];
 
  

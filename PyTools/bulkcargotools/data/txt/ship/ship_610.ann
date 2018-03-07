@@ -1,0 +1,9 @@
+T1	Ship 188 206	MV NEW LEGEND RUBY
+T2	Year 270 274	2014
+T3	DWT 255 261	24,300
+R1	Contain Arg1:T1 Arg2:T3	
+R2	Built Arg1:T1 Arg2:T2	
+T4	Loading_Place 148 166	Djen-Djen, Algeria
+T5	Open_Date 167 185	o/a End April 2017
+R3	Located Arg1:T1 Arg2:T4	
+R4	When Arg1:T1 Arg2:T5	

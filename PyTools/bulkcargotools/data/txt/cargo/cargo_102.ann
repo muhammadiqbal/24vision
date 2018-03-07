@@ -1,0 +1,13 @@
+T1	Load_Place 769 774	ROUEN
+T2	Disch_Place 778 785	MOROCCO
+T3	Cargo 788 803	30,000/10 WHEAT
+T4	Laycan 806 830	SPOT TRY UPTO 12TH APRIL
+T5	Terms 832 846	15000C / 5000X
+T6	Commission 848 854	5.0TTL
+T7	Commodity 123 128	WHEAT
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+R6	Including Arg1:T3 Arg2:T7	

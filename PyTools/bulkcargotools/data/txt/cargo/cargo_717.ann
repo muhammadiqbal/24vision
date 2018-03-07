@@ -1,0 +1,9 @@
+T1	Load_Place 310 319	rotterdam
+T2	Disch_Place 322 336	pointe a pitre
+T3	Cargo 237 306	provisional  1800 cbm cbm/1250 mt crane Equipment/portocabins/various
+T4	Laycan 340 368	ppt onw  april - vsl's dates
+T5	Commission 476 483	2,5 ttl
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	Commission Arg1:T3 Arg2:T5	

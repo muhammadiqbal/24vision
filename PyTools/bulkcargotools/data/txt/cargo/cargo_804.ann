@@ -1,0 +1,15 @@
+T1	Quantity 27 39	3000/5000 mt
+T2	Load_Place 252 268	VARNA OR BOURGAS
+T3	Disch_Place 271 278	TUNISIE
+T4	Cargo 280 295	3000/5000 WHEAT
+T5	Terms 297 309	4/5 TTL DAYS
+T6	Laycan 311 318	PPT ONW
+T7	Commission 320 328	2,50 TTL
+R1	Content Arg1:T4 Arg2:T1	
+R2	From Arg1:T4 Arg2:T2	
+R3	To Arg1:T4 Arg2:T3	
+R4	Commission Arg1:T4 Arg2:T7	
+R5	When Arg1:T4 Arg2:T6	
+R6	How Arg1:T4 Arg2:T5	
+T8	Commodity 40 45	wheat
+R7	What Arg1:T1 Arg2:T8	

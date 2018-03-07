@@ -1,0 +1,15 @@
+T1	Quantity 122 137	7,682/7,752 mts
+T2	Commission 814 822	5.0% iac
+T3	Load_Place 829 838	nikolayev
+T4	Disch_Place 847 854	sibenik
+T6	Laycan 922 938	04 - 06/apr 2017
+T5	Cargo 857 907	7,682/7,752 mts in chopt of blk mop stw abt 1m3/mt
+T7	Terms 942 972;976 1005	load rate: 3000 mt pwwd sshinc disch rate: 2500 mt sshex eiu
+R1	To Arg1:T5 Arg2:T4	
+R2	From Arg1:T5 Arg2:T3	
+R3	When Arg1:T5 Arg2:T6	
+R4	How Arg1:T5 Arg2:T7	
+R5	Commission Arg1:T5 Arg2:T2	
+R6	Content Arg1:T5 Arg2:T1	
+T8	Commodity 154 157	mop
+R7	What Arg1:T1 Arg2:T8	

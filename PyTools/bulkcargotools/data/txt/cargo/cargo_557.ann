@@ -1,0 +1,15 @@
+T1	Commission 1611 1619	1.25 pct
+T2	Commodity 125 129	COAL
+T3	Cargo 250 293	45-55,000 10 pct moloo Thermal coal in Bulk
+T4	Terms 490 517;519 546;550 575	L.Rate: 10,000mt pwwd shinc D.Rate:  7,000mt pwwd shinc :    12 hrs t/t bends eiu
+T5	Load_Place 342 364	Taboneo -  Bunyu range
+T6	Disch_Place 383 405	Inner anchorage Mumbai
+T7	Laycan 299 320	May to September 2017
+R1	When Arg1:T3 Arg2:T7	
+R2	From Arg1:T3 Arg2:T5	
+R3	To Arg1:T3 Arg2:T6	
+R4	How Arg1:T3 Arg2:T4	
+R5	Including Arg1:T3 Arg2:T2	
+R6	Commission Arg1:T3 Arg2:T1	
+T8	Port_No 1545 1548	1/1
+R7	No_Of_Ports Arg1:T3 Arg2:T8	

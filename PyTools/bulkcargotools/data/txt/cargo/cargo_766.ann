@@ -1,0 +1,15 @@
+T1	Commodity 58 62	Coal
+T2	Quantity 46 57	20-25K tons
+T3	Cargo 150 169	20.000-26000TS COAL
+T4	Load_Place 171 177	TUAPSE
+T5	Disch_Place 184 193	IZMIT BAY
+T6	Laycan 194 201	PPT ONW
+T7	Terms 202 213	7000C/7000X
+T8	Commission 215 231	3.75 PCT ADD PUS
+R1	What Arg1:T2 Arg2:T1	
+R2	Content Arg1:T3 Arg2:T2	
+R3	From Arg1:T3 Arg2:T4	
+R4	To Arg1:T3 Arg2:T5	
+R5	When Arg1:T3 Arg2:T6	
+R6	How Arg1:T3 Arg2:T7	
+R7	Commission Arg1:T3 Arg2:T8	

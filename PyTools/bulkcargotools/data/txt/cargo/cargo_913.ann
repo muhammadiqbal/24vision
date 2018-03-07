@@ -1,0 +1,25 @@
+T1	Load_Place 312 339	Tokyo Bay or Kashima, Japan
+T2	Load_Place 502 518	Mizushima, Japan
+T3	Disch_Place 526 541	Pohang, S.Korea
+T4	Disch_Place 347 361	Ulsan, S.Korea
+T5	Terms 384 393	CQD bends
+T6	Terms 564 573	CQD bends
+T7	Commission 640 656	2.50% AddCom pus
+T8	Cargo 417 441	1,560mt/10% Molco H-Beam
+T9	Laycan 450 463	10th May 2017
+T10	Port_No 589 592	1/1
+T11	Port_No 409 412	1/1
+T12	Laycan 263 284	05th or 08th May 2017
+T13	Cargo 214 240	5,000mt/10% Molco HR Coils
+R1	When Arg1:T13 Arg2:T12	
+R2	From Arg1:T13 Arg2:T1	
+R3	To Arg1:T13 Arg2:T4	
+R4	How Arg1:T13 Arg2:T5	
+R5	No_Of_Ports Arg1:T13 Arg2:T11	
+R6	When Arg1:T8 Arg2:T9	
+R7	From Arg1:T8 Arg2:T2	
+R8	To Arg1:T8 Arg2:T3	
+R9	How Arg1:T8 Arg2:T6	
+R10	No_Of_Ports Arg1:T8 Arg2:T10	
+R11	Commission Arg1:T8 Arg2:T7	
+R12	Commission Arg1:T13 Arg2:T7	

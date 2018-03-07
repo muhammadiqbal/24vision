@@ -54,7 +54,9 @@ class CargoType extends Model
      * @var array
      */
     public static $rules = [
-        
+        'name' => 'required|string',
+        'stowage_factor' => 'integer',
+        'sf_unit' => 'integer'
     ];
 
     /**

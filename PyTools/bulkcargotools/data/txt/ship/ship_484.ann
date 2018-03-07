@@ -1,0 +1,9 @@
+T1	Ship 236 244	M/V CANO
+T2	Year 269 273	2013
+T3	DWT 321 327	38,835
+T4	Loading_Place 211 217	Dublin
+T5	Open_Date 218 231	30-31st March
+R1	Located Arg1:T1 Arg2:T4	
+R2	When Arg1:T1 Arg2:T5	
+R3	Built Arg1:T1 Arg2:T2	
+R4	Contain Arg1:T1 Arg2:T3	

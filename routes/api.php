@@ -77,9 +77,9 @@ Route::group(['middleware' => 'auth.basic.once'], function()
 
 	Route::resource('shiporderextracted', 'ShipOfferExtractedAPIController');
 
-	Route::get('emails/{filter}/{limit}', 'EmailAPIController@extra');
-
 	Route::resource('ports', 'PortAPIController');
+	
+	Route::get('emails/{filter}/{limit}', 'EmailAPIController@extra');
 
 	Route::get('controlPanel', 'ControlPanelAPIController@execute');
 

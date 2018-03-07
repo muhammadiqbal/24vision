@@ -1,0 +1,8 @@
+T1	Ship 545 557	MV. DL OLIVE
+T2	Loading_Place 573 583	CJK. CHINA
+T3	Open_Date 588 604	2 - 4/ MAY, 2017
+T4	Year 671 675	2013
+T5	DWT 558 561	35K
+R1	Built Arg1:T1 Arg2:T4	
+R2	When Arg1:T1 Arg2:T3	
+R3	Located Arg1:T1 Arg2:T2	

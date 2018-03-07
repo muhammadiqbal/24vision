@@ -1,0 +1,11 @@
+T1	Cargo 154 219	50000 – 55000 mt in OO of bulk MOP, 1–2 grades, +/- 35 mt of each
+T2	Laycan 247 260	19-21/04/2017
+T3	Load_Place 278 301	1-2 berths at  Klaipeda
+T4	Disch_Place 376 427	1-2 berths/anchorage 1-2 ports of WC or EC of India
+T5	Terms 497 517;536 577	10000 mt pwwd sshinc  10000 mt pwwd shex eiu (Sat 12 - Mon 08)
+T6	Commission 800 820	2.5 pct add comm pus
+R1	When Arg1:T1 Arg2:T2	
+R2	From Arg1:T1 Arg2:T3	
+R3	To Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	

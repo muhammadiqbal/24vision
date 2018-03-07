@@ -1,0 +1,9 @@
+T1	Cargo 135 194	Min 20700 - Max 25300 mts of MOP in bulk, STW abt 1.0 m3/mt
+T2	Load_Place 264 283	Klaipeda, Lithuania
+T4	Laycan 341 354	18-20/04/2017
+T5	Commission 705 725	2.5 pct add comm pus
+R1	From Arg1:T1 Arg2:T2	
+R2	When Arg1:T1 Arg2:T4	
+R4	Commission Arg1:T1 Arg2:T5	
+T3	Disch_Place 397 411;415 426;446 471	Itaqui, Brazil or in CHOPT Itaqui - Rio Grande range
+R3	To Arg1:T1 Arg2:T3	

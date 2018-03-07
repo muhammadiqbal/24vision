@@ -1,0 +1,15 @@
+T1	Quantity 117 125	2500 MTS
+T2	Load_Place 784 791	TUNISIA
+T3	Disch_Place 795 802	CONAKRY
+T5	Laycan 831 835	SPOT
+T6	Terms 837 847	4 TTL DAYS
+T7	Commission 849 857	2.5% TTL
+T4	Cargo 805 823	2500 MTS MIN IN BB
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T2	
+R3	When Arg1:T4 Arg2:T5	
+R4	How Arg1:T4 Arg2:T6	
+R5	Commission Arg1:T4 Arg2:T7	
+R6	Content Arg1:T4 Arg2:T1	
+T8	Commodity 126 129	MIN
+R7	What Arg1:T1 Arg2:T8	

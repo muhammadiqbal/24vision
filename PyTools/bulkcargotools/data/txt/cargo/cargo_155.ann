@@ -1,0 +1,13 @@
+T1	Commission 775 784	3.75% iac
+T2	Terms 762 773	1000 / 1000
+T3	Laycan 747 760	13 / 14 April
+T4	Load_Place 679 687	Nikolaev
+T5	Disch_Place 691 707	Marmara or Izmir
+T6	Cargo 710 745	3300 mts WBP in bulk sf abt 55'cuft
+T7	Quantity 125 133	3300 mts
+R1	To Arg1:T6 Arg2:T5	
+R2	From Arg1:T6 Arg2:T4	
+R3	When Arg1:T6 Arg2:T3	
+R4	How Arg1:T6 Arg2:T2	
+R5	Commission Arg1:T6 Arg2:T1	
+R6	Content Arg1:T6 Arg2:T7	

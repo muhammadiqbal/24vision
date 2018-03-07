@@ -1,0 +1,13 @@
+T1	Quantity 96 107	1,500/2,000
+T2	Cargo 247 288	1,500 MTS UP TO 2,000 MTS BGD CGO SLINGED
+T3	Load_Place 289 293	SFAX
+T4	Disch_Place 296 303	TARTOUS
+T5	Terms 308 316	SPOT/PPT
+T6	Laycan 317 326	4 TTL DYS
+T7	Commission 331 339	1.25 TTL
+R1	Content Arg1:T2 Arg2:T1	
+R2	From Arg1:T2 Arg2:T3	
+R3	To Arg1:T2 Arg2:T4	
+R4	How Arg1:T2 Arg2:T5	
+R5	When Arg1:T2 Arg2:T6	
+R6	Commission Arg1:T2 Arg2:T7	

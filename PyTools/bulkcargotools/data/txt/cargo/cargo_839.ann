@@ -1,0 +1,15 @@
+T1	Quantity 27 39	4600/4800 mt
+T2	Load_Place 268 275	RAVENNA
+T3	Disch_Place 278 307	IZMIR ALIAGA RANGE OR ANTALYA
+T4	Cargo 308 330	4600/4800 WHEATBRAN 60
+T5	Terms 331 338	6,5 TTL
+T6	Laycan 341 354	13 APRIL  ONW
+T7	Commission 356 363	3,75TTL
+R1	From Arg1:T4 Arg2:T2	
+R2	How Arg1:T4 Arg2:T5	
+R3	When Arg1:T4 Arg2:T6	
+R4	Commission Arg1:T4 Arg2:T7	
+R5	To Arg1:T4 Arg2:T3	
+R6	Content Arg1:T4 Arg2:T1	
+T8	Commodity 40 49	wheatbran
+R7	What Arg1:T1 Arg2:T8	

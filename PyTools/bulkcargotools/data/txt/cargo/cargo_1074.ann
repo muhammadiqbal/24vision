@@ -1,0 +1,13 @@
+T1	Disch_Place 220 229	Amsterdam
+T2	Load_Place 167 173	Ashdod
+T3	Terms 295 320	7,000 Shex / 10,000 Shinc
+T4	Laycan 332 336	Spot
+T5	Cargo 262 281	20,000-40,000mt BHF
+T6	Commodity 89 92	BHF
+T7	Quantity 82 88	20-40k
+R1	What Arg1:T7 Arg2:T6	
+R2	To Arg1:T5 Arg2:T1	
+R3	How Arg1:T5 Arg2:T3	
+R4	From Arg1:T5 Arg2:T2	
+R5	Content Arg1:T5 Arg2:T7	
+R6	When Arg1:T5 Arg2:T4	

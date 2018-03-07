@@ -1,0 +1,11 @@
+T2	Terms 367 371	ttld
+T3	Laycan 352 365	2nd half 2017
+T5	Load_Place 187 212	Kuantan or Batam or Kabil
+T6	Disch_Place 217 227	Chittagong
+T1	Commission 377 389	5.0% iac ttl
+T4	Cargo 236 254	abt 7.000 mt pipes
+R1	From Arg1:T4 Arg2:T5	
+R2	To Arg1:T4 Arg2:T6	
+R3	When Arg1:T4 Arg2:T3	
+R4	How Arg1:T4 Arg2:T2	
+R5	Commission Arg1:T4 Arg2:T1	

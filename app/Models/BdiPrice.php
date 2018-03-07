@@ -55,7 +55,9 @@ class BdiPrice extends Model
      * @var array
      */
     public static $rules = [
-        
+        'bdi_id' => 'required|integer',
+        'start_date' => 'date',
+        'end_date' => 'date'
     ];
 
     /**

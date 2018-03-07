@@ -1,0 +1,17 @@
+T1	Commodity 128 142	granite blocks
+T2	Quantity 116 127	25-35,000mt
+T3	Cargo 234 260	25-35,000mt granite blocks
+T4	Laycan 369 385	20-25th apr 2017
+T5	Port_No 461 464	1/1
+T6	Load_Place 274 324	krishnapatnam or kakinada, india,at chrtr's option
+T7	Disch_Place 334 358	shihu or xiamen, s.china
+T8	Terms 387 415;417 446	load rate: 4500mt shinc pwwd disch rate: 5500mt shinc pwwd
+T9	Commission 472 487	total 1.25% pus
+R1	What Arg1:T2 Arg2:T1	
+R2	Content Arg1:T3 Arg2:T2	
+R3	From Arg1:T3 Arg2:T6	
+R4	To Arg1:T3 Arg2:T7	
+R5	When Arg1:T3 Arg2:T4	
+R6	How Arg1:T3 Arg2:T8	
+R7	Commission Arg1:T3 Arg2:T9	
+R8	No_Of_Ports Arg1:T3 Arg2:T5	

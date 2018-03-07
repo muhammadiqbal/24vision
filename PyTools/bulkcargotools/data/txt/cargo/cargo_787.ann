@@ -1,0 +1,13 @@
+T1	Commodity 71 76	scrap
+T2	Cargo 235 290	5000 mts 5 pct scrap XMBT sf max 60 cbft bale per tonne
+T3	Load_Place 291 306	Galveston (USA)
+T4	Disch_Place 309 324	Aliaga (Turkey)
+T5	Laycan 325 345	End May a/o Mid June
+T6	Terms 346 384	1000 shinc load / 1000 sshex discharge
+T7	Commission 385 397	2.5% add pus
+R1	Including Arg1:T2 Arg2:T1	
+R2	To Arg1:T2 Arg2:T4	
+R3	From Arg1:T2 Arg2:T3	
+R4	When Arg1:T2 Arg2:T5	
+R5	How Arg1:T2 Arg2:T6	
+R6	Commission Arg1:T2 Arg2:T7	

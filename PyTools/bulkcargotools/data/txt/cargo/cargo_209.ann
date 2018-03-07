@@ -1,0 +1,13 @@
+T1	Commission 877 886	3.75% iac
+T2	Laycan 821 855	cgo ready depends on river opening
+T3	Terms 807 815	ttl days
+T4	Load_Place 713 732	Ust-Donetsk, Russia
+T5	Disch_Place 736 750	Abu Qir, Egypt
+T6	Cargo 753 780	abt 6500 tns sulfur in bulk
+T7	Commodity 147 153	sulfur
+R1	To Arg1:T6 Arg2:T5	
+R2	From Arg1:T6 Arg2:T4	
+R3	How Arg1:T6 Arg2:T3	
+R4	When Arg1:T6 Arg2:T2	
+R5	Commission Arg1:T6 Arg2:T1	
+R6	Including Arg1:T6 Arg2:T7	

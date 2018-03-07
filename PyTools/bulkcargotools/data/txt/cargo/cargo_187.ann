@@ -1,0 +1,13 @@
+T1	Load_Place 737 742	Aqaba
+T2	Disch_Place 756 772	Goa in W.C.India
+T3	Cargo 775 839	20,000mts 10% moloo bulk hless ferts or at chopt up to full load
+T4	Terms 841 851	8000/ 3000
+T5	Laycan 853 856	Ppt
+T6	Commission 888 897	3.75% iac
+T7	Commodity 157 168	hless ferts
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	How Arg1:T3 Arg2:T4	
+R4	When Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+R6	Including Arg1:T3 Arg2:T7	

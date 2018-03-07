@@ -1,0 +1,9 @@
+T2	Cargo 205 232	About 40,500 mts bulk fertz
+T4	Commission 652 665	2,5 adcom pus
+R3	Commission Arg1:T2 Arg2:T4	
+T5	Load_Place 244 256;318 326	Uusikaupunki Sluiskil
+T6	Disch_Place 433 443;540 560	Rio Grande São Francisco do Sul
+R4	From Arg1:T2 Arg2:T5	
+R5	To Arg1:T2 Arg2:T6	
+T1	Laycan 612 621	May 01/05
+R1	When Arg1:T2 Arg2:T1	

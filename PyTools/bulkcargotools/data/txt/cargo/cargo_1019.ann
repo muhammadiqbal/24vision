@@ -1,0 +1,11 @@
+T1	Cargo 165 191	30’000 mt +/-5% OO alumina
+T2	Load_Place 194 203	Gladstone
+T3	Disch_Place 206 259	Bayuquan or Lianyungang or Qingdao or Rizhao in CHOPT
+T4	Laycan 268 280	4-8 May 2017
+T5	Terms 282 299	18000 shinc / cqd
+T6	Commission 303 322	Our commission only
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	When Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	

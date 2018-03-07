@@ -1,0 +1,15 @@
+T1	Commodity 148 151	npk
+T2	Cargo 245 291	30,000mt 10% molco of npk in bulk (s/f abt 1.4
+T3	Load_Place 318 335	gresik, indonesia
+T4	Disch_Place 355 413	gangavaram or vizak or krishnapatnam or kakinada, ec.india
+T5	Terms 480 512;514 584;607 642;664 702	load rate : 3,000mt pwwd shex uu dis rate : aa) 10,000mt pwwd shex eiu for gangavaram and krishnapatnam bb) 7,000mt pwwd shex eiu for vizak cc) 5,000mt pwwd shex eiu for kakinada
+T6	Laycan 714 731	1st-15th may 2017
+T7	Port_No 773 776	1/1
+T8	Commission 822 841	gencon 2.5% ttl pus
+R1	From Arg1:T2 Arg2:T3	
+R2	To Arg1:T2 Arg2:T4	
+R3	How Arg1:T2 Arg2:T5	
+R4	When Arg1:T2 Arg2:T6	
+R5	No_Of_Ports Arg1:T2 Arg2:T7	
+R6	Commission Arg1:T2 Arg2:T8	
+R7	Including Arg1:T2 Arg2:T1	

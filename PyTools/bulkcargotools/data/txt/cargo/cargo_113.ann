@@ -1,0 +1,15 @@
+T1	Quantity 121 134	2800/3,000 mt
+T2	Load_Place 674 681	Marmara
+T3	Disch_Place 685 698	Baku + Anzali
+T4	Cargo 701 723	2800/3,000 mt bgd mins
+T5	Terms 725 735	7 ttl days
+T6	Laycan 737 750	Spot / prompt
+T7	Commission 752 761	3.75% iac
+T8	Commodity 139 143	mins
+R1	What Arg1:T1 Arg2:T8	
+R2	To Arg1:T4 Arg2:T3	
+R3	From Arg1:T4 Arg2:T2	
+R4	How Arg1:T4 Arg2:T5	
+R5	When Arg1:T4 Arg2:T6	
+R6	Commission Arg1:T4 Arg2:T7	
+R7	Content Arg1:T4 Arg2:T1	

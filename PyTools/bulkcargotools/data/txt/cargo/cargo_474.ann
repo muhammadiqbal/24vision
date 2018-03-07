@@ -1,0 +1,9 @@
+T1	Load_Place 417 422	Masan
+T2	Disch_Place 425 438	St.Petersburg
+T3	Cargo 440 481	1 unit Methanol Reactor, 136,64mts/299cbm
+T4	Laycan 512 525	from 13th May
+T5	Commission 527 539	2,5% com pus
+R1	From Arg1:T3 Arg2:T1	
+R2	To Arg1:T3 Arg2:T2	
+R3	When Arg1:T3 Arg2:T4	
+R4	Commission Arg1:T3 Arg2:T5	

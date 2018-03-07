@@ -1,0 +1,15 @@
+T1	Commodity 40 44	agri
+T2	Quantity 27 39	2000/2200 mt
+T3	Disch_Place 246 253	TUNISIA
+T4	Load_Place 237 243	ORTONA
+T5	Cargo 254 279	2000/2200 TNS AGRI STW 60
+T6	Terms 281 293	5.5 TTL DAYS
+T7	Laycan 295 306	3 APRIL ONW
+T8	Commission 308 318	3.75 % TTL
+R1	How Arg1:T5 Arg2:T6	
+R2	When Arg1:T5 Arg2:T7	
+R3	Commission Arg1:T5 Arg2:T8	
+R4	From Arg1:T5 Arg2:T4	
+R5	To Arg1:T5 Arg2:T3	
+R6	Content Arg1:T5 Arg2:T2	
+R7	What Arg1:T2 Arg2:T1	

@@ -1,0 +1,13 @@
+T1	Load_Place 692 698	B.I.K.
+T3	Cargo 731 749	Abt 10,000.mts hrc
+T5	Terms 796 803	Cqd/Cqd
+T6	Commission 815 824	3.75% iac
+T2	Disch_Place 702 728	Ravenna or Genova in Chopt
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+T4	Laycan 765 779	26 Apr / 5 May
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+T7	Commodity 148 151	hrc
+R6	Including Arg1:T3 Arg2:T7	

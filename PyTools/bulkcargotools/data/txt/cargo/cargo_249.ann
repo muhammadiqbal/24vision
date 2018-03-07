@@ -1,0 +1,28 @@
+T1	Load_Place 716 721	Kunda
+T2	Disch_Place 725 732	Kantvik
+T3	Cargo 735 763	abt 3000 mt Rapeseed in bulk
+T4	Laycan 774 785	28-29 April
+T5	Terms 788 834	36 hrs wwsshinc load / 1500 mt  wwdsshex disch
+T6	Commission 836 844	2.5% ttl
+T7	Load_Place 867 873	ODESSA
+T8	Disch_Place 877 884	MARMARA
+T9	Cargo 887 908	5000 MTS CORN IN BULK
+T10	Laycan 910 921	25/30 APRIL
+T11	Terms 923 932	1250/1250
+T12	Commission 934 942	2.5% TTL
+T13	Commodity 173 177	CORN
+T14	Commodity 125 133	Rapeseed
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+R6	To Arg1:T9 Arg2:T8	
+R7	From Arg1:T9 Arg2:T7	
+R8	When Arg1:T9 Arg2:T10	
+R9	How Arg1:T9 Arg2:T11	
+R10	Commission Arg1:T9 Arg2:T12	
+R11	Including Arg1:T3 Arg2:T14	
+T15	Quantity 164 172	5000 MTS
+R12	What Arg1:T15 Arg2:T13	
+R13	Content Arg1:T9 Arg2:T15	

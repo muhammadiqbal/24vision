@@ -1,0 +1,7 @@
+T1	Ship 466 486	MV THAI BINH STAR 01
+T2	Loading_Place 502 520	HAI PHONG, VIETNAM
+T3	Open_Date 525 532	8TH APR
+T4	Year 608 612	2009
+R1	Located Arg1:T1 Arg2:T2	
+R2	When Arg1:T1 Arg2:T3	
+R3	Built Arg1:T1 Arg2:T4	

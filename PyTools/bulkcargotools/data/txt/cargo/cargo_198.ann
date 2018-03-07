@@ -1,0 +1,15 @@
+T1	Commission 781 790	3.75% iac
+T3	Laycan 731 743	20/23  April
+T4	Load_Place 677 683	Bilbao
+T5	Disch_Place 687 692	Haifa
+T6	Cargo 695 729	10.100/10.450  mts rebars in coils
+T7	Quantity 112 130	10.100/10.450  mts
+T8	Commodity 131 146	rebars in coils
+R1	What Arg1:T7 Arg2:T8	
+R2	To Arg1:T6 Arg2:T5	
+R3	From Arg1:T6 Arg2:T4	
+R4	When Arg1:T6 Arg2:T3	
+T2	Terms 746 760	1500/liner out
+R5	How Arg1:T6 Arg2:T2	
+R6	Commission Arg1:T6 Arg2:T1	
+R7	Content Arg1:T6 Arg2:T7	

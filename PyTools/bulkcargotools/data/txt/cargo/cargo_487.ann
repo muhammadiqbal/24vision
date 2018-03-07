@@ -1,0 +1,15 @@
+T1	Cargo 476 501	5000 mt min/max bulk malt
+T2	Load_Place 506 513	Antwerp
+T3	Disch_Place 516 525	Mariveles
+T4	Laycan 545 574	any June/July (10 day laycan)
+T5	Terms 579 620	2 days load / 3000 disch wwdshexuuiuatutc
+T6	Quantity 132 138	5000mt
+T7	Commodity 139 148	bulk malt
+R1	What Arg1:T6 Arg2:T7	
+T8	Commission 625 640	1.25 % comm pus
+R2	From Arg1:T1 Arg2:T2	
+R3	To Arg1:T1 Arg2:T3	
+R4	When Arg1:T1 Arg2:T4	
+R5	How Arg1:T1 Arg2:T5	
+R6	Commission Arg1:T1 Arg2:T8	
+R7	Content Arg1:T1 Arg2:T6	

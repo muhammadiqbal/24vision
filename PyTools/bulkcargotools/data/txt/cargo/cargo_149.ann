@@ -1,0 +1,13 @@
+T1	Commission 828 837	3.75% iac
+T2	Terms 780 792	8000x/ 4000x
+T3	Laycan 762 773	20/30 April
+T4	Load_Place 690 707	Naantali, Finland
+T5	Disch_Place 711 722	Jeddah, KSA
+T6	Cargo 725 755	60.000 mts 10% inoo bulk wheat
+T7	Commodity 154 159	wheat
+R1	To Arg1:T6 Arg2:T5	
+R2	From Arg1:T6 Arg2:T4	
+R3	When Arg1:T6 Arg2:T3	
+R4	How Arg1:T6 Arg2:T2	
+R5	Commission Arg1:T6 Arg2:T1	
+R6	Including Arg1:T6 Arg2:T7	

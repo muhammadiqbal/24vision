@@ -1,0 +1,13 @@
+T1	Cargo 206 250	30,000 mts Max Aggregate/Stone Chips in Bulk
+T2	Load_Place 272 278	Kandla
+T3	Disch_Place 279 289	Chittagong
+T6	Terms 342 375	11,000 SSHINC / 3,000 PWWD FSHINC
+R1	To Arg1:T1 Arg2:T3	
+R2	From Arg1:T1 Arg2:T2	
+R4	How Arg1:T1 Arg2:T6	
+T4	Terms 327 338	vsl's dates
+R3	How Arg1:T1 Arg2:T4	
+T5	Commission 381 388	2.5 Pus
+T7	Commodity 101 123	STONE CHIPS AGGREGATES
+R5	Including Arg1:T1 Arg2:T7	
+R6	Commission Arg1:T1 Arg2:T5	

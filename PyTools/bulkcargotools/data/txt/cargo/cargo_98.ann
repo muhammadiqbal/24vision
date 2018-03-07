@@ -1,0 +1,15 @@
+T2	Laycan 838 848	5/10 APRIL
+T3	Terms 821 836	4000/2000 sshex
+T4	Load_Place 777 782	Nador
+T5	Disch_Place 786 794	Pozzallo
+T6	Cargo 797 819	7.000ts  blk bentonite
+T7	Quantity 114 121	7.000ts
+T8	Commodity 127 136	bentonite
+R1	What Arg1:T7 Arg2:T8	
+R2	To Arg1:T6 Arg2:T5	
+R3	From Arg1:T6 Arg2:T4	
+R4	How Arg1:T6 Arg2:T3	
+R5	When Arg1:T6 Arg2:T2	
+R7	Content Arg1:T6 Arg2:T7	
+T1	Commission 854 862	5.0% iac
+R6	Commission Arg1:T6 Arg2:T1	

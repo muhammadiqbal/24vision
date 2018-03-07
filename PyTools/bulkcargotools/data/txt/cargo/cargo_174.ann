@@ -1,0 +1,15 @@
+T1	Quantity 129 138	25000 MTS
+T2	Load_Place 651 662	Muara Berau
+T3	Disch_Place 668 679	South China
+T4	Cargo 682 701	25000 MTS Bulk Coal
+T5	Terms 703 739	6000 mt / 12,000 mt pwwd shinc bends
+T6	Laycan 740 755	Mid April, 2017
+T7	Commission 756 766	2.5% total
+T8	Commodity 144 148	Coal
+R1	What Arg1:T1 Arg2:T8	
+R2	To Arg1:T4 Arg2:T3	
+R3	From Arg1:T4 Arg2:T2	
+R4	How Arg1:T4 Arg2:T5	
+R5	When Arg1:T4 Arg2:T6	
+R6	Commission Arg1:T4 Arg2:T7	
+R7	Content Arg1:T4 Arg2:T1	

@@ -1,0 +1,13 @@
+T1	Cargo 162 183	MAX 25,000/5% LESS OO
+T2	Commodity 72 75	BHF
+T3	Laycan 226 239	APR/MAY DATES
+T4	Commission 240 246	5% TTL
+T5	Load_Place 184 191	B.ABBAS
+T6	Disch_Place 194 204	MANZANILLO
+T7	Terms 205 225	4,000X / 5,000C FLEX
+R1	From Arg1:T1 Arg2:T5	
+R2	To Arg1:T1 Arg2:T6	
+R3	Including Arg1:T1 Arg2:T2	
+R4	How Arg1:T1 Arg2:T7	
+R5	When Arg1:T1 Arg2:T3	
+R6	Commission Arg1:T1 Arg2:T4	

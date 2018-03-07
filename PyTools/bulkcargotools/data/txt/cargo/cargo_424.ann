@@ -1,0 +1,13 @@
+T1	Load_Place 624 652	Penang and Bintulu, Malaysia
+T2	Disch_Place 656 680	Aden and Hodeidah, Yemen
+T3	Cargo 683 744;772 843;866 892	5200 CBM MEDIUM-DENSITY FIBREBOARD (MDF) IN CRATES S.F. 3 CBM AND BALANCE 2000-3000 BUNDLES OF SAWN TIMBER PACKED IN BUNDLES SF 3 CBM - NEED ABOUT 6K-8K DWT TNG
+T4	Terms 893 921;922 959	Load rate: 12 days SSHEX EIU Dis rate: 12 days FHEX (incl Sat) EIU
+T5	Laycan 969 975	Propmt
+T6	Port_No 1045 1048	2/2
+T7	Commission 1049 1057	2.5% TTL
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	How Arg1:T3 Arg2:T4	
+R4	When Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T7	
+R6	No_Of_Ports Arg1:T3 Arg2:T6	

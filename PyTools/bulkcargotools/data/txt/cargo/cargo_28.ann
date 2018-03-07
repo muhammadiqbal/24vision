@@ -1,0 +1,13 @@
+T1	Load_Place 812 816	Poti
+T2	Disch_Place 820 828	Taganrog
+T4	Laycan 909 927	30.03 - 04.04.2017
+T5	Terms 929 941	1000  / 1000
+T6	Commission 943 951	2.5% ttl
+T7	Commodity 136 156	ferrosilicomanganese
+T3	Cargo 837 890;900 907	upto 4000 mts of ferrosilicomanganese in bulk and bb, stw=dwt
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+R6	Including Arg1:T3 Arg2:T7	

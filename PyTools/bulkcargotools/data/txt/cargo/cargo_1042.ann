@@ -1,0 +1,9 @@
+T1	Commission 851 871	2.5 pct add comm pus
+T2	Load_Place 346 365	Klaipeda, Lithuania
+T3	Disch_Place 479 493;497 508;528 553	Santos, Brazil or in CHOPT Itaqui - Rio Grande range
+T4	Laycan 423 436	25-27/04/2017
+T5	Cargo 135 192	25000 - 27500 mts in OO of MOP in bulk, STW abt 1.0 m3/mt
+R1	From Arg1:T5 Arg2:T2	
+R2	When Arg1:T5 Arg2:T4	
+R3	To Arg1:T5 Arg2:T3	
+R4	Commission Arg1:T5 Arg2:T1	

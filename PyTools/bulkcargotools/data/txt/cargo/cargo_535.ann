@@ -1,0 +1,14 @@
+T1	Cargo 260 272;282 304	Steel Billet 15,000MT (+/-5% MOLCO)
+T2	Load_Place 323 350	Sohar, Oman (JSIS Terminal)
+T3	Disch_Place 373 391	Jakarta, Indonesia
+T4	Terms 550 678	Loading rate : 5,000 MT (with 4 x 30 MT SWL Cranes)  OR 4,000 MT (with 4 x 25 MT SWL Cranes) PDPR PWWD.
+
+- Discharing rate : CQD
+T5	Terms 550 653;655 678	Loading rate : 5,000 MT (with 4 x 30 MT SWL Cranes)  OR 4,000 MT (with 4 x 25 MT SWL Cranes) PDPR PWWD. - Discharing rate : CQD
+T6	Commission 1284 1297	1.25% ttl pus
+T7	Laycan 413 431	1st - 5th May 2017
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	When Arg1:T1 Arg2:T7	
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	

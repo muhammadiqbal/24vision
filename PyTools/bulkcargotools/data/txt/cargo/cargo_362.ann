@@ -1,0 +1,22 @@
+T1	Load_Place 584 589	Varna
+T2	Disch_Place 593 600	Tartous
+T3	Cargo 603 642	3000 mts kaolin in BB uw 1.1 mt stw=dwt
+T4	Laycan 643 652	3/10 aprl
+T5	Terms 653 663	4 ttl days
+T6	Commission 664 672	5.0% iac
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+T7	Load_Place 697 702	Yeisk
+T8	Disch_Place 706 712	Beirut
+T9	Cargo 715 741	fr sawn timbers abt 4000m3
+T10	Laycan 742 755	need spot vsl
+T11	Commission 768 777	3.75% iac
+R6	To Arg1:T9 Arg2:T8	
+R7	From Arg1:T9 Arg2:T7	
+R8	When Arg1:T9 Arg2:T10	
+R9	Commission Arg1:T9 Arg2:T11	
+T12	Commodity 67 79	sawn timbers
+R10	Including Arg1:T9 Arg2:T12	

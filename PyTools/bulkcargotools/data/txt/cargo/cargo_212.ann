@@ -1,0 +1,13 @@
+T1	Commission 770 779	3.75% iac
+T2	Terms 744 768	CQD/1500mt sshex uu pwwd
+T3	Laycan 731 742	April 14/16
+T4	Load_Place 677 689	Novorossiysk
+T5	Disch_Place 693 699	Bartin
+T6	Cargo 702 729	Abt 5.200 mts steel billets
+T7	Commodity 133 146	steel billets
+R1	To Arg1:T6 Arg2:T5	
+R2	From Arg1:T6 Arg2:T4	
+R3	When Arg1:T6 Arg2:T3	
+R4	How Arg1:T6 Arg2:T2	
+R5	Commission Arg1:T6 Arg2:T1	
+R6	Including Arg1:T6 Arg2:T7	

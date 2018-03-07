@@ -1,0 +1,47 @@
+T1	Cargo 232 258	5,000mt/10% Molco HR Coils
+T2	Laycan 281 295	21st Apr. 2017
+T3	Port_No 401 408	bss 1/1
+T4	Cargo 597 622	Abt 4,700mt Steel CRCoils
+T5	Laycan 679 698	22nd/24th Apr. 2017
+T6	Port_No 741 744	1/1
+T7	Terms 876 916	BT/BT (Full liner terms) & CQD both ends
+T8	Laycan 841 859	01st/31st May 2017
+T9	Cargo 413 439	5,000mt/10% Molco HR Coils
+T10	Laycan 462 476	27th Apr. 2017
+T11	Port_No 587 590	1/1
+T12	Commission 964 980	2.50% AddCom pus
+T13	Cargo 747 767	Abt 4,000mt CR Coils
+T14	Load_Place 771 789	Sriracha, Thailand
+T15	Disch_Place 793 803;809 818;824 829	Long Beach + Houston , USA
+T16	Terms 717 726	CQD bends
+T17	Load_Place 626 644	VungTau, S.Vietnam
+T18	Disch_Place 648 664	Merak, Indonesia
+T19	Terms 562 571	CQD bends
+T20	Load_Place 504 517	Yawata, Japan
+T21	Disch_Place 525 539	Busan, S.Korea
+T22	Disch_Place 345 357	Ulsan, Korea
+T23	Load_Place 323 337	Kimitsu, Japan
+T24	Terms 380 389	CQD bends
+R1	From Arg1:T13 Arg2:T14	
+R2	To Arg1:T13 Arg2:T15	
+R3	When Arg1:T13 Arg2:T8	
+R4	How Arg1:T13 Arg2:T7	
+R5	Commission Arg1:T13 Arg2:T12	
+R6	When Arg1:T4 Arg2:T5	
+R7	From Arg1:T4 Arg2:T17	
+R8	To Arg1:T4 Arg2:T18	
+R9	No_Of_Ports Arg1:T4 Arg2:T6	
+R10	How Arg1:T4 Arg2:T16	
+R11	Commission Arg1:T4 Arg2:T12	
+R12	When Arg1:T9 Arg2:T10	
+R13	From Arg1:T9 Arg2:T20	
+R14	To Arg1:T9 Arg2:T21	
+R15	How Arg1:T9 Arg2:T19	
+R16	No_Of_Ports Arg1:T9 Arg2:T11	
+R17	Commission Arg1:T9 Arg2:T12	
+R18	From Arg1:T1 Arg2:T23	
+R19	When Arg1:T1 Arg2:T2	
+R20	To Arg1:T1 Arg2:T22	
+R21	How Arg1:T1 Arg2:T24	
+R22	No_Of_Ports Arg1:T1 Arg2:T3	
+R23	Commission Arg1:T1 Arg2:T12	

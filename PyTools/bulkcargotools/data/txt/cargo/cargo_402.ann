@@ -1,0 +1,15 @@
+T1	Quantity 75 85	40 000 MTS
+T2	Commodity 86 89	DRI
+R1	What Arg1:T1 Arg2:T2	
+T3	Load_Place 596 603	Bahrain
+T4	Disch_Place 607 622	Shuaiba, Kuwait
+T5	Cargo 625 653	40 000 MTS DRI B (+/-5% ) OO
+T6	Terms 654 710	8000 MT PWWD FHINC / Discharge rate : 7000 MT PWWD FHINC
+T7	Laycan 711 723	Beg May 2017
+T8	Commission 724 732	2.5% ttl
+R2	To Arg1:T5 Arg2:T4	
+R3	From Arg1:T5 Arg2:T3	
+R4	How Arg1:T5 Arg2:T6	
+R5	When Arg1:T5 Arg2:T7	
+R6	Commission Arg1:T5 Arg2:T8	
+R7	Content Arg1:T5 Arg2:T1	

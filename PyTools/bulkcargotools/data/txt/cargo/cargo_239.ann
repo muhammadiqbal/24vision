@@ -1,0 +1,15 @@
+T1	Quantity 115 126	5/5.250 mts
+T2	Load_Place 674 682	Mariupol
+T3	Disch_Place 686 692	Cyprus
+T4	Cargo 695 723	5/5.250 mts of barley 54-55'
+T5	Terms 725 738	1500x / 1500x
+T6	Laycan 740 750	spot / ppt
+T7	Commission 752 761	3.75% iac
+T8	Commodity 130 136	barley
+R1	What Arg1:T1 Arg2:T8	
+R2	To Arg1:T4 Arg2:T3	
+R3	From Arg1:T4 Arg2:T2	
+R4	How Arg1:T4 Arg2:T5	
+R5	When Arg1:T4 Arg2:T6	
+R6	Commission Arg1:T4 Arg2:T7	
+R7	Content Arg1:T4 Arg2:T1	

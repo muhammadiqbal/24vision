@@ -1,0 +1,13 @@
+T1	Load_Place 260 271	LA NOUVELLE
+T2	Disch_Place 272 280	BARLETTA
+T3	Cargo 282 300	5000/6000 WHEAT 45
+T4	Terms 304 315	48 HRS/2000
+T5	Laycan 318 327	2 MAY ONW
+T6	Commission 329 337	5PCT TTL
+R1	Commission Arg1:T3 Arg2:T6	
+R2	When Arg1:T3 Arg2:T5	
+R3	How Arg1:T3 Arg2:T4	
+R4	From Arg1:T3 Arg2:T1	
+R5	To Arg1:T3 Arg2:T2	
+T7	Quantity 54 60	5/6000
+R6	Content Arg1:T3 Arg2:T7	

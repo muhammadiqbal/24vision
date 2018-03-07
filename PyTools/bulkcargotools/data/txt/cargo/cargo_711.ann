@@ -1,0 +1,13 @@
+T1	Quantity 96 99	55K
+T2	Cargo 177 208	M/M 55,000 IRON ORE CONCENTRATE
+T3	Load_Place 209 215	BANDAR
+T4	Disch_Place 216 223	QINGDAO
+T5	Laycan 228 239	10/15 APRIL
+T6	Terms 240 252	7,000/12,000
+T7	Commission 253 265	1.25 ADD PUS
+R1	Content Arg1:T2 Arg2:T1	
+R2	To Arg1:T2 Arg2:T4	
+R3	From Arg1:T2 Arg2:T3	
+R4	When Arg1:T2 Arg2:T5	
+R5	How Arg1:T2 Arg2:T6	
+R6	Commission Arg1:T2 Arg2:T7	

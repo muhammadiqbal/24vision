@@ -1,0 +1,9 @@
+T1	Cargo 145 193	12,000 mt 10 pct moloo blk sbm sf abt 54 cbft/mt
+T2	Load_Place 195 200	Plate
+T3	Disch_Place 203 208	Libya
+T4	Terms 210 248	4,000 mt / 1,500 mt eiu be usual terms
+T5	Laycan 250 258	5/10 may
+R1	To Arg1:T1 Arg2:T3	
+R2	From Arg1:T1 Arg2:T2	
+R3	How Arg1:T1 Arg2:T4	
+R4	When Arg1:T1 Arg2:T5	

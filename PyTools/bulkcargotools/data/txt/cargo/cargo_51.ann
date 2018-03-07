@@ -1,0 +1,44 @@
+T1	Load_Place 637 643	Aveiro
+T2	Disch_Place 649 655	Sousse
+T3	Cargo 659 699	bt 3400nett cbm of Chipboard in packages
+T4	Laycan 703 712	4-5 April
+T5	Terms 742 763	5 Ttlwwdays sshex eiu
+T6	Commission 782 795	Genc 2.5% ttl
+T7	Load_Place 818 824	Mersin
+T8	Disch_Place 828 837	Allicante
+T9	Cargo 840 863	5/8000 mts White cement
+T10	Laycan 865 879	1ST WEEK APRIL
+T11	Terms 887 916	2500-3000 / 1800 mt SSHEX EIU
+T12	Commission 918 926	2.5% TTL
+T13	Load_Place 949 955	Mersin
+T14	Disch_Place 959 966	Sevilla
+T15	Cargo 969 990	5000 mts White cement
+T16	Laycan 992 1006	1ST WEEK APRIL
+T17	Terms 1014 1043	2500-3000 / 1800 mt SSHEX EIU
+T18	Commission 1045 1053	2.5% TTL
+T19	Load_Place 1076 1081	NADOR
+T20	Disch_Place 1085 1092	TUNISIA
+T21	Cargo 1095 1118	5000 mts 5% kaolin clay
+T22	Laycan 1120 1131	03/09 April
+T23	Terms 1133 1144	3500c/3000c
+T24	Commission 1146 1154	2.5% TTL
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+R6	To Arg1:T9 Arg2:T8	
+R7	From Arg1:T9 Arg2:T7	
+R8	When Arg1:T9 Arg2:T10	
+R9	How Arg1:T9 Arg2:T11	
+R10	Commission Arg1:T9 Arg2:T12	
+R11	To Arg1:T15 Arg2:T14	
+R12	From Arg1:T15 Arg2:T13	
+R13	When Arg1:T15 Arg2:T16	
+R14	How Arg1:T15 Arg2:T17	
+R15	Commission Arg1:T15 Arg2:T18	
+R16	To Arg1:T21 Arg2:T20	
+R17	From Arg1:T21 Arg2:T19	
+R18	When Arg1:T21 Arg2:T22	
+R19	How Arg1:T21 Arg2:T23	
+R20	Commission Arg1:T21 Arg2:T24	

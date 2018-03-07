@@ -1,0 +1,73 @@
+T1	Load_Place 333 349	East~South Japan
+T2	Disch_Place 357 369	TBN, S.Korea
+T3	Terms 392 401	CQD bends
+T4	Terms 573 582	CQD bends
+T5	Terms 753 762	CQD bends
+T6	Terms 931 940	CQD bends
+T7	Load_Place 516 528	Osaka, Japan
+T8	Load_Place 697 708	Oita, Japan
+T9	Load_Place 877 888	South Japan
+T10	Disch_Place 896 908	TBN, S.Korea
+T11	Disch_Place 716 730	Dangjin, Korea
+T12	Disch_Place 536 550	Busan, S.Korea
+T13	Terms 1246 1255	CQD bends
+T14	Load_Place 1004 1024	Lamchabang, Thailand
+T15	Disch_Place 1028 1059	Manila (S.Harbour), Philippines
+T16	Load_Place 1150 1169	Cigading, Indonesia
+T17	Disch_Place 1173 1183;1194 1202	Kohsichang -Bangkok
+T18	Commission 1354 1370	2.50% AddCom pus
+T19	Port_No 1115 1118	1/1
+T20	Cargo 1122 1146	Abt 14,000mt Steel Prods
+T21	Cargo 966 986	Abt 2,000mt CR Coils
+T22	Terms 1090 1099	CQD bends
+T23	Laycan 1070 1088	01st/31st May 2017
+T25	Port_No 1267 1270	1/2
+T26	Port_No 956 959	1/1
+T27	Port_No 778 781	1/1
+T28	Cargo 786 812	5,500mt/10% Molco HR Coils
+T31	Cargo 606 632	5,100mt/10% Molco HR Coils
+T32	Port_No 598 601	1/1
+T33	Port_No 417 420	1/1
+T34	Cargo 425 451	5,000mt/10% Molco HR Coils
+T37	Cargo 237 263	5,000mt/10% Molco HR Coils
+T29	Laycan 835 849	23rd Apr. 2017
+T36	Laycan 286 305	14th/15th Apr. 2017
+T35	Laycan 474 488	18th Apr. 2017
+R1	When Arg1:T37 Arg2:T36	
+R2	To Arg1:T37 Arg2:T2	
+R3	From Arg1:T37 Arg2:T1	
+R4	How Arg1:T37 Arg2:T3	
+R5	No_Of_Ports Arg1:T37 Arg2:T33	
+R6	When Arg1:T34 Arg2:T35	
+R7	From Arg1:T34 Arg2:T7	
+R8	To Arg1:T34 Arg2:T12	
+R9	How Arg1:T34 Arg2:T4	
+R10	No_Of_Ports Arg1:T34 Arg2:T32	
+T30	Laycan 655 669	21st Apr. 2017
+R11	When Arg1:T31 Arg2:T30	
+R12	From Arg1:T31 Arg2:T8	
+R13	To Arg1:T31 Arg2:T11	
+R14	How Arg1:T31 Arg2:T5	
+R15	No_Of_Ports Arg1:T31 Arg2:T27	
+R16	From Arg1:T28 Arg2:T9	
+R17	When Arg1:T28 Arg2:T29	
+R18	To Arg1:T28 Arg2:T10	
+R19	How Arg1:T28 Arg2:T6	
+R20	No_Of_Ports Arg1:T28 Arg2:T26	
+R21	From Arg1:T21 Arg2:T14	
+R22	To Arg1:T21 Arg2:T15	
+R23	When Arg1:T21 Arg2:T23	
+R24	How Arg1:T21 Arg2:T22	
+R25	No_Of_Ports Arg1:T21 Arg2:T19	
+R26	From Arg1:T20 Arg2:T16	
+R27	To Arg1:T20 Arg2:T17	
+T24	Laycan 1225 1244	16th/17th Apr. 2017
+R28	When Arg1:T20 Arg2:T24	
+R29	No_Of_Ports Arg1:T20 Arg2:T25	
+R30	How Arg1:T20 Arg2:T13	
+R31	Commission Arg1:T20 Arg2:T18	
+R32	Commission Arg1:T21 Arg2:T18	
+R33	Commission Arg1:T28 Arg2:T18	
+R34	Commission Arg1:T31 Arg2:T18	
+R35	Commission Arg1:T34 Arg2:T18	
+R36	Commission Arg1:T37 Arg2:T18	

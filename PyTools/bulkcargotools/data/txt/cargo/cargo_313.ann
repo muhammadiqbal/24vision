@@ -1,0 +1,22 @@
+T1	Load_Place 571 589	HAIFA OR ASHDOD OO
+T2	Disch_Place 593 598	IZMIR
+T3	Cargo 601 637	ABT 1600 CBM - 450 MTS GENERAL CARGO
+T4	Terms 649 672	4 TTL DAYS XX EIU BENDS
+T5	Laycan 713 743	READY TO LOAD TRY VESSEL DATES
+T6	Commission 750 758	2.5% TTL
+T7	Load_Place 777 783	Aveiro
+T8	Disch_Place 789 795	Sousse
+T9	Cargo 798 839	abt 3400nett cbm of Chipboard in packages
+T10	Laycan 841 850	4-5 April
+T11	Terms 877 898	5 Ttlwwdays sshex eiu
+T12	Commission 919 927	2.5% ttl
+R1	To Arg1:T9 Arg2:T8	
+R2	From Arg1:T9 Arg2:T7	
+R3	When Arg1:T9 Arg2:T10	
+R4	How Arg1:T9 Arg2:T11	
+R5	Commission Arg1:T9 Arg2:T12	
+R6	To Arg1:T3 Arg2:T2	
+R7	From Arg1:T3 Arg2:T1	
+R8	How Arg1:T3 Arg2:T4	
+R9	When Arg1:T3 Arg2:T5	
+R10	Commission Arg1:T3 Arg2:T6	

@@ -1,0 +1,15 @@
+T1	Commission 619 628	3.75% pus
+T2	Terms 424 473	3000 mt pwdd shinc basis workable holds and hooks
+T3	Disch_Place 393 407	Qingdao, china
+T4	Load_Place 358 372	Chennai, india
+T5	Laycan 323 337	10-15 APR 2017
+T6	Cargo 265 314	10,000 mt minmax quartz harmless minerals in bulk
+T7	Commodity 142 148	quartz
+T8	Quantity 133 141	10,000mt
+R1	What Arg1:T8 Arg2:T7	
+R2	Content Arg1:T6 Arg2:T8	
+R3	When Arg1:T6 Arg2:T5	
+R4	From Arg1:T6 Arg2:T4	
+R5	To Arg1:T6 Arg2:T3	
+R6	How Arg1:T6 Arg2:T2	
+R7	Commission Arg1:T6 Arg2:T1	

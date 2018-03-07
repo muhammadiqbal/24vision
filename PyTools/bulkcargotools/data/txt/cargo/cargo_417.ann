@@ -1,0 +1,11 @@
+T1	Quantity 78 88	315.608 kg
+T2	Load_Place 609 614	Izmir
+T3	Disch_Place 618 629	Ho Chi Minh
+T4	Cargo 632 665	61 pkgs, 315.608 kg, 1031,660 cbm
+T5	Laycan 683 694	SPOT/26 APR
+T7	Commission 703 712	3.75% IAC
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T2	
+R3	When Arg1:T4 Arg2:T5	
+R4	Commission Arg1:T4 Arg2:T7	
+R6	Content Arg1:T4 Arg2:T1	

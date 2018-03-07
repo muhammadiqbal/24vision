@@ -1,0 +1,15 @@
+T1	Port_No 415 418	1/1
+T2	Cargo 108 131	30,000 mt 5% bulk sugar
+T3	Commodity 62 67	SUGAR
+T4	Commission 291 308	6.25% adcom pstus
+T5	Laycan 182 198	25 April / 5 May
+T6	Terms 199 290	1,500 mt thurs noon/sat 0800 ntc eiu load 3,000 mt chopt 4,000 mt fri 1700/mon 0800 ntc eiu
+T7	Load_Place 132 142	Port Sudan
+T8	Disch_Place 145 181	Black Sea, Adriatic, Spain, Portugal
+R1	From Arg1:T2 Arg2:T7	
+R2	To Arg1:T2 Arg2:T8	
+R3	When Arg1:T2 Arg2:T5	
+R4	How Arg1:T2 Arg2:T6	
+R5	Commission Arg1:T2 Arg2:T4	
+R6	No_Of_Ports Arg1:T2 Arg2:T1	
+R7	Including Arg1:T2 Arg2:T3	

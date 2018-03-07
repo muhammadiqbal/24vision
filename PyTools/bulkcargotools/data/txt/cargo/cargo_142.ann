@@ -1,0 +1,13 @@
+T1	Load_Place 671 683	RICHARDS BAY
+T2	Disch_Place 687 694	KEMAMAN
+T3	Cargo 697 717	5000MT TITANIUM SLAG
+T4	Laycan 719 732	30 APR/ 5 MAY
+T5	Commission 734 742	5.0% IAC
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	Commission Arg1:T3 Arg2:T5	
+T6	Quantity 120 126	5000MT
+T7	Commodity 127 140	TITANIUM SLAG
+R5	What Arg1:T6 Arg2:T7	
+R6	Content Arg1:T3 Arg2:T6	

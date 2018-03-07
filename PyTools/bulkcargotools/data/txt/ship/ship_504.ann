@@ -1,0 +1,9 @@
+T1	Ship 217 231	M/V LOCH NEVIS
+T2	Loading_Place 203 208	Brake
+T3	Open_Date 209 212	9th
+T4	Year 252 256	2016
+R1	Built Arg1:T1 Arg2:T4	
+T5	DWT 263 269	61,272
+R2	Contain Arg1:T1 Arg2:T5	
+R3	Located Arg1:T1 Arg2:T2	
+R4	When Arg1:T1 Arg2:T3	

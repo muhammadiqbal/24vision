@@ -1,0 +1,15 @@
+T1	Commodity 69 81	Hless Gypsum
+T2	Quantity 46 61	35000-38000 Mts
+T3	Load_Place 342 361	Bandar Abbas / Iran
+T4	Disch_Place 372 398	Teluk Bayur Port Indonesia
+T5	Cargo 417 452	35000-38000 Mts - Bulk Hless Gypsum
+T6	Terms 454 484;487 536	Load Rate: 10000 mt FHINC PWWD -Dis Rate: 5000 MT SHINC PWWD IN TELUK BAYUR PORT
+T7	Laycan 538 573	Ppt to end of April (Try early may)
+T8	Commission 595 622	1.25% addcom + 1.25% Dragut
+R1	What Arg1:T2 Arg2:T1	
+R2	To Arg1:T5 Arg2:T4	
+R3	From Arg1:T5 Arg2:T3	
+R4	Content Arg1:T5 Arg2:T2	
+R5	How Arg1:T5 Arg2:T6	
+R6	When Arg1:T5 Arg2:T7	
+R7	Commission Arg1:T5 Arg2:T8	

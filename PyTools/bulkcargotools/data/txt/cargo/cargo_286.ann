@@ -1,0 +1,15 @@
+T1	Quantity 68 76	3000 MTS
+T2	Load_Place 585 592	MARMARA
+T3	Disch_Place 596 602	DAMMAM
+T4	Cargo 605 626	3000 MTS GENS IN BAGS
+T5	Laycan 627 638	25-30 APRIL
+T6	Terms 639 646	TTL DYS
+T7	Commission 651 660	3.75% IAC
+T8	Commodity 77 81	GENS
+R1	What Arg1:T1 Arg2:T8	
+R2	To Arg1:T4 Arg2:T3	
+R3	From Arg1:T4 Arg2:T2	
+R4	When Arg1:T4 Arg2:T5	
+R5	How Arg1:T4 Arg2:T6	
+R6	Commission Arg1:T4 Arg2:T7	
+R7	Content Arg1:T4 Arg2:T1	

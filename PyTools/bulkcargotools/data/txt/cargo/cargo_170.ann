@@ -1,0 +1,22 @@
+T1	Load_Place 638 651	Azov Bluewave
+T2	Disch_Place 655 678	Marmara or Izmir Aliaga
+T3	Cargo 681 714	2000.mt Linseeds in Bulk  abt 56’
+T4	Laycan 716 727	15-17.April
+T5	Terms 729 740	1000x/1000x
+T6	Commission 742 751	3.75% iac
+T7	Load_Place 764 772	TSIGGELI
+T8	Disch_Place 776 780	CTZA
+T9	Cargo 783 814	6/7000 MTS REBARS+SPOOLED COILS
+T10	Laycan 816 827	21/23 APRIL
+T11	Terms 830 840	6 TTL DAYS
+T12	Commission 843 851	5.0% IAC
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+R6	To Arg1:T9 Arg2:T8	
+R7	From Arg1:T9 Arg2:T7	
+R8	When Arg1:T9 Arg2:T10	
+R9	How Arg1:T9 Arg2:T11	
+R10	Commission Arg1:T9 Arg2:T12	

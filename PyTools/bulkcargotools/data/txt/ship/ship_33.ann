@@ -1,0 +1,35 @@
+T1	Ship 551 559	mv Evita
+T2	Loading_Place 598 606	Aabenraa
+T3	Open_Date 583 594	27/28 April
+T5	Ship 659 666	MV ESKY
+T6	Open_Date 674 682	13 APRIL
+T7	Loading_Place 686 695	STRALSUND
+T8	DWT 727 732	3.400
+T9	Ship 882 895	mv New Gemini
+T10	Loading_Place 918 923	Izmir
+T11	Open_Date 903 914	15-16 April
+T12	Year 928 932	2008
+T14	Ship 1038 1054	MV Anacapa Light
+T15	Open_Date 1063 1074	18-19 APRIL
+T16	Loading_Place 1078 1090	ZHANGJIAGANG
+T17	Year 1164 1168	2005
+T18	Ship 1286 1305	MV Conception Light
+T19	Open_Date 1314 1325	25-26 APRIL
+T20	Loading_Place 1329 1338	VERA CRUZ
+T21	Year 1396 1400	2007
+T22	DWT 1418 1424	32,256
+R1	When Arg1:T18 Arg2:T19	
+R2	Located Arg1:T18 Arg2:T20	
+R3	Built Arg1:T18 Arg2:T21	
+R4	Contain Arg1:T18 Arg2:T22	
+R5	When Arg1:T14 Arg2:T15	
+R6	Located Arg1:T14 Arg2:T16	
+R7	Built Arg1:T14 Arg2:T17	
+R8	When Arg1:T9 Arg2:T11	
+R9	Located Arg1:T9 Arg2:T10	
+R10	Built Arg1:T9 Arg2:T12	
+R12	When Arg1:T5 Arg2:T6	
+R13	Located Arg1:T5 Arg2:T7	
+R14	Contain Arg1:T5 Arg2:T8	
+R15	When Arg1:T1 Arg2:T3	
+R16	Located Arg1:T1 Arg2:T2	

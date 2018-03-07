@@ -1,0 +1,13 @@
+T1	Load_Place 229 237	MOLFETTA
+T2	Disch_Place 240 247	TUNISIA
+T3	Cargo 248 274	1800/2000 TNS AGRI STOW 28
+T4	Terms 275 287	6,5 TTL DAYS
+T5	Laycan 288 300	29 APRIL ONW
+T6	Commission 301 310	3,75% TTL
+R1	Commission Arg1:T3 Arg2:T6	
+R2	When Arg1:T3 Arg2:T5	
+R3	How Arg1:T3 Arg2:T4	
+R4	From Arg1:T3 Arg2:T1	
+R5	To Arg1:T3 Arg2:T2	
+T7	Quantity 47 59	1800/2000 TS
+R6	Content Arg1:T3 Arg2:T7	

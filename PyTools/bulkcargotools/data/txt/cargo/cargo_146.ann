@@ -1,0 +1,11 @@
+T1	Commission 308 320	5.0% iac ttl
+T2	Laycan 264 275	20-25 April
+T3	Terms 250 261	7000x/5000x
+T4	Load_Place 224 236	Novorossiysk
+T5	Disch_Place 239 247	Damietta
+T6	Cargo 187 221	35.000 mts steel coils (max 22 mt)
+R1	From Arg1:T6 Arg2:T4	
+R2	To Arg1:T6 Arg2:T5	
+R3	How Arg1:T6 Arg2:T3	
+R4	When Arg1:T6 Arg2:T2	
+R5	Commission Arg1:T6 Arg2:T1	

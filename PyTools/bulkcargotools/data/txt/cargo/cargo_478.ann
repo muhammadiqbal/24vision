@@ -1,0 +1,13 @@
+T1	Cargo 434 468	2147CBM/ 257 tan / Max weight 11MT
+T2	Load_Place 474 483	Hai Phong
+T3	Disch_Place 485 502	Konstanza Romania
+T4	Laycan 511 521	5-15 April
+T5	Port_No 539 542	1/1
+T6	Commission 597 601	2.5%
+T7	Quantity 126 139	2147CBM/257MT
+R1	Content Arg1:T1 Arg2:T7	
+R2	From Arg1:T1 Arg2:T2	
+R3	To Arg1:T1 Arg2:T3	
+R4	When Arg1:T1 Arg2:T4	
+R5	No_Of_Ports Arg1:T1 Arg2:T5	
+R6	Commission Arg1:T1 Arg2:T6	

@@ -1,0 +1,13 @@
+T1	Load_Place 706 714	Bordeaux
+T2	Disch_Place 718 737	KInsale belfast rge
+T4	Terms 789 798	2000/2000
+T5	Laycan 800 807	Week 16
+T6	Commission 809 818	3.75% iac
+T7	Commodity 150 164	sunflower meal
+T3	Cargo 740 787	Fm 2500 up to 3200 MT sunflower meal stw abt 62
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	How Arg1:T3 Arg2:T4	
+R4	When Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+R6	Including Arg1:T3 Arg2:T7	

@@ -1,0 +1,11 @@
+T1	Cargo 175 187	25000 mt hrc
+T2	Load_Place 189 193	oita
+T3	Disch_Place 196 202;209 219	dammam iskenderun
+T4	Laycan 225 232	mid may
+T5	Terms 234 295	5000 sshex eiu / liner out dammam - 4000 sshex eiu iskenderun
+T6	Commission 309 321	3.75 add pus
+R1	Commission Arg1:T1 Arg2:T6	
+R2	How Arg1:T1 Arg2:T5	
+R3	When Arg1:T1 Arg2:T4	
+R4	From Arg1:T1 Arg2:T2	
+R5	To Arg1:T1 Arg2:T3	

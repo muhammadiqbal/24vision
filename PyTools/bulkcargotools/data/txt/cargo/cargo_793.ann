@@ -1,0 +1,15 @@
+T1	Commodity 67 73	Gypsum
+T2	Quantity 51 66	40500-47500 Mts
+T3	Cargo 309 339	40500-47500 Mts Gypsum in Bulk
+T4	Load_Place 352 371	Bandar Abbas / Iran
+T5	Disch_Place 383 434	CILEGON PORT INDONESIA & Teluk Bayur Port Indonesia
+T6	Terms 530 560;563 651	Load Rate: 10000 mt FHINC PWWD -Dis Rate: CILEGON PORT INDONESIA 3000 MT SHINC & 5000 MT SHINC PWWD IN TELUK BAYUR PORT
+T7	Laycan 653 688	Ppt to end of April (Try early may)
+T8	Commission 710 737	1.25% addcom + 1.25% Dragut
+R1	What Arg1:T2 Arg2:T1	
+R2	Content Arg1:T3 Arg2:T2	
+R3	From Arg1:T3 Arg2:T4	
+R4	To Arg1:T3 Arg2:T5	
+R5	How Arg1:T3 Arg2:T6	
+R6	When Arg1:T3 Arg2:T7	
+R7	Commission Arg1:T3 Arg2:T8	

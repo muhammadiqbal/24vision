@@ -1,0 +1,15 @@
+T1	Cargo 226 271	15-25.000 mts marble blocks uw upto 25 ts max
+T2	Load_Place 275 282	marmara
+T3	Disch_Place 283 297	xiamen - china
+T4	Laycan 299 310	20-30 april
+T5	Terms 313 333	2500 bends sshex eiu
+T7	Quantity 116 129	15-25.000 mts
+T8	Commodity 130 143	marble blocks
+R1	What Arg1:T7 Arg2:T8	
+R2	From Arg1:T1 Arg2:T2	
+R3	To Arg1:T1 Arg2:T3	
+R4	When Arg1:T1 Arg2:T4	
+R5	How Arg1:T1 Arg2:T5	
+R7	Content Arg1:T1 Arg2:T7	
+T6	Commission 373 388	Gcn 2,5 ttl pus
+R6	Commission Arg1:T1 Arg2:T6	

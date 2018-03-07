@@ -1,0 +1,11 @@
+T1	Cargo 278 293;307 354	50,000/10% COAL 20K/10% EX MUARA PANTAI AND 30K/10% MUARA BERAU
+T2	Load_Place 356 382	Muara pantai + Muara Berau
+T3	Disch_Place 385 393	Navlakhi
+T4	Laycan 398 408	8-16 april
+T5	Terms 469 530;531 547	12 hrs TT at each port and 12 hrs free docs time at each port 8000/12000 shinc
+T6	Commission 548 555	3.75TTL
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	When Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	

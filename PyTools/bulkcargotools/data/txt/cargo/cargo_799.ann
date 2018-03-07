@@ -1,0 +1,15 @@
+T1	Commission 578 585	2.5 pct
+T2	Port_No 521 524	1/1
+T3	Terms 391 437;439 493	Loading rates 5k mts pwwd shinc bss 4 x 20 mts Dischg rates 10k mts pwwd shinc bss shore crane dischg
+T4	Load_Place 329 342	haldia, india
+T5	Disch_Place 350 389	main port china (including river ports)
+T6	Laycan 310 321	Ppt onwards
+T7	Cargo 266 308	25k mts of iron ore in bulk 10 pct molchop
+T8	Commodity 137 145	iron ore
+R1	Including Arg1:T7 Arg2:T8	
+R2	When Arg1:T7 Arg2:T6	
+R3	From Arg1:T7 Arg2:T4	
+R4	To Arg1:T7 Arg2:T5	
+R5	How Arg1:T7 Arg2:T3	
+R6	No_Of_Ports Arg1:T7 Arg2:T2	
+R7	Commission Arg1:T7 Arg2:T1	

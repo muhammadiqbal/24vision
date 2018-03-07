@@ -1,0 +1,11 @@
+T1	Commodity 93 101	FELDSPAR
+T2	Commission 622 630	5.0% IAC
+T3	Load_Place 632 646	GULLUK, TURKEY
+T4	Disch_Place 650 660	CHITTAGONG
+T5	Cargo 663 687	30000 +/- 5 PCT FELDSPAR
+T6	Laycan 690 701	20/30 APRIL
+R1	When Arg1:T5 Arg2:T6	
+R2	To Arg1:T5 Arg2:T4	
+R3	From Arg1:T5 Arg2:T3	
+R4	Commission Arg1:T5 Arg2:T2	
+R5	Including Arg1:T5 Arg2:T1	

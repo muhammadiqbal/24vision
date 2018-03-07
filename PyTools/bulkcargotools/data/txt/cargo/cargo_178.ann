@@ -1,0 +1,15 @@
+T1	Quantity 124 140	9.100 / 9.400 mt
+T2	Load_Place 788 798	Iskenderun
+T3	Disch_Place 801 811	Birkenhead
+T4	Cargo 814 841	m/m 9.100 / 9.400 mt of HRC
+T5	Laycan 844 862	23 / 24 April 2017
+T6	Terms 865 894	6.000 Shinc / 3.500 Sshex-eiu
+T7	Commission 897 905	2.5% TTL
+T8	Commodity 144 147	HRC
+R1	What Arg1:T1 Arg2:T8	
+R2	To Arg1:T4 Arg2:T3	
+R3	From Arg1:T4 Arg2:T2	
+R4	When Arg1:T4 Arg2:T5	
+R5	How Arg1:T4 Arg2:T6	
+R6	Commission Arg1:T4 Arg2:T7	
+R7	Content Arg1:T4 Arg2:T1	

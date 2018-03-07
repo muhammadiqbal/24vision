@@ -1,0 +1,22 @@
+T1	Load_Place 553 570	Iskenderun,Turkey
+T2	Load_Place 653 660	Marmara
+T3	Disch_Place 574 582	Nola,USA
+T4	Disch_Place 664 675	Houston,USA
+T5	Cargo 583 603	1350 mts Steel coils
+T6	Cargo 676 700	Abt 1700 mts Steel Coils
+T7	Laycan 701 705	SPOT
+T8	Laycan 616 624	1-10 May
+T9	Terms 604 615	1000 / 1000
+T10	Terms 706 723	2 days sshex / LO
+T11	Commission 724 733	3.75% iac
+T12	Commission 625 633	5.0% iac
+R1	From Arg1:T5 Arg2:T1	
+R2	To Arg1:T5 Arg2:T3	
+R3	How Arg1:T5 Arg2:T9	
+R4	When Arg1:T5 Arg2:T8	
+R5	Commission Arg1:T5 Arg2:T12	
+R6	From Arg1:T6 Arg2:T2	
+R7	To Arg1:T6 Arg2:T4	
+R8	When Arg1:T6 Arg2:T7	
+R9	How Arg1:T6 Arg2:T10	
+R10	Commission Arg1:T6 Arg2:T11	

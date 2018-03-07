@@ -1,0 +1,13 @@
+T1	Commodity 136 143	ALUMINA
+T2	Cargo 437 493	2 x 20,000mt 10pc moloo alumina in big bags 1-1.5mt each
+T3	Laycan 616 627;640 651	april  5-11 april 16-21
+T4	Load_Place 525 560	go dau or in chopt phu my,  vietnam
+T5	Disch_Place 561 603	rizhao or lianyungang or bayuquan in chopt
+T6	Terms 652 688	2500mt satshex load - 5000 mts shinc
+T7	Commission 710 721	2.5 pct pus
+R1	From Arg1:T2 Arg2:T4	
+R2	To Arg1:T2 Arg2:T5	
+R3	When Arg1:T2 Arg2:T3	
+R4	How Arg1:T2 Arg2:T6	
+R5	Commission Arg1:T2 Arg2:T7	
+R6	Including Arg1:T2 Arg2:T1	

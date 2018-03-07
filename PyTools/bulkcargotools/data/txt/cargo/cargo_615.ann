@@ -1,0 +1,13 @@
+T1	Commodity 80 84	RICE
+T2	Cargo 113 137	ABT 39/40000 MT BGD RICE
+T3	Laycan 198 209	26/30 APRIL
+T4	Load_Place 139 156	YANGON + KAKINADA
+T5	Disch_Place 166 171	W.AFR
+T6	Terms 173 196	1500 / 1500 SHEX EIU BE
+T7	Commission 219 241	2.5% ADC + 1.25% JESAI
+R1	From Arg1:T2 Arg2:T4	
+R2	To Arg1:T2 Arg2:T5	
+R3	How Arg1:T2 Arg2:T6	
+R4	When Arg1:T2 Arg2:T3	
+R5	Commission Arg1:T2 Arg2:T7	
+R6	Including Arg1:T2 Arg2:T1	

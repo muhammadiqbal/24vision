@@ -1,0 +1,9 @@
+T1	Cargo 228 266	20,000 mt Rice 70 kgs  Bags in Pallets
+T2	Load_Place 279 297	Nhava-Sheva, India
+T3	Disch_Place 300 317	Guanta, Venezuela
+T4	Laycan 319 322	Ppt
+T5	Commission 378 387	5,0 % ttl
+R1	To Arg1:T1 Arg2:T3	
+R2	From Arg1:T1 Arg2:T2	
+R3	When Arg1:T1 Arg2:T4	
+R4	Commission Arg1:T1 Arg2:T5	

@@ -1,0 +1,33 @@
+T1	Cargo 435 464	abt 25000mt bag cement in bag
+T2	Laycan 473 493	31ST,MARCH-4TH,APRIL
+T3	Load_Place 528 542	hongai Vietnam
+T5	Terms 610 634;636 700	l/rate:7000mt pwwd shinc d/rate:3500mt pwwd shinc for subic+2500mt pwwd shinc for batanga
+T6	Commission 764 768	2.5%
+R1	When Arg1:T1 Arg2:T2	
+R2	From Arg1:T1 Arg2:T3	
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	
+T7	Cargo 773 815	6,800MTS CEMENT IN SLING BAGS & JUMBO BAGS
+T8	Load_Place 824 840	HON GAI, VIETNAM
+T9	Disch_Place 848 871	TAGBILARAN, PHILIPPINES
+T10	Terms 873 899	2,000/1,000MTS PWWD SHINC.
+T11	Laycan 908 915	4-7 APR
+T12	Commission 923 940	1.25% ADDCOMM PUS
+R6	From Arg1:T7 Arg2:T8	
+R7	To Arg1:T7 Arg2:T9	
+R8	How Arg1:T7 Arg2:T10	
+R9	When Arg1:T7 Arg2:T11	
+R10	Commission Arg1:T7 Arg2:T12	
+T13	Cargo 945 978	30,000MTS +/- 10% CLINKER IN BULK
+T14	Load_Place 987 1020	CAM PHA OR 1SBP NGHI SON, VIETNAM
+T15	Disch_Place 1028 1046	MONGLA, BANGLADESH
+T16	Terms 1048 1074	7,000/3,000MTS PWWD FHINC.
+T17	Laycan 1083 1090	MID APR
+T18	Commission 1098 1115	1.25% ADDCOMM PUS
+R11	From Arg1:T13 Arg2:T14	
+R12	To Arg1:T13 Arg2:T15	
+R13	How Arg1:T13 Arg2:T16	
+R14	When Arg1:T13 Arg2:T17	
+R15	Commission Arg1:T13 Arg2:T18	
+T4	Disch_Place 557 580;585 608	subic(discchg 15000mt)+ batnaga(dischg 10000mt)
+R3	To Arg1:T1 Arg2:T4	

@@ -1,0 +1,15 @@
+T1	Quantity 124 137	45/50,000 mts
+T2	Load_Place 787 803	Puerto de Ibicuy
+T3	Disch_Place 807 814	Tripoli
+T4	Cargo 817 839	45/50,000 mts iron ore
+T5	Laycan 842 857	end april dates
+T6	Terms 859 902	15,000 shinc / 10,000 shinc 12 hrs tt bends
+T7	Commission 905 913	5.0% IAC
+T8	Commodity 138 146	iron ore
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T2	
+R3	When Arg1:T4 Arg2:T5	
+R4	How Arg1:T4 Arg2:T6	
+R5	Commission Arg1:T4 Arg2:T7	
+R6	Content Arg1:T4 Arg2:T1	
+R7	What Arg1:T1 Arg2:T8	

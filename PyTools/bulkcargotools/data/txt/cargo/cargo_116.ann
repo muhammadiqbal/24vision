@@ -1,0 +1,15 @@
+T1	Quantity 116 124	9/10.000
+T2	Load_Place 697 701	Safi
+T3	Disch_Place 705 716	Lianyungang
+T5	Laycan 773 789	18-23 April 2017
+T6	Terms 792 813	2’000/2’000 sshex eiu
+T8	Commodity 136 141	ferts
+T7	Commission 824 833	5.25% iac
+T4	Cargo 719 745	9/10.000 chopt bulk  ferts
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T2	
+R3	When Arg1:T4 Arg2:T5	
+R4	How Arg1:T4 Arg2:T6	
+R5	Commission Arg1:T4 Arg2:T7	
+R6	Content Arg1:T4 Arg2:T1	
+R7	What Arg1:T1 Arg2:T8	

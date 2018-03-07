@@ -1,0 +1,11 @@
+T1	Cargo 238 277	24,000 mts 5% moloo  steel scrap stw 68
+T2	Load_Place 279 292	St.Petersburg
+T3	Disch_Place 296 302	Aliaga
+T4	Laycan 305 318	15 April /onw
+T5	Terms 321 338	2500 sc / 4500 sx
+T6	Commission 345 355	5 ttl  iac
+R1	To Arg1:T1 Arg2:T3	
+R2	From Arg1:T1 Arg2:T2	
+R3	When Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	

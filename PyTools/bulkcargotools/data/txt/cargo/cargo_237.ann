@@ -1,0 +1,9 @@
+T1	Commission 985 994	3.75% iac
+T3	Laycan 899 918	19-20th of Apr.2017
+T4	Load_Place 753 797	Glasgow (UK) + Marina Di Carrrara (WC Italy)
+T5	Disch_Place 801 815	Abu Dhabi, UAE
+T6	Cargo 818 846	ttl abt 9930 frtons generals
+R1	To Arg1:T6 Arg2:T5	
+R2	From Arg1:T6 Arg2:T4	
+R3	When Arg1:T6 Arg2:T3	
+R4	Commission Arg1:T6 Arg2:T1	

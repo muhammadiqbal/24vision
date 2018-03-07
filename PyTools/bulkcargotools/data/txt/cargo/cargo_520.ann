@@ -1,0 +1,15 @@
+T1	Commission 411 419	2.5% ttl
+T2	Port_No 407 410	1/1
+T3	Laycan 354 368	26- 30th April
+T4	Terms 281 309;311 344	Load rate : 8,000 mt fhex uu Discharge rate : 2,500 mt fhex uu
+T5	Disch_Place 258 280	Chittagong, Bangladesh
+T6	Load_Place 229 240	Sohar, Oman
+T7	Cargo 151 191	40,000 - 45,000 mt of aggregates in bulk
+T8	Commodity 57 67	aggregates
+R1	Including Arg1:T7 Arg2:T8	
+R2	From Arg1:T7 Arg2:T6	
+R3	To Arg1:T7 Arg2:T5	
+R4	How Arg1:T7 Arg2:T4	
+R5	When Arg1:T7 Arg2:T3	
+R6	No_Of_Ports Arg1:T7 Arg2:T2	
+R7	Commission Arg1:T7 Arg2:T1	

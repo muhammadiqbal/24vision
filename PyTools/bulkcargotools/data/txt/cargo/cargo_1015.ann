@@ -1,0 +1,9 @@
+T1	Cargo 212 293	15,000 mt - 5 pct. more or less in charterer's option – Calcined Pet Coke in Bulk
+T2	Load_Place 298 311	Chalmette, US
+T3	Disch_Place 314 344	Rain CII/Vila do Conde, Brasil
+T4	Laycan 358 380	30 April - 05 May 2017
+T5	Commission 696 715	Our commission only
+R1	To Arg1:T1 Arg2:T3	
+R2	From Arg1:T1 Arg2:T2	
+R3	When Arg1:T1 Arg2:T4	
+R4	Commission Arg1:T1 Arg2:T5	

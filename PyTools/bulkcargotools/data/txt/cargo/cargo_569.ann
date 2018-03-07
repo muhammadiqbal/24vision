@@ -1,0 +1,15 @@
+T1	Commodity 139 145	gypsum
+T2	Cargo 241 304	about 23,000mt 10% moloo of natural gypsum in bulk (s/f abt 0.8
+T3	Load_Place 331 349	bandar abbas, iran
+T4	Disch_Place 369 384	lumut, malaysia
+T5	Terms 400 430;432 461	load rate : 5,000mt pwwd fhinc dis rate : 3,000mt pwwd shinc
+T6	Laycan 473 496	25th april-5th may 2017
+T7	Port_No 538 541	1/1
+T8	Commission 617 629	2.5% ttl pus
+R1	From Arg1:T2 Arg2:T3	
+R2	To Arg1:T2 Arg2:T4	
+R3	How Arg1:T2 Arg2:T5	
+R4	When Arg1:T2 Arg2:T6	
+R5	No_Of_Ports Arg1:T2 Arg2:T7	
+R6	Commission Arg1:T2 Arg2:T8	
+R7	Including Arg1:T2 Arg2:T1	

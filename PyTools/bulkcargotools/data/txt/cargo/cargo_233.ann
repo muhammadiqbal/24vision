@@ -1,0 +1,9 @@
+T1	Quantity 160 169	20,640 kg
+T3	Disch_Place 719 751	Murmansk or Kandalaksha, Russian
+T7	Laycan 1101 1116	15/31 May, 2017
+T4	Cargo 754 789;808 837	Total 20,640 kg / 174 cbm / 174 ??? 2 units of steel rock breaker
+R1	To Arg1:T4 Arg2:T3	
+T2	Load_Place 697 715	Turkish port in OO
+R2	From Arg1:T4 Arg2:T2	
+R3	When Arg1:T4 Arg2:T7	
+R4	Content Arg1:T4 Arg2:T1	

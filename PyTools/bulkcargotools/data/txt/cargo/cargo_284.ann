@@ -1,0 +1,22 @@
+T1	Cargo 659 680	5000 MTS +/- 10% CORN
+T2	Load_Place 682 686	RENI
+T3	Disch_Place 690 716	MARMARA OR IZMIR OR MERSIN
+T4	Terms 718 727	1250/1250
+T5	Laycan 729 733	SPOT
+T6	Commission 735 743	2.5% TTL
+T7	Cargo 766 791	ABT 6600 MTS +/- 10% CORN
+T8	Load_Place 793 797	RENI
+T9	Disch_Place 801 827	MARMARA OR IZMIR OR MERSIN
+T10	Terms 829 838	1500/1500
+T11	Laycan 840 844	SPOT
+T12	Commission 846 854	2.5% TTL
+R1	To Arg1:T1 Arg2:T3	
+R2	From Arg1:T1 Arg2:T2	
+R3	How Arg1:T1 Arg2:T4	
+R4	When Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	
+R6	To Arg1:T7 Arg2:T9	
+R7	From Arg1:T7 Arg2:T8	
+R8	How Arg1:T7 Arg2:T10	
+R9	When Arg1:T7 Arg2:T11	
+R10	Commission Arg1:T7 Arg2:T12	

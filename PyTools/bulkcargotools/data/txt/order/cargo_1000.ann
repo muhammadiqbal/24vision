@@ -1,0 +1,12 @@
+T1	Laycan 363 398	15-17 April (try any 3 days spread)
+T2	Terms 400 448	6000 shinc load / 3500 shinc Bqla, 3000 shinc BV
+T3	Commission 473 477	2.5%
+T4	Cargo 227 267	20,000 mt 10% moloo MOP in bulk 2 grades
+R1	When Arg1:T4 Arg2:T1	
+R2	How Arg1:T4 Arg2:T2	
+R3	Commission Arg1:T4 Arg2:T3	
+T5	Laycan 107 118	15-17 April
+T6	Disch_Place 511 545;576 600;615 645	Barranquilla (Puerto de Monomeros) Buenaventura (Aguadulce) Buenaventura (SPRBV Muelle 13)
+R4	To Arg1:T4 Arg2:T6	
+T7	Quantity 70 79	20,000/10
+R5	Content Arg1:T4 Arg2:T7	

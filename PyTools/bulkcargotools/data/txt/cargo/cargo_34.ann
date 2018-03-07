@@ -1,0 +1,11 @@
+T1	Load_Place 778 785	Kherson
+T2	Disch_Place 789 800	Tbs Mar Izm
+T3	Cargo 803 817	3000/10 wbp 54
+T4	Terms 823 832	1000/1000
+T5	Laycan 834 845	29.03 / onw
+T6	Commission 847 856	3.75% IAC
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	How Arg1:T3 Arg2:T4	
+R4	When Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	

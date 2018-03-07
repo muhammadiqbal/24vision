@@ -1,0 +1,13 @@
+T1	Cargo 168 225	34200 – 38400 mts in OO of MOP in bulk, STW abt 1.0 m3/mt
+T2	Commodity 70 73	mop
+T3	Quantity 58 69	34200/38400
+T4	Load_Place 374 393	Klaipeda, Lithuania
+T5	Laycan 450 463	19-21/04/2017
+T6	Disch_Place 506 516;529 552;683 694;714 739	Rio Grande + Porto Alegre, Brazil, or in CHOPT Itaqui – Rio Grande range
+T7	Commission 1111 1131	2.5 pct add comm pus
+R1	What Arg1:T3 Arg2:T2	
+R2	Content Arg1:T1 Arg2:T3	
+R3	From Arg1:T1 Arg2:T4	
+R4	When Arg1:T1 Arg2:T5	
+R6	Commission Arg1:T1 Arg2:T7	
+R5	To Arg1:T1 Arg2:T6	

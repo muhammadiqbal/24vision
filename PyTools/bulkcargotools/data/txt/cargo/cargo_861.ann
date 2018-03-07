@@ -1,0 +1,9 @@
+T1	Commodity 35 47	steel plates
+T2	Cargo 294 328	1300mt 5% Chop. Prime STEEL PLATES
+T3	Load_Place 239 246	ANTWERP
+T4	Disch_Place 275 293	CONSTANZA, ROMANIA
+T6	Commission 483 489	5% PUS
+R1	From Arg1:T2 Arg2:T3	
+R2	To Arg1:T2 Arg2:T4	
+R3	Including Arg1:T2 Arg2:T1	
+R5	Commission Arg1:T2 Arg2:T6	

@@ -1,0 +1,13 @@
+T1	Commodity 112 115	SGR
+T2	Cargo 184 218	3,000/5% bgd sgr , 5pct MOL Choptn
+T3	Laycan 296 305	10/20 May
+T4	Load_Place 220 254	Jebel Ali or Port Rashid, in Chopt
+T5	Disch_Place 257 291	Pemba Island in Zanzibar, Tanzania
+T6	Terms 306 376	750 THU NOON FHEX EIU ( Bss 2 Cr )/ 500 SAT NOON SHEX EIU ( Bss 2 Cr )
+T7	Commission 391 402	2.5 add pus
+R1	Including Arg1:T2 Arg2:T1	
+R2	From Arg1:T2 Arg2:T4	
+R3	When Arg1:T2 Arg2:T3	
+R4	To Arg1:T2 Arg2:T5	
+R5	How Arg1:T2 Arg2:T6	
+R6	Commission Arg1:T2 Arg2:T7	

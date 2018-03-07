@@ -1,0 +1,11 @@
+T1	Cargo 141 165	12000 m/m AN in Big Bags
+T2	Laycan 217 233	25/30 April 2017
+T3	Commission 236 256	3,75 adc + 1,25 Bery
+T4	Terms 191 214	1700 shinc / 1000 shinc
+T5	Disch_Place 184 189	Vizag
+T6	Load_Place 168 181	St Petersburg
+R1	From Arg1:T1 Arg2:T6	
+R2	To Arg1:T1 Arg2:T5	
+R3	How Arg1:T1 Arg2:T4	
+R4	When Arg1:T1 Arg2:T2	
+R5	Commission Arg1:T1 Arg2:T3	

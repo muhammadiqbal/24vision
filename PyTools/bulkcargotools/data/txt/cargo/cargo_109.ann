@@ -1,0 +1,13 @@
+T1	Commission 700 708	2.5% ttl
+T2	Load_Place 718 725	Trieste
+T3	Disch_Place 729 739	Newport uk
+T4	Cargo 742 784	5000  4% more or less in chopt steel coils
+T5	Laycan 787 798	15-20 april
+T6	Terms 801 815	2500/2500 shex
+T7	Commodity 149 160	steel coils
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T2	
+R3	When Arg1:T4 Arg2:T5	
+R4	How Arg1:T4 Arg2:T6	
+R5	Commission Arg1:T4 Arg2:T1	
+R6	Including Arg1:T4 Arg2:T7	

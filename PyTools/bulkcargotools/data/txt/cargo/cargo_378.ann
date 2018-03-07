@@ -1,0 +1,22 @@
+T1	Load_Place 550 560	Iskenderun
+T3	Cargo 597 633	abt 3000 mts marble chips in bigbags
+T2	Disch_Place 564 594	Dnipro (drft 3.6m) try kherson
+T4	Terms 638 648	6 ttl days
+T5	Laycan 653 668	4-12 April 2017
+T6	Commission 669 678	3.75% iac
+T7	Load_Place 685 693	Nikolaev
+T8	Disch_Place 697 713	Marmara or Izmir
+T9	Cargo 716 751	3300 mts WBP in bulk sf abt 55'cuft
+T10	Laycan 752 765	13 / 14 April
+T11	Terms 766 777	1000 / 1000
+T12	Commission 778 787	3.75% iac
+R1	To Arg1:T9 Arg2:T8	
+R2	From Arg1:T9 Arg2:T7	
+R3	When Arg1:T9 Arg2:T10	
+R4	How Arg1:T9 Arg2:T11	
+R5	Commission Arg1:T9 Arg2:T12	
+R6	To Arg1:T3 Arg2:T2	
+R7	From Arg1:T3 Arg2:T1	
+R8	How Arg1:T3 Arg2:T4	
+R9	When Arg1:T3 Arg2:T5	
+R10	Commission Arg1:T3 Arg2:T6	

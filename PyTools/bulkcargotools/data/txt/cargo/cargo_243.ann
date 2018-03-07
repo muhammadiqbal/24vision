@@ -1,0 +1,15 @@
+T1	Commission 785 790	3.75%
+T2	Laycan 762 776	10 May onwards
+T3	Terms 745 756	3500x/2500x
+T4	Load_Place 682 694	Novorossiysk
+T5	Disch_Place 698 705	Taranto
+T6	Cargo 708 739	m/m 15/17.000 mts steel billets
+T7	Quantity 124 137	15/17.000 mts
+R1	To Arg1:T6 Arg2:T5	
+R2	From Arg1:T6 Arg2:T4	
+R3	How Arg1:T6 Arg2:T3	
+R4	When Arg1:T6 Arg2:T2	
+R5	Commission Arg1:T6 Arg2:T1	
+T8	Commodity 138 151	steel billets
+R6	What Arg1:T7 Arg2:T8	
+R7	Content Arg1:T6 Arg2:T7	

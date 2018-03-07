@@ -1,0 +1,25 @@
+T1	Load_Place 793 802	Rostov AB
+T2	Disch_Place 806 816	Iskenderun
+T3	Cargo 819 857	5000 mt +/-5% of Anthracite coal SF 44
+T4	Terms 859 870	2000x/2000x
+T5	Laycan 872 885	29-31.03.2017
+T6	Commission 887 895	2.5% ttl
+T7	Load_Place 918 927	Rostov AB
+T8	Disch_Place 931 937	Hereke
+T9	Cargo 940 972	5000 mt of Anthracite coal SF 44
+T10	Terms 974 985	2000x/2000x
+T11	Laycan 987 1000	11-14.04.2017
+T12	Commission 1002 1010	1.25 ttl
+T13	Commodity 137 152	Anthracite coal
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	How Arg1:T3 Arg2:T4	
+R4	When Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+R6	To Arg1:T9 Arg2:T8	
+R7	From Arg1:T9 Arg2:T7	
+R8	How Arg1:T9 Arg2:T10	
+R9	When Arg1:T9 Arg2:T11	
+R10	Commission Arg1:T9 Arg2:T12	
+R11	Including Arg1:T9 Arg2:T13	
+R12	Including Arg1:T3 Arg2:T13	

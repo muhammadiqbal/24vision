@@ -1,0 +1,11 @@
+T1	Cargo 198 227	22,000 mt 10% moloo Bulk Coal
+T2	Load_Place 236 241	Beira
+T3	Disch_Place 244 251	Mukalla
+T4	Laycan 265 277	Spot/ Prompt
+T6	Commission 344 355	2.5 add pus
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	When Arg1:T1 Arg2:T4	
+R5	Commission Arg1:T1 Arg2:T6	
+T5	Terms 290 313	6000 shinc / 3000 fhinc
+R4	How Arg1:T1 Arg2:T5	

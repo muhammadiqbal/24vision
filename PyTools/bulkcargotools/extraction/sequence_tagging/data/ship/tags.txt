@@ -1,0 +1,13 @@
+I-Year
+B-Open_Date
+B-DWT
+I-DWT
+B-Destination
+B-Loading_Place
+I-Ship
+B-Ship
+I-Loading_Place
+I-Destination
+I-Open_Date
+B-Year
+O

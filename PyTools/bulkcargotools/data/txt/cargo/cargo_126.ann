@@ -1,0 +1,15 @@
+T1	Quantity 159 181	20.488 / 22.371 M.Tons
+T2	Load_Place 740 750	Iskenderun
+T4	Cargo 801 878;887 950	M/M 20.488 / 22.371 M.Tons of HRC+Steel Plates/Sheets (In Charterer’s option) (abt. 1.500 M.Tons Steel Plates/Sheets + abt. 20.700 M.Tons HRC
+T5	Laycan 953 985	17 - 18 April 2017 – TRY EARLIER
+T6	Terms 987 1019	6.000 Shinc / 7,5 days Sshex-eiu
+T7	Commission 1065 1073	2.5% ttl
+T8	Commodity 185 208	HRC+Steel Plates/Sheets
+R1	What Arg1:T1 Arg2:T8	
+R3	From Arg1:T4 Arg2:T2	
+R4	When Arg1:T4 Arg2:T5	
+R5	How Arg1:T4 Arg2:T6	
+R6	Commission Arg1:T4 Arg2:T7	
+R7	Content Arg1:T4 Arg2:T1	
+T3	Disch_Place 754 761	Antwerp
+R2	To Arg1:T4 Arg2:T3	

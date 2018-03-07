@@ -1,0 +1,53 @@
+T2	Load_Place 603 609	Zarzis
+T3	Disch_Place 613 632	Lattakia or Tartous
+T4	Laycan 699 717	29 March / 3 April
+T5	Commission 731 740	3.75% iac
+T6	Load_Place 747 758	Chornomorsk
+T7	Disch_Place 762 777	Odessa road OPL
+T10	Terms 828 844	ttl 2 days SHINC
+T11	Commission 845 853	2.5% ttl
+T9	Laycan 816 827	25-26.03.17
+T8	Cargo 780 807	1450/3000 mts barley, sf 52
+R5	From Arg1:T8 Arg2:T6	
+R6	To Arg1:T8 Arg2:T7	
+R7	When Arg1:T8 Arg2:T9	
+R8	How Arg1:T8 Arg2:T10	
+R9	Commission Arg1:T8 Arg2:T11	
+T12	Load_Place 870 877	Kherson
+T14	Terms 911 920	1000/1000
+T15	Commission 931 940	3.75% iac
+T13	Laycan 921 930	29.03 onw
+T16	Load_Place 947 956	Rostov AB
+T17	Disch_Place 960 970	Iskenderun
+T18	Cargo 973 1011	5000 mt +/-5% of Anthracite coal SF 44
+T19	Terms 1012 1023	2000x/2000x
+T20	Laycan 1024 1037	29-31.03.2017
+T21	Commission 1038 1046	2.5% ttl
+R10	From Arg1:T18 Arg2:T16	
+R11	To Arg1:T18 Arg2:T17	
+R12	How Arg1:T18 Arg2:T19	
+R13	When Arg1:T18 Arg2:T20	
+R14	Commission Arg1:T18 Arg2:T21	
+T22	Load_Place 1063 1072	Rostov AB
+T23	Disch_Place 1076 1082	Hereke
+T24	Cargo 1085 1117	5000 mt of Anthracite coal SF 44
+T25	Laycan 1118 1129	2000x/2000x
+T26	Laycan 1130 1143	11-14.04.2017
+T27	Commission 1144 1152	2.5% ttl
+R15	From Arg1:T24 Arg2:T22	
+R16	To Arg1:T24 Arg2:T23	
+R17	When Arg1:T24 Arg2:T25	
+R18	When Arg1:T24 Arg2:T26	
+R19	Commission Arg1:T24 Arg2:T27	
+T29	Cargo 892 906	3000/10 wbp 54
+R20	From Arg1:T29 Arg2:T12	
+R22	How Arg1:T29 Arg2:T14	
+R23	When Arg1:T29 Arg2:T13	
+R24	Commission Arg1:T29 Arg2:T15	
+T1	Cargo 635 698	1,700.mt 2% mol chopt harmless sodium sulph in bbgs stw abt 48'
+T28	Disch_Place 881 892	Tbs Mar Izm
+R1	To Arg1:T29 Arg2:T28	
+R2	To Arg1:T1 Arg2:T3	
+R3	From Arg1:T1 Arg2:T2	
+R4	When Arg1:T1 Arg2:T4	
+R25	Commission Arg1:T1 Arg2:T5	

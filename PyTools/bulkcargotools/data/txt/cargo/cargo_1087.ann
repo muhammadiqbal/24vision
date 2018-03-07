@@ -1,0 +1,11 @@
+T1	Load_Place 205 214	Argentina
+T2	Disch_Place 217 224	Algeria
+T3	Cargo 239 257	30.000 5 pct wheat
+T4	Terms 259 268	7000/2500
+T5	Laycan 270 281	20/30 april
+T6	Commission 283 291	Syna 5 %
+R1	How Arg1:T3 Arg2:T4	
+R2	When Arg1:T3 Arg2:T5	
+R3	Commission Arg1:T3 Arg2:T6	
+R4	From Arg1:T3 Arg2:T1	
+R5	To Arg1:T3 Arg2:T2	

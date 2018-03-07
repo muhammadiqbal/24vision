@@ -1,0 +1,11 @@
+T1	Cargo 187 226	12,500 mt Wheat flour in 50 kg Bag  55’
+T2	Load_Place 228 235	Marmara
+T3	Disch_Place 243 248	Sudan
+T4	Laycan 251 260	Spot- ppt
+T5	Terms 262 271	1750/1500
+T6	Commission 274 281	2.5 pct
+R1	To Arg1:T1 Arg2:T3	
+R2	From Arg1:T1 Arg2:T2	
+R3	When Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	

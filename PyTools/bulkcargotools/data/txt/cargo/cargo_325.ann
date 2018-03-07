@@ -1,0 +1,33 @@
+T1	Load_Place 551 559	Bandirma
+T2	Disch_Place 563 578	Inkoo +Szczecin
+T3	Cargo 581 620	4.000.00  MT +/-5 pct blk harmless mins
+T4	Laycan 621 632	24/27 APRIL
+T5	Laycan 767 778	15-20 April
+T6	Commission 646 654	2.5% ttl
+T7	Terms 637 645	TTL DAYS
+T8	Load_Place 701 707	Odessa
+T9	Disch_Place 711 720	Zhenjiang
+T10	Cargo 723 757	20 000 mts of ore in bulk, stw=dwt
+T11	Terms 779 794	4500 c / 7000 c
+T12	Commission 795 803	5.0% IAC
+T13	Load_Place 810 817	Antalya
+T14	Disch_Place 821 840	Freetown (Free D/A)
+T15	Cargo 843 901	abt 27.500 mts Cement in bb + abt 2.500 mts Steel stw= dwt
+T16	Terms 902 922	3500 / 3000 shinc be
+T17	Laycan 923 934	22/25 April
+T18	Commission 935 951;952 960	3,75 pct ttl com 5.0% iac
+R1	To Arg1:T15 Arg2:T14	
+R2	From Arg1:T15 Arg2:T13	
+R3	How Arg1:T15 Arg2:T16	
+R4	When Arg1:T15 Arg2:T17	
+R5	Commission Arg1:T15 Arg2:T18	
+R6	To Arg1:T10 Arg2:T9	
+R7	From Arg1:T10 Arg2:T8	
+R8	When Arg1:T10 Arg2:T5	
+R9	How Arg1:T10 Arg2:T11	
+R10	Commission Arg1:T10 Arg2:T12	
+R11	To Arg1:T3 Arg2:T2	
+R12	From Arg1:T3 Arg2:T1	
+R13	When Arg1:T3 Arg2:T4	
+R14	How Arg1:T3 Arg2:T7	
+R15	Commission Arg1:T3 Arg2:T6	

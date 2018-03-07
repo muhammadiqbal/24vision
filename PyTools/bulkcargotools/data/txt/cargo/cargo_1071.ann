@@ -1,0 +1,13 @@
+T1	Commodity 69 72	PKE
+T2	Cargo 151 171	30,000/10% MOLOO PKE
+T3	Laycan 253 261	1/10 MAY
+T4	Commission 263 272	2.50% PUS
+T5	Terms 221 251	4,000 SATNOONSHEX / 3,000 FHEX
+T6	Disch_Place 213 219	DAMMAM
+T7	Load_Place 190 210	LUBUK GAUNG OR LUMUT
+R1	Including Arg1:T2 Arg2:T1	
+R2	From Arg1:T2 Arg2:T7	
+R3	To Arg1:T2 Arg2:T6	
+R4	How Arg1:T2 Arg2:T5	
+R5	When Arg1:T2 Arg2:T3	
+R6	Commission Arg1:T2 Arg2:T4	

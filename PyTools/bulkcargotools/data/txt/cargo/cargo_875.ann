@@ -1,0 +1,13 @@
+T1	Commodity 35 40	ferts
+T2	Cargo 235 261	ABT 8000 MTS FERTS IN BULK
+T3	Laycan 283 294	13/17 APRIL
+T4	Commission 295 307	2,50 PCT TTL
+T5	Load_Place 262 267	GABES
+T6	Disch_Place 268 272	ALEX
+T7	Terms 273 282	2500/1000
+R1	Including Arg1:T2 Arg2:T1	
+R2	From Arg1:T2 Arg2:T5	
+R3	To Arg1:T2 Arg2:T6	
+R4	How Arg1:T2 Arg2:T7	
+R5	When Arg1:T2 Arg2:T3	
+R6	Commission Arg1:T2 Arg2:T4	

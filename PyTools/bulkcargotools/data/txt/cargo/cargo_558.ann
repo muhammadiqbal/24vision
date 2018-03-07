@@ -1,0 +1,25 @@
+T1	Commodity 137 145	iron ore
+T2	Cargo 231 257	about 28k iron ore in bulk
+T3	Load_Place 259 294	penang(4k mt) +port kelang (24k mt)
+T4	Disch_Place 298 305	luoyuan
+T5	Laycan 314 340	27th april  to 2nd may2017
+T6	Terms 351 361	5000/10000
+T7	Commission 369 376	2.5 pus
+T8	Cargo 396 425	about 24-25k iron ore in bulk
+T9	Load_Place 432 438	kelang
+T10	Disch_Place 443 450	luoyuan
+T11	Laycan 460 486	27th april  to 2nd may2017
+T12	Terms 497 507	5000/10000
+T13	Commission 515 522	2.5 pus
+R1	Including Arg1:T2 Arg2:T1	
+R2	From Arg1:T2 Arg2:T3	
+R3	To Arg1:T2 Arg2:T4	
+R4	When Arg1:T2 Arg2:T5	
+R5	How Arg1:T2 Arg2:T6	
+R6	Commission Arg1:T2 Arg2:T7	
+R7	To Arg1:T8 Arg2:T10	
+R8	From Arg1:T8 Arg2:T9	
+R9	When Arg1:T8 Arg2:T11	
+R10	How Arg1:T8 Arg2:T12	
+R11	Commission Arg1:T8 Arg2:T13	
+R12	Including Arg1:T8 Arg2:T1	

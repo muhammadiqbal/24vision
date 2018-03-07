@@ -53,7 +53,7 @@ class Zone extends Model
      * @var array
      */
     public static $rules = [
-        
+        'name' => 'required|string'
     ];
 
     /**

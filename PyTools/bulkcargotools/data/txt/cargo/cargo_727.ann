@@ -1,0 +1,15 @@
+T1	Quantity 96 98	6k
+T2	Commodity 103 106	sgr
+T3	Cargo 195 230	6,000 net mts bagged sugar - in b.b
+T4	Load_Place 269 273	Novo
+T5	Disch_Place 274 282	Lattakia
+T6	Terms 287 297	1500 / 750
+T7	Commission 311 323	3.75 add pus
+T8	Laycan 283 286	Ppt
+R1	What Arg1:T1 Arg2:T2	
+R2	Content Arg1:T3 Arg2:T1	
+R3	To Arg1:T3 Arg2:T5	
+R4	From Arg1:T3 Arg2:T4	
+R5	When Arg1:T3 Arg2:T8	
+R6	How Arg1:T3 Arg2:T6	
+R7	Commission Arg1:T3 Arg2:T7	

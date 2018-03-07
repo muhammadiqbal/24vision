@@ -1,0 +1,15 @@
+T1	Quantity 117 129	2100/2200 mt
+T2	Load_Place 786 793	Ambarli
+T3	Disch_Place 797 806	Algeciras
+T4	Cargo 809 845	2100/2200 mt stainless scrap abt 65’
+T5	Laycan 851 861	8/12 april
+T6	Terms 863 880	4 ttl wwd ssx eiu
+T7	Commission 882 891	3.75% iac
+T8	Commodity 130 145	stainless scrap
+R1	What Arg1:T1 Arg2:T8	
+R2	To Arg1:T4 Arg2:T3	
+R3	From Arg1:T4 Arg2:T2	
+R4	When Arg1:T4 Arg2:T5	
+R5	How Arg1:T4 Arg2:T6	
+R6	Commission Arg1:T4 Arg2:T7	
+R7	Content Arg1:T4 Arg2:T1	

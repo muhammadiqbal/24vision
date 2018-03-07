@@ -1,0 +1,15 @@
+T1	Commodity 62 66	COAL
+T2	Quantity 46 61	20.000-23000 TS
+T3	Cargo 165 185	20.000-23000 TS COAL
+T4	Load_Place 218 224	TUAPSE
+T5	Disch_Place 231 240	IZMIT BAY
+T6	Terms 273 284	7000C/7000X
+T7	Laycan 241 272	27-31 MARCH (can try beg april)
+T8	Commission 286 302	3.75 PCT ADD PUS
+R1	What Arg1:T2 Arg2:T1	
+R2	Content Arg1:T3 Arg2:T2	
+R3	From Arg1:T3 Arg2:T4	
+R4	To Arg1:T3 Arg2:T5	
+R5	When Arg1:T3 Arg2:T7	
+R6	How Arg1:T3 Arg2:T6	
+R7	Commission Arg1:T3 Arg2:T8	

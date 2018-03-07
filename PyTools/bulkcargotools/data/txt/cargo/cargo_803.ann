@@ -1,0 +1,13 @@
+T2	Load_Place 233 241	DAMIETTA
+T3	Disch_Place 244 263	TUNSIE (INT SOUSSE)
+T5	Commission 304 311	3,75TTL
+T6	Terms 284 294	6 TLL DAYS
+T7	Laycan 296 302	30 ONW
+T1	Commodity 35 38	sbp
+T4	Cargo 264 282	5000/5% SBP STW 60
+R1	How Arg1:T4 Arg2:T6	
+R2	When Arg1:T4 Arg2:T7	
+R3	Commission Arg1:T4 Arg2:T5	
+R4	From Arg1:T4 Arg2:T2	
+R5	To Arg1:T4 Arg2:T3	
+R6	Including Arg1:T4 Arg2:T1	

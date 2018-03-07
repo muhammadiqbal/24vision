@@ -1,0 +1,17 @@
+T1	Quantity 126 141	20,000-35,000mt
+T2	Commodity 153 159	gypsum
+T3	Cargo 293 353	about 20,000-35,000mt of natural gypsum in bulk (s/f abt 0.8
+T4	Load_Place 380 398	bandar abbas, iran
+T5	Disch_Place 418 448	teluk bayur(padang), indonesia
+T6	Terms 460 490;492 521	load rate : 5,000mt pwwd fhinc dis rate : 5,000mt pwwd shinc
+T7	Laycan 533 546	prompt/onward
+T8	Port_No 588 591	1/1
+T9	Commission 646 658	2.5% ttl pus
+R1	What Arg1:T1 Arg2:T2	
+R2	Content Arg1:T3 Arg2:T1	
+R3	From Arg1:T3 Arg2:T4	
+R4	To Arg1:T3 Arg2:T5	
+R5	How Arg1:T3 Arg2:T6	
+R6	When Arg1:T3 Arg2:T7	
+R7	No_Of_Ports Arg1:T3 Arg2:T8	
+R8	Commission Arg1:T3 Arg2:T9	

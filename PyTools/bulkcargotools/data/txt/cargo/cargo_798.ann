@@ -1,0 +1,15 @@
+T1	Port_No 432 435	1/1
+T2	Commission 437 442	3.75%
+T3	Terms 363 404	2500 mts wwd shinc / 3000 mts wwd shex uu
+T4	Disch_Place 351 361	bik , iran
+T5	Load_Place 327 343	go dau , vietnam
+T6	Laycan 309 320	10-20 april
+T7	Cargo 243 284	20k mts of alumina in bulk 10 pct molchop
+T8	Commodity 137 144	alumina
+R1	Including Arg1:T7 Arg2:T8	
+R2	When Arg1:T7 Arg2:T6	
+R3	From Arg1:T7 Arg2:T5	
+R4	To Arg1:T7 Arg2:T4	
+R5	How Arg1:T7 Arg2:T3	
+R6	No_Of_Ports Arg1:T7 Arg2:T1	
+R7	Commission Arg1:T7 Arg2:T2	

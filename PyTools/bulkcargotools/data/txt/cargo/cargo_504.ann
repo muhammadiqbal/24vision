@@ -1,0 +1,15 @@
+T1	Commodity 57 67	River sand
+T2	Cargo 146 186	40,000 - 50,000 MT OF RIVER SAND IN BULK
+T3	Load_Place 187 202	LUMUT, MALAYSIA
+T4	Disch_Place 205 219	CHENNAI, INDIA
+T5	Terms 220 251	5,000 MT FHINC / 5,000 MT SHINC
+T6	Laycan 252 265	15-20TH APRIL
+T7	Port_No 303 306	1/1
+T8	Commission 307 316	2.50% TTl
+R1	Including Arg1:T2 Arg2:T1	
+R2	To Arg1:T2 Arg2:T4	
+R3	From Arg1:T2 Arg2:T3	
+R4	How Arg1:T2 Arg2:T5	
+R5	When Arg1:T2 Arg2:T6	
+R6	No_Of_Ports Arg1:T2 Arg2:T7	
+R7	Commission Arg1:T2 Arg2:T8	

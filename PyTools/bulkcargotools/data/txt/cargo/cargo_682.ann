@@ -1,0 +1,13 @@
+T1	Cargo 133 182	20,000mt +/- 10% moloo ferts in bulk (sf abt 1.45
+T2	Commission 328 336	2.5% ttl
+T3	Laycan 287 302	18th-24th / apr
+T4	Terms 265 276	cqd /1500uu
+T5	Load_Place 202 218	tianjin, n.china
+T6	Disch_Place 221 250	bintulu + lahad datu,malaysia
+R1	Commission Arg1:T1 Arg2:T2	
+R2	When Arg1:T1 Arg2:T3	
+R3	How Arg1:T1 Arg2:T4	
+R4	From Arg1:T1 Arg2:T5	
+R5	To Arg1:T1 Arg2:T6	
+T7	Commodity 63 68	ferts
+R6	Including Arg1:T1 Arg2:T7	

@@ -1,0 +1,15 @@
+T1	Terms 352 361	4 TTL DYS
+T2	Load_Place 324 328	SFAX
+T3	Disch_Place 331 338	TARTOUS
+T4	Cargo 297 323	2,500 MTS BGD CMNT SLINGED
+T5	Laycan 344 351	S P O T
+T6	Commission 366 374	1.25 TTL
+T7	Quantity 96 101	2,500
+T8	Commodity 106 110	CMNT
+R1	What Arg1:T7 Arg2:T8	
+R2	Content Arg1:T4 Arg2:T7	
+R3	To Arg1:T4 Arg2:T3	
+R4	From Arg1:T4 Arg2:T2	
+R5	When Arg1:T4 Arg2:T5	
+R6	How Arg1:T4 Arg2:T1	
+R7	Commission Arg1:T4 Arg2:T6	

@@ -1,0 +1,49 @@
+T1	Cargo 238 264	5,050mt/10% Molco HR Coils
+T2	Laycan 287 301	21st Apr. 2017
+T3	Load_Place 329 343	Kashima, Japan
+T4	Disch_Place 354 380	Kwangyang-Dangjin, S.Korea
+T5	Terms 403 412	CQD bends
+T6	Port_No 428 431	1/1
+T7	Cargo 436 462	5,000mt/10% Molco HR Coils
+T8	Laycan 485 499	21st Apr. 2017
+R1	When Arg1:T1 Arg2:T2	
+R2	From Arg1:T1 Arg2:T3	
+R3	To Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+R5	No_Of_Ports Arg1:T1 Arg2:T6	
+T9	Load_Place 527 541	Kimitsu, Japan
+T10	Disch_Place 549 561	Ulsan, Korea
+T11	Terms 584 593	CQD bends
+T12	Port_No 609 612	1/1
+R6	When Arg1:T7 Arg2:T8	
+R7	From Arg1:T7 Arg2:T9	
+R8	To Arg1:T7 Arg2:T10	
+R9	How Arg1:T7 Arg2:T11	
+R10	No_Of_Ports Arg1:T7 Arg2:T12	
+T13	Cargo 617 643	5,500mt/10% Molco HR Coils
+T14	Laycan 666 680	23rd Apr. 2017
+T15	Load_Place 708 719	South Japan
+T16	Disch_Place 727 739	TBN, S.Korea
+T17	Terms 762 771	CQD bends
+T18	Port_No 787 790	1/1
+T19	Cargo 796 820	Abt 14,000mt Steel Prods
+R11	When Arg1:T13 Arg2:T14	
+R12	From Arg1:T13 Arg2:T15	
+R13	To Arg1:T13 Arg2:T16	
+R14	How Arg1:T13 Arg2:T17	
+R15	No_Of_Ports Arg1:T13 Arg2:T18	
+T20	Load_Place 824 843	Cigading, Indonesia
+T21	Disch_Place 847 857;868 876	Kohsichang -Bangkok
+T22	Laycan 899 918	16th/17th Apr. 2017
+T23	Terms 920 929	CQD bends
+T24	Port_No 941 944	1/2
+T25	Commission 1028 1044	2.50% AddCom PUS
+R16	From Arg1:T19 Arg2:T20	
+R17	To Arg1:T19 Arg2:T21	
+R18	When Arg1:T19 Arg2:T22	
+R19	How Arg1:T19 Arg2:T23	
+R20	No_Of_Ports Arg1:T19 Arg2:T24	
+R21	Commission Arg1:T19 Arg2:T25	
+R22	Commission Arg1:T1 Arg2:T25	
+R23	Commission Arg1:T7 Arg2:T25	
+R24	Commission Arg1:T13 Arg2:T25	

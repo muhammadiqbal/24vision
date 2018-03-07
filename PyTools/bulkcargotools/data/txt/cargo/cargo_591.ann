@@ -1,0 +1,13 @@
+T1	Commodity 138 142	coal
+T2	Cargo 285 311	35000MT.+_10% coal in bulk
+T3	Laycan 320 331	16-19th May
+T4	Load_Place 351 387	MUARA JAWA anchorage east kalimantan
+T5	Disch_Place 412 419	S.China
+T6	Terms 431 453;456 481	Loading rate 8000shinc Discharge rate 12000shinc
+T7	Commission 487 497	2.5pct pus
+R1	Including Arg1:T2 Arg2:T1	
+R2	When Arg1:T2 Arg2:T3	
+R3	From Arg1:T2 Arg2:T4	
+R4	To Arg1:T2 Arg2:T5	
+R5	How Arg1:T2 Arg2:T6	
+R6	Commission Arg1:T2 Arg2:T7	

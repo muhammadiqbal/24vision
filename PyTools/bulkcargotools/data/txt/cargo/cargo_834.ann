@@ -1,0 +1,15 @@
+T1	Commodity 32 36	mins
+T2	Quantity 27 31	7500
+T3	Disch_Place 232 237	IZMIR
+T4	Load_Place 224 229	CADIZ
+T5	Cargo 239 249	7.500 MINS
+T6	Terms 251 258	36 / 36
+T7	Laycan 260 272	10 APRIL ONW
+T8	Commission 274 283	3,75% TTL
+R1	How Arg1:T5 Arg2:T6	
+R2	From Arg1:T5 Arg2:T4	
+R3	To Arg1:T5 Arg2:T3	
+R4	What Arg1:T2 Arg2:T1	
+R5	Content Arg1:T5 Arg2:T2	
+R6	When Arg1:T5 Arg2:T7	
+R7	Commission Arg1:T5 Arg2:T8	

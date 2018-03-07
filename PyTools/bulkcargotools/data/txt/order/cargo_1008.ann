@@ -1,0 +1,11 @@
+T1	Laycan 275 288	19-21/04/2017
+T2	Load_Place 307 330	1-2 berths at  Klaipeda
+T3	Disch_Place 405 456	1-2 berths/anchorage 1-2 ports of WC or EC of India
+T4	Commission 834 854	2.5 pct add comm pus
+T5	Terms 526 546;567 607	10000 mt pwwd sshinc 10000 mt pwwd shex eiu (Sat 12 - Mon 08)
+T6	Cargo 182 216	50000 – 55000 mt in OO of bulk MOP
+R1	When Arg1:T6 Arg2:T1	
+R2	From Arg1:T6 Arg2:T2	
+R3	To Arg1:T6 Arg2:T3	
+R4	How Arg1:T6 Arg2:T5	
+R5	Commission Arg1:T6 Arg2:T4	

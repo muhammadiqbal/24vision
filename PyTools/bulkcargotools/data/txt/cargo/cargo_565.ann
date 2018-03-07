@@ -1,0 +1,28 @@
+T1	Commodity 126 132	gypsum
+T2	Cargo 252 315	about 23,000mt 10% moloo of natural gypsum in bulk (s/f abt 0.8
+T3	Load_Place 342 360	bandar abbas, iran
+T4	Disch_Place 380 395	lumut, malaysia
+T5	Terms 411 441;443 472	load rate : 4,000mt pwwd fhinc dis rate : 3,000mt pwwd shinc
+T6	Laycan 484 507	25th april-5th may 2017
+T7	Port_No 549 552	1/1
+T8	Commission 613 625	2.5% ttl pus
+T9	Cargo 641 701	about 20,000-35,000mt of natural gypsum in bulk (s/f abt 0.8
+T10	Load_Place 728 746	bandar abbas, iran
+T11	Disch_Place 766 796	teluk bayur(padang), indonesia
+T12	Terms 808 838;840 869	load rate : 5,000mt pwwd fhinc dis rate : 5,000mt pwwd shinc
+T13	Laycan 881 894	prompt/onward
+T14	Port_No 936 939	1/1
+T15	Commission 987 1006	gencon 2.5% ttl pus
+R1	Including Arg1:T2 Arg2:T1	
+R2	From Arg1:T2 Arg2:T3	
+R3	To Arg1:T2 Arg2:T4	
+R4	How Arg1:T2 Arg2:T5	
+R5	When Arg1:T2 Arg2:T6	
+R6	No_Of_Ports Arg1:T2 Arg2:T7	
+R7	Commission Arg1:T2 Arg2:T8	
+R8	From Arg1:T9 Arg2:T10	
+R9	To Arg1:T9 Arg2:T11	
+R10	How Arg1:T9 Arg2:T12	
+R11	When Arg1:T9 Arg2:T13	
+R12	No_Of_Ports Arg1:T9 Arg2:T14	
+R13	Commission Arg1:T9 Arg2:T15	

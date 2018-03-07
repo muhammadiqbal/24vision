@@ -1,0 +1,11 @@
+T1	Cargo 186 214	40.000ts 5pct moloo scrap 55
+T2	Load_Place 218 225	holland
+T3	Disch_Place 230 259	turkish med or sea of marmara
+T4	Laycan 265 272	1-5 may
+T5	Terms 274 306	8.000ts satnoon - 6.000ts sshinc
+T6	Commission 315 325	3.75pct pu
+R1	To Arg1:T1 Arg2:T3	
+R2	From Arg1:T1 Arg2:T2	
+R3	When Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	

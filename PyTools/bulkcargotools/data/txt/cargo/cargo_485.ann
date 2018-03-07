@@ -1,0 +1,11 @@
+T1	Cargo 205 251	15000 mt 5 pct scrap bld tyres  stw 35/40 cbft
+T2	Load_Place 253 279	san juan port- puerto rico
+T3	Disch_Place 282 290	haiphong
+T4	Laycan 292 301	spot /ppt
+T5	Terms 303 312	2500/2500
+T6	Commission 314 321	5,0 ttl
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	When Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	

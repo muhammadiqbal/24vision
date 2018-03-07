@@ -1,0 +1,11 @@
+T1	Cargo 195 274	6,000 mt - 5 pct. more or less in charterer's option - dry pencil pitch in bulk
+T2	Laycan 313 322	01-07 May
+T3	Commission 374 386	1,25 pct ttl
+T4	Terms 323 345	11 total ww days shinc
+T5	Load_Place 277 290	Rizhao, China
+T6	Disch_Place 291 312	Vila do Conde, Brasil
+R1	To Arg1:T1 Arg2:T6	
+R2	From Arg1:T1 Arg2:T5	
+R3	When Arg1:T1 Arg2:T2	
+R4	How Arg1:T1 Arg2:T4	
+R5	Commission Arg1:T1 Arg2:T3	

@@ -1,0 +1,15 @@
+T1	Quantity 106 115	19,500 mt
+T2	Load_Place 360 366	Durres
+T3	Disch_Place 373 393	China (Int. Xingang)
+T4	Laycan 394 404	SPOT / PPT
+T5	Terms 405 438	5,000 mt shexeiu / 6,000 mt shinc
+T6	Commission 439 447	3.75 pus
+T7	Cargo 294 326;327 359	1 x  abt  9,500 mt bulk minerals 1 x  abt 10,000 mt bulk minerals
+R1	Content Arg1:T7 Arg2:T1	
+R2	From Arg1:T7 Arg2:T2	
+R3	To Arg1:T7 Arg2:T3	
+R4	When Arg1:T7 Arg2:T4	
+R5	How Arg1:T7 Arg2:T5	
+R6	Commission Arg1:T7 Arg2:T6	
+T8	Commodity 96 99	Min
+R7	What Arg1:T1 Arg2:T8	

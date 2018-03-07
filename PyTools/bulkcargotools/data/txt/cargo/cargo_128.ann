@@ -1,0 +1,13 @@
+T1	Load_Place 667 673	BANDAR
+T2	Disch_Place 677 682	SOHAR
+T3	Cargo 685 709	10,000/5% MOLCHOPT DRI B
+T4	Laycan 711 719	SPOT/PPT
+T5	Terms 721 728;730 741	4000 BE 12 HR TT BE
+T6	Commission 743 751	2.5% TTL
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+T7	Commodity 131 134	DRI
+R6	Including Arg1:T3 Arg2:T7	

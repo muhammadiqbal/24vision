@@ -1,0 +1,13 @@
+T1	Quantity 130 138	8000 mts
+T2	Commodity 144 153	millscale
+T3	Cargo 410 441	Min/max 8000 mts bulk millscale
+T4	Load_Place 465 470	Yanbu
+T5	Disch_Place 525 570	china ( Nanjing or nantong any one in chopt )
+T6	Laycan 604 624	PROMPT, try vsl date
+T7	Commission 626 642	2.5 % addcom pus
+R1	From Arg1:T3 Arg2:T4	
+R2	To Arg1:T3 Arg2:T5	
+R3	When Arg1:T3 Arg2:T6	
+R4	Commission Arg1:T3 Arg2:T7	
+R5	Content Arg1:T3 Arg2:T1	
+R6	What Arg1:T1 Arg2:T2	

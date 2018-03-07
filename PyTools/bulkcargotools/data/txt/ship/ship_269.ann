@@ -1,0 +1,45 @@
+T1	Ship 129 145	MV. Fatema Jahan
+T2	DWT 152 157	45694
+T3	Year 177 181	1995
+T4	Loading_Place 244 258	Taicang, China
+T5	Open_Date 259 275	31st  March 2017
+T6	Ship 336 345	MV. Ammar
+T7	DWT 352 358	45,766
+T8	Year 379 383	1998
+T9	Loading_Place 446 468	Chittagong, Bangladesh
+T10	Open_Date 469 484	1st April, 2017
+T11	Ship 545 565	MV. Maa Saleha Begum
+T12	DWT 572 578	52,064
+T13	Year 600 604	2000
+T14	Loading_Place 669 687	Mongla, Bangladesh
+T15	Open_Date 688 703	8th April, 2017
+T16	Ship 764 780	MV. Aisha Sarwar
+T17	DWT 788 794	48,265
+T18	Year 814 818	2000
+T19	Loading_Place 881 901	Abidjan, Ivory Coast
+T20	Open_Date 902 916	9th April 2017
+T21	Ship 980 994	MV. Jahan Moni
+T22	DWT 1001 1007	55,496
+T23	Year 1029 1033	2008
+T24	Loading_Place 1096 1109	Mumbai, India
+T25	Open_Date 1110 1126	15th April, 2017
+R1	Contain Arg1:T21 Arg2:T22	
+R2	Built Arg1:T21 Arg2:T23	
+R3	Located Arg1:T21 Arg2:T24	
+R4	When Arg1:T21 Arg2:T25	
+R5	Contain Arg1:T16 Arg2:T17	
+R6	Built Arg1:T16 Arg2:T18	
+R7	Located Arg1:T16 Arg2:T19	
+R8	When Arg1:T16 Arg2:T20	
+R9	Contain Arg1:T11 Arg2:T12	
+R10	Built Arg1:T11 Arg2:T13	
+R11	Located Arg1:T11 Arg2:T14	
+R12	When Arg1:T11 Arg2:T15	
+R13	Contain Arg1:T6 Arg2:T7	
+R14	Built Arg1:T6 Arg2:T8	
+R15	Located Arg1:T6 Arg2:T9	
+R16	When Arg1:T6 Arg2:T10	
+R17	Contain Arg1:T1 Arg2:T2	
+R18	Built Arg1:T1 Arg2:T3	
+R19	Located Arg1:T1 Arg2:T4	
+R20	When Arg1:T1 Arg2:T5	

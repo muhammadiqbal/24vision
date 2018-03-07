@@ -1,0 +1,13 @@
+T1	Commodity 140 150	round logs
+T2	Cargo 284 363	11/12,000 cbm suriname round logs(100% legal cargo) sf under deck about 2.3-2.5
+T3	Disch_Place 584 644	tuticorin and kolkata (india) and/or chittagong (bangladesh)
+T4	Load_Place 477 497;507 556	paramaribo, suriname or in choptn naabsa at kuldip singh port facility
+T5	Laycan 655 666	spot/prompt
+T6	Terms 670 704;706 734	load rate : 1200 cbm pwwd shex eiu - discharge rate : liner out
+T7	Commission 783 795	2.5% add pus
+R1	Including Arg1:T2 Arg2:T1	
+R2	From Arg1:T2 Arg2:T4	
+R3	To Arg1:T2 Arg2:T3	
+R4	When Arg1:T2 Arg2:T5	
+R5	How Arg1:T2 Arg2:T6	
+R6	Commission Arg1:T2 Arg2:T7	

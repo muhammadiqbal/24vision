@@ -1,0 +1,7 @@
+T2	Disch_Place 396 404	Calcutta
+T3	Laycan 430 453	18 April  / 10 May 2017
+T1	Load_Place 344 365	abes terminal Antwerp
+T4	Cargo 632 666	total 80 SOC + 2 pieces break bulk
+R1	When Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T1	
+R3	To Arg1:T4 Arg2:T2	

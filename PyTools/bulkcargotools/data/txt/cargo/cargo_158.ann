@@ -1,0 +1,11 @@
+T1	Load_Place 680 685	Izmit
+T2	Disch_Place 689 693	Sfax
+T3	Cargo 696 735	3900/4000.cbm Capacity Cargo in Pallets
+T4	Laycan 737 748	17/19 April
+T5	Terms 750 766	ttl 8 daps sshex
+T6	Commission 768 776	5.0% iac
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	

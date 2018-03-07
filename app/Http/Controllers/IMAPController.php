@@ -12,11 +12,12 @@ class IMAPController extends Controller
 {
     //
 
-    public function inbox(Request $request, EmailRepository $emailRepo){
-        $hostname = '{outlook.office365.com}Test_IMAP';
-        $username = 'MunsterUniversity@24Vision.Solutions';
-        $password = 'Yoz39332';
-        //$inboxprefix = "24VisionChartering-";
+    public function inbox(Request $request, EmailRepository $emailRepo)
+    {
+        //read Imap config from .env file
+        $hostname = env('IMAP_HOST', '{outlook.office365.com}Test_IMAP');
+        $username = env('IMAP_USERNAME', 'MunsterUniversity@24Vision.Solutions');
+        $password = env('IMAP_PASSWORD', 'Yoz39332');
 
     	$mailbox = new Mailbox($hostname, $username, $password, __DIR__);
 		$mailsIds = $mailbox->searchMailbox('ALL');
@@ -49,7 +50,7 @@ class IMAPController extends Controller
             }
 
         }
-		$request->session()->flash('status', '$saveCount successfully fetched into database!');
+		$request->session()->flash('status', $saveCount.' emails successfully fetched into database!');
        return redirect(route('emails.index'));
 
     }

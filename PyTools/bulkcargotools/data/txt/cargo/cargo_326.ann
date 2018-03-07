@@ -1,0 +1,15 @@
+T1	Commodity 70 76	CEMENT
+T2	Quantity 65 69	5000
+R1	What Arg1:T2 Arg2:T1	
+T3	Load_Place 576 581	GABES
+T4	Disch_Place 585 592	HOUSTON
+T5	Terms 649 658	2000/2500
+T6	Cargo 595 612	5000 CEMENT IN BB
+T7	Laycan 613 648	END APRIL/BEG MAY TRY ANY VSL DATES
+T8	Commission 659 667	2.5% TTL
+R2	To Arg1:T6 Arg2:T4	
+R3	From Arg1:T6 Arg2:T3	
+R4	When Arg1:T6 Arg2:T7	
+R5	How Arg1:T6 Arg2:T5	
+R6	Commission Arg1:T6 Arg2:T8	
+R7	Content Arg1:T6 Arg2:T2	

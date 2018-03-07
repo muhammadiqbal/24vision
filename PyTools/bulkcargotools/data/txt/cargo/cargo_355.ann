@@ -1,0 +1,22 @@
+T1	Load_Place 550 556	Bilbao
+T2	Disch_Place 560 565	Haifa
+T3	Cargo 568 602	10.100/10.450  mts rebars in coils
+T4	Laycan 603 615	20/23  April
+T5	Terms 616 630	1500/liner out
+T6	Commission 646 659	Gcn 3.75% iac
+T7	Load_Place 698 703	Nador
+T8	Disch_Place 707 717	Alexandria
+T9	Cargo 720 748	10/12.000 mtons mins in bulk
+T10	Laycan 757 773	22 April onwards
+T11	Terms 774 798	3500 / 2500  shinc/fhinc
+T12	Commission 821 829	5.0% iac
+R1	To Arg1:T9 Arg2:T8	
+R2	From Arg1:T9 Arg2:T7	
+R3	When Arg1:T9 Arg2:T10	
+R4	How Arg1:T9 Arg2:T11	
+R5	Commission Arg1:T9 Arg2:T12	
+R6	To Arg1:T3 Arg2:T2	
+R7	From Arg1:T3 Arg2:T1	
+R8	When Arg1:T3 Arg2:T4	
+R9	How Arg1:T3 Arg2:T5	
+R10	Commission Arg1:T3 Arg2:T6	

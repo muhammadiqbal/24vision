@@ -1,0 +1,11 @@
+T1	Cargo 162 188	M/M 24,000-25,000 MTS UREA
+T2	Laycan 222 236	28 APR / 2 MAY
+T3	Commission 237 245	2.5% TTL
+T4	Terms 206 221	4,000C / 3,000X
+T5	Disch_Place 199 205	GRESIK
+T6	Load_Place 189 196	LAIZHOU
+R1	From Arg1:T1 Arg2:T6	
+R2	To Arg1:T1 Arg2:T5	
+R3	How Arg1:T1 Arg2:T4	
+R4	When Arg1:T1 Arg2:T2	
+R5	Commission Arg1:T1 Arg2:T3	

@@ -1,0 +1,31 @@
+T1	Load_Place 649 654	HAIFA
+T2	Disch_Place 658 665	HOUSTON
+T3	Cargo 668 694;707 897	6 UNITS DRILLING EQUIPMENT 1096 x 257 x 275 cm    =  15900 kg
+
+824  x 246  x 286          =  11600
+
+730  x 353  x 320          =  25000
+
+788 x 220 x 287            =  23400
+
+433 x 427  x 442           =  28000
+
+1X40HC
+T4	Laycan 924 927	PPT
+T6	Commission 950 959	3.75% IAC
+T5	Load_Place 983 1013	Odessa, Brooklyn Kiev terminal
+T7	Disch_Place 1017 1039	Houston, Care Terminal
+T8	Cargo 1042 1096	3/4.000 mts in chopt seamless steel pipes, stw abt 1.5
+T9	Terms 1182 1217	load 800 mts/day sshinc / disch CQD
+T10	Laycan 1228 1249	01 may 2017 / onwards
+T11	Commission 1391 1399	2.5% ttl
+T12	Cargo 668 694	6 UNITS DRILLING EQUIPMENT
+R1	To Arg1:T12 Arg2:T2	
+R2	From Arg1:T12 Arg2:T1	
+R3	When Arg1:T12 Arg2:T4	
+R4	Commission Arg1:T12 Arg2:T6	
+R5	To Arg1:T8 Arg2:T7	
+R6	From Arg1:T8 Arg2:T5	
+R7	How Arg1:T8 Arg2:T9	
+R8	When Arg1:T8 Arg2:T10	
+R9	Commission Arg1:T8 Arg2:T11	

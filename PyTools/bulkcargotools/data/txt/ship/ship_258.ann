@@ -1,0 +1,77 @@
+T1	Ship 628 643	Legiony Polskie
+T2	Ship 691 698	Pomorze
+T3	Ship 757 763	Kurpie
+T4	Ship 820 825	Iryda
+T5	Ship 883 890	Miedwie
+T6	Ship 946 951	Wicko
+T7	Ship 1009 1015	Solina
+T8	Ship 1072 1078	Prosna
+T9	Ship 1135 1138	San
+T10	Ship 1198 1202	Olza
+T11	Ship 549 554	Jawor
+T12	Loading_Place 589 599	Alexandria
+T13	Loading_Place 668 680	Grundartangi
+T14	Loading_Place 731 738	Vitoria
+T15	Loading_Place 797 808	Sunndalsora
+T16	Loading_Place 860 866	Itaqui
+T17	Loading_Place 923 933	Low Baltic
+T18	Loading_Place 986 1000	Fairless Hills
+T19	Loading_Place 1049 1056	Ravenna
+T20	Loading_Place 1112 1122	Casablanca
+T21	Loading_Place 1175 1181	Macapa
+T22	Loading_Place 1238 1245	Tampico
+T23	DWT 573 579	79,650
+T24	DWT 652 658	39,071
+T25	DWT 715 721	38,980
+T26	DWT 781 787	38,056
+T27	DWT 844 850	34,946
+T28	DWT 907 913	30,481
+T29	DWT 970 976	30,379
+T30	DWT 1033 1039	30,182
+T31	DWT 1096 1102	17,096
+T32	DWT 1159 1165	17,060
+T33	DWT 1222 1228	17,050
+T34	Open_Date 605 611	26 Apr
+T35	Open_Date 684 690	04 May
+T36	Open_Date 747 756	26-27 Apr
+T37	Open_Date 813 819	04 May
+T38	Open_Date 876 882	12 May
+T39	Open_Date 939 945	29 Apr
+T40	Open_Date 1002 1008	06 May
+T41	Open_Date 1065 1071	11 May
+T42	Open_Date 1128 1134	29 Apr
+T43	Open_Date 1191 1197	02 May
+T44	Open_Date 1254 1258	spot
+R1	Contain Arg1:T11 Arg2:T23	
+R2	Located Arg1:T11 Arg2:T12	
+R3	When Arg1:T11 Arg2:T34	
+R4	Contain Arg1:T1 Arg2:T24	
+R5	Located Arg1:T1 Arg2:T13	
+R6	When Arg1:T1 Arg2:T35	
+R7	Contain Arg1:T2 Arg2:T25	
+R8	Located Arg1:T2 Arg2:T14	
+R9	When Arg1:T2 Arg2:T36	
+R10	Contain Arg1:T3 Arg2:T26	
+R11	Located Arg1:T3 Arg2:T15	
+R12	When Arg1:T3 Arg2:T37	
+R13	Contain Arg1:T4 Arg2:T27	
+R14	Located Arg1:T4 Arg2:T16	
+R15	When Arg1:T4 Arg2:T38	
+R16	Contain Arg1:T5 Arg2:T28	
+R17	Located Arg1:T5 Arg2:T17	
+R18	When Arg1:T5 Arg2:T39	
+R19	Contain Arg1:T6 Arg2:T29	
+R20	Located Arg1:T6 Arg2:T18	
+R21	When Arg1:T6 Arg2:T40	
+R22	Contain Arg1:T7 Arg2:T30	
+R23	Located Arg1:T7 Arg2:T19	
+R24	When Arg1:T7 Arg2:T41	
+R25	Contain Arg1:T8 Arg2:T31	
+R26	Located Arg1:T8 Arg2:T20	
+R27	When Arg1:T8 Arg2:T42	
+R28	Contain Arg1:T9 Arg2:T32	
+R29	Located Arg1:T9 Arg2:T21	
+R30	When Arg1:T9 Arg2:T43	
+R31	Contain Arg1:T10 Arg2:T33	
+R32	Located Arg1:T10 Arg2:T22	
+R33	When Arg1:T10 Arg2:T44	

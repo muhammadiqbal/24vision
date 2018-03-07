@@ -1,0 +1,15 @@
+T1	Quantity 46 53	25k mts
+T2	Cargo 166 192	25000? ?mt?s?steel billets
+T3	Load_Place 194 207	N?ovorossiysk
+T4	Disch_Place 211 218	Mombasa
+T5	Laycan 220 226	Prompt
+T6	Terms 238 300	Load appox.6000mt / discharge LINER OUT (However appox.3500mt)
+T7	Commission 303 316	3.75%add  pus
+R1	Commission Arg1:T2 Arg2:T7	
+R2	How Arg1:T2 Arg2:T6	
+R3	When Arg1:T2 Arg2:T5	
+R4	From Arg1:T2 Arg2:T3	
+R5	To Arg1:T2 Arg2:T4	
+R6	Content Arg1:T2 Arg2:T1	
+T8	Commodity 54 67	Steel Billets
+R7	What Arg1:T1 Arg2:T8	

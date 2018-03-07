@@ -1,0 +1,9 @@
+T1	Cargo 192 229	30000 mt +/- 10 pct in OO of bulk MOP
+T2	Laycan 288 304	30/04-02/05/2016
+T3	Commission 802 822	2.5 pct add comm pus
+T4	Load_Place 336 355	Klaipeda, Lithuania
+T5	Disch_Place 512 548	Bangladesh (Chittagong and/or Mongla
+R1	When Arg1:T1 Arg2:T2	
+R2	From Arg1:T1 Arg2:T4	
+R3	To Arg1:T1 Arg2:T5	
+R4	Commission Arg1:T1 Arg2:T3	

@@ -1,0 +1,27 @@
+T1	Ship 284 297	Yue Guan Feng
+T2	DWT 299 304	75581
+T3	Year 306 308	10
+T4	Loading_Place 311 322	San Ciprian
+T5	Open_Date 324 330	14-Apr
+R1	Contain Arg1:T1 Arg2:T2	
+R2	Built Arg1:T1 Arg2:T3	
+R3	Located Arg1:T1 Arg2:T4	
+R4	When Arg1:T1 Arg2:T5	
+T6	Ship 335 344	Hong Jing
+T7	DWT 346 351	82354
+T8	Year 353 354	8
+T9	Loading_Place 357 362	Koper
+T10	Open_Date 364 370	10-Apr
+R5	Contain Arg1:T6 Arg2:T7	
+R6	Built Arg1:T6 Arg2:T8	
+R7	Located Arg1:T6 Arg2:T9	
+R8	When Arg1:T6 Arg2:T10	
+T11	Ship 382 393	Fu Xing Hai
+T12	DWT 395 400	38800
+T13	Year 402 406	2016
+T14	Loading_Place 409 420	New Orleans
+T15	Open_Date 422 428	17-Apr
+R9	Contain Arg1:T11 Arg2:T12	
+R10	Built Arg1:T11 Arg2:T13	
+R11	Located Arg1:T11 Arg2:T14	
+R12	When Arg1:T11 Arg2:T15	

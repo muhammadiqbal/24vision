@@ -1,0 +1,9 @@
+T1	Cargo 157 194	43500 mt +/- 10 pct in OO of bulk MOP
+T2	Load_Place 270 289	Klaipeda, Lithuania
+T3	Laycan 378 391	23-25/04/2017
+T4	Disch_Place 455 484;487 558	West / East coast of Malaysia Intention: 3 ports of West Malaysia (Port Klang, Pasir Gudang, Kuantan)
+T5	Commission 1286 1306	2.5 pct add comm pus
+R1	From Arg1:T1 Arg2:T2	
+R2	When Arg1:T1 Arg2:T3	
+R3	To Arg1:T1 Arg2:T4	
+R4	Commission Arg1:T1 Arg2:T5	

@@ -1,0 +1,13 @@
+T1	Cargo 340 383	45/55,000 10 pct moloo Thermal coal in Bulk
+T2	Load_Place 426 448	Taboneo -  Bunyu range
+T3	Disch_Place 467 504	Inner anchorage Mumbai during monsoon
+T4	Terms 573 600;601 628;631 656	L.Rate: 10,000mt pwwd shinc D.Rate:  7,000mt pwwd shinc :    12 hrs t/t bends eiu
+T5	Port_No 1620 1623	1/1
+T6	Commission 1684 1692	1.25 pct
+T7	Commodity 134 138	COAL
+R1	Including Arg1:T1 Arg2:T7	
+R2	From Arg1:T1 Arg2:T2	
+R3	To Arg1:T1 Arg2:T3	
+R4	How Arg1:T1 Arg2:T4	
+R5	No_Of_Ports Arg1:T1 Arg2:T5	
+R6	Commission Arg1:T1 Arg2:T6	

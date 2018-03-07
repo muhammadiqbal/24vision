@@ -1,0 +1,23 @@
+<<<<<<< HEAD
+T4	Disch_Place 1473 1481	Djibouti
+T7	Commodity 141 154	milling wheat
+T5	Terms 1506 1529;1531 1562	Load Rate: 6000MT SSHEX -  Discharge Rate :2750mt FHINC
+T6	Commission 1576 1584	5.0% IAC
+T2	Laycan 1340 1352;1381 1395;1424 1437	1-7 may 2017 14-20 may 2017 1-7 June 2017
+T3	Load_Place 1004 1028;1042 1060;1074 1091;940 958;972 993	Russia      Novorossiysk Russia      Tuapse Russia      Taman Ukraine     Odessa Romania     Constanta
+T1	Cargo 762 803	About 133,334 +/ -5 % mt of milling wheat
+=======
+T1	Cargo 762 831	About 133,334 +/ -5 % mt of milling wheat to be shipped in three lots
+T4	Disch_Place 1473 1481	Djibouti
+T7	Commodity 141 154	milling wheat
+T5	Terms 1506 1529;1534 1562	Load Rate: 6000MT SSHEX Discharge Rate :2750mt FHINC
+T6	Commission 1576 1584	5.0% IAC
+T2	Laycan 1340 1352;1381 1395;1424 1437	1-7 may 2017 14-20 may 2017 1-7 June 2017
+T3	Load_Place 1004 1028;1042 1060;1074 1091;940 958;972 993	Russia      Novorossiysk Russia      Tuapse Russia      Taman Ukraine     Odessa Romania     Constanta
+>>>>>>> a62d00c0e4f470d5d17bb524118d708c933d55c7
+R1	From Arg1:T1 Arg2:T3	
+R2	When Arg1:T1 Arg2:T2	
+R3	To Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	
+R6	Including Arg1:T1 Arg2:T7	

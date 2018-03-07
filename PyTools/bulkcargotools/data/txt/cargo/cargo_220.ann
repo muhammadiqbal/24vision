@@ -1,0 +1,13 @@
+T1	Commission 789 798	3.75% iac
+T3	Laycan 764 775	18/22 April
+T4	Load_Place 676 683	Leghorn
+T5	Disch_Place 687 700	St Petersburg
+T6	Cargo 703 727	158 mts/895 cbm/70 cases
+T7	Quantity 121 128	158 mts
+R1	To Arg1:T6 Arg2:T5	
+R2	From Arg1:T6 Arg2:T4	
+R3	When Arg1:T6 Arg2:T3	
+R4	Commission Arg1:T6 Arg2:T1	
+R5	Content Arg1:T6 Arg2:T7	
+T2	Commodity 140 145	cases
+R6	What Arg1:T7 Arg2:T2	

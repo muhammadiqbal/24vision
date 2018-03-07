@@ -1,0 +1,22 @@
+T1	Cargo 390 421	30k water slag in bulk 10%moloo
+T2	Load_Place 423 431	jingtang
+T3	Disch_Place 432 438	inchon
+T5	Terms 457 472	12000/8000shinc
+T6	Commission 474 485	2.5comm pus
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	
+T7	Cargo 490 512	20-22k palster in bulk
+T8	Load_Place 515 522	weifang
+T9	Disch_Place 523 530	donghae
+T11	Commission 583 594	2.5comm pus
+T12	Terms 551 558	cqd/cqd
+R6	From Arg1:T7 Arg2:T8	
+R7	To Arg1:T7 Arg2:T9	
+R9	How Arg1:T7 Arg2:T12	
+R10	Commission Arg1:T7 Arg2:T11	
+T10	Laycan 532 543	10-15th apr
+R8	When Arg1:T7 Arg2:T10	
+T4	Laycan 440 449	1-5th apr
+R3	When Arg1:T1 Arg2:T4	

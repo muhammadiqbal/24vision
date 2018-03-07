@@ -1,0 +1,22 @@
+T1	Load_Place 550 562	Novorossiysk
+T2	Disch_Place 566 574	Tekirdag
+T3	Cargo 577 602	3280 mts pig iron in bulk
+T4	Terms 603 619	2000  c / 1500 x
+T5	Laycan 620 636	18 APRIL onwards
+T6	Commission 637 645	2.5% ttl
+T7	Load_Place 662 667	SPLIT
+T8	Disch_Place 671 688	MARMARA OR MERSIN
+T9	Cargo 691 715	ABT 5000 MT CORN IN BULK
+T10	Laycan 716 727	15/20 APRIL
+T11	Terms 728 738	1500 /1500
+T12	Commission 739 747	2.5% TTL
+R1	To Arg1:T9 Arg2:T8	
+R2	From Arg1:T9 Arg2:T7	
+R3	When Arg1:T9 Arg2:T10	
+R4	How Arg1:T9 Arg2:T11	
+R5	Commission Arg1:T9 Arg2:T12	
+R6	To Arg1:T3 Arg2:T2	
+R7	From Arg1:T3 Arg2:T1	
+R8	How Arg1:T3 Arg2:T4	
+R9	When Arg1:T3 Arg2:T5	
+R10	Commission Arg1:T3 Arg2:T6	

@@ -25,6 +25,8 @@ Route::group(['middleware' => 'auth'], function()
 	Route::resource('bdiCodes', 'BdiCodeController');
 
 	Route::resource('bdis', 'BdiController');
+	
+	Route::resource('bdiPrices', 'BdiPriceController');
 
 	Route::resource('cargos', 'CargoController');
 
@@ -33,6 +35,8 @@ Route::group(['middleware' => 'auth'], function()
 	Route::resource('emails', 'EmailController');	
 
 	Route::resource('fuelPrices', 'FuelPriceController');
+	
+	Route::resource('feePrices', 'FeePriceController');
 
 	Route::resource('ports', 'PortController');
 

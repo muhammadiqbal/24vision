@@ -1,0 +1,9 @@
+T1	Ship 225 242	MV OCCITAN BARSAC
+T2	Year 289 293	2003
+T3	DWT 299 305	27,112
+T4	Loading_Place 203 209	Itaqui
+T5	Open_Date 210 220	April 13th
+R1	Located Arg1:T1 Arg2:T4	
+R2	When Arg1:T1 Arg2:T5	
+R3	Built Arg1:T1 Arg2:T2	
+R4	Contain Arg1:T1 Arg2:T3	

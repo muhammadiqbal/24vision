@@ -1,0 +1,9 @@
+T1	Load_Place 458 466	SHANGHAI
+T2	Disch_Place 467 472	SUDAN
+T3	Laycan 474 482	1/10 MAY
+T4	Commission 489 496	2.5 PUS
+T5	Cargo 401 424	TTL 633.7 CBM (312.7MT)
+R1	From Arg1:T5 Arg2:T1	
+R2	To Arg1:T5 Arg2:T2	
+R3	When Arg1:T5 Arg2:T3	
+R4	Commission Arg1:T5 Arg2:T4	

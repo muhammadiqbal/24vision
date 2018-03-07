@@ -1,0 +1,9 @@
+T1	Cargo 141 198	30000 mts +/- 10% in OO of MOP in bulk, STW abt 1.0 m3/mt
+T2	Load_Place 270 289	Klaipeda, Lithuania
+T3	Laycan 347 360	05-07/04/2017
+T4	Disch_Place 387 407	Jorf Lasfar, Morocco
+T5	Commission 599 619	2.5 pct add comm pus
+R1	From Arg1:T1 Arg2:T2	
+R2	When Arg1:T1 Arg2:T3	
+R3	To Arg1:T1 Arg2:T4	
+R4	Commission Arg1:T1 Arg2:T5	

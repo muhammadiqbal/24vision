@@ -1,0 +1,24 @@
+T1	Load_Place 635 644	TARRAGONA
+T2	Disch_Place 648 657	ZHENJIANG
+T3	Cargo 660 688	10.000 MTS WOODPULP IN BALES
+T4	Laycan 732 743	25/30 APRIL
+T5	Terms 751 760	3000/3000
+T6	Commission 762 774	GCN 5.0% IAC
+T7	Load_Place 787 796	Constanta
+T8	Disch_Place 800 807	Mukalla
+T12	Terms 971 1015	3000/1500 Tons Pwwd Sshex/Fhex Bss Eiu Bends
+T14	Commission 1193 1202	3.75% IAC
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+T11	Port_No 1105 1108	1/1
+T10	Laycan 1025 1043	15 – 30 April 2017
+T9	Cargo 810 867	12000 Tons +/- 5Pct Of Bulk Milling Wheat (Stwf Abt = 46)
+R6	To Arg1:T9 Arg2:T8	
+R7	From Arg1:T9 Arg2:T7	
+R8	How Arg1:T9 Arg2:T12	
+R9	When Arg1:T9 Arg2:T10	
+R10	No_Of_Ports Arg1:T9 Arg2:T11	
+R11	Commission Arg1:T9 Arg2:T14	

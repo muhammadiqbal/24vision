@@ -1,0 +1,12 @@
+T1	Load_Place 696 704	Klaipeda
+T2	Disch_Place 708 722	New Castle, UK
+T3	Commission 927 936	2.5 % ttl
+T4	Laycan 845 859	16-19 APR 2017
+T6	Terms 864 893	12 hrs sshinc / 12 hrs sshinc
+T7	Commodity 123 134	Cable Reels
+T5	Cargo 725 746;772 840	Cable Reels, 2 units. Weight: 40200 kg / per unit, plus EU pallet with accessories - 1 mts
+R1	To Arg1:T5 Arg2:T2	
+R2	From Arg1:T5 Arg2:T1	
+R3	When Arg1:T5 Arg2:T4	
+R4	Commission Arg1:T5 Arg2:T3	
+R5	Including Arg1:T5 Arg2:T7	

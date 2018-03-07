@@ -1,0 +1,21 @@
+T1	Cargo 500 542	abt 40-45,000 mt Bulk Harmless Fertilizers
+T2	Laycan 605 621	16-19.April 2017
+T3	Load_Place 410 416	Ashdod
+T4	Disch_Place 461 479	Itacotiara, Brazil
+T5	Terms 562 586	7,000 Shex / 3,000 Shinc
+T6	Load_Place 729 751	Teesport, CPL Terminal
+T7	Disch_Place 796 824	Lirquen & Puerto Mont, Chile
+T8	Cargo 842 887	abt 4,000mt BHF – Granular Polysulphate sf~24
+T9	Terms 909 931	1day Shex / 3,500 Shex
+T10	Laycan 950 971	15.April -20.May 2017
+T11	Commission 1088 1104	2.50% ADDCOM PUS
+R1	To Arg1:T1 Arg2:T4	
+R2	From Arg1:T1 Arg2:T3	
+R3	How Arg1:T1 Arg2:T5	
+R4	When Arg1:T1 Arg2:T2	
+R5	To Arg1:T8 Arg2:T7	
+R6	From Arg1:T8 Arg2:T6	
+R7	How Arg1:T8 Arg2:T9	
+R8	When Arg1:T8 Arg2:T10	
+R9	Commission Arg1:T8 Arg2:T11	
+R10	Commission Arg1:T1 Arg2:T11	

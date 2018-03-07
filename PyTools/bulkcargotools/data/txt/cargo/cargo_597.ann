@@ -1,0 +1,13 @@
+T1	Commodity 86 90	RICE
+T2	Cargo 115 144	24/25000 MT BGD RICE SF 49/51
+T3	Laycan 242 253	10/15 APRIL
+T4	Load_Place 164 182	VIETNAM + THAILAND
+T5	Disch_Place 197 215	W.AFR EXCL NIGERIA
+T6	Terms 217 240	1500 / 1500 SHEX EIU BE
+T7	Commission 263 285	2.5% ADC + 1.25% JESAI
+R1	Including Arg1:T2 Arg2:T1	
+R2	From Arg1:T2 Arg2:T4	
+R3	To Arg1:T2 Arg2:T5	
+R4	How Arg1:T2 Arg2:T6	
+R5	When Arg1:T2 Arg2:T3	
+R6	Commission Arg1:T2 Arg2:T7	

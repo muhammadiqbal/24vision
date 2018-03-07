@@ -1,0 +1,15 @@
+T1	Load_Place 249 255	SAVONA
+T2	Disch_Place 256 267	GRANGEMOUTH
+T3	Cargo 269 313	1100/1300 MT CORN GLUTEN FEED IN MEAL STW 60
+T4	Terms 315 325	2 TTL DAYS
+T5	Laycan 327 337	02 MAY ONW
+T6	Commission 339 349	3,75%TOTAL
+T7	Quantity 27 39	1100/1300 mt
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	How Arg1:T3 Arg2:T4	
+R4	When Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+R6	Content Arg1:T3 Arg2:T7	
+T8	Commodity 40 56	corn gluten feed
+R7	What Arg1:T7 Arg2:T8	

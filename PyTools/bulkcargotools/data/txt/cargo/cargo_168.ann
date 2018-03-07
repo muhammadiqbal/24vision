@@ -1,0 +1,15 @@
+T1	Quantity 160 166	25.000
+T2	Load_Place 749 762	ASSALYA, IRAN
+T4	Cargo 815 844	25.000/45000 M/T CLINKER BULK
+T5	Laycan 852 861	VSL DATES
+T6	Terms 869 878	6000/4000
+T7	Commission 893 901	2.5% TTL
+T8	Commodity 177 184	CLINKER
+R1	What Arg1:T1 Arg2:T8	
+R3	From Arg1:T4 Arg2:T2	
+R4	When Arg1:T4 Arg2:T5	
+T3	Disch_Place 766 771;800 812	BEMBA , MUZAMBIQUE
+R2	To Arg1:T4 Arg2:T3	
+R5	How Arg1:T4 Arg2:T6	
+R6	Commission Arg1:T4 Arg2:T7	
+R7	Content Arg1:T4 Arg2:T1	

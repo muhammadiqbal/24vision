@@ -1,0 +1,55 @@
+T1	Load_Place 550 567	Ochakov anchorage
+T2	Disch_Place 571 576	Izmir
+T3	Cargo 579 599	m/m 12000 Barley 56'
+T4	Terms 600 609	4500/2500
+T5	Laycan 610 622	06.04 -09.04
+T6	Commission 623 632	3.75% IAC
+T7	Load_Place 639 646	Marmara
+T8	Disch_Place 650 660	Port Sudan
+T9	Cargo 663 702	12,500 mt Wheat flour in 50 kg Bag  55’
+T10	Laycan 703 712	Spot- ppt
+T11	Terms 713 722	1750/1500
+T12	Commission 723 730	2.5 pct
+T13	Load_Place 1040 1047	Yuzhniy
+T14	Disch_Place 1051 1066	Izmir or Mersin
+T15	Cargo 1069 1086	15000/10 corn 49’
+T16	Terms 1087 1096	5000/3500
+T17	Laycan 1097 1105	05-10.04
+T18	Commission 1106 1115	3.75% IAC
+T19	Load_Place 1122 1129	ADABIYA
+T20	Disch_Place 1140 1148	MALAYSIA
+T21	Cargo 1151 1185	25/35000 MT ROCK PHOSPHATE IN BULK
+T22	Terms 1186 1212	8000 FSHEX / 3000 MT SSHEX
+T23	Laycan 1213 1238	SPOT ( CAN TRY VSL DATE )
+T24	Commission 1239 1247	2.5% TTL
+T25	Disch_Place 1361 1381	MERSIN OR ISKENDERUN
+T26	Load_Place 1345 1356	RICHARDS BY
+T27	Cargo 1384 1428	150.000 MT BULK CHROMITE EACH TRIP +/- 20 CO
+T28	Laycan 1491 1513	STARTING FM APRIL 2017
+T29	Terms 1518 1534	5.000 / 3.500 MT
+T30	Commission 1535 1543	2.5% TTL
+R1	To Arg1:T27 Arg2:T25	
+R2	From Arg1:T27 Arg2:T26	
+R3	When Arg1:T27 Arg2:T28	
+R4	How Arg1:T27 Arg2:T29	
+R5	Commission Arg1:T27 Arg2:T30	
+R6	To Arg1:T21 Arg2:T20	
+R7	From Arg1:T21 Arg2:T19	
+R8	How Arg1:T21 Arg2:T22	
+R9	When Arg1:T21 Arg2:T23	
+R10	Commission Arg1:T21 Arg2:T24	
+R11	To Arg1:T15 Arg2:T14	
+R12	From Arg1:T15 Arg2:T13	
+R13	How Arg1:T15 Arg2:T16	
+R14	When Arg1:T15 Arg2:T17	
+R15	Commission Arg1:T15 Arg2:T18	
+R16	To Arg1:T9 Arg2:T8	
+R17	From Arg1:T9 Arg2:T7	
+R18	When Arg1:T9 Arg2:T10	
+R19	How Arg1:T9 Arg2:T11	
+R20	Commission Arg1:T9 Arg2:T12	
+R21	To Arg1:T3 Arg2:T2	
+R22	From Arg1:T3 Arg2:T1	
+R23	How Arg1:T3 Arg2:T4	
+R24	When Arg1:T3 Arg2:T5	
+R25	Commission Arg1:T3 Arg2:T6	

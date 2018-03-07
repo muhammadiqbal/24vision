@@ -1,0 +1,15 @@
+T1	Commodity 82 93	ferroalloys
+T2	Quantity 70 78	3550 mts
+T3	Load_Place 613 623	Ilyichevsk
+T4	Disch_Place 627 634	Isdemir
+T5	Cargo 637 677	3550 mts of ferroalloys in bulk, stw=dwt
+T6	Laycan 687 700	14-15.04.2017
+T7	Terms 701 710	1000/1000
+T8	Commission 711 719	2.5% ttl
+R1	To Arg1:T5 Arg2:T4	
+R2	From Arg1:T5 Arg2:T3	
+R3	When Arg1:T5 Arg2:T6	
+R4	How Arg1:T5 Arg2:T7	
+R5	Commission Arg1:T5 Arg2:T8	
+R6	Content Arg1:T5 Arg2:T2	
+R7	What Arg1:T2 Arg2:T1	

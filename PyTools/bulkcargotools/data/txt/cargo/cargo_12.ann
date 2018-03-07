@@ -1,0 +1,7 @@
+T1	Load_Place 752 759	Karachi
+T2	Disch_Place 763 769	Durban
+T3	Laycan 826 842	01/10 April 2017
+T4	Cargo 772 824	01 Unit  155 MM T5 HOWITZER GUN mounted on a Vehicle
+R1	To Arg1:T4 Arg2:T2	
+R2	From Arg1:T4 Arg2:T1	
+R3	When Arg1:T4 Arg2:T3	

@@ -1,0 +1,13 @@
+T1	Load_Place 727 731	BARI
+T2	Disch_Place 735 742	TRIESTE
+T3	Cargo 745 761	10.000 /5% WHEAT
+T4	Terms 764 775	3000 / 4000
+T5	Laycan 778 787	PPT / ONW
+T6	Commission 790 798	2.5% TTL
+T7	Commodity 123 128	WHEAT
+R1	How Arg1:T3 Arg2:T4	
+R2	When Arg1:T3 Arg2:T5	
+R3	Commission Arg1:T3 Arg2:T6	
+R4	To Arg1:T3 Arg2:T2	
+R5	From Arg1:T3 Arg2:T1	
+R6	Including Arg1:T3 Arg2:T7	

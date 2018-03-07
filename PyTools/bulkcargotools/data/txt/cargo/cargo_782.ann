@@ -1,0 +1,13 @@
+T1	Commodity 55 62	Petcoke
+T2	Cargo 285 368	15000 MT (+/- 5% basis charterer’s option) of Green Raw Petroleum Coke (SF 1.3-1.4)
+T3	Load_Place 398 412	Longkou, China
+T4	Disch_Place 415 427	Haldia india
+T5	Laycan 435 449	5th – 10th May
+T6	Terms 471 494	4000/5000 MT PWWD SHINC
+T7	Commission 501 512	2.5 PCT pus
+R1	Including Arg1:T2 Arg2:T1	
+R2	To Arg1:T2 Arg2:T4	
+R3	From Arg1:T2 Arg2:T3	
+R4	When Arg1:T2 Arg2:T5	
+R5	How Arg1:T2 Arg2:T6	
+R6	Commission Arg1:T2 Arg2:T7	

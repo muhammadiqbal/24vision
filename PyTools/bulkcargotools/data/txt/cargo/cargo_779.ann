@@ -1,0 +1,13 @@
+T1	Commodity 55 59	coal
+T2	Cargo 137 174	20.000TS +/-10PCT IN  OWS OPTION COAL
+T3	Disch_Place 185 190	TOROS
+T4	Load_Place 175 181	TUAPSE
+T5	Terms 203 214	7000C/7000X
+T6	Laycan 191 202	27-30 APRIL
+T7	Commission 215 231	3.75 PCT ADD PUS
+R1	Including Arg1:T2 Arg2:T1	
+R2	To Arg1:T2 Arg2:T3	
+R3	From Arg1:T2 Arg2:T4	
+R4	When Arg1:T2 Arg2:T6	
+R5	How Arg1:T2 Arg2:T5	
+R6	Commission Arg1:T2 Arg2:T7	

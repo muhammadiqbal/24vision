@@ -1,0 +1,13 @@
+T2	Commodity 111 118	Alumina
+T3	Cargo 648 717;747 765	Sandy Calcined Metallurgical Grade Alumina in Plastic Woven Jumbo Bag 20,000mts (+/-10%)
+T4	Laycan 775 797	20th - 30th April 2017
+T5	Load_Place 809 848	Go Dau port, Dong Nai province, Vietnam
+T6	Disch_Place 869 909	Gangavaram / Visakapatnam SeaPort, India
+T7	Terms 1107 1159;1707 1762;922 1092	Including official Vietnam gazatted Public Holidays. Gangavaram / Visakapatnam - 3500 MT / 24 hours WWDSHINC Go Dau port, Dong Nai province, Vietnam - 3,000 MT per Weather Working Day of twenty four (24) consecutive hours, Sundays and Holidays excluded, unless used (WWD SHEX UU)
+T8	Commission 1771 1781	Total 2.5%
+R2	When Arg1:T3 Arg2:T4	
+R3	From Arg1:T3 Arg2:T5	
+R4	To Arg1:T3 Arg2:T6	
+R5	How Arg1:T3 Arg2:T7	
+R6	Commission Arg1:T3 Arg2:T8	
+R1	Including Arg1:T3 Arg2:T2	

@@ -1,0 +1,42 @@
+T1	Ship 549 556	Karpaty
+T2	DWT 573 579	82,138
+T3	Loading_Place 589 598	Port Said
+T4	Open_Date 605 611	28 Apr
+T5	Ship 628 635	Pomorze
+T6	DWT 652 658	38,980
+T7	Loading_Place 668 675	Vitoria
+T8	Open_Date 684 693	27-28 Apr
+T9	Open_Date 750 754	spot
+T10	Open_Date 811 815	spot
+T11	Loading_Place 734 739	Brest
+T12	DWT 779 785	29,694
+T13	Ship 694 698	Irma
+T14	Ship 755 760	Lubie
+T15	Ship 816 822	Prosna
+T16	Ship 879 883	Olza
+T17	Loading_Place 919 926	Tampico
+T18	Loading_Place 856 866	Casablanca
+T19	Loading_Place 795 804	Vera Cruz
+T20	DWT 840 846	17,096
+T21	DWT 903 909	17,050
+T22	DWT 718 724	34,946
+T23	Open_Date 872 878	27 Apr
+T24	Open_Date 935 941	18 Apr
+R1	Contain Arg1:T1 Arg2:T2	
+R2	Located Arg1:T1 Arg2:T3	
+R3	When Arg1:T1 Arg2:T4	
+R4	Contain Arg1:T5 Arg2:T6	
+R5	Located Arg1:T5 Arg2:T7	
+R6	When Arg1:T5 Arg2:T8	
+R7	Contain Arg1:T13 Arg2:T22	
+R8	Located Arg1:T13 Arg2:T11	
+R9	When Arg1:T13 Arg2:T9	
+R10	Contain Arg1:T14 Arg2:T12	
+R11	Located Arg1:T14 Arg2:T19	
+R12	When Arg1:T14 Arg2:T10	
+R13	Contain Arg1:T15 Arg2:T20	
+R14	Located Arg1:T15 Arg2:T18	
+R15	When Arg1:T15 Arg2:T23	
+R16	Contain Arg1:T16 Arg2:T21	
+R17	Located Arg1:T16 Arg2:T17	
+R18	When Arg1:T16 Arg2:T24	

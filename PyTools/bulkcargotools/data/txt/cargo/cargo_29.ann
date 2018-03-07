@@ -1,0 +1,13 @@
+T1	Load_Place 771 775	RENI
+T2	Quantity 108 118	2/3500 MTS
+T3	Disch_Place 779 782	TBS
+T4	Cargo 785 806	2/3500 MTS SFS, SF 89
+T5	Laycan 827 831	SPOT
+T6	Commission 837 845	2.5% TTL
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T1	
+R3	When Arg1:T4 Arg2:T5	
+R4	Commission Arg1:T4 Arg2:T6	
+T7	Commodity 119 122	SFS
+R6	Content Arg1:T4 Arg2:T2	
+R5	What Arg1:T2 Arg2:T7	

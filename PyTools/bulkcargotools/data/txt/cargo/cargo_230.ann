@@ -1,0 +1,15 @@
+T1	Commission 813 821	5.0% iac
+T2	Terms 801 811	4 ttl days
+T3	Laycan 788 799	25/28 APRIL
+T4	Load_Place 705 725	Pietarsaari(Finland)
+T5	Disch_Place 728 740	Bandar Abbas
+T6	Cargo 743 785	abt 3/3.500 mt in chopt wood pulp in units
+T7	Quantity 136 146	3/3.500 mt
+T8	Commodity 156 165	wood pulp
+R1	What Arg1:T7 Arg2:T8	
+R2	To Arg1:T6 Arg2:T5	
+R3	From Arg1:T6 Arg2:T4	
+R4	When Arg1:T6 Arg2:T3	
+R5	How Arg1:T6 Arg2:T2	
+R6	Commission Arg1:T6 Arg2:T1	
+R7	Content Arg1:T6 Arg2:T7	

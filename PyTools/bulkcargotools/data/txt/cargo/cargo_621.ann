@@ -1,0 +1,13 @@
+T1	Commodity 60 65	fertz
+T2	Cargo 191 222;232 263	20,000 mt 10% moloo MOP in bulk (15000/10 GMOP  + 5000/10 SMOP)
+T3	Load_Place 266 274	Klaipeda
+T4	Disch_Place 275 289;299 318	Barranquilla + Buenaventura NAABSA
+T5	Laycan 327 338	15-17 April
+T6	Terms 364 409	6000 shinc load / 3500 shinc Bqla, 3000 shinc
+T7	Commission 437 452	2.5% addcom pus
+R1	Including Arg1:T2 Arg2:T1	
+R2	To Arg1:T2 Arg2:T4	
+R3	From Arg1:T2 Arg2:T3	
+R4	When Arg1:T2 Arg2:T5	
+R5	How Arg1:T2 Arg2:T6	
+R6	Commission Arg1:T2 Arg2:T7	

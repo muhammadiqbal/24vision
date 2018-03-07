@@ -1,0 +1,13 @@
+T1	Commission 1052 1060	2.5% TTL
+T4	Load_Place 721 749	Penang and Bintulu, Malaysia
+T5	Disch_Place 753 777	Aden and Hodeidah, yemen
+T3	Terms 889 917;919 956	Load rate: 12 days SSHEX EIU Dis rate: 12 days FHEX (incl Sat) EIU
+T8	Port_No 1044 1047	2/2
+T2	Laycan 967 973	Propmt
+T6	Cargo 780 800;822 877;878 883	ABOUT 6/8000 MTS DWT 5200 CBM MEDIUM-DENSITY FIBREBOARD (MDF) IN CRATES S.F. 3 CBM
+R1	To Arg1:T6 Arg2:T5	
+R2	From Arg1:T6 Arg2:T4	
+R3	How Arg1:T6 Arg2:T3	
+R4	When Arg1:T6 Arg2:T2	
+R5	No_Of_Ports Arg1:T6 Arg2:T8	
+R6	Commission Arg1:T6 Arg2:T1	

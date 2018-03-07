@@ -1,0 +1,19 @@
+T1	Cargo 205 232	About 40,500 mts bulk ferts
+T2	Load_Place 244 256;318 326	Uusikaupunki Sluiskil
+T3	Disch_Place 433 443;556 576	Rio Grande São Francisco do Sul
+T4	Laycan 628 637	May 05/07
+T6	Cargo 725 755;765 807	19,200 mt 10% moloo bulk ferts + 1,500 mt m/m Nitrabor in 1200kg big bags
+T8	Commission 936 951	2.5% addcom pus
+T9	Terms 874 907	3000 shex load / 4000 shinc disch
+T10	Load_Place 818 824	Heroya
+T11	Disch_Place 827 847	Vera Cruz + Altamira
+T5	Commission 671 702	2,50 pct addcom + 1,25 pct bery
+R1	To Arg1:T6 Arg2:T11	
+R2	From Arg1:T6 Arg2:T10	
+T7	Laycan 856 872	27 April / 1 May
+R3	How Arg1:T6 Arg2:T9	
+R4	Commission Arg1:T6 Arg2:T8	
+R5	From Arg1:T1 Arg2:T2	
+R6	To Arg1:T1 Arg2:T3	
+R7	When Arg1:T1 Arg2:T4	
+R8	Commission Arg1:T1 Arg2:T5	

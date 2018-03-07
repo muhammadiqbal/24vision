@@ -1,0 +1,11 @@
+T1	Load_Place 188 207	El Ferrol + Setubal
+T2	Disch_Place 210 280	Philadelphia (Kinder Morgan) + Jacksonville + Pt. Everglades + Houston
+T3	Cargo 281 317	abt 36.000mt rebars max 12m/5ts bdls
+T4	Terms 318 334	4000 sshex / cqd
+T5	Laycan 335 348	spot/10th May
+T6	Commission 349 353	3,75
+R1	From Arg1:T3 Arg2:T1	
+R2	To Arg1:T3 Arg2:T2	
+R3	How Arg1:T3 Arg2:T4	
+R4	When Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	

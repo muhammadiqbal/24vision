@@ -1,0 +1,15 @@
+T1	Commission 505 511	1.25 %
+T2	Port_No 493 496	1/1
+T3	Laycan 437 454	10- 15 April 2017
+T4	Cargo 142 182	24000 MT + 10 % CHOP COPPER SLAG IN BULK
+T5	Load_Place 259 303	Birla Copper Jetty, Dahej, Gujarat, WC INDIA
+T6	Disch_Place 328 357	DUQUM Port, Sultanate of Oman
+T7	Terms 359 390;392 427	Load Rate : 6,000 Mt PWWD SHINC Discharge Rate : 5,000 Mt PWWD FHEX
+T8	Commodity 50 61	COOPER SLAG
+R1	Including Arg1:T4 Arg2:T8	
+R2	From Arg1:T4 Arg2:T5	
+R3	To Arg1:T4 Arg2:T6	
+R4	How Arg1:T4 Arg2:T7	
+R5	When Arg1:T4 Arg2:T3	
+R6	No_Of_Ports Arg1:T4 Arg2:T2	
+R7	Commission Arg1:T4 Arg2:T1	

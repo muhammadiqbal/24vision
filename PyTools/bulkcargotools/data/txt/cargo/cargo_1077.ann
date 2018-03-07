@@ -1,0 +1,22 @@
+T1	Load_Place 1099 1112	SANGHI, INDIA
+T2	Disch_Place 1115 1126	ADEN, YEMEN
+T3	Terms 1128 1151;1194 1210	9000 SHINC / 3000 FHINC 12HRS / 24HRS TT
+T4	Commission 1212 1224	3.75 ADC PUS
+T5	Laycan 1081 1097	1 - 5 April 2017
+T6	Cargo 1061 1079	40,000 10% CLINKER
+T7	Commission 1022 1027	1.25%
+T10	Load_Place 561 588	Mundra port (Gujrat, India)
+T11	Cargo 440 494	ANY SIZE UPTO 42000 mt Aggregate / Crushed stone chips
+T12	Disch_Place 606 636	Mongla/Chittagong.(Bangladesh)
+T13	Terms 698 724;725 754	Load Rate: 11000mt per day Discharge Rate: 3000mt per da
+T14	Laycan 932 942;944 964;979 1001	SPOT / PPT 2nd laycan: 1-10 APR 3rd laycan : 10-20 APR
+R1	From Arg1:T11 Arg2:T10	
+R2	To Arg1:T11 Arg2:T12	
+R3	How Arg1:T11 Arg2:T13	
+R4	When Arg1:T11 Arg2:T14	
+R5	Commission Arg1:T11 Arg2:T7	
+R6	When Arg1:T6 Arg2:T5	
+R7	From Arg1:T6 Arg2:T1	
+R8	To Arg1:T6 Arg2:T2	
+R9	How Arg1:T6 Arg2:T3	
+R10	Commission Arg1:T6 Arg2:T4	

@@ -1,0 +1,24 @@
+T1	Commodity 116 121	SUGAR
+T2	Cargo 211 234	36/40,000 mt bulk sugar
+T3	Laycan 236 244	8/15 May
+T4	Commission 289 309	6.25% add +1.25 mbbc
+T5	Terms 246 287	8000/6000 sat noon/mon 0800 ntc eiu bends
+T6	Load_Place 164 173	Paranagua
+T7	Disch_Place 182 189	Bizerte
+T8	Load_Place 317 326	P.Quetzal
+T9	Disch_Place 331 368	West Africa (Nouakchott-Namibe range)
+T10	Terms 435 455	1500/1000 (1500 Med)
+T11	Laycan 422 433	21/28 April
+T12	Cargo 390 420	22,000/30,000 nmt bagged sugar
+T13	Commission 457 478	6.25% add + 1.25 mbbc
+R1	From Arg1:T2 Arg2:T6	
+R2	To Arg1:T2 Arg2:T7	
+R3	When Arg1:T2 Arg2:T3	
+R4	Including Arg1:T2 Arg2:T1	
+R5	How Arg1:T2 Arg2:T5	
+R6	Commission Arg1:T2 Arg2:T4	
+R7	From Arg1:T12 Arg2:T8	
+R8	To Arg1:T12 Arg2:T9	
+R9	When Arg1:T12 Arg2:T11	
+R10	How Arg1:T12 Arg2:T10	
+R11	Commission Arg1:T12 Arg2:T13	

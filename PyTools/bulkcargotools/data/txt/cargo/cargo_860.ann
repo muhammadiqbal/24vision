@@ -1,0 +1,15 @@
+T1	Commodity 40 45	wheat
+T2	Quantity 27 39	11/15.000 mt
+T3	Load_Place 255 281	NEA KARVALI + THESSALONIKI
+T4	Disch_Place 286 290	ADRI
+T5	Cargo 292 311	ANY 11/15.000 WHEAT
+T6	Terms 313 326	3.000 / 4.000
+T7	Laycan 328 335	PPT ONW
+T8	Commission 337 346	2,50% TTL
+R1	How Arg1:T5 Arg2:T6	
+R2	When Arg1:T5 Arg2:T7	
+R3	Commission Arg1:T5 Arg2:T8	
+R4	From Arg1:T5 Arg2:T3	
+R5	To Arg1:T5 Arg2:T4	
+R6	Content Arg1:T5 Arg2:T2	
+R7	What Arg1:T2 Arg2:T1	

@@ -1,0 +1,12 @@
+Tomorrow if we have time I will explain the organization of development. import time
+import os
+start_time = time.time()
+
+#Run the Programs
+os.system('python3 imap_caller.py')
+os.system('python3 execute_classification.py')
+os.system('python3 execute_cargo_extraction.py "cargo"')
+os.system('python3 execute_ship_extraction.py "ship"')
+os.system('python3 execute_order_extraction.py "order"')
+
+print("--- %s seconds ---" % (time.time() - start_time))

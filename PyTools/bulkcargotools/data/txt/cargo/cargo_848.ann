@@ -1,0 +1,15 @@
+T1	Commodity 35 39	agri
+T2	Quantity 27 34	1100 mt
+T3	Load_Place 227 237	POOLE (UK)
+T4	Disch_Place 238 244	MEPPEL
+T5	Cargo 246 258	1100 AGRI 60
+T6	Terms 260 265	4 TTL
+T7	Laycan 267 274	PPT ONW
+T8	Commission 276 283	3,75TTL
+R1	From Arg1:T5 Arg2:T3	
+R2	To Arg1:T5 Arg2:T4	
+R3	What Arg1:T2 Arg2:T1	
+R4	Content Arg1:T5 Arg2:T2	
+R5	How Arg1:T5 Arg2:T6	
+R6	When Arg1:T5 Arg2:T7	
+R7	Commission Arg1:T5 Arg2:T8	

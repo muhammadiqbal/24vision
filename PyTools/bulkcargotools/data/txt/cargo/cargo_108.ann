@@ -1,0 +1,18 @@
+T1	Quantity 122 130	4115 mts
+T2	Load_Place 671 677	Rijeka
+T3	Disch_Place 681 696	Gemlik + Mardas
+T4	Cargo 699 717	4115 mts of steels
+T5	Laycan 722 731	8-9 april
+T6	Terms 747 801;822 985	1250 mt pwwday sshex eiu (FRI 17:00/MON 08:00 HRS NTC) 1 WWDAY OF 24 CONSEC HRS SSHEX EIU FRI 17 OR DBH TILL MON 08 OR DAH NTC SSHEX EIU at Mardas      
+
+1250 mt pwwday sshex eiu (FRI 17:00/MON 08:00 HRS NTC) at Gemlik
+T7	Commodity 134 140	steels
+R1	What Arg1:T1 Arg2:T7	
+R2	To Arg1:T4 Arg2:T3	
+R3	From Arg1:T4 Arg2:T2	
+R4	When Arg1:T4 Arg2:T5	
+T8	Terms 733 801;803 913;921 985	loading rate: 1250 mt pwwday sshex eiu (FRI 17:00/MON 08:00 HRS NTC) discharging rate:  1 WWDAY OF 24 CONSEC HRS SSHEX EIU FRI 17 OR DBH TILL MON 08 OR DAH NTC SSHEX EIU at Mardas 1250 mt pwwday sshex eiu (FRI 17:00/MON 08:00 HRS NTC) at Gemlik
+T9	Commission 1003 1012	3.75% iac
+R5	How Arg1:T4 Arg2:T8	
+R6	Commission Arg1:T4 Arg2:T9	
+R7	Content Arg1:T4 Arg2:T1	

@@ -1,0 +1,23 @@
+T1	Quantity 106 115	19,500 mt
+T2	Cargo 265 312	1 or 2 or 3 Lots of abt 10,000 mt bulk minerals
+T3	Load_Place 318 324	Mersin
+T4	Disch_Place 337 342	China
+T5	Terms 343 376	5,000 mt shexeiu / 7,000 mt shinc
+T6	Laycan 377 384	S P O T
+T7	Cargo 394 426;427 459	1 x  abt  9,500 mt bulk minerals 1 x  abt 10,000 mt bulk minerals
+T8	Laycan 494 504	SPOT / PPT
+T9	Commission 540 552	3.75 add pus
+T10	Terms 505 538	5,000 mt shexeiu / 6,000 mt shinc
+T11	Load_Place 460 466	Durres
+T12	Disch_Place 473 493	China (Int. Xingang)
+R1	To Arg1:T2 Arg2:T4	
+R2	From Arg1:T2 Arg2:T3	
+R3	How Arg1:T2 Arg2:T5	
+R4	When Arg1:T2 Arg2:T6	
+R5	From Arg1:T7 Arg2:T11	
+R6	To Arg1:T7 Arg2:T12	
+R7	When Arg1:T7 Arg2:T8	
+R8	How Arg1:T7 Arg2:T10	
+R9	Commission Arg1:T7 Arg2:T9	
+R10	Content Arg1:T7 Arg2:T1	
+R11	Commission Arg1:T2 Arg2:T9	

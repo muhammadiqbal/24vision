@@ -1,0 +1,13 @@
+T1	Load_Place 231 237	ANCONA
+T2	Disch_Place 240 246	MERSIN
+T3	Terms 267 278	3000 / 5000
+T4	Cargo 248 265	20.000 /10% WHEAT
+T5	Commodity 36 41	wheat
+T6	Laycan 280 292	1 MAY ONWARD
+T7	Commission 294 303	2,50% TTL
+R1	From Arg1:T4 Arg2:T1	
+R2	To Arg1:T4 Arg2:T2	
+R3	Including Arg1:T4 Arg2:T5	
+R4	How Arg1:T4 Arg2:T3	
+R5	When Arg1:T4 Arg2:T6	
+R6	Commission Arg1:T4 Arg2:T7	

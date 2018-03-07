@@ -1,0 +1,15 @@
+T1	Port_No 497 500	1/1
+T2	Laycan 423 429	Propmt
+T3	Terms 347 374;376 412	Load rate: 6 days SSHEX EIU Dis rate: 8 days FHEX (incl Sat) EIU
+T4	Commission 507 516	2.50% ttl
+T5	Load_Place 259 275	Penang, malaysia
+T6	Disch_Place 288 299	Aden, yemen
+T7	Cargo 191 244	5200 CBM MDF for under deck load in Crates S.F. 3 CBM
+T8	Commodity 68 87	MDF and Sawn timber
+R1	From Arg1:T7 Arg2:T5	
+R2	To Arg1:T7 Arg2:T6	
+R3	How Arg1:T7 Arg2:T3	
+R4	When Arg1:T7 Arg2:T2	
+R5	No_Of_Ports Arg1:T7 Arg2:T1	
+R6	Commission Arg1:T7 Arg2:T4	
+R7	Including Arg1:T7 Arg2:T8	

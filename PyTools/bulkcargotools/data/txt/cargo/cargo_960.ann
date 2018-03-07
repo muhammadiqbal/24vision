@@ -1,0 +1,11 @@
+T1	Cargo 186 223	5000 wmt 3% molchopt pb concs in bulk
+T2	Load_Place 229 237	Lüderitz
+T3	Disch_Place 245 252	huangpu
+T4	Terms 253 275	4000 ssinc / 3000 shex
+T5	Laycan 277 280	May
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	How Arg1:T1 Arg2:T4	
+R4	When Arg1:T1 Arg2:T5	
+T6	Commission 304 323	2.5 pct add com pus
+R5	Commission Arg1:T1 Arg2:T6	

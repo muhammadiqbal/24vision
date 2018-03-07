@@ -1,0 +1,42 @@
+T1	Load_Place 550 555	Izmir
+T2	Disch_Place 559 570	Ho Chi Minh
+T3	Cargo 573 606	61 pkgs, 315.608 kg, 1031,660 cbm
+T4	Laycan 624 635	SPOT/26 APR
+T6	Commission 644 653	3.75% IAC
+T7	Load_Place 660 667	MARMARA
+T8	Disch_Place 671 677	ANNABA
+T9	Cargo 680 703	10.000 MTS STEEL BILLET
+T10	Laycan 704 716	5-7 MAY 2017
+T11	Terms 717 728	10 TTL DAYS
+T12	Commission 729 738	3.75% IAC
+T13	Load_Place 763 770	RAVENNA
+T14	Disch_Place 774 792	HAMILTON + CHICAGO
+T15	Cargo 795 811	13580 MTS STEELS
+T16	Laycan 812 823	24/28 APRIL
+T17	Terms 824 832	2000/CQD
+T18	Commission 833 841	2.5% TTL
+T19	Commission 888 896	5.0% iac
+T20	Load_Place 898 905	Taranto
+T21	Disch_Place 909 916	Antwerp
+T22	Cargo 919 947	min/max 29500/30500 tons hrc
+T23	Laycan 965 976	22/24 april
+T24	Terms 977 1009	3000 x at load / 4000 x at disch
+R1	To Arg1:T22 Arg2:T21	
+R2	From Arg1:T22 Arg2:T20	
+R3	When Arg1:T22 Arg2:T23	
+R4	How Arg1:T22 Arg2:T24	
+R5	Commission Arg1:T22 Arg2:T19	
+R6	To Arg1:T15 Arg2:T14	
+R7	From Arg1:T15 Arg2:T13	
+R8	When Arg1:T15 Arg2:T16	
+R9	How Arg1:T15 Arg2:T17	
+R10	Commission Arg1:T15 Arg2:T18	
+R11	To Arg1:T9 Arg2:T8	
+R12	From Arg1:T9 Arg2:T7	
+R13	When Arg1:T9 Arg2:T10	
+R14	How Arg1:T9 Arg2:T11	
+R15	Commission Arg1:T9 Arg2:T12	
+R16	To Arg1:T3 Arg2:T2	
+R17	From Arg1:T3 Arg2:T1	
+R18	When Arg1:T3 Arg2:T4	
+R20	Commission Arg1:T3 Arg2:T6	

@@ -1,0 +1,14 @@
+T1	Load_Place 326 332	mersin
+T2	Disch_Place 333 343	ain sukhna
+T4	Laycan 650 663	ppt/next week
+T5	Load_Place 668 673	mersi
+T6	Disch_Place 674 687	jizan(redsea)
+T8	Laycan 879 888	next week
+T7	Cargo 688 728;773 790	abt 70 steelpipes  length betw 27/29mtrs ttl abt 1250mtons
+T3	Cargo 345 378;456 473	abt 42 stlpipes length 60/70 mtrs ttl abt 1500mtons
+R1	When Arg1:T7 Arg2:T8	
+R2	To Arg1:T7 Arg2:T6	
+R3	From Arg1:T7 Arg2:T5	
+R4	To Arg1:T3 Arg2:T2	
+R5	From Arg1:T3 Arg2:T1	
+R6	When Arg1:T3 Arg2:T4	

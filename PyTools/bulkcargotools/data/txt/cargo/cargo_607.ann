@@ -1,0 +1,13 @@
+T1	Commodity 82 86	rice
+T2	Cargo 113 143	20/23000 mt bgd rice, sf 49-51
+T3	Load_Place 154 162	Thailand
+T4	Disch_Place 171 189	w.afr excl nigeria
+T5	Terms 191 213	1500 /1500 shex eiu be
+T6	Commission 234 256	2.5% adc + 1.25% jesai
+T7	Laycan 215 224	End april
+R1	Including Arg1:T2 Arg2:T1	
+R2	From Arg1:T2 Arg2:T3	
+R3	To Arg1:T2 Arg2:T4	
+R4	How Arg1:T2 Arg2:T5	
+R5	When Arg1:T2 Arg2:T7	
+R6	Commission Arg1:T2 Arg2:T6	

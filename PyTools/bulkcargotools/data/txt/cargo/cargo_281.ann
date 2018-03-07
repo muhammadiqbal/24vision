@@ -1,0 +1,11 @@
+T1	Commission 295 298	5 %
+T2	Terms 282 290	4000/CQD
+T3	Laycan 239 243;274 277	5/10 MAY
+T4	Cargo 216 234	47,500MT  ILMENITE
+T5	Load_Place 184 188	MOMA
+T6	Disch_Place 190 211	QINGDAO AND ZHENJIANG
+R1	To Arg1:T4 Arg2:T6	
+R2	From Arg1:T4 Arg2:T5	
+R3	When Arg1:T4 Arg2:T3	
+R4	How Arg1:T4 Arg2:T2	
+R5	Commission Arg1:T4 Arg2:T1	

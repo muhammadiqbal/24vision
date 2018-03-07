@@ -1,0 +1,22 @@
+T1	Cargo 126 155	6000-6600mt of bulk ball clay
+T2	Load_Place 163 178	Lumut, Malaysia
+T3	Disch_Place 188 211	Chittagong , Bangladesh
+T4	Terms 213 247	2000/1000 pwwd shinc / fhinc bends
+T5	Laycan 257 286	Prompt Onwards, try vsl dates
+T6	Commission 288 292	3.75
+T7	Cargo 304 335	10000-12000mt of bulk ball clay
+T8	Load_Place 343 358	Lumut, Malaysia
+T9	Disch_Place 368 391	Chittagong , Bangladesh
+T10	Terms 393 427	2000/1000 pwwd shinc / fhinc bends
+T11	Laycan 437 464	14/17 April , try vsl dates
+T12	Commission 466 470	3.75
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	How Arg1:T1 Arg2:T4	
+R4	When Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	
+R6	From Arg1:T7 Arg2:T8	
+R7	To Arg1:T7 Arg2:T9	
+R8	How Arg1:T7 Arg2:T10	
+R9	When Arg1:T7 Arg2:T11	
+R10	Commission Arg1:T7 Arg2:T12	

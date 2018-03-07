@@ -1,0 +1,9 @@
+T1	Ship 237 254	M/V “Lady Damla “
+T2	DWT 260 266	28,749
+T3	Year 351 355	2008
+T4	Loading_Place 200 207	SETUBAL
+T5	Open_Date 208 218	07th April
+R1	Located Arg1:T1 Arg2:T4	
+R2	When Arg1:T1 Arg2:T5	
+R3	Contain Arg1:T1 Arg2:T2	
+R4	Built Arg1:T1 Arg2:T3	

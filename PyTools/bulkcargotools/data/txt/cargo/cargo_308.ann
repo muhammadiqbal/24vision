@@ -1,0 +1,22 @@
+T1	Load_Place 550 553	Fos
+T2	Disch_Place 557 562	Sines
+T3	Cargo 565 586	8./10.000 mt blk mins
+T4	Laycan 587 594	week 18
+T5	Terms 595 615	96 ttlhrs shex/shinc
+T6	Commission 620 628	5.0% iac
+T7	Load_Place 637 667	French med or French atl. port
+T8	Disch_Place 671 684	Krishnapatnam
+T9	Cargo 687 725	3./5.000 mt shredded tyres stw abt 64'
+T10	Terms 728 732	ttld
+T11	Laycan 736 751	end april / may
+T12	Commission 758 767	3.75% iac
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+R6	To Arg1:T9 Arg2:T8	
+R7	From Arg1:T9 Arg2:T7	
+R8	How Arg1:T9 Arg2:T10	
+R9	When Arg1:T9 Arg2:T11	
+R10	Commission Arg1:T9 Arg2:T12	

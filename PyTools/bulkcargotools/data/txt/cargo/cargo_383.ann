@@ -1,0 +1,33 @@
+T1	Load_Place 550 556	Bilbao
+T2	Disch_Place 560 565	Haifa
+T3	Cargo 568 602	10.100/10.450  mts rebars in coils
+T4	Laycan 603 615	20/23  April
+T5	Terms 616 630	1500/liner out
+T6	Commission 646 659	gcn 3.75% iac
+T7	Load_Place 698 703	VARNA
+T8	Disch_Place 707 752	RAS AL KHAIMAH (5,000 MT) + DAMMAM(17,000 MT)
+T9	Cargo 755 811	TTL ABT 22,000 MTS SODA ASH DENSE IN BULK STW 1,1 CBM/MT
+T10	Terms 832 845	4000/2500 SID
+T11	Laycan 816 827	25/30 APRIL
+T12	Load_Place 891 900	Uglegorsk
+T13	Commission 871 879	5.0% IAC
+T14	Disch_Place 910 938	Campha or Hochiminh in CHOPT
+T15	Cargo 941 974	25 000 mt 10% MOLCO  Coal in bulk
+T16	Laycan 975 989	04-07 May 2017
+T17	Terms 990 1030	4 000 mt PWWD SHINC/10 000 mt PWWD SHINC
+T18	Commission 1092 1101	3.75% iac
+R1	To Arg1:T15 Arg2:T14	
+R2	From Arg1:T15 Arg2:T12	
+R3	When Arg1:T15 Arg2:T16	
+R4	How Arg1:T15 Arg2:T17	
+R5	Commission Arg1:T15 Arg2:T18	
+R6	To Arg1:T9 Arg2:T8	
+R7	From Arg1:T9 Arg2:T7	
+R8	When Arg1:T9 Arg2:T11	
+R9	How Arg1:T9 Arg2:T10	
+R10	Commission Arg1:T9 Arg2:T13	
+R11	To Arg1:T3 Arg2:T2	
+R12	From Arg1:T3 Arg2:T1	
+R13	Commission Arg1:T3 Arg2:T6	
+R14	How Arg1:T3 Arg2:T5	
+R15	When Arg1:T3 Arg2:T4	

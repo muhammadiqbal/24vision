@@ -1,0 +1,17 @@
+T1	Commodity 83 87	RICE
+T2	Quantity 72 78	20/21K
+T3	Cargo 187 216	20/21000 MT BGD RICE SF 49/51
+T4	Load_Place 236 258	YANGON AND OR KAKINADA
+T5	Disch_Place 273 290	ABIDJAN, W.AFRICA
+T6	Terms 292 315	1500 / 1500 SHEX EIU BE
+T7	Laycan 317 326	01/05 MAY
+T8	Port_No 338 341	2/1
+T9	Commission 366 371	3.75%
+R1	What Arg1:T2 Arg2:T1	
+R2	Content Arg1:T3 Arg2:T2	
+R3	From Arg1:T3 Arg2:T4	
+R4	To Arg1:T3 Arg2:T5	
+R5	How Arg1:T3 Arg2:T6	
+R6	When Arg1:T3 Arg2:T7	
+R7	No_Of_Ports Arg1:T3 Arg2:T8	
+R8	Commission Arg1:T3 Arg2:T9	

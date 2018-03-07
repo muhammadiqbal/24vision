@@ -1,0 +1,17 @@
+T1	Cargo 119 185	MIN/MAX 10,000 MT OF SLAG POWER(GGBFS) PACKING IN 1.5 MT JUMBO BAG
+T2	Commodity 62 66	SLAG
+T3	Laycan 198 213	8-15, MAY, 2017
+T4	Port_No 462 465	1/1
+T5	Commission 485 492	2.5% PU
+T6	Terms 378 390	CQD AT BENDS
+T7	Disch_Place 274 298	THILAWA, YANGON, MYANMAR
+T8	Load_Place 237 250	RIZHAO, CHINA
+T9	Quantity 58 61	10K
+R1	What Arg1:T9 Arg2:T2	
+R2	When Arg1:T1 Arg2:T3	
+R3	From Arg1:T1 Arg2:T8	
+R4	To Arg1:T1 Arg2:T7	
+R5	Content Arg1:T1 Arg2:T9	
+R6	How Arg1:T1 Arg2:T6	
+R7	No_Of_Ports Arg1:T1 Arg2:T4	
+R8	Commission Arg1:T1 Arg2:T5	

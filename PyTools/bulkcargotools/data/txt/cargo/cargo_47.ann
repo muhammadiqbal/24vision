@@ -1,0 +1,15 @@
+T1	Quantity 118 125	900 MTS
+T2	Load_Place 677 687	ISKENDERUN
+T3	Disch_Place 691 698	ANTWERP
+T4	Cargo 701 723	900 MTS STEEL PRODUCTS
+T5	Laycan 725 735	3/15 APRIL
+T6	Terms 737 747	2 TTL DAYS
+T7	Commission 749 758	3.75% IAC
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T2	
+R3	When Arg1:T4 Arg2:T5	
+R4	How Arg1:T4 Arg2:T6	
+R5	Commission Arg1:T4 Arg2:T7	
+R6	Content Arg1:T4 Arg2:T1	
+T8	Commodity 126 140	STEEL PRODUCTS
+R8	What Arg1:T1 Arg2:T8	

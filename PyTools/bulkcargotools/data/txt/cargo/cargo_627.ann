@@ -1,0 +1,11 @@
+T1	Cargo 111 191	12,000 mt 10% moloo bulk ferts 2 grades + 500 mt m/m Nitrabor in 1200kg big bags
+T3	Disch_Place 222 246	Caldera + Puerto Quetzal
+T5	Terms 297 344	6000 shex load / 3500 shinc Cald, 5000 shinc PQ
+T6	Commission 369 384	2.5% addcom pus
+R1	Commission Arg1:T1 Arg2:T6	
+R2	How Arg1:T1 Arg2:T5	
+R5	To Arg1:T1 Arg2:T3	
+T2	Load_Place 193 203;213 219	Sluiskil + Heroya
+R4	From Arg1:T1 Arg2:T2	
+T4	Laycan 255 266	20-25 April
+R3	When Arg1:T1 Arg2:T4	

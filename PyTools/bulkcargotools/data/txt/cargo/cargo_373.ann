@@ -1,0 +1,22 @@
+T1	Load_Place 550 565	Yeisk Port Silo
+T2	Disch_Place 569 588	Samsun or Yesilyurt
+T3	Cargo 591 618	3,050-3080.mt Wheat in Bulk
+T4	Laycan 619 630	10-13.April
+T5	Terms 631 644	1000x / 1000x
+T6	Commission 645 654	3.75% iac
+T7	Load_Place 661 673	Novorossiysk
+T8	Disch_Place 677 685	Tekirdag
+T9	Cargo 688 713	3280 mts pig iron in bulk
+T10	Terms 714 730	2000  c / 1500 x
+T11	Laycan 731 747	18 APRIL onwards
+T12	Commission 748 756	2.5% ttl
+R1	To Arg1:T9 Arg2:T8	
+R2	From Arg1:T9 Arg2:T7	
+R3	How Arg1:T9 Arg2:T10	
+R4	When Arg1:T9 Arg2:T11	
+R5	Commission Arg1:T9 Arg2:T12	
+R6	To Arg1:T3 Arg2:T2	
+R7	From Arg1:T3 Arg2:T1	
+R8	When Arg1:T3 Arg2:T4	
+R9	How Arg1:T3 Arg2:T5	
+R10	Commission Arg1:T3 Arg2:T6	

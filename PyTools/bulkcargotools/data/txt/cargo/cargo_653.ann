@@ -1,0 +1,17 @@
+T1	Quantity 62 69	22000MT
+T2	Cargo 130 157	22000mt cement in jumbo bag
+T3	Load_Place 159 165	Rizhao
+T4	Disch_Place 166 185	Batangas and iloilo
+T5	Terms 187 195	CQD/2000
+T6	Laycan 197 207	6-15 April
+T7	Commission 256 262	2.5pct
+R1	Commission Arg1:T2 Arg2:T7	
+R2	When Arg1:T2 Arg2:T6	
+R3	How Arg1:T2 Arg2:T5	
+R4	From Arg1:T2 Arg2:T3	
+R5	To Arg1:T2 Arg2:T4	
+R6	Content Arg1:T2 Arg2:T1	
+T8	Commodity 70 76	CEMENT
+R7	What Arg1:T1 Arg2:T8	
+T9	Port_No 247 250	1/2
+R8	No_Of_Ports Arg1:T2 Arg2:T9	

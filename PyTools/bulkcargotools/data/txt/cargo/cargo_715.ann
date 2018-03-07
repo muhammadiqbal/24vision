@@ -1,0 +1,33 @@
+T1	Cargo 183 200	2,000 MT WOODPULP
+T2	Laycan 246 251	14/23
+T3	Terms 252 268	48 TTL HRS SSHEX
+T4	Commission 273 284	2.5 ADD PUS
+T5	Load_Place 167 174	HAMBURG
+T6	Disch_Place 175 182	LATAKIA
+T7	Cargo 294 326	3,500/10% net mt bgd sgr - in bb
+T8	Load_Place 365 377	Novorossiysk
+T9	Disch_Place 378 386	Lattakia
+T10	Terms 398 406	1500/750
+T11	Laycan 387 397	7/15 April
+T12	Commission 407 419	3.75 add pus
+T13	Cargo 432 473	1,500 MTS UP TO 2,000 MTS BGD CGO SLINGED
+T14	Laycan 493 501	SPOT/PPT
+T15	Commission 516 524	1.25 TTL
+T16	Terms 502 511	4 TTL DYS
+T17	Load_Place 474 478	SFAX
+T18	Disch_Place 481 488	TARTOUS
+R1	To Arg1:T13 Arg2:T18	
+R2	From Arg1:T13 Arg2:T17	
+R3	When Arg1:T13 Arg2:T14	
+R4	How Arg1:T13 Arg2:T16	
+R5	Commission Arg1:T13 Arg2:T15	
+R6	From Arg1:T7 Arg2:T8	
+R7	To Arg1:T7 Arg2:T9	
+R8	When Arg1:T7 Arg2:T11	
+R9	How Arg1:T7 Arg2:T10	
+R10	Commission Arg1:T7 Arg2:T12	
+R11	From Arg1:T1 Arg2:T5	
+R12	To Arg1:T1 Arg2:T6	
+R13	When Arg1:T1 Arg2:T2	
+R14	How Arg1:T1 Arg2:T3	
+R15	Commission Arg1:T1 Arg2:T4	

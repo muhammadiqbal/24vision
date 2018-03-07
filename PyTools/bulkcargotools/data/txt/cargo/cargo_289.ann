@@ -1,0 +1,79 @@
+T1	Laycan 2177 2181	Spot
+T2	Cargo 2032 2052;2064 2085	 Stone chips in bulk 55,000mt +/-10% MOLOO
+T3	Commission 2008 2022	3.75% IAC 2.5%
+T5	Terms 2182 2213;2214 2245	Load Rate - 10,000mt pwwd shinc Disch Rate - 3,000mt pwwd fhinc
+T6	Load_Place 2102 2125	Mundra or Kandla, India
+T7	Disch_Place 2147 2167	Chittagong or Mongla
+R2	From Arg1:T2 Arg2:T6	
+R3	To Arg1:T2 Arg2:T7	
+R4	When Arg1:T2 Arg2:T1	
+R5	Commission Arg1:T2 Arg2:T3	
+R6	How Arg1:T2 Arg2:T5	
+T8	Load_Place 1082 1106	Dahej, Gujarat, WC INDIA
+T9	Disch_Place 1158 1187	DUQUM Port, Sultanate of Oman
+T10	Cargo 919 969	CGO/QTY : 24000 MT + 10 % CHOP COPPER SLAG IN BULK
+T11	Laycan 1227 1244	10- 15 April 2017
+T12	Terms 1354 1416;1418 1473	Load Rate                                : 6,000 Mt PWWD SHINC Discharge Rate                     : 5,000 Mt PWWD FHEX
+T13	Commission 2298 2312	3.75% IAC 2.5%
+T14	Cargo 2323 2340;2352 2373	Limestone in bulk 45,000mt +/-10% MOLOO
+T16	Load_Place 2391 2408	Cam Pha, Viet Nam
+T17	Disch_Place 2430 2452	Chittagong, Bangladesh
+T18	Laycan 2460 2476	10-15April, 2017
+T19	Terms 2477 2507;2508 2539	Load Rate - 8,000mt pwwd shinc Disch Rate - 3,000mt pwwd fhinc
+R8	Commission Arg1:T14 Arg2:T13	
+R9	From Arg1:T14 Arg2:T16	
+R10	To Arg1:T14 Arg2:T17	
+R11	When Arg1:T14 Arg2:T18	
+R12	How Arg1:T14 Arg2:T19	
+T20	Commission 2592 2606	3.75% IAC 2.5%
+T21	Cargo 2615 2632;2638 2672	Woodchips in bulk 10,000BDMT +/-10% MOLOO (S/f: 5.4)
+T23	Load_Place 2693 2701	Chan May
+T24	Disch_Place 2707 2720	Rizhao, China
+T25	Laycan 2729 2745	15-20April, 2017
+R14	Commission Arg1:T21 Arg2:T20	
+R15	From Arg1:T21 Arg2:T23	
+R16	To Arg1:T21 Arg2:T24	
+R17	When Arg1:T21 Arg2:T25	
+T26	Commission 2794 2808	3.75% IAC 2.5%
+T27	Cargo 2819 2831;2843 2865	COAL in bulk 100,000mt +/-10% MOLOO
+T28	Load_Place 2883 2897	Baltimore, USA
+T29	Disch_Place 2929 2940	Kandla, WCI
+T30	Laycan 2948 2968	Early of April, 2017
+T31	Terms 2969 3000;3001 3033	Load Rate - 40,000mt pwwd shinc Disch Rate - 25,000mt pwwd shinc
+R18	From Arg1:T10 Arg2:T8	
+R19	To Arg1:T10 Arg2:T9	
+R21	How Arg1:T10 Arg2:T12	
+R22	Commission Arg1:T27 Arg2:T26	
+R23	From Arg1:T27 Arg2:T28	
+R24	To Arg1:T27 Arg2:T29	
+R25	When Arg1:T27 Arg2:T30	
+R26	How Arg1:T27 Arg2:T31	
+T32	Commission 3082 3096	3.75% IAC 2.5%
+T33	Load_Place 3098 3113	Campha, Vietnam
+T34	Disch_Place 3117 3139	Chittagong, Bangladesh
+T35	Cargo 3142 3173	45,000 MT 10% OO Bulk Limestone
+T36	Terms 3174 3210	7000 MT / 2500 MT , pwwd shinc bends
+T37	Laycan 3211 3227	Spot / try dates
+T38	Commission 3274 3283	3.75% IAC
+T39	Terms 3374 3401	4.000 FHEX UU / 10.000SHINC
+T40	Laycan 3349 3373	SPOT/5 APRIL (TRY LATER)
+T41	Cargo 3285 3329	MIN 54.000 / MAX 56.000 SLABS - QTY IN CHOPT
+T42	Load_Place 3330 3337	B.ABBAS
+T43	Disch_Place 3340 3348	PRACHUAP
+R27	Commission Arg1:T41 Arg2:T38	
+R28	To Arg1:T41 Arg2:T43	
+R29	From Arg1:T41 Arg2:T42	
+R30	When Arg1:T41 Arg2:T40	
+R31	How Arg1:T41 Arg2:T39	
+R32	To Arg1:T35 Arg2:T34	
+R33	Commission Arg1:T35 Arg2:T32	
+R34	From Arg1:T35 Arg2:T33	
+R35	How Arg1:T35 Arg2:T36	
+R36	When Arg1:T35 Arg2:T37	
+R20	When Arg1:T10 Arg2:T11	
+T44	Port_No 2269 2272	1/2
+R1	No_Of_Ports Arg1:T2 Arg2:T44	
+T4	Port_No 2563 2566	1/2
+R7	No_Of_Ports Arg1:T14 Arg2:T4	
+T15	Port_No 3057 3060	1/2
+R13	No_Of_Ports Arg1:T27 Arg2:T15	

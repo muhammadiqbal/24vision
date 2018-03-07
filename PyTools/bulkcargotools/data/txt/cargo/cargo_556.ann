@@ -1,0 +1,43 @@
+T1	Commission 474 482	2.5% pus
+T2	Port_No 464 467	1/1
+T3	Laycan 361 371	7-10th apr
+T4	Terms 384 421	5,000mt pwwd shinc/2,200mt pwwd shinc
+T5	Load_Place 308 328	kohsichang, thailand
+T6	Disch_Place 336 353	qinzhou, s. china
+T7	Cargo 229 285	20,000-26,000mt tapioca chips in bulk (sf abt 1.85 -1.90
+T8	Commodity 126 139	topioca chips
+T9	Cargo 492 542	40,000-45,000mt tapioca chips in bulk (sf abt 1.85
+T10	Load_Place 564 584	kohsichang, thailand
+T11	Disch_Place 592 646	river port(int zhenjiang), or lianyungang, china chopt
+T12	Laycan 655 666	13-20th apr
+T13	Port_No 759 762	1/1
+T14	Terms 679 716	7,000mt pwwd shinc/3,500mt pwwd shinc
+T15	Commission 769 777	2.5% pus
+T16	Cargo 787 840	20,000mt 10% molco tapioca chips in bulk (sf abt 1.85
+T17	Load_Place 863 883	kohsichang, thailand
+T18	Disch_Place 891 907	zhenjiang, china
+T19	Laycan 915 926	20-30th apr
+T20	Port_No 1019 1022	1/1
+T21	Terms 939 976	5,000mt pwwd shinc/2,500mt pwwd shinc
+T22	Commission 1029 1037	2.5% pus
+R1	From Arg1:T9 Arg2:T10	
+R2	To Arg1:T9 Arg2:T11	
+R3	When Arg1:T9 Arg2:T12	
+R4	How Arg1:T9 Arg2:T14	
+R5	No_Of_Ports Arg1:T9 Arg2:T13	
+R6	Commission Arg1:T9 Arg2:T15	
+R7	From Arg1:T16 Arg2:T17	
+R8	To Arg1:T16 Arg2:T18	
+R9	When Arg1:T16 Arg2:T19	
+R10	How Arg1:T16 Arg2:T21	
+R11	No_Of_Ports Arg1:T16 Arg2:T20	
+R12	Commission Arg1:T16 Arg2:T22	
+R13	From Arg1:T7 Arg2:T5	
+R14	To Arg1:T7 Arg2:T6	
+R15	When Arg1:T7 Arg2:T3	
+R16	How Arg1:T7 Arg2:T4	
+R17	No_Of_Ports Arg1:T7 Arg2:T2	
+R18	Commission Arg1:T7 Arg2:T1	
+R19	Including Arg1:T7 Arg2:T8	
+R20	Including Arg1:T16 Arg2:T8	
+R21	Including Arg1:T9 Arg2:T8	

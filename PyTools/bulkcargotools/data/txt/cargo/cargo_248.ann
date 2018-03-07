@@ -1,0 +1,13 @@
+T1	Commission 950 958	2.5% ttl
+T2	Laycan 874 894	May - September 2017
+T3	Terms 897 923;925 948	10,000 shinc / 7,000 shinc TT 12 hrs t/t bends eiu
+T4	Load_Place 750 757	Taboneo
+T5	Disch_Place 761 812	Bunyu range - Inner anchorage Mumbai during monsoon
+T6	Cargo 815 871	4 + 2 shipments CHOPT x 45/55.000 10% moloo coal in bulk
+T7	Commodity 205 209	coal
+R1	To Arg1:T6 Arg2:T5	
+R2	When Arg1:T6 Arg2:T2	
+R3	From Arg1:T6 Arg2:T4	
+R4	How Arg1:T6 Arg2:T3	
+R5	Commission Arg1:T6 Arg2:T1	
+R6	Including Arg1:T6 Arg2:T7	

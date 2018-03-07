@@ -1,0 +1,30 @@
+T1	Commodity 40 45	wheat
+T2	Quantity 27 39	5000/6000 mt
+T3	Commodity 98 102	agri
+T4	Quantity 85 97	2000/2500 mt
+T5	Load_Place 294 309	ALEXANDROUPOLIS
+T6	Disch_Place 312 326	UPPER ADRIATIC
+T7	Terms 344 353	2000/3000
+T8	Load_Place 380 396	P.LAGOS (GREECE)
+T9	Terms 433 442	1000/1000
+T10	Disch_Place 399 406	RAVENNA
+T11	Cargo 327 342	5000/6000 WHEAT
+T12	Laycan 355 361	17 ONW
+T13	Commission 363 371	2,50 TTL
+T14	Cargo 407 425	2000/2500 TNS AGRI
+T15	Laycan 444 452	SPOT PPT
+T16	Commission 454 464	3.75 % TTL
+R1	How Arg1:T14 Arg2:T9	
+R2	When Arg1:T14 Arg2:T15	
+R3	Commission Arg1:T14 Arg2:T16	
+R4	From Arg1:T14 Arg2:T8	
+R5	To Arg1:T14 Arg2:T10	
+R6	How Arg1:T11 Arg2:T7	
+R7	When Arg1:T11 Arg2:T12	
+R8	Commission Arg1:T11 Arg2:T13	
+R9	From Arg1:T11 Arg2:T5	
+R10	To Arg1:T11 Arg2:T6	
+R11	Content Arg1:T11 Arg2:T2	
+R12	What Arg1:T2 Arg2:T1	
+R13	What Arg1:T4 Arg2:T3	
+R14	Content Arg1:T14 Arg2:T4	

@@ -1,0 +1,13 @@
+T1	Load_Place 744 755	Muara Berau
+T2	Disch_Place 767 813	Duyen Hai Terminal, Tra Vinh Province, Vietnam
+T3	Cargo 816 863	2 or 3 x 19 – 20 KT 10% Indonesian Coal in Bulk
+T5	Laycan 932 954;956 978;980 1002	20-04-2017  26-04-2017 22-04-2017  28-04-2017 24-04-2017  30-04-2017
+T6	Commission 1014 1022	2.5% ttl
+T7	Commodity 182 197	Indonesian Coal
+T4	Terms 865 887;889 917	load rate : 8000 shinc Discharge rate : 10000 shinc
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	How Arg1:T3 Arg2:T4	
+R4	When Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+R6	Including Arg1:T3 Arg2:T7	

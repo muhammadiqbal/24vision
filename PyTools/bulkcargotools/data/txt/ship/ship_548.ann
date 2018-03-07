@@ -1,0 +1,9 @@
+T1	Ship 262 276	MV OCCITAN SKY
+T2	Year 312 316	2004
+T3	Loading_Place 238 246	Key West
+T4	Open_Date 247 257	24th April
+T5	DWT 330 336	27,082
+R1	Located Arg1:T1 Arg2:T3	
+R2	When Arg1:T1 Arg2:T4	
+R3	Built Arg1:T1 Arg2:T2	
+R4	Contain Arg1:T1 Arg2:T5	

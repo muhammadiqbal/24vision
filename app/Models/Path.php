@@ -60,7 +60,10 @@ class Path extends Model
      * @var array
      */
     public static $rules = [
-        
+        'route_id' => 'required|integer',
+        'zone1' => 'required|integer',
+        'zone2' => 'integer',
+        'zone3' => 'required|integer'
     ];
 
     /**

@@ -1,0 +1,22 @@
+T1	Cargo 210 237	45,000 mt 10% moloo Clinker
+T2	Cargo 413 442	22,000 mt 10% moloo Bulk Coal
+T3	Laycan 464 476	Spot/ Prompt
+T4	Laycan 286 297	25/30 April
+T5	Commission 322 333	2.5 add pus
+T6	Commission 519 530	2.5 add pus
+T7	Load_Place 238 245	Nantong
+T8	Load_Place 443 448	Beira
+T9	Disch_Place 451 458	Mukalla
+T10	Disch_Place 261 268	Mombasa
+T11	Terms 298 317	20,000 / 7000 shinc
+T12	Terms 477 500	6000 shinc / 3000 fhinc
+R1	From Arg1:T1 Arg2:T7	
+R2	To Arg1:T1 Arg2:T10	
+R3	When Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T11	
+R5	Commission Arg1:T1 Arg2:T5	
+R6	From Arg1:T2 Arg2:T8	
+R7	To Arg1:T2 Arg2:T9	
+R8	When Arg1:T2 Arg2:T3	
+R9	How Arg1:T2 Arg2:T12	
+R10	Commission Arg1:T2 Arg2:T6	

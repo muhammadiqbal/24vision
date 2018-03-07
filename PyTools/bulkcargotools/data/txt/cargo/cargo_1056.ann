@@ -1,0 +1,9 @@
+T1	Commission 713 733	2.5 pct add comm pus
+T2	Laycan 346 359	27-29/04/2017
+T3	Cargo 142 199	32500 - 34100 mts in OO of MOP in bulk, STW abt 1.0 m3/mt
+T4	Disch_Place 402 414;416 427;447 472	SFdS, Brazil or in CHOPT Itaqui - Rio Grande range
+T5	Load_Place 269 288	Klaipeda, Lithuania
+R1	From Arg1:T3 Arg2:T5	
+R2	When Arg1:T3 Arg2:T2	
+R3	To Arg1:T3 Arg2:T4	
+R4	Commission Arg1:T3 Arg2:T1	

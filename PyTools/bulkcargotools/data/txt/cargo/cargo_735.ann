@@ -1,0 +1,11 @@
+T1	Cargo 150 199	15,000/10% moloo cgo of Ammonium Sulphate in bulk
+T2	Load_Place 200 207	Longkou
+T3	Disch_Place 208 218	KohSichang
+T4	Laycan 223 232	25/30 Apr
+T5	Terms 233 258	4,000 Shinc / 3,000 Shinc
+T6	Commission 259 270	2.5 Add pus
+R1	To Arg1:T1 Arg2:T3	
+R2	From Arg1:T1 Arg2:T2	
+R3	When Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	

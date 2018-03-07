@@ -1,0 +1,11 @@
+T1	Ship 145 155	MV "HEINO"
+T2	Year 389 393	2007
+T3	DWT 402 411	12782 MTS
+T4	Loading_Place 163 172	JEBEL ALI
+T5	Open_Date 173 187	09 - 10  APRIL
+T6	Destination 363 375	PERSIAN GULF
+R1	Located Arg1:T1 Arg2:T4	
+R2	When Arg1:T1 Arg2:T5	
+R3	To Arg1:T1 Arg2:T6	
+R4	Built Arg1:T1 Arg2:T2	
+R5	Contain Arg1:T1 Arg2:T3	

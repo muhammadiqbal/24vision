@@ -1,0 +1,9 @@
+T1	Ship 204 212	MV SALTA
+T2	Loading_Place 117 124	TIANJIN
+T3	Open_Date 125 136	20/23 APRIL
+T4	Year 292 296	2009
+T5	DWT 317 323	53,035
+R1	Located Arg1:T1 Arg2:T2	
+R2	When Arg1:T1 Arg2:T3	
+R3	Built Arg1:T1 Arg2:T4	
+R4	Contain Arg1:T1 Arg2:T5	

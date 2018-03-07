@@ -1,0 +1,15 @@
+T1	Commission 770 779	3.75% iac
+T2	Terms 757 768	2000x bends
+T3	Laycan 739 755	14 April onwards
+T4	Load_Place 681 685	Novo
+T5	Disch_Place 689 694	Ghent
+T6	Cargo 697 737	7500/9000 mts linseed in bulk sf abt 56’
+T7	Quantity 110 123	7500/9000 mts
+R1	To Arg1:T6 Arg2:T5	
+R2	From Arg1:T6 Arg2:T4	
+R3	When Arg1:T6 Arg2:T3	
+R4	How Arg1:T6 Arg2:T2	
+R5	Commission Arg1:T6 Arg2:T1	
+T8	Commodity 124 131	linseed
+R6	Content Arg1:T6 Arg2:T7	
+R7	What Arg1:T7 Arg2:T8	

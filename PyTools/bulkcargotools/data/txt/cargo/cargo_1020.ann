@@ -1,0 +1,21 @@
+T1	Load_Place 156 162	Ashdod
+T2	Disch_Place 211 220	Amsterdam
+T3	Cargo 260 272	35,000mt BHF
+T4	Terms 288 313	7,000 Shex / 10,000 Shinc
+T5	Laycan 327 338	14-17 April
+T6	Cargo 498 522	22,000mt Sulphur in bulk
+T7	Disch_Place 471 477	Ashdod
+T8	Load_Place 359 373	Brake, Germany
+T9	Terms 537 561	8,000 Shinc / 5,000 Shex
+T10	Laycan 575 586	17-21 April
+T11	Commission 671 687	2.50% ADDCOM PUS
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	How Arg1:T3 Arg2:T4	
+R4	When Arg1:T3 Arg2:T5	
+R5	To Arg1:T6 Arg2:T7	
+R6	From Arg1:T6 Arg2:T8	
+R7	How Arg1:T6 Arg2:T9	
+R8	When Arg1:T6 Arg2:T10	
+R9	Commission Arg1:T6 Arg2:T11	
+R10	Commission Arg1:T3 Arg2:T11	

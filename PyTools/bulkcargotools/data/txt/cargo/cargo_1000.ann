@@ -1,0 +1,11 @@
+T1	Cargo 268 299	(15000/10 GMOP  + 5000/10 SMOP)
+T2	Load_Place 302 310	Klaipeda
+T3	Disch_Place 311 325;335 354	Barranquilla + Buenaventura NAABSA
+T4	Laycan 363 374	15-17 April
+T5	Commission 473 488	2.5% addcom pus
+T6	Terms 400 448	6000 shinc load / 3500 shinc Bqla, 3000 shinc BV
+R1	To Arg1:T1 Arg2:T3	
+R2	From Arg1:T1 Arg2:T2	
+R3	When Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T6	
+R5	Commission Arg1:T1 Arg2:T5	

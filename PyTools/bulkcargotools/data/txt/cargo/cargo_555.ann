@@ -1,0 +1,15 @@
+T1	Cargo 216 253	13,500 mt Eucalyptus Logs  sf 1.5 cbm
+T2	Commodity 126 141	Eucalyptus Logs
+T3	Quantity 116 125	13,500 mt
+T4	Load_Place 259 269	Rio Grande
+T5	Disch_Place 270 276	Dafeng
+T6	Terms 278 299	3000 shinc/2000 shinc
+T7	Laycan 301 312	May 22 – 29
+T8	Commission 333 342	1.25% pus
+R1	What Arg1:T3 Arg2:T2	
+R2	Content Arg1:T1 Arg2:T3	
+R3	To Arg1:T1 Arg2:T5	
+R4	From Arg1:T1 Arg2:T4	
+R5	How Arg1:T1 Arg2:T6	
+R6	When Arg1:T1 Arg2:T7	
+R7	Commission Arg1:T1 Arg2:T8	

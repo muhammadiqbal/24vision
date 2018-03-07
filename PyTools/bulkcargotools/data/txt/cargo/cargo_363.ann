@@ -1,0 +1,35 @@
+T1	Commission 566 574	5.0% IAC
+T2	Load_Place 576 581	AQABA
+T3	Disch_Place 587 594	MARMARA
+T4	Cargo 597 624	5000/10 MOLOO BULK DAP  DWT
+T5	Laycan 625 635	1/10 APRIL
+T6	Terms 636 656	3000 FHEX/2500 SSHEX
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T2	
+R3	Commission Arg1:T4 Arg2:T1	
+R4	When Arg1:T4 Arg2:T5	
+R5	How Arg1:T4 Arg2:T6	
+T7	Load_Place 663 672	TARRAGONA
+T8	Disch_Place 676 685	ZHENJIANG
+T9	Cargo 688 716	10.000 MTS WOODPULP IN BALES
+T10	Laycan 758 769	25/30 APRIL
+T11	Terms 776 785	3000/3000
+T12	Commission 794 802	5.0% IAC
+R6	To Arg1:T9 Arg2:T8	
+R7	From Arg1:T9 Arg2:T7	
+R8	When Arg1:T9 Arg2:T10	
+R9	How Arg1:T9 Arg2:T11	
+R10	Commission Arg1:T9 Arg2:T12	
+T13	Load_Place 809 818	Constanta
+T14	Disch_Place 822 829	Mukalla
+T15	Cargo 832 889	12000 Tons +/- 5Pct Of Bulk Milling Wheat (Stwf Abt = 46)
+T16	Terms 991 1035	3000/1500 Tons Pwwd Sshex/Fhex Bss Eiu Bends
+T17	Laycan 1044 1062	15 – 30 April 2017
+T18	Commission 1207 1216	3.75% IAC
+R11	To Arg1:T15 Arg2:T14	
+R12	From Arg1:T15 Arg2:T13	
+R13	How Arg1:T15 Arg2:T16	
+R14	When Arg1:T15 Arg2:T17	
+R15	Commission Arg1:T15 Arg2:T18	
+T19	Port_No 1123 1126	1/1
+R16	No_Of_Ports Arg1:T15 Arg2:T19	

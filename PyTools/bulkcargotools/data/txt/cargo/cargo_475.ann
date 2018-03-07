@@ -1,0 +1,15 @@
+T1	Quantity 126 132	5000MT
+T2	Commodity 133 139	BILLET
+T4	Load_Place 437 445	Nikolaev
+T6	Disch_Place 461 493	Jiangyin port (Pref) or Shanghai
+T7	Terms 494 509	2500 shex bends
+R2	What Arg1:T1 Arg2:T2	
+T9	Laycan 512 515	May
+T3	Commission 532 539	2,5 pus
+T5	Cargo 412 428	5.000 ts billets
+R1	From Arg1:T5 Arg2:T4	
+R3	To Arg1:T5 Arg2:T6	
+R4	When Arg1:T5 Arg2:T9	
+R5	How Arg1:T5 Arg2:T7	
+R6	Commission Arg1:T5 Arg2:T3	
+R7	Content Arg1:T5 Arg2:T1	

@@ -1,0 +1,15 @@
+T1	Commodity 98 102	rice
+T2	Quantity 83 90	5/10500
+T3	Load_Place 597 614	Kolkata, EC.INDIA
+T4	Disch_Place 618 631	Tobruk, Libya
+T5	Cargo 634 653	5/10500 mt Bgd rice
+T6	Terms 673 698	1000 satshex / 1000 fshex
+T7	Laycan 699 711	25-28  April
+T8	Commission 742 750	2.5% TTL
+R1	To Arg1:T5 Arg2:T4	
+R2	From Arg1:T5 Arg2:T3	
+R3	How Arg1:T5 Arg2:T6	
+R4	When Arg1:T5 Arg2:T7	
+R5	Commission Arg1:T5 Arg2:T8	
+R6	Content Arg1:T5 Arg2:T2	
+R7	What Arg1:T2 Arg2:T1	

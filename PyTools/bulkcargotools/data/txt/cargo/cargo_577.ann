@@ -1,0 +1,13 @@
+T1	Commodity 134 137	log
+T2	Cargo 227 238	14000m3 log
+T3	Load_Place 241 247	Albany
+T4	Disch_Place 248 256	taichang
+T5	Laycan 273 284	Ship's date
+T6	Terms 286 296	3000c3000c
+T7	Commission 298 310	3.75 add pus
+R1	Including Arg1:T2 Arg2:T1	
+R2	To Arg1:T2 Arg2:T4	
+R3	From Arg1:T2 Arg2:T3	
+R4	When Arg1:T2 Arg2:T5	
+R5	How Arg1:T2 Arg2:T6	
+R6	Commission Arg1:T2 Arg2:T7	

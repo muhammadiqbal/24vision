@@ -1,0 +1,13 @@
+T1	Terms 727 748	2500 shinc/3500 shinc
+T2	Commission 750 759	3.75% iac
+T3	Laycan 713 724	10/20 april
+T4	Load_Place 666 672	Beirut
+T5	Disch_Place 681 685	Oman
+T6	Cargo 688 711	15.000 mts 10%  HMS 1-2
+T7	Commodity 132 135	HMS
+R1	To Arg1:T6 Arg2:T5	
+R2	From Arg1:T6 Arg2:T4	
+R3	When Arg1:T6 Arg2:T3	
+R4	How Arg1:T6 Arg2:T1	
+R5	Commission Arg1:T6 Arg2:T2	
+R6	Including Arg1:T6 Arg2:T7	

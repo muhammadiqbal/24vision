@@ -1,0 +1,95 @@
+T1	Load_Place 552 570	Turkish port in OO
+T2	Disch_Place 574 606	Murmansk or Kandalaksha, Russian
+T3	Cargo 609 644;663 692	Total 20,640 kg / 174 cbm / 174 ??? 2 units of steel rock breaker
+T4	Laycan 956 971	15/31 May, 2017
+T5	Load_Place 1268 1288	Pietarsaari(Finland)
+T6	Disch_Place 1291 1303	Bandar Abbas
+T7	Cargo 1306 1359	abt 3000 mt up to 3500 mt in chopt wood pulp in units
+T8	Laycan 1360 1371	25/28 APRIL
+T9	Terms 1372 1382	4 ttl days
+T10	Commission 1383 1391	5.0% iac
+T11	Load_Place 1398 1408	Iskenderun
+T12	Disch_Place 1412 1441	Dnipro drft 3.6m  try Kherson
+T13	Cargo 1444 1480	abt 3000 mts marble chips in bigbags
+T14	Terms 1485 1495	6 ttl days
+T15	Laycan 1500 1515	4-12 April 2017
+T16	Commission 1516 1525	3.75% iac
+T17	Load_Place 1532 1537	EGYPT
+T18	Disch_Place 1541 1554	GERMAN BALTIC
+T19	Cargo 1557 1579	4.000MT 10% MOLOO UREA
+T20	Laycan 1580 1623	APRIL DATES, NEED OWNERS BEST 3-DAYS LAYCAN
+T21	Terms 1624 1647	2000 FSHEX / 2000 SSHEX
+T22	Commission 1652 1660	5.0% IAC
+T23	Load_Place 1667 1673	MERSIN
+T24	Disch_Place 1677 1700	EEMSHAVEN (NETHERLANDS)
+T25	Cargo 1703 1728	UPTO 5300 MTS BULK CEMENT
+T26	Laycan 1729 1740	17-22 APRIL
+T27	Terms 1760 1767	TTL DYS
+T28	Commission 1772 1781	3.755 IAC
+T29	Load_Place 1801 1811	Iskenderun
+T30	Disch_Place 1815 1825	Mostaganem
+T31	Cargo 1828 1853	4/5.000mts calcitte in BB
+T32	Laycan 1877 1888	18-21 april
+T33	Terms 1889 1933	7 or 8 ttl days (depends on qtty) sshex/fhex
+T34	Commission 1934 1942	5.0% iac
+T35	Load_Place 1974 1982	FLUSHING
+T36	Disch_Place 1986 2012	DAMMAM+1 WC INDIA IN CHOPT
+T37	Cargo 2015 2044	5/6.000MTS IN CHOPT WOOODPULP
+T38	Terms 2122 2155	FREE IN, 2 DAYS SHINC / LINER OUT
+T39	Commission 2163 2171	5.0% IAC
+T40	Laycan 2103 2117	02-10 MAY.2017
+T41	Load_Place 2202 2206	RENI
+T42	Disch_Place 2210 2237	MARMARA  OR IZMIR OR MERSIN
+T43	Cargo 2240 2268	M/M 6/6.600  MTS CORN  SF 50
+T44	Terms 2269 2278	1500/1500
+T45	Commission 2284 2292	2.5% TTL
+T46	Laycan 2279 2283	SPOT
+T47	Load_Place 2309 2315	MERSIN
+T48	Disch_Place 2319 2325	ODESSA
+T49	Cargo 2328 2352	5/6.500 MTS GENS IN BAGS
+T50	Laycan 2353 2364	15-20 APRIL
+T51	Terms 2365 2372	TTL DYS
+T52	Commission 2377 2386	3.75% IAC
+R1	To Arg1:T49 Arg2:T48	
+R2	From Arg1:T49 Arg2:T47	
+R3	When Arg1:T49 Arg2:T50	
+R4	Commission Arg1:T49 Arg2:T52	
+R5	When Arg1:T49 Arg2:T50	
+R6	To Arg1:T43 Arg2:T42	
+R7	From Arg1:T43 Arg2:T41	
+R8	How Arg1:T43 Arg2:T44	
+R9	When Arg1:T43 Arg2:T46	
+R10	Commission Arg1:T43 Arg2:T45	
+R11	To Arg1:T37 Arg2:T36	
+R12	From Arg1:T37 Arg2:T35	
+R13	When Arg1:T37 Arg2:T40	
+R14	How Arg1:T37 Arg2:T38	
+R15	Commission Arg1:T37 Arg2:T39	
+R16	To Arg1:T31 Arg2:T30	
+R17	From Arg1:T31 Arg2:T29	
+R18	When Arg1:T31 Arg2:T32	
+R19	How Arg1:T31 Arg2:T33	
+R20	Commission Arg1:T31 Arg2:T34	
+R21	To Arg1:T25 Arg2:T24	
+R22	From Arg1:T25 Arg2:T23	
+R23	When Arg1:T25 Arg2:T26	
+R24	How Arg1:T25 Arg2:T27	
+R25	Commission Arg1:T25 Arg2:T28	
+R26	To Arg1:T19 Arg2:T18	
+R27	From Arg1:T19 Arg2:T17	
+R28	When Arg1:T19 Arg2:T20	
+R29	How Arg1:T19 Arg2:T21	
+R30	Commission Arg1:T19 Arg2:T22	
+R31	To Arg1:T13 Arg2:T12	
+R32	From Arg1:T13 Arg2:T11	
+R33	How Arg1:T13 Arg2:T14	
+R34	When Arg1:T13 Arg2:T15	
+R35	Commission Arg1:T13 Arg2:T16	
+R36	To Arg1:T7 Arg2:T6	
+R37	From Arg1:T7 Arg2:T5	
+R38	When Arg1:T7 Arg2:T8	
+R39	How Arg1:T7 Arg2:T9	
+R40	Commission Arg1:T7 Arg2:T10	
+R41	When Arg1:T3 Arg2:T4	
+R42	From Arg1:T3 Arg2:T1	
+R43	To Arg1:T3 Arg2:T2	

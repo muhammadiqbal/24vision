@@ -1,0 +1,25 @@
+T1	Ship 119 131	MV.Aruna Ece
+T2	Loading_Place 150 156	Pohang
+T3	Open_Date 158 169	04/17~04/24
+T4	Destination 214 240	Iskenderun / Rota / Gemlik
+T5	Ship 245 254	M.V A. S.
+T6	DWT 259 264	35098
+R1	Located Arg1:T1 Arg2:T2	
+R2	When Arg1:T1 Arg2:T3	
+R3	To Arg1:T1 Arg2:T4	
+R4	Contain Arg1:T5 Arg2:T6	
+T7	Open_Date 291 303	8-12 TH/ MAY
+T8	Loading_Place 321 328	TIANJIN
+T9	Destination 421 489	DJIBOUTI(opt) - ADABIYA(opt) - ISKENDERUN - MERSIN - SFAX - DJENDJEN
+R5	When Arg1:T5 Arg2:T7	
+R6	Located Arg1:T5 Arg2:T8	
+R7	To Arg1:T5 Arg2:T9	
+T10	Ship 665 680	MV GLOVIS MARIA
+T11	Loading_Place 687 703	DHAMRA, E. INDIA
+T12	Open_Date 704 718	24-26 APR 2017
+R8	Located Arg1:T10 Arg2:T11	
+R9	When Arg1:T10 Arg2:T12	
+T13	Year 732 736	2012
+T14	DWT 791 797	55,705
+R10	Built Arg1:T10 Arg2:T13	
+R11	Contain Arg1:T10 Arg2:T14	

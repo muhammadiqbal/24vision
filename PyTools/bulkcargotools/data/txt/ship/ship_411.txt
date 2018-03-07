@@ -1,0 +1,396 @@
+Lightship Chartering Chart OSL <chart.osl@lightshipchartering.com>
+SwissMarine Supra/Ultra Menu
+FRM: LIGHTSHIP CHARTERING, OSLO,  WWW.LIGHTSHIPCHARTERING.COM
+
+Please propose for the following:-
+
+ 
+
+China
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Dalmatia G
+
+Nantong
+
+22/24 Apr
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+West Coast
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Hopa I
+
+Lazaro Cardenas
+
+18/19 Apr
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+USEC
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Captain Andreadis
+
+New York
+
+14 Apr
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Cont
+
+ 
+
+ 
+
+ 
+
+ 
+
+Kenan
+
+Bremen
+
+21/22 Apr
+
+ 
+
+ 
+
+
+**********
+
+ 
+
+ MV Dalmatia G
+  Geared / Grabber 
+  Flag Italy; built 2010 
+  57,227dwt on 13.0m swad 
+  LOA 190m; Beam 32.26m TPC 57.2 
+  GRT 32884; NRT 18782 
+  Grain capacity: 71917m cu 
+  Hatch #1:18.040 x 18.260 
+  Hatch #2-#5:19.680 x 18.260 
+  5 holds/5 hatches 
+
+  Speed/consumption:     
+  Ballast abt 13 knots on abt 29.0mt ifo + 0.2mt mdo 
+  Laden abt 13.0 knots on abt 30.5mt ifo + 0.2mt mdo 
+  Idle abt 3mt ifo per day; working abt 7mt ifo per day 
+  Eco speed / consumption 
+  Ballast Condition: Speed abt 11.5 knots, consumption: abt 21.0 mts ifo + 0.2mt mdo 
+  Laden   Condition: Speed abt 11.5 knots, consumption: abt 22.0 mts ifo + 0.2mt mdo
+
+All details abt
+
+ 
+
+**********
+
+ 
+
+M/V Hopa I & Kenan
+
+Geared (4 x 35T) / Grabber (15M3 x 4)
+
+Flag Malta; Built 2012/2013
+
+63,250dwt on 13.3m ssw
+
+LOA 199.99m; beam 32.26m
+
+Grt 35812; Nrt 21,224; TPC 62.1
+
+5 holds/5 hatches
+
+HATCH/HOLD DIMENSIONS:
+
+NO.1: 14.76 (L) X 17.02 (B)m; NO.2-NO.5: 22.14 (L) X 18.64 (B)m FLAT TANK TOP DIMENSION:
+
+HOLD 1 12.16M-23.5M, 2: 23.5M,
+
+3: 23.5M, 4: 23.5M, 5: 23.5M-10.54M
+
+ 
+
+All details abt
+
+ 
+
+Speed/consumption:    
+
+Ballast abt 14 knots on abt 27.5mt ifo
+
+Laden abt 13.5 knots on abt 28.5mt ifo
+
+Idle abt 3mt ifo per day; working abt 6mt ifo per day
+
+ 
+
+Eco speed / consumption (wog):
+
+Ballast Condition: Speed abt 12.5 knots, consumption: abt 21.5 mts ifo 
+
+Laden Condition: Speed abt 12.5 knots, consumption: abt 24.0 mts ifo
+
+ 
+
+All dtls abt 
+
+ 
+
+**********
+
+ 
+
+M/V CAPTAIN ANDREADIS
+
+ 
+
+NAME   : CAPTAIN ANDREADIS (EX. HULL NO. 26)
+
+TYPE   : GEARED SINGLE DECK, SELF TRIMMING BULK CARRIER
+
+SUMMER DWT/DRAFT : 58,760 MT DWT / 12.828 M
+
+BUILT   : NOV 2008
+
+SHIPYARD     : TSUNEISHI - ZHOUSHAN SHIPYARD
+
+FLAG   : PANAMA
+
+ICE CLASS  : NO
+
+CO2 FITTED  : NO
+
+LOA/BEAM      : 189.99 M / 32.26 M
+
+GRT/NRT   : 32415 / 19353
+
+HO/HA   : 5/5
+
+H/COVERS     : FOLDING TYPE OPENING FWD/AFT
+
+TPC   : 57.83 MT
+
+GRAIN CAPACITY  : 2,555,405 CBFT
+
+ 
+
+BREAKDOWN PER HOLD (CBFT)
+
+HOLD NO.1  :   436,536
+
+HOLD NO.2  :   564,207
+
+HOLD NO.3  :   512,442
+
+HOLD NO.4  :   564,016
+
+HOLD NO.5  :   478,204
+
+-----------------------------
+
+   TOTAL   : 2,555,405
+
+ 
+
+HATCH SIZES
+
+HOLD NO.  1     : 17.60 M X 17.00 M
+
+HOLD NOS. 2-4   : 21.60 M X 18.60 M
+
+HOLD NOS. 5    : 20.80 M X 18.60 M
+
+ 
+
+AUSTRALIAN HOLD LADDER FITTED
+
+ 
+
+CARGO GEAR / SWL : 4 SETS / HOOK SWL 30 MT (RADIUS 26 MTR)
+
+                   GRAB SWL 24 MT (RADIUS 26 MTR)
+
+GRAB CAPACITY    : 12/10/8.5/7.5/6 M3 (CBM)
+
+ALLOWABLE DENSITY
+
+OF GRAB   : 1.25/1.5/1.75/2/2.5 MT/M3
+
+ 
+
+SPEED AND CONSUMPTION IN GOOD WEATHER AND SMOOTH SEA UP TO AND INCLUDING BEAUFORT SCALE FORCE 4 / DOUGLAS SEA SCALE 3 (1.25 M) ABOUT IS UNDERSTOOD TO MEAN 5% DOWNWARDS IN THE SPEED AND 5% UPWARDS IN THE CONSUMPTION.
+
+ANY GAIN ON TIME OVER THE ABV AND/OR CONSUMPTION BELOW THE ABV TO BE OFF-SET AGAINST LOSS ON TIME AND/OR CONSUMPTION IF ANY. SPEED NOT TO BE DEBITED DUE TO FAVORABLE CURRENTS.
+
+ 
+
+BALLAST: ABT 14.00 KTS ON ABT 30.00 MT IFO (380 CST) INCLUDING ONE GENERATOR LADEN  : ABT 14.00 KTS ON ABT 31.00 MT IFO (380 CST) INCLUDING ONE GENERATOR
+
+ 
+
+ECONOMICAL SPEED AND CONSUMPTION :
+
+BALLAST: ABT 12.00 KTS ON ABT 22.00 MT IFO (380 CST) INCLUDING ONE GENERATOR LADEN  : ABT 11.50 KTS ON ABT 22.50 MT IFO (380 CST) INCLUDING ONE GENERATOR
+
+ 
+
+VESSEL ALSO CONSUMES ABT 0.1 MT MDO OR MGO AT SEA AND AT PORT FOR INCINERATOR PURPOSES.
+
+ 
+
+PORT CONSUMPTION
+
+IDLE   : ABT 2.80 MT IFO (380 CST) PLUS ABT 1.50 MT IFO (380 CST) FOR
+
+BOILER
+
+WORKING: ABT 5.50 MT IFO (380 CST) PLUS ABT 1.50 MT IFO (380 CST) FOR BOILER
+
+ 
+
+BUNKERS SPECIFICATION (ISO 8217/2010 E)
+
+FOR IFO: RMG 380 WITH MAX VISCOCITY 380 CST AT 50 DEGREES CELCIUS
+
+       : MINIMUM SPECIFIC ENERGY 40 MJ/KG - CCAI MAX VALUE 870 FOR MDO: DMB OR MGO: DMA
+
+ 
+
+WHEN THE VESSEL IS IN BALLAST CONDITION AND ONLY FOR BALLAST EXCHANGE VESSEL CONSUMES ABT 6.00 MT IFO ACCORDING TO INTERNATIONAL REGULATIONS.
+
+ 
+
+VSL BURNS IFO OR MDO OR MGO WHEN ENGINE ON STAND BY, WHEN DEAD SLOW, WHEN STARTING BALLASTING OR DE-BALLASTING, WHEN MANEUVERING IN/OUT PORTS/CANALS/RIVERS/STRAITS/SHALLOW WATERS, WHEN NAVIGATES IN RESTRICTED WATERS, WITH OR WITHOUT PILOT TO MASTER'S DISCRETION
+
+ 
+
+'ALL DETAILS ABOUT'
+
+ 
+
+**********
+
+ 
+
+ 
+
+Best regards
+
+ 
+
+Henrik Aaeng
+
+Lightship Chartering - Oslo
+
+Drammensveien 127
+
+0277 - Oslo - Norway
+
+ 
+
+Direct:   + 47 21418941
+
+Mobile  : + 47 91889200
+
+Mail: CHART.OSL@LIGHTSHIPCHARTERING.COM <mailto:CHART.OSL@LIGHTSHIPCHARTERING.COM> 
+
+skype: henrikaaeng
+
+ 
+
+ 
+
+ 
+
+COPENHAGEN * GENEVA * ATHENS * OSLO 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+

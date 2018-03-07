@@ -1,0 +1,19 @@
+T2	Load_Place 708 718	Iskenderun
+T4	Cargo 755 791	abt 3000 mts marble chips in bigbags
+T5	Terms 797 807	6 ttl days
+T6	Laycan 813 828	4-12 April 2017
+T7	Commission 830 839	3.75% iac
+T1	Commodity 154 166	marble chips
+<<<<<<< HEAD
+=======
+T3	Disch_Place 722 752	Dnipro (drft 3.6m) try kherson
+>>>>>>> a62d00c0e4f470d5d17bb524118d708c933d55c7
+R2	From Arg1:T4 Arg2:T2	
+R3	How Arg1:T4 Arg2:T5	
+R4	When Arg1:T4 Arg2:T6	
+R5	Commission Arg1:T4 Arg2:T7	
+R6	Including Arg1:T4 Arg2:T1	
+<<<<<<< HEAD
+T3	Disch_Place 722 752	Dnipro (drft 3.6m) try kherson
+=======
+>>>>>>> a62d00c0e4f470d5d17bb524118d708c933d55c7

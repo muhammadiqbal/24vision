@@ -1,0 +1,55 @@
+T1	Load_Place 550 556	Mersin
+T2	Disch_Place 560 569	Allicante
+T3	Cargo 572 596	5/8.000 mts White cement
+T4	Laycan 597 611	1ST WEEK APRIL
+T5	Terms 618 647	2500-3000 / 1800 mt SSHEX EIU
+T6	Commission 648 656	2.5% ttl
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+T7	Load_Place 668 713	Argentina (Bahia Blanca or Necochea in chopt)
+T8	Disch_Place 717 723	Lisbon
+T9	Cargo 726 779	min 7000 upto max 15000 mts Sunflower Seeds (abt 85')
+T10	Laycan 808 816	May 2017
+T11	Commission 822 830	5.0% iac
+T12	Terms 788 802	5000 mts bends
+R6	To Arg1:T9 Arg2:T8	
+R7	From Arg1:T9 Arg2:T7	
+R8	How Arg1:T9 Arg2:T12	
+R9	When Arg1:T9 Arg2:T10	
+R10	Commission Arg1:T9 Arg2:T11	
+T18	Load_Place 1112 1120	Mariupol
+T19	Disch_Place 1124 1133	wc Greece
+T20	Cargo 1136 1165	8.6/9.000mt bulk wheat sf 46'
+T21	Laycan 1166 1176	5-10 Appil
+T22	Terms 1177 1198	2500/2000 sshex bends
+T23	Commission 1199 1208	3.75% IAC
+R15	To Arg1:T20 Arg2:T19	
+R16	From Arg1:T20 Arg2:T18	
+R17	When Arg1:T20 Arg2:T21	
+R18	How Arg1:T20 Arg2:T22	
+R19	Commission Arg1:T20 Arg2:T23	
+T24	Load_Place 1248 1259	DUQM (OMAN)
+T25	Disch_Place 1262 1271	TUTICORIN
+T26	Laycan 1300 1312	EARLY MAY 17
+T27	Commission 1313 1321	2.5% TTL
+T28	Terms 1272 1299	10,000 MT / 12,000 MT DAILY
+T29	Cargo 1223 1247	LIMESTONE 50K MT 10% MOL
+R20	From Arg1:T29 Arg2:T24	
+R21	To Arg1:T29 Arg2:T25	
+R22	How Arg1:T29 Arg2:T28	
+R23	When Arg1:T29 Arg2:T26	
+R24	Commission Arg1:T29 Arg2:T27	
+T30	Load_Place 1371 1384	SAROOJ (IRAN)
+T31	Disch_Place 1387 1396	TUTICORIN
+T32	Terms 1397 1424	10,000 MT / 12,000 MT DAILY
+T33	Laycan 1425 1436	EARY MAY 17
+T34	Commission 1437 1445	2.5% TTL
+T35	Cargo 1346 1370	LIMESTONE 50K MT 10% MOL
+R25	From Arg1:T35 Arg2:T30	
+R26	To Arg1:T35 Arg2:T31	
+R27	How Arg1:T35 Arg2:T32	
+R28	When Arg1:T35 Arg2:T33	
+R29	Commission Arg1:T35 Arg2:T34	

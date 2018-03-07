@@ -1,0 +1,9 @@
+T1	Cargo 149 186	30000 mt +/- 10 pct in OO of bulk MOP
+T2	Laycan 369 382	26-28/04/2017
+T3	Disch_Place 1212 1232	2.5 pct add comm pus
+T4	Disch_Place 445 462;464 475;477 487;514 533	West / East coast of Malaysia Intention: Bintulu, Lahad Datu
+T5	Load_Place 262 281	Klaipeda, Lithuania
+R1	From Arg1:T1 Arg2:T5	
+R2	To Arg1:T1 Arg2:T4	
+R3	When Arg1:T1 Arg2:T2	
+R4	To Arg1:T1 Arg2:T3	

@@ -1,0 +1,12 @@
+T1	Commission 673 681	2.5% TTL
+T2	Cargo 696 745	min /max 10.000 tons bulk sorghum  pls empty bags
+T3	Load_Place 813 823	Port Sudan
+T5	Laycan 1114 1135	28 April / 5 May 2017
+R1	Commission Arg1:T2 Arg2:T1	
+R2	From Arg1:T2 Arg2:T3	
+T4	Disch_Place 855 922	in Charterers’ option out of Berbera and/or Djibouti and/or Mombasa
+R3	From Arg1:T2 Arg2:T3	
+R4	To Arg1:T2 Arg2:T4	
+R5	When Arg1:T2 Arg2:T5	
+T6	Terms 1137 1165;1173 1213;1228 1288;1302 1353	LOADRATE    2,500 mtons pwwd DISCH RATE  Berbera     2,500 mtons pwwd Djibouti    5,000 mtons pwwd chopt 4,000 or 2,000 mtons pwwd Mombasa     9,000 mtons pwwd choot 3,800 mtons pwwd
+R6	How Arg1:T2 Arg2:T6	

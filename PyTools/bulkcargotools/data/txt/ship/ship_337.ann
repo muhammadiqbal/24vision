@@ -1,0 +1,9 @@
+T1	Ship 237 249	MV Four Aida
+T2	Year 519 523	2009
+T3	DWT 669 675	34,370
+T4	Loading_Place 208 220	Bahia Blanca
+T5	Open_Date 221 232	15/22 April
+R1	Located Arg1:T1 Arg2:T4	
+R2	When Arg1:T1 Arg2:T5	
+R3	Built Arg1:T1 Arg2:T2	
+R4	Contain Arg1:T1 Arg2:T3	

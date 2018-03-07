@@ -1,0 +1,35 @@
+T1	Cargo 404 427	61k-70K BAUXITE IN BULK
+T2	Laycan 533 560	EARLY OF APRIL TRY VSL DATE
+T3	Commission 582 590	2.5% PUS
+T4	Terms 511 525	6000MT/15000MT
+T5	Load_Place 433 476	RENNELL ISLAND(11-37.2S 160-05.2E)  SOLOMON
+T6	Disch_Place 485 501	LAIZHOU, N.CHINA
+T7	Cargo 634 677	ABT48,000MT MANGANESE ORE IN BULK 10% MOLOO
+T8	Load_Place 698 714	OWENDO W. AFRICA
+T9	Disch_Place 736 761	QINZHOU OR TIANJIN, CHINA
+T10	Terms 772 793	7000/10000 PWWD SHINC
+T11	Laycan 801 804	PPT
+T12	Port_No 843 846	1/1
+T13	Commission 852 860	2.5% PUS
+T14	Cargo 1422 1446	35000 mt clinker in bulk
+T15	Laycan 1607 1636	7 days notice to load port ok
+T16	Commission 1638 1653	2.5% adcomm PUS
+T17	Terms 1512 1550	6000mt pwwd fhinc / 3000 mt pwwd shinc
+T18	Load_Place 1448 1456	Asaluyeh
+T19	Disch_Place 1459 1469	chittagong
+R1	To Arg1:T14 Arg2:T19	
+R2	From Arg1:T14 Arg2:T18	
+R3	How Arg1:T14 Arg2:T17	
+R4	When Arg1:T14 Arg2:T15	
+R5	Commission Arg1:T14 Arg2:T16	
+R6	From Arg1:T7 Arg2:T8	
+R7	To Arg1:T7 Arg2:T9	
+R8	How Arg1:T7 Arg2:T10	
+R9	When Arg1:T7 Arg2:T11	
+R10	No_Of_Ports Arg1:T7 Arg2:T12	
+R11	Commission Arg1:T7 Arg2:T13	
+R12	From Arg1:T1 Arg2:T5	
+R13	To Arg1:T1 Arg2:T6	
+R14	How Arg1:T1 Arg2:T4	
+R15	When Arg1:T1 Arg2:T2	
+R16	Commission Arg1:T1 Arg2:T3	

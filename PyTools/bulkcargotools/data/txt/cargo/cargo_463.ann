@@ -1,0 +1,179 @@
+T1	Cargo 427 451	20k  fert in bulk sf:1.2
+T2	Load_Place 509 520	nanjing,chn
+T3	Disch_Place 522 540	gresik , indonesia
+T4	Laycan 547 566	ppt ,try vsl's date
+T5	Terms 585 605	3500/3500 pwwd shinc
+T6	Commission 612 620	2.5% PUS
+T7	Cargo 696 757	21,000 WMT 10% MOLCO COPPER CONCENTRATE IN BULK (SF ABT. 0.45
+T8	Load_Place 766 775	KWANGYANG
+T9	Disch_Place 776 787	QINHUANGDAO
+T10	Laycan 791 803	5TH~10TH/APR
+T11	Terms 807 841;843 879	L/TERM : 3,000WMT WWD SATPMSHEX UU - D/TERM : 3,000WNT WWD SATPMSHEX UU
+T12	Port_No 945 948	1/1
+T13	Commission 1046 1061	2.5% AD COM PUS
+T14	Cargo 1186 1222	MIN 20,000MTS DAP IN BULK(SF ABT1.25
+T15	Load_Place 1241 1254	NANJING,CHINA
+T16	Disch_Place 1261 1298	GRESIK(PETROKIMIA TERMINAL),INDONESIA
+T17	Laycan 1307 1318	17-21TH,APR
+T18	Terms 1332 1370	4,000MT PWWD SHINC/3,500MT PWWD SHEXUU
+T19	Port_No 1444 1447	1/1
+T20	Commission 1457 1471	2.5PCT ADD PUS
+T21	Cargo 1542 1570	20000mt -29000MT  bag cement
+T22	Laycan 1600 1613	4TH-6TH,APRIL
+T23	Load_Place 1645 1659	hongai Vietnam
+T24	Disch_Place 1675 1684	KTC,DAVAO
+T25	Terms 1687 1711;1713 1738	l/rate:5000mt pwwd shinc -d/rate:3000MT PWWD SHINC
+T26	Commission 1806 1814	2.5% iac
+T27	Cargo 1852 1881	abt 25000mt bag cement in bag
+T28	Laycan 1890 1910	31ST,MARCH-4TH,APRIL
+T29	Load_Place 1945 1959	hongai Vietnam
+T30	Disch_Place 1974 1997;2002 2025	subic(discchg 15000mt)+ batnaga(dischg 10000mt)
+T31	Terms 2027 2051;2053 2117	l/rate:7000mt pwwd shinc d/rate:3500mt pwwd shinc for subic+2500mt pwwd shinc for batanga
+T32	Commission 2181 2185	2.5%
+T33	Cargo 2195 2228	30,000MTS +/- 10% CLINKER IN BULK
+T34	Load_Place 2237 2270	CAM PHA OR 1SBP NGHI SON, VIETNAM
+T35	Disch_Place 2278 2296	MONGLA, BANGLADESH
+T36	Terms 2298 2323	7,000/3,000MTS PWWD FHINC
+T37	Laycan 2333 2340	MID APR
+T38	Commission 2342 2365	TOTAL 1.25% ADDCOMM PUS
+T39	Cargo 2375 2402	21,000 Mts White lime stone
+T40	Load_Place 2409 2426	Nghi son, Vietnam
+T41	Disch_Place 2431 2451	Chittagong anchorage
+T42	Terms 2461 2470	5500/2000
+T43	Port_No 2506 2509	1/1
+T45	Cargo 2560 2610	10,000 - 17,000 bdmt of wood chip in bulk (sf: 5.2
+T46	Load_Place 2622 2638	Chanmay, Vietnam
+T47	Disch_Place 2646 2659	Rozhao, china
+T48	Laycan 2671 2683	20-30  April
+T49	Terms 2695 2713	6,000mt pwwd bends
+T50	Commission 2740 2749	3.75% IAC
+T51	Cargo 2759 2806	2 shipments Limestone Chip 50000 mt +-10% moolo
+T52	Load_Place 2813 2820	Cam Pha
+T53	Disch_Place 2822 2832	Chittagong
+T54	Laycan 2842 2866	5-10 April + 15-20 April
+T55	Terms 2878 2893	8000/3000 Shinc
+T56	Commission 2900 2904	2.5%
+T57	Cargo 3013 3060	20000MT TOPICA CHIPS IN BULK 5% MOLCO (1.8-1.85
+T58	Load_Place 3093 3112	KOSICHANG, THAILAND
+T59	Disch_Place 3138 3164	LONGKOU/LIANYUNGANG, CHINA
+T60	Terms 3167 3198;3200 3236	LOADING RATE: 5000MT PWWD SHINC -DISCHARGING RATE: 2500MT PWWD SHINC
+T61	Laycan 3247 3276	END OF MAR.-EARLY APRIL, 2017
+T62	Port_No 3309 3312	1/1
+T63	Commission 3325 3338	TTL 2.50% PUS
+T64	Cargo 3715 3751	20,000% moloo coal in bulk (s/f: 1.3
+T65	Laycan 3770 3791	12th ÷18th April 2017
+T66	Load_Place 3819 3857	Muara Berau, East Kalimanta, Indonesia
+T67	Disch_Place 3890 3926	Duyen hai port, Travinh pro, Vietnam
+T68	Terms 3950 4019;4024 4097	Loading rate: 8.000mt pwwd shinc 12 hrs –TT USC exld supper holidays. Discharging rate: 10.000mt pwwd shinc 12 hrs –TT USC exld supper holidays
+T69	Port_No 4139 4142	1.1
+T70	Commission 4275 4287	1.25 Pct pus
+T71	Cargo 4390 4423;4434 4455	Woodchips Eucalyptus, S.F. is 2.3 : 40,000 – 45,000 GMT
+T72	Laycan 4465 4478	5-15 Apr 2017
+T73	Load_Place 4509 4528	Kerry Siam Sea port
+T74	Disch_Place 4529 4552	Zhangjing (South China)
+T75	Terms 4583 4596	9000/5000 GMT
+T76	Commission 4684 4688	2.5%
+T77	Cargo 4751 4783	50000-58000MT COAL IN BULK MOLCO
+T78	Load_Place 4824 4842	Sumatra, INDONESIA
+T79	Disch_Place 4869 4885	GUANGZHOU, CHINA
+T80	Terms 4888 4918;4920 4956	LOADING RATE:8000MT PWWD SHINC -DISCHARGING RATE:12000MT PWWD SHINC
+T81	Laycan 4966 4990	10TH., -12TH.,APRIL,2017
+T82	Port_No 5024 5027	1/1
+T83	Commission 5035 5043	2.5% PUS
+T84	Cargo 5053 5071	Hbi 40-45k in bulk
+T85	Laycan 5088 5099	10-13 april
+T86	Port_No 5155 5158	1/1
+T87	Load_Place 5073 5079	Labuan
+T88	Disch_Place 5080 5086	pohang
+T89	Commission 5160 5175	Ttl 3.75pct pus
+T90	Terms 5101 5129	8000 UU /5000 sshex mon08 uu
+T91	Cargo 5253 5280	max 25K MT iron ore in bulk
+T92	Laycan 5289 5301	10-20th, Apr
+T93	Load_Place 5322 5330	Iran Bik
+T94	Disch_Place 5353 5370	China  RIVER PORT
+T95	Terms 5382 5405;5407 5433	loading rate 5000 fhinc discharge rate 10000 shinc
+T96	Commission 5439 5449	2.5pct pus
+R1	When Arg1:T91 Arg2:T92	
+R2	From Arg1:T91 Arg2:T93	
+R3	To Arg1:T91 Arg2:T94	
+R4	How Arg1:T91 Arg2:T95	
+R5	Commission Arg1:T91 Arg2:T96	
+R6	From Arg1:T84 Arg2:T87	
+R7	To Arg1:T84 Arg2:T88	
+R8	When Arg1:T84 Arg2:T85	
+R9	How Arg1:T84 Arg2:T90	
+R10	No_Of_Ports Arg1:T84 Arg2:T86	
+R11	Commission Arg1:T84 Arg2:T89	
+R12	From Arg1:T77 Arg2:T78	
+R13	To Arg1:T77 Arg2:T79	
+R14	How Arg1:T77 Arg2:T80	
+R15	When Arg1:T77 Arg2:T81	
+R16	No_Of_Ports Arg1:T77 Arg2:T82	
+R17	Commission Arg1:T77 Arg2:T83	
+R18	When Arg1:T71 Arg2:T72	
+R19	From Arg1:T71 Arg2:T73	
+R20	To Arg1:T71 Arg2:T74	
+R21	How Arg1:T71 Arg2:T75	
+R22	Commission Arg1:T71 Arg2:T76	
+R23	When Arg1:T64 Arg2:T65	
+R24	From Arg1:T64 Arg2:T66	
+R25	To Arg1:T64 Arg2:T67	
+R26	How Arg1:T64 Arg2:T68	
+R27	No_Of_Ports Arg1:T64 Arg2:T69	
+R28	Commission Arg1:T64 Arg2:T70	
+R29	From Arg1:T57 Arg2:T58	
+R30	To Arg1:T57 Arg2:T59	
+R31	How Arg1:T57 Arg2:T60	
+R32	When Arg1:T57 Arg2:T61	
+R33	No_Of_Ports Arg1:T57 Arg2:T62	
+R34	Commission Arg1:T57 Arg2:T63	
+R35	To Arg1:T51 Arg2:T53	
+R36	From Arg1:T51 Arg2:T52	
+R37	When Arg1:T51 Arg2:T54	
+R38	How Arg1:T51 Arg2:T55	
+R39	Commission Arg1:T51 Arg2:T56	
+R40	To Arg1:T45 Arg2:T47	
+R41	From Arg1:T45 Arg2:T46	
+R42	When Arg1:T45 Arg2:T48	
+R43	How Arg1:T45 Arg2:T49	
+R44	Commission Arg1:T45 Arg2:T50	
+R45	From Arg1:T39 Arg2:T40	
+R46	To Arg1:T39 Arg2:T41	
+R47	How Arg1:T39 Arg2:T42	
+T44	Commission 2536 2544	2.5% pus
+R48	Commission Arg1:T39 Arg2:T44	
+R49	No_Of_Ports Arg1:T39 Arg2:T43	
+T97	Laycan 2479 2490	1-5th April
+R50	When Arg1:T39 Arg2:T97	
+R51	From Arg1:T33 Arg2:T34	
+R52	To Arg1:T33 Arg2:T35	
+R53	How Arg1:T33 Arg2:T36	
+R54	When Arg1:T33 Arg2:T37	
+R55	Commission Arg1:T33 Arg2:T38	
+R56	When Arg1:T27 Arg2:T28	
+R57	From Arg1:T27 Arg2:T29	
+R58	To Arg1:T27 Arg2:T30	
+R59	How Arg1:T27 Arg2:T31	
+R60	Commission Arg1:T27 Arg2:T32	
+R61	When Arg1:T21 Arg2:T22	
+R62	From Arg1:T21 Arg2:T23	
+R63	To Arg1:T21 Arg2:T24	
+R64	How Arg1:T21 Arg2:T25	
+R65	Commission Arg1:T21 Arg2:T26	
+R66	To Arg1:T14 Arg2:T16	
+R67	From Arg1:T14 Arg2:T15	
+R68	When Arg1:T14 Arg2:T17	
+R69	How Arg1:T14 Arg2:T18	
+R70	No_Of_Ports Arg1:T14 Arg2:T19	
+R71	Commission Arg1:T14 Arg2:T20	
+R72	To Arg1:T7 Arg2:T9	
+R73	From Arg1:T7 Arg2:T8	
+R74	When Arg1:T7 Arg2:T10	
+R75	How Arg1:T7 Arg2:T11	
+R76	No_Of_Ports Arg1:T7 Arg2:T12	
+R77	Commission Arg1:T7 Arg2:T13	
+R78	From Arg1:T1 Arg2:T2	
+R79	To Arg1:T1 Arg2:T3	
+R80	When Arg1:T1 Arg2:T4	
+R81	How Arg1:T1 Arg2:T5	
+R82	Commission Arg1:T1 Arg2:T6	

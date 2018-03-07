@@ -1,0 +1,11 @@
+T1	Cargo 210 237	25,000 MTs +/- 5% moloo SBM
+T2	Load_Place 240 247	Upriver
+T3	Disch_Place 251 265	Guayaquil + BV
+T4	Terms 268 285	6000spmsx / 5000c
+T5	Commission 300 304	1.25
+T6	Laycan 287 297	8-15 April
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	How Arg1:T1 Arg2:T4	
+R4	When Arg1:T1 Arg2:T6	
+R5	Commission Arg1:T1 Arg2:T5	

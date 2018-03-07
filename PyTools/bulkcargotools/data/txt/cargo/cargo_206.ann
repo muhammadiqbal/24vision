@@ -1,0 +1,13 @@
+T1	Load_Place 673 681	Nikolaev
+T2	Disch_Place 685 692	Preveza
+T3	Cargo 695 721	6000 mts +/- 10% GRAIN 49’
+T4	Terms 723 734	2000 / 1750
+T5	Laycan 736 759	15-20 april (try later)
+T6	Commission 761 769	5.0% iac
+T7	Commodity 133 138	GRAIN
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	How Arg1:T3 Arg2:T4	
+R4	When Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+R6	Including Arg1:T3 Arg2:T7	

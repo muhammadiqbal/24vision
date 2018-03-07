@@ -1,0 +1,13 @@
+T1	Load_Place 776 783	Kherson
+T2	Disch_Place 787 794	Marmara
+T3	Cargo 797 813	2700/3300 WBP 54
+T4	Quantity 115 124	2700/3300
+T5	Terms 819 833	1000/1000 x be
+T6	Laycan 835 843	05-07.04
+T7	Commission 845 854	3.75% iac
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	How Arg1:T3 Arg2:T5	
+R4	When Arg1:T3 Arg2:T6	
+R5	Commission Arg1:T3 Arg2:T7	
+R6	Content Arg1:T3 Arg2:T4	

@@ -1,0 +1,26 @@
+T1	Commodity 89 94	ferts
+T2	Quantity 68 76	9/10.000
+T3	Load_Place 659 663	Safi
+T4	Disch_Place 667 678	Lianyungang
+T6	Laycan 733 749	18-23 April 2017
+T5	Cargo 681 707	9/10.000 chopt bulk  ferts
+T7	Terms 750 771	2’000/2’000 sshex eiu
+T8	Commission 780 789	5.25% iac
+T9	Commission 889 898	3.75% IAC
+T10	Load_Place 900 908	ST. PETE
+T11	Disch_Place 912 922	NEMRUT BAY
+T12	Cargo 925 970	15.000 MTS HMS1+2 ABT 61/62' - 2 pct molchopt
+T13	Terms 971 1000	3.000 SHINC / 5.000 SSHEX EIU
+T14	Laycan 1001 1018	s p o t /20 april
+R1	To Arg1:T12 Arg2:T11	
+R2	From Arg1:T12 Arg2:T10	
+R3	How Arg1:T12 Arg2:T13	
+R4	When Arg1:T12 Arg2:T14	
+R5	Commission Arg1:T12 Arg2:T9	
+R6	To Arg1:T5 Arg2:T4	
+R7	From Arg1:T5 Arg2:T3	
+R8	When Arg1:T5 Arg2:T6	
+R9	How Arg1:T5 Arg2:T7	
+R10	Commission Arg1:T5 Arg2:T8	
+R11	What Arg1:T2 Arg2:T1	
+R12	Content Arg1:T5 Arg2:T2	

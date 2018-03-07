@@ -1,0 +1,13 @@
+T1	Commission 713 721	5.0% IAC
+T2	Load_Place 723 728	AQABA
+T3	Disch_Place 734 741	MARMARA
+T5	Laycan 774 784	1/10 APRIL
+T6	Terms 787 807	3000 FHEX/2500 SSHEX
+T7	Commodity 160 163	DAP
+T4	Cargo 744 771	5000/10 MOLOO BULK DAP  DWT
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T2	
+R3	When Arg1:T4 Arg2:T5	
+R4	How Arg1:T4 Arg2:T6	
+R5	Commission Arg1:T4 Arg2:T1	
+R6	Including Arg1:T4 Arg2:T7	

@@ -1,0 +1,11 @@
+T1	Load_Place 274 283	Nika-Tera
+T2	Disch_Place 333 339	Kandla
+T3	Terms 408 452	6000 sshinc/3000 sshinc - laytime reversible
+T4	Commission 456 466	2.5adc PUS
+T5	Laycan 387 404	25/30 april, 2017
+T6	Cargo 145 186;210 249	19-19,500 mts in owns option clay in bulk + 300-400 mts in chopt clay in big-bags
+R1	From Arg1:T6 Arg2:T1	
+R2	To Arg1:T6 Arg2:T2	
+R3	When Arg1:T6 Arg2:T5	
+R4	How Arg1:T6 Arg2:T3	
+R5	Commission Arg1:T6 Arg2:T4	

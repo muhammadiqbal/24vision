@@ -1,0 +1,13 @@
+T1	Cargo 244 282	Military cargo :    total 654,389 tons
+T2	Load_Place 582 589	Leixoes
+T3	Disch_Place 594 602	Klaipeda
+T4	Commodity 96 108	MILITARY CGO
+T5	Laycan 621 632	15/May/2017
+T6	Commission 798 802	5TTL
+R1	Including Arg1:T1 Arg2:T4	
+R2	To Arg1:T1 Arg2:T3	
+R3	From Arg1:T1 Arg2:T2	
+R4	When Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	
+T7	Terms 779 794	24 HRS / 24 HRS
+R6	How Arg1:T1 Arg2:T7	

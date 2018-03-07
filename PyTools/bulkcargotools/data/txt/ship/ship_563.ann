@@ -1,0 +1,25 @@
+T4	DWT 196 202	24,176
+T1	Ship 367 374	MV Paul
+T2	Ship 1127 1141	MV "Voge Emma"
+T3	Year 438 442	1998
+T5	Year 1201 1205	2011
+T6	Ship 1717 1730	MV 'Sea Hawk'
+T7	Year 1860 1864	2017
+R1	Built Arg1:T6 Arg2:T7	
+R2	Built Arg1:T2 Arg2:T5	
+R3	Built Arg1:T1 Arg2:T3	
+T8	Loading_Place 217 227	Alexandria
+T9	Open_Date 228 236	25 April
+R4	Contain Arg1:T1 Arg2:T4	
+R5	Located Arg1:T1 Arg2:T8	
+R6	When Arg1:T1 Arg2:T9	
+T10	Loading_Place 275 278	Cjk
+T11	Open_Date 279 290	26-27 April
+T12	DWT 254 260	36,830
+T13	DWT 309 315	37,163
+T14	Loading_Place 330 334	Qdao
+T15	Open_Date 335 342	4-6 May
+R7	Contain Arg1:T2 Arg2:T12	
+R8	Located Arg1:T2 Arg2:T10	
+R9	When Arg1:T2 Arg2:T11	
+R10	Contain Arg1:T6 Arg2:T13	

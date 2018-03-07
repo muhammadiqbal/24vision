@@ -1,0 +1,11 @@
+T1	Cargo 159 198	3,500 net mt 10% bagged sugar - in b.b.
+T2	Load_Place 235 247	Novorossiysk
+T3	Disch_Place 248 256	Lattakia
+T4	Laycan 257 267	5/15 April
+T5	Terms 268 306;307 351	1500 mt sat noon/mon 0800 ntc eiu load 750 mt thurs 1700/sun 0800 ntc eiu discharge
+T6	Commission 365 377	3.75 add pus
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	When Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	

@@ -1,0 +1,31 @@
+T1	Commission 598 606	2.5% TTL
+T2	Cargo 618 667	min /max 10.000 tons bulk sorghum  pls empty bags
+T3	Load_Place 729 739	Port Sudan
+T4	Disch_Place 771 838	in Charterers’ option out of Berbera and/or Djibouti and/or Mombasa
+T5	Laycan 1023 1044	28 April / 5 May 2017
+T6	Terms 1045 1073;1078 1118;1131 1191;1204 1255	LOADRATE    2,500 mtons pwwd DISCH RATE  Berbera     2,500 mtons pwwd Djibouti    5,000 mtons pwwd chopt 4,000 or 2,000 mtons pwwd Mombasa     9,000 mtons pwwd choot 3,800 mtons pwwd
+T7	Load_Place 1342 1351	Australia
+T8	Disch_Place 1359 1367	EC INDIA
+T9	Cargo 1370 1404	35,000 mt bulk alumina 5 pct moloo
+T10	Laycan 1410 1424	11/17 May 2017
+T11	Terms 1437 1488;1489 1540;1621 1670;1671 1720	Kwinana             - 14000 MT / 24 hours WWDSSHINC Bunbury(Berth No 4) - 18000 MT / 24 hours WWDSSHINC Gangavaram          - 3500 MT / 24 hours WWDSHINC Kakinada            - 7500 MT / 24 hours WWDSHINC
+T12	Load_Place 1892 1900	WC INDIA
+T13	Disch_Place 1908 1915	S.KOREA
+T14	Cargo 1918 1942	50,000 mt 10% Moloo bulk
+T15	Laycan 1948 1956	8/12 May
+T16	Terms 1962 1993	15,000/20,000 SHINC – 12 hrs TT
+T17	Commission 2080 2088	2.5% ttl
+R1	To Arg1:T14 Arg2:T13	
+R2	From Arg1:T14 Arg2:T12	
+R3	When Arg1:T14 Arg2:T15	
+R4	How Arg1:T14 Arg2:T16	
+R5	Commission Arg1:T14 Arg2:T17	
+R6	To Arg1:T9 Arg2:T8	
+R7	From Arg1:T9 Arg2:T7	
+R8	When Arg1:T9 Arg2:T10	
+R9	How Arg1:T9 Arg2:T11	
+R10	From Arg1:T2 Arg2:T3	
+R11	How Arg1:T2 Arg2:T6	
+R12	When Arg1:T2 Arg2:T5	
+R13	To Arg1:T2 Arg2:T4	
+R14	Commission Arg1:T2 Arg2:T1	

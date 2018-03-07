@@ -1,0 +1,13 @@
+T1	Load_Place 695 701	Genova
+T2	Disch_Place 705 717	Buenos aires
+T3	Cargo 720 765	7 x abt 6000mts concrete platforms (abt 1000)
+T4	Laycan 831 840	may dates
+T5	Terms 842 852	8 ttl days
+T6	Commission 854 862	5.0% iac
+T7	Commodity 135 153	concrete platforms
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+R6	Including Arg1:T3 Arg2:T7	

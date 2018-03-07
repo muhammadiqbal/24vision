@@ -1,0 +1,15 @@
+T1	Commission 834 843	3.75% iac
+T2	Laycan 814 828	14-16 of April
+T3	Terms 798 808	3 days ttl
+T4	Load_Place 716 734	kdz.Eregli, Turkey
+T5	Disch_Place 737 743;787 796	Dnipro , Ukraine
+T6	Cargo 691 714	1050 mts of steel coils
+T7	Quantity 137 145	1050 mts
+T8	Commodity 149 160	steel coils
+R1	What Arg1:T7 Arg2:T8	
+R2	From Arg1:T6 Arg2:T4	
+R3	To Arg1:T6 Arg2:T5	
+R4	How Arg1:T6 Arg2:T3	
+R5	When Arg1:T6 Arg2:T2	
+R6	Commission Arg1:T6 Arg2:T1	
+R7	Content Arg1:T6 Arg2:T7	

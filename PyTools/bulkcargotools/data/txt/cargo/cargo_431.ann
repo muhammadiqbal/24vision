@@ -1,0 +1,13 @@
+T1	Cargo 458 487	abt 25000mt bag cement in bag
+T2	Laycan 497 517	31ST,MARCH-4TH,APRIL
+T3	Load_Place 552 566	hongai Vietnam
+T5	Terms 633 658;659 724	-l/rate:7000mt pwwd shinc -d/rate:3500mt pwwd shinc for subic+2500mt pwwd shinc for batanga
+T6	Commission 790 800	2.5% total
+R1	When Arg1:T1 Arg2:T2	
+R2	From Arg1:T1 Arg2:T3	
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	
+T7	Commodity 130 136	CEMENT
+R6	Including Arg1:T1 Arg2:T7	
+T4	Disch_Place 581 604;609 632	subic(discchg 15000mt)+ batnaga(dischg 10000mt)
+R3	To Arg1:T1 Arg2:T4	

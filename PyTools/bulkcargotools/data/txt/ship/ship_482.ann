@@ -1,0 +1,7 @@
+T1	Loading_Place 222 225	ARA
+T2	Open_Date 226 237	12-17 APRIL
+T3	Ship 271 279	MV CELIA
+T4	Year 349 353	2013
+R1	Located Arg1:T3 Arg2:T1	
+R2	When Arg1:T3 Arg2:T2	
+R3	Built Arg1:T3 Arg2:T4	

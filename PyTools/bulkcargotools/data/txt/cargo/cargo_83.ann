@@ -1,0 +1,13 @@
+T2	Load_Place 786 796	ISKENDERUN
+T3	Disch_Place 800 807	ANTWERP
+T4	Cargo 810 837	ABT 1850 MTS STEEL PRODUCTS
+T5	Terms 839 845	900 BE
+T6	Laycan 847 858	16/22 APRIL
+T7	Commission 860 869	3.75% IAC
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T2	
+R3	How Arg1:T4 Arg2:T5	
+R4	When Arg1:T4 Arg2:T6	
+R5	Commission Arg1:T4 Arg2:T7	
+T1	Commodity 131 145	STEEL PRODUCTS
+R6	Including Arg1:T4 Arg2:T1	

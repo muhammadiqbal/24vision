@@ -1,0 +1,11 @@
+T1	Cargo 331 355	20,000mt Sulphur in bulk
+T2	Laycan 408 419	17-21 April
+T3	Commission 506 522	2.50% ADDCOM PUS
+T4	Terms 370 394	8,000 Shinc / 5,000 Shex
+T5	Disch_Place 299 305	Ashdod
+T6	Load_Place 187 201	Brake, Germany
+R1	To Arg1:T1 Arg2:T5	
+R2	From Arg1:T1 Arg2:T6	
+R3	How Arg1:T1 Arg2:T4	
+R4	When Arg1:T1 Arg2:T2	
+R5	Commission Arg1:T1 Arg2:T3	

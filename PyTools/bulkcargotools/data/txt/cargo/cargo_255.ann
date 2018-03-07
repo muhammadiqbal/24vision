@@ -1,0 +1,13 @@
+T1	Commission 574 582	2.5% ttl
+T3	Laycan 370 391	10 th - 15th MAY 2017
+T4	Disch_Place 344 362	Paradip AND HALDIA
+T5	Load_Place 317 331	RBCT/NAVITRADE
+T6	Cargo 268 304	MIN MAX 75,000mt  CHOPT COAL in bulk
+R1	From Arg1:T6 Arg2:T5	
+R2	To Arg1:T6 Arg2:T4	
+R3	When Arg1:T6 Arg2:T3	
+T2	Terms 393 421;422 480;483 509	Loadrate:  SCALE PWWD SHINC. Disch rate: PARADIP 10,000MT AND HALDIA 6000 MT PWWD SHINC T.T 12HRS at each port EIU
+R4	How Arg1:T6 Arg2:T2	
+R5	Commission Arg1:T6 Arg2:T1	
+T7	Port_No 534 537	1/2
+R6	No_Of_Ports Arg1:T6 Arg2:T7	

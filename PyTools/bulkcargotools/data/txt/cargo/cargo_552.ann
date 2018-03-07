@@ -1,0 +1,15 @@
+T1	Commodity 141 144	npk
+T2	Cargo 247 293	30,000mt 10% molco of npk in bulk (s/f abt 1.4
+T3	Load_Place 319 336	gresik, indonesia
+T4	Disch_Place 355 371	mundra, wc.india
+T5	Terms 373 405;406 438	load rate : 3,000mt pwwd shex uu dis rate : 5,000mt pwwd shex eiu
+T6	Laycan 448 465	1st-15th may 2017
+T7	Port_No 507 510	1/1
+T8	Commission 547 559	2.5% ttl pus
+R1	From Arg1:T2 Arg2:T3	
+R2	To Arg1:T2 Arg2:T4	
+R3	How Arg1:T2 Arg2:T5	
+R4	When Arg1:T2 Arg2:T6	
+R5	No_Of_Ports Arg1:T2 Arg2:T7	
+R6	Commission Arg1:T2 Arg2:T8	
+R7	Including Arg1:T2 Arg2:T1	

@@ -1,0 +1,13 @@
+T1	Commission 873 881	5.0% iac
+T3	Laycan 815 827	Prompt / Onw
+T4	Load_Place 708 715	Houston
+T6	Cargo 758 791	600 MTS Used Seamless Drill Pipes
+T7	Quantity 144 151	600 MTS
+T8	Commodity 152 177	Used Seamless Drill Pipes
+R1	What Arg1:T7 Arg2:T8	
+R3	From Arg1:T6 Arg2:T4	
+R4	When Arg1:T6 Arg2:T3	
+R5	Commission Arg1:T6 Arg2:T1	
+R6	Content Arg1:T6 Arg2:T7	
+T2	Disch_Place 719 755	Haiphong Or Phumy Port, Vietnam, O/O
+R2	To Arg1:T6 Arg2:T2	

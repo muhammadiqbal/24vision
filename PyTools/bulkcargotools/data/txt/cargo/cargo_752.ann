@@ -1,0 +1,15 @@
+T2	Cargo 291 327	45000 Tons +/- 10Pct Of Bulk Clinker
+T3	Port_No 512 515	1/1
+T4	Load_Place 339 346	Adabiya
+T5	Disch_Place 348 355	Mombasa
+T6	Terms 386 427	7,000/5,000 Tons Pwwd Fshinc/ Shinc Bends
+T7	Laycan 433 474	15 – 18 April 2017, Can Try Vessel Date’s
+R1	From Arg1:T2 Arg2:T4	
+R2	To Arg1:T2 Arg2:T5	
+R3	How Arg1:T2 Arg2:T6	
+R4	When Arg1:T2 Arg2:T7	
+R5	No_Of_Ports Arg1:T2 Arg2:T3	
+T8	Commission 555 572	3.75% Ttl Com Iac
+T9	Commodity 168 175	CLINKER
+R6	Including Arg1:T2 Arg2:T9	
+R7	Commission Arg1:T2 Arg2:T8	

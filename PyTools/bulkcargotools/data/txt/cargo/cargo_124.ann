@@ -1,0 +1,15 @@
+T1	Quantity 119 128	10.000mts
+T2	Load_Place 810 816	Kandla
+T3	Disch_Place 820 828	Thailand
+T4	Cargo 831 878	m/m 10.000mts blk RSM (rape seed meal), S/F: 55
+T5	Laycan 885 894	20-27 apr
+T6	Terms 896 921	5000 / 2000 satpm shexeiu
+T7	Commission 923 931	5.0% IAC
+T8	Commodity 133 153	RSM (rape seed meal)
+R1	What Arg1:T1 Arg2:T8	
+R2	To Arg1:T4 Arg2:T3	
+R3	From Arg1:T4 Arg2:T2	
+R4	When Arg1:T4 Arg2:T5	
+R5	How Arg1:T4 Arg2:T6	
+R6	Commission Arg1:T4 Arg2:T7	
+R7	Content Arg1:T4 Arg2:T1	

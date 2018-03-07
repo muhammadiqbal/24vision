@@ -1,0 +1,11 @@
+T1	Ship 297 315	MV AMIS WISDOM III
+T2	Loading_Place 268 274	GDYNIA
+T3	Open_Date 277 292	21ST APRIL 2017
+T4	DWT 331 340	61,527.00
+T5	Year 394 398	2011
+R1	Located Arg1:T1 Arg2:T2	
+R2	When Arg1:T1 Arg2:T3	
+R3	Contain Arg1:T1 Arg2:T4	
+R4	Built Arg1:T1 Arg2:T5	
+T6	Destination 244 257	any direction
+R5	To Arg1:T1 Arg2:T6	

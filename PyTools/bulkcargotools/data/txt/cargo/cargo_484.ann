@@ -1,0 +1,22 @@
+T1	Cargo 196 233	ABT 48,000MT M. ORE IN BULK 10% MOLOO
+T2	Load_Place 234 240	Owendo
+T3	Disch_Place 247 252	CHINA
+T4	Terms 253 272	7000 c   /  10000 c
+T5	Laycan 275 288	PPT - Mid APR
+T6	Commission 289 298	3.75 pcnt
+T7	Cargo 307 341	Min-max 40-55000mts of bulk gypsum
+T8	Load_Place 346 358	Bandar abbas
+T9	Disch_Place 365 381	paradip + haldia
+T10	Terms 383 406	8000 / 10000  EIU bends
+T11	Laycan 415 426	17-25 April
+T12	Commission 429 433	3.75
+R1	From Arg1:T7 Arg2:T8	
+R2	To Arg1:T7 Arg2:T9	
+R3	How Arg1:T7 Arg2:T10	
+R4	When Arg1:T7 Arg2:T11	
+R5	Commission Arg1:T7 Arg2:T12	
+R6	To Arg1:T1 Arg2:T3	
+R7	From Arg1:T1 Arg2:T2	
+R8	How Arg1:T1 Arg2:T4	
+R9	When Arg1:T1 Arg2:T5	
+R10	Commission Arg1:T1 Arg2:T6	

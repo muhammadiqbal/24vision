@@ -1,0 +1,15 @@
+T1	Quantity 119 130	44/4570 mts
+T2	Load_Place 780 789	Barcelona
+T3	Disch_Place 793 802	Port Said
+T4	Cargo 805 825	44/4570 mts profiles
+T5	Laycan 827 839	29/30  March
+T6	Terms 841 862	3000 sshex /800 fshex
+T8	Commodity 131 139	profiles
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T2	
+R3	When Arg1:T4 Arg2:T5	
+R4	How Arg1:T4 Arg2:T6	
+R6	Content Arg1:T4 Arg2:T1	
+R7	What Arg1:T1 Arg2:T8	
+T7	Commission 875 884	3.75% iac
+R5	Commission Arg1:T4 Arg2:T7	

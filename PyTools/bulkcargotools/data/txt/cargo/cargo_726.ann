@@ -1,0 +1,13 @@
+T1	Commodity 100 105	SCRAP
+T2	Cargo 187 207	abt 40.000 mts scrap
+T3	Load_Place 248 252	arag
+T4	Disch_Place 260 269	egypt med
+T5	Terms 281 298	10 ttl days shinc
+T6	Commission 303 311	3.75 pus
+T7	Laycan 270 280	18 apr/onw
+R1	Including Arg1:T2 Arg2:T1	
+R2	From Arg1:T2 Arg2:T3	
+R3	To Arg1:T2 Arg2:T4	
+R4	When Arg1:T2 Arg2:T7	
+R5	How Arg1:T2 Arg2:T5	
+R6	Commission Arg1:T2 Arg2:T6	

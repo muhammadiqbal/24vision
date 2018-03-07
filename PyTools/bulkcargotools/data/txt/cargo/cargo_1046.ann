@@ -1,0 +1,12 @@
+T1	Commodity 69 80	Solid Pitch
+T2	Cargo 416 495	6,000 mt - 5 pct. more or less in charterer's option - dry pencil pitch in bulk
+T3	Laycan 573 587	15-20 May 2017
+T4	Terms 1027 1115	11 total ww days shinc for loading and discharging - local holidays excluded unless used
+T5	Load_Place 517 530	Rizhao, China
+T6	Disch_Place 531 552	Vila do Conde, Brasil
+T7	Commission 5362 5383	1.25pct Bery Maritime
+R1	Including Arg1:T2 Arg2:T1	
+R2	How Arg1:T2 Arg2:T4	
+R3	To Arg1:T2 Arg2:T6	
+R4	From Arg1:T2 Arg2:T5	
+R5	When Arg1:T2 Arg2:T3	

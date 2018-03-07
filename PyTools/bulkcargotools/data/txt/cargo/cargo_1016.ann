@@ -1,0 +1,13 @@
+T1	Commission 290 295	5 ttl
+T2	Laycan 279 288	22/25 apr
+T3	Cargo 189 221	37,000 / 10 pct moloo bulk ferts
+T4	Load_Place 228 243	ice free Baltic
+T5	Disch_Place 251 255	wcca
+T6	Terms 257 272	6000 c / 7000 c
+T7	Commodity 62 67	ferts
+R1	From Arg1:T3 Arg2:T4	
+R2	To Arg1:T3 Arg2:T5	
+R3	How Arg1:T3 Arg2:T6	
+R4	When Arg1:T3 Arg2:T2	
+R5	Commission Arg1:T3 Arg2:T1	
+R6	Including Arg1:T3 Arg2:T7	

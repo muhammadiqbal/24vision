@@ -1,0 +1,15 @@
+T1	Quantity 72 82	25.000 TNS
+T2	Commodity 83 88	WHEAT
+R1	What Arg1:T1 Arg2:T2	
+T3	Load_Place 602 610	NIKOLAEV
+T4	Terms 669 680	8000 / 3000
+T5	Laycan 685 699	PROMPT ONWARDS
+T6	Disch_Place 618 625	MOROCCO
+T7	Cargo 628 664	25.000 TNS WHEAT IN BULK STW ABT 47'
+T8	Commission 700 709	3.75% IAC
+R2	To Arg1:T7 Arg2:T6	
+R3	From Arg1:T7 Arg2:T3	
+R4	How Arg1:T7 Arg2:T4	
+R5	When Arg1:T7 Arg2:T5	
+R6	Commission Arg1:T7 Arg2:T8	
+R7	Content Arg1:T7 Arg2:T1	

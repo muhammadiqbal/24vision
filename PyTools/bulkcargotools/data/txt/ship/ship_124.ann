@@ -1,0 +1,9 @@
+T1	Ship 29 47	MV. MANDARIN CHINA
+T2	Year 586 590	2011
+T3	DWT 592 598	56,778
+T4	Loading_Place 509 516	PARADIP
+T5	Open_Date 518 532	5-10 APR, 2017
+R1	Contain Arg1:T1 Arg2:T3	
+R2	Built Arg1:T1 Arg2:T2	
+R3	Located Arg1:T1 Arg2:T4	
+R4	When Arg1:T1 Arg2:T5	

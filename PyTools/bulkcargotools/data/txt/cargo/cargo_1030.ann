@@ -1,0 +1,11 @@
+T1	Commission 365 380	2.5% ADDCOM PUS
+T2	Commission 348 362	Prompt onwards
+T3	Cargo 274 293	30,000-35,000mt BHF
+T4	Load_Place 175 181	Ashdod
+T5	Disch_Place 230 239	Amsterdam
+T6	Terms 309 334	7,000 Shex / 10,000 Shinc
+R1	How Arg1:T3 Arg2:T6	
+R2	Commission Arg1:T3 Arg2:T2	
+R3	Commission Arg1:T3 Arg2:T1	
+R4	To Arg1:T3 Arg2:T5	
+R5	From Arg1:T3 Arg2:T4	

@@ -1,0 +1,15 @@
+T1	Quantity 137 146	50000 mts
+T2	Cargo 852 883	50000 mts bagged UREA 50kg bags
+R1	Content Arg1:T2 Arg2:T1	
+T3	Load_Place 809 826	Alexandria, Egypt
+T4	Disch_Place 830 849	Montevideo, Uruguay
+T5	Terms 885 928	4000 mts pwwd shexc bends - 12 hrs TT bends
+T6	Laycan 930 946	20-30 April date
+T7	Commission 948 956	5.0% iac
+R2	From Arg1:T2 Arg2:T3	
+R3	To Arg1:T2 Arg2:T4	
+R4	How Arg1:T2 Arg2:T5	
+R5	When Arg1:T2 Arg2:T6	
+R6	Commission Arg1:T2 Arg2:T7	
+T8	Commodity 154 158	UREA
+R7	What Arg1:T1 Arg2:T8	

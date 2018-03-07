@@ -1,0 +1,17 @@
+T1	Cargo 110 152	10.000mt 10% moloo feed grade urea in bulk
+T2	Load_Place 154 168	Marsa el Brega
+T3	Disch_Place 171 181	Contrecœur
+T4	Laycan 190 201	21-24 April
+T5	Terms 203 222	4000 fhex/9000 shex
+T6	Commission 247 258	2.5% addcom
+T7	Cargo 395 432	Abt 25,000 mt feedphos/amidas in bulk
+T8	Load_Place 444 462	Kokkola + Sluiskil
+T9	Disch_Place 481 505	Mississippi River NABIBR
+T10	Laycan 514 525	25-27 April
+T11	Terms 555 606	2500 shex Kokkola, 6000 shex Skl / 8000 shinc disch
+T12	Commission 631 646	2.5% addcom pus
+R1	To Arg1:T1 Arg2:T3	
+R2	From Arg1:T1 Arg2:T2	
+R3	When Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	

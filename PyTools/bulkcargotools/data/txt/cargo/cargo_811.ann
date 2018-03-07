@@ -1,0 +1,13 @@
+T1	Commodity 37 41	corn
+T2	Load_Place 257 261	NIKO
+T3	Disch_Place 266 296	SFAX-POZZALLO-TORRE ANNUNZIATA
+T4	Cargo 298 313	15.000/10% CORN
+T5	Terms 315 326	10 TTL DAYS
+T6	Laycan 328 339	5 APRIL ONW
+T7	Commission 341 347	5% PUS
+R1	How Arg1:T4 Arg2:T5	
+R2	When Arg1:T4 Arg2:T6	
+R3	Commission Arg1:T4 Arg2:T7	
+R4	From Arg1:T4 Arg2:T2	
+R5	To Arg1:T4 Arg2:T3	
+R6	Including Arg1:T4 Arg2:T1	

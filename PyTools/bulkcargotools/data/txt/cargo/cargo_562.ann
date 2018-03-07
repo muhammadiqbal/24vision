@@ -1,0 +1,15 @@
+T1	Commodity 148 154	copper
+T2	Quantity 116 124	24000 mt
+T3	Cargo 247 285	24000 mt sipping bulk materials copper
+T4	Load_Place 298 311	yanbu red sea
+T5	Disch_Place 330 341	dahej india
+T6	Terms 352 364	5000/5000 mt
+T7	Laycan 381 392	vessel date
+T8	Commission 408 423	1.25 % comm pus
+R1	From Arg1:T3 Arg2:T4	
+R2	To Arg1:T3 Arg2:T5	
+R3	How Arg1:T3 Arg2:T6	
+R4	When Arg1:T3 Arg2:T7	
+R5	Commission Arg1:T3 Arg2:T8	
+R6	Content Arg1:T3 Arg2:T2	
+R7	What Arg1:T2 Arg2:T1	

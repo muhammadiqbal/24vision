@@ -1,0 +1,15 @@
+T1	Quantity 124 130	6000mt
+T2	Commodity 131 142	Solid Pitch
+R1	What Arg1:T1 Arg2:T2	
+T3	Cargo 681 765	Abt. 6,000 mt - 5 pct. more or less in charterer's option - dry pencil pitch in bulk
+T4	Load_Place 786 799	Rizhao, China
+T5	Disch_Place 800 821	Vila do Conde, Brasil
+T6	Laycan 842 856	15-20 May 2017
+T7	Terms 1295 1317	11 total ww days shinc
+T8	Commission 5521 5529	1.25 pus
+R2	From Arg1:T3 Arg2:T4	
+R3	To Arg1:T3 Arg2:T5	
+R4	When Arg1:T3 Arg2:T6	
+R5	How Arg1:T3 Arg2:T7	
+R6	Content Arg1:T3 Arg2:T1	
+R7	Commission Arg1:T3 Arg2:T8	

@@ -1,0 +1,33 @@
+T1	Commission 780 788	2.5% ttl
+T3	Laycan 2088 2131	03-07 May, 2017 (Max ETA Songkhla End June)
+T2	Load_Place 1084 1108	Constanta SOCEP, Romania
+T4	Disch_Place 1112 1130	SONGKHLA, Thailand
+T7	Load_Place 3486 3492	NEMRUT
+T8	Disch_Place 3496 3509	VERACRUZ (MX)
+T9	Cargo 3512 3531	2500MTS WRIC SF’ 52
+T10	Laycan 3533 3542	05/07 APR
+T11	Terms 3545 3553	TTL DAYS
+T12	Commission 3555 3564	3.75% IAC
+T13	Load_Place 3593 3599	NEMRUT
+T14	Disch_Place 3603 3614	OSHAWA (CA)
+T15	Cargo 3617 3636	5000MTS WRIC SF’ 52
+T16	Laycan 3638 3647	07/10 APR
+T17	Terms 3650 3658	TTL DAYS
+T18	Commission 3660 3669	3.75% IAC
+T5	Cargo 1133 1166	1,560 tns 5% molchopt STEEL PIPES
+R1	To Arg1:T5 Arg2:T4	
+R2	From Arg1:T5 Arg2:T2	
+R3	Commission Arg1:T5 Arg2:T1	
+R4	When Arg1:T5 Arg2:T3	
+T6	Terms 2188 2266;2761 2787	Loading terms Songhlka : 900 mtons /gang / day  SSINC max 2 gangs simo uu pwwd Discharge terms: liner out
+R5	How Arg1:T5 Arg2:T6	
+R6	To Arg1:T9 Arg2:T8	
+R7	From Arg1:T9 Arg2:T7	
+R8	When Arg1:T9 Arg2:T10	
+R9	How Arg1:T9 Arg2:T11	
+R10	Commission Arg1:T9 Arg2:T12	
+R11	To Arg1:T15 Arg2:T14	
+R12	From Arg1:T15 Arg2:T13	
+R13	When Arg1:T15 Arg2:T16	
+R14	How Arg1:T15 Arg2:T17	
+R15	Commission Arg1:T15 Arg2:T18	

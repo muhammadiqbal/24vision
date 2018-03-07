@@ -1,0 +1,12 @@
+T1	Load_Place 680 689	Uglegorsk
+T3	Cargo 730 763	25 000 mt 10% MOLCO  Coal in bulk
+T4	Laycan 764 778	04-07 May 2017
+T5	Terms 779 819	4 000 mt PWWD SHINC/10 000 mt PWWD SHINC
+T6	Commission 881 890	3.75% iac
+R1	Commission Arg1:T3 Arg2:T6	
+T2	Disch_Place 699 727	Campha or Hochiminh in CHOPT
+R2	How Arg1:T3 Arg2:T5	
+R3	To Arg1:T3 Arg2:T2	
+R4	From Arg1:T3 Arg2:T1	
+T7	Commodity 164 168	Coal
+R5	Including Arg1:T3 Arg2:T7	

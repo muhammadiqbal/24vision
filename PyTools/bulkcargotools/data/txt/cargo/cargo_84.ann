@@ -1,0 +1,11 @@
+T1	Commission 841 850	3.75% IAC
+T2	Laycan 831 839	05-07.04
+T3	Terms 815 829	1000/1000 x be
+T4	Load_Place 774 781	Kherson
+T5	Disch_Place 785 792	Marmara
+T6	Cargo 795 809	3000/10 WBP 54
+R1	To Arg1:T6 Arg2:T5	
+R2	From Arg1:T6 Arg2:T4	
+R3	How Arg1:T6 Arg2:T3	
+R4	When Arg1:T6 Arg2:T2	
+R5	Commission Arg1:T6 Arg2:T1	

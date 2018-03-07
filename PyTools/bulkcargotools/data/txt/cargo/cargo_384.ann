@@ -1,0 +1,22 @@
+T1	Load_Place 550 556	B.I.K.
+T2	Disch_Place 560 586	Ravenna or Genova in Chopt
+T3	Cargo 589 607	Abt 10,000.mts hrc
+T4	Laycan 622 636	26 Apr / 5 May
+T5	Terms 652 659	Cqd/Cqd
+T6	Commission 670 679	3.75% iac
+T7	Load_Place 709 716	ISDEMIR
+T8	Disch_Place 720 727	ANTWERP
+T9	Cargo 767 840	M/M 20.488 / 22.371 MTS OF HRC+STEEL PLATES/SHEETS (IN CHARTERERS OPTION)
+T10	Laycan 915 928	14 / 17 APRIL
+T11	Terms 932 964	6.000 SHINC / 7,5 DAYS SSHEX-EIU
+T12	Commission 1048 1052	2.5%
+R1	To Arg1:T9 Arg2:T8	
+R2	From Arg1:T9 Arg2:T7	
+R3	When Arg1:T9 Arg2:T10	
+R4	How Arg1:T9 Arg2:T11	
+R5	Commission Arg1:T9 Arg2:T12	
+R6	To Arg1:T3 Arg2:T2	
+R7	From Arg1:T3 Arg2:T1	
+R8	When Arg1:T3 Arg2:T4	
+R9	How Arg1:T3 Arg2:T5	
+R10	Commission Arg1:T3 Arg2:T6	

@@ -1,0 +1,7 @@
+T1	Ship 125 138	MV RAINBOW RH
+T2	Loading_Place 495 502	QINZHOU
+T3	Open_Date 503 510	5TH/APR
+T4	Year 603 607	1995
+R1	When Arg1:T1 Arg2:T3	
+R2	Located Arg1:T1 Arg2:T2	
+R3	Built Arg1:T1 Arg2:T4	

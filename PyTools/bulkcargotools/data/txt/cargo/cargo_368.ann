@@ -1,0 +1,13 @@
+T1	Load_Place 636 664	Penang and Bintulu, Malaysia
+T2	Disch_Place 668 692	Aden and Hodeidah, yemen
+T3	Cargo 695 715	ABOUT 6/8000 MTS DWT
+T4	Terms 799 827;828 865	Load rate: 12 days SSHEX EIU Dis rate: 12 days FHEX (incl Sat) EIU
+T5	Port_No 951 954	2/2
+T6	Commission 955 963	2.5% TTL
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	How Arg1:T3 Arg2:T4	
+R5	Commission Arg1:T3 Arg2:T6	
+T7	Laycan 875 881	Propmt
+R4	When Arg1:T3 Arg2:T7	
+R6	No_Of_Ports Arg1:T3 Arg2:T5	

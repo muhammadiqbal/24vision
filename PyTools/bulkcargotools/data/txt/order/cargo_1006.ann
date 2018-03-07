@@ -1,0 +1,13 @@
+T1	Quantity 67 79	41,500/10PCT
+T2	Disch_Place 207 217;220 226	Rio Grande Itaqui
+T3	Load_Place 192 204	Ras Al Khair
+T4	Laycan 262 270	14-16Apr
+T5	Commission 271 279	2.5adcom
+T6	Terms 227 261	12,000 fhex uu / 5,000sc + 2,500sc
+T7	Cargo 140 164	41,500/10pct moloo ferts
+R1	Content Arg1:T7 Arg2:T1	
+R2	From Arg1:T7 Arg2:T3	
+R3	To Arg1:T7 Arg2:T2	
+R4	How Arg1:T7 Arg2:T6	
+R5	When Arg1:T7 Arg2:T4	
+R6	Commission Arg1:T7 Arg2:T5	

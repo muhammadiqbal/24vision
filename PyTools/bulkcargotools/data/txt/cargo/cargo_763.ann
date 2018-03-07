@@ -1,0 +1,29 @@
+T1	Commodity 163 174	WHEAT FLOUR
+T2	Cargo 306 359	M/M 25000/30000 Of Bgd Wheat Flour Packed In Big Bags
+T3	Load_Place 463 473	Iskenderun
+T5	Terms 519 562	2000 / 1500 Tons Pwwd Sshex / Fshex Bss Eiu
+T6	Port_No 605 608	1/1
+T7	Laycan 622 656	20– 30 April 17, Can Try Vsl Dates
+T8	Commission 744 760	2.5% Ttl Com Iac
+T9	Cargo 817 870	M/M 15000/18000 Of Bgd Wheat Flour Packed In Big Bags
+T10	Load_Place 974 980	Mersin
+T11	Disch_Place 983 993	Port Sudan
+T4	Disch_Place 476 486	Port Sudan
+T12	Terms 1026 1068	2000 / 1500 Tons Pwwd Sshex/ Fshex Bss Eiu
+T13	Port_No 1111 1114	1/1
+T14	Laycan 1128 1163	25 – 30 April 17, Can Try Vsl Dates
+T15	Commission 1251 1267	2.5% Ttl Com Iac
+R1	Including Arg1:T2 Arg2:T1	
+R2	To Arg1:T2 Arg2:T4	
+R3	From Arg1:T2 Arg2:T3	
+R4	How Arg1:T2 Arg2:T5	
+R5	No_Of_Ports Arg1:T2 Arg2:T6	
+R6	When Arg1:T2 Arg2:T7	
+R7	Commission Arg1:T2 Arg2:T8	
+R8	To Arg1:T9 Arg2:T11	
+R9	From Arg1:T9 Arg2:T10	
+R10	When Arg1:T9 Arg2:T14	
+R11	How Arg1:T9 Arg2:T12	
+R12	No_Of_Ports Arg1:T9 Arg2:T13	
+R13	Commission Arg1:T9 Arg2:T15	
+R14	Including Arg1:T9 Arg2:T1	

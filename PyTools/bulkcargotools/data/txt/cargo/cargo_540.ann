@@ -1,0 +1,23 @@
+T1	Cargo 223 310	40000mt 10% molo stone aggregates (construction material) , sizes 8-22 mm,loose in bulk
+T2	Load_Place 320 331	kandla, wci
+T3	Disch_Place 334 356	chittagong, bangladesh
+T4	Laycan 393 405	15-20 apr'17
+T5	Terms 416 434	10k/3000 shex/fhex
+T6	Commission 449 462	ttl 1.25% pus
+T7	Cargo 649 687	rock boulders in bulk quantity 20000mt
+T8	Laycan 757 766	vsl dates
+T9	Load_Place 788 801	chennai India
+T10	Disch_Place 820 842	Chittagong, Bangladesh
+T11	Terms 844 873;875 901	Load rate: 4000 Mt pwwd shinc Disrate: 2000mt pwwd shinc
+T12	Commission 993 1001	2.5% pus
+T13	Cargo 1022 1053	45,000 MT 10% OO Bulk Limestone
+T14	Load_Place 1055 1070	Campha, Vietnam
+T15	Disch_Place 1073 1095	Chittagong, Bangladesh
+T16	Terms 1097 1133	7000 MT / 2500 MT , pwwd shinc bends
+T17	Laycan 1135 1139	Spot
+T18	Commission 1171 1185	2.5% adcom pus
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	When Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	

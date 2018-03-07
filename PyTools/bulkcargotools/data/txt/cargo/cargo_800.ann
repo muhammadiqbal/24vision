@@ -1,0 +1,15 @@
+T1	Commodity 44 49	wheat
+T2	Quantity 27 43	10.000/12.500 mt
+T3	Load_Place 255 272	RAVENNA OR ANCONA
+T4	Disch_Place 275 282	TUNISIE
+T5	Cargo 284 303	10.000/12.500 WHEAT
+T6	Terms 305 324	2000-3000/1500-1750
+T7	Laycan 326 338	28 MARCH ONW
+T8	Commission 340 348	2,50 TTL
+R1	What Arg1:T2 Arg2:T1	
+R2	From Arg1:T5 Arg2:T3	
+R3	To Arg1:T5 Arg2:T4	
+R4	How Arg1:T5 Arg2:T6	
+R5	When Arg1:T5 Arg2:T7	
+R6	Commission Arg1:T5 Arg2:T8	
+R7	Content Arg1:T5 Arg2:T2	

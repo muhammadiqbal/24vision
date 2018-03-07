@@ -1,0 +1,15 @@
+T1	Quantity 114 124	10.000 MTS
+T2	Load_Place 778 785	MARMARA
+T3	Disch_Place 789 795	ANNABA
+T4	Cargo 798 821	10.000 MTS STEEL BILLET
+T5	Laycan 823 835	5-7 MAY 2017
+T6	Terms 838 849	10 TTL DAYS
+T7	Commission 852 861	3.75% IAC
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T2	
+R3	When Arg1:T4 Arg2:T5	
+R4	How Arg1:T4 Arg2:T6	
+R5	Commission Arg1:T4 Arg2:T7	
+R6	Content Arg1:T4 Arg2:T1	
+T8	Commodity 125 137	STEEL BILLET
+R7	What Arg1:T1 Arg2:T8	

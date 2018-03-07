@@ -1,0 +1,13 @@
+T1	Load_Place 431 439	Shanghai
+T2	Disch_Place 447 459	P.Kamchatsky
+T3	Terms 469 472	CQD
+T4	Cargo 485 520	1074 pipes, pipes 1450 mt/ 3300 cbm
+T5	Laycan 631 647	end of May, 2017
+T6	Commission 689 698	1,25% pus
+R1	How Arg1:T4 Arg2:T3	
+R2	To Arg1:T4 Arg2:T2	
+R3	From Arg1:T4 Arg2:T1	
+R4	When Arg1:T4 Arg2:T5	
+R5	Commission Arg1:T4 Arg2:T6	
+T7	Commodity 126 131	Pipes
+R6	Including Arg1:T4 Arg2:T7	

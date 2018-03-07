@@ -1,0 +1,15 @@
+T1	Commodity 86 90	RICE
+T2	Quantity 78 81	20K
+T3	Cargo 146 163	20000 MT BGD RICE
+T4	Load_Place 165 171	YANGON
+T5	Disch_Place 174 181	ABIDJAN
+T6	Terms 183 194	1500 / 1500
+T7	Laycan 196 207	10/15 APRIL
+T8	Commission 217 222	3.75%
+R1	What Arg1:T2 Arg2:T1	
+R2	Content Arg1:T3 Arg2:T2	
+R3	To Arg1:T3 Arg2:T5	
+R4	From Arg1:T3 Arg2:T4	
+R5	How Arg1:T3 Arg2:T6	
+R6	When Arg1:T3 Arg2:T7	
+R7	Commission Arg1:T3 Arg2:T8	

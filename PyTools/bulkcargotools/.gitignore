@@ -1,0 +1,3 @@
+__pycache__
+extraction/sequence_tagging/data/_static/glove.6B/*.*
+#extraction/sequence_tagging/results/*

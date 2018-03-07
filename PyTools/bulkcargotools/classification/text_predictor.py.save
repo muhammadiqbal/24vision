@@ -1,0 +1,154 @@
+#This program is the responsible to predict the type of mails, it will receive
+#the mails from the server , this connection will be done by the API
+import pickle
+import json
+import classification.text_classification #classification.
+import classification.contractions #classification.
+#from   text_classification import normalize_corpus #classification.
+#from text_classification import normalize_corpus
+# Enable imports from parent/sibling directories/packages
+import sys
+import os
+sys.path.insert(0, os.path.abspath('..'))
+import api.api_client as api_client
+from nltk.stem import WordNetLemmatizer
+from nltk.corpus import wordnet as wn
+import nltk
+import re
+import string
+from classification.contractions import CONTRACTION_MAP
+from sklearn import metrics
+import numpy as np
+######################################################################
+
+stopword_list = nltk.corpus.stopwords.words('english')
+wnl = WordNetLemmatizer()
+
+
+#Method: Expand_Contractions( text, contraction_mapping )
+#Description:
+#   This method will recieve a text (mail) and will transform the contractions to the original form
+#   That will help to retrive better the words to the word matrix
+#Import Parameters:
+#   Text A string , a text we want to use remove the contractions
+#   Constraction_mapping , a list of the contractions in english and their respective transformations
+#Export Parameters:
+#   Expanded_text: string, the text wihtout the contractions
+   
+def expand_contractions(text, contraction_mapping):
+    contractions_pattern = re.compile('({})'.format(
+        '|'.join(contraction_mapping.keys())), flags=re.IGNORECASE | re.DOTALL)
+
+    def expand_match(contraction):
+        match = contraction.group(0)
+        first_char = match[0]
+        expanded_contraction = contraction_mapping.get(match)\
+            if contraction_mapping.get(match)\
+            else contraction_mapping.get(match.lower())
+        expanded_contraction = first_char + expanded_contraction[1:]
+        return expanded_contraction
+    expanded_text = contractions_pattern.sub(expand_match, text)
+    expanded_text = re.sub("'", "", expanded_text)
+    return expanded_text
+
+#Method: remove_stopwords( tokens )
+#Description:
+#   This method will delete the stopwords of the text. The stop words are compared using
+#   the stopwords dictionary from NKTK package
+#Import parameters:
+#   tokens: a token is sentence
+#Return parameters:
+#   filtered_tokens: the token without stopwords
+def remove_stopwords(tokens):
+    stopword_list = nltk.corpus.stopwords.words('english')
+    filtered_tokens = [token for token in tokens if token not in stopword_list]
+    return filtered_tokens
+
+#Method: lemmatize_corpus(text)
+#Description:
+#   This method will transform the words in their lemma, for example ate -> eat
+#bigger -> big . THis will help to count the words better in the word matrix
+#Import parameters:
+#   text is a string, this text also will need to have the tags per every word, definig what this word is
+#   for example. Ate,'V'  , beacuse is a verb . 
+#Return parameters:
+#   lematized_tokens= the text with all the words tranformed to their lemma   
+def lemmatize_corpus(text): # In parameter is a tokenized text
+    def penn_to_wn_tags(pos_tag):
+        if pos_tag.startswith('J'):
+            return wn.ADJ
+        elif pos_tag.startswith('V'):
+            return wn.VERB
+        elif pos_tag.startswith('N'):
+            return wn.NOUN
+        elif pos_tag.startswith('R'):
+            return wn.ADV
+        else:
+            return None
+
+    tagged_text = nltk.pos_tag(text)
+    tagged_converted_text = [(word, penn_to_wn_tags(pos_tag))
+                             for word, pos_tag in tagged_text]
+    lemmatized_tokens = [wnl.lemmatize(word, pos_tag) if pos_tag
+                         else word for word, pos_tag in tagged_converted_text]
+    return lemmatized_tokens
+
+#Method: normalize_corpus
+#Description:
+#   This method is the integration of all the methods which are related to the manipulation and normalization 
+#   of the text. This method encapsualte, the functions to put the text to lower, expand contractions
+#   remove_stopwords, lemmatize the corpus.
+#Import parameters:
+#   corpus is a string, in this case is every mail that was fetched from the data base
+#Export parameter: The corpus with all the normalized text
+def normalize_corpus(corpus):
+    normalized_corpus = []
+    translator = str.maketrans('', '', string.punctuation)
+    for i in mailCorpus:
+        text = i
+        text = text.lower()
+        text = expand_contractions(text, CONTRACTION_MAP)
+        text = text.translate(translator)
+        text = nltk.word_tokenize(text)
+        text = remove_stopwords(text)
+        text = lemmatize_corpus(text)
+        text = ' '.join(text)
+        normalized_corpus.append(text)
+    return normalized_corpus
+
+########################################################################
+
+#Read the pickles from the trainer program (text_classification.py) 
+filename = 'svm_email.sav' # Load the SVM classification model
+loaded_model = pickle.load(open(filename, 'rb'))
+filename = 'tfidf_vectorizer.sav'# Load the tfidf word matrix which the model trained
+tfidf_vectorizer = pickle.load(open(filename, 'rb'))
+
+emails =    api_client.query_api_get("emails", {"filter": "unclassified"}, "json", 5000) #Emails from API
+emaildata = json.loads(emails._content.decode('ascii'))
+mailCorpus = []
+mailID = []
+#Added a counter here to check wether the API fetches mails or not
+#Due to an error which is triggered by an empty array
+counter =  0
+for part in emaildata:
+    #if(part['classification_manual'] != 'Mix'):
+        mailCorpus.append(str(part['body']))
+        mailID.append(part['emailID'])
+        counter = counter +1 
+        
+print("no of fetched mails: "+ str(counter))
+
+normalized_corpus = normalize_corpus(mailCorpus) 
+tfidf_test_features = tfidf_vectorizer.transform(normalized_corpus)
+predictions  = loaded_model.predict(tfidf_test_features) #Run the predictor 
+output_proba = loaded_model.predict_proba(tfidf_test_features ) #Calculate tje probabilities of the prediction
+
+for mID, pred , proba  in zip(mailID, predictions , output_proba):
+    #output_proba[1]
+    ind = np.argpartition(proba, -1)[-1:]     #Take the better probability 
+    classif_data = {"classification_automated": pred,
+    "classification_automated_certainty": proba[ind] }
+    conID = "emails/" + str(mID)    
+    res4 = api_client.query_api_post(conID, classif_data) #Send the response to the server.
+  

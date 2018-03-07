@@ -1,0 +1,11 @@
+T1	Commission 399 407	2.5% ttl
+T2	Laycan 386 396	2 half may
+T4	Disch_Place 312 322	Port Sudán
+T5	Load_Place 283 298	Varna, Bulgaria
+T3	Terms 325 345;347 361	Ld rate 7000 mt shex Disch rate CQD
+T6	Cargo 182 214	480,000 MT Soft Milling Wheat G2
+R1	From Arg1:T6 Arg2:T5	
+R2	To Arg1:T6 Arg2:T4	
+R3	How Arg1:T6 Arg2:T3	
+R4	When Arg1:T6 Arg2:T2	
+R5	Commission Arg1:T6 Arg2:T1	

@@ -1,0 +1,17 @@
+T1	Cargo 157 205	20,000 - 40,000 MT OF AGGREGATES IN BULK (20 MM)
+T2	Quantity 38 55	20000 to 40000 mt
+T3	Commodity 59 77	Aggregates in bulk
+T4	Load_Place 206 213	CHENNAI
+T5	Disch_Place 216 226	CHITTAGONG
+T6	Port_No 308 311	1/1
+T7	Laycan 258 271	15-20TH APRIL
+T8	Terms 227 257	6,000 MT SHINC / 2500 MT FHINC
+T9	Commission 312 321	2.50% TTL
+R1	Content Arg1:T1 Arg2:T2	
+R2	What Arg1:T2 Arg2:T3	
+R3	From Arg1:T1 Arg2:T4	
+R4	To Arg1:T1 Arg2:T5	
+R5	How Arg1:T1 Arg2:T8	
+R6	When Arg1:T1 Arg2:T7	
+R7	No_Of_Ports Arg1:T1 Arg2:T6	
+R8	Commission Arg1:T1 Arg2:T9	

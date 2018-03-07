@@ -1,0 +1,11 @@
+T1	Load_Place 219 228	Barcelona
+T2	Disch_Place 245 277	Paranagua chopt Antonina, Brazil
+T3	Terms 351 406	4,500sshex / 7,000c at Paranagua and 6,000c at Antonina
+T4	Commission 641 657	2.50% Addcom PUS
+T5	Laycan 424 438	03-05 May 2017
+T6	Cargo 295 333	abt 28,000mt Bulk Harmless Fertilizers
+R1	How Arg1:T6 Arg2:T3	
+R2	When Arg1:T6 Arg2:T5	
+R3	Commission Arg1:T6 Arg2:T4	
+R4	To Arg1:T6 Arg2:T2	
+R5	From Arg1:T6 Arg2:T1	

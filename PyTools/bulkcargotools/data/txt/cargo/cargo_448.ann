@@ -1,0 +1,13 @@
+T1	Commodity 130 137	TAPICOA
+T2	Cargo 425 463	ABT45000 MTS TAPIOCA CHIPS S.F ABT 1.8
+T3	Load_Place 474 493	KOHSICHANG THAILAND
+T4	Disch_Place 500 532	Lianyungang OR Rizhao port CHINA
+T5	Terms 543 563	7000/3000 PWWD SHINC
+T6	Laycan 581 596	15th APRIL 2017
+T7	Commission 650 665	TTL 2.5 PCT PUS
+R1	From Arg1:T2 Arg2:T3	
+R2	To Arg1:T2 Arg2:T4	
+R3	How Arg1:T2 Arg2:T5	
+R4	When Arg1:T2 Arg2:T6	
+R5	Commission Arg1:T2 Arg2:T7	
+R6	Including Arg1:T2 Arg2:T1	

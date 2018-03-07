@@ -1,0 +1,22 @@
+T1	Load_Place 635 650	Misurata, Libya
+T2	Disch_Place 654 672	Alexandria , Egypt
+T3	Cargo 675 738	ttl 18.000MTS (3 x 6.000MTS per shipment )Plastic raw materials
+T4	Commission 817 826	3.75% iac
+T5	Laycan 793 814	ready from 10-15 days
+T6	Commission 861 870	3.75% IAC
+T7	Cargo 875 928	MIN 20.000 MTS  5 PCT IN OO, WHEAT IN BULK, SF ABT 46
+T8	Load_Place 930 950	NOVOROSSIYSK, RUSSIA
+T9	Disch_Place 953 969	AS SALEEF, YEMEN
+T10	Laycan 971 994	01 - 05.MAY.2017 ONWARD
+T11	Terms 996 1021	7.000 SHINC / 3.500 FHINC
+T12	Commission 1023 1032	3.75% IAC
+R1	To Arg1:T7 Arg2:T9	
+R2	From Arg1:T7 Arg2:T8	
+R3	When Arg1:T7 Arg2:T10	
+R4	How Arg1:T7 Arg2:T11	
+R5	Commission Arg1:T7 Arg2:T12	
+R6	Commission Arg1:T7 Arg2:T6	
+R7	To Arg1:T3 Arg2:T2	
+R8	From Arg1:T3 Arg2:T1	
+R9	When Arg1:T3 Arg2:T5	
+R10	Commission Arg1:T3 Arg2:T4	

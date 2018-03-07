@@ -1,0 +1,15 @@
+T1	Load_Place 588 596	MALAYSIA
+T2	Disch_Place 600 605	YEMEN
+T3	Cargo 608 635	8/15.000 DWT TIMBER/PLYWOOD
+T4	Commission 682 691	3.75% IAC
+T5	Terms 636 646	TOTAL DAYS
+T6	Laycan 670 681	PPT ONWARDS
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	How Arg1:T3 Arg2:T5	
+R4	When Arg1:T3 Arg2:T6	
+R5	Commission Arg1:T3 Arg2:T4	
+T7	Quantity 66 78	8/15.000 DWT
+T8	Commodity 79 93	TIMBER/PLYWOOD
+R6	Content Arg1:T3 Arg2:T7	
+R7	What Arg1:T7 Arg2:T8	

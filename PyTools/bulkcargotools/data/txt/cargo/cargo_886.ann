@@ -1,0 +1,13 @@
+T1	Commodity 40 51	steel pipes
+T3	Load_Place 698 719	Porto Marghera, Italy
+T4	Disch_Place 738 764	Dammam port , Saudi Arabia
+T2	Cargo 1051 1081;786 797	: Total 4,500 tns 10% molchopt STEEL PIPES
+T5	Laycan 1219 1232	April 21 - 28
+T6	Terms 1257 1326;1405 1433	Loading terms: 600 mton/day SATPMSHEX per gang, max 2 gangs simo pwwd - Discharge terms: liner out
+R1	To Arg1:T2 Arg2:T4	
+R2	From Arg1:T2 Arg2:T3	
+R3	Including Arg1:T2 Arg2:T1	
+R4	When Arg1:T2 Arg2:T5	
+R5	How Arg1:T2 Arg2:T6	
+T7	Commission 2561 2566	1.25%
+R6	Commission Arg1:T2 Arg2:T7	

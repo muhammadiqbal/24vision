@@ -1,0 +1,13 @@
+T1	Commodity 77 79	AN
+T2	Cargo 141 174	20,000 10pct Moloo AN in Big Bags
+T3	Load_Place 177 190	St Petersburg
+T4	Disch_Place 193 198	Vizag
+T5	Terms 200 223	1700 shinc / 1000 shinc
+T6	Commission 253 273	3,75 adc + 1,25 Bery
+T7	Laycan 226 250	End April / Beg May 2017
+R1	Including Arg1:T2 Arg2:T1	
+R2	To Arg1:T2 Arg2:T4	
+R3	From Arg1:T2 Arg2:T3	
+R4	How Arg1:T2 Arg2:T5	
+R5	When Arg1:T2 Arg2:T7	
+R6	Commission Arg1:T2 Arg2:T6	

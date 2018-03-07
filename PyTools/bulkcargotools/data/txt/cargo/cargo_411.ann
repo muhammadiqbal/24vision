@@ -1,0 +1,20 @@
+T1	Load_Place 550 557	Leghorn
+T2	Disch_Place 561 574	St Petersburg
+T3	Cargo 577 601	158 mts/895 cbm/70 cases
+T4	Laycan 636 647	18/22 April
+T5	Commission 659 668	3.75% iac
+T6	Load_Place 700 710	Danube Rvr
+T7	Disch_Place 716 724	WC Italy
+T8	Cargo 727 748	5/5.500mt blk dwt cgo
+T9	Laycan 749 758	apr 21/25
+T10	Terms 759 767	ttl daps
+T11	Commission 768 777	3.75% iac
+R1	To Arg1:T8 Arg2:T7	
+R2	From Arg1:T8 Arg2:T6	
+R3	When Arg1:T8 Arg2:T9	
+R4	How Arg1:T8 Arg2:T10	
+R5	Commission Arg1:T8 Arg2:T11	
+R6	To Arg1:T3 Arg2:T2	
+R7	From Arg1:T3 Arg2:T1	
+R8	When Arg1:T3 Arg2:T4	
+R9	Commission Arg1:T3 Arg2:T5	

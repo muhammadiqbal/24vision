@@ -1,0 +1,57 @@
+T1	Load_Place 550 555	Raahe
+T2	Disch_Place 573 582	Amsterdam
+T3	Cargo 585 607	10.000ts 10pct coke 70
+T4	Laycan 612 621	ppt/onwds
+T5	Terms 644 673	4.000ts sshex - 4.000ts shinc
+T6	Commission 674 690	gencon 3.75% iac
+T7	Commission 707 716	3.75% IAC
+T8	Load_Place 718 726	ST. PETE
+T9	Disch_Place 730 737	RAVENNA
+T10	Cargo 740 775	14.000/16.000 MTS HMS1+2 ABT 61/62'
+T11	Terms 776 805	3.000 SHINC / 3.000 SSHEX EIU
+T12	Laycan 813 823	7/10 APRIL
+T13	Load_Place 830 849	Matanzas, Venezuela
+T14	Disch_Place 853 866	Mumbai, India
+T15	Cargo 869 882	22,700 MT HRC
+T16	Laycan 897 911	End April 2017
+T17	Terms 930 979	CQD COP Load/LO Under The Hook/Try FO 5,000 SHINC
+T18	Commission 980 995	Gencon 5.0% iac
+T19	Commission 1019 1028	3.75% IAC
+T20	Cargo 1029 1063	20,000MT 10% MOLOO BLK HLESS FERTS
+T21	Load_Place 1071 1076	AQABA
+T22	Disch_Place 1091 1099	WC.INDIA
+T23	Terms 1100 1126	8000/3000 OR AT CHOPT 5000
+T24	Laycan 1127 1144	2ND HALF OF APRIL
+T25	Commission 1287 1301	3.75% IAC 2.5%
+T26	Cargo 1303 1353	47,000-49,000MT TAPIOCA CHIPS IN BULK (SF ABT 1.87
+T27	Load_Place 1374 1394	KOHSICHANG, THAILAND
+T28	Disch_Place 1402 1415	RIZHAO, CHINA
+T29	Laycan 1422 1433	25-30TH APR
+T30	Terms 1445 1482	7,000MT PWWD SHINC/3,500MT PWWD SHINC
+T31	Port_No 1524 1527	1/1
+R1	From Arg1:T26 Arg2:T27	
+R2	To Arg1:T26 Arg2:T28	
+R3	When Arg1:T26 Arg2:T29	
+R4	No_Of_Ports Arg1:T26 Arg2:T31	
+R5	How Arg1:T26 Arg2:T30	
+R6	Commission Arg1:T26 Arg2:T25	
+R7	From Arg1:T20 Arg2:T21	
+R8	To Arg1:T20 Arg2:T22	
+R9	How Arg1:T20 Arg2:T23	
+R10	When Arg1:T20 Arg2:T24	
+R11	Commission Arg1:T20 Arg2:T19	
+R12	To Arg1:T15 Arg2:T14	
+R13	From Arg1:T15 Arg2:T13	
+R14	When Arg1:T15 Arg2:T16	
+R15	How Arg1:T15 Arg2:T17	
+R16	Commission Arg1:T15 Arg2:T18	
+R17	To Arg1:T10 Arg2:T9	
+R18	From Arg1:T10 Arg2:T8	
+R19	How Arg1:T10 Arg2:T11	
+R20	When Arg1:T10 Arg2:T12	
+R21	Commission Arg1:T10 Arg2:T7	
+R22	To Arg1:T3 Arg2:T2	
+R23	From Arg1:T3 Arg2:T1	
+R24	When Arg1:T3 Arg2:T4	
+R25	How Arg1:T3 Arg2:T5	
+R26	Commission Arg1:T3 Arg2:T6	

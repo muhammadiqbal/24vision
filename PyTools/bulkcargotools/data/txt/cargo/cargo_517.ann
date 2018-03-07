@@ -1,0 +1,15 @@
+T1	Commodity 59 81	Plywood MDF and timber
+T2	Cargo 157 196;227 231;232 237	5200 -15,000 CBM Plywood MDF and timber S.F. 3 CBM
+T3	Load_Place 252 280	Penang and Bintulu, malaysia
+T4	Disch_Place 293 304	Aden, yemen
+T5	Terms 352 380;382 419	Load rate: 15 days SSHEX EIU Dis rate: 20 days FHEX (incl Sat) EIU
+T6	Laycan 430 436	Propmt
+T7	Port_No 515 518	2/2
+T8	Commission 525 534	2.50% ttl
+R1	From Arg1:T2 Arg2:T3	
+R2	To Arg1:T2 Arg2:T4	
+R3	How Arg1:T2 Arg2:T5	
+R4	When Arg1:T2 Arg2:T6	
+R5	Including Arg1:T2 Arg2:T1	
+R6	No_Of_Ports Arg1:T2 Arg2:T7	
+R7	Commission Arg1:T2 Arg2:T8	

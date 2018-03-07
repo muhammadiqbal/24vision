@@ -1,0 +1,15 @@
+T1	Commission 799 807	5.0% iac
+T2	Laycan 780 794	12-15 April'17
+T3	Terms 751 772	3000 / 3000 sshex eiu
+T4	Load_Place 687 695	Nikolaev
+T5	Disch_Place 699 708	Tuticorin
+T6	Cargo 711 749	abt 25000 mts bulk agriprods sf abt 62
+T7	Quantity 122 131	25000 mts
+T8	Commodity 137 146	agriprods
+R1	What Arg1:T7 Arg2:T8	
+R2	To Arg1:T6 Arg2:T5	
+R3	From Arg1:T6 Arg2:T4	
+R4	How Arg1:T6 Arg2:T3	
+R5	When Arg1:T6 Arg2:T2	
+R6	Commission Arg1:T6 Arg2:T1	
+R7	Content Arg1:T6 Arg2:T7	

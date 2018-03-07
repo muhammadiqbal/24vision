@@ -1,0 +1,15 @@
+T1	Commission 386 394	2.5% ttl
+T2	Laycan 320 326	Prompt
+T3	Port_No 382 385	1/2
+T4	Cargo 151 191	50,000 - 55,000 mt of aggregates in bulk
+T5	Load_Place 204 209	Sohar
+T6	Disch_Place 228 249	Chittagong and Mongla
+T7	Terms 250 277;279 310	Load rate : 12,000 mt fhinc Discharge rate : 3,000 mt fhinc
+T8	Commodity 57 67	aggregates
+R1	From Arg1:T4 Arg2:T5	
+R2	To Arg1:T4 Arg2:T6	
+R3	How Arg1:T4 Arg2:T7	
+R4	When Arg1:T4 Arg2:T2	
+R5	No_Of_Ports Arg1:T4 Arg2:T3	
+R6	Commission Arg1:T4 Arg2:T1	
+R7	Including Arg1:T4 Arg2:T8	

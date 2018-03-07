@@ -1,0 +1,21 @@
+T1	Terms 466 483	7,000 C / 3,500 C
+T2	Terms 249 266	7,000 C / 3,500 c
+T3	Load_Place 213 224	Novorossysk
+T4	Load_Place 433 444	Novorossysk
+T5	Disch_Place 227 235	As Salif
+T6	Disch_Place 445 450	B.i.k
+T7	Laycan 455 465	30 Apr/Onw
+T8	Laycan 240 248	1-10 May
+T9	Cargo 408 432	Min 20,000/5% more chopt
+T10	Cargo 178 212	Min 20,000/5% more chopt blk wheat
+T11	Commission 164 176	1.25 ADD PUS
+R1	Commission Arg1:T10 Arg2:T11	
+R2	To Arg1:T10 Arg2:T5	
+R3	From Arg1:T10 Arg2:T3	
+R4	When Arg1:T10 Arg2:T8	
+R5	How Arg1:T10 Arg2:T2	
+R6	To Arg1:T9 Arg2:T6	
+R7	From Arg1:T9 Arg2:T4	
+R8	When Arg1:T9 Arg2:T7	
+R9	How Arg1:T9 Arg2:T1	
+R10	Commission Arg1:T9 Arg2:T11	

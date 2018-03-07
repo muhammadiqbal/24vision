@@ -1,0 +1,9 @@
+T1	Commission 704 724	2.5 pct add comm pus
+T2	Disch_Place 393 405;407 418;438 463	SFdS, Brazil or in CHOPT Itaqui - Rio Grande range
+T3	Load_Place 260 279	Klaipeda, Lithuania
+T4	Laycan 337 350	27-29/04/2017
+T5	Cargo 133 190	32500 - 34100 mts in OO of MOP in bulk, STW abt 1.0 m3/mt
+R1	From Arg1:T5 Arg2:T3	
+R2	When Arg1:T5 Arg2:T4	
+R3	To Arg1:T5 Arg2:T2	
+R4	Commission Arg1:T5 Arg2:T1	

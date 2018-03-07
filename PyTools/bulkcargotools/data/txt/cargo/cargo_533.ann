@@ -1,0 +1,15 @@
+T1	Cargo 233 252	30,000 Mt bulk coal
+T2	Load_Place 254 276	Muara Berau, Indonesia
+T3	Disch_Place 280 304	Caojing. Shanghai, China
+T4	Terms 306 337	8000 mt / 12,000 mt, pwwd shinc
+T5	Laycan 339 356	14/18 April, 2017
+T6	Commission 358 372	2.5% adcom pus
+T7	Quantity 126 135	30,000 Mt
+T8	Commodity 136 145	bulk coal
+R1	What Arg1:T7 Arg2:T8	
+R2	From Arg1:T1 Arg2:T2	
+R3	To Arg1:T1 Arg2:T3	
+R4	How Arg1:T1 Arg2:T4	
+R5	When Arg1:T1 Arg2:T5	
+R6	Commission Arg1:T1 Arg2:T6	
+R7	Content Arg1:T1 Arg2:T7	

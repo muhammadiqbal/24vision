@@ -1,0 +1,15 @@
+T1	Commodity 35 40	wheat
+T2	Quantity 27 34	1100 mt
+T3	Load_Place 231 237	ANCONA
+T4	Disch_Place 240 247	TRIESTE
+T5	Cargo 248 262	1100 TNS WHEAT
+T6	Terms 264 274	3 TTL DAYS
+T7	Laycan 276 284	SPOT PPT
+T8	Commission 286 296	3.75 % TTL
+R1	From Arg1:T5 Arg2:T3	
+R2	To Arg1:T5 Arg2:T4	
+R3	What Arg1:T2 Arg2:T1	
+R4	Content Arg1:T5 Arg2:T2	
+R5	How Arg1:T5 Arg2:T6	
+R6	When Arg1:T5 Arg2:T7	
+R7	Commission Arg1:T5 Arg2:T8	

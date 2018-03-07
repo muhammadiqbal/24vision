@@ -1,0 +1,23 @@
+T1	Load_Place 299 313	Kashima, Japan
+T2	Disch_Place 321 333	Ulsan, Korea
+T3	Disch_Place 517 538	Batangas, Philippines
+T4	Load_Place 492 509	Saganoseki, Japan
+T5	Terms 591 614	3.0K/ 2.0K PWWD SHEX UU
+T6	Terms 356 363	CQD/CQD
+T7	Cargo 207 234	5,185 mt/10% Molco HR Coils
+T8	Laycan 257 271	29th Apr. 2017
+T9	Port_No 395 398	1/1
+T10	Cargo 403 435	6,800mt / 10% Moloo Slag in bulk
+T11	Laycan 548 571	29th Apr/ 03rd May 2017
+T12	Commission 741 757	2.50% AddCom PUS
+R1	From Arg1:T7 Arg2:T1	
+R2	When Arg1:T7 Arg2:T8	
+R3	To Arg1:T7 Arg2:T2	
+R4	No_Of_Ports Arg1:T7 Arg2:T9	
+R5	How Arg1:T7 Arg2:T6	
+R6	From Arg1:T10 Arg2:T4	
+R7	When Arg1:T10 Arg2:T11	
+R8	To Arg1:T10 Arg2:T3	
+R9	How Arg1:T10 Arg2:T5	
+R10	Commission Arg1:T10 Arg2:T12	
+R11	Commission Arg1:T7 Arg2:T12	

@@ -1,0 +1,13 @@
+T1	Commodity 111 120	aggregate
+T2	Commission 669 683	3.75% IAC 2.5%
+T3	Load_Place 691 697	Kandla
+T4	Disch_Place 725 749	PAYRA BANDAR, Bangladesh
+T5	Cargo 752 817	50.000 mts bulk aggregate 10-20 mm in size +/- 10% carrier option
+T6	Laycan 818 838	Prompt, try vsl date
+T7	Terms 839 899;900 915	10000 mts pwwd shinc ld rate /3000 mts pwwd fhinc disch rate 12 hrs tt bends
+R1	To Arg1:T5 Arg2:T4	
+R2	Commission Arg1:T5 Arg2:T2	
+R3	From Arg1:T5 Arg2:T3	
+R4	When Arg1:T5 Arg2:T6	
+R5	How Arg1:T5 Arg2:T7	
+R6	Including Arg1:T5 Arg2:T1	

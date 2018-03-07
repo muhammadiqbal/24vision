@@ -1,0 +1,11 @@
+T1	Commission 912 920	2.5% TTL
+T3	Laycan 763 777	05/10 May 2017
+T4	Load_Place 688 695	M.China
+T5	Disch_Place 703 711	EC INDIA
+T6	Cargo 714 752	15.000 MTS  5% MOLCHOP in Bulk, SF 1.3
+T2	Terms 779 842;844 910	Load rate: 6000 MT / 24 hours WWDSSHINC with 4 workable hatches Discharge rate: 3500 MT / 24 hours WWDSHINC basis 4 cranes working
+R1	To Arg1:T6 Arg2:T5	
+R2	From Arg1:T6 Arg2:T4	
+R3	When Arg1:T6 Arg2:T3	
+R4	How Arg1:T6 Arg2:T2	
+R5	Commission Arg1:T6 Arg2:T1	

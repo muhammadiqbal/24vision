@@ -1,0 +1,13 @@
+T1	Laycan 846 860	23-25 April'17
+T2	Terms 817 838	1500 / 2000 sshex eiu
+T3	Load_Place 739 746	Kherson
+T4	Disch_Place 750 767	Brest-St.Malo rng
+T5	Cargo 770 813	abt 6000 mts agriprods, sf abt 62 / in bulk
+T6	Commission 723 737	3.75% IAC 2.5%
+T8	Commodity 138 147	agriprods
+R1	To Arg1:T5 Arg2:T4	
+R2	From Arg1:T5 Arg2:T3	
+R3	How Arg1:T5 Arg2:T2	
+R4	When Arg1:T5 Arg2:T1	
+R5	Commission Arg1:T5 Arg2:T6	
+R6	Including Arg1:T5 Arg2:T8	

@@ -1,0 +1,15 @@
+T1	Quantity 116 131	10/12.000 mtons
+T2	Load_Place 683 688	Nador
+T3	Disch_Place 692 702	Alexandria
+T4	Cargo 705 741	10/12.000 mtons mins in bulk stw dwt
+T5	Laycan 743 759	22 April onwards
+T6	Terms 762 786	3500 / 2500  shinc/fhinc
+T7	Commission 813 821	5.0% iac
+T8	Commodity 132 136	mins
+R1	What Arg1:T1 Arg2:T8	
+R2	To Arg1:T4 Arg2:T3	
+R3	From Arg1:T4 Arg2:T2	
+R4	When Arg1:T4 Arg2:T5	
+R5	How Arg1:T4 Arg2:T6	
+R6	Commission Arg1:T4 Arg2:T7	
+R7	Content Arg1:T4 Arg2:T1	

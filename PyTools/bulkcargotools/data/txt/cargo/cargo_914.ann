@@ -1,0 +1,11 @@
+T1	Commission 408 414	4% ttl
+T2	Laycan 396 406	week 15/16
+T3	Terms 385 394	7000/7000
+T4	Cargo 357 383	abt 23.000 Bauxiet in bulk
+T5	Load_Place 334 343	Iskendrun
+T6	Disch_Place 346 355	Rotterdam
+R1	To Arg1:T4 Arg2:T6	
+R2	From Arg1:T4 Arg2:T5	
+R3	How Arg1:T4 Arg2:T3	
+R4	When Arg1:T4 Arg2:T2	
+R5	Commission Arg1:T4 Arg2:T1	

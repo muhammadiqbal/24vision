@@ -1,0 +1,13 @@
+T1	Commission 1558 1567	3.75% iac
+T2	Terms 1392 1491	4000 mt pwwd of 24 consec hrs wwd satshex uu iuatc be fri 1700 / mon 0800 hrs not to count UU bends
+T5	Laycan 977 994	05/09 april, 2017
+T6	Cargo 740 799	min 13,000. mts 5 pct more in chopt bulk copper concentrate
+R1	When Arg1:T6 Arg2:T5	
+R4	How Arg1:T6 Arg2:T2	
+R5	Commission Arg1:T6 Arg2:T1	
+T7	Commodity 131 149	copper concentrate
+R6	Including Arg1:T6 Arg2:T7	
+T4	Load_Place 1031 1044	Poti, Georgia
+T3	Disch_Place 1288 1301	Beihai, China
+R2	From Arg1:T6 Arg2:T4	
+R3	To Arg1:T6 Arg2:T3	

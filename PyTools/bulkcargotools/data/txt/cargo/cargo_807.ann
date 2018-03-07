@@ -1,0 +1,15 @@
+T1	Quantity 27 34	4000 mt
+T2	Cargo 241 269	4000 mts steel scrap abt 75'
+T3	Load_Place 270 281	Split+Ploce
+T4	Disch_Place 284 307	Icdas port, Marmara sea
+T5	Laycan 308 317	1/5 April
+T6	Terms 319 329	7 ttl days
+T7	Commission 334 347	3,75% add pus
+R1	Commission Arg1:T2 Arg2:T7	
+R2	How Arg1:T2 Arg2:T6	
+R3	When Arg1:T2 Arg2:T5	
+R4	From Arg1:T2 Arg2:T3	
+R5	To Arg1:T2 Arg2:T4	
+R6	Content Arg1:T2 Arg2:T1	
+T8	Commodity 35 47	steel screap
+R7	What Arg1:T1 Arg2:T8	

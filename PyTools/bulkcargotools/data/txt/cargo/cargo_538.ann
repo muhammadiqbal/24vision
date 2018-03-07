@@ -1,0 +1,15 @@
+T1	Quantity 126 141	18.000/25.000mt
+T2	Commodity 149 155	cement
+T3	Cargo 263 284;286 308	Min 18K mt Max 25K mt Bagged cement in jumbo
+T4	Load_Place 310 318	BIK IRAN
+T5	Disch_Place 319 332	MUKALLA YEMEN
+T6	Terms 334 360	3000/3000 mt fhinc fhex uu
+T7	Laycan 362 368	Prompt
+T8	Commission 416 433	1.25% Addcomm pus
+R1	To Arg1:T3 Arg2:T5	
+R2	From Arg1:T3 Arg2:T4	
+R3	How Arg1:T3 Arg2:T6	
+R4	When Arg1:T3 Arg2:T7	
+R5	Commission Arg1:T3 Arg2:T8	
+R6	Content Arg1:T3 Arg2:T1	
+R7	What Arg1:T1 Arg2:T2	

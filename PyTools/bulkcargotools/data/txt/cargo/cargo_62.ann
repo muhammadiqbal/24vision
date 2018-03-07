@@ -1,0 +1,15 @@
+T1	Commission 831 839	2.5% ttl
+T2	Laycan 818 829	10-11 April
+T3	Terms 806 816	2500 / CQD
+T4	Load_Place 714 728	Eregli, Turkey
+T5	Disch_Place 732 761	Valleyfield + Windsor, Canada
+T6	Cargo 764 803	12.500 / 15.800 tons chopt steel plates
+T7	Quantity 144 164	12.500 / 15.800 tons
+T8	Commodity 171 183	steel plates
+R1	What Arg1:T7 Arg2:T8	
+R2	To Arg1:T6 Arg2:T5	
+R3	From Arg1:T6 Arg2:T4	
+R4	How Arg1:T6 Arg2:T3	
+R5	When Arg1:T6 Arg2:T2	
+R6	Commission Arg1:T6 Arg2:T1	
+R7	Content Arg1:T6 Arg2:T7	

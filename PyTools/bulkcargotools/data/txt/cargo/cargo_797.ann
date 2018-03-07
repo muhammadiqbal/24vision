@@ -1,0 +1,13 @@
+T1	Commodity 55 60	SCRAP
+T2	Cargo 139 175	25,000 MT 10 PCT SCRAP XMBT STOW DWT
+T3	Disch_Place 187 196	VERA CRUZ
+T4	Load_Place 178 186	NEW YORK
+T5	Laycan 199 210	APRIL 23 ON
+T6	Terms 213 234	7000 SHINC/5000 SHINC
+T7	Commission 237 250	3.75 PCT ?PUS
+R1	To Arg1:T2 Arg2:T3	
+R2	From Arg1:T2 Arg2:T4	
+R3	When Arg1:T2 Arg2:T5	
+R4	How Arg1:T2 Arg2:T6	
+R5	Commission Arg1:T2 Arg2:T7	
+R6	Including Arg1:T2 Arg2:T1	

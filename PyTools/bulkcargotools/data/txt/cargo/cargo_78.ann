@@ -1,0 +1,15 @@
+T1	Quantity 116 127	5/8.000 mts
+T2	Load_Place 781 787	Mersin
+T3	Disch_Place 791 800	Allicante
+T4	Cargo 803 827	5/8.000 mts White cement
+T5	Laycan 829 843	1ST WEEK APRIL
+T6	Terms 851 880	2500-3000 / 1800 mt SSHEX EIU
+T7	Commission 882 890	2.5% ttl
+T8	Commodity 128 140	White cement
+R1	What Arg1:T1 Arg2:T8	
+R2	To Arg1:T4 Arg2:T3	
+R3	From Arg1:T4 Arg2:T2	
+R4	When Arg1:T4 Arg2:T5	
+R5	How Arg1:T4 Arg2:T6	
+R6	Commission Arg1:T4 Arg2:T7	
+R7	Content Arg1:T4 Arg2:T1	

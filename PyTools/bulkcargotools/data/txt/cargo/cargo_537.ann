@@ -1,0 +1,15 @@
+T1	Cargo 236 256	ttl 5000mt steel cgo
+T2	Load_Place 269 279	lanshan,cn
+T3	Disch_Place 281 303	kwangyang+ ulsan,korea
+T4	Port_No 393 396	1/2
+T5	Laycan 354 357	ppt
+T6	Commission 403 411	2.5% pus
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	When Arg1:T1 Arg2:T5	
+R4	No_Of_Ports Arg1:T1 Arg2:T4	
+R5	Commission Arg1:T1 Arg2:T6	
+T7	Quantity 130 136	5000mt
+R6	Content Arg1:T1 Arg2:T7	
+T8	Commodity 137 142	steel
+R7	What Arg1:T7 Arg2:T8	

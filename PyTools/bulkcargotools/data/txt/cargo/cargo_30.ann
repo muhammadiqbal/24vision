@@ -1,0 +1,13 @@
+T1	Load_Place 825 833	Bandirma
+T2	Disch_Place 837 846	Immingham
+T3	Cargo 849 930	abt 4300 mt +/-5% in chopt hless minerals in bulk and bb (2500 mt blk+1800 mt bb)
+T4	Laycan 939 948	05/08 Apr
+T5	Terms 952 964	5 total days
+T6	Commission 967 975	2.5% ttl
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+T7	Commodity 150 164	hless minerals
+R6	Including Arg1:T3 Arg2:T7	

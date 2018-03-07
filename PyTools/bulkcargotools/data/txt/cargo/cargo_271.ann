@@ -1,0 +1,15 @@
+T1	Commission 736 744	2.5% TTL
+T2	Terms 724 734	5 TTL DAYS
+T3	Laycan 711 722	25/30 APRIL
+T4	Load_Place 667 671	SFAX
+T5	Disch_Place 675 682	ABIDJAN
+T6	Cargo 685 703	3000 MTS MIN IN BB
+T7	Quantity 112 120	3000 MTS
+R1	To Arg1:T6 Arg2:T5	
+R2	From Arg1:T6 Arg2:T4	
+R3	When Arg1:T6 Arg2:T3	
+R4	How Arg1:T6 Arg2:T2	
+R5	Commission Arg1:T6 Arg2:T1	
+T8	Commodity 121 124	MIN
+R6	What Arg1:T7 Arg2:T8	
+R7	Content Arg1:T6 Arg2:T7	

@@ -1,0 +1,11 @@
+T1	Load_Place 605 613	WC India
+T2	Disch_Place 623 625	PG
+T3	Cargo 628 680	10.000 MTS +/-5% MOLCO IN BULK, NON HAZ., SF 1.0 CBM
+T4	Laycan 686 700	01/05 May 2017
+T6	Commission 790 798	2.5% TTL
+T5	Terms 706 789	750 mt per hook per WWD SHEX EIU / 1000 mt per WWD FHEX EIU, basis 3 workable hooks
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	

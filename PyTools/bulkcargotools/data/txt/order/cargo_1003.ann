@@ -1,0 +1,11 @@
+T1	Laycan 339 350	April 19-21
+T2	Load_Place 300 312	Uusikaupunki
+T3	Disch_Place 315 319;322 328	Tema Douala
+T4	Terms 394 399;424 429;438 443	6000c 2500c 1500c
+T5	Commission 447 459	2.5 % addcom
+T6	Cargo 261 295	abt 17.000mt NPK in bulk, 2 grades
+R1	From Arg1:T6 Arg2:T2	
+R2	To Arg1:T6 Arg2:T3	
+R3	When Arg1:T6 Arg2:T1	
+R4	How Arg1:T6 Arg2:T4	
+R5	Commission Arg1:T6 Arg2:T5	

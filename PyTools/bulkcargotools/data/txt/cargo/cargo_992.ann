@@ -1,0 +1,11 @@
+T1	Cargo 129 166	43000 mt +/- 10 pct in OO of bulk MOP
+T2	Load_Place 242 261	Klaipeda, Lithuania
+T4	Laycan 354 367	13-15/04/2017
+T3	Disch_Place 421 439;556 589	Gresik, Indonesia, Kalimireng/Maspion terminal  
+and
+T5	Commission 915 935	2.5 pct add comm pus
+T6	Disch_Place 421 438	Gresik, Indonesia
+R1	From Arg1:T1 Arg2:T2	
+R2	When Arg1:T1 Arg2:T4	
+R3	To Arg1:T1 Arg2:T6	
+R4	Commission Arg1:T1 Arg2:T5	

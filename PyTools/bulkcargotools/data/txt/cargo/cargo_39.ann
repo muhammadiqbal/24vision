@@ -1,0 +1,11 @@
+T1	Load_Place 220 224	Azov
+T2	Disch_Place 225 258	Samsun or Marmara or Aliaga range
+T3	Cargo 260 296	2500 +/-10 pct SFS in bulk sf abt 85
+T4	Terms 298 307	1000/1000
+T5	Laycan 309 322	23-27.04.2017
+T6	Commission 325 330	3.75%
+R1	From Arg1:T3 Arg2:T1	
+R2	To Arg1:T3 Arg2:T2	
+R3	How Arg1:T3 Arg2:T4	
+R4	When Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	

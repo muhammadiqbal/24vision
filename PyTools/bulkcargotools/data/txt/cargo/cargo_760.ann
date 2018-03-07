@@ -1,0 +1,17 @@
+T1	Quantity 161 167	42/50K
+T2	Commodity 172 177	WHEAT
+T3	Cargo 391 444;461 476	M/M 42000/50000 Of Bgd Wheat Flour Packed In Big Bags /Stwf Abt = 57’
+T4	Load_Place 488 507	Iskenderun + Mersin
+T6	Terms 542 629;631 676	Loading Rate’s 3000 Tons At Iskenderun And 2000 Tons At Mersin Pwwd Sshex Bss Eiu Bends Discharging Rate 1500 Tons Pwwd Fshex Bss Eiu
+T7	Port_No 714 717	2/1
+T8	Laycan 731 766	25 – 30 April 17, Can Try Vsl Dates
+T9	Commission 854 870	2.5% Ttl Com Iac
+T5	Disch_Place 510 520	Port Sudan
+R1	What Arg1:T1 Arg2:T2	
+R2	Content Arg1:T3 Arg2:T1	
+R3	To Arg1:T3 Arg2:T5	
+R4	From Arg1:T3 Arg2:T4	
+R5	How Arg1:T3 Arg2:T6	
+R6	No_Of_Ports Arg1:T3 Arg2:T7	
+R7	When Arg1:T3 Arg2:T8	
+R8	Commission Arg1:T3 Arg2:T9	

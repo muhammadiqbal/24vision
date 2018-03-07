@@ -1,0 +1,11 @@
+T1	Load_Place 167 176	Jebel Ali
+T2	Disch_Place 182 187	Sudan
+T3	Cargo 188 218	22,000 net mt 10% bagged sugar
+T4	Laycan 219 233	27 April/1 May
+T5	Terms 234 263	1000 opt 1500 opt 2000 / 1500
+T6	Commission 264 276	6.25 ADD PUS
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	

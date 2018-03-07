@@ -1,0 +1,15 @@
+T1	Quantity 132 139	10000MT
+T2	Cargo 468 498	10000mts tapioca chips s.f 2.2
+T3	Load_Place 522 533	Beihai port
+T4	Disch_Place 549 563	Hochiminh port
+T5	Terms 575 584	1500/1500
+T6	Laycan 594 604	25-30April
+T7	Commission 626 630	2.5%
+T8	Commodity 140 153	TAPIOCA CHIPS
+R1	What Arg1:T1 Arg2:T8	
+R2	Content Arg1:T2 Arg2:T1	
+R3	From Arg1:T2 Arg2:T3	
+R4	To Arg1:T2 Arg2:T4	
+R5	How Arg1:T2 Arg2:T5	
+R6	When Arg1:T2 Arg2:T6	
+R7	Commission Arg1:T2 Arg2:T7	

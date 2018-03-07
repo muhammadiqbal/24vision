@@ -1,0 +1,9 @@
+T1	Ship 202 219	M/V MAPLE FORTUNE
+T2	Loading_Place 232 245	SHEERNESS, UK
+T3	Open_Date 246 256	7-12 April
+T4	Year 329 333	2010
+T5	DWT 362 370	32,544.3
+R1	Located Arg1:T1 Arg2:T2	
+R2	When Arg1:T1 Arg2:T3	
+R3	Built Arg1:T1 Arg2:T4	
+R4	Contain Arg1:T1 Arg2:T5	

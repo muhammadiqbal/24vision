@@ -1,0 +1,11 @@
+T1	Load_Place 672 682	Chittagong
+T2	Disch_Place 686 693	Mombasa
+T3	Cargo 696 719	3.525 Tons / 16.945 Cbm
+T4	Laycan 722 731	15/22 May
+T5	Commission 740 749	3.75% IAC
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	Commission Arg1:T3 Arg2:T5	
+T6	Quantity 70 80	3.525 Tons
+R5	Content Arg1:T3 Arg2:T6	

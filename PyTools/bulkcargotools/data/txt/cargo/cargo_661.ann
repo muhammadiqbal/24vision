@@ -1,0 +1,11 @@
+T1	Cargo 215 242	abt 30000 mts wheat in bulk
+T2	Load_Place 245 254	Ventspils
+T3	Disch_Place 257 262	Dubai
+T4	Terms 263 279	10,000c/5,000 fx
+T5	Laycan 281 293	2nd half may
+T6	Commission 294 301	2,5% pu
+R1	Commission Arg1:T1 Arg2:T6	
+R2	When Arg1:T1 Arg2:T5	
+R3	How Arg1:T1 Arg2:T4	
+R4	To Arg1:T1 Arg2:T3	
+R5	From Arg1:T1 Arg2:T2	

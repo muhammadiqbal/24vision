@@ -1,0 +1,26 @@
+T1	Quantity 71 82	44/4570 mts
+T2	Commodity 83 91	profiles
+T3	Load_Place 585 594	Barcelona
+T4	Disch_Place 599 608	Port Said
+T5	Cargo 611 631	44/4570 mts profiles
+T6	Laycan 632 644	29/30  March
+T7	Commission 671 680	3.75% IAC
+T8	Commission 807 816	3.75% IAC
+T9	Load_Place 702 731	Vilanova (close to Barcelona)
+T10	Disch_Place 735 741	Sousse
+T11	Terms 780 802	2000 sshex /1000 sshex
+T12	Laycan 768 779	30/31 March
+T13	Cargo 744 766	2975/3110 mts profiles
+R1	To Arg1:T13 Arg2:T10	
+R2	From Arg1:T13 Arg2:T9	
+R3	When Arg1:T13 Arg2:T12	
+R4	How Arg1:T13 Arg2:T11	
+R5	Commission Arg1:T13 Arg2:T8	
+R6	To Arg1:T5 Arg2:T4	
+R7	From Arg1:T5 Arg2:T3	
+R8	When Arg1:T5 Arg2:T6	
+R9	Commission Arg1:T5 Arg2:T7	
+T14	Terms 645 666	3000 sshex /800 fshex
+R10	How Arg1:T5 Arg2:T14	
+R11	Content Arg1:T5 Arg2:T1	
+R12	What Arg1:T1 Arg2:T2	

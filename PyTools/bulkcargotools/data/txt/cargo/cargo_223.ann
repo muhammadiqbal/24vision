@@ -1,0 +1,44 @@
+T1	Commission 1133 1142	3.75% iac
+T2	Terms 1123 1131	TTL Days
+T3	Laycan 1111 1120	14/20 Apr
+T4	Cargo 1091 1109	4000mts WRIC sf'52
+T5	Load_Place 1068 1074	NEMRUT
+T6	Disch_Place 1078 1089	OSHAWA (CA)
+T7	Commission 1028 1037	3.75% iac
+T8	Terms 1018 1026	TTL Days
+T9	Laycan 1006 1015	15/20 Apr
+T10	Cargo 986 1004	6000mts WRIC sf'55
+T11	Load_Place 961 968	RAVENNA
+T12	Disch_Place 972 984	TORONTO (CA)
+T13	Commission 939 948	3.75% iac
+T14	Laycan 928 937	19-21 Apr
+T15	Terms 874 921	2000mts pwwd sshex eiu / 1500mts pwwd sshex eiu
+T16	Load_Place 767 782	Icdas port Biga
+T17	Disch_Place 786 795	Constanta
+T18	Cargo 798 866	3675mt +-5 molshops steel rebars in fixed length and debars in coils
+T19	Commission 748 757	3.75% iac
+T20	Terms 712 746	1500mt pwwd sshex eiu fri 17 mon 8
+T21	Laycan 697 705	18-20.04
+T22	Load_Place 635 645	Monfalcone
+T23	Disch_Place 649 658	Constanta
+T24	Cargo 661 690	3800mt +/-5%, debars in coils
+R1	To Arg1:T24 Arg2:T23	
+R2	From Arg1:T24 Arg2:T22	
+R3	When Arg1:T24 Arg2:T21	
+R4	How Arg1:T24 Arg2:T20	
+R5	Commission Arg1:T24 Arg2:T19	
+R6	How Arg1:T18 Arg2:T15	
+R7	To Arg1:T18 Arg2:T17	
+R8	From Arg1:T18 Arg2:T16	
+R9	When Arg1:T18 Arg2:T14	
+R10	Commission Arg1:T18 Arg2:T13	
+R11	From Arg1:T10 Arg2:T11	
+R12	To Arg1:T10 Arg2:T12	
+R13	When Arg1:T10 Arg2:T9	
+R14	How Arg1:T10 Arg2:T8	
+R15	Commission Arg1:T10 Arg2:T7	
+R16	From Arg1:T4 Arg2:T5	
+R17	To Arg1:T4 Arg2:T6	
+R18	When Arg1:T4 Arg2:T3	
+R19	How Arg1:T4 Arg2:T2	
+R20	Commission Arg1:T4 Arg2:T1	

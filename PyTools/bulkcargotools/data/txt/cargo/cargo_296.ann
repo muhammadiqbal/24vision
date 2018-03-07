@@ -1,0 +1,88 @@
+T1	Load_Place 552 559	TUNISIA
+T2	Disch_Place 563 570	CONAKRY
+T3	Cargo 573 597	2500 MTS MIN IN BB 1 TON
+T4	Laycan 598 602	SPOT
+T5	Terms 603 613	4 TTL DAYS
+T6	Commission 614 622	2.5% TTL
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+T7	Cargo 754 806	abt 2,650.mt equal abt 3400cbm Chipboards in pallets
+T8	Disch_Place 745 751	Sousse
+T9	Load_Place 719 740	Aveiro-North Terminal
+T10	Laycan 807 815	4/6 Apri
+T11	Terms 816 821	5 wwd
+T12	Commission 826 834	2.5% ttl
+R6	To Arg1:T7 Arg2:T8	
+R7	From Arg1:T7 Arg2:T9	
+R8	When Arg1:T7 Arg2:T10	
+R9	How Arg1:T7 Arg2:T11	
+R10	Commission Arg1:T7 Arg2:T12	
+T13	Load_Place 853 857	Novo
+T14	Disch_Place 861 866	Varna
+T15	Cargo 869 898	3.500 mts 2% chopt alum prods
+T16	Terms 899 923	1500 sshinc / 1000 sshex
+T17	Laycan 924 942	12 / 14 April 2017
+T18	Commission 943 951	2.5% ttl
+R11	To Arg1:T15 Arg2:T14	
+R12	From Arg1:T15 Arg2:T13	
+R13	How Arg1:T15 Arg2:T16	
+R14	When Arg1:T15 Arg2:T17	
+R15	Commission Arg1:T15 Arg2:T18	
+T19	Load_Place 1000 1004	Poti
+T20	Disch_Place 1008 1016	Taganrog
+T21	Cargo 1025 1077;1086 1095	upto 4000 mts of ferrosilicomanganese in bulk and bb , stw=dwt
+T22	Laycan 1096 1114	30.03 - 04.04.2017
+T23	Terms 1115 1127	1000  / 1000
+T24	Commission 1128 1136	2.5% ttl
+R16	To Arg1:T21 Arg2:T20	
+R17	From Arg1:T21 Arg2:T19	
+R18	When Arg1:T21 Arg2:T22	
+R19	How Arg1:T21 Arg2:T23	
+R20	Commission Arg1:T21 Arg2:T24	
+T25	Load_Place 1158 1166	Bandirma
+T26	Disch_Place 1170 1179	Immingham
+T27	Cargo 1182 1263	abt 4300 mt +/-5% in chopt hless minerals in bulk and bb (2500 mt blk+1800 mt bb)
+T28	Laycan 1271 1280	05/08 Apr
+T29	Terms 1282 1294	5 total days
+T30	Commission 1295 1303	2.5% ttl
+R21	To Arg1:T27 Arg2:T26	
+R22	From Arg1:T27 Arg2:T25	
+R23	When Arg1:T27 Arg2:T28	
+R24	How Arg1:T27 Arg2:T29	
+R25	Commission Arg1:T27 Arg2:T30	
+T31	Load_Place 1363 1372	Rostov AB
+T32	Disch_Place 1376 1386	Iskenderun
+T33	Cargo 1389 1427	5000 mt +/-5% of Anthracite coal SF 44
+T34	Terms 1428 1439	2000x/2000x
+T35	Laycan 1440 1453	29-31.03.2017
+T36	Commission 1454 1462	2.5% ttl
+R26	To Arg1:T33 Arg2:T32	
+R27	From Arg1:T33 Arg2:T31	
+R28	How Arg1:T33 Arg2:T34	
+R29	When Arg1:T33 Arg2:T35	
+R30	Commission Arg1:T33 Arg2:T36	
+T37	Load_Place 1479 1488	Rostov AB
+T38	Disch_Place 1492 1498	Hereke
+T39	Cargo 1501 1533	5000 mt of Anthracite coal SF 44
+T40	Terms 1534 1545	2000x/2000x
+T41	Laycan 1546 1559	11-14.04.2017
+T42	Commission 1560 1568	2.5% ttl
+R31	To Arg1:T39 Arg2:T38	
+R32	From Arg1:T39 Arg2:T37	
+R33	How Arg1:T39 Arg2:T40	
+R34	When Arg1:T39 Arg2:T41	
+R35	Commission Arg1:T39 Arg2:T42	
+T43	Load_Place 1585 1591	MALAGA
+T44	Disch_Place 1597 1604	TUNISIA
+T45	Cargo 1607 1636	5000 MTS MARBLE CHIPS IN BULK
+T46	Laycan 1637 1641	SPOT
+T47	Terms 1642 1654	60 TTL HOURS
+T48	Commission 1655 1663	2.5% ttl
+R36	To Arg1:T45 Arg2:T44	
+R37	From Arg1:T45 Arg2:T43	
+R38	When Arg1:T45 Arg2:T46	
+R39	How Arg1:T45 Arg2:T47	
+R40	Commission Arg1:T45 Arg2:T48	

@@ -1,0 +1,9 @@
+T1	Load_Place 804 809	Izmir
+T2	Disch_Place 813 824	Ho Chi Minh
+T4	Laycan 879 889	26.04.2017
+T6	Commission 901 910	3.75% IAC
+T3	Cargo 827 860	61 pkgs, 315.608 kg, 1031,660 cbm
+R1	When Arg1:T3 Arg2:T4	
+R2	Commission Arg1:T3 Arg2:T6	
+R3	To Arg1:T3 Arg2:T2	
+R4	From Arg1:T3 Arg2:T1	

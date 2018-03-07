@@ -1,0 +1,15 @@
+T1	Load_Place 598 605	Isdemir
+T2	Disch_Place 609 616	Sagunto
+T3	Cargo 619 655	M/M 15.113/16.705 mts of HRC inchopt
+T4	Laycan 656 665	12-13 Apr
+T5	Commission 712 720	2.5% ttl
+T6	Terms 666 694	6.500 Shinc/5 days Sshex-eiu
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T6	
+R5	Commission Arg1:T3 Arg2:T5	
+T7	Quantity 71 88	15.113/16.705 mts
+T8	Commodity 92 95	HRC
+R6	What Arg1:T7 Arg2:T8	
+R7	Content Arg1:T3 Arg2:T7	

@@ -1,0 +1,257 @@
+shine <shine@shineship.kr>
+;
+LOCAL <<OPEN>> 33K@PHIL 10/16 MAY
+ 
+=====================================
+Shine Shipping Co.Ltd/  attn : yh hong 
+-----------------------
+TEL : +82-2-2076-8283 
+MOB : +82-10-4994-3197 
+E-mail : shine@shineship.kr <mailto:shine@shineship.kr> 
+Skype: yhhong0418
+Address : Rm 2036, 20th Fl., Standard Chartered 
+            Bank Korea Bldg.,47 Jong-ro, Jongno-gu, 
+            Seoul, Korea
+=====================================
+ 
+LOCAL OPEN TNGE
+PLS PPOS RATED BIZ 
+ 
+
+OPEN PHILIPPINES (INTN : CAGAYAN DE ORO) 10/16 MAY
+
+ 
+
+Vsl’s name : MV. Bulktec (Hull number : MLBC32500 – 21)
+
+Blt : Jun. 2009
+
+Flag : Hong Kong
+
+Class : CCS
+
+IMO No. : 9473406
+
+Official No. : HK-2431
+
+Call Sign : VRFJ3
+
+Inmarsat C ID : 447701764/5
+
+F station : Tel : 764911968/9
+
+        Fax : 764911970
+
+Builder : Zhejiang Taizhou Maple Leaf Shipbuilding Ltd.
+
+Class notation : CSA, Bulk Carrier, BC-A, Strengthened for Heavy Cargoes, Cargo Hold No.2 and 4 may be empty, ESP, BWMP. CSM, MCC
+
+ 
+
+DWT 33,178mt on Summer Draught moulded abt. 10.15m
+
+Gross Tonnage (I.C.T.M. 1969) : 20,763 
+
+Net Tonnage : 11627
+
+Suez Tonnage : GRT/NRT 22320/19788.92
+
+Panama : 17323
+
+LOA : 179.90m
+
+Breadth, moulded : 28.40m
+
+Depth, moulded : 14.10m
+
+Lightship : 8621
+
+ 
+
+Summer SW draft 10.15m DWT/33178mt TPC/46.14 Freeboard/3.978
+
+Tropical SW draft 10.36m DWT/34143mt TPC/46.31 Freeboard/3.767
+
+Winter SW draft 9.94m DWT/32040mt TPC/45.94 Freeboard/4.189
+
+Fresh Water draft 10.377m DWT/33969mt 
+
+Tropical fresh water draft 10.588m DWT/34969mt 
+
+ 
+
+Tank capacities (100%) 
+
+Fuel oil tanks                                     1,229 cbm
+
+Diesel oil tanks                                  200 cbm
+
+Low sulfuric fuel oil tanks                              298 cbm
+
+Fresh water tanks (inc. A.P.T.)           166 cbm
+
+Drinking water tank                                        166cbm
+
+Water ballast tanks                                                       19,800 cbm  (with Hold No.3 as water ballast tank)
+
+Hold No.3 can be used as Water Ballast Tank  8303cbm.
+
+ 
+
+Main engine : MAN B&W 6S42MC 
+
+CSR normal output 5,832kw (7931ps) x 131.3rpm (90% MCR) 
+
+Generator : 3 sets  468kw 1200 rpm 60 Hz
+
+Emergency Generator : 1 set  132kw 1800 rpm 60 Hz         
+
+Propeller : Four (4) blades solid type, Nickle Aluminum Bronze casting
+
+ 
+
+Speed : 13.5kts at consumption HFO/380cst 28.0mt daily plus  0.1mt MDO daily
+
+At port : idle : 3.1mt HFO/380cst plus 0.1mt MDO daily
+
+All Crane working :  4.5mt HFO/380cst plus 0.1mt MDO daily
+
+ 
+
+ECO SPD/CON (WOG)
+
+Laden : abt. 13.5kts at consumption HFO/380cst abt. 28.0mt daily plus abt. 0.1mt MDO daily
+
+Ballast : abt. 13.5kts at consumption HFO/380cst abt. 27.6mt daily plus abt. 0.1mt DMGO daily
+
+Laden : abt. 13.0kts at consumption HFO/380cst abt. 26.0mt daily plus abt. 0.1mt MDO daily
+
+Ballast : abt. 13.0kts at consumption HFO/380cst abt. 25.6mt daily plus abt. 0.1mt DMGO daily
+
+Laden : abt. 12.5kts at consumption HFO/380cst abt. 23.0mt daily plus abt. 0.1mt MDO daily
+
+Ballast : abt. 12.5kts at consumption HFO/380cst abt. 22.5mt daily plus abt. 0.1mt DMGO daily
+
+Laden : abt. 12.0kts at consumption HFO/380cst abt. 21.0mt daily plus abt. 0.1mt MDO daily
+
+Ballast : abt. 12.0kts at consumption HFO/380cst abt. 20.5mt daily plus abt. 0.1mt DMGO daily
+
+ 
+
+50% MCR : 
+Laden : abt 11.0 kts at consumption HFO/380cst abt 18.8 mt daily plus abt  0.1 mt MDO daily,   
+
+Ballast: abt 11.5 kts at consumption HFO/380cst abt 17.8 mt daily plus abt  0.1 mt MDO daily
+
+ 
+
+At 50% MCR conditions, the vessel should run full speed in an hour within every 24 hours
+
+ 
+
+Speed and consumption figures are basis under good weather condition and smooth sea and no negative influence by currents, swell and/or tidal streams, maximum Beaufort 4 and Douglas 3 and even keel in deep water with clean bottom, maximum sea temperature 28 degree Celsius, except restricted areas, like approaches, shallow waters, etc. Evidence of weather conditions to be taken from vessel’s deck logs.
+
+(All details about)
+
+ 
+
+ 
+
+The vessel is burning some HFO/MDO when entering/leaving port and maneuvering and berthing, minimal amount of HFO/MDO is used for starting/stopping engine.
+
+ 
+
+Endurance : abt. 14,000 sea miles 
+
+ 
+
+Stack weight :  
+
+Tank top : 20.00 mt/m2
+
+Upper deck side : 4.00 mt/m2   
+
+Cross deck : 4.00 mt/m2  
+
+Hatch covers : 3.30 mt/m2  
+
+ 
+
+Hatch cover : Electro-hydraulic open/close fold hatch covers
+
+CO2 : Fitted
+
+Logger : Fitted
+
+ 
+
+Hatch size : 
+
+No.1 14.4 x 17.6 m,   No.2,3,4 20.0 x 19.2 m,    No.5 18.4 x 19.2 m
+
+ 
+
+5 H/H
+
+Cargo Holds                 Grain                     Bale
+
+No.1                  . 7,064 cbm                  6,710 cbm
+
+No.2                   9,308 cbm                  8,842 cbm
+
+No.3                  . 8,746 cbm                  8,308 cbm
+
+No.4                   9,316 cbm                  8,849 cbm
+
+No.5                   8,131 cbm                  7,723 cbm
+
+Total                  42,565 cbm                  40,432 cbm
+
+ 
+
+Above hold capacity include hatch coaming.
+
+ 
+
+Height of permanent steel stanchion   8.5m within No. 2,3,4 and 5 cargo hold area and   7.5m in No.1 cargo hold area.
+
+ 
+
+Collapsible steel stanchion  2.8m apart on upper deck both sides.
+
+ 
+
+Eye plates (SWL 3 tons) are fitted suitably on upper deck and in cargo hold.
+
+ 
+
+Cranes : 4 x 30mt  Electro-hydraulic deck cranes of single type
+
+Hoisting load : 30/18/6 mt
+
+Hoisting speed : 19/24/50m/min
+
+Lowering speed : 50m/min
+
+Winding height Max. : 35m
+
+Slewing radius : 24 – 4.5m
+
+Slewing speed : 0.55 rpm
+
+Slewing angle : 360 degrees, endless
+
+Luffing time :  52 sec.
+
+Outreach :     9.0m
+
+ 
+
+(All details about and given in good faith without guarantee)
+
+ 
+
+ 
+
+B.RGDS / YH
+

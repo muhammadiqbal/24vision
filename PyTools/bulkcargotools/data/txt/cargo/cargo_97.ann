@@ -1,0 +1,13 @@
+T2	Load_Place 791 801	Carboneras
+T3	Disch_Place 805 824	Honfleur or Dunkirk
+T4	Cargo 827 847	7/8 kt 10pct clinker
+T5	Laycan 849 860	12/14 April
+T6	Terms 862 893	7.000 shinc / 4.000 satnoonshex
+T7	Commission 895 903	5.0% ttl
+T8	Commodity 143 150	clinker
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T2	
+R3	When Arg1:T4 Arg2:T5	
+R4	How Arg1:T4 Arg2:T6	
+R5	Commission Arg1:T4 Arg2:T7	
+R6	Including Arg1:T4 Arg2:T8	

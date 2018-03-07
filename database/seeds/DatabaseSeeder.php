@@ -39,6 +39,25 @@ class DatabaseSeeder extends Seeder {
 	}
 
 }
+	/**
+	* 
+	*/
+	class UserSeeder extends Seeder
+	{
+		
+		public function run(){
+
+			DB::table('users')->delete();
+			User::create([
+				'name' => 'admin'
+		        'email' => 'admin@24vision.com',
+		        'password' => bcrypt('PSbi4macom'),
+		        'remember_token' => str_random(10),
+			]);
+		}
+
+	}	
+
 
 	/**
 	* 

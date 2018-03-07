@@ -1,0 +1,9 @@
+T1	Cargo 231 252	27,900 mts bulk ferts
+T2	Load_Place 282 292;393 399	Sluiskil – Heroya
+T3	Disch_Place 522 534;666 673;779 785	Rio Grande – Aratu - Maceio
+T4	Laycan 897 908	April 08/12
+T5	Commission 914 932	2.5 pct addcom pus
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	When Arg1:T1 Arg2:T4	
+R4	Commission Arg1:T1 Arg2:T5	

@@ -47,7 +47,7 @@ class StowageFactorUnit extends Model
      * @var array
      */
     public static $rules = [
-        
+        'unit' => 'required|string'
     ];
 
     /**

@@ -1,0 +1,11 @@
+T1	Cargo 178 206	1,500 MTS OF BGD CGO SLINGED
+T2	Load_Place 209 215	SICILY
+T3	Disch_Place 220 224	EMED
+T4	Terms 238 247	4 TTL DYS
+T5	Laycan 229 237	SPOT/PPT
+T6	Commission 252 263	2.5 ADD PUS
+R1	To Arg1:T1 Arg2:T3	
+R2	From Arg1:T1 Arg2:T2	
+R3	When Arg1:T1 Arg2:T5	
+R4	How Arg1:T1 Arg2:T4	
+R5	Commission Arg1:T1 Arg2:T6	

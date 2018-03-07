@@ -1,0 +1,15 @@
+T1	Quantity 116 133	14.000/16.000 MTS
+T2	Load_Place 820 824	PETE
+T3	Disch_Place 828 835	RAVENNA
+T4	Cargo 838 873	14.000/16.000 MTS HMS1+2 ABT 61/62'
+T5	Terms 875 904	3.000 SHINC / 3.000 SSHEX EIU
+T6	Laycan 913 923	7/10 APRIL
+T7	Commission 802 811	3.75% IAC
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T2	
+R3	How Arg1:T4 Arg2:T5	
+R4	When Arg1:T4 Arg2:T6	
+R5	Commission Arg1:T4 Arg2:T7	
+R6	Content Arg1:T4 Arg2:T1	
+T8	Commodity 134 140	HMS1+2
+R7	What Arg1:T1 Arg2:T8	

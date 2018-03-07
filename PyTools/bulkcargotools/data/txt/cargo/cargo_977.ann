@@ -1,0 +1,9 @@
+T1	Laycan 370 402	prompt Onwards, try vessel dates
+T2	Cargo 257 283	abt 21,000 mt 4-grades BHF
+T3	Terms 302 352	7,000 shex / 1,000mt shex Davao & 3,000 shex Japan
+T4	Load_Place 155 160	Eilat
+T5	Disch_Place 178 238	Davao, Ph.(6000mt) & Higashi-Harima, Kashima, Kushiro, Japan
+R1	To Arg1:T2 Arg2:T5	
+R2	How Arg1:T2 Arg2:T3	
+R3	When Arg1:T2 Arg2:T1	
+R4	From Arg1:T2 Arg2:T4	

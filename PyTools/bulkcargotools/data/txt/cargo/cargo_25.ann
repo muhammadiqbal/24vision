@@ -1,0 +1,43 @@
+T2	Load_Place 884 907	Mundra or Kandla, India
+T3	Disch_Place 930 950	Chittagong or Mongla
+T4	Laycan 961 965	Spot
+T6	Commission 1072 1086	3.75% IAC 2.5%
+T8	Cargo 813 832;845 866	Stone chips in bulk 55,000mt +/-10% MOLOO
+T9	Cargo 1133 1165;1178 1199	Tapioca chips in bulk (S/f: 2.2) 10,000mt +/-10% MOLOO
+T10	Load_Place 1221 1232	Ho Chi Minh
+T11	Disch_Place 1233 1249	Jingjiang, China
+T12	Laycan 1259 1273	25-30Mar, 2017
+T14	Commission 1347 1361	3.75% IAC 2.5%
+T16	Cargo 1408 1425;1438 1459	Limestone in bulk 45,000mt +/-10% MOLOO
+T17	Load_Place 1478 1495	Cam Pha, Viet Nam
+T18	Disch_Place 1518 1540	Chittagong, Bangladesh
+T19	Laycan 1552 1567	5-10April, 2017
+T21	Commission 1641 1655	3.75% IAC 2.5%
+T23	Cargo 1699 1716;1723 1757	Woodchips in bulk 10,000BDMT +/-10% MOLOO (S/f: 5.4)
+T24	Load_Place 1779 1787	Chan May
+T25	Disch_Place 1793 1806	Rizhao, China
+T26	Laycan 1816 1832	15-20April, 2017
+T27	Commission 1868 1882	3.75% IAC 2.5%
+T5	Terms 1000 1031;967 998	Disch Rate - 3,000mt pwwd fhinc Load Rate - 10,000mt pwwd shinc
+R1	From Arg1:T8 Arg2:T2	
+R2	To Arg1:T8 Arg2:T3	
+R3	When Arg1:T8 Arg2:T4	
+R4	How Arg1:T8 Arg2:T5	
+R5	Commission Arg1:T8 Arg2:T6	
+T1	Port_No 1056 1059	1/2
+R6	From Arg1:T9 Arg2:T10	
+R7	To Arg1:T9 Arg2:T11	
+T7	Terms 1275 1304;1306 1338	Load Rate - 1500mt pwwd shinc Disch Rate - 1,5,00mt pwwd shinc
+R8	When Arg1:T9 Arg2:T12	
+R9	How Arg1:T9 Arg2:T7	
+R10	Commission Arg1:T9 Arg2:T14	
+R11	From Arg1:T16 Arg2:T17	
+R12	To Arg1:T16 Arg2:T18	
+R13	When Arg1:T16 Arg2:T19	
+T13	Terms 1569 1599;1601 1632	Load Rate - 8,000mt pwwd shinc Disch Rate - 3,000mt pwwd fhinc
+R14	How Arg1:T16 Arg2:T13	
+R15	Commission Arg1:T16 Arg2:T21	
+R16	From Arg1:T23 Arg2:T24	
+R17	To Arg1:T23 Arg2:T25	
+R18	When Arg1:T23 Arg2:T26	
+R19	Commission Arg1:T23 Arg2:T27	

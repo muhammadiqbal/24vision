@@ -1,0 +1,11 @@
+T1	Commission 856 865	3.75% iac
+T2	Laycan 833 837	spot
+T3	Load_Place 782 787	Yeisk
+T4	Disch_Place 791 797	Beirut
+T5	Cargo 800 826	fr sawn timbers abt 4000m3
+R1	To Arg1:T5 Arg2:T4	
+R2	From Arg1:T5 Arg2:T3	
+R3	When Arg1:T5 Arg2:T2	
+R4	Commission Arg1:T5 Arg2:T1	
+T6	Commodity 112 127	fr sawn timbers
+R5	Including Arg1:T5 Arg2:T6	

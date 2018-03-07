@@ -1,0 +1,13 @@
+T1	Commission 812 820	2.5% TTL
+T2	Laycan 796 809	20 APRIL  ONW
+T3	Terms 778 794	1500 / 2000-2500
+T4	Load_Place 700 718	NIKOLAEV OR ODESSA
+T5	Disch_Place 722 749	1 ADRIATIC OR 1 NAPLES GULF
+T6	Cargo 752 775	6.500 mts /10% WHEAT 47
+T7	Commodity 161 166	WHEAT
+R1	To Arg1:T6 Arg2:T5	
+R2	From Arg1:T6 Arg2:T4	
+R3	How Arg1:T6 Arg2:T3	
+R4	When Arg1:T6 Arg2:T2	
+R5	Commission Arg1:T6 Arg2:T1	
+R6	Including Arg1:T6 Arg2:T7	

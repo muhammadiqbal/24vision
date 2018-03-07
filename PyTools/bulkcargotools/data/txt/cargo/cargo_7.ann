@@ -1,0 +1,97 @@
+T1	Load_Place 603 615	MASAN, KOREA
+T3	Cargo 671 707	ABT 867T/1703CBM/282PCS, LOOSE PIPES
+T4	Laycan 820 842	31 MARCH/06 APRIL 2017
+R1	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+T5	Commission 978 987	3.75% IAC
+R4	Commission Arg1:T3 Arg2:T5	
+T7	Disch_Place 1011 1018	Houston
+T8	Cargo 1021 1054	abt 1800m3 / 208mts Project cargo
+T9	Laycan 1055 1065	5/15 April
+T10	Commission 1073 1082	3.75% iac
+R6	To Arg1:T8 Arg2:T7	
+R7	When Arg1:T8 Arg2:T9	
+R8	Commission Arg1:T8 Arg2:T10	
+T11	Commission 1366 1375	3.75% IAC
+T12	Load_Place 1377 1384	2 MILOS
+T14	Cargo 1410 1442	2000 MTS BULK PERLITE / 2 GRADES
+T15	Laycan 1496 1507	5 / 9 APRIL
+T16	Terms 1508 1528;1529 1549	L 1350 MTS/WWD SSHEX D 1350 MTS/WWD SSHEX
+R9	Commission Arg1:T14 Arg2:T11	
+R10	From Arg1:T14 Arg2:T12	
+R12	When Arg1:T14 Arg2:T15	
+R13	How Arg1:T14 Arg2:T16	
+T17	Load_Place 1669 1691	Aveiro, North Terminal
+T18	Disch_Place 1696 1702	Sousse
+T19	Cargo 1705 1760	about  2,650.mt equal abt 3400cbm Chipboards in pallets
+T20	Laycan 1761 1769	4/6 Apri
+T22	Commission 1780 1788	2.5% ttl
+R14	From Arg1:T19 Arg2:T17	
+R15	To Arg1:T19 Arg2:T18	
+R16	When Arg1:T19 Arg2:T20	
+R17	Commission Arg1:T19 Arg2:T22	
+T23	Terms 1858 1869	2000x/1500x
+T24	Disch_Place 1822 1837	Beirut, Lebanon
+T25	Cargo 1840 1857	3,765 tons STEELS
+T26	Laycan 1870 1876	Prompt
+T27	Commission 1877 1885	2.5% ttl
+T28	Load_Place 1805 1813	Nikolaev
+R18	From Arg1:T25 Arg2:T28	
+R19	To Arg1:T25 Arg2:T24	
+R20	How Arg1:T25 Arg2:T23	
+R21	When Arg1:T25 Arg2:T26	
+R22	Commission Arg1:T25 Arg2:T27	
+T29	Cargo 1902 1922	44/4570 mts profiles
+T30	Load_Place 1923 1932	Barcelona
+T31	Disch_Place 1936 1945	Port Said
+T32	Laycan 1947 1959	29/30  March
+T33	Terms 1960 1981	3000 sshex /800 fshex
+R23	From Arg1:T29 Arg2:T30	
+R24	To Arg1:T29 Arg2:T31	
+R25	When Arg1:T29 Arg2:T32	
+R26	How Arg1:T29 Arg2:T33	
+T34	Load_Place 1987 2016	Vilanova (close to Barcelona)
+T35	Disch_Place 2020 2026	Sousse
+T36	Cargo 2029 2051	2975/3110 mts profiles
+T37	Laycan 2054 2065	30/31 March
+T38	Terms 2066 2088	2000 sshex /1000 sshex
+T39	Commission 2093 2102	3.75% IAC
+R27	From Arg1:T36 Arg2:T34	
+R28	To Arg1:T36 Arg2:T35	
+R29	When Arg1:T36 Arg2:T37	
+R30	How Arg1:T36 Arg2:T38	
+R31	Commission Arg1:T36 Arg2:T39	
+T40	Load_Place 2126 2143	MARINA DI CARRARA
+T41	Disch_Place 2147 2152	GABES
+T42	Cargo 2155 2195	6500 10% MOLOO TONS MARBLE CHIPS IN BULK
+T43	Laycan 2196 2209	10/13th APRIL
+T45	Commission 2240 2248	2.5% TTL
+T46	Load_Place 2265 2293	Penang and Bintulu, Malaysia
+T47	Disch_Place 2297 2321	Aden and Hodeidah, Yemen
+R32	To Arg1:T42 Arg2:T41	
+R33	From Arg1:T42 Arg2:T40	
+R34	When Arg1:T42 Arg2:T43	
+R36	Commission Arg1:T42 Arg2:T45	
+T48	Cargo 2324 2385	5200 CBM MEDIUM-DENSITY FIBREBOARD (MDF) IN CRATES S.F. 3 CBM
+T49	Terms 2534 2562;2563 2600	Load rate: 12 days SSHEX EIU Dis rate: 12 days FHEX (incl Sat) EIU
+T50	Laycan 2610 2633	Propmt (5 days notices)
+T51	Port_No 2686 2689	2/2
+T52	Commission 2690 2698	2.5% TTL
+R37	From Arg1:T48 Arg2:T46	
+R38	To Arg1:T48 Arg2:T47	
+R39	How Arg1:T48 Arg2:T49	
+R40	When Arg1:T48 Arg2:T50	
+R41	No_Of_Ports Arg1:T48 Arg2:T51	
+R42	Commission Arg1:T48 Arg2:T52	
+T2	Disch_Place 626 668	EGYPT, PREF. PORT SAID/ALEXANDRIA/DAMIETTA
+R2	To Arg1:T3 Arg2:T2	
+T54	Terms 1066 1072	flt hh
+R44	How Arg1:T8 Arg2:T54	
+T6	Load_Place 996 1007	Marmara Sea
+R5	From Arg1:T8 Arg2:T6	
+T13	Disch_Place 1390 1407	LE TREPORT FRANCE
+R11	To Arg1:T14 Arg2:T13	
+T21	Terms 1770 1779	5 wwd l/d
+R45	How Arg1:T19 Arg2:T21	
+T44	Terms 2212 2226	6 TTL WWDAYS -
+R35	How Arg1:T42 Arg2:T44	

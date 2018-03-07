@@ -1,0 +1,15 @@
+T1	Commission 788 797	3.75% IAC
+T2	Laycan 772 786	PROMPT ONWARDS
+T3	Terms 755 766	8000 / 3000
+T4	Load_Place 687 695	NIKOLAEV
+T5	Disch_Place 703 710	MOROCCO
+T7	Quantity 120 130	25.000 TNS
+T8	Commodity 131 136	WHEAT
+R1	What Arg1:T7 Arg2:T8	
+T6	Cargo 713 749	25.000 TNS WHEAT IN BULK STW ABT 47'
+R2	To Arg1:T6 Arg2:T5	
+R3	From Arg1:T6 Arg2:T4	
+R4	How Arg1:T6 Arg2:T3	
+R5	When Arg1:T6 Arg2:T2	
+R6	Commission Arg1:T6 Arg2:T1	
+R7	Content Arg1:T6 Arg2:T7	

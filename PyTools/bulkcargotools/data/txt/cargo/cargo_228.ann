@@ -1,0 +1,13 @@
+T1	Commission 823 831	5.0% iac
+T2	Terms 800 815	4000 / 4000 mts
+T3	Laycan 789 794	WK 18
+T4	Load_Place 698 715	Balchik, Bulgaria
+T5	Disch_Place 719 733	Seville, Spain
+T6	Cargo 736 784	10.000 mts 10% moloo Sunflowerseeds (abt 85/86')
+T7	Commodity 153 167	Sunflowerseeds
+R1	To Arg1:T6 Arg2:T5	
+R2	From Arg1:T6 Arg2:T4	
+R3	When Arg1:T6 Arg2:T3	
+R4	How Arg1:T6 Arg2:T2	
+R5	Commission Arg1:T6 Arg2:T1	
+R6	Including Arg1:T6 Arg2:T7	

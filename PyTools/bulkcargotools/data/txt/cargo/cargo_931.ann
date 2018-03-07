@@ -1,0 +1,11 @@
+T1	Cargo 186 211	35000 MT +/-5% OO alumina
+T2	Laycan 265 276	23-27 April
+T3	Commission 295 307	1,25 pct ttl
+T4	Terms 278 293	7ttl days shinc
+T5	Load_Place 213 216	VDC
+T6	Disch_Place 223 256	WC Norway (intention Sunndalsora)
+R1	From Arg1:T1 Arg2:T5	
+R2	To Arg1:T1 Arg2:T6	
+R3	When Arg1:T1 Arg2:T2	
+R4	How Arg1:T1 Arg2:T4	
+R5	Commission Arg1:T1 Arg2:T3	

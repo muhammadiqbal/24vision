@@ -1,0 +1,13 @@
+T1	Load_Place 272 286	Marsa el Brega
+T2	Disch_Place 289 299	Contrecœur
+T3	Terms 321 340	4000 fhex/9000 shex
+T4	Laycan 308 319	21-24 April
+T5	Commission 365 376	2.5% addcom
+T6	Cargo 228 270	10.000mt 10% moloo feed grade urea in bulk
+T7	Commodity 79 83	Urea
+R1	To Arg1:T6 Arg2:T2	
+R2	Including Arg1:T6 Arg2:T7	
+R3	From Arg1:T6 Arg2:T1	
+R4	When Arg1:T6 Arg2:T4	
+R5	How Arg1:T6 Arg2:T3	
+R6	Commission Arg1:T6 Arg2:T5	

@@ -1,0 +1,15 @@
+T1	Load_Place 801 808	Isdemir
+T2	Disch_Place 812 826	Seville, Spain
+T3	Cargo 830 867	M/M  5.450 / 5.750 mts in chopt coils
+T4	Laycan 877 895	02 – 03 April 2017
+T5	Terms 898 928	4.500 Sshinc / 2.750 Sshex-eiu
+T6	Commission 996 1004	2.5% ttl
+T7	Quantity 128 145	5.450 / 5.750 mts
+T8	Commodity 155 160	coils
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+R6	Content Arg1:T3 Arg2:T7	
+R7	What Arg1:T7 Arg2:T8	

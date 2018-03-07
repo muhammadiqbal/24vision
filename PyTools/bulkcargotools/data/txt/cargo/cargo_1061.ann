@@ -1,0 +1,11 @@
+T1	Cargo 330 368	abt 27,000mt Bulk Harmless Fertilizers
+T2	Laycan 473 489	26-30.April 2017
+T3	Terms 386 457	4,000mt shex (9kmt Tees) & 9,000 shinc (18kmt AMS) / 3,000 shinc Brazil
+T4	Disch_Place 235 284	Itaqui & Rio Grande, Brazil , option Porto Alegre
+T5	Load_Place 191 219	Teesport, UK & Amsterdam, NL
+T6	Commission 823 839	2.50% ADDCOM PUS
+R1	How Arg1:T1 Arg2:T3	
+R2	When Arg1:T1 Arg2:T2	
+R3	To Arg1:T1 Arg2:T4	
+R4	From Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	

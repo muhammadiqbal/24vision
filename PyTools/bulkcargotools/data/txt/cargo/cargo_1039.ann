@@ -1,0 +1,13 @@
+T1	Cargo 149 169	25,000/10% MOLOO PKE
+T2	Load_Place 187 198	LUBUK GAUNG
+T3	Disch_Place 207 217	UK/IRELAND
+T4	Terms 238 269	4,000 SATNOONSHEX / 7,000 SSHEX
+T5	Commodity 69 72	PKE
+T6	Laycan 270 282	23 APRIL ONW
+T7	Commission 283 292	2.50% PUS
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	How Arg1:T1 Arg2:T4	
+R4	When Arg1:T1 Arg2:T6	
+R5	Commission Arg1:T1 Arg2:T7	
+R6	Including Arg1:T1 Arg2:T5	

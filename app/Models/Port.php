@@ -62,7 +62,12 @@ class Port extends Model
      * @var array
      */
     public static $rules = [
-        
+        'name' => 'required|string',
+        'zone_id'=> 'integer',
+        'max_laden_draft'=> 'numeric',
+        'latitude' => 'numeric',
+        'longitude' => 'numeric',
+        'draft_factor'=> 'numeric'
     ];
 
     /**

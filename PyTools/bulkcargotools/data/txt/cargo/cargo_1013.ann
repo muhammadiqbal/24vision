@@ -1,0 +1,9 @@
+T2	Laycan 793 804	April 21/25
+T3	Cargo 235 262	About 42,700 mts bulk ferts
+R3	When Arg1:T3 Arg2:T2	
+T4	Load_Place 283 293;394 400	Sluiskil – Heroya
+T5	Disch_Place 528 536;617 637;702 714	Santos - Sao Francisco do Sul - Rio Grande
+R1	From Arg1:T3 Arg2:T4	
+R2	To Arg1:T3 Arg2:T5	
+T1	Commission 869 929	2.50 pct addcom to Charterers plus 1.25 pct to Bery Maritime
+R4	Commission Arg1:T3 Arg2:T1	

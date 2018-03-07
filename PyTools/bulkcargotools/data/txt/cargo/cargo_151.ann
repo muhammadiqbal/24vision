@@ -1,0 +1,22 @@
+T1	Load_Place 635 642	Marmara
+T2	Disch_Place 646 652	Xiamen
+T3	Cargo 655 683	abt 27.000 mts Marble Blocks
+T4	Terms 685 699	6.000/8000 mts
+T5	Laycan 701 712	20/26 April
+T6	Commission 714 723	3.75% iac
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	How Arg1:T3 Arg2:T4	
+R4	When Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+T7	Cargo 834 859	35.000 MTS Gypsum in bulk
+T8	Disch_Place 809 831	Teluk bayur, Indonesia
+T9	Load_Place 787 805	Bandar Abbas ,Iran
+T10	Terms 866 911	6000.0 MT PWWD FHINCH / 5000.0 MT PWWD SHINCH
+T11	Commission 768 777	3.75% IAC
+T12	Laycan 918 924	Prompt
+R6	Commission Arg1:T7 Arg2:T11	
+R7	To Arg1:T7 Arg2:T8	
+R8	From Arg1:T7 Arg2:T9	
+R9	How Arg1:T7 Arg2:T10	
+R10	When Arg1:T7 Arg2:T12	

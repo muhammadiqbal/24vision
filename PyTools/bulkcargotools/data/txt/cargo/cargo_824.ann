@@ -1,0 +1,15 @@
+T1	Commodity 32 36	mins
+T2	Quantity 27 31	7500
+T3	Disch_Place 230 235	IZMIR
+T4	Load_Place 224 229	CADIZ
+T5	Cargo 236 245	7500 MINS
+T6	Terms 247 267	36 SASHEX / 36 SHINC
+T7	Laycan 269 280	19 JUNE ONW
+T8	Commission 281 289	3.75 TTL
+R1	From Arg1:T5 Arg2:T4	
+R2	To Arg1:T5 Arg2:T3	
+R3	Content Arg1:T5 Arg2:T2	
+R4	What Arg1:T2 Arg2:T1	
+R5	How Arg1:T5 Arg2:T6	
+R6	When Arg1:T5 Arg2:T7	
+R7	Commission Arg1:T5 Arg2:T8	

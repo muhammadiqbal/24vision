@@ -1,0 +1,49 @@
+T1	Ship 549 554	Jawor
+T2	Ship 628 635	Pomorze
+T3	Ship 694 700	Kurpie
+T4	Ship 757 761	Irma
+T5	Ship 818 824	Solina
+T6	Ship 881 887	Prosna
+T7	Ship 944 948	Olza
+T8	Loading_Place 668 675	Vitoria
+T9	Loading_Place 589 599	Alexandria
+T10	Loading_Place 734 745	Sunndalsora
+T11	Loading_Place 797 802	Brest
+T12	Loading_Place 858 865	Ravenna
+T13	Loading_Place 921 931	Casablanca
+T14	Loading_Place 984 991	Tampico
+T15	Open_Date 813 817	spot
+T16	Open_Date 605 611	28 Apr
+T17	Open_Date 684 693	29-30 Apr
+T18	Open_Date 750 756	04 May
+T19	Open_Date 874 880	11 May
+T20	Open_Date 937 943	29 Apr
+T21	Open_Date 1000 1006	20 Apr
+T22	DWT 573 579	79,650
+T23	DWT 652 658	38,980
+T24	DWT 718 724	38,056
+T25	DWT 781 787	34,946
+T26	DWT 842 848	30,182
+T27	DWT 905 911	17,096
+T28	DWT 968 974	17,050
+R1	Contain Arg1:T1 Arg2:T22	
+R2	Located Arg1:T1 Arg2:T9	
+R3	When Arg1:T1 Arg2:T16	
+R4	Contain Arg1:T2 Arg2:T23	
+R5	Located Arg1:T2 Arg2:T8	
+R6	When Arg1:T2 Arg2:T17	
+R7	Contain Arg1:T3 Arg2:T24	
+R8	Located Arg1:T3 Arg2:T10	
+R9	When Arg1:T3 Arg2:T18	
+R10	Contain Arg1:T4 Arg2:T25	
+R11	Located Arg1:T4 Arg2:T11	
+R12	When Arg1:T4 Arg2:T15	
+R13	Contain Arg1:T5 Arg2:T26	
+R14	Located Arg1:T5 Arg2:T12	
+R15	When Arg1:T5 Arg2:T19	
+R16	Contain Arg1:T6 Arg2:T27	
+R17	Located Arg1:T6 Arg2:T13	
+R18	When Arg1:T6 Arg2:T20	
+R19	Contain Arg1:T7 Arg2:T28	
+R20	Located Arg1:T7 Arg2:T14	
+R21	When Arg1:T7 Arg2:T21	

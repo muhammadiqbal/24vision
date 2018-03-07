@@ -1,0 +1,20 @@
+T1	Cargo 376 411	25-55,000MTS OF BULK ROCK PHOSPHATE
+T2	Laycan 476 488	SPOT PPT ONW
+T3	Load_Place 418 424	SAFAGA
+T4	Disch_Place 432 441	W.C INDIA
+T5	Terms 446 467	6000 / 6000 EIU BENDS
+T6	Commission 490 499	1.25% PUS
+T7	Cargo 504 535	Min/max 8000 mts bulk millscale
+T8	Load_Place 559 564	Yanbu
+T9	Disch_Place 619 664	china ( Nanjing or nantong any one in chopt )
+T10	Laycan 698 721	15-20 Apr, try vsl date
+T11	Commission 723 740	2.5 % addcomm pus
+R1	From Arg1:T7 Arg2:T8	
+R2	To Arg1:T7 Arg2:T9	
+R3	When Arg1:T7 Arg2:T10	
+R4	Commission Arg1:T7 Arg2:T11	
+R5	From Arg1:T1 Arg2:T3	
+R6	To Arg1:T1 Arg2:T4	
+R7	How Arg1:T1 Arg2:T5	
+R8	When Arg1:T1 Arg2:T2	
+R9	Commission Arg1:T1 Arg2:T6	

@@ -1,0 +1,55 @@
+T1	Load_Place 550 556	Genova
+T2	Disch_Place 560 572	Buenos aires
+T3	Cargo 575 620	7 x abt 6000mts concrete platforms (abt 1000)
+T4	Laycan 682 691	may dates
+T5	Terms 692 702	8 ttl days
+T6	Commission 703 711	5.0% iac
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+T7	Load_Place 728 738	Monfalcone
+T8	Disch_Place 742 751	Constanta
+T9	Cargo 754 783	3800mt +/-5%, debars in coils
+T10	Laycan 788 796	18-20.04
+T11	Terms 801 835	1500mt pwwd sshex eiu fri 17 mon 8
+T12	Commission 836 845	3.75% iac
+R6	To Arg1:T9 Arg2:T8	
+R7	From Arg1:T9 Arg2:T7	
+R8	When Arg1:T9 Arg2:T10	
+R9	How Arg1:T9 Arg2:T11	
+R10	Commission Arg1:T9 Arg2:T12	
+T13	Load_Place 852 867	Icdas port Biga
+T14	Load_Place 1082 1089	RAVENNA
+T15	Disch_Place 871 880	Constanta
+T16	Disch_Place 1093 1105	TORONTO (CA)
+T17	Disch_Place 1188 1199	OSHAWA (CA)
+T18	Cargo 883 951	3675mt +-5 molshops steel rebars in fixed length and debars in coils
+T19	Terms 1003 1050	2000mts pwwd sshex eiu / 1500mts pwwd sshex eiu
+T20	Laycan 1056 1065	19-21 Apr
+T21	Commission 1066 1075	3.75% iac
+T22	Cargo 1106 1124	6000mts WRIC sf'55
+T23	Laycan 1125 1134	15/20 Apr
+T24	Terms 1136 1144	TTL Days
+T25	Commission 1145 1154	3.75% iac
+T26	Load_Place 1178 1184	NEMRUT
+T27	Cargo 1200 1218	4000mts WRIC sf'52
+T28	Laycan 1219 1228	14/20 Apr
+T29	Terms 1230 1238	TTL Days
+T30	Commission 1239 1248	3.75% iac
+R11	When Arg1:T27 Arg2:T28	
+R12	How Arg1:T27 Arg2:T29	
+R13	Commission Arg1:T27 Arg2:T30	
+R14	From Arg1:T27 Arg2:T26	
+R15	To Arg1:T27 Arg2:T17	
+R16	From Arg1:T22 Arg2:T14	
+R17	To Arg1:T22 Arg2:T16	
+R18	When Arg1:T22 Arg2:T23	
+R19	How Arg1:T22 Arg2:T24	
+R20	Commission Arg1:T22 Arg2:T25	
+R21	To Arg1:T18 Arg2:T15	
+R22	From Arg1:T18 Arg2:T13	
+R23	How Arg1:T18 Arg2:T19	
+R24	When Arg1:T18 Arg2:T20	
+R25	Commission Arg1:T18 Arg2:T21	

@@ -1,0 +1,54 @@
+T1	Load_Place 559 573	Porto marghera
+T2	Disch_Place 577 586	Rotterdam
+T3	Cargo 590 607	3 colli machinery
+T4	Laycan 738 747	1- 15 may
+T5	Commission 753 762	3.75% iac
+T6	Load_Place 769 787	port harcourt-onne
+T7	Disch_Place 791 826	mundra,kandla, pipavav or mumbai oo
+T8	Cargo 829 856	2850 cbm / 652 mt rig parts
+T9	Laycan 870 877	ppt onw
+T10	Commission 914 923	3.75% iac
+T11	Load_Place 978 982	Bata
+T12	Disch_Place 986 1004	dubai or abu dhabi
+T13	Cargo 1006 1020	15 x dumptruck
+T14	Laycan 1074 1104	ppt – early may – vsssls dates
+T15	Commission 1117 1126	3.75% iac
+T16	Load_Place 1133 1139	Mumbai
+T17	Disch_Place 1143 1161	Subic, Philippines
+T18	Cargo 1164 1206	5568 cbm 5 pct plant construction material
+T19	Laycan 1214 1225	28/31 april
+T20	Commission 1238 1247	3.75% iac
+T21	Load_Place 1304 1312	Shuidong
+T22	Disch_Place 1316 1320	Poti
+T23	Cargo 1323 1358	1531cbm/335 mt reactors+asccesoires
+T24	Laycan 1373 1395	18/4 onw – vsssl dates
+T25	Commission 1418 1427	3.75% IAC
+T26	Load_Place 1541 1558	Hazira  or Mumbai
+T27	Disch_Place 1562 1566	Poti
+T28	Cargo 1568 1607	1 degasser on saddles - 2450x450x430 cm
+T29	Laycan 1693 1704	11-15 april
+T30	Commission 1717 1722	3.75%
+R1	To Arg1:T28 Arg2:T27	
+R2	From Arg1:T28 Arg2:T26	
+R3	When Arg1:T28 Arg2:T29	
+R4	Commission Arg1:T28 Arg2:T30	
+R5	To Arg1:T23 Arg2:T22	
+R6	From Arg1:T23 Arg2:T21	
+R7	When Arg1:T23 Arg2:T24	
+R8	Commission Arg1:T23 Arg2:T25	
+R9	To Arg1:T18 Arg2:T17	
+R10	From Arg1:T18 Arg2:T16	
+R11	When Arg1:T18 Arg2:T19	
+R12	Commission Arg1:T18 Arg2:T20	
+R13	To Arg1:T13 Arg2:T12	
+R14	From Arg1:T13 Arg2:T11	
+R15	When Arg1:T13 Arg2:T14	
+R16	Commission Arg1:T13 Arg2:T15	
+R17	To Arg1:T8 Arg2:T7	
+R18	From Arg1:T8 Arg2:T6	
+R19	When Arg1:T8 Arg2:T9	
+R20	Commission Arg1:T8 Arg2:T10	
+R21	To Arg1:T3 Arg2:T2	
+R22	From Arg1:T3 Arg2:T1	
+R23	When Arg1:T3 Arg2:T4	
+R24	Commission Arg1:T3 Arg2:T5	

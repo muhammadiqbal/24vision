@@ -1,0 +1,11 @@
+T1	Load_Place 637 647	Danube Rvr
+T2	Disch_Place 653 661	WC Italy
+T3	Cargo 664 685	5/5.500mt blk dwt cgo
+T4	Laycan 687 696	apr 21/25
+T5	Laycan 698 706	ttl daps
+T6	Commission 708 717	3.75% iac
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	When Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	

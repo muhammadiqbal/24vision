@@ -1,0 +1,11 @@
+T1	Cargo 228 255	45,000 mt 10% moloo Clinker
+T2	Load_Place 264 271	Nantong
+T3	Disch_Place 287 294	Mombasa
+T4	Laycan 323 336	25-30th April
+T5	Terms 349 368	20,000 / 7000 shinc
+T6	Commission 381 392	2.5 add pus
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	When Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	

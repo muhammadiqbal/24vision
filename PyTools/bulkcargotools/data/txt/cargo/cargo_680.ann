@@ -1,0 +1,15 @@
+T1	Commodity 58 71	Manganese ore
+T2	Cargo 151 194	abt48,000mt manganese ore in bulk 10% moloo
+T3	Load_Place 225 241	owendo w. Africa
+T4	Disch_Place 277 302	qinzhou or tianjin, china
+T5	Terms 328 349	7000/10000 pwwd shinc
+T6	Laycan 360 363	ppt
+T7	Port_No 403 406	1/1
+T8	Commission 417 430	2.5pct add pu
+R1	Including Arg1:T2 Arg2:T1	
+R2	From Arg1:T2 Arg2:T3	
+R3	To Arg1:T2 Arg2:T4	
+R4	How Arg1:T2 Arg2:T5	
+R5	When Arg1:T2 Arg2:T6	
+R6	No_Of_Ports Arg1:T2 Arg2:T7	
+R7	Commission Arg1:T2 Arg2:T8	

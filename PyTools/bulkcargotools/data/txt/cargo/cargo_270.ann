@@ -1,0 +1,15 @@
+T1	Quantity 145 155	10.000 MTS
+T2	Commission 723 731	2.5% TTL
+T3	Load_Place 1055 1080	Marina di Carrara , Italy
+T4	Disch_Place 1105 1130	Sault Saint Mary , Canada
+T6	Cargo 1409 1437;1454 1467	STEEL ROUND BARS 5% molchopt : 10.000 tons
+T7	Laycan 1542 1560	15 – 21 may - 2017
+T9	Commodity 156 172	STEEL ROUND BARS
+R1	What Arg1:T1 Arg2:T9	
+R2	To Arg1:T6 Arg2:T4	
+R3	When Arg1:T6 Arg2:T7	
+R4	From Arg1:T6 Arg2:T3	
+T5	Terms 1629 1705;1862 1940	Loading terms: : 1300 mton/day SATPMSHEX eu per gang pwwd, max 2 gangs simo. Discharge terms: 2,800 mtons /gang / day /crane  SHEX max 2 gangs simo uu pwwd
+R5	How Arg1:T6 Arg2:T5	
+R6	Commission Arg1:T6 Arg2:T2	
+R7	Content Arg1:T6 Arg2:T1	

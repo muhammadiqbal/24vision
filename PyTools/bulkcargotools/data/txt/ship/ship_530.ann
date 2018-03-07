@@ -1,0 +1,11 @@
+T1	Loading_Place 219 230	Kaliningrad
+T2	Open_Date 232 242	21st April
+T3	Ship 247 262	mv Arklow Spray
+T4	Year 270 272	14
+T5	DWT 274 279	34905
+T6	Destination 428 436	Atlantic
+R1	Located Arg1:T3 Arg2:T1	
+R2	When Arg1:T3 Arg2:T2	
+R3	Built Arg1:T3 Arg2:T4	
+R4	Contain Arg1:T3 Arg2:T5	
+R5	To Arg1:T3 Arg2:T6	

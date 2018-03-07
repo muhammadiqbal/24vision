@@ -55,7 +55,10 @@ class FeePrice extends Model
      * @var array
      */
     public static $rules = [
-        
+        'port_id' => 'required|integer',
+        'start_date' => 'date',
+        'end_date' => 'date',
+        'price'=> 'required|numeric'
     ];
 
     /**

@@ -1,0 +1,122 @@
+T1	Load_Place 603 609	MERSIN
+T2	Disch_Place 613 618	TAMPA
+T3	Cargo 621 634	83 STEELPIPES
+T4	Laycan 657 667	10TH APRIL
+T5	Terms 685 700	TTL W  900MTONS
+T6	Load_Place 797 807	Constantza
+T7	Disch_Place 812 826	Fort De France
+T8	Cargo 828 861	1 radiation + 1 convection module
+T10	Commission 1038 1046	5.0% iac
+T11	Load_Place 1053 1061	Shanghai
+T12	Disch_Place 1065 1075	Chittagong
+T13	Laycan 1109 1131	starting sept/oct 2017
+T15	Commission 1250 1258	5.0% iac
+T16	Load_Place 1299 1308	Cartagena
+T17	Disch_Place 1311 1320	Djen Djen
+T20	Load_Place 1769 1779	ISKENDERUN
+T21	Disch_Place 1783 1790	ANTWERP
+T22	Cargo 1793 1820	ABT 1850 MTS STEEL PRODUCTS
+T23	Terms 1821 1827	900 BE
+T24	Laycan 1828 1839	16/22 APRIL
+T25	Commission 1840 1849	3.75% IAC
+T26	Load_Place 1870 1877	MARMARA
+T27	Disch_Place 1881 1888	T.BASHI
+T29	Laycan 1948 1961	10-15/04/2017
+T30	Terms 1966 1974	TTL DAYS
+T31	Commission 1976 1989	TTL 3.75% IAC
+T32	Load_Place 1996 2003	Kherson
+T33	Disch_Place 2007 2014	Marmara
+T34	Cargo 2017 2031	3000/10 WBP 54
+T35	Terms 2036 2050	1000/1000 x be
+T36	Laycan 2051 2059	05-07.04
+T37	Commission 2060 2069	3.75% IAC
+T38	Load_Place 2076 2082	Mersin
+T39	Disch_Place 2086 2095	Allicante
+T40	Cargo 2098 2122	5/8.000 mts White cement
+T41	Laycan 2123 2137	1ST WEEK APRIL
+T42	Disch_Place 2144 2173	2500-3000 / 1800 mt SSHEX EIU
+T43	Commission 2174 2182	2.5% ttl
+T44	Load_Place 2194 2239	Argentina (Bahia Blanca or Necochea in chopt)
+T45	Disch_Place 2243 2249	Lisbon
+T46	Cargo 2252 2305	min 7000 upto max 15000 mts Sunflower Seeds (abt 85')
+T47	Terms 2314 2328	5000 mts bends
+T48	Laycan 2334 2342	May 2017
+T50	Load_Place 2641 2649	Mariupol
+T51	Disch_Place 2653 2662	wc Greece
+T52	Cargo 2665 2694	8.6/9.000mt bulk wheat sf 46'
+T53	Laycan 2695 2705	5-10 Appil
+T54	Terms 2706 2727	2500/2000 sshex bends
+T55	Commission 2728 2737	3.75% IAC
+T56	Cargo 2752 2776	LIMESTONE 50K MT 10% MOL
+T57	Load_Place 2777 2788	DUQM (OMAN)
+T58	Disch_Place 2791 2800	TUTICORIN
+T59	Terms 2801 2828	10,000 MT / 12,000 MT DAILY
+T60	Laycan 2829 2841	EARLY MAY 17
+T61	Commission 2842 2850	2.5% TTL
+T62	Cargo 2875 2899	LIMESTONE 50K MT 10% MOL
+T63	Load_Place 2900 2913	SAROOJ (IRAN)
+T64	Disch_Place 2916 2925	TUTICORIN
+T65	Terms 2926 2953	10,000 MT / 12,000 MT DAILY
+T66	Laycan 2954 2965	EARY MAY 17
+T67	Commission 2966 2974	2.5% TTL
+R1	To Arg1:T3 Arg2:T2	
+R5	To Arg1:T8 Arg2:T7	
+R6	From Arg1:T8 Arg2:T6	
+T9	Laycan 985 1032	fm  31/07/17  dely at dischport latest 01/09/17
+R7	When Arg1:T8 Arg2:T9	
+R8	Commission Arg1:T8 Arg2:T10	
+T18	Cargo 1321 1388	ttl  10 voyages with abt 150 pipes but not all on consecutive basis
+R13	To Arg1:T18 Arg2:T17	
+R14	From Arg1:T18 Arg2:T16	
+R17	To Arg1:T22 Arg2:T21	
+R18	From Arg1:T22 Arg2:T20	
+R19	How Arg1:T22 Arg2:T23	
+R20	When Arg1:T22 Arg2:T24	
+R21	Commission Arg1:T22 Arg2:T25	
+R27	To Arg1:T34 Arg2:T33	
+R28	From Arg1:T34 Arg2:T32	
+R29	How Arg1:T34 Arg2:T35	
+R30	When Arg1:T34 Arg2:T36	
+R31	Commission Arg1:T34 Arg2:T37	
+R32	To Arg1:T40 Arg2:T39	
+R33	From Arg1:T40 Arg2:T38	
+R34	When Arg1:T40 Arg2:T41	
+R35	To Arg1:T40 Arg2:T42	
+R36	Commission Arg1:T40 Arg2:T43	
+R37	To Arg1:T46 Arg2:T45	
+R38	From Arg1:T46 Arg2:T44	
+R39	How Arg1:T46 Arg2:T47	
+R40	When Arg1:T46 Arg2:T48	
+R42	To Arg1:T52 Arg2:T51	
+R43	From Arg1:T52 Arg2:T50	
+R44	When Arg1:T52 Arg2:T53	
+R45	How Arg1:T52 Arg2:T54	
+R46	Commission Arg1:T52 Arg2:T55	
+R47	To Arg1:T56 Arg2:T58	
+R48	From Arg1:T56 Arg2:T57	
+R49	How Arg1:T56 Arg2:T59	
+R50	When Arg1:T56 Arg2:T60	
+R51	Commission Arg1:T56 Arg2:T61	
+R52	To Arg1:T62 Arg2:T64	
+R53	From Arg1:T62 Arg2:T63	
+R54	How Arg1:T62 Arg2:T65	
+R55	When Arg1:T62 Arg2:T66	
+R56	Commission Arg1:T62 Arg2:T67	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+T14	Cargo 1207 1245	620/650 pipes = abt   6.820 / 7.150 mt
+R9	When Arg1:T14 Arg2:T13	
+R10	To Arg1:T14 Arg2:T12	
+R11	From Arg1:T14 Arg2:T11	
+R12	Commission Arg1:T14 Arg2:T15	
+T19	Commission 1540 1548	5.0% iac
+R15	Commission Arg1:T18 Arg2:T19	
+T28	Cargo 1891 1909;1920 1943	UP TO FCC GENERALS (NEED ARND 220-240 CBF)
+R16	To Arg1:T28 Arg2:T27	
+R22	From Arg1:T28 Arg2:T26	
+R23	When Arg1:T28 Arg2:T29	
+R24	How Arg1:T28 Arg2:T30	
+R25	Commission Arg1:T28 Arg2:T31	
+T49	Commission 2348 2356	5.0% iac
+R26	Commission Arg1:T46 Arg2:T49	

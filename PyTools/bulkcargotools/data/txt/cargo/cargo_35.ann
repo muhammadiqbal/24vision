@@ -1,0 +1,15 @@
+T1	Commission 826 834	5.0% IAC
+T2	Load_Place 836 842	Odessa
+T3	Disch_Place 846 850	Oran
+T5	Quantity 115 126	18/19000 mt
+T6	Laycan 899 908	5-8 April
+T8	Commodity 127 134	billets
+T7	Terms 910 945	4000 x at load/ 1500 FSHEX at disch
+R7	What Arg1:T5 Arg2:T8	
+T4	Cargo 853 876	m/m 18/19000 mt billets
+R1	Commission Arg1:T4 Arg2:T1	
+R2	To Arg1:T4 Arg2:T3	
+R3	From Arg1:T4 Arg2:T2	
+R4	When Arg1:T4 Arg2:T6	
+R5	How Arg1:T4 Arg2:T7	
+R6	Content Arg1:T4 Arg2:T5	

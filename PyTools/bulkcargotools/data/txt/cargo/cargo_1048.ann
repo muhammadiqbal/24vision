@@ -1,0 +1,13 @@
+T1	Cargo 123 153	50,000/10pct Urea (sf abt 1.45
+T2	Load_Place 158 176	Nanjing or Nantong
+T3	Disch_Place 191 194	ECI
+T4	Terms 196 222	6000sc / 10,000 sashex eiu
+T5	Laycan 223 231	15-31May
+T6	Commission 247 262	3.75adcom pstus
+T7	Commodity 64 68	urea
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	How Arg1:T1 Arg2:T4	
+R4	When Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	
+R6	Including Arg1:T1 Arg2:T7	

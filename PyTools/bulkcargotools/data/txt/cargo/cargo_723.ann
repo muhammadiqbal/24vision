@@ -1,0 +1,20 @@
+T1	Cargo 188 220	20/25,000 mts Iron Scrap HMS # 1
+T2	Load_Place 247 258	Guanta, Ven
+T3	Disch_Place 262 280	Nhava Shiva, India
+T4	Laycan 285 295	9/11 April
+T5	Commission 326 331	5 ttl
+T6	Terms 296 321	2,500 sshex / 2,500 shinc
+T7	Cargo 363 393	20,000 tns bgd rice in pallets
+T8	Disch_Place 436 442	Guanta
+T9	Load_Place 422 433	Nhava Shiva
+T10	Terms 443 469	2,000 shinc / 2,000  sshex
+T11	Commission 474 478	5ttl
+R1	To Arg1:T1 Arg2:T3	
+R2	From Arg1:T1 Arg2:T2	
+R3	When Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T6	
+R5	Commission Arg1:T1 Arg2:T5	
+R6	To Arg1:T7 Arg2:T8	
+R7	From Arg1:T7 Arg2:T9	
+R8	How Arg1:T7 Arg2:T10	
+R9	Commission Arg1:T7 Arg2:T11	

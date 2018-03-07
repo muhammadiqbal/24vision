@@ -1,0 +1,15 @@
+T1	Commodity 39 44	straw
+T2	Quantity 27 38	600/2000 mt
+T3	Disch_Place 247 253	BEIRUT
+T4	Load_Place 241 246	VARNA
+T5	Cargo 254 281	600/2000 TNS STRAW IN BALES
+T6	Terms 283 293	6 TTL DAYS
+T7	Laycan 294 302	SPOT PPT
+T8	Commission 303 308	3.75%
+R1	What Arg1:T2 Arg2:T1	
+R2	To Arg1:T5 Arg2:T3	
+R3	From Arg1:T5 Arg2:T4	
+R4	Content Arg1:T5 Arg2:T2	
+R5	How Arg1:T5 Arg2:T6	
+R6	When Arg1:T5 Arg2:T7	
+R7	Commission Arg1:T5 Arg2:T8	

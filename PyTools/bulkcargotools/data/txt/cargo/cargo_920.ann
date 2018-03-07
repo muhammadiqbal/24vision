@@ -1,0 +1,7 @@
+T1	Load_Place 368 374	mersin
+T2	Disch_Place 375 385	ain sukhna
+T3	Laycan 690 703	ppt/next week
+T4	Cargo 387 420;498 515	abt 42 stlpipes length 60/70 mtrs ttl abt 1500mtons
+R1	To Arg1:T4 Arg2:T2	
+R2	From Arg1:T4 Arg2:T1	
+R3	When Arg1:T4 Arg2:T3	

@@ -1,0 +1,15 @@
+T1	Quantity 122 140	10.500 / 11.600 mt
+T2	Load_Place 788 798	Iskenderun
+T3	Disch_Place 802 809	Sagunto
+T4	Cargo 812 841	m/m 10.500 / 11.600 mt of HRC
+T5	Laycan 844 867	01 April 2017 – Onwards
+T6	Terms 870 902	6.000 Shinc / 3,5 days Sshex-eiu
+T7	Commission 905 913	2.5% ttl
+T8	Commodity 144 147	HRC
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T2	
+R3	When Arg1:T4 Arg2:T5	
+R4	How Arg1:T4 Arg2:T6	
+R5	Commission Arg1:T4 Arg2:T7	
+R6	Content Arg1:T4 Arg2:T1	
+R7	What Arg1:T1 Arg2:T8	

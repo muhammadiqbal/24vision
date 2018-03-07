@@ -1,0 +1,15 @@
+T1	Load_Place 695 704	Australia
+T2	Disch_Place 712 720	EC INDIA
+T3	Cargo 723 757	35,000 mt bulk alumina 5 pct moloo
+T4	Laycan 764 778	11/17 May 2017
+T6	Commodity 141 148	alumina
+<<<<<<< HEAD
+T5	Terms 1036 1085;783 793;795 846;848 899;901 963;968 983;985 1034	Kakinada            - 7500 MT / 24 hours WWDSHINC Load Rate: Kwinana             - 14000 MT / 24 hours WWDSSHINC Bunbury(Berth No 4) - 18000 MT / 24 hours WWDSSHINC Including official Western Australian Gazetted Public Holidays Discharge Rate: Gangavaram          - 3500 MT / 24 hours WWDSHINC
+=======
+T5	Terms 1036 1085;783 793;795 846;848 899;901 963;968 983;985 1034	Kakinada            - 7500 MT / 24 hours WWDSHINC Load Rate: Kwinana             - 14000 MT / 24 hours WWDSSHINC Bunbury(Berth No 4) - 18000 MT / 24 hours WWDSSHINC Including official Western Australian Gazetted Public Holidays Discharge Rate: Gangavaram          - 3500 MT / 24 hours WWDSHINC
+>>>>>>> a62d00c0e4f470d5d17bb524118d708c933d55c7
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Including Arg1:T3 Arg2:T6	

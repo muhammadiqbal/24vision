@@ -1,0 +1,15 @@
+T1	Commodity 86 91	scrap
+T2	Quantity 71 82	7/15000 mts
+R1	What Arg1:T2 Arg2:T1	
+T3	Load_Place 599 607	Misurata
+T4	Disch_Place 611 621	Iskenderun
+T5	Cargo 624 654	7/15000 mts of scrap sf abt 70
+T6	Terms 659 667	ttl days
+T7	Laycan 668 672	spot
+T8	Commission 673 681	2.5% ttl
+R2	To Arg1:T5 Arg2:T4	
+R3	From Arg1:T5 Arg2:T3	
+R4	How Arg1:T5 Arg2:T6	
+R5	When Arg1:T5 Arg2:T7	
+R6	Commission Arg1:T5 Arg2:T8	
+R7	Content Arg1:T5 Arg2:T2	

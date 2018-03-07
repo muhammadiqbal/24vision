@@ -1,0 +1,11 @@
+T2	Load_Place 203 215	Uusikaupunki
+T3	Disch_Place 218 231	Tema + Douala
+T4	Laycan 242 253	April 19-21
+T5	Terms 273 302;304 346	loadspeed Uusikaupunki  6000c - discharge speed Tema 2500c, Douala 1500c
+T1	Cargo 164 188	abt 17.000mt NPK in bulk
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	When Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+T6	Commission 350 366	2.5 % addcom pus
+R5	Commission Arg1:T1 Arg2:T6	

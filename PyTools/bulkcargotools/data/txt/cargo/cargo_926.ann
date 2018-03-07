@@ -1,0 +1,11 @@
+T1	Cargo 196 246	min 15’100 – max 15’300 wmt chopt zn concs in bulk
+T2	Laycan 247 252	april
+T3	Load_Place 309 316	Abidjan
+T4	Disch_Place 323 330	Antwerp
+T5	Terms 331 354	5000 ssinc / 5000 sshex
+T6	Commission 355 370	2.5 add com pus
+R1	When Arg1:T1 Arg2:T2	
+R2	From Arg1:T1 Arg2:T3	
+R3	To Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	

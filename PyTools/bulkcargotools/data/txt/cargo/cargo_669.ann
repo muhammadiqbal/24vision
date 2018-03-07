@@ -1,0 +1,13 @@
+T1	Cargo 210 250	35.000 +10% chopt steel scrap s/f abt 65
+T2	Load_Place 253 272	Baltyjsk + Klaipeda
+T3	Disch_Place 280 296	Nemrut bay chopt
+T4	Laycan 298 307	12-20 may
+T5	Terms 309 326	4000c+6000c/7000c
+T6	Commission 328 338	2.5 pct pu
+R1	Commission Arg1:T1 Arg2:T6	
+R2	How Arg1:T1 Arg2:T5	
+R3	When Arg1:T1 Arg2:T4	
+R4	From Arg1:T1 Arg2:T2	
+R5	To Arg1:T1 Arg2:T3	
+T7	Commodity 52 63	steel scrap
+R6	Including Arg1:T1 Arg2:T7	

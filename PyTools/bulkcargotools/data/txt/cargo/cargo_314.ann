@@ -1,0 +1,51 @@
+T1	Load_Place 551 571	Fuglafjordur, Faroes
+T2	Load_Place 680 689	Barcelona
+T3	Load_Place 800 809	Nikolayev
+T4	Load_Place 889 898	Nikolayev
+T5	Cargo 1135 1162	1X (45,000-60,000) MT MOLOO
+T6	Laycan 1171 1197	20’April’17 to 26’April’17
+T7	Terms 1209 1235;1252 1268;1269 1285	Sherbo River -7,000 MT/day VPT- 8000 MT/day GPL-12000 MT/day
+T8	Commission 1286 1294	2.5% TTL
+T9	Disch_Place 902 908	Mersin
+T10	Cargo 911 940	25.000 mts grains, sf abt 54'
+T11	Terms 945 957	4000x/ 3000x
+T12	Laycan 958 974	28-Mar/ 02-April
+T13	Commission 981 989	5.0% iac
+T14	Disch_Place 813 819	Mersin
+T15	Cargo 822 848	10,000 MT 10% Corn in Bulk
+T16	Terms 849 860	Total 6daps
+T17	Laycan 861 872	01-10.April
+T18	Commission 873 882	3.75% iac
+T19	Disch_Place 693 702	Port Said
+T20	Cargo 705 725	44/4570 mts profiles
+T21	Laycan 726 738	29/30  March
+T22	Terms 739 760	3000 sshex /800 fshex
+T23	Commission 766 779	Gnc 3.75% iac
+T24	Disch_Place 575 590	Astakos, Greece
+T25	Cargo 593 627	2.5/3.000 mton fishmeal stw abt 60
+T26	Laycan 628 646	Week 14, try later
+T27	Terms 647 664	5 ttl days sshinc
+T28	Commission 665 673	5.0% iac
+R1	To Arg1:T25 Arg2:T24	
+R2	From Arg1:T25 Arg2:T1	
+R3	When Arg1:T25 Arg2:T26	
+R4	How Arg1:T25 Arg2:T27	
+R5	Commission Arg1:T25 Arg2:T28	
+R6	To Arg1:T20 Arg2:T19	
+R7	From Arg1:T20 Arg2:T2	
+R8	When Arg1:T20 Arg2:T21	
+R9	How Arg1:T20 Arg2:T22	
+R10	Commission Arg1:T20 Arg2:T23	
+R11	To Arg1:T15 Arg2:T14	
+R12	From Arg1:T15 Arg2:T3	
+R13	How Arg1:T15 Arg2:T16	
+R14	When Arg1:T15 Arg2:T17	
+R15	Commission Arg1:T15 Arg2:T18	
+R16	To Arg1:T10 Arg2:T9	
+R17	From Arg1:T10 Arg2:T4	
+R18	How Arg1:T10 Arg2:T11	
+R19	When Arg1:T10 Arg2:T12	
+R20	Commission Arg1:T10 Arg2:T13	
+R21	When Arg1:T5 Arg2:T6	
+R22	How Arg1:T5 Arg2:T7	
+R23	Commission Arg1:T5 Arg2:T8	

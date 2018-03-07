@@ -1,0 +1,26 @@
+T1	Quantity 62 74	5000/6600 mt
+T2	Load_Place 254 270	GDANSK OR GDYNIA
+T3	Disch_Place 273 284	EAST GREECE
+T4	Cargo 285 300	5000/6600 WHEAT
+T5	Terms 302 311	2000/2000
+T6	Laycan 313 320	PPT ONW
+T7	Commission 322 330	3,75 TTL
+R1	Commission Arg1:T4 Arg2:T7	
+R2	When Arg1:T4 Arg2:T6	
+R3	How Arg1:T4 Arg2:T5	
+R4	To Arg1:T4 Arg2:T3	
+R5	From Arg1:T4 Arg2:T2	
+R6	Content Arg1:T4 Arg2:T1	
+T8	Commodity 75 80	wheat
+T9	Load_Place 339 348	SANTANDER
+T10	Disch_Place 349 355	BEIRUT
+T11	Cargo 357 389	2600/2800 TNS WHEAT STRAW STW 60
+T12	Terms 391 401	5 TTL DAYS
+T13	Laycan 402 409	PPT ONW
+T14	Commission 411 420	3.75% TTL
+R7	To Arg1:T11 Arg2:T10	
+R8	From Arg1:T11 Arg2:T9	
+R9	How Arg1:T11 Arg2:T12	
+R10	When Arg1:T11 Arg2:T13	
+R11	Commission Arg1:T11 Arg2:T14	
+R12	What Arg1:T1 Arg2:T8	

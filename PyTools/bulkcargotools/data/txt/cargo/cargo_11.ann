@@ -1,0 +1,15 @@
+T1	Load_Place 826 833	B.Abbas
+T2	Disch_Place 837 845	Prachuap
+T3	Cargo 848 881	M/M 54/56000 slabs - qty in chopt
+T4	Laycan 883 895	spot/1 april
+T5	Terms 897 921	4000fhex uu / 10000shinc
+T6	Commission 927 936	3.75% IAC
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	How Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+T8	Commodity 129 134	slabs
+T7	Quantity 120 128	54/56000
+R6	What Arg1:T7 Arg2:T8	
+R7	Content Arg1:T3 Arg2:T7	

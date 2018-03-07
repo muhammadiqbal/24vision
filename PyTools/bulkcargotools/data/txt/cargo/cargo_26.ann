@@ -1,0 +1,13 @@
+T3	Laycan 971 993	20th - 30th April 2017
+T4	Load_Place 1006 1045	Go Dau port, Dong Nai province, Vietnam
+T5	Disch_Place 1067 1107	Gangavaram / Visakapatnam SeaPort, India
+T7	Commission 1988 1998	Total 2.5%
+T2	Terms 1112 1122;1124 1308;1309 1360;1904 1919;1921 1976	Load Rate: Go Dau port, Dong Nai province, Vietnam - 3,000 MT per Weather Working Day of twenty four (24) consecutive hours, Sundays and Holidays excluded, unless used (WWD SHEX UU), or pro-rata. Including official Vietnam gazatted Public Holidays Discharge Rate: Gangavaram / Visakapatnam - 3500 MT / 24 hours WWDSHINC
+T6	Commodity 159 166	Alumina
+T1	Cargo 842 911;940 960	Sandy Calcined Metallurgical Grade Alumina in Plastic Woven Jumbo Bag : 20,000mts (+/-10%)
+R1	When Arg1:T1 Arg2:T3	
+R2	From Arg1:T1 Arg2:T4	
+R3	To Arg1:T1 Arg2:T5	
+R4	How Arg1:T1 Arg2:T2	
+R5	Commission Arg1:T1 Arg2:T7	
+R6	Including Arg1:T1 Arg2:T6	

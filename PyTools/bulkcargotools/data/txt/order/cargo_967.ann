@@ -1,0 +1,9 @@
+T1	Cargo 130 168	29000 mt +/-  10 pct in OO of bulk MOP
+T2	Load_Place 343 362	Klaipeda, Lithuania
+T3	Laycan 451 464	04-06/04/2017
+T4	Disch_Place 522 529	Vietnam
+T5	Quantity 62 65	29k
+R1	Content Arg1:T1 Arg2:T5	
+R2	From Arg1:T1 Arg2:T2	
+R3	To Arg1:T1 Arg2:T4	
+R4	When Arg1:T1 Arg2:T3	

@@ -1,0 +1,13 @@
+T1	Commodity 90 99	agriprods
+T2	Commission 640 654	3.75% IAC 2.5%
+T3	Load_Place 655 662	Kherson
+T4	Disch_Place 666 683	Brest-St.Malo rng
+T5	Cargo 686 729	abt 6000 mts agriprods, sf abt 62 / in bulk
+T6	Terms 731 752	1500 / 2000 sshex eiu
+T7	Laycan 758 772	23-25 April'17
+R1	Commission Arg1:T5 Arg2:T2	
+R2	To Arg1:T5 Arg2:T4	
+R3	When Arg1:T5 Arg2:T7	
+R4	How Arg1:T5 Arg2:T6	
+R5	From Arg1:T5 Arg2:T3	
+R6	Including Arg1:T5 Arg2:T1	

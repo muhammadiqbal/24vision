@@ -1,0 +1,11 @@
+T1	Cargo 276 331	abt 46.400t five grades potash and NPK/Entec fertilizer
+T2	Load_Place 357 383;461 495	Hamburg, intention Kalikai Antwerp, intention BASF / Eurochem
+T3	Disch_Place 555 590	Pasir Gudang + Port Klang + Belawan
+T4	Laycan 595 613	22nd April onwards
+T5	Terms 783 823;825 846;851 921	Hamburg 8.000t pwwd shex Satnoon/Mon 8am Antwerp: 5.000t shinc Discharge speed: 2.500t pwwd sshex Fri 5pm/Mon 8am all discharge ports
+T6	Commission 1177 1187	2,5% ad pu
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	When Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	

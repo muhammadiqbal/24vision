@@ -1,0 +1,11 @@
+T1	Load_Place 214 231	Aaheim, WC Norway
+T2	Disch_Place 274 288	Gijon, N.Spain
+T3	Laycan 328 365	19-21st April, 2017 (try later dates)
+T4	Terms 376 423	load; 24.000 sshinc wp / dish; 12.000 sshinc wp
+T5	Commission 481 496	2,50 addcom PUS
+T6	Cargo 136 173;196 205	24.000 mts +/-10% OO, Olivine in bulk , stw dwt
+R1	From Arg1:T6 Arg2:T1	
+R2	To Arg1:T6 Arg2:T2	
+R3	When Arg1:T6 Arg2:T3	
+R4	How Arg1:T6 Arg2:T4	
+R5	Commission Arg1:T6 Arg2:T5	

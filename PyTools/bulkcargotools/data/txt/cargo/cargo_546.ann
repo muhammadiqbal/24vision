@@ -1,0 +1,15 @@
+T1	Commodity 141 145	COAL
+T2	Quantity 126 135	35,000 MT
+T3	Cargo 256 275	35,000 MT BULK COAL
+T4	Load_Place 277 299	Muara Sabak, Indonesia
+T5	Disch_Place 304 315	South China
+T6	Terms 317 355	8000 mt / 12,000 mt , pwwd shinc bends
+T7	Laycan 357 377	2nd week April, 2017
+T8	Commission 379 393	2.5% adcom pus
+R1	What Arg1:T2 Arg2:T1	
+R2	Content Arg1:T3 Arg2:T2	
+R3	From Arg1:T3 Arg2:T4	
+R4	To Arg1:T3 Arg2:T5	
+R5	How Arg1:T3 Arg2:T6	
+R6	When Arg1:T3 Arg2:T7	
+R7	Commission Arg1:T3 Arg2:T8	

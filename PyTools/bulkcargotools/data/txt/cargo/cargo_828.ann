@@ -1,0 +1,15 @@
+T1	Commodity 39 44	STRAW
+T2	Quantity 27 38	600/2000 MT
+T3	Disch_Place 248 254	BEIRUT
+T4	Load_Place 242 247	VARNA
+T5	Cargo 255 282	600/2000 TNS STRAW IN BALES
+T6	Terms 284 294	6 TTL DAYS
+T7	Laycan 295 303	SPOT PPT
+T8	Commission 305 310	3.75%
+R1	From Arg1:T5 Arg2:T4	
+R2	To Arg1:T5 Arg2:T3	
+R3	Content Arg1:T5 Arg2:T2	
+R4	What Arg1:T2 Arg2:T1	
+R5	How Arg1:T5 Arg2:T6	
+R6	When Arg1:T5 Arg2:T7	
+R7	Commission Arg1:T5 Arg2:T8	

@@ -1,0 +1,13 @@
+T1	Commodity 140 144	coal
+T2	Cargo 431 477	40,000 MT Bulk Coal – try slightly less / more
+T3	Load_Place 479 497	Taboneo, Indonesia
+T4	Disch_Place 501 524	Caojin, Shanghai, China
+T5	Terms 538 578	7000 mt pwwd shinc / 12,000mt pwwd shinc
+T6	Commission 599 613	2.5% adcom pus
+T7	Laycan 580 597	25-30 April, 2017
+R1	From Arg1:T2 Arg2:T3	
+R2	To Arg1:T2 Arg2:T4	
+R3	How Arg1:T2 Arg2:T5	
+R4	When Arg1:T2 Arg2:T7	
+R5	Commission Arg1:T2 Arg2:T6	
+R6	Including Arg1:T2 Arg2:T1	

@@ -1,0 +1,11 @@
+T1	Commission 591 599	2.5% add
+T2	Laycan 577 590	2-6 apr, 2017
+T3	Cargo 462 506	25-30,000 mt 10% molchopt mill scale in bulk
+T4	Disch_Place 528 546	china intn nanjing
+T5	Load_Place 515 521	b'desh
+T6	Terms 547 576	load 5000 mt / disch 10000 mt
+R1	From Arg1:T3 Arg2:T5	
+R2	To Arg1:T3 Arg2:T4	
+R3	How Arg1:T3 Arg2:T6	
+R4	When Arg1:T3 Arg2:T2	
+R5	Commission Arg1:T3 Arg2:T1	

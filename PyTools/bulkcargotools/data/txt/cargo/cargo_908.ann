@@ -1,0 +1,57 @@
+T1	Cargo 207 233	5,000mt/10% Molco HR Coils
+T2	Laycan 256 270	21st Apr. 2017
+T3	Load_Place 298 312	Kimitsu, Japan
+T4	Disch_Place 320 332	Ulsan, Korea
+T5	Terms 355 364	CQD bends
+T6	Port_No 380 383	1/1
+R1	When Arg1:T1 Arg2:T2	
+R2	From Arg1:T1 Arg2:T3	
+R3	To Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+R5	No_Of_Ports Arg1:T1 Arg2:T6	
+T7	Cargo 388 414	5,500mt/10% Molco HR Coils
+T8	Laycan 437 451	23rd Apr. 2017
+T9	Load_Place 479 490	South Japan
+T10	Disch_Place 498 510	TBN, S.Korea
+T11	Terms 533 542	CQD bends
+T12	Port_No 558 561	1/1
+R6	When Arg1:T7 Arg2:T8	
+R7	From Arg1:T7 Arg2:T9	
+R8	To Arg1:T7 Arg2:T10	
+R9	How Arg1:T7 Arg2:T11	
+T13	Cargo 566 605	10,000mt/5% Molco Steel Billet in loose
+T14	Laycan 624 642	05th/10th May 2017
+T15	Load_Place 668 680	Suao, Taiwan
+T16	Disch_Place 688 700	Busan, Korea
+T17	Terms 723 732	CQD bends
+R10	When Arg1:T13 Arg2:T14	
+R11	From Arg1:T13 Arg2:T15	
+R12	To Arg1:T13 Arg2:T16	
+R13	How Arg1:T13 Arg2:T17	
+T18	Cargo 783 808	Abt 4,700mt Steel CRCoils
+T19	Load_Place 812 830	VungTau, S.Vietnam
+T20	Disch_Place 834 851	Merak, Indonesia,
+T21	Laycan 865 878	22nd/24th Apr
+T22	Terms 903 912	CQD bends
+T23	Port_No 927 930	1/1
+R14	From Arg1:T18 Arg2:T19	
+R15	To Arg1:T18 Arg2:T20	
+R16	When Arg1:T18 Arg2:T21	
+R17	How Arg1:T18 Arg2:T22	
+R18	No_Of_Ports Arg1:T18 Arg2:T23	
+T24	Cargo 933 952	Abt 3,000mt CR Coil
+T25	Load_Place 956 971	Nansha, S.China
+T26	Disch_Place 975 1011	Pyeongtaek or Pohang or Busan, Korea
+T27	Laycan 1023 1060	PPT/Spot onwards until 20th Apr. 2017
+T28	Terms 1070 1083	CQD both ends
+R19	From Arg1:T24 Arg2:T25	
+R20	To Arg1:T24 Arg2:T26	
+R21	When Arg1:T24 Arg2:T27	
+R22	How Arg1:T24 Arg2:T28	
+T29	Commission 1131 1147	2.50% AddCom PUS
+R23	Commission Arg1:T24 Arg2:T29	
+R24	Commission Arg1:T18 Arg2:T29	
+R25	Commission Arg1:T13 Arg2:T29	
+R26	Commission Arg1:T7 Arg2:T29	
+R27	Commission Arg1:T1 Arg2:T29	
+R28	No_Of_Ports Arg1:T7 Arg2:T12	

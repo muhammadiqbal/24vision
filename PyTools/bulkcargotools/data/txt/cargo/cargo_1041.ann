@@ -1,0 +1,11 @@
+T1	Cargo 220 279	abt 21.500mt NPK in bulk, 3 grades in bulk and 1 in Bigbags
+T2	Laycan 331 342	April 23-26
+T3	Commission 471 487	2.5 % addcom pus
+T4	Terms 373 410;412 467	loadspeed Kotka 4000c, Klaipeda 4000c - discharge speed Abidjan 3000c, Tema 2000c, Lome 2000c
+T5	Load_Place 284 298	Kotka+Klaipeda
+T6	Disch_Place 301 320	Abidjan+Lome + Tema
+R1	To Arg1:T1 Arg2:T6	
+R2	From Arg1:T1 Arg2:T5	
+R3	When Arg1:T1 Arg2:T2	
+R4	How Arg1:T1 Arg2:T4	
+R5	Commission Arg1:T1 Arg2:T3	

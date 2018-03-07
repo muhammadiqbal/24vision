@@ -1,0 +1,11 @@
+T2	Cargo 326 364	20,00mt - 2 pct moloo calcined petcoke
+T3	Load_Place 371 394	Visakhapatnam, EC India
+T4	Disch_Place 397 412	Mesaieed, Qatar
+T5	Laycan 518 524	prompt
+R1	From Arg1:T2 Arg2:T3	
+R2	To Arg1:T2 Arg2:T4	
+R3	When Arg1:T2 Arg2:T5	
+T1	Terms 419 466;471 499	Load: 1,200 mt pwwd per crane / per hatch SHINC - Dish: 6,000 mt pwwd FSHINC
+R5	How Arg1:T2 Arg2:T1	
+T6	Commission 541 550	ttl 1.25%
+R4	Commission Arg1:T2 Arg2:T6	

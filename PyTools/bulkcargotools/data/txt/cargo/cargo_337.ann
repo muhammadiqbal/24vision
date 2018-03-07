@@ -1,0 +1,53 @@
+T1	Load_Place 550 557	Karachi
+T2	Disch_Place 561 567	Durban
+T3	Cargo 568 620	01 Unit  155 MM T5 HOWITZER GUN mounted on a Vehicle
+T4	Laycan 621 637	01/10 April 2017
+T5	Load_Place 806 813	Isdemir
+T6	Disch_Place 817 831	Seville, Spain
+T7	Cargo 835 872	M/M  5.450 / 5.750 mts in chopt coils
+T8	Laycan 880 898	02 – 03 April 2017
+T9	Terms 899 929	4.500 Sshinc / 2.750 Sshex-eiu
+T10	Commission 992 1000	2.5% ttl
+T11	Commission 1028 1036	5.0% iac
+T12	Load_Place 1043 1052	nikolayev
+T13	Disch_Place 1061 1068	sibenik
+T14	Terms 1152 1182;1184 1213	load rate: 3000 mt pwwd sshinc disch rate: 2500 mt sshex eiu
+T15	Cargo 1071 1121	7,682/7,752 mts in chopt of blk mop stw abt 1m3/mt
+T16	Laycan 1134 1150	04 - 06/apr 2017
+T17	Commission 1394 1403	3.75% iac
+T18	Laycan 1377 1393	20-30 April date
+T19	Cargo 1301 1332	50000 mts bagged UREA 50kg bags
+T20	Disch_Place 1279 1298	Montevideo, Uruguay
+T21	Load_Place 1258 1275	Alexandria, Egypt
+T22	Terms 1333 1376	4000 mts pwwd shexc bends - 12 hrs TT bends
+T23	Commission 1432 1441	3.75% IAC
+T24	Load_Place 1444 1451	B.Abbas
+T25	Disch_Place 1455 1463	Prachuap
+T26	Cargo 1466 1499	M/M 54/56000 slabs - qty in chopt
+T27	Laycan 1500 1512	spot/1 april
+T28	Commission 1542 1551	3.75% IAC
+T29	Terms 1513 1537	4000fhex uu / 10000shinc
+R1	To Arg1:T26 Arg2:T25	
+R2	From Arg1:T26 Arg2:T24	
+R3	When Arg1:T26 Arg2:T27	
+R4	How Arg1:T26 Arg2:T29	
+R5	Commission Arg1:T26 Arg2:T28	
+R6	Commission Arg1:T26 Arg2:T23	
+R7	To Arg1:T19 Arg2:T20	
+R8	From Arg1:T19 Arg2:T21	
+R9	How Arg1:T19 Arg2:T22	
+R10	When Arg1:T19 Arg2:T18	
+R11	Commission Arg1:T19 Arg2:T17	
+R12	To Arg1:T15 Arg2:T13	
+R13	From Arg1:T15 Arg2:T12	
+R14	When Arg1:T15 Arg2:T16	
+R15	How Arg1:T15 Arg2:T14	
+R16	Commission Arg1:T15 Arg2:T11	
+R17	To Arg1:T7 Arg2:T6	
+R18	From Arg1:T7 Arg2:T5	
+R19	When Arg1:T7 Arg2:T8	
+R20	How Arg1:T7 Arg2:T9	
+R21	Commission Arg1:T7 Arg2:T10	
+R22	When Arg1:T3 Arg2:T4	
+R23	To Arg1:T3 Arg2:T2	
+R24	From Arg1:T3 Arg2:T1	

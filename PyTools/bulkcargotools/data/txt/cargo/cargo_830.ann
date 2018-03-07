@@ -1,0 +1,15 @@
+T1	Commodity 35 39	mins
+T2	Quantity 27 34	1500 mt
+T3	Cargo 233 251	1500 MTS MIN IN BB
+T4	Disch_Place 263 269	LICATA
+T5	Load_Place 258 262	SFAX
+T6	Laycan 270 274	SPOT
+T7	Terms 275 285	3 TTL DAYS
+T8	Commission 286 296	2.50 % TTL
+R1	Content Arg1:T3 Arg2:T2	
+R2	What Arg1:T2 Arg2:T1	
+R3	To Arg1:T3 Arg2:T4	
+R4	From Arg1:T3 Arg2:T5	
+R5	When Arg1:T3 Arg2:T6	
+R6	How Arg1:T3 Arg2:T7	
+R7	Commission Arg1:T3 Arg2:T8	

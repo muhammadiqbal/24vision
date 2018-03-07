@@ -1,0 +1,22 @@
+T1	Cargo 159 191	3,500/10% net mt bgd sgr - in bb
+T2	Load_Place 230 242	Novorossiysk
+T3	Disch_Place 243 251	Lattakia
+T4	Laycan 252 262	7/15 April
+T5	Terms 263 271	1500/750
+T6	Commission 272 284	3.75 add pus
+T7	Cargo 393 434	1,500 MTS UP TO 2,000 MTS BGD CGO SLINGED
+T8	Load_Place 435 439	SFAX
+T9	Disch_Place 442 449	TARTOUS
+T10	Terms 463 472	4 TTL DYS
+T11	Laycan 454 462	SPOT/PPT
+T12	Commission 473 485	GCN 1.25 TTL
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	When Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	
+R6	From Arg1:T7 Arg2:T8	
+R7	To Arg1:T7 Arg2:T9	
+R8	When Arg1:T7 Arg2:T11	
+R9	How Arg1:T7 Arg2:T10	
+R10	Commission Arg1:T7 Arg2:T12	

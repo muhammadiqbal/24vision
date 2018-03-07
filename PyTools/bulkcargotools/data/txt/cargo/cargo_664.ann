@@ -1,0 +1,11 @@
+T1	Load_Place 1684 1712;1788 1822	Hamburg, intention Kalikai – Antwerp, intention BASF / Eurochem
+T3	Laycan 1867 1885	22nd April onwards
+T4	Terms 2073 2113;2115 2136;2141 2211	Hamburg 8.000t pwwd shex Satnoon/Mon 8am Antwerp: 5.000t shinc Discharge speed: 2.500t pwwd sshex Fri 5pm/Mon 8am all discharge ports
+T5	Commission 2498 2508	2,5% ad pu
+T2	Cargo 775 818	46.500t GRAND TOTAL (Fertilizer and potash)
+T6	Disch_Place 1252 1257;1422 1429;896 901;989 995	Klang Belawan Pasir Gudang
+R1	To Arg1:T2 Arg2:T6	
+R2	From Arg1:T2 Arg2:T1	
+R3	When Arg1:T2 Arg2:T3	
+R4	How Arg1:T2 Arg2:T4	
+R5	Commission Arg1:T2 Arg2:T5	

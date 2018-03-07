@@ -1,0 +1,22 @@
+T1	Cargo 137 189	5000mt granular urea+620mt prilled urea in jumbo bag
+T2	Cargo 300 335	4050mt map + 1525mt as in jumbo bag
+T3	Laycan 367 384	2nd half may,2017
+T4	Laycan 249 266	2nd half may,2017
+T5	Load_Place 190 230	yantai or tianjin china in owners option
+T6	Disch_Place 232 248	beira,mozambique
+T7	Terms 267 276	cqd bends
+T8	Load_Place 336 349	nantong,china
+T9	Disch_Place 350 366	beira,mozambique
+T10	Terms 385 394	cqd bends
+T11	Commission 395 411	1.25 pct to bery
+T12	Commission 277 289	1.25 to bery
+R1	To Arg1:T2 Arg2:T9	
+R2	From Arg1:T2 Arg2:T8	
+R3	When Arg1:T2 Arg2:T3	
+R4	How Arg1:T2 Arg2:T10	
+R5	Commission Arg1:T2 Arg2:T11	
+R6	From Arg1:T1 Arg2:T5	
+R7	To Arg1:T1 Arg2:T6	
+R8	When Arg1:T1 Arg2:T4	
+R9	How Arg1:T1 Arg2:T7	
+R10	Commission Arg1:T1 Arg2:T12	

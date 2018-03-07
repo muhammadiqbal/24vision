@@ -1,0 +1,17 @@
+T1	Ship 638 646	mv Evita
+T2	Open_Date 670 681	27/28 April
+T3	Loading_Place 685 693	Aabenraa
+T4	Ship 754 761	MV ESKY
+T5	Open_Date 769 777	13 APRIL
+T6	Loading_Place 781 790	STRALSUND
+R2	When Arg1:T1 Arg2:T2	
+R3	Located Arg1:T1 Arg2:T3	
+R4	When Arg1:T4 Arg2:T5	
+R5	Located Arg1:T4 Arg2:T6	
+T9	Ship 994 1007	mv New Gemini
+T10	Open_Date 1015 1026	15-16 April
+T11	Loading_Place 1030 1035	Izmir
+T12	Year 1042 1046	2008
+R7	When Arg1:T9 Arg2:T10	
+R8	Located Arg1:T9 Arg2:T11	
+R9	Built Arg1:T9 Arg2:T12	

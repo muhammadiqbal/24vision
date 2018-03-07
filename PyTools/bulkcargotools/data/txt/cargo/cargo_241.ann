@@ -1,0 +1,9 @@
+T1	Load_Place 698 706	Le Havre
+T2	Disch_Place 710 714	Doha
+T3	Cargo 717 728;752 771	Nr 21 drums weight 40 tons each
+T4	Laycan 773 784	26/30 April
+T6	Commission 806 815	3.75% iac
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	When Arg1:T3 Arg2:T4	
+R4	Commission Arg1:T3 Arg2:T6	

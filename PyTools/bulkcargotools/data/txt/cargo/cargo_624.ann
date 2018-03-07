@@ -1,0 +1,33 @@
+T1	Cargo 157 216	abt 21.500mt NPK in bulk, 3 grades in bulk and 1 in Bigbags
+T2	Load_Place 221 235	Kotka+Klaipeda
+T3	Disch_Place 238 257	Abidjan+Lome + Tema
+T4	Laycan 268 279	April 23-26
+T5	Terms 310 347;349 404	loadspeed Kotka 4000c, Klaipeda 4000c - discharge speed Abidjan 3000c, Tema 2000c, Lome 2000c
+T6	Commission 408 424	2.5 % addcom pus
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	When Arg1:T1 Arg2:T4	
+R5	Commission Arg1:T1 Arg2:T6	
+T7	Cargo 1149 1191	10.000mt 10% moloo feed grade urea in bulk
+T8	Load_Place 1193 1207	Marsa el Brega
+T9	Disch_Place 1210 1220	Contrecœur
+T10	Laycan 1229 1240	21-24 April
+T11	Terms 1242 1261	4000 fhex/9000 shex
+T12	Commission 1286 1297	2.5% addcom
+T13	Cargo 1434 1471	Abt 25,000 mt feedphos/amidas in bulk
+T14	Load_Place 1483 1501	Kokkola + Sluiskil
+T15	Disch_Place 1520 1544	Mississippi River NABIBR
+T16	Laycan 1553 1564	25-27 April
+T17	Terms 1594 1645	2500 shex Kokkola, 6000 shex Skl / 8000 shinc disch
+T18	Commission 1670 1685	2.5% addcom pus
+R6	From Arg1:T13 Arg2:T14	
+R7	To Arg1:T13 Arg2:T15	
+R8	When Arg1:T13 Arg2:T16	
+R9	How Arg1:T13 Arg2:T17	
+R10	Commission Arg1:T13 Arg2:T18	
+R11	To Arg1:T7 Arg2:T9	
+R12	From Arg1:T7 Arg2:T8	
+R13	When Arg1:T7 Arg2:T10	
+R14	How Arg1:T7 Arg2:T11	
+R15	Commission Arg1:T7 Arg2:T12	
+R4	How Arg1:T1 Arg2:T5	

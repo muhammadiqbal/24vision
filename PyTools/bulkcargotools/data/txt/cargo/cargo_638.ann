@@ -1,0 +1,11 @@
+T1	Cargo 191 228	Abt 25,000 mt feedphos/amidas in bulk
+T2	Load_Place 240 258	Kokkola + Sluiskil
+T3	Disch_Place 277 301	Mississippi River NABIBR
+T4	Laycan 310 321	25-27 April
+T5	Terms 351 402	2500 shex Kokkola, 6000 shex Skl / 8000 shinc disch
+T6	Commission 427 442	2.5% addcom pus
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	When Arg1:T1 Arg2:T4	
+R4	How Arg1:T1 Arg2:T5	
+R5	Commission Arg1:T1 Arg2:T6	

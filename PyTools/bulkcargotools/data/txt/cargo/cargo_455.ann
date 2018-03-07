@@ -1,0 +1,35 @@
+T1	Cargo 375 410	20K-22K MT FERTLIZER IN BULK SF:1.2
+T2	Laycan 462 488	29TH OF APR -5TH/ MAY,2017
+T3	Load_Place 422 435	NANJING,CHINA
+T4	Disch_Place 437 455	SURABAYA,INDONESIA
+T5	Terms 499 512	3500MT/3500MT
+T6	Commission 527 535	2.5% PUS
+T7	Cargo 557 604	15,000mt of Ammonium Sulphate in bulk 10% MOLOO
+T8	Load_Place 628 647	Longkou, China port
+T9	Disch_Place 650 671	Koh Sichang, Thailand
+T10	Port_No 772 775	1/1
+T11	Laycan 692 715	25th - 30th April, 2017
+T12	Terms 799 838	4,000mt Pwwd Shinc / 3,000mt Pwwd Shinc
+T13	Commission 873 891	Total 2.5% com pus
+T14	Cargo 897 946	20,000MT +/- 10% MOLOO FERTS IN BULK (SF ABT 1.45
+T15	Load_Place 954 980	YANTAI OR TIANJIN, N.CHINA
+T16	Disch_Place 983 1012	BINTULU + LAHAD DATU,MALAYSIA
+T17	Terms 1015 1026	CQD /2000UU
+T18	Laycan 1030 1045	18TH-24TH / APR
+T19	Commission 1050 1059	1.25% pus
+R1	From Arg1:T14 Arg2:T15	
+R2	To Arg1:T14 Arg2:T16	
+R3	How Arg1:T14 Arg2:T17	
+R4	When Arg1:T14 Arg2:T18	
+R5	Commission Arg1:T14 Arg2:T19	
+R6	From Arg1:T7 Arg2:T8	
+R7	To Arg1:T7 Arg2:T9	
+R8	When Arg1:T7 Arg2:T11	
+R9	No_Of_Ports Arg1:T7 Arg2:T10	
+R10	How Arg1:T7 Arg2:T12	
+R11	Commission Arg1:T7 Arg2:T13	
+R12	From Arg1:T1 Arg2:T3	
+R13	To Arg1:T1 Arg2:T4	
+R14	When Arg1:T1 Arg2:T2	
+R15	How Arg1:T1 Arg2:T5	
+R16	Commission Arg1:T1 Arg2:T6	

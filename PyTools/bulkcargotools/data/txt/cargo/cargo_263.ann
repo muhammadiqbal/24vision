@@ -1,0 +1,15 @@
+T1	Quantity 113 120	4000 ts
+T2	Load_Place 630 635	Gabes
+T3	Disch_Place 639 646	Abu qir
+T4	Cargo 649 667	4000 ts dcp in blk
+T5	Laycan 671 684	spot vsl date
+T6	Terms 688 694	8 days
+T7	Commission 695 704	3.75% iac
+T8	Commodity 121 124	dcp
+R1	What Arg1:T1 Arg2:T8	
+R2	To Arg1:T4 Arg2:T3	
+R3	From Arg1:T4 Arg2:T2	
+R4	When Arg1:T4 Arg2:T5	
+R5	How Arg1:T4 Arg2:T6	
+R6	Commission Arg1:T4 Arg2:T7	
+R7	Content Arg1:T4 Arg2:T1	

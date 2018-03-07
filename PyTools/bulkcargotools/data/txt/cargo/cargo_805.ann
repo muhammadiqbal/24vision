@@ -1,0 +1,15 @@
+T1	Quantity 27 39	2600/2800 mt
+T2	Load_Place 244 253	SANTANDER
+T3	Disch_Place 254 260	BEIRUT
+T5	Terms 296 306	5 TTL DAYS
+T6	Laycan 308 315	PPT ONW
+T7	Commission 317 326	3.75% TTL
+T8	Commodity 40 51	wheat straw
+T4	Cargo 262 294	2600/2800 TNS WHEAT STRAW STW 60
+R1	What Arg1:T1 Arg2:T8	
+R2	To Arg1:T4 Arg2:T3	
+R3	From Arg1:T4 Arg2:T2	
+R4	Content Arg1:T4 Arg2:T1	
+R5	How Arg1:T4 Arg2:T5	
+R6	When Arg1:T4 Arg2:T6	
+R7	Commission Arg1:T4 Arg2:T7	

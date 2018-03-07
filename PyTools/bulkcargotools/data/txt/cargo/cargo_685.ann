@@ -1,0 +1,13 @@
+T1	Cargo 303 328	ABT.4/6000 TONS BULK CLAY
+T2	Load_Place 340 346	ODESSA
+T3	Disch_Place 351 360	MANGALORE
+T4	Commission 414 421	2,50 PU
+R1	To Arg1:T1 Arg2:T3	
+R2	From Arg1:T1 Arg2:T2	
+T6	Terms 398 402	TTLD
+R3	Commission Arg1:T1 Arg2:T4	
+T5	Laycan 364 375	SPOT OWNARD
+T7	Commodity 63 67	clay
+R4	Including Arg1:T1 Arg2:T7	
+R5	When Arg1:T1 Arg2:T5	
+R6	How Arg1:T1 Arg2:T6	

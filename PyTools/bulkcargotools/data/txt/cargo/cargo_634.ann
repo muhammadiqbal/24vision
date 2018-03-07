@@ -1,0 +1,9 @@
+T1	Cargo 197 224	About 42,700 mts bulk ferts
+T2	Load_Place 245 253;356 362	Sluiskil Heroya
+T3	Disch_Place 490 496;579 599;666 676	Santos Sao Francisco do Sul Rio Grande
+T4	Laycan 755 766	April 21/25
+T5	Commission 831 839	2.50 pct
+R1	From Arg1:T1 Arg2:T2	
+R2	To Arg1:T1 Arg2:T3	
+R3	When Arg1:T1 Arg2:T4	
+R4	Commission Arg1:T1 Arg2:T5	

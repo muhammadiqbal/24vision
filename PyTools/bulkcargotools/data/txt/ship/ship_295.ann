@@ -1,0 +1,45 @@
+T1	Ship 148 168	MV. Maa Saleha Begum
+T3	Loading_Place 193 211	Mongla, Bangladesh
+T4	Open_Date 212 229	11 th April, 2017
+T2	DWT 237 243	52,064
+T5	Year 265 269	2000
+R1	Contain Arg1:T1 Arg2:T2	
+R2	Located Arg1:T1 Arg2:T3	
+R3	When Arg1:T1 Arg2:T4	
+R4	Built Arg1:T1 Arg2:T5	
+T6	Ship 331 340	MV. Samir
+T7	Ship 600 613	MV. Jahan Mon
+T8	Ship 782 801	MV. Khadeejah Jahan
+T9	Ship 1034 1044	MV. Zuhayr
+T10	DWT 509 515	52,454
+T11	DWT 691 697	55,496
+T12	DWT 945 951	45,363
+T13	DWT 1125 1131	52,454
+T14	Year 1152 1156	2007
+T15	Year 972 976	1997
+T16	Year 719 723	2008
+T17	Year 535 539	2005
+T18	Loading_Place 390 412	Chittagong, Bangladesh
+T19	Loading_Place 653 666	Mumbai, India
+T20	Loading_Place 830 848	Mongla, Bangladesh
+T21	Loading_Place 1090 1100	CJK, China
+T22	Open_Date 1102 1117	19th April 2017
+T23	Open_Date 849 866	15 th April, 2017
+T24	Open_Date 667 683	13th April, 2017
+T25	Open_Date 413 430	13 th April, 2017
+R5	Located Arg1:T6 Arg2:T18	
+R6	When Arg1:T6 Arg2:T25	
+R7	Contain Arg1:T6 Arg2:T10	
+R8	Built Arg1:T6 Arg2:T17	
+R9	Located Arg1:T7 Arg2:T19	
+R10	When Arg1:T7 Arg2:T24	
+R11	Contain Arg1:T7 Arg2:T11	
+R12	Built Arg1:T7 Arg2:T16	
+R13	Located Arg1:T8 Arg2:T20	
+R14	When Arg1:T8 Arg2:T23	
+R15	Contain Arg1:T8 Arg2:T12	
+R16	Built Arg1:T8 Arg2:T15	
+R17	Located Arg1:T9 Arg2:T21	
+R18	When Arg1:T9 Arg2:T22	
+R19	Contain Arg1:T9 Arg2:T13	
+R20	Built Arg1:T9 Arg2:T14	

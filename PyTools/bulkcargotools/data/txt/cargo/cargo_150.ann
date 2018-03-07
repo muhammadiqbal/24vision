@@ -1,0 +1,17 @@
+T1	Quantity 127 135	5.000mts
+T2	Load_Place 707 725	Hochiminh, Vietnam
+T3	Disch_Place 734 757	Matadi, Congo, w.africa
+T5	Laycan 811 828	vsl’s date in Apr
+T6	Terms 835 861	1,500 shinc/ 1,000 shex uu
+T7	Commission 892 905	3.75% iac ttl
+T8	Port_No 887 890	1/1
+T4	Cargo 760 790	5.000mts rice in jumbo bag 1mt
+R1	To Arg1:T4 Arg2:T3	
+R2	From Arg1:T4 Arg2:T2	
+R3	When Arg1:T4 Arg2:T5	
+R4	How Arg1:T4 Arg2:T6	
+R5	No_Of_Ports Arg1:T4 Arg2:T8	
+R6	Commission Arg1:T4 Arg2:T7	
+T9	Commodity 136 140	rice
+R7	Content Arg1:T4 Arg2:T1	
+R8	What Arg1:T1 Arg2:T9	

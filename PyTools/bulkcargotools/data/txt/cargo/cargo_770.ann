@@ -1,0 +1,13 @@
+T3	Load_Place 164 172	NEW YORK
+T4	Disch_Place 179 197	TURKEY EXCL BL SEA
+T5	Laycan 200 209	APR 15 ON
+T6	Terms 212 233	7000 SHINC/7000 SHINC
+T7	Commission 236 248	3.75 PCT pus
+T2	Cargo 113 161	40000 5 PCT SCRAP XMBT STOW 50 CU FT BALE PER TN
+T8	Commodity 55 60	Scrap
+R1	Including Arg1:T2 Arg2:T8	
+R2	From Arg1:T2 Arg2:T3	
+R3	To Arg1:T2 Arg2:T4	
+R4	When Arg1:T2 Arg2:T5	
+R5	How Arg1:T2 Arg2:T6	
+R6	Commission Arg1:T2 Arg2:T7	

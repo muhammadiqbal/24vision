@@ -1,0 +1,42 @@
+T1	Load_Place 550 556	ODESSA
+T2	Disch_Place 560 570	ALEXANDRIA
+T3	Cargo 573 620	ABT 700 MTS / 1470 CBM S/TIMBER BOARDS PACKAGED
+T4	Terms 621 631	3 TTL DAYS
+T5	Laycan 632 638	PROMPT
+T6	Commission 639 647	5.0% IAC
+R1	To Arg1:T3 Arg2:T2	
+R2	From Arg1:T3 Arg2:T1	
+R3	How Arg1:T3 Arg2:T4	
+R4	When Arg1:T3 Arg2:T5	
+R5	Commission Arg1:T3 Arg2:T6	
+T7	Cargo 690 744	ABT 3200 TN  SUN FLOWER SEEDS HUSK PELLETS STW ABT 64’
+T8	Load_Place 753 759	IZMAIL
+T9	Disch_Place 763 791	CHALKIS  OR STILIS (STYLIDA)
+T10	Terms 792 826	1200 MT WWD SSHEX/900 MT WWD SSHEX
+T11	Laycan 830 843	12-20.04.2017
+T12	Commission 889 898	3.75% TTL
+R6	From Arg1:T7 Arg2:T8	
+R7	To Arg1:T7 Arg2:T9	
+R8	How Arg1:T7 Arg2:T10	
+R9	When Arg1:T7 Arg2:T11	
+R10	Commission Arg1:T7 Arg2:T12	
+T13	Load_Place 907 915	Azov Sea
+T14	Disch_Place 923 937	Sea of Marmara
+T15	Cargo 940 954	abt 4000t gens
+T16	Laycan 957 966	next week
+T17	Commission 969 977	2.5% ttl
+T18	Commission 1078 1086	2.5% ttl
+T19	Terms 1071 1074	ttd
+T20	Laycan 1061 1068	next wk
+T21	Cargo 1028 1058	abt 5/5500t box dtwer fcc gens
+T22	Disch_Place 1015 1025	Aegean Sea
+T23	Load_Place 998 1007	Black Sea
+R11	To Arg1:T15 Arg2:T14	
+R12	From Arg1:T15 Arg2:T13	
+R13	When Arg1:T15 Arg2:T16	
+R14	Commission Arg1:T15 Arg2:T17	
+R15	To Arg1:T21 Arg2:T22	
+R16	From Arg1:T21 Arg2:T23	
+R17	When Arg1:T21 Arg2:T20	
+R18	How Arg1:T21 Arg2:T19	
+R19	Commission Arg1:T21 Arg2:T18	
