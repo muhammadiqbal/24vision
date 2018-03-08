@@ -48,7 +48,7 @@ var svg = d3.select("svg")
   svg.append("path")
       .datum([
       	@foreach($feePrices as $feePrice)
-	      	{"x":,"y":,"date":{!!$feePrice->start_date!!}, "price":{!!$feePrice->price!!} },{}
+	      	{"x":,"y":,"date":{!!$feePrice->start_date!!}, "price":{!!$feePrice->price!!} },
       	@endforeach
       	])
       .attr("class", "line")
