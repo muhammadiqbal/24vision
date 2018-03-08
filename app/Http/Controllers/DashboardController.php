@@ -121,32 +121,39 @@ class DashboardController extends Controller
         $bdiPricedata = $bdiPriceChart->DataTable();
         $fuelPricedata = $fuelPriceChart->DataTable();
 
-        $feePrice = FeePrice::select('start_date as 0', 'price as 1')
+        $feePrices = FeePrice::select('start_date', 'price')
                               ->where('port_id', $port)
-                              ->get()
-                              ->toArray();
+                              ->get();
 
-        $fuelPrice = FuelPrice::select('start_date as 0', 'price as 1')
+        $fuelPrices = FuelPrice::select('start_date', 'price')
                               ->where('fuel_type_id', $fuelType)
-                              ->get()
-                              ->toArray();
+                              ->get();
 
-        $bdiPrice = BdiPrice::select('start_date as 0', 'price as 1')
+        $bdiPrices = BdiPrice::select('start_date', 'price')
                               ->where('bdi_id', $bdi)
-                              ->get()
-                              ->toArray();
+                              ->get();
 
         $feePricedata->addDateColumn('Year')
-                     ->addNumberColumn('Price')
-                     ->addRows(array($feePrice));
+                     ->addNumberColumn('Price');
+
+        foreach ($feePrices as $feePrices) {
+            $feePricedata->addRow([$feePrice->start_date, $feePrice->price]);
+        }
 
         $fuelPricedata->addDateColumn('Year')
-                     ->addNumberColumn('Price')
-                     ->addRows($fuelPrice);
+                     ->addNumberColumn('Price');
+
+        foreach ($fuelPrices as $fuelPrices) {
+            $fuelPricedata->addRow([$fuelPrice->start_date, $fuelPrice->price]);
+        }
 
         $bdiPricedata->addDateColumn('Year')
-                     ->addNumberColumn('Price')
-                     ->addRows($bdiPrice);
+                     ->addNumberColumn('Price');
+
+        foreach ($bdiPrices as $bdiPrices) {
+            $bdiPricedata->addRow([$bdiPrice->start_date, $bdiPrice->price]);
+        }
+
 
         $feePriceChart->LineChart('data', $data, [
             'title' => 'Port fee Price ('.Port::find($port).')',
