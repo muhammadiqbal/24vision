@@ -30,11 +30,11 @@ var svg = d3.select("svg")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
-var data ={!!$feePrices!!};
+var data = {!!$feePrices!!};
   // format the data
   data.forEach(function(d) {
       d.Date = parseTime(d.Date);
-      d.Price = d.Price;
+      d.Price = +d.Price;
   });
   
   // sort years ascending
@@ -49,7 +49,7 @@ var data ={!!$feePrices!!};
   
   // Add the valueline path.
   svg.append("path")
-      .data(data)
+      .data([data])
       .attr("class", "line")
       .attr("d", valueline);
 
