@@ -123,27 +123,30 @@ class DashboardController extends Controller
 
         $feePrice = FeePrice::select('start_date as 0', 'price as 1')
                               ->where('port_id', $port)
-                              ->get();
+                              ->get()
+                              ->toArray();
 
         $fuelPrice = FuelPrice::select('start_date as 0', 'price as 1')
                               ->where('fuel_type_id', $fuelType)
-                              ->get();
+                              ->get()
+                              ->toArray();
 
         $bdiPrice = BdiPrice::select('start_date as 0', 'price as 1')
                               ->where('bdi_id', $bdi)
-                              ->get();
+                              ->get()
+                              ->toArray();
 
         $feePricedata->addDateColumn('Year')
                      ->addNumberColumn('Price')
-                     ->addRows($feePrice);
+                     ->addRows([$feePrice]);
 
         $fuelPricedata->addDateColumn('Year')
                      ->addNumberColumn('Price')
-                     ->addRows($fuelPrice);
+                     ->addRows([$fuelPrice]);
 
         $bdiPricedata->addDateColumn('Year')
                      ->addNumberColumn('Price')
-                     ->addRows($bdiPrice);
+                     ->addRows([$bdiPrice]);
 
         $feePriceChart->LineChart('data', $data, [
             'title' => 'Port fee Price ('.Port::find($port).')',
