@@ -121,32 +121,32 @@ class DashboardController extends Controller
         $bdiPricedata = $bdiPriceChart->DataTable();
         $fuelPricedata = $fuelPriceChart->DataTable();
 
-        $feePrice = FeePrice::select('fee_prices.end_date', 'price')
+        $feePrice = FeePrice::select('end_date', 'price')
                               ->where('port_id', $port)
                               ->get()
                               ->toArray();
 
-        $fuelPrice = FuelPrice::select('fuel_prices.end_date', 'price')
+        $fuelPrice = FuelPrice::select('end_date', 'price')
                               ->where('fuel_type_id', $fuelType)
                               ->get()
                               ->toArray();
 
-        $bdiPrice = BdiPrice::select('bdi_prices.end_date', 'price')
+        $bdiPrice = BdiPrice::select('end_date', 'price')
                               ->where('bdi_id', $bdi)
                               ->get()
                               ->toArray();
 
         $feePricedata->addDateColumn('Year')
                      ->addNumberColumn('Price')
-                     ->addRows();
+                     ->addRows($feePrice);
 
         $fuelPricedata->addDateColumn('Year')
                      ->addNumberColumn('Price')
-                     ->addRows();
+                     ->addRows($fuelPrice);
 
         $bdiPricedata->addDateColumn('Year')
                      ->addNumberColumn('Price')
-                     ->addRows();
+                     ->addRows($bdiPrice);
 
         $feePriceChart->LineChart('data', $data, [
             'title' => 'Port fee Price ('.Port::find($port).')',
