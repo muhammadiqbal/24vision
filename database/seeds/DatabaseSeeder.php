@@ -49,7 +49,7 @@ class DatabaseSeeder extends Seeder {
 
 			DB::table('users')->delete();
 			User::create([
-				'name' => 'admin'
+				'name' => 'admin',
 		        'email' => 'admin@24vision.com',
 		        'password' => bcrypt('PSbi4macom'),
 		        'remember_token' => str_random(10),

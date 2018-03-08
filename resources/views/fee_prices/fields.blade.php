@@ -1,7 +1,15 @@
 <!-- Port Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('port_id', 'Port Id:') !!}
-    {!! Form::number('port_id', null, ['class' => 'form-control']) !!}
+    <select name="port_id" class="form-control">
+    @foreach($ports as $port)
+            @if(!empty($feePrice) && $feePrice->port_id == $port->id)
+                <option value="{{$port->id}}" selected="true">{{$port->name}}</option>
+            @else
+                <option value="{{$port->id}}">{{$port->name}}</option>
+            @endif
+    @endforeach
+    </select>
 </div>
 
 <!-- Star Date Field -->

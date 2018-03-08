@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use App\DataTables\FeePriceDataTable;
 use App\Http\Requests;
+use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreateFeePriceRequest;
 use App\Http\Requests\UpdateFeePriceRequest;
+use App\Models\Port;
 use App\Repositories\FeePriceRepository;
 use Flash;
-use App\Http\Controllers\AppBaseController;
 use Response;
 
 class FeePriceController extends AppBaseController
@@ -39,7 +40,8 @@ class FeePriceController extends AppBaseController
      */
     public function create()
     {
-        return view('fee_prices.create');
+        $ports = Port::all();
+        return view('fee_prices.create')->with('ports',$ports);
     }
 
     /**
@@ -96,8 +98,10 @@ class FeePriceController extends AppBaseController
 
             return redirect(route('feePrices.index'));
         }
+        $ports = Port::all();
 
-        return view('fee_prices.edit')->with('feePrice', $feePrice);
+        return view('fee_prices.edit')->with('feePrice', $feePrice)
+                                      ->with('ports',$ports);
     }
 
     /**

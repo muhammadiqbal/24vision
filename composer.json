@@ -53,7 +53,9 @@
         "post-install-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postInstall",
             "php artisan optimize",
-            "pip3 install PyTools/requirements.txt"
+            "conda install --name --file PyTools/spec-file.txt || pip3 install PyTools/requirements.txt",
+            "php artisan migrate || echo 'Please configure your database before migrating.'",
+            "php artisan db:seed || echo 'Please configure your database before executing seeder.'"
         ],
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",

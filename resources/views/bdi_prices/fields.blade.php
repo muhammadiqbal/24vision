@@ -1,7 +1,15 @@
 <!-- Bdi Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('bdi_id', 'Bdi Id:') !!}
-    {!! Form::number('bdi_id', null, ['class' => 'form-control']) !!}
+    <select name="port_id" class="form-control">
+    @foreach($bdis as $bdi)
+            @if(!empty($bdiPrice) && $bdiPrice->port_id == $bdi->id)
+                <option value="{{$bdi->id}}" selected="true">{{$bdi->code}}</option>
+            @else
+                <option value="{{$bdi->id}}">{{$bdi->code}}</option>
+            @endif
+    @endforeach
+    </select>
 </div>
 
 <!-- Price Field -->

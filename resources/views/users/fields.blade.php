@@ -19,13 +19,10 @@
 <!-- Role Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('role', 'Role:') !!}
-    {!! Form::text('role', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Remember Token Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('remember_token', 'Remember Token:') !!}
-    {!! Form::text('remember_token', null, ['class' => 'form-control']) !!}
+   <select name="role">
+       <option value="Super Admin">Super Admin</option>
+       <option value="Admin">Admin</option>
+   </select>
 </div>
 
 <!-- Submit Field -->

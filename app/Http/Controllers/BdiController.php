@@ -7,8 +7,8 @@ use App\Http\Requests;
 use App\Http\Requests\CreateBdiRequest;
 use App\Http\Requests\UpdateBdiRequest;
 use App\Repositories\BdiRepository;
-use Flash;
 use App\Http\Controllers\AppBaseController;
+use Flash;
 use Response;
 
 class BdiController extends AppBaseController

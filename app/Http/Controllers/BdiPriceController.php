@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use App\DataTables\BdiPriceDataTable;
 use App\Http\Requests;
+use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreateBdiPriceRequest;
 use App\Http\Requests\UpdateBdiPriceRequest;
+use App\Models\Bdi;
 use App\Repositories\BdiPriceRepository;
 use Flash;
-use App\Http\Controllers\AppBaseController;
 use Response;
 
 class BdiPriceController extends AppBaseController
@@ -39,7 +40,8 @@ class BdiPriceController extends AppBaseController
      */
     public function create()
     {
-        return view('bdi_prices.create');
+        $bdis = Bdi::all();
+        return view('bdi_prices.create')->with('bdis', $bdis);
     }
 
     /**
@@ -96,8 +98,8 @@ class BdiPriceController extends AppBaseController
 
             return redirect(route('bdiPrices.index'));
         }
-
-        return view('bdi_prices.edit')->with('bdiPrice', $bdiPrice);
+        $bdis = Bdi::all();
+        return view('bdi_prices.edit')->with('bdiPrice', $bdiPrice)->with('bdis', $bdis);
     }
 
     /**
