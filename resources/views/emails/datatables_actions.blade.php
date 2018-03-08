@@ -1,6 +1,6 @@
 {!! Form::open(['route' => ['emails.destroy', $emailID], 'method' => 'delete']) !!}
 <div class='btn-group'>
-    <a href="{{ route('emails.show', $emailID) }}" class='btn btn-default btn-xs' data-toggle="tooltip" title="View">
+    <a href="{{ route('emails.show', $emailID) }}" target="_blank" class='btn btn-default btn-xs' data-toggle="tooltip" title="View">
         <i class="glyphicon glyphicon-eye-open"></i>
     </a>
     <a href="{{ route('emails.edit', $emailID) }}" class='btn btn-default btn-xs' data-toggle="tooltip" title="Edit">

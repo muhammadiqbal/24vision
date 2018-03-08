@@ -1,6 +1,6 @@
 {!! Form::open(['route' => ['bdis.destroy', $id], 'method' => 'delete']) !!}
 <div class='btn-group'>
-     <a href="{!! url('/linechart','?entity=bdiPrice&bdi='.$id) !!}" class='btn btn-default btn-xs' data-toggle="tooltip" title="trends">
+     <a href="{!! url('/linechart?entity=bdiPrice&bdi='.$id) !!}" target="_blank" class='btn btn-default btn-xs' data-toggle="tooltip" title="trends">
         <i class="fa fa-area-chart"></i>
     </a>
     <a href="{{ route('bdis.show', $id) }}" class='btn btn-default btn-xs' data-toggle="tooltip" title="View">
