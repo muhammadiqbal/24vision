@@ -124,7 +124,7 @@ class DashboardController extends Controller
                                   ->toJson();
             $title = "Port ".Port::find($port_id)->name.' Fees';
         }elseif ($entity == 'fuelPrice') {
-            $data = FuelPrice::select('DATE(start_date) as Date', 'price')
+            $data = FuelPrice::select(DB::raw('DATE(start_date) as Date'), 'price')
                               ->where('fuel_type_id', $fuel_type_id)
                               ->get()
                               ->toJson();
