@@ -1,5 +1,8 @@
 {!! Form::open(['route' => ['feePrices.destroy', $id], 'method' => 'delete']) !!}
 <div class='btn-group'>
+     <a href="{!! url('/linechart?entity=feePrice&port='.$port_id) !!}" target="_blank" class='btn btn-default btn-xs' data-toggle="tooltip" title="trends">
+        <i class="fa fa-area-chart"></i>
+    </a>
     <a href="{{ route('feePrices.show', $id) }}" target="_blank" class='btn btn-default btn-xs' ata-toggle="tooltip" title="View">
         <i class="glyphicon glyphicon-eye-open"></i>
     </a>
