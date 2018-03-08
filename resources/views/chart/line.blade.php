@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<svg width="960" height="500"></svg>
+<div class="box-primary">
+	<h1>{!!$title!!}</h1>
+	<svg width="960" height="500"></svg>
+</div>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 var margin = {top: 20, right: 20, bottom: 30, left: 50},
@@ -30,7 +33,7 @@ var svg = d3.select("svg")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
-var data = {!!$feePrices!!};
+var data = {!!$data!!};
   // format the data
   data.forEach(function(d) {
       d.Date = parseTime(d.Date);

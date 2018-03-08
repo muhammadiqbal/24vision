@@ -50,7 +50,7 @@ Route::group(['middleware' => 'auth'], function()
 	
 	Route::resource('zonePoints', 'ZonePointController');
 	
-	Route::get('dashboard','DashboardController@dashboard');
+	Route::get('linechart','DashboardController@linechart');
 	
 	Route::get('execBCT','DashboardController@execBCT');
 

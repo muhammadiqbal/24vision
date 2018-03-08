@@ -109,79 +109,35 @@ class DashboardController extends Controller
                                             ]);
     }
 
-    public function dashboard(Request $request)
+    public function linechart(Request $request)
     {
-        $port = $request->input('port_id',Port::first()->id);
-        $fuelType = $request->input('port_id',FuelType::first()->id);
-        $bdi = $request->input('bdi',Bdi::first()->id);
+        $entity = $request->input('entity','bdi'); 
+       
+        $port_id = $request->input('port',Port::first()->id);
+        $fuel_type_id = $request->input('FuelType',FuelType::first()->id);
+        $bdi_id = $request->input('bdi',Bdi::first()->id);
 
-        // $feePriceChart = new Lavacharts; 
-        // $bdiPriceChart = new Lavacharts; 
-        // $fuelPriceChart = new Lavacharts; 
+        if($entity == 'feePrice'){
+            $data = FeePrice::select(DB::raw('DATE(start_date) as Date'), 'price')
+                                  ->where('port_id', $port_id)
+                                  ->get()
+                                  ->toJson();
+            $title = "Port ".Port::find($port_id)->name.' Fees';
+        }elseif ($entity == 'fuelPrice') {
+            $data = FuelPrice::select('DATE(start_date) as Date', 'price')
+                              ->where('fuel_type_id', $fuel_type_id)
+                              ->get()
+                              ->toJson();
+            $title = "Fuel Type ".FuelType::find($fuel_type_id)->name.' Price';
+        }elseif ($entity == 'bdiPrice') {
+            $data = BdiPrice::select(DB::raw('DATE(start_date) as Date'), 'price as Price')
+                              ->where('bdi_id', $bdi_id)
+                              ->get()
+                              ->toJson();
+            $title = "BDI ".Bdi::find($bdi_id)->name.' Price';
+        }
 
-        // $feePricedata = $feePriceChart->DataTable();
-        // $bdiPricedata = $bdiPriceChart->DataTable();
-        // $fuelPricedata = $fuelPriceChart->DataTable();
-
-        $feePrices = FeePrice::select(DB::raw('DATE(start_date) as Date'), 'price')
-                              ->where('port_id', $port)
-                              ->get()->toJson();
-
-        $fuelPrices = FuelPrice::select('start_date', 'price')
-                              ->where('fuel_type_id', $fuelType)
-                              ->get()->toJson();
-
-        $bdiPrices = BdiPrice::select(DB::raw('DATE(start_date) as Date'), 'price as Price')
-                              ->where('bdi_id', $bdi)
-                              ->get()->toJson();
-
-        // $feePricedata->addDateColumn('Year')
-        //              ->addNumberColumn('Price');
-
-        // foreach ($feePrices as $feePrice) {
-        //     $feePricedata->addRow([$feePrice->start_date, $feePrice->price]);
-        // }
-
-        // $fuelPricedata->addDateColumn('Year')
-        //              ->addNumberColumn('Price');
-
-        // foreach ($fuelPrices as $fuelPrice) {
-        //     $fuelPricedata->addRow([$fuelPrice->start_date, $fuelPrice->price]);
-        // }
-
-        // $bdiPricedata->addDateColumn('Year')
-        //              ->addNumberColumn('Price');
-
-        // foreach ($bdiPrices as $bdiPrice) {
-        //     $bdiPricedata->addRow([$bdiPrice->start_date, $bdiPrice->price]);
-        // }
-
-
-        // $feePriceChart->LineChart('feePricedata', $feePricedata, [
-        //     'title' => 'Port fee Price ('.Port::find($port)->name.')',
-        //     'legend' => [
-        //         'position' => 'in'
-        //     ]
-        // ]);
-
-        // $fuelPriceChart->LineChart('fuelPricedata', $fuelPricedata, [
-        //     'title' => 'Fuel Price ('.FuelType::find($fuelType)->name.')',
-        //     'legend' => [
-        //         'position' => 'in'
-        //     ]
-        // ]);
-
-        // $bdiPriceChart->LineChart('bdiPricedata', $bdiPricedata, [
-        //     'title' => 'BDI Price ('.Bdi::find($bdi)->code.')',
-        //     'legend' => [
-        //         'position' => 'in'
-        //     ]
-        // ]);
-
-      return view('dashboard.index')->with('feePrices', $bdiPrices);
-                                    // ->with('feePriceChart', $feePriceChart)
-                                    // ->with('fuelPriceChart', $fuelPriceChart)
-                                    // ->with('bdiPriceChart', $bdiPriceChart);
+        return view('dashboard.index')->with('data', $data);
     }
 
     public function execBCT()
