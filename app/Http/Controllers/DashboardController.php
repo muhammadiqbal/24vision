@@ -136,21 +136,21 @@ class DashboardController extends Controller
         $feePricedata->addDateColumn('Year')
                      ->addNumberColumn('Price');
 
-        foreach ($feePrices as $feePrices) {
+        foreach ($feePrices as $feePrice) {
             $feePricedata->addRow([$feePrice->start_date, $feePrice->price]);
         }
 
         $fuelPricedata->addDateColumn('Year')
                      ->addNumberColumn('Price');
 
-        foreach ($fuelPrices as $fuelPrices) {
+        foreach ($fuelPrices as $fuelPrice) {
             $fuelPricedata->addRow([$fuelPrice->start_date, $fuelPrice->price]);
         }
 
         $bdiPricedata->addDateColumn('Year')
                      ->addNumberColumn('Price');
 
-        foreach ($bdiPrices as $bdiPrices) {
+        foreach ($bdiPrices as $bdiPrice) {
             $bdiPricedata->addRow([$bdiPrice->start_date, $bdiPrice->price]);
         }
 
