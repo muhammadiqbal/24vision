@@ -20,7 +20,7 @@ class FeePriceDataTable extends DataTable
             ->editColumn('start_date', function(FeePrice $feePrices){
                return date_format(date_create($feePrices->start_date),'d-m-Y');
             })
-            ->editColumn('end_date', function(FeePrice $fuelPrices){
+            ->editColumn('end_date', function(FeePrice $feePrices){
                return date_format(date_create($feePrices->end_date),'d-m-Y');
             })
             ->make(true);
