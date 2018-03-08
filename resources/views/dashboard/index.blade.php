@@ -46,7 +46,12 @@ var svg = d3.select("svg")
 
   // Add the valueline path.
   svg.append("path")
-      .datum({!!$feePrices!!})
+      .datum([
+      	@foreach($feePrices as $feePrice)
+	      	{"x":,"y":,"date":{!!$feePrice->start_date!!}, "price":{!!$feePrice->price!!} },
+	      	{!!$feePrices!!}
+      	@endforeach
+      	])
       .attr("class", "line")
       .attr("d", valueline);
 
