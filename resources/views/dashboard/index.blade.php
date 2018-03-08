@@ -64,5 +64,4 @@ var data = {!!$feePrices!!};
 
 
 </script>
-</body>
-</script>
+@endsection
