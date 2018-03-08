@@ -46,7 +46,7 @@ var svg = d3.select("svg")
 
   // Add the valueline path.
   svg.append("path")
-      .datum({{$feePrices}})
+      .datum({!!$feePrices!!})
       .attr("class", "line")
       .attr("d", valueline);
 
