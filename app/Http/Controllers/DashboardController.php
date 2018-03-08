@@ -129,11 +129,11 @@ class DashboardController extends Controller
 
         $fuelPrices = FuelPrice::select('start_date', 'price')
                               ->where('fuel_type_id', $fuelType)
-                              ->get();
+                              ->get()->toJson();
 
-        $bdiPrices = BdiPrice::select('start_date', 'price')
+        $bdiPrices = BdiPrice::select(DB::raw('DATE(start_date) as date'), 'price')
                               ->where('bdi_id', $bdi)
-                              ->get();
+                              ->get()->toJson();
 
         // $feePricedata->addDateColumn('Year')
         //              ->addNumberColumn('Price');
@@ -178,7 +178,7 @@ class DashboardController extends Controller
         //     ]
         // ]);
 
-      return view('dashboard.index')->with('feePrices', $feePrices);
+      return view('dashboard.index')->with('feePrices', $bdiPrices);
                                     // ->with('feePriceChart', $feePriceChart)
                                     // ->with('fuelPriceChart', $fuelPriceChart)
                                     // ->with('bdiPriceChart', $bdiPriceChart);
