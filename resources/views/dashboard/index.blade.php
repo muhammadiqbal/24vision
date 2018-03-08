@@ -35,7 +35,6 @@ var data ={!!$feePrices!!};
   data.forEach(function(d) {
       d.Date = parseTime(d.start_date);
       d.Price = +d.price;
-      d.Exports = +d.Exports;
   });
   
   // sort years ascending
