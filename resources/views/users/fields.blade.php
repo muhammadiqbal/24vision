@@ -19,7 +19,7 @@
 <!-- Role Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('role', 'Role:') !!}
-   <select name="role">
+   <select name="role" class="form-control">
        <option value="Super Admin">Super Admin</option>
        <option value="Admin">Admin</option>
    </select>
