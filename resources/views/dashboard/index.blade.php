@@ -41,8 +41,8 @@ var svg = d3.select("svg")
 //   });
 
   // Scale the range of the data
-  x.domain(d3.extent(data, function(d) { return d.date; }));
-  y.domain([0, d3.max(data, function(d) { return d.close; })]);
+  // x.domain(d3.extent(data, function(d) { return d.date; }));
+  // y.domain([0, d3.max(data, function(d) { return d.close; })]);
 
   // Add the valueline path.
   svg.append("path")
