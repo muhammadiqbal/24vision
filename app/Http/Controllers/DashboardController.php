@@ -138,15 +138,15 @@ class DashboardController extends Controller
 
         $feePricedata->addDateColumn('Year')
                      ->addNumberColumn('Price')
-                     ->addRows([$feePrice]);
+                     ->addRows(array($feePrice));
 
         $fuelPricedata->addDateColumn('Year')
                      ->addNumberColumn('Price')
-                     ->addRows([$fuelPrice]);
+                     ->addRows($fuelPrice);
 
         $bdiPricedata->addDateColumn('Year')
                      ->addNumberColumn('Price')
-                     ->addRows([$bdiPrice]);
+                     ->addRows($bdiPrice);
 
         $feePriceChart->LineChart('data', $data, [
             'title' => 'Port fee Price ('.Port::find($port).')',
