@@ -30,23 +30,27 @@ var svg = d3.select("svg")
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
-// Get the data
-// d3.csv("data.csv", function(error, data) {
-//   if (error) throw error;
-
-//   // format the data
-//   data.forEach(function(d) {
-//       d.date = parseTime(d.date);
-//       d.close = +d.close;
-//   });
-
+var data ={!!$feePrices!!};
+  // format the data
+  data.forEach(function(d) {
+      d.Date = parseTime(d.start_date);
+      d.Price = +d.price;
+      d.Exports = +d.Exports;
+  });
+  
+  // sort years ascending
+  data.sort(function(a, b){
+    return a["Date"]-b["Date"];
+	})
+ 
   // Scale the range of the data
-  // x.domain(d3.extent(data, function(d) { return d.date; }));
-  // y.domain([0, d3.max(data, function(d) { return d.close; })]);
-
+  x.domain(d3.extent(data, function(d) { return d.Date; }));
+  y.domain([0, d3.max(data, function(d) {
+	  return Math.max(d.price); })]);
+  
   // Add the valueline path.
   svg.append("path")
-      .datum({!!$feePrices!!})
+      .data(data)
       .attr("class", "line")
       .attr("d", valueline);
 
