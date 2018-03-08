@@ -178,10 +178,9 @@ class DashboardController extends Controller
             ]
         ]);
 
-      return view('dashboard.index',compact('feePriceChart'));
-                                    // ->with('feePriceChart', $feePriceChart)
-                                    // ->with('fuelPriceChart', $fuelPriceChart)
-                                    // ->with('bdiPriceChart', $bdiPriceChart);
+      return view('dashboard.index')->with('feePriceChart', $feePriceChart)
+                                    ->with('fuelPriceChart', $fuelPriceChart)
+                                    ->with('bdiPriceChart', $bdiPriceChart);
     }
 
     public function execBCT()
