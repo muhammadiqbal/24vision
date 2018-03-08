@@ -111,9 +111,9 @@ class DashboardController extends Controller
 
     public function dashboard(Request $request)
     {
-        $port = $request->input('port_id',1);
-        $fuelType = $request->input('port_id',1);
-        $bdi = $request->input('bdi',1);
+        $port = $request->input('port_id',Port::first()->id);
+        $fuelType = $request->input('port_id',FuelType::first()->id);
+        $bdi = $request->input('bdi',Bdi::first()->id);
 
         $feePriceChart = new Lavacharts; 
         $bdiPriceChart = new Lavacharts; 
@@ -172,7 +172,7 @@ class DashboardController extends Controller
         ]);
 
         $bdiPriceChart->LineChart('bdiPricedata', $bdiPricedata, [
-            'title' => 'BDI Price ('.Bdi::find($bdi)->name.')',
+            'title' => 'BDI Price ('.Bdi::find($bdi)->code.')',
             'legend' => [
                 'position' => 'in'
             ]
