@@ -23,7 +23,7 @@ var valueline = d3.line()
 // append the svg obgect to the body of the page
 // appends a 'group' element to 'svg'
 // moves the 'group' element to the top left margin
-var svg = d3.select("body").append("svg")
+var svg = d3.select("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -46,7 +46,7 @@ var svg = d3.select("body").append("svg")
 
   // Add the valueline path.
   svg.append("path")
-      .datum([{{$feePrices}}])
+      .datum({{$feePrices}})
       .attr("class", "line")
       .attr("d", valueline);
 
@@ -59,7 +59,6 @@ var svg = d3.select("body").append("svg")
   svg.append("g")
       .call(d3.axisLeft(y));
 
-});
 
 </script>
 </body>
