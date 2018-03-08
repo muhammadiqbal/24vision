@@ -125,7 +125,7 @@ class DashboardController extends Controller
 
         $feePrices = FeePrice::select('start_date', 'price')
                               ->where('port_id', $port)
-                              ->get();
+                              ->get()->toJson();
 
         $fuelPrices = FuelPrice::select('start_date', 'price')
                               ->where('fuel_type_id', $fuelType)
