@@ -33,8 +33,8 @@ var svg = d3.select("svg")
 var data ={!!$feePrices!!};
   // format the data
   data.forEach(function(d) {
-      d.Date = parseTime(d.start_date);
-      d.Price = +d.price;
+      d.Date = parseTime(d.Date);
+      d.Price = +d.Price;
   });
   
   // sort years ascending

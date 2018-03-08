@@ -123,7 +123,7 @@ class DashboardController extends Controller
         // $bdiPricedata = $bdiPriceChart->DataTable();
         // $fuelPricedata = $fuelPriceChart->DataTable();
 
-        $feePrices = FeePrice::select(DB::raw('DATE(start_date) as date'), 'price')
+        $feePrices = FeePrice::select(DB::raw('DATE(start_date) as Date'), 'price')
                               ->where('port_id', $port)
                               ->get()->toJson();
 
@@ -131,7 +131,7 @@ class DashboardController extends Controller
                               ->where('fuel_type_id', $fuelType)
                               ->get()->toJson();
 
-        $bdiPrices = BdiPrice::select(DB::raw('DATE(start_date) as date'), 'price')
+        $bdiPrices = BdiPrice::select(DB::raw('DATE(start_date) as Date'), 'price as Price')
                               ->where('bdi_id', $bdi)
                               ->get()->toJson();
 
