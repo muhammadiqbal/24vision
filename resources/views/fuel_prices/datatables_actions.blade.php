@@ -1,5 +1,8 @@
 {!! Form::open(['route' => ['fuelPrices.destroy', $id], 'method' => 'delete']) !!}
 <div class='btn-group'>
+     <a href="{!! url('/linechart','?entity=fuelPrice&fuelType='.$fuel_type_id) !!}" class='btn btn-default btn-xs' data-toggle="tooltip" title="trends">
+        <i class="fa fa-area-chart"></i>
+    </a>
     <a href="{{ route('fuelPrices.show', $id) }}" class='btn btn-default btn-xs' data-toggle="tooltip" title="View">
         <i class="glyphicon glyphicon-eye-open"></i>
     </a>
