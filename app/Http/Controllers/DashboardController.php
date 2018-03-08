@@ -123,18 +123,15 @@ class DashboardController extends Controller
 
         $feePrice = FeePrice::select('start_date as 0', 'price as 1')
                               ->where('port_id', $port)
-                              ->get()
-                              ->toArray();
+                              ->get();
 
         $fuelPrice = FuelPrice::select('start_date as 0', 'price as 1')
                               ->where('fuel_type_id', $fuelType)
-                              ->get()
-                              ->toArray();
+                              ->get();
 
         $bdiPrice = BdiPrice::select('start_date as 0', 'price as 1')
                               ->where('bdi_id', $bdi)
-                              ->get()
-                              ->toArray();
+                              ->get();
 
         $feePricedata->addDateColumn('Year')
                      ->addNumberColumn('Price')
