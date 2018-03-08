@@ -118,13 +118,13 @@ class DashboardController extends Controller
         $bdi_id = $request->input('bdi',Bdi::first()->id);
 
         if($entity == 'feePrice'){
-            $data = FeePrice::select(DB::raw('DATE(start_date) as Date'), 'price')
+            $data = FeePrice::select(DB::raw('DATE(start_date) as Date'), 'price as Price')
                                   ->where('port_id', $port_id)
                                   ->get()
                                   ->toJson();
             $title = "Port ".Port::find($port_id)->name.' Fees';
         }elseif ($entity == 'fuelPrice') {
-            $data = FuelPrice::select(DB::raw('DATE(start_date) as Date'), 'price')
+            $data = FuelPrice::select(DB::raw('DATE(start_date) as Date'), 'price as Price')
                               ->where('fuel_type_id', $fuel_type_id)
                               ->get()
                               ->toJson();
