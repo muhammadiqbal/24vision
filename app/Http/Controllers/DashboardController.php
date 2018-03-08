@@ -155,21 +155,21 @@ class DashboardController extends Controller
         }
 
 
-        $feePriceChart->LineChart('data', $data, [
+        $feePriceChart->LineChart('feePricedata', $feePricedata, [
             'title' => 'Port fee Price ('.Port::find($port).')',
             'legend' => [
                 'position' => 'in'
             ]
         ]);
 
-        $fuelPriceChart->LineChart('data', $data, [
+        $fuelPriceChart->LineChart('fuelPricedata', $fuelPricedata, [
             'title' => 'Fuel Price ('.FuelType::find($fuelType).')',
             'legend' => [
                 'position' => 'in'
             ]
         ]);
 
-        $bdiPriceChart->LineChart('data', $data, [
+        $bdiPriceChart->LineChart('bdiPricedata', $bdiPricedata, [
             'title' => 'BDI Price ('.Bdi::find($bdi).')',
             'legend' => [
                 'position' => 'in'
