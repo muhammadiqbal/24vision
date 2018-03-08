@@ -50,6 +50,8 @@ Route::group(['middleware' => 'auth'], function()
 	
 	Route::resource('zonePoints', 'ZonePointController');
 	
+	Route::get('dashboard','DashboardController@dashboard');
+	
 	Route::get('execBCT','DashboardController@execBCT');
 
 	Route::get('imap','IMAPController@inbox');

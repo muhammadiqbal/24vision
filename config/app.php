@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'CargoInShip'),
 
     /*
     |--------------------------------------------------------------------------
@@ -188,6 +188,7 @@ return [
         Yajra\DataTables\DataTablesServiceProvider::class,
         Yajra\DataTables\ButtonsServiceProvider::class,
         Webklex\IMAP\Providers\LaravelServiceProvider::class,
+        Khill\Lavacharts\Laravel\LavachartsServiceProvider::class,
         //Toin0u\Geotools\GeotoolsServiceProvider::class,
 
     ],
@@ -243,7 +244,8 @@ return [
         'Flash'     => Laracasts\Flash\Flash::class,
         'Mapper'    => Cornford\Googlmapper\Facades\MapperFacade::class,
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
-        'Client' => Webklex\IMAP\Facades\Client::class
+        'Client' => Webklex\IMAP\Facades\Client::class,
+        'Lava' => Khill\Lavacharts\Laravel\LavachartsFacade::class,
         //'Geotools' => Toin0u\Geotools\Facade\Geotools::class,
     ],
 

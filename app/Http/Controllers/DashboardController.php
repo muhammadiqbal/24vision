@@ -9,6 +9,7 @@ use App\Models\Ship;
 use App\Models\Port;
 use App\Models\Email;
 use Illuminate\Http\Request;
+use Khill\Lavacharts\Lavacharts;
 use PhpImap\Mailbox;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
@@ -103,9 +104,71 @@ class DashboardController extends Controller
                                             ]);
     }
 
-    public function controlPanel()
+    public function dashboard(Request $request)
     {
-      return view('control_panel.terminal');
+        $port = $request->input('port_id',1);
+        $fuelType = $request->input('port_id',1);
+        $bdi = $request->input('bdi',1);
+
+        $feePriceChart = new Lavacharts; 
+        $bdiPriceChart = new Lavacharts; 
+        $fuelPriceChart = new Lavacharts; 
+
+        $feePricedata = $feePriceChart->DataTable();
+        $bdiPricedata = $bdiPriceChart->DataTable();
+        $fuelPricedata = $fuelPriceChart->DataTable();
+
+        $feePrice = FeePrice::select('fee_prices.end_date', 'price')
+                              ->where('port_id', $port)
+                              ->get()
+                              ->toArray();
+
+        $fuelPrice = FuelPrice::select('fuel_prices.end_date', 'price')
+                              ->where('fuel_type_id', $fuelType)
+                              ->get()
+                              ->toArray();
+
+        $bdiPrice = BdiPrice::select('bdi_prices.end_date', 'price')
+                              ->where('bdi_id', $bdi)
+                              ->get()
+                              ->toArray();
+
+        $feePricedata->addDateColumn('Year')
+                     ->addNumberColumn('Price')
+                     ->addRows();
+
+        $fuelPricedata->addDateColumn('Year')
+                     ->addNumberColumn('Price')
+                     ->addRows();
+
+        $bdiPricedata->addDateColumn('Year')
+                     ->addNumberColumn('Price')
+                     ->addRows();
+
+        $feePriceChart->LineChart('data', $data, [
+            'title' => 'Port fee Price ('.Port::find($port).')',
+            'legend' => [
+                'position' => 'in'
+            ]
+        ]);
+
+        $fuelPriceChart->LineChart('data', $data, [
+            'title' => 'Fuel Price ('.FuelType::find($fuelType).')',
+            'legend' => [
+                'position' => 'in'
+            ]
+        ]);
+
+        $bdiPriceChart->LineChart('data', $data, [
+            'title' => 'BDI Price ('.Bdi::find($bdi).')',
+            'legend' => [
+                'position' => 'in'
+            ]
+        ]);
+
+      return view('dashboard.index')->with('feePriceChart', $feePriceChart)
+                                    ->with('fuelPriceChart', $fuelPriceChart)
+                                    ->with('bdiPriceChart', $bdiPriceChart);
     }
 
     public function execBCT()
