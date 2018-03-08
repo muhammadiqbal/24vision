@@ -45,7 +45,7 @@ var data ={!!$feePrices!!};
   // Scale the range of the data
   x.domain(d3.extent(data, function(d) { return d.Date; }));
   y.domain([0, d3.max(data, function(d) {
-	  return Math.max(d.price); })]);
+	  return Math.max(d.Price); })]);
   
   // Add the valueline path.
   svg.append("path")
