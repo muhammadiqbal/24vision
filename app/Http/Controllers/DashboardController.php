@@ -137,7 +137,7 @@ class DashboardController extends Controller
             $title = "BDI ".Bdi::find($bdi_id)->name.' Price';
         }
 
-        return view('dashboard.index')->with('data', $data);
+        return view('chart.line')->with('data', $data);
     }
 
     public function execBCT()
