@@ -183,7 +183,7 @@ class DashboardController extends Controller
 
         }
 
-        $script = 'python3 ../PyTools/bulkcargotools/run.py ';
+        $script = 'export LD_LIBRARY_PATH=/lib:/$USER/lib:/$USER/.local/lib/python3.5/site-packages && python3 ../PyTools/bulkcargotools/run.py ';
         $process = new Process($script);
         $process->run();
 

@@ -2,6 +2,7 @@
 <div class="form-group col-sm-6">
     {!! Form::label('loading_port', 'Loading Port:') !!}
     <select name="loading_port" class="form-control">
+            <option value=""></option>
         @foreach($ports as $port)
             @if(!empty($cargo) && $cargo->loading_port == $port->id)
                 <option value="{{$port->id}}" selected="true">{{$port->name}}</option>
@@ -16,6 +17,7 @@
 <div class="form-group col-sm-6">
     {!! Form::label('discharging_port', 'Discharging Port:') !!}
     <select name="discharging_port" class="form-control">
+        <option value=""></option>
         @if(!empty($cargo) && $cargo->discharging_port == $port->id)
             <option value="{{$port->id}}" selected="true">{{$port->name}}</option>
         @else
@@ -41,6 +43,7 @@
     {!! Form::label('cargo_type_id', 'Cargo Type Id:') !!}
     <select name="cargo_type_id" class="form-control">
         @foreach($cargo_types as $cargo_type)
+            <option value=""></option>
             @if(!empty($cargo) && $cargo->cargo_type_id == $cargo_type->id)
                 <option value="{{$cargo_type->id}}" selected="true">{{$cargo_type->name}}</option>
             @else
@@ -60,6 +63,7 @@
 <div class="form-group col-sm-6">
     {!! Form::label('sf_unit', 'Sf Unit:') !!}
     <select name="sf_unit" class="form-control">
+        <option value=""></option>
         @foreach($sf_units as $sf_unit)
             @if(!empty($cargo) && $cargo->sf_unit == $sf_unit->id)
                 <option value="{{$sf_unit->id}}" selected="true">{{$sf_unit->unit}}</option>
@@ -74,6 +78,7 @@
 <div class="form-group col-sm-6">
     {!! Form::label('ship_specialization_id', 'Ship Specialization Id:') !!}
     <select name="ship_specialization_id" class="form-control">
+        <option value=""></option>
         @foreach($ship_specializations as $ship_specialization)
             @if(!empty($cargo) && $cargo->ship_specialization_id == $ship_specialization->id)
                 <option value="{{$ship_specialization->id}}">{{$ship_specialization->name}}</option>
@@ -89,6 +94,7 @@
 <div class="form-group col-sm-6">
     {!! Form::label('quantity_measurement_id', 'Quantity Measurement Id:') !!}
     <select name="quantity_measurement_id" class="form-control">
+        <option value=""></option>
         @foreach($quantity_measurements as $quantity_measurement)
             @if(!empty($cargo) && $cargo->quantity_measurement_id == $quantity_measurement->id)
                 <option value="{{$quantity_measurement->id}}" selected="true">{{$quantity_measurement->name}}</option>
@@ -109,6 +115,7 @@
 <div class="form-group col-sm-6">
     {!! Form::label('loading_rate_type', 'Loading Rate Type:') !!}
     <select name="loading_rate_type" class="form-control">
+        <option value=""></option>
         @foreach($ld_rate_types as $ld_rate_type)
             @if(!empty($cargo) && $cargo->loading_rate_type == $ld_rate_type->id)
                 <option value="{{$ld_rate_type->id}}" selected="true">{{$ld_rate_type->name}}</option>
@@ -130,6 +137,7 @@
 <div class="form-group col-sm-6">
     {!! Form::label('discharging_rate_type', 'Discharging Rate Type:') !!}
     <select name="discharging_rate_type" class="form-control">
+        <option value=""></option>
         @foreach($ld_rate_types as $ld_rate_type)
             @if(!empty($cargo) && $cargo->discharging_rate_type == $ld_rate_type->id)
                 <option value="{{$ld_rate_type->id}}">{{$ld_rate_type->name}}</option>
@@ -169,6 +177,7 @@
 <div class="form-group col-sm-6">
     {!! Form::label('status_id', 'Status Id:') !!}
     <select name="status_id" class="form-control">
+        <option value=""></option>
         @foreach($cargo_statuses as $cargo_status)
             @if(!empty($cargo) && $cargo->status_id == $cargo_status->id)
                 <option value="{{$cargo_status->id}}" selected="true">{{$cargo_status->name}}</option>
