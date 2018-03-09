@@ -41,7 +41,49 @@ class CargoDataTable extends DataTable
             ->filterColumn('status', function($query, $keyword) {
                 $query->whereRaw("p1.name like ?", ["%{$keyword}%"]);
             })
-
+            ->editColumn('cargo_type_id', function(Cargo $cargo){
+                if ($cargo->laycan_first_day_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->type.'</b>';
+                } else {                
+                    return $cargo->type;
+                }               
+            })
+            ->editColumn('quantity', function(Cargo $cargo){
+                if ($cargo->quantity_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->quantity.'</b>';
+                } else {                
+                    return $cargo->quantity;
+                }               
+            })
+            ->editColumn('laycan_first_day', function(Cargo $cargo){
+                if ($cargo->laycan_first_day_manual) {
+                    return '<b style=\'color:red;\'>'.date_format(date_create($cargo->laycan_first_day),'d-m-Y').'</b>';
+                } else {                
+                    return date_format(date_create($cargo->laycan_first_day),'d-m-Y');
+                }               
+            })
+            ->editColumn('laycan_last_day', function(Cargo $cargo){
+                if ($cargo->laycan_last_day_manual) {
+                    return '<b style=\'color:red;\'>'.date_format(date_create($cargo->laycan_last_day),'d-m-Y').'</b>';
+                } else {                
+                    return date_format(date_create($cargo->laycan_last_day),'d-m-Y');
+                }
+            })
+            ->editColumn('loading_port',function(Cargo $cargo){
+                if ($cargo->loading_port_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->load_port.'</b>';
+                }else{
+                    return $cargo->load_port;
+                }
+            })
+            ->editColumn('discharging_port',function(Cargo $cargo){
+                if ($cargo->discharging_port_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->disch_port.'</b>';
+                }else{
+                    return $cargo->disch_port;
+                }
+            })
+            ->rawColumns(['action','cargo_type_id', 'quantity','laycan_first_day','laycan_last_day','loading_port','discharging_port'])
             ->make(true);
     }
 
