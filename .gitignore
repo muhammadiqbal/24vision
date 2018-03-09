@@ -3,6 +3,7 @@
 /public/storage
 /storage/*.key
 /vendor
+/PyTools/log
 /.idea
 /.vagrant
 Homestead.json

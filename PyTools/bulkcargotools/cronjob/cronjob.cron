@@ -1,6 +1,7 @@
-*/15 * * * *  cd ~/var/www/24vision/PyTools/bulkcargotools; python3 execute_classification.py >> ~/log/log_predictor.txt
-0 */6 * * * cd ~/var/www/24vision/PyTools/bulkcargotools; python3 train_classification.py >> ~/log/log_classification.txt
+*/15 * * * *  cd ~/var/www/24vision/PyTools/bulkcargotools; python3 execute_classification.py >> ~/var/www/24vision/PyTools/log/log_predictor.txt
+0 */6 * * * cd ~/var/www/24vision/PyTools/bulkcargotools; python3 train_classification.py >> ~/var/www/24vision/PyTools/log/log_classification.txt
 */10 * * * * cd ~/var/www/24vision/PyTools/bulkcargotools; python3 imap_caller.py >> ~/log/log_imap.txt
-*/13 * * * * cd ~/var/www/24vision/PyTools/bulkcargotools; python3 execute_cargo_extraction.py "cargo" >> ~/log/log_extraction.txt
-*/14 * * * * cd ~/var/www/24vision/PyTools/bulkcargotools; python3 execute_ship_extraction.py "ship" >> ~/log/log_extraction.txt
-*/15 * * * * python3 ~/var/www/24vision/PyTools/bulkcargotools/imap_caller.py >> ~/var/www/24vision/PyTools/bulkcargotools/log_imap2.txt
+*/13 * * * * cd ~/var/www/24vision/PyTools/bulkcargotools; python3 execute_cargo_extraction.py "cargo" >> ~/var/www/24vision/PyTools/log/log_extraction.txt
+*/13 * * * * cd ~/var/www/24vision/PyTools/bulkcargotools; python3 execute_cargo_cleaning.py >> ~/var/www/24vision/PyTools/log/log_data_cleaning.txt
+*/14 * * * * cd ~/var/www/24vision/PyTools/bulkcargotools; python3 execute_ship_extraction.py "ship" >> ~/var/www/24vision/PyTools/log/log_extraction.txt
+*/15 * * * * python3 ~/var/www/24vision/PyTools/bulkcargotools/imap_caller.py >> ~/var/www/24vision/PyTools/log/log_imap2.txt

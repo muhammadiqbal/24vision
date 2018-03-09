@@ -52,8 +52,6 @@ Route::group(['middleware' => 'auth'], function()
 	
 	Route::get('linechart','DashboardController@linechart');
 	
-	Route::get('execBCT','DashboardController@execBCT');
-
 	Route::get('imap','IMAPController@inbox');
 	
 	Route::put('/emails/reclassify/{id}','EmailController@reclassify');
@@ -61,6 +59,8 @@ Route::group(['middleware' => 'auth'], function()
 	Route::get('/home/{ship_id?}/{port_id?}/{date_of_opening?}/{occupied_size?}/{occupied_tonage?}/{range?}', 'DashboardController@index');
 
 	Route::get('/voyage/{ship}/{cargo}/{port_ship}/{date}', 'VoyageController@getVoyage');
+
+	// Route::get('execBCT','DashboardController@execBCT');
 
 	//Route::resource('shipSpecializations', 'ShipSpecializationController');
 

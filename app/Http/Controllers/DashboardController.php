@@ -141,6 +141,10 @@ class DashboardController extends Controller
                                  ->with('title',$title);
     }
 
+    /* this function is to execute bulkcargo Tools using PHP scipt*/
+    /* be careful executing shell command. Mind the user privilege and the execution environment*/
+    /* temporarily has to be disabled*/
+    /*
     public function execBCT()
     {
 
@@ -195,6 +199,7 @@ class DashboardController extends Controller
         Flash::success($script.' executed with result: '.$process->getOutput());
 
         return redirect(url('/home'));
-    }
-
+     }
+     */
+     /** ENd OF ExecBCT funcion **/
 }

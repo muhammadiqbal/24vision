@@ -116,8 +116,8 @@
         @endif
         ><a href="{{url('/agreements')}}"><i class="fa fa-link"></i> <span>Agreements</span></a></li>
        --}}
-       <li>
+      {{--  <li>
           <a href="{{url('/execBCT')}}"><button class="btn-lg btn-success align-middle" data-toggle="tooltip" title="Execute BulkCargoTool"><i class="fa fa-magic">Run BulkCargoTool</i></button></a>
-      </li>
+      </li> --}}
     </ul>
     <!-- /.sidebar-menu -->

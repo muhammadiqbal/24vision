@@ -137,10 +137,7 @@ class DashboardDataTable extends DataTable
                                       'p2.name as disch_port',
                                       DB::raw('(quantity / '.$this->ship->dwcc.')*'.$this->ship->max_laden_draft - $this->ship->ballast_draft.' AS draft'),
                                       DB::raw('quantity * cargo_types.stowage_factor AS size'),
-                                      // DB::raw('ST_Distance_Sphere(
-                                      //   ST_GeomFromText(
-                                      //       POINT( $port->latitude $port->longitude), 
-                                      //       ST_GeomFromText(POINT(latitude longitude))' )
+                                      DB::raw('ST_Distance(POINT('.$port->latitude.','.$port->longitude.'), POINT(p1.latitude,p1.longitude)) AS range' )
                                     ])
                             ->leftjoin('cargo_status', 'cargos.status_id','cargo_status.id')
                             ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
@@ -158,6 +155,9 @@ class DashboardDataTable extends DataTable
             $cargo->whereDate('laycan_first_day','<=',date($this->request()->get('date_of_opening')))
                   ->whereDate('laycan_last_day','>=',date($this->request()->get('date_of_opening')));
 
+        }
+        if($this->request()->get('range')){
+            $cargo->having('range','<=',$this->request()->get('range'));
         }
 
         return $this->applyScopes($cargo);
