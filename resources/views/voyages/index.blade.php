@@ -280,7 +280,7 @@
    <script src="http://d3js.org/d3.v3.min.js"></script>
    <script src="http://d3js.org/topojson.v1.min.js"></script>
    <script src="http://d3js.org/queue.v1.min.js"></script>
-   
+
 <script type="text/javascript">
 var countries = getCountries(); 
 
@@ -302,7 +302,7 @@ var countries = getCountries();
       .attr("height", height);
 
       queue()
-      .defer(d3.json, "http://bl.ocks.org/mbostock/raw/4090846/world-50m.json")
+      .defer(d3.json, "file://world-50m.json")
       .await(ready);
 function ready(error, world) {
 
