@@ -19,17 +19,6 @@ class CargoDataTable extends DataTable
         return datatables()
             ->of($this->query())
             ->addColumn('action', 'cargos.datatables_actions')
-            ->editColumn('laycan_first_day', function(Cargo $cargo){
-               return date_format(date_create($cargo->laycan_first_day),'d-m-Y');
-            })
-            ->editColumn('laycan_last_day', function(Cargo $cargo){
-               return date_format(date_create($cargo->laycan_last_day),'d-m-Y');
-            })
-            ->editColumn('loading_port',function(Cargo $cargo){
-                if ($cargo->loading_port_manual) {
-                    return '<b style=\'color:red;\'>'.$cargo->loading_port_manual.'</b>';
-                }
-            })
             ->filterColumn('status', function($query, $keyword) {
                 $query->whereRaw("status like ?", ["%{$keyword}%"]);
             })
@@ -182,7 +171,6 @@ class CargoDataTable extends DataTable
                     ],
                     'colvis'
                 ],
-                //"defaultContent": "<i>Not set</i>",
                
             ]);
     }
