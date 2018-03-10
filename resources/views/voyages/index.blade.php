@@ -302,7 +302,7 @@ var countries = getCountries();
       .attr("height", height);
 
       queue()
-      .defer(d3.json, "{!!assets('world-50m.json')!!}")
+      .defer(d3.json, "{!!asset('world-50m.json')!!}")
       .await(ready);
 function ready(error, world) {
 
