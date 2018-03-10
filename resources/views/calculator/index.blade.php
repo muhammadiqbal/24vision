@@ -70,10 +70,11 @@
 
         <div class="box box-primary">
             <div class="box box-primary">
-                      <b style="color: blue;">NULL</b>
-                      <b style="color: red;">Manually changed</b>
-                      <b style="color: green;">Constructed</b>
+                      
                 <div class="box-body table-responsive">
+                <b style="color: blue;">NULL</b>|
+                <b style="color: red;">Manually changed</b>|
+                <b style="color: green;">Constructed</b>
                     @include('calculator.table')
                 </div>
             </div>

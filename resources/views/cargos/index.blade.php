@@ -42,8 +42,8 @@
         
 
             <div class="box-body table-responsive">
-            <b style="color: blue;">NULL</b>
-            <b style="color: red;">Manually changed</b>
+            <b style="color: blue;">NULL</b>|
+            <b style="color: red;">Manually changed</b>|
             <b style="color: green;">Constructed</b>
                     @include('cargos.table')
             </div>
