@@ -14,7 +14,7 @@
 
         <div class="clearfix"></div>
         <div class="box box-primary">
-        <div class="col-sm-12">
+        <div class="col-sm-6" style="top:20px;">
         <form method="GET" id="search-form" class="form-inline" role="form">
             <div class="form-group col-sm-3">
                 {!! Form::label('status', 'Status:') !!}
@@ -38,8 +38,15 @@
             </div>
             <button type="submit" class="btn btn-primary">Search</button>
         </form>
-
         </div>
+        <div class="col-sm-6">
+            <li>
+                <ul style="color: blue;">NULL</ul>
+                <ul style="color: red;">Manually changed</ul>
+                <ul style="color: green;">Constructed</ul>
+            </li>
+        </div>
+
             <div class="box-body table-responsive">
                     @include('cargos.table')
             </div>
