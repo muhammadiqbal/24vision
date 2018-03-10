@@ -277,8 +277,6 @@
 </table>
 </div>
 
-@endsection
-@section('script')
 <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src="http://d3js.org/topojson.v1.min.js"></script>
