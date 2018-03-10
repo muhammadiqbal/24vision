@@ -18,7 +18,7 @@
 <!-- Occupied size Field -->
 <div class="form-group col-sm-4">
     {!! Form::label('occupied_size', 'Occupied size:') !!}
-    {!! Form::number('occupied_size',null, ['class' => 'form-control', 'value'=>$occupied_size]) !!}
+    {!! Form::number('occupied_size',null, ['class' => 'form-control', 'value'=>$occupied_size, 'min'=>0]) !!}
 </div>
 
 <!-- Port Id Field -->
@@ -39,7 +39,7 @@
 <!-- Date Of Opening Field -->
 <div class="form-group col-sm-4">
     {!! Form::label('occupied_tonage', 'Occupied tonage:') !!}
-    {!! Form::number('occupied_tonage',null, ['class' => 'form-control', 'value'=>$occupied_tonage]) !!}
+    {!! Form::number('occupied_tonage',null, ['class' => 'form-control', 'value'=>$occupied_tonage, 'min'=>0]) !!}
 </div>
 
  <div class="col-sm-4">
@@ -56,7 +56,7 @@
 <!-- Range Field -->
 <div class="form-group col-sm-4">
     {!! Form::label('Range', 'Range:') !!}
-    {!! Form::number('range',null, ['class' => 'form-control', 'value'=>$range]) !!}
+    {!! Form::number('range',null, ['class' => 'form-control', 'value'=>$range, 'min'=>0]) !!}
 </div>
 
 <!-- Date Of Opening Field -->

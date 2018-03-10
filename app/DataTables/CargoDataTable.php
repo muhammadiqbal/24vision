@@ -9,6 +9,7 @@ use Yajra\DataTables\Services\DataTable;
 
 class CargoDataTable extends DataTable
 {
+    protected $null = '<b style=\'color:blue;\'>NULL</b>';
 
     /**
      * @return \Illuminate\Http\JsonResponse
@@ -41,8 +42,29 @@ class CargoDataTable extends DataTable
             ->filterColumn('status', function($query, $keyword) {
                 $query->whereRaw("p1.name like ?", ["%{$keyword}%"]);
             })
+            ->editColumn('bdi', function(Cargo $cargo){
+                $ship = $this->ship;
+                $port = $this->port;
+                $date_of_opening = $this->date_of_opening;
+
+                return $cargo->setBdi($port, $ship, $date_of_opening);
+            })
+            ->addColumn('ntce', function(Cargo $cargo){
+                $ship = $this->ship;
+                $port = $this->port;
+                $date_of_opening = $this->date_of_opening;
+
+                return $cargo->setNtce($port, $ship, $date_of_opening);
+            })
+            ->addColumn('gross_rate', function(Cargo $cargo){
+                $ship = $this->ship;
+                $port = $this->port;
+                $date_of_opening = $this->date_of_opening;
+
+                return $cargo->setGrossRate($port, $ship, $date_of_opening);
+            })
             ->editColumn('cargo_type_id', function(Cargo $cargo){
-                if ($cargo->laycan_first_day_manual) {
+                if ($cargo->cargo_type_id_manual) {
                     return '<b style=\'color:red;\'>'.$cargo->type.'</b>';
                 } else {                
                     return $cargo->type;
@@ -51,6 +73,8 @@ class CargoDataTable extends DataTable
             ->editColumn('quantity', function(Cargo $cargo){
                 if ($cargo->quantity_manual) {
                     return '<b style=\'color:red;\'>'.$cargo->quantity.'</b>';
+                }elseif ($cargo->quantity_constructed) {
+                    return '<b style=\'color:green;\'>'.$cargo->quantity.'</b>';
                 } else {                
                     return $cargo->quantity;
                 }               
@@ -58,6 +82,8 @@ class CargoDataTable extends DataTable
             ->editColumn('laycan_first_day', function(Cargo $cargo){
                 if ($cargo->laycan_first_day_manual) {
                     return '<b style=\'color:red;\'>'.date_format(date_create($cargo->laycan_first_day),'d-m-Y').'</b>';
+                }elseif ($cargo->laycan_first_day_constructed) {
+                    return '<b style=\'color:green;\'>'.date_format(date_create($cargo->laycan_first_day),'d-m-Y').'</b>';
                 } else {                
                     return date_format(date_create($cargo->laycan_first_day),'d-m-Y');
                 }               
@@ -65,6 +91,8 @@ class CargoDataTable extends DataTable
             ->editColumn('laycan_last_day', function(Cargo $cargo){
                 if ($cargo->laycan_last_day_manual) {
                     return '<b style=\'color:red;\'>'.date_format(date_create($cargo->laycan_last_day),'d-m-Y').'</b>';
+                } elseif ($cargo->laycan_last_day_constructed) {
+                    return '<b style=\'color:green;\'>'.date_format(date_create($cargo->laycan_last_day),'d-m-Y').'</b>';
                 } else {                
                     return date_format(date_create($cargo->laycan_last_day),'d-m-Y');
                 }
@@ -168,20 +196,20 @@ class CargoDataTable extends DataTable
     {
         return [
             
-            'cargo_type_id' => ['defaultContent' => 'NULL','name' => 'type', 'data' => 'type', 'searchable'=> false],
-            'quantity' => ['defaultContent' => 'NULL','name' => 'quantity', 'data' => 'quantity'],
-            'loading_port' => ['defaultContent' => 'NULL', 'name' => 'load_port', 'data' => 'load_port', 'searchable'=> false],
-            'discharging_port' => ['defaultContent' => 'NULL','name' => 'disch_port', 'data' => 'disch_port', 'searchable'=> false],
-            'laycan_first_day' => ['defaultContent' => 'NULL','name' => 'laycan_first_day', 'data' => 'laycan_first_day'],
-            'laycan_last_day' => ['defaultContent' => 'NULL','name' => 'laycan_last_day', 'data' => 'laycan_last_day'],
-            'loading_rate' => ['defaultContent' => 'NULL','name' => 'loading_rate', 'data' => 'loading_rate'],
-            'loading_rate_type' => ['defaultContent' => 'NULL','name' => 'l_type', 'data' => 'l_type', 'searchable'=> false],
-            'discharging_rate'=>['defaultContent' => 'NULL','name' => 'discharging_rate', 'data' => 'discharging_rate'],
-            'discharging_rate_type'=>['defaultContent' => 'NULL','name' => 'd_type', 'data' => 'd_type', 'searchable'=> false],
-            'stowage_factor' => ['defaultContent' => 'NULL','name' => 'stowage_factor', 'data' => 'stowage_factor' ],
-            'commission' => ['defaultContent' => 'NULL','name' => 'commission', 'data' => 'commission'],
-            'email_id' => ['defaultContent' => 'NULL','name' => 'email_id', 'data' => 'email_id'],
-            'status_id' => ['defaultContent' => 'NULL','name' => 'status', 'data' => 'status','searchable'=> false]
+            'cargo_type_id' => ['defaultContent' => $this->null,'name' => 'type', 'data' => 'type', 'searchable'=> false],
+            'quantity' => ['defaultContent' => $this->null,'name' => 'quantity', 'data' => 'quantity'],
+            'loading_port' => ['defaultContent' => $this->null, 'name' => 'load_port', 'data' => 'load_port', 'searchable'=> false],
+            'discharging_port' => ['defaultContent' => $this->null,'name' => 'disch_port', 'data' => 'disch_port', 'searchable'=> false],
+            'laycan_first_day' => ['defaultContent' => $this->null,'name' => 'laycan_first_day', 'data' => 'laycan_first_day'],
+            'laycan_last_day' => ['defaultContent' => $this->null,'name' => 'laycan_last_day', 'data' => 'laycan_last_day'],
+            'loading_rate' => ['defaultContent' => $this->null,'name' => 'loading_rate', 'data' => 'loading_rate'],
+            'loading_rate_type' => ['defaultContent' => $this->null,'name' => 'l_type', 'data' => 'l_type', 'searchable'=> false],
+            'discharging_rate'=>['defaultContent' => $this->null,'name' => 'discharging_rate', 'data' => 'discharging_rate'],
+            'discharging_rate_type'=>['defaultContent' => $this->null,'name' => 'd_type', 'data' => 'd_type', 'searchable'=> false],
+            'stowage_factor' => ['defaultContent' => $this->null,'name' => 'stowage_factor', 'data' => 'stowage_factor' ],
+            'commission' => ['defaultContent' => $this->null,'name' => 'commission', 'data' => 'commission'],
+            'email_id' => ['defaultContent' => $this->null,'name' => 'email_id', 'data' => 'email_id'],
+            'status_id' => ['defaultContent' => $this->null,'name' => 'status', 'data' => 'status','searchable'=> false]
         ];
     }
 

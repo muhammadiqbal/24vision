@@ -17,6 +17,7 @@ class DashboardDataTable extends DataTable
     protected $remaining_draft;
     protected $port;
     protected $date_of_opening;
+    protected $null = '<b style=\'color:blue;\'>NULL</b>';
 
     public function forShip(Ship $ship){
         $this->ship = $ship;
@@ -78,7 +79,7 @@ class DashboardDataTable extends DataTable
                 return $cargo->setGrossRate($port, $ship, $date_of_opening);
             })
             ->editColumn('cargo_type_id', function(Cargo $cargo){
-                if ($cargo->laycan_first_day_manual) {
+                if ($cargo->cargo_type_id_manual) {
                     return '<b style=\'color:red;\'>'.$cargo->type.'</b>';
                 } else {                
                     return $cargo->type;
@@ -87,6 +88,8 @@ class DashboardDataTable extends DataTable
             ->editColumn('quantity', function(Cargo $cargo){
                 if ($cargo->quantity_manual) {
                     return '<b style=\'color:red;\'>'.$cargo->quantity.'</b>';
+                }elseif ($cargo->quantity_constructed) {
+                    return '<b style=\'color:green;\'>'.$cargo->quantity.'</b>';
                 } else {                
                     return $cargo->quantity;
                 }               
@@ -94,6 +97,8 @@ class DashboardDataTable extends DataTable
             ->editColumn('laycan_first_day', function(Cargo $cargo){
                 if ($cargo->laycan_first_day_manual) {
                     return '<b style=\'color:red;\'>'.date_format(date_create($cargo->laycan_first_day),'d-m-Y').'</b>';
+                }elseif ($cargo->laycan_first_day_constructed) {
+                    return '<b style=\'color:green;\'>'.date_format(date_create($cargo->laycan_first_day),'d-m-Y').'</b>';
                 } else {                
                     return date_format(date_create($cargo->laycan_first_day),'d-m-Y');
                 }               
@@ -101,6 +106,8 @@ class DashboardDataTable extends DataTable
             ->editColumn('laycan_last_day', function(Cargo $cargo){
                 if ($cargo->laycan_last_day_manual) {
                     return '<b style=\'color:red;\'>'.date_format(date_create($cargo->laycan_last_day),'d-m-Y').'</b>';
+                } elseif ($cargo->laycan_last_day_constructed) {
+                    return '<b style=\'color:green;\'>'.date_format(date_create($cargo->laycan_last_day),'d-m-Y').'</b>';
                 } else {                
                     return date_format(date_create($cargo->laycan_last_day),'d-m-Y');
                 }
@@ -202,17 +209,17 @@ class DashboardDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'cargo_type_id' => ['defaultContent' => 'NULL','name' => 'type', 'data' => 'type','title'=>'cargo_type_id','searchable'=> false],
-            'quantity' => ['defaultContent' => 'NULL','name' => 'quantity', 'data' => 'quantity','title'=>'quantity'],
-            'laycan_first_day' => ['defaultContent' => 'NULL','name' => 'laycan_first_day', 'data' => 'laycan_first_day','title'=>'laycan_first_day'],
-            'laycan_last_day' => ['defaultContent' => 'NULL','name' => 'laycan_last_day', 'data' => 'laycan_last_day','title'=>'laycan_last_day'],
-            'loading_port' => ['defaultContent' => 'NULL','name' => 'load_port', 'data' => 'load_port','title'=>'loading_port','searchable'=> false],
-            'discharging_port' => ['defaultContent' => 'NULL','name' => 'disch_port', 'data' => 'disch_port','title'=>'discharging_port','searchable'=> false],
-            'email_id' => ['defaultContent' => 'NULL','name' => 'email_id', 'data' => 'email_id','title'=>'email_id'],
-            'bdi' => ['defaultContent'=>'NULL', 'name'=>'bdi', 'data'=>'bdi', 'title'=>'bdi','title'=>'bdi'],
-            'ntce' => ['defaultContent'=>'NULL', 'name'=>'', 'data'=>'ntce',  'title'=>'ntce','title'=>'ntce'],
-            'gross_rate' => ['defaultContent'=>'NULL', 'name'=>'', 'data'=>'gross_rate', 'title'=>'gross_rate','title'=>'gross_rate'],
-            'status_id' => ['defaultContent' => 'NULL','name' => 'status', 'data' => 'status','title'=>'status_id','searchable'=> false],
+            'cargo_type_id' => ['defaultContent' => $this->null,'name' => 'type', 'data' => 'type','title'=>'cargo_type_id','searchable'=> false],
+            'quantity' => ['defaultContent' => $this->null,'name' => 'quantity', 'data' => 'quantity','title'=>'quantity'],
+            'laycan_first_day' => ['defaultContent' => $this->null,'name' => 'laycan_first_day', 'data' => 'laycan_first_day','title'=>'laycan_first_day'],
+            'laycan_last_day' => ['defaultContent' => $this->null,'name' => 'laycan_last_day', 'data' => 'laycan_last_day','title'=>'laycan_last_day'],
+            'loading_port' => ['defaultContent' => $this->null,'name' => 'load_port', 'data' => 'load_port','title'=>'loading_port','searchable'=> false],
+            'discharging_port' => ['defaultContent' => $this->null,'name' => 'disch_port', 'data' => 'disch_port','title'=>'discharging_port','searchable'=> false],
+            'email_id' => ['defaultContent' => $this->null,'name' => 'email_id', 'data' => 'email_id','title'=>'email_id'],
+            'bdi' => ['defaultContent'=>$this->null, 'name'=>'bdi', 'data'=>'bdi', 'title'=>'bdi','title'=>'bdi'],
+            'ntce' => ['defaultContent'=>$this->null, 'name'=>'', 'data'=>'ntce',  'title'=>'ntce','title'=>'ntce'],
+            'gross_rate' => ['defaultContent'=>$this->null, 'name'=>'', 'data'=>'gross_rate', 'title'=>'gross_rate','title'=>'gross_rate'],
+            'status_id' => ['defaultContent' => $this->null,'name' => 'status', 'data' => 'status','title'=>'status_id','searchable'=> false],
         ];
     }
     /**
