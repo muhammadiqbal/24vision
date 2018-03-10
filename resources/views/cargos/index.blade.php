@@ -14,7 +14,7 @@
 
         <div class="clearfix"></div>
         <div class="box box-primary">
-        <div class="col-sm-12" style="top:10px;">
+        <div class="col-sm-12" style="top:10px; bottom:5px;">
         <form method="GET" id="search-form" class="form-inline" role="form">
             <div class="form-group col-sm-3">
                 {!! Form::label('status', 'Status:') !!}
@@ -42,6 +42,9 @@
         
 
             <div class="box-body table-responsive">
+            <b style="color: blue;">NULL</b>
+            <b style="color: red;">Manually changed</b>
+            <b style="color: green;">Constructed</b>
                     @include('cargos.table')
             </div>
         </div>
