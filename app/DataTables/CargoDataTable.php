@@ -31,27 +31,6 @@ class CargoDataTable extends DataTable
             ->filterColumn('status', function($query, $keyword) {
                 $query->whereRaw("p1.name like ?", ["%{$keyword}%"]);
             })
-            ->editColumn('bdi', function(Cargo $cargo){
-                $ship = $this->ship;
-                $port = $this->port;
-                $date_of_opening = $this->date_of_opening;
-
-                return $cargo->setBdi($port, $ship, $date_of_opening);
-            })
-            ->addColumn('ntce', function(Cargo $cargo){
-                $ship = $this->ship;
-                $port = $this->port;
-                $date_of_opening = $this->date_of_opening;
-
-                return $cargo->setNtce($port, $ship, $date_of_opening);
-            })
-            ->addColumn('gross_rate', function(Cargo $cargo){
-                $ship = $this->ship;
-                $port = $this->port;
-                $date_of_opening = $this->date_of_opening;
-
-                return $cargo->setGrossRate($port, $ship, $date_of_opening);
-            })
             ->editColumn('cargo_type_id', function(Cargo $cargo){
                 if ($cargo->cargo_type_id_manual) {
                     return '<b style=\'color:red;\'>'.$cargo->type.'</b>';
