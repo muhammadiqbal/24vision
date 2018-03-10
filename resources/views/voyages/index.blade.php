@@ -299,7 +299,7 @@ var countries = getCountries();
 
       var graticule = d3.geo.graticule();
 
-      var svg = d3.select("body").append("svg")
+      var svg = d3.select("svg")
       .attr("width", width)
       .attr("height", height);
 
