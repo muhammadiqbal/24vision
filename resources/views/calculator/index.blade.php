@@ -46,7 +46,15 @@
                 </div>
                 <!-- /.info-box -->
             </div>
-            <button class="col-sm-3 col-xs-12"> <i class="icon-globe"></i>Cargo Map</button>
+
+            <div class="col-sm-3 col-xs-12">
+                <div class="info-box">
+                  <!-- Apply any bg-* class to to the icon to color it -->
+                  <a href="{{url('cargoMap')}}" target="_blank"><span class="info-box-icon bg-red"><i class="fa fa-ship"></i></span></a>
+                </div>
+                <!-- /.info-box -->
+            </div>
+
          
         </div>
 
