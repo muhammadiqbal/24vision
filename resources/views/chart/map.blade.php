@@ -1,5 +1,32 @@
 @extends('layouts.app')
+@section('css')
+<style>
 
+   .graticule {
+      fill: none;
+      stroke: #777;
+      stroke-opacity: .5;
+      stroke-width: .5px;
+   }
+
+   .land {
+      fill: #222;
+   }
+
+   .boundary {
+      fill: none;
+      stroke: #fff;
+      stroke-width: .5px;
+   }
+
+   .route {
+      fill: none;
+      stroke: red;
+      stroke-width: 3px;
+   }
+
+</style>
+@endsection
 @section('content')
 <div class="box-primary">
 	<h1>Cargo Maps</h1>
