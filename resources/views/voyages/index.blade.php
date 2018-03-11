@@ -335,24 +335,6 @@ function ready(error, world) {
 
          d3.select(self.frameElement).style("height", height + "px");
 
-         // var features = countries.features;
-         // for(var i=240; i<features.length-2; i++) {
-         //    if(features[i].geometry.coordinates[0] < features[i+1].geometry.coordinates[0]){
-         //       var route = {
-         //          type: "LineString",
-         //          coordinates: [
-         //          features[i].geometry.coordinates,
-         //          features[i+1].geometry.coordinates
-         //          ]
-         //       };
-         //       svg.append("path")
-         //       .datum(route)
-         //       .attr("class", "route")
-         //       .attr("d", path);
-         //    }
-
-         // }
-
           var route = {
                   type: "LineString",
                   coordinates: [
@@ -362,8 +344,6 @@ function ready(error, world) {
                svg.append("path")
                .datum(route)
                .attr("class", "route")
-               .attr("data-toggle","tooltip")
-               .attr("title", "{{$cargo->loading_port." to ".$cargo->discharging_port}}")
                .attr("d", path);
 
       }

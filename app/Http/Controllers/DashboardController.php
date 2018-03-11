@@ -141,6 +141,16 @@ class DashboardController extends Controller
                                  ->with('title',$title);
     }
 
+    public function cargoMap(){
+      $cargos = Cargo::select(DB::raw('COUNT(id)'),'lPortLongitude','lPortLatitude''dPortLongitude','dPortLatitude')
+                      ->leftjoin('ports as lPort','loading_port','ports.id')
+                      ->leftjoin('ports as dPort','discharging_port','ports.id')
+                      ->groupBy('loading_port')
+                      ->groupBy('discharging_port')
+                      ->get()->toJson();
+      return view('chart.map')->with('cargos',$cargos);
+    }
+
     /* this function is to execute bulkcargo Tools using PHP scipt*/
     /* be careful executing shell command. Mind the user privilege and the execution environment*/
     /* temporarily has to be disabled*/
