@@ -289,8 +289,7 @@ var ports = getPorts();
 
       var projection = d3.geo.mercator()
       .scale((width + 1) / 2 / Math.PI)
-      .translate([width / 2, height / 2])
-      .precision(.1);
+      .translate([width / 2, height / 2]);
 
       var path = d3.geo.path()
       .projection(projection);
@@ -323,8 +322,8 @@ function ready(error, world) {
 
          //render the points
          ports.forEach(function(d) { 
-            var x = projection(21);
-            var y = projection(108);
+            var x = projection(d.latitude);
+            var y = projection(d.longitude);
 
             svg.append("svg:circle")
             .attr("class","point")
