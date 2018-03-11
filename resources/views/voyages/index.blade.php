@@ -323,8 +323,8 @@ function ready(error, world) {
 
          //render the points
          ports.forEach(function(d) { 
-            var x = projection(d.longitude);
-            var y = projection(d.latitude);
+            var x = projection(d.coordinates)[1];
+            var y = projection(d.coordinates)[0];
 
             svg.append("svg:circle")
             .attr("class","point")
@@ -368,6 +368,7 @@ function ready(error, world) {
       }
 
 function getPorts(){
+  //coordinates[long, lat]
   return   [{"name":"FANG-CHENG","coordinates":[21.45,108.21]},
   {"name":"BEIHAI","coordinates":[21.29,109.04]},
   {"name":"HAIKOU","coordinates":[20.03,110.17]},
