@@ -98,7 +98,7 @@ function ready(error, world) {
 
                 svg.append("text")
                 .attr("class", "labels")
-                .text(d.name +" "+ d.count)
+                .text(d.port +" "+ d.count)
                 .attr("x", projection(d.lPortLongitude))
                 .attr("y", projection(d.lPortLatitude));
          });
