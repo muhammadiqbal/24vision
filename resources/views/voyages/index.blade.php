@@ -28,9 +28,13 @@
 </style>
 @endsection
 @section('content')
-<div class="box-primary">
-  <svg width="960" height="600"></svg>
 
+<div class="box box-primary">
+<div class="box box-content col-sm-12">
+  <svg></svg>
+</div>
+<div class="box box-content">
+  
   Result for: <br/>
   <b>Cargo:</b> {{$cargo->quantity}} {{$cargo_name}} from {{$port_start_name}} to {{$port_end_name}} (Status: ) [ID {{$cargo->id}}] <br/>
   <b>Ship:</b> {{$ship->name}} [ID {{$ship->id}}] <br/>
@@ -39,7 +43,7 @@
   <br/>
   <br/>
 </div>
-<div class="box-primary col-sm-6" style="height:240px;">
+<div class="box box-content col-sm-6" style="height:240px;">
  <div class="voyage_box_title">Ship</div>
  <table style="min-width:300px">
   <tr>
@@ -90,7 +94,7 @@
 </div>
 
 
-<div class="box-primary col-sm-6" style="height:240px;">
+<div class="box box-content col-sm-6" style="height:240px;">
  <div class="voyage_box_title">Cargo</div>
  <table style="min-width:300px">
   <tr>
@@ -121,7 +125,7 @@
 </table>
 </div>
 
-<div class="box-primary col-sm-6" style="height:180px;">
+<div class="box box-content col-sm-6" style="height:180px;">
  <div class="voyage_box_title">Start Port</div>
  <table style="min-width:300px">
   <tr>
@@ -160,7 +164,7 @@
 </table>
 </div>
 
-<div class="box-primary col-sm-6" style="height:180px;">
+<div class="box box-content col-sm-6" style="height:180px;">
  <div class="voyage_box_title">End Port</div>
  <table style="min-width:300px">
   <tr>
@@ -199,7 +203,7 @@
 </table>
 </div>
 
-<div class="box-primary col-sm-6" style="height:180px;">
+<div class="box box-content col-sm-6" style="height:180px;">
  <div class="voyage_box_title"style="height:20px;">Calculation </div>
  <table style="min-width:300px">
 
@@ -235,7 +239,7 @@
 </table>
 </div>
 
-<div class="box-primary col-sm-6" style="height:190px;">
+<div class="box box-content col-sm-6" style="height:190px;">
   <div class="voyage_box_title" style="height:20px;"></div>
   <table style="min-width:300px">
     <tr>
@@ -276,7 +280,7 @@
   </tr>
 </table>
 </div>
-
+</div>
    <script src="http://d3js.org/d3.v3.min.js"></script>
    <script src="http://d3js.org/topojson.v1.min.js"></script>
    <script src="http://d3js.org/queue.v1.min.js"></script>
