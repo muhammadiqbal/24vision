@@ -142,7 +142,7 @@ class DashboardController extends Controller
     }
 
     public function cargoMap(){
-      $cargos = Cargo::select(DB::raw('COUNT(cargos.id)'),
+      $cargos = Cargo::select(DB::raw('COUNT(cargos.id) as count'),
                                     'lPort.longitude as lPortLongitude',
                                     'lPort.latitude as lPortLatitude',
                                     'dPort.longitude as dPortLongitude',

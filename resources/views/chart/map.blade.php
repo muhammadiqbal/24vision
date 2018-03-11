@@ -95,11 +95,9 @@ function ready(error, world) {
                  .attr("class", "route")
                  .attr("d", path);
 
-                svg.selectAll(".labels")
-                .data(data)
-                .enter().append("text")
+                svg.append("text")
                 .attr("class", "labels")
-                .text(function(d) { return d.properties.Team; })
+                .text(function(d) { return d.count; })
                 .attr("x", function(d) {
                     return projection(d.lPortLongitude);
                 })
