@@ -369,7 +369,7 @@ function ready(error, world) {
       }
 
 function getPorts(){
-  return  [
+  return  {
   {"name":"FANG-CHENG","latitude":"21.45","longitude":"108.21"},
   {"name":"BEIHAI","latitude":"21.29","longitude":"109.04"},
   {"name":"HAIKOU","latitude":"20.03","longitude":"110.17"},
@@ -782,7 +782,8 @@ function getPorts(){
   {"name":"MALMO","latitude":"55.37","longitude":"13.00"},
   {"name":"LIMHAMN","latitude":"55.35","longitude":"12.56"},
   {"name":"TRELLEBORG","latitude":"55.22","longitude":"13.09"},
-  {"name":"YSTAD","latitude":"55.26","longitude":"13.50"}];
+  {"name":"YSTAD","latitude":"55.26","longitude":"13.50"}}
+  ;
  
 </script>
 @endsection
