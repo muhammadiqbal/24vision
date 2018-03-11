@@ -322,8 +322,8 @@ function ready(error, world) {
 
          //render the points
          ports.forEach(function(d) { 
-            var x = projection(d.coordinates)[0];
-            var y = projection(d.coordinates)[1];
+            var x = projection(d.coordinates)[1];
+            var y = projection(d.coordinates)[0];
 
             svg.append("svg:circle")
             .attr("class","point")
@@ -356,8 +356,8 @@ function ready(error, world) {
           var route = {
                   type: "LineString",
                   coordinates: [
-                  [{!!$cargo->loadingPort->latitude!!},{!!$cargo->loadingPort->longitude!!}],
-                  [{!!$cargo->dischargingPort->latitude!!},{!!$cargo->dischargingPort->longitude!!}]
+                  [{!!$cargo->loadingPort->longitude!!},{!!$cargo->loadingPort->latitude!!}],
+                  [{!!$cargo->dischargingPort->longitude!!},{!!$cargo->dischargingPort->latitude!!}]
                   ]};
                svg.append("path")
                .datum(route)
