@@ -278,6 +278,7 @@
 </div>
 
    <script src="http://d3js.org/d3.v3.min.js"></script>
+   <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
    <script src="http://d3js.org/topojson.v1.min.js"></script>
    <script src="http://d3js.org/queue.v1.min.js"></script>
 
@@ -290,6 +291,9 @@ var ports = getPorts();
       var projection = d3.geo.mercator()
       .scale((width + 1) / 2 / Math.PI)
       .translate([width / 2, height / 2]);
+
+      var projection = d3.geoAlbers()
+      .scale(960);
 
       var path = d3.geo.path()
       .projection(projection);
@@ -322,8 +326,8 @@ function ready(error, world) {
 
          //render the points
          ports.forEach(function(d) { 
-            var x = projection(21);
-            var y = projection(108);
+            var x = projection(d.longitude);
+            var y = projection(d.latitude);
 
             svg.append("svg:circle")
             .attr("class","point")
