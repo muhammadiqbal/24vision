@@ -782,6 +782,6 @@ function getPorts(){
   {"name":"LIMHAMN","latitude":"55.35","longitude":"12.56"},
   {"name":"TRELLEBORG","latitude":"55.22","longitude":"13.09"},
   {"name":"YSTAD","latitude":"55.26","longitude":"13.50"}
-  ]
+  ];
 </script>
 @endsection
