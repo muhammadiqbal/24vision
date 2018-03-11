@@ -289,7 +289,7 @@ var ports = getPorts();
 
       var projection = d3.geo.mercator()
       .scale((width + 1) / 2 / Math.PI)
-      .translate([width / 2, height / 2]).precision(.1);
+      .translate([width , height ]).precision(.1);
 
       var path = d3.geo.path()
       .projection(projection);
