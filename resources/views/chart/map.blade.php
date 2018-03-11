@@ -84,24 +84,26 @@ function ready(error, world) {
 
          d3.select(self.frameElement).style("height", height + "px");
 
-         cargos.forEach(function(d) { 
-            var route = {
-                    type: "LineString",
-                    coordinates: [
-                    [d.lPortLongitude,d.lPortLatitude],
-                    [d.dPortLongitude,d.dPortLatitude]
-                    ]};
-                 svg.append("path")
-                 .datum(route)
-                 .attr("class", "route")
-                 .attr("d", path);
+         /* add text label to the path*/
+         /* need to find the right projection*/
+         // cargos.forEach(function(d) { 
+         //    var route = {
+         //            type: "LineString",
+         //            coordinates: [
+         //            [d.lPortLongitude,d.lPortLatitude],
+         //            [d.dPortLongitude,d.dPortLatitude]
+         //            ]};
+         //         svg.append("path")
+         //         .datum(route)
+         //         .attr("class", "route")
+         //         .attr("d", path);
 
-                svg.append("text")
-                .attr("class", "labels")
-                .text(d.port +" "+ d.count)
-                .attr("x", projection(d.lPortLongitude))
-                .attr("y", projection(d.lPortLatitude));
-         });
+         //        svg.append("text")
+         //        .attr("class", "labels")
+         //        .text(d.port +" "+ d.count)
+         //        .attr("x", projection(d.lPortLongitude))
+         //        .attr("y", projection(d.lPortLatitude));
+         // });
 
         
 
