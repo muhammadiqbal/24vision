@@ -332,7 +332,7 @@ function ready(error, world) {
             .attr("cy", y)
             .attr("fill", "#FF0000")
             .attr("r", 3)
-            alert(x,y);
+            alert(d.latitude);
          });
 
          d3.select(self.frameElement).style("height", height + "px");
