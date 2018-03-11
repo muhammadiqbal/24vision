@@ -48,8 +48,10 @@
             </div>
 
             <div class="col-sm-3 col-xs-12">
-                
+                <div class="info-box" style="border-radius: 100% 100% 50% 50%">
                   <a href="{{url('cargoMap')}}" target="_blank"><span class="info-box-icon bg-red" style="border-radius:100%;"><i class="fa fa-globe" data-toggle="tooltip" title="View cargo Map"></i></span></a>
+                  <span class="info-box-text">Ship</span>
+                </div>
                
             </div>
 
