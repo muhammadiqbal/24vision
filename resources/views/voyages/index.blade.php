@@ -30,10 +30,10 @@
 @section('content')
 
 <div class="box box-primary">
-<div class="box box-content col-sm-12">
+<div class=" col-sm-12">
   <svg></svg>
 </div>
-<div class="box box-content">
+<div class="">
   
   Result for: <br/>
   <b>Cargo:</b> {{$cargo->quantity}} {{$cargo_name}} from {{$port_start_name}} to {{$port_end_name}} (Status: ) [ID {{$cargo->id}}] <br/>
@@ -43,7 +43,7 @@
   <br/>
   <br/>
 </div>
-<div class="box box-content col-sm-6" style="height:240px;">
+<div class=" col-sm-6" style="height:240px;">
  <div class="voyage_box_title">Ship</div>
  <table style="min-width:300px">
   <tr>
@@ -94,7 +94,7 @@
 </div>
 
 
-<div class="box box-content col-sm-6" style="height:240px;">
+<div class=" col-sm-6" style="height:240px;">
  <div class="voyage_box_title">Cargo</div>
  <table style="min-width:300px">
   <tr>
@@ -125,7 +125,7 @@
 </table>
 </div>
 
-<div class="box box-content col-sm-6" style="height:180px;">
+<div class=" col-sm-6" style="height:180px;">
  <div class="voyage_box_title">Start Port</div>
  <table style="min-width:300px">
   <tr>
@@ -164,7 +164,7 @@
 </table>
 </div>
 
-<div class="box box-content col-sm-6" style="height:180px;">
+<div class=" col-sm-6" style="height:180px;">
  <div class="voyage_box_title">End Port</div>
  <table style="min-width:300px">
   <tr>
@@ -203,7 +203,7 @@
 </table>
 </div>
 
-<div class="box box-content col-sm-6" style="height:180px;">
+<div class=" col-sm-6" style="height:180px;">
  <div class="voyage_box_title"style="height:20px;">Calculation </div>
  <table style="min-width:300px">
 
@@ -239,7 +239,7 @@
 </table>
 </div>
 
-<div class="box box-content col-sm-6" style="height:190px;">
+<div class=" col-sm-6" style="height:190px;">
   <div class="voyage_box_title" style="height:20px;"></div>
   <table style="min-width:300px">
     <tr>
@@ -325,17 +325,17 @@ function ready(error, world) {
          .attr("d", path);
 
          //render the points
-         ports.forEach(function(d) { 
-            var x = projection(d.longitude);
-            var y = projection(d.latitude);
+         // ports.forEach(function(d) { 
+         //    var x = projection(d.longitude);
+         //    var y = projection(d.latitude);
 
-            svg.append("svg:circle")
-            .attr("class","point")
-            .attr("cx", x)
-            .attr("cy", y)
-            .attr("fill", "#FF0000")
-            .attr("r", 3);
-         });
+         //    svg.append("svg:circle")
+         //    .attr("class","point")
+         //    .attr("cx", x)
+         //    .attr("cy", y)
+         //    .attr("fill", "#FF0000")
+         //    .attr("r", 3);
+         // });
 
          d3.select(self.frameElement).style("height", height + "px");
 
