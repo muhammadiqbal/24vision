@@ -142,7 +142,7 @@ class DashboardController extends Controller
     }
 
     public function cargoMap(){
-      $cargos = Cargo::select(DB::raw('COUNT(id)'),'lPortLongitude','lPortLatitude''dPortLongitude','dPortLatitude')
+      $cargos = Cargo::select(DB::raw('COUNT(id)'),'lPort.longitude as lPortLongitude','lPort.latitude as lPortLatitude''dPort.longitude as dPortLongitude','dPort.latitude as dPortLatitude')
                       ->leftjoin('ports as lPort','loading_port','ports.id')
                       ->leftjoin('ports as dPort','discharging_port','ports.id')
                       ->groupBy('loading_port')
