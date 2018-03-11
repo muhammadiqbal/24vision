@@ -10,7 +10,7 @@
    <script src="http://d3js.org/queue.v1.min.js"></script>
 
 <script type="text/javascript">
-var ports = getPorts(); 
+var cargos = getCargos(); 
 
       var width = 960,
       height = 960;
@@ -62,11 +62,11 @@ function ready(error, world) {
                  .datum(route)
                  .attr("class", "route")
                  .attr("d", path);
-         }
+         });
 
       }
 
-function getPorts(){
+function getCargos(){
 
   return  {!!$cargos!!};
 }
