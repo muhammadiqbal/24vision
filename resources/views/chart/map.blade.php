@@ -26,9 +26,10 @@
    }
 
     .labels {
-        fill: #444;
+        fill: #f00;
         font-family:arial;
-        font-size:0.7em;
+        font-size:2em;
+        font-weight: bolder;
     }
 </style>
 @endsection
