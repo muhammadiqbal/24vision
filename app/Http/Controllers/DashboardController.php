@@ -149,6 +149,8 @@ class DashboardController extends Controller
                                     'dPort.latitude as dPortLatitude')
                       ->leftjoin('ports as lPort','loading_port','lPort.id')
                       ->leftjoin('ports as dPort','discharging_port','dPort.id')
+                      ->whereNotNull('loading_port')
+                      ->whereNotNull('discharging_port')
                       ->groupBy('loading_port')
                       ->groupBy('discharging_port')
                       ->get()->toJson();
