@@ -28,8 +28,8 @@
     .labels {
         fill: #f00;
         font-family:arial;
-        font-size:2em;
-        font-weight: bolder;
+        font-size:1em;
+        font-weight: bold;
     }
 </style>
 @endsection
@@ -98,7 +98,7 @@ function ready(error, world) {
 
                 svg.append("text")
                 .attr("class", "labels")
-                .text(d.count)
+                .text(d.name +" "+ d.count)
                 .attr("x", projection(d.lPortLongitude))
                 .attr("y", projection(d.lPortLatitude));
          });

@@ -146,7 +146,8 @@ class DashboardController extends Controller
                                     'lPort.longitude as lPortLongitude',
                                     'lPort.latitude as lPortLatitude',
                                     'dPort.longitude as dPortLongitude',
-                                    'dPort.latitude as dPortLatitude')
+                                    'dPort.latitude as dPortLatitude',
+                                    'lPort.name as port')
                       ->leftjoin('ports as lPort','loading_port','lPort.id')
                       ->leftjoin('ports as dPort','discharging_port','dPort.id')
                       ->whereNotNull('loading_port')
