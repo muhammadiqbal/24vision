@@ -691,7 +691,7 @@ function getPorts(){
   {"name":"QUA IBOE OIL TERMINAL","coordinates":[4.14,8.02]},
   {"name":"PENNINGTON OIL TERMINAL","coordinates":[4.15,5.37]},
   {"name":"BONNY","coordinates":[4.27,7.10]},
-  {"name":"BONNY OFFSHORE TERMINAL","coordinates":[4.11,7.14},
+  {"name":"BONNY OFFSHORE TERMINAL","coordinates":[4.11,7.14]},
   {"name":"OKRIKA","coordinates":[4.43,7.05]},
   {"name":"ONNE","coordinates":[4.41,7.09]},
   {"name":"PORT HARCOURT","coordinates":[4.46,7.00]},
