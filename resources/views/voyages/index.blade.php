@@ -330,7 +330,7 @@ function ready(error, world) {
             .attr("cx", x)
             .attr("cy", y)
             .attr("fill", "#FF0000")
-            .attr("r", 3)
+            .attr("r", 3);
             alert(d.latitude[0 +'/'+ x);
          });
 
