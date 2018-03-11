@@ -130,7 +130,11 @@ class VoyageController extends Controller
 		$bdi_code = null;
 		$bdi_name = null;
 		}
-		//$route = $calculator->findRoute($route_id);
+		
+
+		$ports = Port::select('name','latitude','longitude')
+					   ->get()
+					   ->toJson();
 
     	return view('voyages.index')
 		->with('ship',$ship)
@@ -181,7 +185,8 @@ class VoyageController extends Controller
 		->with('bdi_code',$bdi_code)
 		->with('bdi_name',$bdi_name)
 		->with('laycan_first_day',$laycan_first_day)
-		->with('laycan_last_day',$laycan_last_day);
+		->with('laycan_last_day',$laycan_last_day)
+		->with('ports',$ports);
     }
 }
 
