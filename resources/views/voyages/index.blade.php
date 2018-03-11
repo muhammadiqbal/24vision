@@ -290,10 +290,7 @@ var ports = getPorts();
 
       var projection = d3.geo.mercator()
       .scale((width + 1) / 2 / Math.PI)
-      .translate([width / 2, height / 2]);
-
-      var projection = d3.geoAlbers()
-      .scale(960);
+      .translate([width / 2, height / 2]).precision(.1);
 
       var path = d3.geo.path()
       .projection(projection);
@@ -335,7 +332,6 @@ function ready(error, world) {
             .attr("cy", y)
             .attr("fill", "#FF0000")
             .attr("r", 3);
-            alert(d.latitude +'/'+ x);
          });
 
          d3.select(self.frameElement).style("height", height + "px");
