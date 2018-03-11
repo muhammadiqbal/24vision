@@ -30,10 +30,10 @@
 @section('content')
 
 <div class="box box-primary">
-<div class=" col-sm-12">
+<div class="col-sm-12">
   <svg></svg>
 </div>
-<div class="">
+<div class="col-sm-12">
   
   Result for: <br/>
   <b>Cargo:</b> {{$cargo->quantity}} {{$cargo_name}} from {{$port_start_name}} to {{$port_end_name}} (Status: ) [ID {{$cargo->id}}] <br/>
@@ -43,7 +43,7 @@
   <br/>
   <br/>
 </div>
-<div class=" col-sm-6" style="height:240px;">
+<div class="col-sm-6" style="height:240px;">
  <div class="voyage_box_title">Ship</div>
  <table style="min-width:300px">
   <tr>
@@ -280,7 +280,7 @@
   </tr>
 </table>
 </div>
-</div>
+
    <script src="http://d3js.org/d3.v3.min.js"></script>
    <script src="http://d3js.org/topojson.v1.min.js"></script>
    <script src="http://d3js.org/queue.v1.min.js"></script>
