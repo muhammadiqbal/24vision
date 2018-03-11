@@ -32,10 +32,7 @@
   <svg width="960" height="600"></svg>
 
   Result for: <br/>
-  <b>Cargo:</b> {{$cargo->quantity}} {{$carg
-    o_name}} from {{$port_star
-    t_name}} to {{$port_en
-    d_name}} (Status: ) [ID {{$cargo->id}}] <br/>
+  <b>Cargo:</b> {{$cargo->quantity}} {{$cargo_name}} from {{$port_start_name}} to {{$port_end_name}} (Status: ) [ID {{$cargo->id}}] <br/>
   <b>Ship:</b> {{$ship
     ->name}} [ID {{$ship->id}}] <br/>
   <b>Start-Port:</b> {{$port_ship
