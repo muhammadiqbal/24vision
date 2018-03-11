@@ -369,9 +369,9 @@ function ready(error, world) {
       }
 
 function getPorts(){
-  return   [{"name":"FANG-CHENG","latitude":21.45,"longitude":108.21},
-  {"name":"BEIHAI","latitude":21.29,"longitude":109.04},
-  {"name":"HAIKOU","latitude":20.03,"longitude":110.17},
+  return   [{"name":"FANG-CHENG","latitude":"21.45","longitude":"108.21"},
+  {"name":"BEIHAI","latitude":"21.29","longitude":"109.04"},
+  {"name":"HAIKOU","latitude":"20.03","longitude":"110.17"},
   {"name":"BASUO","latitude":"19.06","longitude":"108.37"},
   // {"name":"ZHANJIANG","latitude":"21.12","longitude":"110.24"},
   // {"name":"LON SHUI TERMINAL","latitude":"20.50","longitude":"115.41"},
