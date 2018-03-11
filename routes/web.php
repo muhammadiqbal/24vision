@@ -54,6 +54,8 @@ Route::group(['middleware' => 'auth'], function()
 	
 	Route::get('imap','IMAPController@inbox');
 	
+	Route::get('cargoMap','cargoMap@DashboardController');
+	
 	Route::put('/emails/reclassify/{id}','EmailController@reclassify');
 	
 	Route::get('/home/{ship_id?}/{port_id?}/{date_of_opening?}/{occupied_size?}/{occupied_tonage?}/{range?}', 'DashboardController@index');
