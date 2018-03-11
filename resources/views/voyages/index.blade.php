@@ -21,8 +21,8 @@
 
    .route {
       fill: none;
-      stroke: blue;
-      stroke-width: 1px;
+      stroke: red;
+      stroke-width: 3px;
    }
 
 </style>
