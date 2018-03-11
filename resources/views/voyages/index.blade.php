@@ -369,7 +369,7 @@ function ready(error, world) {
       }
 
 function getPorts(){
-  return  {
+  return  
   {"name":"FANG-CHENG","latitude":"21.45","longitude":"108.21"},
   {"name":"BEIHAI","latitude":"21.29","longitude":"109.04"},
   {"name":"HAIKOU","latitude":"20.03","longitude":"110.17"},
@@ -453,7 +453,7 @@ function getPorts(){
   {"name":"POHANG","latitude":"36.03","longitude":"129.23"},
   {"name":"MUKHO","latitude":"37.34","longitude":"129.07"},
   {"name":"TONGHAE","latitude":"37.32","longitude":"129.09"},
-  {"name":"SOKCH'O HANG","latitude":"38.12","longitude":"128.36"},
+  {"name":"SOKCH\'O HANG","latitude":"38.12","longitude":"128.36"},
   {"name":"MOMBETSU KO","latitude":"44.21","longitude":"143.21"},
   {"name":"ABASHIRI KO","latitude":"44.01","longitude":"144.17"},
   {"name":"NEMURO KO","latitude":"43.20","longitude":"145.35"},
@@ -782,7 +782,7 @@ function getPorts(){
   {"name":"MALMO","latitude":"55.37","longitude":"13.00"},
   {"name":"LIMHAMN","latitude":"55.35","longitude":"12.56"},
   {"name":"TRELLEBORG","latitude":"55.22","longitude":"13.09"},
-  {"name":"YSTAD","latitude":"55.26","longitude":"13.50"}}
+  {"name":"YSTAD","latitude":"55.26","longitude":"13.50"}
   ;
  
 </script>
