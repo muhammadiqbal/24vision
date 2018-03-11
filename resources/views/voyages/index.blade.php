@@ -369,7 +369,7 @@ function ready(error, world) {
       }
 
 function getPorts(){
-  return { {!!$ports[0]!!} };
+  return { {!!$ports!!} };
  
 </script>
 @endsection
