@@ -323,8 +323,8 @@ function ready(error, world) {
 
          //render the points
          ports.forEach(function(d) { 
-            var x = projection(21.45);
-            var y = projection(108.41);
+            var x = projection(21);
+            var y = projection(108);
 
             svg.append("svg:circle")
             .attr("class","point")
