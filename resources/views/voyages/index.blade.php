@@ -783,5 +783,6 @@ function getPorts(){
   {"name":"TRELLEBORG","latitude":"55.22","longitude":"13.09"},
   {"name":"YSTAD","latitude":"55.26","longitude":"13.50"}
   ];
+}
 </script>
 @endsection
