@@ -471,7 +471,7 @@ function getPorts(){
   {"name":"AOMORI KO","latitude":40.50,"longitude":140.45},
   {"name":"NOSHIRO KO","latitude":40.13,"longitude":140.00},
   {"name":"HACHINOHE KO","latitude":40.32,"longitude":141.33},
-  {"name":"MIYAKO","latitude":39.38,"longitude":141.59,
+  {"name":"MIYAKO","latitude":39.38,"longitude":141.59},
   {"name":"KAMAISHI KO","latitude":39.16,"longitude":141.54},
   {"name":"OFUNATO","latitude":39.03,"longitude":141.44},
   {"name":"KESENNUMA KO","latitude":38.52,"longitude":141.36},
