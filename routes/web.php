@@ -54,7 +54,7 @@ Route::group(['middleware' => 'auth'], function()
 	
 	Route::get('imap','IMAPController@inbox');
 	
-	Route::get('cargoMap','cargoMap@DashboardController');
+	Route::get('cargoMap','DashboardController@cargoMap');
 	
 	Route::put('/emails/reclassify/{id}','EmailController@reclassify');
 	
