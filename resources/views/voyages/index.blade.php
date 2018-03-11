@@ -301,7 +301,7 @@ var ports = getPorts();
       .attr("height", height);
 
       queue()
-      .defer(d3.json, "{!!asset('world-50m.json')!!}")
+      .defer(d3.json, "{!!asset('world-110m.json')!!}")
       .await(ready);
 function ready(error, world) {
 
