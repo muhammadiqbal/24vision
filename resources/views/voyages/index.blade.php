@@ -362,7 +362,8 @@ function ready(error, world) {
                svg.append("path")
                .datum(route)
                .attr("class", "route")
-               .attr("")
+               .attr("data-toggle","tooltip")
+               .attr("title", "{{$cargo->loading_port." to ".$cargo->discharging_port}}")
                .attr("d", path);
 
       }
