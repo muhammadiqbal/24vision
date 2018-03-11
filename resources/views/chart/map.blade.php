@@ -22,9 +22,14 @@
    .route {
       fill: none;
       stroke: red;
-      stroke-width: 3px;
+      stroke-width: 1px;
    }
 
+    .labels {
+        fill: #444;
+        font-family:arial;
+        font-size:0.7em;
+    }
 </style>
 @endsection
 @section('content')
@@ -89,7 +94,21 @@ function ready(error, world) {
                  .datum(route)
                  .attr("class", "route")
                  .attr("d", path);
+
+                svg.selectAll(".labels")
+                .data(data)
+                .enter().append("text")
+                .attr("class", "labels")
+                .text(function(d) { return d.properties.Team; })
+                .attr("x", function(d) {
+                    return projection(d.lPortLongitude);
+                })
+                .attr("y", function(d) {
+                    return projection(d.lPortLatitude);
+                });
          });
+
+        
 
       }
 
