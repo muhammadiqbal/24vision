@@ -323,8 +323,8 @@ function ready(error, world) {
 
          //render the points
          ports.forEach(function(d) { 
-            var x = projection(d.latitude);
-            var y = projection(d.longitude);
+            var x = projection(d.latitude)[0];
+            var y = projection(d.longitude)[1];
 
             svg.append("svg:circle")
             .attr("class","point")
@@ -332,7 +332,7 @@ function ready(error, world) {
             .attr("cy", y)
             .attr("fill", "#FF0000")
             .attr("r", 3)
-            alert(d.latitude);
+            alert(d.latitude +'/'+ x);
          });
 
          d3.select(self.frameElement).style("height", height + "px");
