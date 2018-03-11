@@ -282,7 +282,7 @@
    <script src="http://d3js.org/queue.v1.min.js"></script>
 
 <script type="text/javascript">
-var countries = getPorts(); 
+var ports = getPorts(); 
 
       var width = 960,
       height = 960;
@@ -322,7 +322,7 @@ function ready(error, world) {
          .attr("d", path);
 
          //render the points
-         countries.forEach(function(d) { 
+         ports.ports.forEach(function(d) { 
             var x = projection(d.latitude);
             var y = projection(d.longitude);
 
@@ -369,7 +369,7 @@ function ready(error, world) {
       }
 
 function getPorts(){
-  return   [ {"name":"FANG-CHENG","latitude":"21.45","longitude":"108.21"},
+  return   {"ports":{"name":"FANG-CHENG","latitude":"21.45","longitude":"108.21"},
   {"name":"BEIHAI","latitude":"21.29","longitude":"109.04"},
   {"name":"HAIKOU","latitude":"20.03","longitude":"110.17"},
   {"name":"BASUO","latitude":"19.06","longitude":"108.37"},
@@ -782,7 +782,7 @@ function getPorts(){
   {"name":"LIMHAMN","latitude":"55.35","longitude":"12.56"},
   {"name":"TRELLEBORG","latitude":"55.22","longitude":"13.09"},
   {"name":"YSTAD","latitude":"55.26","longitude":"13.50"}
-  ];
+  ]};
 }
 </script>
 @endsection
