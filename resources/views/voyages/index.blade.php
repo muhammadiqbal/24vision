@@ -33,10 +33,8 @@
 
   Result for: <br/>
   <b>Cargo:</b> {{$cargo->quantity}} {{$cargo_name}} from {{$port_start_name}} to {{$port_end_name}} (Status: ) [ID {{$cargo->id}}] <br/>
-  <b>Ship:</b> {{$ship
-    ->name}} [ID {{$ship->id}}] <br/>
-  <b>Start-Port:</b> {{$port_ship
-    ->name}} [ID {{$port_ship->id}}]<br/>
+  <b>Ship:</b> {{$ship->name}} [ID {{$ship->id}}] <br/>
+  <b>Start-Port:</b> {{$port_ship->name}} [ID {{$port_ship->id}}]<br/>
   <b>Date:</b> {{$date->format('m/d/Y')}}<br/>
   <br/>
   <br/>
@@ -46,8 +44,7 @@
  <table style="min-width:300px">
   <tr>
     <th>Name:</th>
-    <td style="text-align:right">{{$ship
-      ->name}}</td> 
+    <td style="text-align:right">{{$ship->name}}</td> 
   </tr>
   <tr>
     <th>Imo:</th>
@@ -98,8 +95,7 @@
  <table style="min-width:300px">
   <tr>
     <th>Cargo:</th>
-    <td style="text-align:right">{{$carg
-      o_name}}</td> 
+    <td style="text-align:right">{{$cargo_name}}</td> 
   </tr>
   <tr>
     <th>Quantity:</th>
@@ -130,8 +126,7 @@
  <table style="min-width:300px">
   <tr>
     <th>Name:</th>
-    <td style="text-align:right">{{$port_star
-      t_name}}</td> 
+    <td style="text-align:right">{{$port_start_name}}</td> 
   </tr>
   <tr>
     <th>Zone:</th>
@@ -170,8 +165,7 @@
  <table style="min-width:300px">
   <tr>
     <th>Name:</th>
-    <td style="text-align:right">{{$port_en
-      d_name}}</td> 
+    <td style="text-align:right">{{$port_end_name}}</td> 
   </tr>
   <tr>
     <th>Zone:</th>
