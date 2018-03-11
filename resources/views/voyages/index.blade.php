@@ -29,7 +29,7 @@
 @endsection
 @section('content')
 
-<div class="box box-primary">
+
 <div class="col-sm-12">
   <svg></svg>
 </div>
