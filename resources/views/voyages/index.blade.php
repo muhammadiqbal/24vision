@@ -322,7 +322,7 @@ function ready(error, world) {
          .attr("d", path);
 
          //render the points
-         countries.features.forEach(function(d) { 
+         countries.forEach(function(d) { 
             var x = projection(d.latitude);
             var y = projection(d.longitude);
 
