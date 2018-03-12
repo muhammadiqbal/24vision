@@ -19,17 +19,6 @@ class IMAPController extends Controller
         $username = env('IMAP_USERNAME', 'MunsterUniversity@24Vision.Solutions');
         $password = env('IMAP_PASSWORD', 'Yoz39332');
 
-
-        
-       
-        try {
-            imap_open ( $hostname, $username, $password );
-            // Validate the value...
-        } catch (Exception $e) {
-             print_r ( imap_last_error () );
-            report($e. imap_last_error () );
-
-        }
     	$mailbox = new Mailbox($hostname, $username, $password, __DIR__);
 		$mailsIds = $mailbox->searchMailbox('ALL');
 		if(!$mailsIds) {
@@ -53,7 +42,7 @@ class IMAPController extends Controller
                     '_created_on'=>date('Y-m-d'),
                     'classification_automated_certainty'=>null,
                     'kibana_extracted'=>false];
-            if(Email::where('IMAPUID',$email->uid)->first() == null){
+            if(Email::where('IMAPUID',env('IMAP_INBOXPREFIX', '4VisionChartering-').$email->uid)->first() == null){
                 $storeEmail = $emailRepo->create($input);
                 if ($storeEmail) {
                     $saveCount++;
