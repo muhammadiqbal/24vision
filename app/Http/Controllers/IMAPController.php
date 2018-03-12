@@ -37,12 +37,12 @@ class IMAPController extends Controller
                     'classification_manual'=>null,
                     'date'=> \Carbon\Carbon::parse(@$email->date),
                     'classification_automated'=>null,
-                    'IMAPUID'=> $email->uid,
+                    'IMAPUID'=>env('IMAP_INBOXPREFIX', '24VisionChartering-').$email->uid,
                     'IMAPFolderID'=>null,
                     '_created_on'=>date('Y-m-d'),
                     'classification_automated_certainty'=>null,
                     'kibana_extracted'=>false];
-            if(Email::where('IMAPUID',env('IMAP_INBOXPREFIX', '4VisionChartering-').$email->uid)->first() == null){
+            if(Email::where(env('IMAP_INBOXPREFIX', '24VisionChartering-').$email->uid)->first() == null){
                 $storeEmail = $emailRepo->create($input);
                 if ($storeEmail) {
                     $saveCount++;
