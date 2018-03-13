@@ -6,9 +6,11 @@ use App\DataTables\PathDataTable;
 use App\Http\Requests;
 use App\Http\Requests\CreatePathRequest;
 use App\Http\Requests\UpdatePathRequest;
+use App\Http\Controllers\AppBaseController;
+use App\Models\Zone;
+use App\Models\Route;
 use App\Repositories\PathRepository;
 use Flash;
-use App\Http\Controllers\AppBaseController;
 use Response;
 
 class PathController extends AppBaseController
@@ -39,7 +41,10 @@ class PathController extends AppBaseController
      */
     public function create()
     {
-        return view('paths.create');
+        $routes = Route::all();
+        $zones = Zone::all();
+        return view('paths.create')->with('routes',$routes)
+                                   ->with('zones',$zones);
     }
 
     /**
@@ -97,7 +102,11 @@ class PathController extends AppBaseController
             return redirect(route('paths.index'));
         }
 
-        return view('paths.edit')->with('path', $path);
+        $routes = Route::all();
+        $zones = Zone::all();
+        return view('paths.edit')->with('path', $path)
+                                 ->with('routes',$routes)
+                                 ->with('zones',$zones);
     }
 
     /**

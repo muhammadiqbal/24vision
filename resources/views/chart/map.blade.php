@@ -86,6 +86,7 @@ function ready(error, world) {
 
        
          cargos.forEach(function(d) { 
+          if (d.lPortLongitude <= d.dPortLongitude) {
             var route = {
                     type: "LineString",
                     coordinates: [
@@ -96,7 +97,18 @@ function ready(error, world) {
                  .datum(route)
                  .attr("class", "route")
                  .attr("d", path);
-
+          }else{
+            var route = {
+                    type: "LineString",
+                    coordinates: [
+                    [d.dPortLongitude,d.dPortLatitude],
+                    [d.lPortLongitude,d.lPortLatitude]
+                    ]};
+                 svg.append("path")
+                 .datum(route)
+                 .attr("class", "route")
+                 .attr("d", path);
+          }
                 /* add text label to the path*/
                 /* need to find the right projection*/
                 // svg.append("text")

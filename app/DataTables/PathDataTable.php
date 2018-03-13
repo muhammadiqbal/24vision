@@ -27,7 +27,11 @@ class PathDataTable extends DataTable
      */
     public function query()
     {
-        $paths = Path::query();
+        $paths = Path::leftjoin('zones as z1','zone1','z1.id')
+                     ->leftjoin('zones as z2','zone2','z2.id')
+                     ->leftjoin('zones as z3','zone3','z3.id')
+                     ->leftjoin('routes','route_id','routes.id')
+                     ->select('z1.name as zone1', 'z2.name as zone2', 'z3.name zone3', 'routes.name as route');
 
         return $this->applyScopes($paths);
     }
@@ -72,10 +76,10 @@ class PathDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'route_id' => ['name' => 'route_id', 'data' => 'route_id'],
-            'zone1' => ['name' => 'zone1', 'data' => 'zone1'],
-            'zone2' => ['name' => 'zone2', 'data' => 'zone2'],
-            'zone3' => ['name' => 'zone3', 'data' => 'zone3']
+            'route_id' => ['name' => 'route', 'data' => 'route','searchable'=>false],
+            'zone1' => ['name' => 'zone1', 'data' => 'zone1','searchable'=>false],
+            'zone2' => ['name' => 'zone2', 'data' => 'zone2','searchable'=>false],
+            'zone3' => ['name' => 'zone3', 'data' => 'zone3','searchable'=>false]
         ];
     }
 
