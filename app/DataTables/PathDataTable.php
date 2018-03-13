@@ -31,7 +31,7 @@ class PathDataTable extends DataTable
                      ->leftjoin('zones as z2','zone2','z2.id')
                      ->leftjoin('zones as z3','zone3','z3.id')
                      ->leftjoin('routes','route_id','routes.id')
-                     ->select('z1.name as zone1', 'z2.name as zone2', 'z3.name zone3', 'routes.name as route');
+                     ->select('z1.name as zone1', 'z2.name as zone2', 'z3.name as zone3', 'routes.name as route');
 
         return $this->applyScopes($paths);
     }
