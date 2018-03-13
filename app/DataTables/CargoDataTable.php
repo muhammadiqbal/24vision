@@ -104,7 +104,7 @@ class CargoDataTable extends DataTable
         }
 
         if($this->request()->get('laycan_last_day')){
-            $cargos->where('laycan_last_day','<=',$this->request()->get('laycan_last_day' ));
+            $cargos->where('laycan_last_day','>=',$this->request()->get('laycan_last_day' ));
         }
 
         if($this->request()->get('statusoption')){

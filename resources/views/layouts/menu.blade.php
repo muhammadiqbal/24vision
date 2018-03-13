@@ -67,6 +67,12 @@
         @endif
         >
         <a href="{{url('/routes')}}"><i class="fa fa-compass"></i> <span>Route</span></a></li>
+       <li
+        @if( $route =='App\Http\Controllers\PathController')
+          class="active"
+        @endif
+        >
+        <a href="{{url('/paths')}}"><i class="fa fa-road"></i> <span>Path</span></a></li>
       <li
         @if( $route =='App\Http\Controllers\BdiController')
           class="active"

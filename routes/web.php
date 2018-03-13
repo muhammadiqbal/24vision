@@ -38,6 +38,8 @@ Route::group(['middleware' => 'auth'], function()
 	
 	Route::resource('feePrices', 'FeePriceController');
 
+	Route::resource('paths', 'PathController');
+	
 	Route::resource('ports', 'PortController');
 
 	Route::resource('routes', 'RouteController');
