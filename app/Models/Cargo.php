@@ -170,7 +170,8 @@ class Cargo extends Model
      * @var array
      */
     public static $rules = [
-        
+        'laycan_first_day'=>'nullable|date',
+        'laycan_last_day'=>'nullable|date|after_or_equal:laycan_first_day'
     ];
 
  
@@ -344,7 +345,7 @@ class Cargo extends Model
      **/
     public function stowageFactorUnit()
     {
-        return $this->belongsTo(\App\Models\StowageFactorUnit::class);
+        return $this->belongsTo(\App\Models\StowageFactorUnit::class,'sf_unit');
     }
 
     /**

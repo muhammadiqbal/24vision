@@ -11,54 +11,78 @@
                 <tr>
                     <th>Size</th>
                     <td>
-                        @if($selectedShip)
+                        @if(isset($selectedShip))
                             {{$selectedShip->max_holds_capacity}}
+                        @else
+                            {{0}}
                         @endif
-                    </td>
+                  </td>
                     <td>
-                        @if($selectedShip && $occupied_size)
+                        @if(isset($occupied_size))
                             {{$occupied_size}}
+                         @else
+                            {{0}}
                         @endif
                     </td>
                     <td>
-                        @if($selectedShip && $occupied_size)
+                        @if(isset($selectedShip) && isset($occupied_size))
                             {{$selectedShip->max_holds_capacity - $occupied_size}}
+                        @elseif(isset($selectedShip))
+                            {{$selectedShip->max_holds_capacity}}
+                        @else
+                            {{0}}
                         @endif
                     </td>
                 </tr>
                 <tr>
                     <th>Draft</th>
                     <td>
-                        @if($selectedShip)
-                            {{$selectedShip->max_laden_draft}}
+                        @if(isset($allowedDraft))
+                            {{$allowedDraft}}
+                        @else
+                            {{0}}
                         @endif
                     </td>
                     <td>
-                         @if($selectedShip && $occupied_tonage)
-                            {{$selectedShip->ballast_draft * $occupied_tonage}}
+                         @if(isset($occupied_draft))
+                            {{$occupied_draft}}
+                        @else
+                            {{0}}
                         @endif
                     </td>
                     <td>
-                        @if($selectedShip && $occupied_tonage)
-                            {{$selectedShip->max_laden_draft-($selectedShip->ballast_draft * $occupied_tonage)}}
+                        @if(isset($remainingDraft))
+                            {{$remainingDraft}}
+                        @elseif(isset($allowedDraft))
+                            {{$allowedDraft}}
+                        @else
+                            {{0}}
                         @endif
                     </td>
                 </tr>
                 <tr>
                     <th>Tonage</th>
                     <td>
-                        @if($selectedShip)
+                        @if(isset($selectedShip))
                             {{$selectedShip->dwcc}}
+                        @else
+                            {{0}}
                         @endif
                     </td>
                     <td>
-                        @if($selectedShip && $occupied_tonage)
+                        @if(isset($$occupied_tonage))
                             {{$occupied_tonage}}
+                        @else
+                            {{0}}
                         @endif
                     </td>
                     <td>
-                        @if($selectedShip && $occupied_tonage)
+                        @if(isset($selectedShip) && isset($occupied_tonage))
                             {{$selectedShip->dwcc-$occupied_tonage}}
+                        @elseif(isset($selectedShip))
+                            {{$selectedShip->dwcc}}
+                        @else 
+                            {{0}}
                         @endif
                     </td>
                 </tr>

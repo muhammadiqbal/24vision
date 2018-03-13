@@ -1,7 +1,6 @@
 <!-- Route Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('route_id', 'Route Id:') !!}
-    {!! Form::number('route_id', null, ['class' => 'form-control']) !!}
     <select name="route_id" class="form-control">
      @foreach($routes as $route)
             @if(!empty($path) && $path->route_id == $route->id)
@@ -47,8 +46,6 @@
     <select name="zone3" class="form-control">
     @foreach($zones as $zone)
             @if(!empty($path) && $path->zone3 == $zone->id)
-                <option value="{{$zone->id}}" selected="true">{{$zone->name}}</option>
-            @elseif($_GET['id'] == $zone->id)
                 <option value="{{$zone->id}}" selected="true">{{$zone->name}}</option>
             @else
                 <option value="{{$zone->id}}">{{$zone->name}}</option>

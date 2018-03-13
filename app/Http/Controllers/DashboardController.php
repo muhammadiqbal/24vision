@@ -12,6 +12,7 @@ use App\Models\BdiPrice;
 use App\Models\Bdi;
 use App\Models\Ship;
 use App\Models\Port;
+use App\Models\Zone;
 use App\Models\Email;
 use Illuminate\Http\Request;
 use Khill\Lavacharts\Lavacharts;
@@ -20,6 +21,8 @@ use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use DB;
 use Response;
+use \League\Geotools\Polygon\Polygon;
+use \League\Geotools\Coordinate\Coordinate;
 
 
 class DashboardController extends Controller
@@ -36,20 +39,31 @@ class DashboardController extends Controller
 
     public function testing()
     {
-        $cargo = DB::table('cargos')->select(['cargos.*',
-                                      'cargo_status.name as status',
-                                      'cargo_types.name as type',
-                                      'p1.name as load_port',
-                                      'p2.name as disch_port',
-                                      DB::raw('(quantity * 2) AS draft'),
-                                      DB::raw('(cargos.quantity * cargo_types.stowage_factor) AS size')
-                                    ])
-                             ->leftjoin('cargo_status', 'cargos.status_id','cargo_status.id')
-                             ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
-                             ->leftjoin('ports as p1', 'p1.id','loading_port')
-                             ->leftjoin('ports as p2', 'p2.id','discharging_port')
-                             ->get();
-        return Response::json(Email::orderBy('date','desc')->select('email.*'));
+
+        $ports = Port::all();
+        $zones = Zone::all();
+
+        foreach ($ports as $port) {
+          if ($port->zone_id ==null){
+            foreach ($zones as $zone) {
+              $zonePoints = $zone->zonePoints;
+              $polyCoordinate = array();
+              foreach ($zonePoints as $zonePoint) {
+                array_push($polyCoordinate, [$port->latitude, $port->longitude]);
+              }
+              $polygon = new Polygon($polyCoordinate);
+
+              if ($port->latitude && $port->longitude && $polygon->pointInPolygon(new Coordinate([$port->latitude, $port->longitude]))) {
+                 $port->update(['zone_id'=>$zone->id]);
+                 break;
+              }
+            }
+          }
+        }
+
+
+       
+        return ;
     }
 
     /**
@@ -61,34 +75,54 @@ class DashboardController extends Controller
     {
         $ships = Ship::all();
         $ports = Port::all();
-        if($request->input('ship_id')){
-           $selectedShip = Ship::find($request->input('ship_id'));
-        }else {
-           $selectedShip = Ship::first();
-        }
-
-        if($request->input('port_id')){
-           $port = Port::find($request->input('port_id'));;
-        }else{
-           $port = Port::first();
-        }
-
-        $occupied_size = $request->input('occupied_size',0);
-        $occupied_tonage = $request->input('occupied_tonage',0);
-        $date_of_opening = $request->input('date_of_opening',date('d-m-Y'));
-        $range = $request->input('range');
-
-        $remainingSize = $selectedShip->max_holds_capacity - $occupied_size;     
-        $remainingDraft = $selectedShip->max_laden_draft - $selectedShip->ballast_draft 
-                            -(($occupied_tonage/$selectedShip->dwcc)*
-                                ($selectedShip->max_laden_draft - $selectedShip->ballast_draft));
-        $remainingTonnage = $selectedShip->dwcc-$occupied_tonage;
 
         $mailCount = Email::count();
         $cargoCount = Cargo::count();
         $shipCount = Ship::count();
-        return $dashboardDataTable
-                                  ->forRemainingTonnage($remainingTonnage)
+        $remainingSize = 0;     
+        $allowedDraft = 0;
+        $occupied_draft = 0;
+        $remainingDraft = 0;
+        $remainingTonnage = 0;
+
+        $occupied_size = $request->input('occupied_size',0);
+        $occupied_tonage = $request->input('occupied_tonage',0);
+        $date_of_opening = $request->input('date_of_opening',date('d-m-Y'));
+        $range = $request->input('range',0);
+        
+        if(!$request->input('ship_id') && !$request->input('port_id')){
+          return view('calculator.index_empty',compact('ships', 
+                                             'ports',
+                                             'occupied_size',
+                                             'occupied_tonage',
+                                             'occupied_draft' ,
+                                             'allowedDraft' ,
+                                             'remainingDraft',
+                                             'date_of_opening',
+                                             'mailCount',
+                                             'cargoCount',
+                                             'shipCount',
+                                             'range'));
+        }
+
+        if($request->input('ship_id')){
+           $selectedShip = Ship::find($request->input('ship_id'));
+        }
+
+        if($request->input('port_id')){
+           $port = Port::find($request->input('port_id'));;
+        }
+
+        if($selectedShip && $port){
+          $remainingSize = $selectedShip->max_holds_capacity - $occupied_size;     
+          $allowedDraft = $selectedShip->max_laden_draft - $selectedShip->ballast_draft;
+          $occupied_draft = round(round(($occupied_tonage/$selectedShip->dwcc),2)*$allowedDraft,2);
+          $remainingDraft = $allowedDraft - round($occupied_draft,2);
+          $remainingTonnage = $selectedShip->dwcc-$occupied_tonage;
+        }
+
+        
+        return $dashboardDataTable->forRemainingTonnage($remainingTonnage)
                                   ->forRemainingSize($remainingSize)
                                   ->forRemainingDraft($remainingDraft)
                                   ->forShip($selectedShip)
@@ -100,6 +134,9 @@ class DashboardController extends Controller
                                              'selectedShip'=>$selectedShip,
                                              'occupied_size'=>$occupied_size,
                                              'occupied_tonage'=>$occupied_tonage,
+                                             'occupied_draft' =>$occupied_draft,
+                                             'allowedDraft' => $allowedDraft,
+                                             'remainingDraft' => $remainingDraft,
                                              'date_of_opening'=>$date_of_opening,
                                              'mailCount'=>$mailCount,
                                              'cargoCount'=>$cargoCount,

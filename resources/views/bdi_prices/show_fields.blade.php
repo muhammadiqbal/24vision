@@ -7,7 +7,7 @@
 <!-- Bdi Id Field -->
 <div class="form-group">
     {!! Form::label('bdi_id', 'Bdi Id:') !!}
-    <p>{!! $bdiPrice->bdi_id !!}</p>
+    <p>{!! isset($bdiPrice->bdi_id) ? $bdiPrice->bdi->name : null !!}</p>
 </div>
 
 <!-- Price Field -->

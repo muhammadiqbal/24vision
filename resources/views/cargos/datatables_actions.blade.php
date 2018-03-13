@@ -3,7 +3,7 @@
         <i class="glyphicon glyphicon-envelope"></i>
     </a>
 
-    {!! Form::open(['url'=>url('/emails/reclassify/'.$email_id), 'method' => 'put']) !!}
+{{--     {!! Form::open(['url'=>url('/emails/reclassify/'.$email_id), 'method' => 'put']) !!}
     {!! Form::button('<i class="glyphicon glyphicon-cog"></i>', [
         'type' => 'submit',
         'class' => 'btn btn-xs',
@@ -11,7 +11,7 @@
         'data-toggle'=>"tooltip", 
         'title'=>"reclassify"
     ]) !!}
-    {!! Form::close() !!}
+    {!! Form::close() !!} --}}
     
     {{-- mark mail as used fo training --}}
     {{-- <a class='btn btn-default btn-xs'>
@@ -19,7 +19,7 @@
     </a> --}}
 
     <a href="{{ route('cargos.edit', $id) }}" class='btn btn-default btn-xs'>
-        <i class="glyphicon glyphicon-edit"></i>
+        <i class="glyphicon glyphicon-edit" data-toggle="tooltip" title="Edit"></i>
     </a>
 
     {!! Form::open(['route' => ['cargos.destroy', $id], 'method' => 'delete']) !!}

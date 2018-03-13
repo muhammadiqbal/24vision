@@ -23,13 +23,21 @@
 <!-- Start Date Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('start_date', 'Start Date:') !!}
-    {!! Form::date('start_date', null, ['class' => 'form-control']) !!}
+    @if($fuelPrice)
+        {!! Form::date('start_date', $fuelPrice->start_date, ['class' => 'form-control']) !!}
+    @else
+        {!! Form::date('start_date', null, ['class' => 'form-control']) !!}
+    @endif
 </div>
 
 <!-- End Date Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('end_date', 'End Date:') !!}
-    {!! Form::date('end_date', null, ['class' => 'form-control']) !!}
+    @if($fuelPrice)
+        {!! Form::date('end_date', $fuelPrice->end_date, ['class' => 'form-control']) !!}
+    @else
+        {!! Form::date('end_date', null, ['class' => 'form-control']) !!}
+    @endif
 </div>
 
 <!-- Submit Field -->

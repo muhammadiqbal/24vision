@@ -13,7 +13,11 @@
 <!-- Year Of Build Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('year_of_build', 'Year Of Build:') !!}
-    {!! Form::date('year_of_build', null, ['class' => 'form-control']) !!}
+    @if($ship)
+        {!! Form::date('year_of_build', $ship->year_of_build, ['class' => 'form-control']) !!}
+    @else
+        {!! Form::date('year_of_build', null, ['class' => 'form-control']) !!}
+    @endif
 </div>
 
 <!-- Dwcc Field -->

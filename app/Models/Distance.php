@@ -54,7 +54,7 @@ class Distance extends Model
     public static $rules = [
         'start_port' => 'required|integer',
         'end_port' => 'required|integer',
-        'distance' => 'required|numeric'
+        'distance' => 'nullable|numeric'
     ];
 
     /**

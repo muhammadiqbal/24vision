@@ -7,13 +7,13 @@
 <!-- Port Id Field -->
 <div class="form-group">
     {!! Form::label('port_id', 'Port Id:') !!}
-    <p>{!! $feePrice->port_id !!}</p>
+    <p>{!! isset($feePrice->port_id) ? $feePrice->port->name : null !!}</p>
 </div>
 
 <!-- Star Date Field -->
 <div class="form-group">
-    {!! Form::label('star_date', 'Star Date:') !!}
-    <p>{!! $feePrice->star_date !!}</p>
+    {!! Form::label('start_date', 'Start Date:') !!}
+    <p>{!! $feePrice->start_date !!}</p>
 </div>
 
 <!-- End Date Field -->

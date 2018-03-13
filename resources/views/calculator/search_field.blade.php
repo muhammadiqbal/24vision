@@ -4,9 +4,10 @@
 <div class="form-group col-sm-8">
     {!! Form::label('ship_id', 'Ship*:') !!}
     <select name="ship_id" class="form-control" required="true">
+        <option value=""></option>
         @foreach($ships as $ship)
                 <option 
-                    @if($selectedShip->id == $ship->id)
+                    @if(isset($selectedShip) && $selectedShip->id == $ship->id)
                         {{'selected="true"'}}
                     @endif
                     value="{{$ship->id}}">{{$ship->name}}
@@ -25,9 +26,10 @@
 <div class="form-group col-sm-8">
     {!! Form::label('port_id', 'Port*:') !!}
     <select name="port_id" class="form-control" required="true">
+        <option value=""></option>
         @foreach($ports as $port)
                 <option 
-                    @if($selectedPort->id == $port->id)
+                    @if(isset($selectedPort) && $selectedPort->id == $port->id)
                         {{'selected="true"'}}
                     @endif
                     value="{{$port->id}}">{{$port->name}}
@@ -44,13 +46,18 @@
 
  <div class="col-sm-4">
     {!! Form::label('cargo_status', 'Cargo status:') !!}
-    <select name="cargo_status" class="form-control">
+{{--     <select name="cargo_status[]" class="form-control select2" data-widget="select2" multiple="true" placehoder="select status(es)">
         <option >All</option>
         <option value="1">OK</option>
         <option value="2">Review</option>
         <option value="3">Unusable</option>
         <option value="4">Incomplete</option>
-    </select>
+    </select> --}}
+    <br>
+    <input type="checkbox" value="1" name="cargo_status[]">OK
+    <input type="checkbox" value="2" name="cargo_status[]"> Review<br>
+    <input type="checkbox" value="3" name="cargo_status[]">Unusable
+    <input type="checkbox" value="4" name="cargo_status[]">Incomplte
 </div>
 
 <!-- Range Field -->

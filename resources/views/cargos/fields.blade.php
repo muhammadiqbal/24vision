@@ -18,32 +18,42 @@
     {!! Form::label('discharging_port', 'Discharging Port:') !!}
     <select name="discharging_port" class="form-control">
         <option value=""></option>
-        @if(!empty($cargo) && $cargo->discharging_port == $port->id)
-            <option value="{{$port->id}}" selected="true">{{$port->name}}</option>
-        @else
-            <option value="{{$port->id}}">{{$port->name}}</option>
-        @endif
+        @foreach($ports as $port)
+            @if(!empty($cargo) && $cargo->discharging_port == $port->id)
+                <option value="{{$port->id}}" selected="true">{{$port->name}}</option>
+            @else
+                <option value="{{$port->id}}">{{$port->name}}</option>
+            @endif
+        @endforeach
     </select>
 </div>
 
 <!-- Laycan First Day Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('laycan_first_day', 'Laycan First Day:') !!}
-    {!! Form::date('laycan_first_day', null, ['class' => 'form-control']) !!}
+    @if(isset($cargo))
+        {!! Form::date('laycan_first_day', $cargo->laycan_first_day, ['class' => 'form-control']) !!}
+    @else
+        {!! Form::date('laycan_first_day', null, ['class' => 'form-control']) !!}
+    @endif
 </div>
 
 <!-- Laycan Last Day Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('laycan_last_day', 'Laycan Last Day:') !!}
-    {!! Form::date('laycan_last_day', null, ['class' => 'form-control']) !!}
+    @if(isset($cargo))
+        {!! Form::date('laycan_last_day', $cargo->laycan_last_day, ['class' => 'form-control']) !!}
+    @else
+        {!! Form::date('laycan_last_day', null, ['class' => 'form-control']) !!}
+    @endif
 </div>
 
 <!-- Cargo Type Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('cargo_type_id', 'Cargo Type Id:') !!}
     <select name="cargo_type_id" class="form-control">
+        <option value=""></option>
         @foreach($cargo_types as $cargo_type)
-            <option value=""></option>
             @if(!empty($cargo) && $cargo->cargo_type_id == $cargo_type->id)
                 <option value="{{$cargo_type->id}}" selected="true">{{$cargo_type->name}}</option>
             @else
@@ -56,7 +66,7 @@
 <!-- Stowage Factor Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('stowage_factor', 'Stowage Factor:') !!}
-    {!! Form::number('stowage_factor', null, ['class' => 'form-control']) !!}
+    {!! Form::number('stowage_factor', null, ['class' => 'form-control','step'=>'any', 'min'=>'0']) !!}
 </div>
 
 <!-- Sf Unit Field -->
@@ -81,10 +91,9 @@
         <option value=""></option>
         @foreach($ship_specializations as $ship_specialization)
             @if(!empty($cargo) && $cargo->ship_specialization_id == $ship_specialization->id)
-                <option value="{{$ship_specialization->id}}">{{$ship_specialization->name}}</option>
-            @else
                 <option value="{{$ship_specialization->id}}" selected="true">{{$ship_specialization->name}}</option>
-
+            @else
+                <option value="{{$ship_specialization->id}}" >{{$ship_specialization->name}}</option>
             @endif
         @endforeach
     </select>
@@ -108,7 +117,7 @@
 <!-- Quantity Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('quantity', 'Quantity:') !!}
-    {!! Form::number('quantity', null, ['class' => 'form-control']) !!}
+    {!! Form::number('quantity', null, ['class' => 'form-control','step'=>'any', 'min'=>'0']) !!}
 </div>
 
 <!-- Loading Rate Type Field -->
@@ -130,7 +139,7 @@
 <!-- Loading Rate Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('loading_rate', 'Loading Rate:') !!}
-    {!! Form::number('loading_rate', null, ['class' => 'form-control']) !!}
+    {!! Form::number('loading_rate', null, ['class' => 'form-control','step'=>'any', 'min'=>'0']) !!}
 </div>
 
 <!-- Discharging Rate Type Field -->
@@ -140,7 +149,7 @@
         <option value=""></option>
         @foreach($ld_rate_types as $ld_rate_type)
             @if(!empty($cargo) && $cargo->discharging_rate_type == $ld_rate_type->id)
-                <option value="{{$ld_rate_type->id}}">{{$ld_rate_type->name}}</option>
+                <option value="{{$ld_rate_type->id}}" selected="true">{{$ld_rate_type->name}}</option>
             @else
                 <option value="{{$ld_rate_type->id}}">{{$ld_rate_type->name}}</option>
             @endif
@@ -152,7 +161,7 @@
 <!-- Discharging Rate Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('discharging_rate', 'Discharging Rate:') !!}
-    {!! Form::number('discharging_rate', null, ['class' => 'form-control']) !!}
+    {!! Form::number('discharging_rate', null, ['class' => 'form-control','step'=>'any', 'min'=>'0']) !!}
 </div>
 
 <!-- Extra Condition Field -->
@@ -164,13 +173,13 @@
 <!-- Comission Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('commission', 'Comission:') !!}
-    {!! Form::number('commission', null, ['class' => 'form-control']) !!}
+    {!! Form::number('commission', null, ['class' => 'form-control','step'=>'any', 'min'=>'1']) !!}
 </div>
 
 <!-- Emailid Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('email_id', 'Emailid:') !!}
-    {!! Form::number('email_id', null, ['class' => 'form-control']) !!}
+    {!! Form::number('email_id', null, ['class' => 'form-control','step'=>'1', 'min'=>'1']) !!}
 </div>
 
 <!-- Status Id Field -->

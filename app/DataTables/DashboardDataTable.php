@@ -62,21 +62,21 @@ class DashboardDataTable extends DataTable
                 $port = $this->port;
                 $date_of_opening = $this->date_of_opening;
 
-                return $cargo->setBdi($port, $ship, $date_of_opening);
+                return '$'.round($cargo->setBdi($port, $ship, $date_of_opening),2);
             })
             ->addColumn('ntce', function(Cargo $cargo){
                 $ship = $this->ship;
                 $port = $this->port;
                 $date_of_opening = $this->date_of_opening;
 
-                return $cargo->setNtce($port, $ship, $date_of_opening);
+                return '$'.round($cargo->setNtce($port, $ship, $date_of_opening),2);
             })
             ->addColumn('gross_rate', function(Cargo $cargo){
                 $ship = $this->ship;
                 $port = $this->port;
                 $date_of_opening = $this->date_of_opening;
 
-                return $cargo->setGrossRate($port, $ship, $date_of_opening);
+                return '$'.round($cargo->setGrossRate($port, $ship, $date_of_opening),2);
             })
             ->editColumn('cargo_type_id', function(Cargo $cargo){
                 if ($cargo->cargo_type_id_manual) {
@@ -94,22 +94,26 @@ class DashboardDataTable extends DataTable
                     return $cargo->quantity;
                 }               
             })
-            ->editColumn('laycan_first_day', function(Cargo $cargo){
-                if ($cargo->laycan_first_day_manual) {
-                    return '<b style=\'color:red;\'>'.date_format(date_create($cargo->laycan_first_day),'d-m-Y').'</b>';
+           ->editColumn('laycan_first_day', function(Cargo $cargo){
+                if ($cargo->laycan_first_day == null){
+                    return null;
+                }elseif($cargo->laycan_first_day_manual) {
+                    return '<b style=\'color:red;\'>'.date('d-m-Y',strtotime($cargo->laycan_first_day)).'</b>';
                 }elseif ($cargo->laycan_first_day_constructed) {
-                    return '<b style=\'color:green;\'>'.date_format(date_create($cargo->laycan_first_day),'d-m-Y').'</b>';
-                } else {                
-                    return date_format(date_create($cargo->laycan_first_day),'d-m-Y');
+                    return '<b style=\'color:green;\'>'.date('d-m-Y',strtotime($cargo->laycan_first_day)).'</b>';
+                }else {                
+                    return date('d-m-Y',strtotime($cargo->laycan_first_day));
                 }               
             })
             ->editColumn('laycan_last_day', function(Cargo $cargo){
-                if ($cargo->laycan_last_day_manual) {
-                    return '<b style=\'color:red;\'>'.date_format(date_create($cargo->laycan_last_day),'d-m-Y').'</b>';
+                if ($cargo->laycan_last_day == null){
+                    return null;
+                }elseif($cargo->laycan_last_day_manual) {
+                    return '<b style=\'color:red;\'>'.date('d-m-Y',strtotime($cargo->laycan_last_day)).'</b>';
                 } elseif ($cargo->laycan_last_day_constructed) {
-                    return '<b style=\'color:green;\'>'.date_format(date_create($cargo->laycan_last_day),'d-m-Y').'</b>';
+                    return '<b style=\'color:green;\'>'.date('d-m-Y',strtotime($cargo->laycan_last_day)).'</b>';
                 } else {                
-                    return date_format(date_create($cargo->laycan_last_day),'d-m-Y');
+                    return date('d-m-Y',strtotime($cargo->laycan_last_day));
                 }
             })
             ->editColumn('loading_port',function(Cargo $cargo){
@@ -150,23 +154,26 @@ class DashboardDataTable extends DataTable
                             ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
                             ->leftjoin('ports as p1', 'p1.id','loading_port')
                             ->leftjoin('ports as p2', 'p2.id','discharging_port')
-                            ->where('loading_port',$this->port->id)
+                            ->where(function($q){
+                                $q->where('loading_port',$this->port->id);
+                                if($this->request()->get('range')){
+                                    $q->orHaving('range','<=',$this->request()->get('range'));
+                                }
+                            })
                             ->where('quantity','<=',  $this->remaining_tonage)
                             ->having('size','<=',$this->remaining_size)
                             ->having('draft','<=',$this->remaining_draft);
 
         if($this->request()->get('cargo_status')){
-            $cargo->where('cargos.status_id', $this->request()->get('cargo_status'));
+            $cargo->whereIn('cargos.status_id', $this->request()->get('cargo_status'));
         }
         if($this->request()->get('date_of_opening')){
-            // $cargo->whereDate('laycan_first_day','<=',date($this->request()->get('date_of_opening')))
-            //       ->whereDate('laycan_last_day','>=',date($this->request()->get('date_of_opening')));
-
+            $cargo->where(function($q){
+                $q->whereDate('laycan_first_day','<=',$this->request()->get('date_of_opening'));
+                $q->whereDate('laycan_last_day','>=',$this->request()->get('date_of_opening'));
+                $q->orWhereNull('laycan_last_day');
+            });
         }
-        if($this->request()->get('range')){
-            $cargo->having('range','<=',$this->request()->get('range'));
-        }
-
         return $this->applyScopes($cargo);
     }
 

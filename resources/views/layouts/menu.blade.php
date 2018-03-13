@@ -116,6 +116,12 @@
         @endif>
         <a href="{{url('/users')}}"><i class="fa fa-user"></i> <span>Users</span></a></li>
       </li>
+      <li>
+        <a target="_blank" href="http://bi4macom.uni-muenster.de/bi4macom-old/bulk-cargo-tool/interface/"><span>Old Dashboard</span></a></li>
+      </li>
+
+
+      
       {{-- <li
         @if( $route =='App\Http\Controllers\AgreementController')
           class="active"
