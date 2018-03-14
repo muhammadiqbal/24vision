@@ -4,14 +4,14 @@
     </a>
 
     {!! Form::open(['url'=>url('/emails/reclassify/'.$email_id), 'method' => 'put']) !!}
-    {!! Form::button('<i class="glyphicon glyphicon-cog"></i>', [
+  {{--   {!! Form::button('<i class="glyphicon glyphicon-cog"></i>', [
         'type' => 'submit',
         'class' => 'btn btn-xs',
         'onclick' => "return confirm('Reclassify this email?')",
         'data-toggle'=>"tooltip", 
         'title'=>"reclassify"
     ]) !!}
-    {!! Form::close() !!}
+    {!! Form::close() !!} --}}
     
     {{-- mark mail as used fo training --}}
     {{-- <a class='btn btn-default btn-xs'>
