@@ -13,6 +13,8 @@
                     <td>
                         @if($selectedShip)
                             {{$selectedShip->max_holds_capacity}}
+                        @else
+                            {{0}}
                         @endif
                     </td>
                     <td>
@@ -23,24 +25,32 @@
                     <td>
                         @if($selectedShip && $occupied_size)
                             {{$selectedShip->max_holds_capacity - $occupied_size}}
+                        @else
+                            {{$selectedShip->max_holds_capacity}}
                         @endif
                     </td>
                 </tr>
                 <tr>
                     <th>Draft</th>
                     <td>
-                        @if($selectedShip)
-                            {{$selectedShip->max_laden_draft}}
+                        @if($allowedDraft)
+                            {{$allowedDraft}}
+                        @else
+                            {{0}}
                         @endif
                     </td>
                     <td>
-                         @if($selectedShip && $occupied_tonage)
-                            {{$selectedShip->ballast_draft * $occupied_tonage}}
+                         @if($occupied_draft)
+                            {{$occupied_draft}}
+                        @else
+                            {{0}}
                         @endif
                     </td>
                     <td>
-                        @if($selectedShip && $occupied_tonage)
-                            {{$selectedShip->max_laden_draft-($selectedShip->ballast_draft * $occupied_tonage)}}
+                        @if($allowedDraft && $occupied_draft)
+                            {{$remainingDraft}}
+                        @else
+                            {{$allowedDraft}}
                         @endif
                     </td>
                 </tr>
@@ -49,16 +59,22 @@
                     <td>
                         @if($selectedShip)
                             {{$selectedShip->dwcc}}
+                        @else
+                            {{0}}
                         @endif
                     </td>
                     <td>
                         @if($selectedShip && $occupied_tonage)
                             {{$occupied_tonage}}
+                        @else
+                            {{0}}
                         @endif
                     </td>
                     <td>
                         @if($selectedShip && $occupied_tonage)
                             {{$selectedShip->dwcc-$occupied_tonage}}
+                        @else
+                            {{$selectedShip->dwcc}}
                         @endif
                     </td>
                 </tr>

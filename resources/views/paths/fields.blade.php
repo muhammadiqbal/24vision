@@ -1,7 +1,6 @@
 <!-- Route Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('route_id', 'Route Id:') !!}
-    {!! Form::number('route_id', null, ['class' => 'form-control']) !!}
     <select name="route_id" class="form-control">
      @foreach($routes as $route)
             @if(!empty($path) && $path->route_id == $route->id)
