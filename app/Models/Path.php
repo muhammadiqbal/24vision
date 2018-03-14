@@ -79,7 +79,7 @@ class Path extends Model
      **/
     public function zone1()
     {
-        return $this->belongsTo(\App\Models\Zone::class);
+        return $this->belongsTo(\App\Models\Zone::class,'zone1');
     }
 
     /**
@@ -87,7 +87,7 @@ class Path extends Model
      **/
     public function zone2()
     {
-        return $this->belongsTo(\App\Models\Zone::class);
+        return $this->belongsTo(\App\Models\Zone::class,'zone2');
     }
 
     /**
@@ -95,7 +95,7 @@ class Path extends Model
      **/
     public function zone3()
     {
-        return $this->belongsTo(\App\Models\Zone::class);
+        return $this->belongsTo(\App\Models\Zone::class,'zone3');
     }
 
     /**
