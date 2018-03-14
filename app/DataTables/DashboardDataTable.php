@@ -159,8 +159,8 @@ class DashboardDataTable extends DataTable
             $cargo->whereIn('cargos.status_id', $this->request()->get('cargo_status'));
         }
         if($this->request()->get('date_of_opening')){
-            // $cargo->whereDate('laycan_first_day','<=',date($this->request()->get('date_of_opening')))
-            //       ->whereDate('laycan_last_day','>=',date($this->request()->get('date_of_opening')));
+            $cargo->whereDate('laycan_first_day','<=',$this->request()->get('date_of_opening'))
+                  ->whereDate('laycan_last_day','>=',$this->request()->get('date_of_opening'));
 
         }
         if($this->request()->get('range')){
