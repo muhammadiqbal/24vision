@@ -48,8 +48,6 @@
     @foreach($zones as $zone)
             @if(!empty($path) && $path->zone3 == $zone->id)
                 <option value="{{$zone->id}}" selected="true">{{$zone->name}}</option>
-            @elseif($_GET['id'] == $zone->id)
-                <option value="{{$zone->id}}" selected="true">{{$zone->name}}</option>
             @else
                 <option value="{{$zone->id}}">{{$zone->name}}</option>
             @endif

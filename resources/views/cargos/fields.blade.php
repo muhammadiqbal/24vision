@@ -18,11 +18,13 @@
     {!! Form::label('discharging_port', 'Discharging Port:') !!}
     <select name="discharging_port" class="form-control">
         <option value=""></option>
-        @if(!empty($cargo) && $cargo->discharging_port == $port->id)
-            <option value="{{$port->id}}" selected="true">{{$port->name}}</option>
-        @else
-            <option value="{{$port->id}}">{{$port->name}}</option>
-        @endif
+        @foreach($ports as $port)
+            @if(!empty($cargo) && $cargo->discharging_port == $port->id)
+                <option value="{{$port->id}}" selected="true">{{$port->name}}</option>
+            @else
+                <option value="{{$port->id}}">{{$port->name}}</option>
+            @endif
+        @endforeach
     </select>
 </div>
 
@@ -42,8 +44,8 @@
 <div class="form-group col-sm-6">
     {!! Form::label('cargo_type_id', 'Cargo Type Id:') !!}
     <select name="cargo_type_id" class="form-control">
+        <option value=""></option>
         @foreach($cargo_types as $cargo_type)
-            <option value=""></option>
             @if(!empty($cargo) && $cargo->cargo_type_id == $cargo_type->id)
                 <option value="{{$cargo_type->id}}" selected="true">{{$cargo_type->name}}</option>
             @else
