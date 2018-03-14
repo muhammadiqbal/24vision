@@ -156,7 +156,7 @@ class DashboardDataTable extends DataTable
                             ->having('draft','<=',$this->remaining_draft);
 
         if($this->request()->get('cargo_status')){
-            $cargo->where('cargos.status_id', $this->request()->get('cargo_status'));
+            $cargo->whereIn('cargos.status_id', $this->request()->get('cargo_status'));
         }
         if($this->request()->get('date_of_opening')){
             // $cargo->whereDate('laycan_first_day','<=',date($this->request()->get('date_of_opening')))
