@@ -80,7 +80,7 @@ class DashboardController extends Controller
 
         $remainingSize = $selectedShip->max_holds_capacity - $occupied_size;     
         $allowedDraft = $selectedShip->max_laden_draft - $selectedShip->ballast_draft;
-        $occupied_draft = ($occupied_tonage/$selectedShip->dwcc);
+        $occupied_draft = round(($occupied_tonage/$selectedShip->dwcc),2)*$allowedDraft;
         $remainingDraft = $allowedDraft - $occupied_draft;
         $remainingTonnage = $selectedShip->dwcc-$occupied_tonage;
 
