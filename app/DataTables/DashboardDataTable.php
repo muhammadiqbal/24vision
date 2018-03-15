@@ -161,8 +161,7 @@ class DashboardDataTable extends DataTable
         if($this->request()->get('date_of_opening')){
             // $cargo->whereDate('laycan_first_day','<=',$this->request()->get('date_of_opening'))
             //       ->whereDate('laycan_last_day','>=',$this->request()->get('date_of_opening'));
-            $cargos->where('laycan_first_day','<=',$this->request()->get('date_of_opening' ))
-                   ->where('laycan_last_day','>=',$this->request()->get('date_of_opening' ));
+            $cargos->whereRaw('CAST(.'$this->request()->get('date_of_opening' ).') >= laycan_first_day AND CAST(.'$this->request()->get('date_of_opening' ).') <= laycan_last_day ');
 
         }
         if($this->request()->get('range')){
