@@ -7,7 +7,7 @@
         <option value=""></option>
         @foreach($ships as $ship)
                 <option 
-                    @if($selectedShip && $selectedShip->id == $ship->id)
+                    @if(isset($selectedShip) && $selectedShip->id == $ship->id)
                         {{'selected="true"'}}
                     @endif
                     value="{{$ship->id}}">{{$ship->name}}
@@ -29,7 +29,7 @@
         <option value=""></option>
         @foreach($ports as $port)
                 <option 
-                    @if($selectedPort && $selectedPort->id == $port->id)
+                    @if(isset($selectedPort) && $selectedPort->id == $port->id)
                         {{'selected="true"'}}
                     @endif
                     value="{{$port->id}}">{{$port->name}}
