@@ -58,7 +58,7 @@
 <!-- Stowage Factor Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('stowage_factor', 'Stowage Factor:') !!}
-    {!! Form::number('stowage_factor', null, ['class' => 'form-control','step'=>'any', 'min'='0']) !!}
+    {!! Form::number('stowage_factor', null, ['class' => 'form-control','step'=>'any', 'min'=>'0']) !!}
 </div>
 
 <!-- Sf Unit Field -->
@@ -110,7 +110,7 @@
 <!-- Quantity Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('quantity', 'Quantity:') !!}
-    {!! Form::number('quantity', null, ['class' => 'form-control','step'=>'any', 'min'='0']) !!}
+    {!! Form::number('quantity', null, ['class' => 'form-control','step'=>'any', 'min'=>'0']) !!}
 </div>
 
 <!-- Loading Rate Type Field -->
@@ -132,7 +132,7 @@
 <!-- Loading Rate Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('loading_rate', 'Loading Rate:') !!}
-    {!! Form::number('loading_rate', null, ['class' => 'form-control','step'=>'any', 'min'='0']) !!}
+    {!! Form::number('loading_rate', null, ['class' => 'form-control','step'=>'any', 'min'=>'0']) !!}
 </div>
 
 <!-- Discharging Rate Type Field -->
@@ -154,7 +154,7 @@
 <!-- Discharging Rate Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('discharging_rate', 'Discharging Rate:') !!}
-    {!! Form::number('discharging_rate', null, ['class' => 'form-control','step'=>'any', 'min'='0']) !!}
+    {!! Form::number('discharging_rate', null, ['class' => 'form-control','step'=>'any', 'min'=>'0']) !!}
 </div>
 
 <!-- Extra Condition Field -->
@@ -172,7 +172,7 @@
 <!-- Emailid Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('email_id', 'Emailid:') !!}
-    {!! Form::number('email_id', null, ['class' => 'form-control','step'=>'1', 'min'='1']) !!}
+    {!! Form::number('email_id', null, ['class' => 'form-control','step'=>'1', 'min'=>'1']) !!}
 </div>
 
 <!-- Status Id Field -->
