@@ -65,13 +65,25 @@ class DashboardController extends Controller
         $mailCount = Email::count();
         $cargoCount = Cargo::count();
         $shipCount = Ship::count();
-
+        $remainingSize = 0;     
+        $allowedDraft = 0;
+        $occupied_draft = 0;
+        $remainingDraft = 0;
+        $remainingTonnage = 0;
+        
         if(!$request->input('ship_id') && !$request->input('port_id')){
-          return view('calculator.index_empty')->with('mailCount',$mailCount)
-                                              ->with('cargoCount',$cargoCount)
-                                              ->with('shipCount',$shipCount)
-                                              ->with('ships',$ships) 
-                                              ->with('ports',$ports);
+          return view('calculator.index_empty',compact('ships', 
+                                             'ports',
+                                             'occupied_size',
+                                             'occupied_tonage',
+                                             'occupied_draft' ,
+                                             'allowedDraft' ,
+                                             'remainingDraft',
+                                             'date_of_opening',
+                                             'mailCount',
+                                             'cargoCount',
+                                             'shipCount',
+                                             'range'));
         }
 
         if($request->input('ship_id')){
