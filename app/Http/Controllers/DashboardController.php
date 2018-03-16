@@ -70,7 +70,11 @@ class DashboardController extends Controller
         $occupied_draft = 0;
         $remainingDraft = 0;
         $remainingTonnage = 0;
-        
+
+        $occupied_size = $request->input('occupied_size',0);
+        $occupied_tonage = $request->input('occupied_tonage',0);
+        $date_of_opening = $request->input('date_of_opening',date('d-m-Y'));
+
         if(!$request->input('ship_id') && !$request->input('port_id')){
           return view('calculator.index_empty',compact('ships', 
                                              'ports',
@@ -82,8 +86,7 @@ class DashboardController extends Controller
                                              'date_of_opening',
                                              'mailCount',
                                              'cargoCount',
-                                             'shipCount',
-                                             'range'));
+                                             'shipCount'));
         }
 
         if($request->input('ship_id')){
@@ -93,12 +96,6 @@ class DashboardController extends Controller
         if($request->input('port_id')){
            $port = Port::find($request->input('port_id'));;
         }
-
-
-        $occupied_size = $request->input('occupied_size',0);
-        $occupied_tonage = $request->input('occupied_tonage',0);
-        $date_of_opening = $request->input('date_of_opening',date('d-m-Y'));
-        $range = $request->input('range');
 
         if($selectedShip && $port){
           $remainingSize = $selectedShip->max_holds_capacity - $occupied_size;     

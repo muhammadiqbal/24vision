@@ -69,7 +69,7 @@
 <!-- Date Of Opening Field -->
 <div class="form-group col-sm-4">
     {!! Form::label('date_of_opening', 'Date Of Opening*:') !!}
-    {!! Form::date('date_of_opening',null, ['class' => 'form-control', 'required'=>'true', 'value'=>$date_of_opening]) !!}
+    {!! Form::date('date_of_opening',$_GET['date_of_opening'], ['class' => 'form-control', 'required'=>'true', 'value'=>$date_of_opening]) !!}
 </div>
 
 <!-- Submit Field -->
