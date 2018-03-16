@@ -27,8 +27,10 @@
                     <td>
                         @if($selectedShip && $occupied_size)
                             {{$selectedShip->max_holds_capacity - $occupied_size}}
-                        @else
+                        @elseif($selectedShip)
                             {{$selectedShip->max_holds_capacity}}
+                        @else
+                            {{0}}
                         @endif
                     </td>
                 </tr>
@@ -51,8 +53,10 @@
                     <td>
                         @if($allowedDraft && $occupied_draft)
                             {{$remainingDraft}}
-                        @else
+                        @elseif($allowedDraft)
                             {{$allowedDraft}}
+                        @else
+                            {{0}}
                         @endif
                     </td>
                 </tr>
@@ -75,8 +79,10 @@
                     <td>
                         @if($selectedShip && $occupied_tonage)
                             {{$selectedShip->dwcc-$occupied_tonage}}
-                        @else
+                        @elseif($selectedShip)
                             {{$selectedShip->dwcc}}
+                        @else 
+                            {{0}}
                         @endif
                     </td>
                 </tr>
