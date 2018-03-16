@@ -7,7 +7,7 @@
 <!-- Route Id Field -->
 <div class="form-group">
     {!! Form::label('route_id', 'Route Id:') !!}
-    <p>{!! $path->route()->name !!}</p>
+    <p>{!! $path->route !!}</p>
 </div>
 
 <!-- Zone1 Field -->
