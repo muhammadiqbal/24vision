@@ -44,13 +44,17 @@
 
  <div class="col-sm-4">
     {!! Form::label('cargo_status', 'Cargo status:') !!}
-    <select name="cargo_status[]" class="form-control select2" data-widget="select2" multiple="true" placehoder="select status(es)">
+{{--     <select name="cargo_status[]" class="form-control select2" data-widget="select2" multiple="true" placehoder="select status(es)">
         <option >All</option>
         <option value="1">OK</option>
         <option value="2">Review</option>
         <option value="3">Unusable</option>
         <option value="4">Incomplete</option>
-    </select>
+    </select> --}}
+    <input type="checkbox" value="1" name="cargo_status[]" class="form-control">OK
+    <input type="checkbox" value="2" name="cargo_status[]" class="form-control"> Review
+    <input type="checkbox" value="3" name="cargo_status[]" class="form-control">Unusable
+    <input type="checkbox" value="4" name="cargo_status[]" class="form-control">Option
 </div>
 
 <!-- Range Field -->
