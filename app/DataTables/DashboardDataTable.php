@@ -142,7 +142,7 @@ class DashboardDataTable extends DataTable
     public function query()
     {
         if (!$this->request()->get('ship_id') || !$this->request()->get('port_id') ){
-            $cargo = [];
+            $cargo = Cargo::select('');
         }
 
         $cargo = Cargo::select(['cargos.*',
