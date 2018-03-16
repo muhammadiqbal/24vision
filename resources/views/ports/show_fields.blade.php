@@ -13,7 +13,7 @@
 <!-- Zone Id Field -->
 <div class="form-group">
     {!! Form::label('zone_id', 'Zone Id:') !!}
-    <p>{!! $port->zone->name !!}</p>
+    <p>{!! isset($port->zone_id) ? $port->zone->name : null !!}</p>
 </div>
 
 <!-- Max Laden Draft Field -->

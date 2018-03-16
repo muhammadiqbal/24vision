@@ -7,25 +7,25 @@
 <!-- Route Id Field -->
 <div class="form-group">
     {!! Form::label('route_id', 'Route Id:') !!}
-    <p>{!! $path->route->name !!}</p>
+    <p>{!! isset($path->route_id) ? $path->route->name : null !!}</p>
 </div>
 
 <!-- Zone1 Field -->
 <div class="form-group">
     {!! Form::label('zone1', 'Zone1:') !!}
-    <p>{!! $path->zon1->name !!}</p>
+    <p>{!! isset($path->zone1) ? $path->zon1->name : null !!}</p>
 </div>
 
 <!-- Zone2 Field -->
 <div class="form-group">
     {!! Form::label('zone2', 'Zone2:') !!}
-    <p>{!! $path->zon2->name !!}</p>
+    <p>{!! isset($path->zone2) ? $path->zon2->name : null !!}</p>
 </div>
 
 <!-- Zone3 Field -->
 <div class="form-group">
     {!! Form::label('zone3', 'Zone3:') !!}
-    <p>{!! $path->zon3->name !!}</p>
+    <p>{!! isset($path->zone3) ? $path->zon3->name : null !!}</p>
 </div>
 
 <!-- Created At Field -->

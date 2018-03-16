@@ -91,13 +91,13 @@
 <!-- Ship Type Id Field -->
 <div class="form-group">
     {!! Form::label('ship_type_id', 'Ship Type Id:') !!}
-    <p>{!! $ship->shipType->name !!}</p>
+    <p>{!! isset($ship->ship_type_id) ?  $ship->shipType->name : null !!}</p>
 </div>
 
 <!-- Ship Specialization Id Field -->
 <div class="form-group">
     {!! Form::label('ship_specialization_id', 'Ship Specialization Id:') !!}
-    <p>{!! $ship->shipSpecialization->name !!}</p>
+    <p>{!! isset($ship->ship_specialization_id) ? $ship->shipSpecialization->name : null !!}</p>
 </div>
 
 <!-- Gear Onboard Field -->

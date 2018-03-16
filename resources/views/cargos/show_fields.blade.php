@@ -7,7 +7,7 @@
 <!-- Loading Port Field -->
 <div class="form-group">
     {!! Form::label('loading_port', 'Loading Port:') !!}
-    <p>{!! $cargo->loadingPort !!}</p>
+    <p>{!! isset($$cargo->loading_port) ? $cargo->loadingPort :null !!}</p>
 </div>
 
 <!-- Loading Port Manual Field -->
@@ -19,7 +19,7 @@
 <!-- Discharging Port Field -->
 <div class="form-group">
     {!! Form::label('discharging_port', 'Discharging Port:') !!}
-    <p>{!! $cargo->dischargingPort !!}</p>
+    <p>{!! isset($cargo->discharging_rate) ? $cargo->dischargingPort->name :null !!}</p>
 </div>
 
 <!-- Discharging Port Manual Field -->
@@ -79,7 +79,7 @@
 <!-- Sf Unit Field -->
 <div class="form-group">
     {!! Form::label('sf_unit', 'Sf Unit:') !!}
-    <p>{!! $cargo->stowageFactorUnit !!}</p>
+    <p>{!! isset($cargo->sf_unit) ? $cargo->stowageFactorUnit->name : null !!}</p>
 </div>
 
 <!-- Sf Unit Manual Field -->
@@ -91,7 +91,7 @@
 <!-- Ship Specialization Id Field -->
 <div class="form-group">
     {!! Form::label('ship_specialization_id', 'Ship Specialization Id:') !!}
-    <p>{!! $cargo->ship_specialization_id !!}</p>
+    <p>{!! isset($cargo->ship_specialization_id) ? $cargo->shipSpecialization->name : null !!}</p>
 </div>
 
 <!-- Ship Specialization Id Manual Field -->

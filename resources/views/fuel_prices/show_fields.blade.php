@@ -7,7 +7,7 @@
 <!-- Fuel Type Id Field -->
 <div class="form-group">
     {!! Form::label('fuel_type_id', 'Fuel Type Id:') !!}
-    <p>{!! $fuelPrice->fuelType->name !!}</p>
+    <p>{!! isset($fuelPrice->fuel_type_id) ? $fuelPrice->fuelType->name : null!!}</p>
 </div>
 
 <!-- Price Field -->
