@@ -170,7 +170,8 @@ class Cargo extends Model
      * @var array
      */
     public static $rules = [
-        
+        'laycan_first_day'=>'date',
+        'laycan_last_day'=>'date'|'after_or_equal:laycan_first_day'
     ];
 
  
