@@ -199,13 +199,13 @@
 <!-- Emailid Field -->
 <div class="form-group">
     {!! Form::label('emailId', 'Emailid:') !!}
-    <p>{!! $cargo->emailId !!}</p>
+    <p><a href="{{route('emails',$cargo->emailId)}}">{!! $cargo->emailId !!}</a></p>
 </div>
 
 <!-- Emailid Manual Field -->
 <div class="form-group">
     {!! Form::label('emailId_manual', 'Emailid Manual:') !!}
-    <p><a href="{{route('emails.emailId')}}">{!! $cargo->emailId_manual !!}</p>
+    <p>{!! $cargo->emailId_manual !!}</p>
 </div>
 
 <!-- Status Id Field -->
