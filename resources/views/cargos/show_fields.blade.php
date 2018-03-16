@@ -7,7 +7,7 @@
 <!-- Loading Port Field -->
 <div class="form-group">
     {!! Form::label('loading_port', 'Loading Port:') !!}
-    <p>{!! $cargo->loadingPort->name !!}</p>
+    <p>{!! $cargo->loadingPort !!}</p>
 </div>
 
 <!-- Loading Port Manual Field -->
@@ -19,7 +19,7 @@
 <!-- Discharging Port Field -->
 <div class="form-group">
     {!! Form::label('discharging_port', 'Discharging Port:') !!}
-    <p>{!! $cargo->dischargingPort->name !!}</p>
+    <p>{!! $cargo->dischargingPort !!}</p>
 </div>
 
 <!-- Discharging Port Manual Field -->
