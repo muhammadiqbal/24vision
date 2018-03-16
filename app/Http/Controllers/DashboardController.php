@@ -62,8 +62,14 @@ class DashboardController extends Controller
         $ships = Ship::all();
         $ports = Port::all();
 
+        $mailCount = Email::count();
+        $cargoCount = Cargo::count();
+        $shipCount = Ship::count();
+
         if(!$request->input('ship_id') && !$request->input('port_id')){
-          return view('calculator.index_empty');
+          return view('calculator.index_empty')->with('mailCount'=>$mailCount)
+                                              ->with('cargoCount'=>$cargoCount)
+                                              ->with('shipCount'=>$shipCount);
         }
 
         if($request->input('ship_id')){
@@ -88,10 +94,7 @@ class DashboardController extends Controller
           $remainingTonnage = $selectedShip->dwcc-$occupied_tonage;
         }
 
-        $mailCount = Email::count();
-        $cargoCount = Cargo::count();
-        $shipCount = Ship::count();
-
+        
         return $dashboardDataTable->forRemainingTonnage($remainingTonnage)
                                   ->forRemainingSize($remainingSize)
                                   ->forRemainingDraft($remainingDraft)
