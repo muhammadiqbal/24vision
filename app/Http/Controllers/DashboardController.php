@@ -67,9 +67,9 @@ class DashboardController extends Controller
         $shipCount = Ship::count();
 
         if(!$request->input('ship_id') && !$request->input('port_id')){
-          return view('calculator.index_empty')->with('mailCount'=>$mailCount)
-                                              ->with('cargoCount'=>$cargoCount)
-                                              ->with('shipCount'=>$shipCount);
+          return view('calculator.index_empty')->with('mailCount',$mailCount)
+                                              ->with('cargoCount',$cargoCount)
+                                              ->with('shipCount',$shipCount);
         }
 
         if($request->input('ship_id')){
