@@ -61,7 +61,7 @@ class DashboardController extends Controller
     {
         $ships = Ship::all();
         $ports = Port::all();
-        $ship = null;
+        $selectedShip = null;
         $port = null;
         if($request->input('ship_id')){
            $selectedShip = Ship::find($request->input('ship_id'));
