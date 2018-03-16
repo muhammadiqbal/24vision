@@ -53,10 +53,11 @@
         <option value="3">Unusable</option>
         <option value="4">Incomplete</option>
     </select> --}}
+    <br>
     <input type="checkbox" value="1" name="cargo_status[]">OK
-    <input type="checkbox" value="2" name="cargo_status[]"> Review
+    <input type="checkbox" value="2" name="cargo_status[]"> Review<br>
     <input type="checkbox" value="3" name="cargo_status[]">Unusable
-    <input type="checkbox" value="4" name="cargo_status[]">Option
+    <input type="checkbox" value="4" name="cargo_status[]">Incomplte
 </div>
 
 <!-- Range Field -->
