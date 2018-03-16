@@ -79,7 +79,7 @@
 <!-- Sf Unit Field -->
 <div class="form-group">
     {!! Form::label('sf_unit', 'Sf Unit:') !!}
-    <p>{!! $cargo->stowageFactorUnit->name !!}</p>
+    <p>{!! $cargo->stowageFactorUnit !!}</p>
 </div>
 
 <!-- Sf Unit Manual Field -->
