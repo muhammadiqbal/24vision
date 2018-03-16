@@ -199,7 +199,7 @@
 <!-- Emailid Field -->
 <div class="form-group">
     {!! Form::label('emailId', 'Emailid:') !!}
-    <p><a href="{{route('emails',$cargo->emailId)}}">{!! $cargo->emailId !!}</a></p>
+    <p><a href="{{url('emails/'.$cargo->emailId)}}">{!! $cargo->emailId !!}</a></p>
 </div>
 
 <!-- Emailid Manual Field -->
