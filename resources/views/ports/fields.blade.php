@@ -8,6 +8,15 @@
 <div class="form-group col-sm-6">
     {!! Form::label('zone_id', 'Zone Id:') !!}
     {!! Form::number('zone_id', null, ['class' => 'form-control']) !!}
+    <select name="zone_id" class="form-control">
+        @foreach($zones as $zone)
+            @if($port && $port->id == $zone->id)
+                <option value="{{$zone->id}}" selected="true">{{$zone->name}}</option>
+            @else
+                <option value="{{$zone->id}}">{{$zone->name}}</option>
+            @endif
+        @endforeach
+    </select>
 </div>
 
 <!-- Max Laden Draft Field -->

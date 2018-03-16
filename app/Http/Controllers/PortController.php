@@ -43,7 +43,8 @@ class PortController extends AppBaseController
      */
     public function create()
     {
-        return view('ports.create');
+        $zones = Zone::all();
+        return view('ports.create')->with('zones', $zones);
     }
 
     /**
@@ -115,8 +116,10 @@ class PortController extends AppBaseController
 
             return redirect(route('ports.index'));
         }
-
-        return view('ports.edit')->with('port', $port);
+        $zones = Zone::all();
+        
+        return view('ports.edit')->with('port', $port)
+                                 ->with('zones', $zones);
     }
 
     /**
