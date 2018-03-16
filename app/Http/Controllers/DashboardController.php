@@ -88,7 +88,6 @@ class DashboardController extends Controller
         $cargoCount = Cargo::count();
         $shipCount = Ship::count();
 
-        return Cargo::whereRaw($request->get('date_of_opening' ).' >= laycan_first_day AND '.$request->get('date_of_opening' ).' <= laycan_last_day ')->get();
         return $dashboardDataTable
                                   ->forRemainingTonnage($remainingTonnage)
                                   ->forRemainingSize($remainingSize)

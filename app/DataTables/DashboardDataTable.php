@@ -94,20 +94,20 @@ class DashboardDataTable extends DataTable
                     return $cargo->quantity;
                 }               
             })
-            ->editColumn('laycan_first_day', function(Cargo $cargo){
+           ->editColumn('laycan_first_day', function(Cargo $cargo){
                 if ($cargo->laycan_first_day_manual) {
-                    return '<b style=\'color:red;\'>'.date_format(date_create($cargo->laycan_first_day),'d-m-Y').'</b>';
+                    return '<b style=\'color:red;\'>'.date_format(date_create(strtotime($cargo->laycan_first_day)),'d-m-Y').'</b>';
                 }elseif ($cargo->laycan_first_day_constructed) {
-                    return '<b style=\'color:green;\'>'.date_format(date_create($cargo->laycan_first_day),'d-m-Y').'</b>';
+                    return '<b style=\'color:green;\'>'.date_format(date_create(strtotime($cargo->laycan_first_day)),'d-m-Y').'</b>';
                 } else {                
-                    return date_format(date_create($cargo->laycan_first_day),'d-m-Y');
+                    return date_format(date_create(strtotime($cargo->laycan_first_day)),'d-m-Y');
                 }               
             })
             ->editColumn('laycan_last_day', function(Cargo $cargo){
                 if ($cargo->laycan_last_day_manual) {
-                    return '<b style=\'color:red;\'>'.date_format(date_create($cargo->laycan_last_day),'d-m-Y').'</b>';
+                    return '<b style=\'color:red;\'>'.date_format(date_create(strtotime($cargo->laycan_last_day)),'d-m-Y').'</b>';
                 } elseif ($cargo->laycan_last_day_constructed) {
-                    return '<b style=\'color:green;\'>'.date_format(date_create($cargo->laycan_last_day),'d-m-Y').'</b>';
+                    return '<b style=\'color:green;\'>'.date_format(date_create(strtotime($cargo->laycan_last_day)),'d-m-Y').'</b>';
                 } else {                
                     return date_format(date_create($cargo->laycan_last_day),'d-m-Y');
                 }
@@ -161,7 +161,7 @@ class DashboardDataTable extends DataTable
         if($this->request()->get('date_of_opening')){
             // $cargo->whereDate('laycan_first_day','<=',$this->request()->get('date_of_opening'))
             //       ->whereDate('laycan_last_day','>=',$this->request()->get('date_of_opening'));
-            $cargos->whereRaw('CAST('.$this->request()->get('date_of_opening' ).') >= laycan_first_day AND CAST('.$this->request()->get('date_of_opening' ).') <= laycan_last_day ');
+            $cargos->whereRaw($this->request()->get('date_of_opening' ).' >= laycan_first_day AND '.$this->request()->get('date_of_opening' ).' <= laycan_last_day ');
 
         }
         if($this->request()->get('range')){
