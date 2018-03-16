@@ -59,19 +59,16 @@ class PortController extends AppBaseController
         $input = $request->all();
 
         $zone = Zone::find($request->get('zone_id'));
-        $zonePoints = $zone->zonePoints();
+        $zonePoints = $zone->zonePoints()->toArray();
         $polygon = new Polygon($zonePoints);
 
         $latitude = $request->get('latitude');
         $longitude = $request->get('longitude');
         
-        foreach ($zonePoints as $zonePoint) {
-            if (!$polygon->pointInPolygon(new Coordinate([$latitude, $longitude]))) {
-                Flash::error('ERROR: Port location is not in the zone!');
-                return redirect(route('/ports/create'));
-            }
+        if (!$polygon->pointInPolygon(new Coordinate([$latitude, $longitude]))) {
+           Flash::success('ERROR: Port location is not in the zone!');
+           return redirect(route('/ports/create'));
         }
-        
 
         $zonePort = $this->zonePortRepository->create($input);
 
@@ -138,17 +135,15 @@ class PortController extends AppBaseController
         $port = $this->portRepository->findWithoutFail($id);
 
         $zone = Zone::find($request->get('zone_id'));
-        $zonePoints = $zone->zonePoints();
+        $zonePoints = $zone->zonePoints()->toArray();
         $polygon = new Polygon($zonePoints);
 
         $latitude = $request->get('latitude');
         $longitude = $request->get('longitude');
         
-        foreach ($zonePoints as $zonePoint) {
-            if (!$polygon->pointInPolygon(new Coordinate([$latitude, $longitude]))) {
-                Flash::success('ERROR: Port location is not in the zone!');
-                return redirect(route('/ports/create'));
-            }
+        if (!$polygon->pointInPolygon(new Coordinate([$latitude, $longitude]))) {
+           Flash::success('ERROR: Port location is not in the zone!');
+           return redirect(route('/ports/create'));
         }
 
 
