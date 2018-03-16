@@ -59,7 +59,7 @@ class PortController extends AppBaseController
         $input = $request->all();
 
         $zone = Zone::find($request->get('zone_id'));
-        $zonePoints = $zone->zonePoints()->toArray();
+        $zonePoints = $zone->zonePoints()->get()->toArray();
         $polygon = new Polygon($zonePoints);
 
         $latitude = $request->get('latitude');
@@ -135,7 +135,7 @@ class PortController extends AppBaseController
         $port = $this->portRepository->findWithoutFail($id);
 
         $zone = Zone::find($request->get('zone_id'));
-        $zonePoints = $zone->zonePoints()->toArray();
+        $zonePoints = $zone->zonePoints()->get()->toArray();
         $polygon = new Polygon($zonePoints);
 
         $latitude = $request->get('latitude');
