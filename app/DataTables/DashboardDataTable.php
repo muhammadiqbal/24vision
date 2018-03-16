@@ -98,22 +98,22 @@ class DashboardDataTable extends DataTable
                 if ($cargo->laycan_first_day_manual == null){
                     return null;
                 }elseif($cargo->laycan_first_day_manual) {
-                    return '<b style=\'color:red;\'>'.date(strtotime('d-m-Y',$cargo->laycan_first_day)).'</b>';
+                    return '<b style=\'color:red;\'>'.date('d-m-Y',strtotime($cargo->laycan_first_day)).'</b>';
                 }elseif ($cargo->laycan_first_day_constructed) {
-                    return '<b style=\'color:green;\'>'.date(strtotime('d-m-Y',$cargo->laycan_first_day)).'</b>';
+                    return '<b style=\'color:green;\'>'.date('d-m-Y',strtotime($cargo->laycan_first_day)).'</b>';
                 }else {                
-                    return date(strtotime('d-m-Y',$cargo->laycan_first_day));
+                    return date('d-m-Y',strtotime($cargo->laycan_first_day));
                 }               
             })
             ->editColumn('laycan_last_day', function(Cargo $cargo){
                 if ($cargo->laycan_first_day_manual == null){
                     return null;
                 }elseif($cargo->laycan_last_day_manual) {
-                    return '<b style=\'color:red;\'>'.date(strtotime('d-m-Y',$cargo->laycan_last_day)).'</b>';
+                    return '<b style=\'color:red;\'>'.date('d-m-Y',strtotime($cargo->laycan_last_day)).'</b>';
                 } elseif ($cargo->laycan_last_day_constructed) {
-                    return '<b style=\'color:green;\'>'.date(strtotime('d-m-Y',$cargo->laycan_last_day)).'</b>';
+                    return '<b style=\'color:green;\'>'.date('d-m-Y',strtotime($cargo->laycan_last_day)).'</b>';
                 } else {                
-                    return date(strtotime('d-m-Y',$cargo->laycan_last_day));
+                    return date('d-m-Y',strtotime($cargo->laycan_last_day));
                 }
             })
             ->editColumn('loading_port',function(Cargo $cargo){
