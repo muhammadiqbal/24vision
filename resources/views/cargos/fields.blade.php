@@ -31,13 +31,21 @@
 <!-- Laycan First Day Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('laycan_first_day', 'Laycan First Day:') !!}
-    {!! Form::date('laycan_first_day', null, ['class' => 'form-control']) !!}
+    @if($cargo)
+        {!! Form::date('laycan_first_day', $cargo->laycan_first_day, ['class' => 'form-control']) !!}
+    @else
+        {!! Form::date('laycan_first_day', null, ['class' => 'form-control']) !!}
+    @endif
 </div>
 
 <!-- Laycan Last Day Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('laycan_last_day', 'Laycan Last Day:') !!}
-    {!! Form::date('laycan_last_day', null, ['class' => 'form-control']) !!}
+    @if($cargo)
+        {!! Form::date('laycan_last_day', $cargo->laycan_last_day, ['class' => 'form-control']) !!}
+    @else
+        {!! Form::date('laycan_last_day', null, ['class' => 'form-control']) !!}
+    @endif
 </div>
 
 <!-- Cargo Type Id Field -->
