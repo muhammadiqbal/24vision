@@ -48,16 +48,20 @@ class CargoDataTable extends DataTable
                 }               
             })
             ->editColumn('laycan_first_day', function(Cargo $cargo){
-                if ($cargo->laycan_first_day_manual) {
+                if ($cargo->laycan_first_day_manual == null){
+                    return null;
+                }elseif($cargo->laycan_first_day_manual) {
                     return '<b style=\'color:red;\'>'.date_format(date_create(strtotime($cargo->laycan_first_day)),'d-m-Y').'</b>';
                 }elseif ($cargo->laycan_first_day_constructed) {
                     return '<b style=\'color:green;\'>'.date_format(date_create(strtotime($cargo->laycan_first_day)),'d-m-Y').'</b>';
-                } else {                
+                }else {                
                     return date_format(date_create(strtotime($cargo->laycan_first_day)),'d-m-Y');
                 }               
             })
             ->editColumn('laycan_last_day', function(Cargo $cargo){
-                if ($cargo->laycan_last_day_manual) {
+                if ($cargo->laycan_first_day_manual == null){
+                    return null;
+                }elseif($cargo->laycan_last_day_manual) {
                     return '<b style=\'color:red;\'>'.date_format(date_create(strtotime($cargo->laycan_last_day)),'d-m-Y').'</b>';
                 } elseif ($cargo->laycan_last_day_constructed) {
                     return '<b style=\'color:green;\'>'.date_format(date_create(strtotime($cargo->laycan_last_day)),'d-m-Y').'</b>';
