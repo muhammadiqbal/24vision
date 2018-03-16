@@ -11,23 +11,23 @@
                 <tr>
                     <th>Size</th>
                     <td>
-                        @if($selectedShip)
+                        @if(isset($selectedShip))
                             {{$selectedShip->max_holds_capacity}}
                         @else
                             {{0}}
                         @endif
-                    </td>
+                  </td>
                     <td>
-                        @if($selectedShip && $occupied_size)
+                        @if(isset($occupied_size))
                             {{$occupied_size}}
                          @else
                             {{0}}
                         @endif
                     </td>
                     <td>
-                        @if($selectedShip && $occupied_size)
+                        @if(isset($selectedShip) && isset($occupied_size))
                             {{$selectedShip->max_holds_capacity - $occupied_size}}
-                        @elseif($selectedShip)
+                        @elseif(isset($selectedShip))
                             {{$selectedShip->max_holds_capacity}}
                         @else
                             {{0}}
@@ -37,23 +37,23 @@
                 <tr>
                     <th>Draft</th>
                     <td>
-                        @if($allowedDraft)
+                        @if(isset($allowedDraft))
                             {{$allowedDraft}}
                         @else
                             {{0}}
                         @endif
                     </td>
                     <td>
-                         @if($occupied_draft)
+                         @if(isset($occupied_draft))
                             {{$occupied_draft}}
                         @else
                             {{0}}
                         @endif
                     </td>
                     <td>
-                        @if($allowedDraft && $occupied_draft)
+                        @if(isset($remainingDraft))
                             {{$remainingDraft}}
-                        @elseif($allowedDraft)
+                        @elseif(isset($allowedDraft))
                             {{$allowedDraft}}
                         @else
                             {{0}}
@@ -63,23 +63,23 @@
                 <tr>
                     <th>Tonage</th>
                     <td>
-                        @if($selectedShip)
+                        @if(isset($selectedShip))
                             {{$selectedShip->dwcc}}
                         @else
                             {{0}}
                         @endif
                     </td>
                     <td>
-                        @if($selectedShip && $occupied_tonage)
+                        @if(isset($$occupied_tonage))
                             {{$occupied_tonage}}
                         @else
                             {{0}}
                         @endif
                     </td>
                     <td>
-                        @if($selectedShip && $occupied_tonage)
+                        @if(isset($selectedShip) && isset($occupied_tonage))
                             {{$selectedShip->dwcc-$occupied_tonage}}
-                        @elseif($selectedShip)
+                        @elseif(isset($selectedShip))
                             {{$selectedShip->dwcc}}
                         @else 
                             {{0}}
