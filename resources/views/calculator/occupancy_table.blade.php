@@ -20,6 +20,8 @@
                     <td>
                         @if($selectedShip && $occupied_size)
                             {{$occupied_size}}
+                         @else
+                            {{0}}
                         @endif
                     </td>
                     <td>
