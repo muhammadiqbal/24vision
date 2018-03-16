@@ -13,7 +13,7 @@
 <!-- Zone1 Field -->
 <div class="form-group">
     {!! Form::label('zone1', 'Zone1:') !!}
-    <p>{!! $path->zone1->name !!}</p>
+    <p>{!! $path->zone1 !!}</p>
 </div>
 
 <!-- Zone2 Field -->
