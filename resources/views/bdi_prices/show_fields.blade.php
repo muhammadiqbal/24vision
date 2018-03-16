@@ -7,7 +7,7 @@
 <!-- Bdi Id Field -->
 <div class="form-group">
     {!! Form::label('bdi_id', 'Bdi Id:') !!}
-    <p>{!! $bdiPrice->bdi_id !!}</p>
+    <p>{!! $bdiPrice->bdi->name !!}</p>
 </div>
 
 <!-- Price Field -->

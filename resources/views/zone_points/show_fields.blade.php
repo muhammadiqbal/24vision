@@ -7,7 +7,7 @@
 <!-- Zone Id Field -->
 <div class="form-group">
     {!! Form::label('zone_id', 'Zone Id:') !!}
-    <p>{!! $zonePoint->zone_id !!}</p>
+    <p>{!! $zonePoint->zone->name !!}</p>
 </div>
 
 <!-- Latitude Field -->

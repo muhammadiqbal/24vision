@@ -7,7 +7,7 @@
 <!-- Loading Port Field -->
 <div class="form-group">
     {!! Form::label('loading_port', 'Loading Port:') !!}
-    <p>{!! $cargo->loading_port !!}</p>
+    <p>{!! $cargo->loadingPort->name !!}</p>
 </div>
 
 <!-- Loading Port Manual Field -->
@@ -19,7 +19,7 @@
 <!-- Discharging Port Field -->
 <div class="form-group">
     {!! Form::label('discharging_port', 'Discharging Port:') !!}
-    <p>{!! $cargo->discharging_port !!}</p>
+    <p>{!! $cargo->dischargingPort->name !!}</p>
 </div>
 
 <!-- Discharging Port Manual Field -->
@@ -79,7 +79,7 @@
 <!-- Sf Unit Field -->
 <div class="form-group">
     {!! Form::label('sf_unit', 'Sf Unit:') !!}
-    <p>{!! $cargo->sf_unit !!}</p>
+    <p>{!! $cargo->stowageFactorUnit->name !!}</p>
 </div>
 
 <!-- Sf Unit Manual Field -->
@@ -205,7 +205,7 @@
 <!-- Emailid Manual Field -->
 <div class="form-group">
     {!! Form::label('emailId_manual', 'Emailid Manual:') !!}
-    <p>{!! $cargo->emailId_manual !!}</p>
+    <p><a href="{{route('emails.emailId')}}">{!! $cargo->emailId_manual !!}</p>
 </div>
 
 <!-- Status Id Field -->

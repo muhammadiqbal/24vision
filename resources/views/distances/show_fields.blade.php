@@ -7,13 +7,13 @@
 <!-- Start Port Field -->
 <div class="form-group">
     {!! Form::label('start_port', 'Start Port:') !!}
-    <p>{!! $distance->start_port !!}</p>
+    <p>{!! $distance->startPort->name !!}</p>
 </div>
 
 <!-- End Port Field -->
 <div class="form-group">
     {!! Form::label('end_port', 'End Port:') !!}
-    <p>{!! $distance->end_port !!}</p>
+    <p>{!! $distance->endPort->name !!}</p>
 </div>
 
 <!-- Distance Field -->
