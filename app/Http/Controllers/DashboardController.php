@@ -61,27 +61,19 @@ class DashboardController extends Controller
     {
         $ships = Ship::all();
         $ports = Port::all();
-        $selectedShip = null;
-        $port = null;
-        $remainingSize = 0;     
-        $allowedDraft = 0;
-        $occupied_draft = 0;
-        $remainingDraft = 0;
-        $remainingTonnage = 0;
+
+        if(!$request->input('ship_id') && !$request->input('port_id')){
+          return view('calculator.index_empty');
+        }
 
         if($request->input('ship_id')){
            $selectedShip = Ship::find($request->input('ship_id'));
         }
-        // else {
-        //    $selectedShip = Ship::first();
-        // }
 
         if($request->input('port_id')){
            $port = Port::find($request->input('port_id'));;
         }
-        // else{
-        //    $port = Port::first();
-        // }
+
 
         $occupied_size = $request->input('occupied_size',0);
         $occupied_tonage = $request->input('occupied_tonage',0);
@@ -100,8 +92,7 @@ class DashboardController extends Controller
         $cargoCount = Cargo::count();
         $shipCount = Ship::count();
 
-        return $dashboardDataTable
-                                  ->forRemainingTonnage($remainingTonnage)
+        return $dashboardDataTable->forRemainingTonnage($remainingTonnage)
                                   ->forRemainingSize($remainingSize)
                                   ->forRemainingDraft($remainingDraft)
                                   ->forShip($selectedShip)

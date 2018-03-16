@@ -19,7 +19,7 @@ class DashboardDataTable extends DataTable
     protected $date_of_opening;
     protected $null = '<b style=\'color:blue;\'>NULL</b>';
 
-    public function forShip($ship){
+    public function forShip(Ship $ship){
         $this->ship = $ship;
         return $this;
     }
@@ -31,7 +31,7 @@ class DashboardDataTable extends DataTable
         $this->remaining_tonage = $remaining_tonage;
         return $this;
     }
-    public function forPort($port){
+    public function forPort(Port $port){
         $this->port = $port;
         return $this;
     }
@@ -141,7 +141,6 @@ class DashboardDataTable extends DataTable
      */
     public function query()
     {
-
         $cargo = Cargo::select(['cargos.*',
                                       'cargo_status.name as status',
                                       'cargo_types.name as type',
