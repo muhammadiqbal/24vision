@@ -63,6 +63,12 @@ class DashboardController extends Controller
         $ports = Port::all();
         $selectedShip = null;
         $port = null;
+        $remainingSize = 0;     
+        $allowedDraft = 0;
+        $occupied_draft = 0;
+        $remainingDraft = 0;
+        $remainingTonnage = 0;
+
         if($request->input('ship_id')){
            $selectedShip = Ship::find($request->input('ship_id'));
         }
@@ -89,7 +95,7 @@ class DashboardController extends Controller
           $remainingDraft = $allowedDraft - round($occupied_draft,2);
           $remainingTonnage = $selectedShip->dwcc-$occupied_tonage;
         }
-        
+
         $mailCount = Email::count();
         $cargoCount = Cargo::count();
         $shipCount = Ship::count();
