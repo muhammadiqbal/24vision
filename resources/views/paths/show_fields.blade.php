@@ -13,19 +13,19 @@
 <!-- Zone1 Field -->
 <div class="form-group">
     {!! Form::label('zone1', 'Zone1:') !!}
-    <p>{!! $path->zone1 !!}</p>
+    <p>{!! $path->zon1->name !!}</p>
 </div>
 
 <!-- Zone2 Field -->
 <div class="form-group">
     {!! Form::label('zone2', 'Zone2:') !!}
-    <p>{!! $path->zone2 !!}</p>
+    <p>{!! $path->zon2->name !!}</p>
 </div>
 
 <!-- Zone3 Field -->
 <div class="form-group">
     {!! Form::label('zone3', 'Zone3:') !!}
-    <p>{!! $path->zone3 !!}</p>
+    <p>{!! $path->zon3->name !!}</p>
 </div>
 
 <!-- Created At Field -->
