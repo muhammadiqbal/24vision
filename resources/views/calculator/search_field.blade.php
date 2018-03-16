@@ -4,9 +4,10 @@
 <div class="form-group col-sm-8">
     {!! Form::label('ship_id', 'Ship*:') !!}
     <select name="ship_id" class="form-control" required="true">
+        <option value=""></option>
         @foreach($ships as $ship)
                 <option 
-                    @if($selectedShip->id == $ship->id)
+                    @if($selectedShip && $selectedShip->id == $ship->id)
                         {{'selected="true"'}}
                     @endif
                     value="{{$ship->id}}">{{$ship->name}}
@@ -25,9 +26,10 @@
 <div class="form-group col-sm-8">
     {!! Form::label('port_id', 'Port*:') !!}
     <select name="port_id" class="form-control" required="true">
+        <option value=""></option>
         @foreach($ports as $port)
                 <option 
-                    @if($selectedPort->id == $port->id)
+                    @if($selectedPort && $selectedPort->id == $port->id)
                         {{'selected="true"'}}
                     @endif
                     value="{{$port->id}}">{{$port->name}}
