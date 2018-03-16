@@ -141,10 +141,10 @@ class DashboardDataTable extends DataTable
      */
     public function query()
     {
-        if (!isset($this->request()->get('ship_id')) || !isset($this->request()->get('port_id')) ){
+        if (!$this->request()->get('ship_id') || !$this->request()->get('port_id') ){
             $cargo = null;
         }
-        
+
         $cargo = Cargo::select(['cargos.*',
                                       'cargo_status.name as status',
                                       'cargo_types.name as type',
