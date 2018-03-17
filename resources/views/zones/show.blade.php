@@ -1,5 +1,38 @@
 @extends('layouts.app')
+@section('css')
+<style>
 
+   .graticule {
+      fill: none;
+      stroke: #777;
+      stroke-opacity: .5;
+      stroke-width: .5px;
+   }
+
+   .land {
+      fill: #222;
+   }
+
+   .boundary {
+      fill: none;
+      stroke: #fff;
+      stroke-width: .5px;
+   }
+
+   .route {
+      fill: none;
+      stroke: red;
+      stroke-width: 1px;
+   }
+
+    .labels {
+        fill: #f00;
+        font-family:arial;
+        font-size:1em;
+        font-weight: bold;
+    }
+</style>
+@endsection
 @section('content')
     <section class="content-header">
         <h1>
