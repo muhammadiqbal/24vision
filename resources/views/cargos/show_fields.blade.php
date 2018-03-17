@@ -7,7 +7,7 @@
 <!-- Loading Port Field -->
 <div class="form-group">
     {!! Form::label('loading_port', 'Loading Port:') !!}
-    <p>{!! isset($$cargo->loading_port) ? $cargo->loadingPort :null !!}</p>
+    <p>{!! isset($cargo->loading_port) ? $cargo->loadingPort :null !!}</p>
 </div>
 
 <!-- Loading Port Manual Field -->
