@@ -79,7 +79,7 @@
 <!-- Sf Unit Field -->
 <div class="form-group">
     {!! Form::label('sf_unit', 'Sf Unit:') !!}
-    <p>{!! isset($cargo->sf_unit) ? $cargo->stowageFactorUnit->name : null !!}</p>
+    <p></p>
 </div>
 
 <!-- Sf Unit Manual Field -->
@@ -91,7 +91,7 @@
 <!-- Ship Specialization Id Field -->
 <div class="form-group">
     {!! Form::label('ship_specialization_id', 'Ship Specialization Id:') !!}
-    <p></p>
+    <p>{!! isset($cargo->ship_specialization_id) ? $cargo->shipSpecialization->name : null !!}</p>
 </div>
 
 <!-- Ship Specialization Id Manual Field -->
