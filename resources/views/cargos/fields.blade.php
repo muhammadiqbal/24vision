@@ -174,7 +174,7 @@
 <!-- Comission Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('commission', 'Comission:') !!}
-    {!! Form::number('commission', null, ['class' => 'form-control']) !!}
+    {!! Form::number('commission', null, ['class' => 'form-control','step'=>'1', 'min'=>'1']) !!}
 </div>
 
 <!-- Emailid Field -->
