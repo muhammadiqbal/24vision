@@ -171,7 +171,7 @@ class Cargo extends Model
      */
     public static $rules = [
         'laycan_first_day'=>'date',
-        'laycan_last_day'=>'date|after_or_equal:laycan_first_day'
+        'laycan_last_day'=>'nullable|date|after_or_equal:laycan_first_day'
     ];
 
  
