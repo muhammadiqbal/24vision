@@ -91,7 +91,7 @@
 <!-- Ship Specialization Id Field -->
 <div class="form-group">
     {!! Form::label('ship_specialization_id', 'Ship Specialization Id:') !!}
-    <p>{!! isset($cargo->ship_specialization_id) ? $cargo->shipSpecialization->name : null !!}</p>
+    <p></p>
 </div>
 
 <!-- Ship Specialization Id Manual Field -->
