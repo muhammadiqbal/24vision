@@ -17,7 +17,7 @@ class CreateTablePorts extends Migration
         Schema::create('ports', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique();
-            $table->integer('zone_id')->unsigned();
+            $table->integer('zone_id')->unsigned()->nullable();
             $table->foreign('zone_id')->references('id')->on('zones');
             $table->decimal('max_laden_draft')->nullable();
             $table->decimal('latitude');
