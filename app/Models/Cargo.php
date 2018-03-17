@@ -345,7 +345,7 @@ class Cargo extends Model
      **/
     public function stowageFactorUnit()
     {
-        return $this->belongsTo(\App\Models\StowageFactorUnit::class);
+        return $this->belongsTo(\App\Models\StowageFactorUnit::class,'sf_unit');
     }
 
     /**
