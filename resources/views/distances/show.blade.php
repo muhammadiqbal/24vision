@@ -95,12 +95,12 @@ function ready(error, world) {
 
          d3.select(self.frameElement).style("height", height + "px");
 
-       // close the polygon to create a shape
+
        var route = {
                     type: "LineString",
                     coordinates: [
-                    ["{!! $distance->startPort->longitude!!}","{!! $distance->startPort->latitude!!}"],
-                    ["{!! $distance->endPort->longitude!!}","{!! $distance->endPort->latitude!!}"]
+                    [{!! $distance->startPort->longitude!!},{!! $distance->startPort->latitude!!}],
+                    [{!! $distance->endPort->longitude!!},{!! $distance->endPort->latitude!!}]
                     ]};
                  svg.append("path")
                  .datum(route)
