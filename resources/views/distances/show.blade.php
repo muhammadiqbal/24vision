@@ -99,8 +99,8 @@ function ready(error, world) {
        var route = {
                     type: "LineString",
                     coordinates: [
-                    [{!! $distance->startPort->longitude!!},{!! $distance->startPort->latitude!!}],
-                    [{!! $distance->endPort->longitude!!},{!! $distance->endPort->latitude!!}]
+                    ["{!! $distance->startPort->longitude!!}","{!! $distance->startPort->latitude!!}"],
+                    ["{!! $distance->endPort->longitude!!}","{!! $distance->endPort->latitude!!}"]
                     ]};
                  svg.append("path")
                  .datum(route)
