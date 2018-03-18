@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('css')
 <style>
 
    .graticule {
@@ -31,6 +32,7 @@
         font-weight: bold;
     }
 </style>
+@endsection
 @section('content')
     <section class="content-header">
         <h1>
