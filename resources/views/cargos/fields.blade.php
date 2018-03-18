@@ -91,10 +91,9 @@
         <option value=""></option>
         @foreach($ship_specializations as $ship_specialization)
             @if(!empty($cargo) && $cargo->ship_specialization_id == $ship_specialization->id)
-                <option value="{{$ship_specialization->id}}">{{$ship_specialization->name}}</option>
-            @else
                 <option value="{{$ship_specialization->id}}" selected="true">{{$ship_specialization->name}}</option>
-
+            @else
+                <option value="{{$ship_specialization->id}}" >{{$ship_specialization->name}}</option>
             @endif
         @endforeach
     </select>
@@ -150,7 +149,7 @@
         <option value=""></option>
         @foreach($ld_rate_types as $ld_rate_type)
             @if(!empty($cargo) && $cargo->discharging_rate_type == $ld_rate_type->id)
-                <option value="{{$ld_rate_type->id}}">{{$ld_rate_type->name}}</option>
+                <option value="{{$ld_rate_type->id}}" selected="true">{{$ld_rate_type->name}}</option>
             @else
                 <option value="{{$ld_rate_type->id}}">{{$ld_rate_type->name}}</option>
             @endif
