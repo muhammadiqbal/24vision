@@ -112,7 +112,7 @@ class CargoDataTable extends DataTable
         }
 
         if($this->request()->get('statusoption')){
-            $cargos->whereIn('status_id','=',$this->request()->get('statusoption' ));
+            $cargos->whereIn('status_id','=',$this->request()->get('statusoption[]' ));
         }
 
 
