@@ -119,6 +119,18 @@ function ready(error, world) {
                  .attr("d", path);
          };
       }
+       // close the polygon to create a shape
+       var route = {
+                    type: "LineString",
+                    coordinates: [
+                    [zonePoints[0].longitude,zonePoints[0].latitude],
+                    [zonePoints[zonePoints.length-1].longitude,zonePoints[zonePoints.length-1].latitude]
+                    ]};
+                 svg.append("path")
+                 .datum(route)
+                 .attr("class", "route")
+                 .attr("d", path);
+         };
 
 function getZonePoints(){
 
