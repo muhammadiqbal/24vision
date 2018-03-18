@@ -36,6 +36,19 @@ class DashboardController extends Controller
 
     public function testing()
     {
+
+        $ports = Port::all();
+        $zones = Zone::all();
+
+        foreach ($ports as $port) {
+          if (!isset($port->zone_id)){
+            foreach ($zones as $zone) {
+              
+            }
+          }
+        }
+
+
         $cargo = DB::table('cargos')->select(['cargos.*',
                                       'cargo_status.name as status',
                                       'cargo_types.name as type',
