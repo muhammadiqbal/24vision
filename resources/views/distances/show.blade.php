@@ -1,5 +1,36 @@
 @extends('layouts.app')
+<style>
 
+   .graticule {
+      fill: none;
+      stroke: #777;
+      stroke-opacity: .5;
+      stroke-width: .5px;
+   }
+
+   .land {
+      fill: #222;
+   }
+
+   .boundary {
+      fill: none;
+      stroke: #fff;
+      stroke-width: .5px;
+   }
+
+   .route {
+      fill: none;
+      stroke: red;
+      stroke-width: 1px;
+   }
+
+    .labels {
+        fill: #f00;
+        font-family:arial;
+        font-size:1em;
+        font-weight: bold;
+    }
+</style>
 @section('content')
     <section class="content-header">
         <h1>
@@ -8,6 +39,7 @@
     </section>
     <div class="content">
         <div class="box box-primary">
+        <svg></svg>
             <div class="box-body">
                 <div class="row" style="padding-left: 20px">
                     @include('distances.show_fields')
