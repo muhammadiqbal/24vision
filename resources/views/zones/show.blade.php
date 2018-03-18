@@ -118,9 +118,9 @@ function ready(error, world) {
                  .attr("class", "route")
                  .attr("d", path);
          };
-      }
-       // close the polygon to create a shape
-       var route = {
+
+        // close the polygon to create a shape
+        var route = {
                     type: "LineString",
                     coordinates: [
                     [zonePoints[0].longitude,zonePoints[0].latitude],
@@ -130,7 +130,9 @@ function ready(error, world) {
                  .datum(route)
                  .attr("class", "route")
                  .attr("d", path);
-         };
+      }
+
+
 
 function getZonePoints(){
 
