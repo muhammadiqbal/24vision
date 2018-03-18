@@ -46,7 +46,7 @@ class DashboardController extends Controller
         foreach ($ports as $port) {
           if ($port->zone_id ==null){
             foreach ($zones as $zone) {
-              $zonePoints = $zone->zonePoints()->get()->toArray();
+              $zonePoints = $zone->zonePoints()->toArray();
               $polygon = new Polygon($zonePoints);
 
               if ($port->latitude && $port->longitude && $polygon->pointInPolygon(new Coordinate([$port->latitude, $port->longitude]))) {
