@@ -49,7 +49,7 @@ class DashboardController extends Controller
               $zonePoints = $zone->zonePoints;
               $polyCoordinate = array();
               foreach ($zonePoints as $zonePoint) {
-                array_push($polyCoordinate, [$port->latitude, $port->longitude])
+                array_push($polyCoordinate, [$port->latitude, $port->longitude]);
               }
               $polygon = new Polygon($polyCoordinate);
 
