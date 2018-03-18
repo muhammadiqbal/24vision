@@ -16,7 +16,7 @@
         <div class="box box-primary">
         <div class="col-sm-12" style="top:10px; bottom:5px;">
         <form method="GET" id="search-form" class="form-inline" role="form">
-            <div class="form-group col-sm-3">
+            {{-- <div class="form-group col-sm-3">
                 {!! Form::label('status', 'Status:') !!}
                 <select name="statusoption" id="statusoption" class="form-control">
                     <option value="1">OK</option>
@@ -24,7 +24,17 @@
                     <option value="3">Unusable</option>
                     <option value="4">Incomplete</option>
                 </select>
+            </div> --}}
+
+             <div class="form-group col-sm-3">
+                {!! Form::label('cargo_status', 'Cargo status:') !!}
+                <br>
+                <input type="checkbox" value="1" name="statusoption[]">OK
+                <input type="checkbox" value="2" name="statusoption[]"> Review<br>
+                <input type="checkbox" value="3" name="statusoption[]">Unusable
+                <input type="checkbox" value="4" name="statusoption[]">Incomplte
             </div>
+
             
             <!-- Laycan First Day Field -->
             <div class="form-group col-sm-3">
