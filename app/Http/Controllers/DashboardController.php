@@ -12,6 +12,7 @@ use App\Models\BdiPrice;
 use App\Models\Bdi;
 use App\Models\Ship;
 use App\Models\Port;
+use App\Models\Zone;
 use App\Models\Email;
 use Illuminate\Http\Request;
 use Khill\Lavacharts\Lavacharts;
@@ -20,6 +21,8 @@ use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use DB;
 use Response;
+use \League\Geotools\Polygon\Polygon;
+use \League\Geotools\Coordinate\Coordinate;
 
 
 class DashboardController extends Controller
@@ -43,26 +46,20 @@ class DashboardController extends Controller
         foreach ($ports as $port) {
           if (!isset($port->zone_id)){
             foreach ($zones as $zone) {
-              
+              $zonePoints = $zone->zonePoints()->get()->toArray();
+              $polygon = new Polygon($zonePoints);
+
+              if ($polygon->pointInPolygon(new Coordinate([$port->latitude, $port->longitude]))) {
+                 $port->update(['zone_id'=>$zone->id]);
+                 break;
+              }
             }
           }
         }
 
 
-        $cargo = DB::table('cargos')->select(['cargos.*',
-                                      'cargo_status.name as status',
-                                      'cargo_types.name as type',
-                                      'p1.name as load_port',
-                                      'p2.name as disch_port',
-                                      DB::raw('(quantity * 2) AS draft'),
-                                      DB::raw('(cargos.quantity * cargo_types.stowage_factor) AS size')
-                                    ])
-                             ->leftjoin('cargo_status', 'cargos.status_id','cargo_status.id')
-                             ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
-                             ->leftjoin('ports as p1', 'p1.id','loading_port')
-                             ->leftjoin('ports as p2', 'p2.id','discharging_port')
-                             ->get();
-        return Response::json(Email::orderBy('date','desc')->select('email.*'));
+       
+        return ;
     }
 
     /**
