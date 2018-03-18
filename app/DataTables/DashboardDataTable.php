@@ -169,7 +169,7 @@ class DashboardDataTable extends DataTable
 
         }
         if($this->request()->get('range')){
-            $cargo->having('range','<=',$this->request()->get('range'));
+            $cargo->orHaving('range','<=',$this->request()->get('range'));
         }
 
         return $this->applyScopes($cargo);
