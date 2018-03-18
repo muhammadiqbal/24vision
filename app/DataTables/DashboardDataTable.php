@@ -95,7 +95,7 @@ class DashboardDataTable extends DataTable
                 }               
             })
            ->editColumn('laycan_first_day', function(Cargo $cargo){
-                if ($cargo->laycan_first_day_manual == null){
+                if ($cargo->laycan_first_day == null){
                     return null;
                 }elseif($cargo->laycan_first_day_manual) {
                     return '<b style=\'color:red;\'>'.date('d-m-Y',strtotime($cargo->laycan_first_day)).'</b>';
@@ -106,7 +106,7 @@ class DashboardDataTable extends DataTable
                 }               
             })
             ->editColumn('laycan_last_day', function(Cargo $cargo){
-                if ($cargo->laycan_first_day_manual == null){
+                if ($cargo->laycan_last_day == null){
                     return null;
                 }elseif($cargo->laycan_last_day_manual) {
                     return '<b style=\'color:red;\'>'.date('d-m-Y',strtotime($cargo->laycan_last_day)).'</b>';
