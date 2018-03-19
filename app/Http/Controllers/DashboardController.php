@@ -37,7 +37,7 @@ class DashboardController extends Controller
         $this->middleware('auth');
     }
 
-    public function testing()
+    public function testing(Request $request)
     {
 
         DB::enableQueryLog();
