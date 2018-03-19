@@ -41,7 +41,7 @@ class DashboardController extends Controller
     {
 
         DB::connection('mysql')->enableQueryLog();
-        $cargo = DB::table('cargo')->select(['cargos.*',
+        $cargo = DB::table('cargos')->select(['cargos.*',
                                       'cargo_status.name as status',
                                       'cargo_types.name as type',
                                       'p1.name as load_port',
