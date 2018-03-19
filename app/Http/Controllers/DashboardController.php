@@ -75,7 +75,7 @@ class DashboardController extends Controller
             });
         }
 
-        return print_r(DB::getQueryLog());
+        return DB::getQueryLog();
 
         $ports = Port::all();
         $zones = Zone::all();
