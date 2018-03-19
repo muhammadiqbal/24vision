@@ -157,7 +157,7 @@ class DashboardDataTable extends DataTable
                             ->where(function($q){
                                 if($this->request()->get('range')){
                                     $q->where('loading_port',$this->port->id);
-                                    $q->orHaving('range','<=',$this->request()->get('range'));
+                                    $q->orHaving('range','g<=',$this->request()->get('range'));
                                 }
                             });
                             ->where('quantity','<=',  $this->remaining_tonage)
