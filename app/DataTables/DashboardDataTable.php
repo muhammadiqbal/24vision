@@ -141,6 +141,7 @@ class DashboardDataTable extends DataTable
      */
     public function query()
     {
+        DB::connection('mysql')->enableQueryLog();
         $cargo = Cargo::select(['cargos.*',
                                       'cargo_status.name as status',
                                       'cargo_types.name as type',
