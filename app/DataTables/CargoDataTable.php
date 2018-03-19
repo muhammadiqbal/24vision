@@ -101,7 +101,7 @@ class CargoDataTable extends DataTable
                         ->leftjoin('loading_discharging_rate_type as disch_type', 'cargos.discharging_rate_type','disch_type.id')
                         ->leftjoin('ports as p1', 'p1.id','loading_port')
                         ->leftjoin('ports as p2', 'p2.id','discharging_port')
-                        ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port', 'load_type.name as l_type', 'disch_type.name as d_type');
+                        ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port', 'load_type.name as l_type', 'disch_type.name as d_type')
                         ->orderBy('email_id','desc');
 
         if($this->request()->get('laycan_first_day')){
