@@ -52,7 +52,7 @@ class DashboardController extends Controller
                                     ])
                             ->leftjoin('cargo_status', 'cargos.status_id','cargo_status.id')
                             ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
-                            ->leftjoin('ports as p1', 'p1.id','loading_port')
+                            ->leftjoin('ports s p1', 'p1.id','loading_port')
                             ->leftjoin('ports as p2', 'p2.id','discharging_port')
                             ->where(function($q) use ($request){
                                 $q->where('loading_port','31');
