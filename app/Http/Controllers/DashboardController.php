@@ -74,7 +74,7 @@ class DashboardController extends Controller
                 $q->orWhere(function(){
                     $q->whereDate('laycan_first_day','<=',$request->input('date_of_opening'));
                     $q->whereNull('laycan_last_day');
-                })
+                });
                 
             });
         }
