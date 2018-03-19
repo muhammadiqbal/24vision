@@ -56,8 +56,8 @@ class DashboardController extends Controller
                             ->leftjoin('ports as p2', 'p2.id','discharging_port')
                             ->where(function($q){
                                 $q->where('loading_port','31');
-                                if($this->request()->get('range')){
-                                    $q->orHaving('range','<=',$request>get('range'));
+                                if($request->input('range')){
+                                    $q->orHaving('range','<=',$request>ginput'range'));
                                 }
                             })
                             ->where('quantity','<=',  '1234')
@@ -65,12 +65,12 @@ class DashboardController extends Controller
                             ->having('draft','<=','12345');
 
         if($this->request()->get('cargo_status')){
-            $cargo->whereIn('cargos.status_id', $request->get('cargo_status'));
+            $cargo->whereIn('cargos.status_id', $request->input('cargo_status'));
         }
         if($this->request()->get('date_of_opening')){
             $cargo->where(function($q){
-                $q->whereDate('laycan_first_day','<=',$request->get('date_of_opening'));
-                $q->whereDate('laycan_last_day','>=',$request->get('date_of_opening'));
+                $q->whereDate('laycan_first_day','<=',$request->input('date_of_opening'));
+                $q->whereDate('laycan_last_day','>=',$request->input('date_of_opening'));
                 $q->orWhereNull('laycan_last_day');
             });
         }
