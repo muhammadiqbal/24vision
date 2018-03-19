@@ -57,7 +57,7 @@ class DashboardController extends Controller
                             ->where(function($q) use ($request){
                                 $q->where('loading_port','31');
                                 if($request->input('range')){
-                                    $q->orHaving('range','<=',$request>input('range'));
+                                    $q->orHaving('range','<=',$request->input('range'));
                                 }
                             })
                             ->where('quantity','<=',  '1234')
