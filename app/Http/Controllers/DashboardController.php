@@ -39,7 +39,7 @@ class DashboardController extends Controller
 
     public function testing()
     {
-        DB::connection('mysql')->enableQueryLog();
+        DB::enableQueryLog();
         $cargo = Cargo::select(['cargos.*',
                                       'cargo_status.name as status',
                                       'cargo_types.name as type',
@@ -74,7 +74,7 @@ class DashboardController extends Controller
             });
         }
 
-        return DB::connection('mysql')->getQueryLog();
+        return print_r(DB::getQueryLog());
 
         $ports = Port::all();
         $zones = Zone::all();
