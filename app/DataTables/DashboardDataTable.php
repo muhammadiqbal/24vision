@@ -154,7 +154,12 @@ class DashboardDataTable extends DataTable
                             ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
                             ->leftjoin('ports as p1', 'p1.id','loading_port')
                             ->leftjoin('ports as p2', 'p2.id','discharging_port')
-                            ->where('loading_port',$this->port->id)
+                            ->where(function($q){
+                                if($this->request()->get('range')){
+                                    $q->where('loading_port',$this->port->id);
+                                    $q->orHaving('range','<=',$this->request()->get('range'));
+                                }
+                            });
                             ->where('quantity','<=',  $this->remaining_tonage)
                             ->having('size','<=',$this->remaining_size)
                             ->having('draft','<=',$this->remaining_draft);
@@ -163,15 +168,12 @@ class DashboardDataTable extends DataTable
             $cargo->whereIn('cargos.status_id', $this->request()->get('cargo_status'));
         }
         if($this->request()->get('date_of_opening')){
-            $cargo->whereDate('laycan_first_day','<=',$this->request()->get('date_of_opening'))
-                  ->whereDate('laycan_last_day','>=',$this->request()->get('date_of_opening'))
-                  ->orWhereNull('laycan_last_day');
-
+            $cargo->where(function($q){
+                $q->whereDate('laycan_first_day','<=',$this->request()->get('date_of_opening'));
+                $q->whereDate('laycan_last_day','>=',$this->request()->get('date_of_opening'));
+                $q->orWhereNull('laycan_last_day');
+            });
         }
-        if($this->request()->get('range')){
-            $cargo->orHaving('range','<=',$this->request()->get('range'));
-        }
-
         return $this->applyScopes($cargo);
     }
 
