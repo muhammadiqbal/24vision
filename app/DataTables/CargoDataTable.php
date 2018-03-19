@@ -102,7 +102,7 @@ class CargoDataTable extends DataTable
                         ->leftjoin('ports as p1', 'p1.id','loading_port')
                         ->leftjoin('ports as p2', 'p2.id','discharging_port')
                         ->select('cargos.*','cargo_status.name as status','cargo_types.name as type', 'p1.name as load_port', 'p2.name as disch_port', 'load_type.name as l_type', 'disch_type.name as d_type');
-                        // ->orerBy('email_id','desc');
+                        ->orderBy('email_id','desc');
 
         if($this->request()->get('laycan_first_day')){
             $cargos->where('laycan_first_day','<=',$this->request()->get('laycan_first_day' ));
