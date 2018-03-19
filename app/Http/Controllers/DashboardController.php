@@ -46,31 +46,31 @@ class DashboardController extends Controller
                                       'cargo_types.name as type',
                                       'p1.name as load_port',
                                       'p2.name as disch_port',
-                                      DB::raw('(quantity / '.$this->ship->dwcc.')*'.$this->ship->max_laden_draft - $this->ship->ballast_draft.' AS draft'),
+                                      DB::raw('(quantity / 12)* 23 AS draft'),
                                       DB::raw('quantity * cargo_types.stowage_factor AS size'),
-                                      DB::raw('ST_Distance(POINT('.$this->port->latitude.','.$this->port->longitude.'), POINT(p1.latitude,p1.longitude)) AS \'range\'' )
+                                      DB::raw('ST_Distance(POINT(66,32), POINT(p1.latitude,p1.longitude)) AS \'range\'' )
                                     ])
                             ->leftjoin('cargo_status', 'cargos.status_id','cargo_status.id')
                             ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
                             ->leftjoin('ports as p1', 'p1.id','loading_port')
                             ->leftjoin('ports as p2', 'p2.id','discharging_port')
                             ->where(function($q){
-                                $q->where('loading_port',$this->port->id);
+                                $q->where('loading_port','31');
                                 if($this->request()->get('range')){
-                                    $q->orHaving('range','<=',$this->request()->get('range'));
+                                    $q->orHaving('range','<=',$request>get('range'));
                                 }
                             })
-                            ->where('quantity','<=',  $this->remaining_tonage)
-                            ->having('size','<=',$this->remaining_size)
-                            ->having('draft','<=',$this->remaining_draft);
+                            ->where('quantity','<=',  '1234')
+                            ->having('size','<=','1234')
+                            ->having('draft','<=','12345');
 
         if($this->request()->get('cargo_status')){
-            $cargo->whereIn('cargos.status_id', $this->request()->get('cargo_status'));
+            $cargo->whereIn('cargos.status_id', $request->get('cargo_status'));
         }
         if($this->request()->get('date_of_opening')){
             $cargo->where(function($q){
-                $q->whereDate('laycan_first_day','<=',$this->request()->get('date_of_opening'));
-                $q->whereDate('laycan_last_day','>=',$this->request()->get('date_of_opening'));
+                $q->whereDate('laycan_first_day','<=',$request->get('date_of_opening'));
+                $q->whereDate('laycan_last_day','>=',$request->get('date_of_opening'));
                 $q->orWhereNull('laycan_last_day');
             });
         }
