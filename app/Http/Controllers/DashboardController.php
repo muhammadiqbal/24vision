@@ -39,6 +39,7 @@ class DashboardController extends Controller
 
     public function testing()
     {
+
         DB::enableQueryLog();
         $cargo = DB::table('cargo')->select(['cargos.*',
                                       'cargo_status.name as status',
