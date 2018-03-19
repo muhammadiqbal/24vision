@@ -40,7 +40,7 @@ class DashboardController extends Controller
     public function testing(Request $request)
     {
 
-        DB::enableQueryLog();
+        DB::connection('mysql')->enableQueryLog();
         $cargo = DB::table('cargo')->select(['cargos.*',
                                       'cargo_status.name as status',
                                       'cargo_types.name as type',
@@ -52,7 +52,7 @@ class DashboardController extends Controller
                                     ])
                             ->leftjoin('cargo_status', 'cargos.status_id','cargo_status.id')
                             ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
-                            ->leftjoin('ports s p1', 'p1.id','loading_port')
+                            ->leftjoin('ports as p1', 'p1.id','loading_port')
                             ->leftjoin('ports as p2', 'p2.id','discharging_port')
                             ->where(function($q) use ($request){
                                 $q->where('loading_port','31');
@@ -75,32 +75,32 @@ class DashboardController extends Controller
             });
         }
 
-        return DB::getQueryLog();
+        print_r(DB::connection('mysql')->getQueryLog());
 
-        $ports = Port::all();
-        $zones = Zone::all();
+        // $ports = Port::all();
+        // $zones = Zone::all();
 
-        foreach ($ports as $port) {
-          if ($port->zone_id ==null){
-            foreach ($zones as $zone) {
-              $zonePoints = $zone->zonePoints;
-              $polyCoordinate = array();
-              foreach ($zonePoints as $zonePoint) {
-                array_push($polyCoordinate, [$port->latitude, $port->longitude]);
-              }
-              $polygon = new Polygon($polyCoordinate);
+        // foreach ($ports as $port) {
+        //   if ($port->zone_id ==null){
+        //     foreach ($zones as $zone) {
+        //       $zonePoints = $zone->zonePoints;
+        //       $polyCoordinate = array();
+        //       foreach ($zonePoints as $zonePoint) {
+        //         array_push($polyCoordinate, [$port->latitude, $port->longitude]);
+        //       }
+        //       $polygon = new Polygon($polyCoordinate);
 
-              if ($port->latitude && $port->longitude && $polygon->pointInPolygon(new Coordinate([$port->latitude, $port->longitude]))) {
-                 $port->update(['zone_id'=>$zone->id]);
-                 break;
-              }
-            }
-          }
-        }
+        //       if ($port->latitude && $port->longitude && $polygon->pointInPolygon(new Coordinate([$port->latitude, $port->longitude]))) {
+        //          $port->update(['zone_id'=>$zone->id]);
+        //          break;
+        //       }
+        //     }
+        //   }
+        // }
 
 
        
-        return ;
+        // return ;
     }
 
     /**
