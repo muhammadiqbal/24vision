@@ -157,9 +157,7 @@ class DashboardDataTable extends DataTable
                             ->leftjoin('ports as p2', 'p2.id','discharging_port')
                             ->where(function($q){
                                 $q->where('loading_port',$this->port->id);
-                                if($this->request()->get('range')){
-                                    $q->orHaving('range','<=',$this->request()->get('range'));
-                                }
+                                $q->orHaving('range','<=',$this->request()->get('range'));
                             })
                             ->where('quantity','<=',  $this->remaining_tonage)
                             ->having('size','<=',$this->remaining_size)
@@ -172,7 +170,10 @@ class DashboardDataTable extends DataTable
             $cargo->where(function($q){
                 $q->whereDate('laycan_first_day','<=',$this->request()->get('date_of_opening'));
                 $q->whereDate('laycan_last_day','>=',$this->request()->get('date_of_opening'));
-                $q->orWhereNull('laycan_last_day');
+                $q->orWhere(function($q){
+                    $q->whereDate('laycan_first_day','<=',$this->request()->get('date_of_opening'));
+                    $q->whereNull('laycan_last_day');
+                })
             });
         }
         return $this->applyScopes($cargo);

@@ -71,7 +71,11 @@ class DashboardController extends Controller
             $cargo->where(function($q) use ($request){
                 $q->whereDate('laycan_first_day','<=',$request->input('date_of_opening'));
                 $q->whereDate('laycan_last_day','>=',$request->input('date_of_opening'));
-                $q->orWhereNull('laycan_last_day');
+                $q->orWhere(function(){
+                    $q->whereDate('laycan_first_day','<=',$request->input('date_of_opening'));
+                    $q->whereNull('laycan_last_day');
+                })
+                
             });
         }
         $cargo->get();
