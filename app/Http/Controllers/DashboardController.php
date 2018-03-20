@@ -55,10 +55,10 @@ class DashboardController extends Controller
                             ->leftjoin('ports as p1', 'p1.id','loading_port')
                             ->leftjoin('ports as p2', 'p2.id','discharging_port')
                      //       ->where('loading_port','31')
-                            ->having('range','<=',$request->input('range'))
                             ->where('quantity','<=',  '1234')
                             ->having('size','<=','1234')
                             ->having('draft','<=','12345');
+                            ->having('range','<=',$request->input('range'))
 
         if($request->input('cargo_status')){
             $cargo->whereIn('cargos.status_id', $request->input('cargo_status'));
