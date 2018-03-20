@@ -145,7 +145,7 @@ class DashboardDataTable extends DataTable
      */
     public function query()
     {
-        DB::connection('mysql')->enableQueryLog();
+
         $cargo = Cargo::select(['cargos.*',
                                       'cargo_status.name as status',
                                       'cargo_types.name as type',
@@ -209,8 +209,7 @@ class DashboardDataTable extends DataTable
                              'pdf',
                          ],
                     ],
-                    'colvis',
-                    'initComplete'=>'alert('.dd(DB::connection('mysql')->getQueryLog()).');',
+                    'colvis'
                 ],
             ]);
     }
