@@ -155,11 +155,9 @@ class DashboardDataTable extends DataTable
                             ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
                             ->leftjoin('ports as p1', 'p1.id','loading_port')
                             ->leftjoin('ports as p2', 'p2.id','discharging_port')
-                            ->where(function($q){
-                                $q->where('loading_port',$this->port->id);
-                                $q->orHaving('range','<=',$this->request()->get('range'));
-                            })
-                            ->where('quantity','<=',  $this->remaining_tonage)
+                            //->where('loading_port',$this->port->id);
+                            ->having('range','<=',$this->request()->get('range')? $this->request()->get('range'):0);
+                            ->where('quantity','<=', $this->remaining_tonage)
                             ->having('size','<=',$this->remaining_size)
                             ->having('draft','<=',$this->remaining_draft);
 
