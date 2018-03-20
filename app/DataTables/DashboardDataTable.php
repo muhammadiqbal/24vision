@@ -164,23 +164,23 @@ class DashboardDataTable extends DataTable
                             ->where('quantity','<=', $this->remaining_tonage)
                             ->having('size','<=',$this->remaining_size)
                             ->having('draft','<=',$this->remaining_draft);
-                            //->havingRaw('(ranges<='.$this->range.' or loading_port ='.$this->port->id.')');
+                            ->havingRaw('(ranges<='.$this->range.' or loading_port ='.$this->port->id.')');
 
         if($this->request()->get('cargo_status')){
             $cargo->whereIn('cargos.status_id', $this->request()->get('cargo_status'));
         }
-        if($this->request()->get('date_of_opening')){
-            $cargo->where(function($q){
-                $q->where(function($q){
-                    $q->whereDate('laycan_first_day','<=',$this->request()->get('date_of_opening'));
-                    $q->whereDate('laycan_last_day','>=',$this->request()->get('date_of_opening'));
-                });
-                $q->orWhere(function($q){
-                    $q->whereDate('laycan_first_day','<=',$this->request()->get('date_of_opening'));
-                    $q->whereNull('laycan_last_day');
-                });
-            });
-        }
+        // if($this->request()->get('date_of_opening')){
+        //     $cargo->where(function($q){
+        //         $q->where(function($q){
+        //             $q->whereDate('laycan_first_day','<=',$this->request()->get('date_of_opening'));
+        //             $q->whereDate('laycan_last_day','>=',$this->request()->get('date_of_opening'));
+        //         });
+        //         $q->orWhere(function($q){
+        //             $q->whereDate('laycan_first_day','<=',$this->request()->get('date_of_opening'));
+        //             $q->whereNull('laycan_last_day');
+        //         });
+        //     });
+        // }
         return $this->applyScopes($cargo);
     }
 
