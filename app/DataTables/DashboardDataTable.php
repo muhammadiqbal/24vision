@@ -156,7 +156,7 @@ class DashboardDataTable extends DataTable
                             ->leftjoin('cargo_status', 'cargos.status_id','cargo_status.id')
                             ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
                             ->leftjoin('ports as p1', 'p1.id','loading_port')
-                            ->leftjoin('ports as p2', 'p2.id','discharging_port');
+                            ->leftjoin('ports as p2', 'p2.id','discharging_port')
                             ->where('quantity','<=', $this->remaining_tonage)
                             ->having('size','<=',$this->remaining_size)
                             ->having('draft','<=',$this->remaining_draft)
@@ -207,7 +207,8 @@ class DashboardDataTable extends DataTable
                              'pdf',
                          ],
                     ],
-                    'colvis'
+                    'colvis',
+                    'initComplete'=>'alert('.dd(DB::connection('mysql')->getQueryLog()).');',
                 ],
             ]);
     }
