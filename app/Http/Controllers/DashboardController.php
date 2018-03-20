@@ -64,7 +64,7 @@ class DashboardController extends Controller
         if($request->input('cargo_status')){
             $cargo->whereIn('cargos.status_id', $request->input('cargo_status'));
         }
-         if($this->request()->get('date_of_opening')){
+         if($request->input('date_of_opening')){
             $cargo->where(function($q){
                 $q->where(function($q){
                     $q->whereDate('laycan_first_day','<=',$request->input('date_of_opening'));
