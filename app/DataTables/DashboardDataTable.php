@@ -4,6 +4,7 @@ use App\Models\Cargo;
 use App\Models\Ship;
 use App\Models\Port;
 use Yajra\DataTables\Services\DataTable;
+use DB;
 
 
 class DashboardDataTable extends DataTable
@@ -144,6 +145,7 @@ class DashboardDataTable extends DataTable
      */
     public function query()
     {
+        DB::connection('mysql')->enableQueryLog();
         $cargo = Cargo::select(['cargos.*',
                                       'cargo_status.name as status',
                                       'cargo_types.name as type',
