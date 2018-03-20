@@ -40,42 +40,42 @@ class DashboardController extends Controller
     public function testing(Request $request)
     {
 
-        DB::connection('mysql')->enableQueryLog();
-        $cargo = DB::table('cargos')->select(['cargos.*',
-                                      'cargo_status.name as status',
-                                      'cargo_types.name as type',
-                                      'p1.name as load_port',
-                                      'p2.name as disch_port',
-                                      DB::raw('(quantity / 12)* 23 AS draft'),
-                                      DB::raw('quantity * cargo_types.stowage_factor AS size'),
-                                      DB::raw('ST_Distance(POINT(66,32), POINT(p1.latitude,p1.longitude)) AS \'range\'' )
-                                    ])
-                            ->leftjoin('cargo_status', 'cargos.status_id','cargo_status.id')
-                            ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
-                            ->leftjoin('ports as p1', 'p1.id','loading_port')
-                            ->leftjoin('ports as p2', 'p2.id','discharging_port')
-                     //       ->where('loading_port','31')
-                            ->where('quantity','<=',  '1234')
-                            ->having('size','<=','1234')
-                            ->having('draft','<=','12345');
-                            ->having('range','<=',$request->input('range'))
+        // DB::connection('mysql')->enableQueryLog();
+        // $cargo = DB::table('cargos')->select(['cargos.*',
+        //                               'cargo_status.name as status',
+        //                               'cargo_types.name as type',
+        //                               'p1.name as load_port',
+        //                               'p2.name as disch_port',
+        //                               DB::raw('(quantity / 12)* 23 AS draft'),
+        //                               DB::raw('quantity * cargo_types.stowage_factor AS size'),
+        //                               DB::raw('ST_Distance(POINT(66,32), POINT(p1.latitude,p1.longitude)) AS \'range\'' )
+        //                             ])
+        //                     ->leftjoin('cargo_status', 'cargos.status_id','cargo_status.id')
+        //                     ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
+        //                     ->leftjoin('ports as p1', 'p1.id','loading_port')
+        //                     ->leftjoin('ports as p2', 'p2.id','discharging_port')
+        //              //       ->where('loading_port','31')
+        //                     ->where('quantity','<=',  '1234')
+        //                     ->having('size','<=','1234')
+        //                     ->having('draft','<=','12345');
+        //                     ->having('range','<=',$request->input('range'))
 
-        if($request->input('cargo_status')){
-            $cargo->whereIn('cargos.status_id', $request->input('cargo_status'));
-        }
-        if($request->input('date_of_opening')){
-            $cargo->where(function($q) use ($request){
-                $q->whereDate('laycan_first_day','<=',$request->input('date_of_opening'));
-                $q->whereDate('laycan_last_day','>=',$request->input('date_of_opening'));
-                $q->orWhere(function($q) use ($request){
-                    $q->whereDate('laycan_first_day','<=',$request->input('date_of_opening'));
-                    $q->whereNull('laycan_last_day');
-                });
+        // if($request->input('cargo_status')){
+        //     $cargo->whereIn('cargos.status_id', $request->input('cargo_status'));
+        // }
+        // if($request->input('date_of_opening')){
+        //     $cargo->where(function($q) use ($request){
+        //         $q->whereDate('laycan_first_day','<=',$request->input('date_of_opening'));
+        //         $q->whereDate('laycan_last_day','>=',$request->input('date_of_opening'));
+        //         $q->orWhere(function($q) use ($request){
+        //             $q->whereDate('laycan_first_day','<=',$request->input('date_of_opening'));
+        //             $q->whereNull('laycan_last_day');
+        //         });
                 
-            });
-        }
-        $cargo->get();
-        dd(DB::connection('mysql')->getQueryLog());
+        //     });
+        // }
+        // $cargo->get();
+        // dd(DB::connection('mysql')->getQueryLog());
 
         /* port zone assignment//
         // $ports = Port::all();
