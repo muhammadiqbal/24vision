@@ -162,7 +162,7 @@ class DashboardDataTable extends DataTable
                             ->whereNotNull('loading_port')
                             ->having('size','<=',$this->remaining_size)
                             ->having('draft','<=',$this->remaining_draft);
-                            //->havingRaw('(\'ranges\' <='.$this->range.' or loading_port ='.$this->port->id.')');
+                            ->havingRaw('(\'ranges\' <='.$this->range.' or loading_port ='.$this->port->id.')');
  
         if($this->request()->get('cargo_status')){
             $cargo->whereIn('cargos.status_id', $this->request()->get('cargo_status'));
@@ -230,6 +230,7 @@ class DashboardDataTable extends DataTable
             'ntce' => ['defaultContent'=>$this->null, 'name'=>'', 'data'=>'ntce',  'title'=>'ntce','title'=>'ntce'],
             'gross_rate' => ['defaultContent'=>$this->null, 'name'=>'', 'data'=>'gross_rate', 'title'=>'gross_rate','title'=>'gross_rate'],
             'status_id' => ['defaultContent' => $this->null,'name' => 'status', 'data' => 'status','title'=>'status_id','searchable'=> false],
+            'range' => ['defaultContent'=>$this->null, 'name'=>'range', 'data'=>'range', 'title'=>'range'],
         ];
     }
 
