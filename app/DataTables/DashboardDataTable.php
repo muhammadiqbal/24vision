@@ -53,7 +53,7 @@ class DashboardDataTable extends DataTable
     public function ajax()
     { 
         return datatables()
-            ->of($this->query()) //change this to collection apply the bdi set in query
+            ->eloquent($this->query()) //change this to collection apply the bdi set in query
             ->addColumn('action', function(Cargo $cargo) {
                     $ship = $this->ship;
                     $port = $this->port;
@@ -158,13 +158,11 @@ class DashboardDataTable extends DataTable
                             ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
                             ->leftjoin('ports as p1', 'p1.id','loading_port')
                             ->leftjoin('ports as p2', 'p2.id','discharging_port')
-                            ->where('quantity','<=', $this->remaining_tonage)
                             ->whereNotNull('loading_port')
+                            ->where('quantity','<=', $this->remaining_tonage)
                             ->having('size','<=',$this->remaining_size)
                             ->having('draft','<=',$this->remaining_draft)
                             ->having('ranges','<=',$this->range);
-                            //->havingRaw('(\'ranges\' <='.$this->range.' or loading_port ='.$this->port->id.')');
- 
         if($this->request()->get('cargo_status')){
             $cargo->whereIn('cargos.status_id', $this->request()->get('cargo_status'));
         }
