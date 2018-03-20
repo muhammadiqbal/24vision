@@ -159,6 +159,7 @@ class DashboardDataTable extends DataTable
                             ->leftjoin('ports as p1', 'p1.id','loading_port')
                             ->leftjoin('ports as p2', 'p2.id','discharging_port')
                             ->where('quantity','<=', $this->remaining_tonage)
+                            ->whereNotNull('loading_port')
                             ->having('size','<=',$this->remaining_size)
                             ->having('draft','<=',$this->remaining_draft)
                             ->havingRaw('(\'ranges\' <='.$this->range.' or loading_port ='.$this->port->id.')');
