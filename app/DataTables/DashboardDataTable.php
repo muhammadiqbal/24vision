@@ -209,7 +209,8 @@ class DashboardDataTable extends DataTable
                              'pdf',
                          ],
                     ],
-                    'colvis'
+                    'colvis',
+                    'initComplete' => 'alert('.dd($this->query()).');'
                 ],
             ]);
     }
