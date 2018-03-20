@@ -54,7 +54,7 @@ class DashboardController extends Controller
                             ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
                             ->leftjoin('ports as p1', 'p1.id','loading_port')
                             ->leftjoin('ports as p2', 'p2.id','discharging_port')
-                            ->where('loading_port','31')
+                     //       ->where('loading_port','31')
                             ->having('range','<=',$request->input('range'))
                             ->where('quantity','<=',  '1234')
                             ->having('size','<=','1234')
@@ -77,6 +77,7 @@ class DashboardController extends Controller
         $cargo->get();
         dd(DB::connection('mysql')->getQueryLog());
 
+        /* port zone assignment//
         // $ports = Port::all();
         // $zones = Zone::all();
 
@@ -97,9 +98,7 @@ class DashboardController extends Controller
         //     }
         //   }
         // }
-
-
-       
+        /**END of Port zone assignment**/
         // return ;
     }
 
@@ -122,6 +121,7 @@ class DashboardController extends Controller
         $remainingDraft = 0;
         $remainingTonnage = 0;
 
+        $range = $request->input('range',0);
         $occupied_size = $request->input('occupied_size',0);
         $occupied_tonage = $request->input('occupied_tonage',0);
         $date_of_opening = $request->input('date_of_opening',date('d-m-Y'));
@@ -165,6 +165,7 @@ class DashboardController extends Controller
                                   ->forShip($selectedShip)
                                   ->forPort($port)
                                   ->forDateOfOpening($date_of_opening)
+                                  ->forRange($range)
                                   ->render('calculator.index',
                                             ['ships'=>$ships, 
                                              'ports'=>$ports,

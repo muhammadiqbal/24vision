@@ -18,6 +18,7 @@ class DashboardDataTable extends DataTable
     protected $port;
     protected $date_of_opening;
     protected $null = '<b style=\'color:blue;\'>NULL</b>';
+    protected $range;
 
     public function forShip(Ship $ship){
         $this->ship = $ship;
@@ -42,7 +43,12 @@ class DashboardDataTable extends DataTable
     public function forRemainingDraft($remaining_draft){
         $this->remaining_draft = $remaining_draft;
         return $this;
-    }    
+    }  
+    public function forRange(){
+        $this->range = $range;
+        return $this;
+    }  
+
     /**
      * @return \Illuminate\Http\JsonResponse
      */
@@ -156,10 +162,13 @@ class DashboardDataTable extends DataTable
                             ->leftjoin('ports as p1', 'p1.id','loading_port')
                             ->leftjoin('ports as p2', 'p2.id','discharging_port')
                             //->where('loading_port',$this->port->id);
-                            ->having('range','<=',$this->request()->get('range')? $this->request()->get('range'):0)
                             ->where('quantity','<=', $this->remaining_tonage)
                             ->having('size','<=',$this->remaining_size)
-                            ->having('draft','<=',$this->remaining_draft);
+                            ->having('draft','<=',$this->remaining_draft)
+                            ->having(functon($q){
+                                $q->having('range','<=',$this->range);
+                                $q->orHaving('load_port','=',$this->port->id);
+                            });
 
         if($this->request()->get('cargo_status')){
             $cargo->whereIn('cargos.status_id', $this->request()->get('cargo_status'));
