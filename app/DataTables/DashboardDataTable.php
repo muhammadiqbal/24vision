@@ -210,7 +210,6 @@ class DashboardDataTable extends DataTable
                          ],
                     ],
                     'colvis',
-                    'initComplete' => 'alert('.dd($this->query()).');'
                 ],
             ]);
     }
