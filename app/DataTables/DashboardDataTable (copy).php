@@ -234,17 +234,17 @@ class DashboardDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'cargo_type_id' => ['defaultContent' => $this->null,'name' => 'type', 'data' => 'type','title'=>'cargo_type_id','searchable'=> false],
-            'quantity' => ['defaultContent' => $this->null,'name' => 'quantity', 'data' => 'quantity','title'=>'quantity'],
-            'laycan_first_day' => ['defaultContent' => $this->null,'name' => 'laycan_first_day', 'data' => 'laycan_first_day','title'=>'laycan_first_day'],
-            'laycan_last_day' => ['defaultContent' => $this->null,'name' => 'laycan_last_day', 'data' => 'laycan_last_day','title'=>'laycan_last_day'],
-            'loading_port' => ['defaultContent' => $this->null,'name' => 'load_port', 'data' => 'load_port','title'=>'loading_port','searchable'=> false],
-            'discharging_port' => ['defaultContent' => $this->null,'name' => 'disch_port', 'data' => 'disch_port','title'=>'discharging_port','searchable'=> false],
-            'email_id' => ['defaultContent' => $this->null,'name' => 'email_id', 'data' => 'email_id','title'=>'email_id'],
-            'bdi' => ['defaultContent'=>$this->null, 'name'=>'bdi', 'data'=>'bdi', 'title'=>'bdi','title'=>'bdi'],
-            'ntce' => ['defaultContent'=>$this->null, 'name'=>'', 'data'=>'ntce',  'title'=>'ntce','title'=>'ntce'],
-            'gross_rate' => ['defaultContent'=>$this->null, 'name'=>'', 'data'=>'gross_rate', 'title'=>'gross_rate','title'=>'gross_rate'],
-            'status_id' => ['defaultContent' => $this->null,'name' => 'status', 'data' => 'status','title'=>'status_id','searchable'=> false],
+            'cargo_type_id' => ['defaultContent' => NULL,'name' => 'type', 'data' => 'type','title'=>'cargo_type_id','searchable'=> false],
+            'quantity' => ['defaultContent' => NULL,'name' => 'quantity', 'data' => 'quantity','title'=>'quantity'],
+            'laycan_first_day' => ['defaultContent' => NULL,'name' => 'laycan_first_day', 'data' => 'laycan_first_day','title'=>'laycan_first_day'],
+            'laycan_last_day' => ['defaultContent' => NULL,'name' => 'laycan_last_day', 'data' => 'laycan_last_day','title'=>'laycan_last_day'],
+            'loading_port' => ['defaultContent' => NULL,'name' => 'load_port', 'data' => 'load_port','title'=>'loading_port','searchable'=> false],
+            'discharging_port' => ['defaultContent' => NULL,'name' => 'disch_port', 'data' => 'disch_port','title'=>'discharging_port','searchable'=> false],
+            'email_id' => ['defaultContent' => NULL,'name' => 'email_id', 'data' => 'email_id','title'=>'email_id'],
+            'bdi' => ['defaultContent'=>NULL, 'name'=>'bdi', 'data'=>'bdi', 'title'=>'bdi','title'=>'bdi'],
+            'ntce' => ['defaultContent'=>NULL, 'name'=>'', 'data'=>'ntce',  'title'=>'ntce','title'=>'ntce'],
+            'gross_rate' => ['defaultContent'=>NULL, 'name'=>'', 'data'=>'gross_rate', 'title'=>'gross_rate','title'=>'gross_rate'],
+            'status_id' => ['defaultContent' => NULL,'name' => 'status', 'data' => 'status','title'=>'status_id','searchable'=> false],
         ];
     }
     /**
