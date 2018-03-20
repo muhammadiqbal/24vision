@@ -56,9 +56,7 @@ class DashboardController extends Controller
                             ->leftjoin('ports as p2', 'p2.id','discharging_port')
                             ->where(function($q) use ($request){
                                 $q->where('loading_port','31');
-                                if($request->input('range')){
-                                    $q->orHaving('range','<=',$request->input('range'));
-                                }
+                                $q->orHaving('range','<=',$request->input('range'));
                             })
                             ->where('quantity','<=',  '1234')
                             ->having('size','<=','1234')
@@ -71,7 +69,7 @@ class DashboardController extends Controller
             $cargo->where(function($q) use ($request){
                 $q->whereDate('laycan_first_day','<=',$request->input('date_of_opening'));
                 $q->whereDate('laycan_last_day','>=',$request->input('date_of_opening'));
-                $q->orWhere(function(){
+                $q->orWhere(function($q){
                     $q->whereDate('laycan_first_day','<=',$request->input('date_of_opening'));
                     $q->whereNull('laycan_last_day');
                 });
