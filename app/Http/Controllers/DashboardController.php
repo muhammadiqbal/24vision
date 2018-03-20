@@ -125,7 +125,7 @@ class DashboardController extends Controller
         $occupied_size = $request->input('occupied_size',0);
         $occupied_tonage = $request->input('occupied_tonage',0);
         $date_of_opening = $request->input('date_of_opening',date('d-m-Y'));
-        $range = $request->input('range',0);
+        $range = $request->input('range')? $request->input('range'):0;
         
         if(!$request->input('ship_id') && !$request->input('port_id')){
           return view('calculator.index_empty',compact('ships', 
