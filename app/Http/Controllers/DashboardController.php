@@ -75,6 +75,7 @@ class DashboardController extends Controller
                     $q->whereNull('laycan_last_day');
                 });
             });
+        }
         return $cargo->get();
         // dd(DB::connection('mysql')->getQueryLog());
 
