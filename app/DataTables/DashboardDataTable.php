@@ -165,7 +165,7 @@ class DashboardDataTable extends DataTable
                             ->where('quantity','<=', $this->remaining_tonage)
                             ->having('size','<=',$this->remaining_size)
                             ->having('draft','<=',$this->remaining_draft)
-                            ->having(functon($q){
+                            ->having(function($q){
                                 $q->having('range','<=',$this->range);
                                 $q->orHaving('load_port','=',$this->port->id);
                             });
