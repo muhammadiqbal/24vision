@@ -167,7 +167,7 @@ class DashboardDataTable extends DataTable
                             ->having('draft','<=',$this->remaining_draft)
                             ->having(function($q){
                                 $q->having('range','<=',$this->range);
-                                $q->orHaving('load_port','=',$this->port->id);
+                                $q->orHaving('load_port','=',(string)$this->port->id);
                             });
 
         if($this->request()->get('cargo_status')){
