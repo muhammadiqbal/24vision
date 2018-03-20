@@ -41,7 +41,7 @@ class DashboardDataTable extends DataTable
         $this->remaining_draft = $remaining_draft;
         return $this;
     }  
-    public function forRange(){
+    public function forRange($range){
         $this->range = $range;
         return $this;
     }  
