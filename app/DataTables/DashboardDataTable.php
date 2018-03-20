@@ -170,12 +170,14 @@ class DashboardDataTable extends DataTable
             $cargo->whereIn('cargos.status_id', $this->request()->get('cargo_status'));
         }
         if($this->request()->get('date_of_opening')){
-            $cargo->whereDate('laycan_first_day','<=',$this->request()->get('date_of_opening'))
-                  ->whereDate('laycan_last_day','>=',$this->request()->get('date_of_opening'))
-                  ->orWhere(function($q){
+            $cargo->where(function($q){
+                    $q->whereDate('laycan_first_day','<=',$this->request()->get('date_of_opening'));
+                    $q->whereDate('laycan_last_day','>=',$this->request()->get('date_of_opening'));
+                    $q->orWhere(function($q){
                         $q->whereDate('laycan_first_day','<=',$this->request()->get('date_of_opening'));
                         $q->whereNull('laycan_last_day');
                 });
+            });
         }
         return $this->applyScopes($cargo);
     }
@@ -207,7 +209,8 @@ class DashboardDataTable extends DataTable
                              'pdf',
                          ],
                     ],
-                    'colvis'
+                    'colvis',
+                    'initComplete' => 'alert('.dd($this->query()).');'
                 ],
             ]);
     }
