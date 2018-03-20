@@ -4,7 +4,10 @@ use App\Models\Cargo;
 use App\Models\Ship;
 use App\Models\Port;
 use Yajra\DataTables\Services\DataTable;
-
+use \League\Geotools\Geotools;
+use \League\Geotools\Coordinate\Coordinate;
+use App\Services\Calculator;
+use DB;
 
 class DashboardDataTable extends DataTable
 {
@@ -41,7 +44,7 @@ class DashboardDataTable extends DataTable
         $this->remaining_draft = $remaining_draft;
         return $this;
     }  
-    public function forRange(){
+    public function forRange($range){
         $this->range = $range;
         return $this;
     }  
@@ -52,7 +55,7 @@ class DashboardDataTable extends DataTable
     public function ajax()
     { 
         return datatables()
-            ->of($this->query()) //change this to collection apply the bdi set in query
+            ->eloquent($this->query()) //change this to collection apply the bdi set in query
             ->addColumn('action', function(Cargo $cargo) {
                     $ship = $this->ship;
                     $port = $this->port;
@@ -134,7 +137,6 @@ class DashboardDataTable extends DataTable
                 }
             })
             ->rawColumns(['action','cargo_type_id', 'quantity','laycan_first_day','laycan_last_day','loading_port','discharging_port'])
-            //->filterColumn('status', 'whereRaw', "?", ["$1"])
             ->make(true);
     }
     /**
@@ -144,41 +146,52 @@ class DashboardDataTable extends DataTable
      */
     public function query()
     {
+        // $cargo = Cargo::select(['cargos.*',
+        //                               'cargo_status.name as status',
+        //                               'cargo_types.name as type',
+        //                               'p1.name as load_port',
+        //                               'p2.name as disch_port',
+        //                               DB::raw('(quantity / '.$this->ship->dwcc.')*'.$this->ship->max_laden_draft - $this->ship->ballast_draft.' AS draft'),
+        //                               DB::raw('quantity * cargo_types.stowage_factor AS size'),
+        //                               DB::raw('ST_Distance(POINT('.$this->port->latitude.','.$this->port->longitude.'), POINT(p1.latitude,p1.longitude)) AS \'range\'' )
+        //                             ])
+        //                     ->leftjoin('cargo_status', 'cargos.status_id','cargo_status.id')
+        //                     ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
+        //                     ->leftjoin('ports as p1', 'p1.id','loading_port')
+        //                     ->leftjoin('ports as p2', 'p2.id','discharging_port')
+        //                     ->where('quantity','<=', $this->remaining_tonage)
+        //                     ->having('size','<=',$this->remaining_size)
+        //                     ->having('draft','<=',$this->remaining_draft)
+        //                     ->havingRaw('(\'range\' <='.$this->range.' or loading_port ='.$this->port->id.')');
+ 
+        // if($this->request()->get('cargo_status')){
+        //     $cargo->whereIn('cargos.status_id', $this->request()->get('cargo_status'));
+        // }
+        // if($this->request()->get('date_of_opening')){
+        //     $cargo->where(function($q){
+        //         $q->where(function($q){
+        //             $q->whereDate('laycan_first_day','<=',$this->request()->get('date_of_opening'));
+        //             $q->whereDate('laycan_last_day','>=',$this->request()->get('date_of_opening'));
+        //         });
+        //         $q->orWhere(function($q){
+        //             $q->whereDate('laycan_first_day','<=',$this->request()->get('date_of_opening'));
+        //             $q->whereNull('laycan_last_day');
+        //         });
+        //     });
+        // }
         $cargo = Cargo::select(['cargos.*',
                                       'cargo_status.name as status',
                                       'cargo_types.name as type',
                                       'p1.name as load_port',
                                       'p2.name as disch_port',
                                       DB::raw('(quantity / '.$this->ship->dwcc.')*'.$this->ship->max_laden_draft - $this->ship->ballast_draft.' AS draft'),
-                                      DB::raw('quantity * cargo_types.stowage_factor AS size'),
+                                      DB::raw('quantity * cargos.stowage_factor AS size'),
                                       DB::raw('ST_Distance(POINT('.$this->port->latitude.','.$this->port->longitude.'), POINT(p1.latitude,p1.longitude)) AS \'range\'' )
                                     ])
                             ->leftjoin('cargo_status', 'cargos.status_id','cargo_status.id')
                             ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
                             ->leftjoin('ports as p1', 'p1.id','loading_port')
-                            ->leftjoin('ports as p2', 'p2.id','discharging_port')
-                            //->where('loading_port',$this->port->id);
-                            ->where('quantity','<=', $this->remaining_tonage)
-                            ->having('size','<=',$this->remaining_size)
-                            ->having('draft','<=',$this->remaining_draft)
-                            ->having(function($q){
-                                $q->having('range','<=',$this->range);
-                                $q->orHaving('load_port','=',$this->port->id);
-                            });
-
-        if($this->request()->get('cargo_status')){
-            $cargo->whereIn('cargos.status_id', $this->request()->get('cargo_status'));
-        }
-        if($this->request()->get('date_of_opening')){
-            $cargo->where(function($q){
-                $q->whereDate('laycan_first_day','<=',$this->request()->get('date_of_opening'));
-                $q->whereDate('laycan_last_day','>=',$this->request()->get('date_of_opening'));
-                $q->orWhere(function($q){
-                    $q->whereDate('laycan_first_day','<=',$this->request()->get('date_of_opening'));
-                    $q->whereNull('laycan_last_day');
-                });
-            });
-        }
+                            ->leftjoin('ports as p2', 'p2.id','discharging_port');
         return $this->applyScopes($cargo);
     }
 
@@ -191,11 +204,11 @@ class DashboardDataTable extends DataTable
     {
         return $this->builder()
             ->columns($this->getColumns())
-            ->addAction(['width' => '15%'])
+            ->addAction(['width' => '10%'])
             ->ajax('')
             ->parameters([
                 'dom' => 'Bfrtip',
-                'scrollX' => true,
+                'scrollX' => false,
                 'buttons' => [
                     'print',
                     'reset',
