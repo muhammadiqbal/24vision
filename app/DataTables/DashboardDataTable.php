@@ -153,7 +153,7 @@ class DashboardDataTable extends DataTable
                                       DB::raw('(quantity / '.$this->ship->dwcc.')*'.$this->ship->max_laden_draft - $this->ship->ballast_draft.' AS draft'),
                                       DB::raw('quantity * cargo_types.stowage_factor AS size'),
                                       DB::raw('ST_Distance(POINT('.$this->port->latitude.','.$this->port->longitude.'), POINT(p1.latitude,p1.longitude)) AS \'ranges\'' ),
-                                      'range'
+                                      'ranges'
                                     ])
                             ->leftjoin('cargo_status', 'cargos.status_id','cargo_status.id')
                             ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
@@ -231,7 +231,7 @@ class DashboardDataTable extends DataTable
             'ntce' => ['defaultContent'=>$this->null, 'name'=>'', 'data'=>'ntce',  'title'=>'ntce','title'=>'ntce'],
             'gross_rate' => ['defaultContent'=>$this->null, 'name'=>'', 'data'=>'gross_rate', 'title'=>'gross_rate','title'=>'gross_rate'],
             'status_id' => ['defaultContent' => $this->null,'name' => 'status', 'data' => 'status','title'=>'status_id','searchable'=> false],
-            'range' => ['defaultContent'=>$this->null, 'name'=>'range', 'data'=>'range', 'title'=>'range'],
+            'range' => ['defaultContent'=>$this->null, 'name'=>'ranges', 'data'=>'ranges', 'title'=>'ranges'],
         ];
     }
 
