@@ -54,88 +54,87 @@ class DashboardDataTable extends DataTable
     { 
         return datatables()
             ->of($this->query()) //change this to collection apply the bdi set in query
-           //  ->addColumn('action', function(Cargo $cargo) {
-           //          $ship = $this->ship;
-           //          $port = $this->port;
-           //          $date_of_opening = $this->date_of_opening;
-           //          return view('calculator.datatables_actions', 
-           //              compact('cargo','ship','port','date_of_opening'))->render();
-           //  })
-           //  ->editColumn('bdi', function(Cargo $cargo){
-           //      $ship = $this->ship;
-           //      $port = $this->port;
-           //      $date_of_opening = $this->date_of_opening;
+            ->addColumn('action', function(Cargo $cargo) {
+                    $ship = $this->ship;
+                    $port = $this->port;
+                    $date_of_opening = $this->date_of_opening;
+                    return view('calculator.datatables_actions', 
+                        compact('cargo','ship','port','date_of_opening'))->render();
+            })
+            ->editColumn('bdi', function(Cargo $cargo){
+                $ship = $this->ship;
+                $port = $this->port;
+                $date_of_opening = $this->date_of_opening;
 
-           //      return '$'.round($cargo->setBdi($port, $ship, $date_of_opening),2);
-           //  })
-           //  ->addColumn('ntce', function(Cargo $cargo){
-           //      $ship = $this->ship;
-           //      $port = $this->port;
-           //      $date_of_opening = $this->date_of_opening;
+                return '$'.round($cargo->setBdi($port, $ship, $date_of_opening),2);
+            })
+            ->addColumn('ntce', function(Cargo $cargo){
+                $ship = $this->ship;
+                $port = $this->port;
+                $date_of_opening = $this->date_of_opening;
 
-           //      return '$'.round($cargo->setNtce($port, $ship, $date_of_opening),2);
-           //  })
-           //  ->addColumn('gross_rate', function(Cargo $cargo){
-           //      $ship = $this->ship;
-           //      $port = $this->port;
-           //      $date_of_opening = $this->date_of_opening;
+                return '$'.round($cargo->setNtce($port, $ship, $date_of_opening),2);
+            })
+            ->addColumn('gross_rate', function(Cargo $cargo){
+                $ship = $this->ship;
+                $port = $this->port;
+                $date_of_opening = $this->date_of_opening;
 
-           //      return '$'.round($cargo->setGrossRate($port, $ship, $date_of_opening),2);
-           //  })
-           //  ->editColumn('cargo_type_id', function(Cargo $cargo){
-           //      if ($cargo->cargo_type_id_manual) {
-           //          return '<b style=\'color:red;\'>'.$cargo->type.'</b>';
-           //      } else {                
-           //          return $cargo->type;
-           //      }               
-           //  })
-           //  ->editColumn('quantity', function(Cargo $cargo){
-           //      if ($cargo->quantity_manual) {
-           //          return '<b style=\'color:red;\'>'.$cargo->quantity.'</b>';
-           //      }elseif ($cargo->quantity_constructed) {
-           //          return '<b style=\'color:green;\'>'.$cargo->quantity.'</b>';
-           //      } else {                
-           //          return $cargo->quantity;
-           //      }               
-           //  })
-           // ->editColumn('laycan_first_day', function(Cargo $cargo){
-           //      if ($cargo->laycan_first_day == null){
-           //          return null;
-           //      }elseif($cargo->laycan_first_day_manual) {
-           //          return '<b style=\'color:red;\'>'.date('d-m-Y',strtotime($cargo->laycan_first_day)).'</b>';
-           //      }elseif ($cargo->laycan_first_day_constructed) {
-           //          return '<b style=\'color:green;\'>'.date('d-m-Y',strtotime($cargo->laycan_first_day)).'</b>';
-           //      }else {                
-           //          return date('d-m-Y',strtotime($cargo->laycan_first_day));
-           //      }               
-           //  })
-           //  ->editColumn('laycan_last_day', function(Cargo $cargo){
-           //      if ($cargo->laycan_last_day == null){
-           //          return null;
-           //      }elseif($cargo->laycan_last_day_manual) {
-           //          return '<b style=\'color:red;\'>'.date('d-m-Y',strtotime($cargo->laycan_last_day)).'</b>';
-           //      } elseif ($cargo->laycan_last_day_constructed) {
-           //          return '<b style=\'color:green;\'>'.date('d-m-Y',strtotime($cargo->laycan_last_day)).'</b>';
-           //      } else {                
-           //          return date('d-m-Y',strtotime($cargo->laycan_last_day));
-           //      }
-           //  })
-           //  ->editColumn('loading_port',function(Cargo $cargo){
-           //      if ($cargo->loading_port_manual) {
-           //          return '<b style=\'color:red;\'>'.$cargo->load_port.'</b>';
-           //      }else{
-           //          return $cargo->load_port;
-           //      }
-           //  })
-           //  ->editColumn('discharging_port',function(Cargo $cargo){
-           //      if ($cargo->discharging_port_manual) {
-           //          return '<b style=\'color:red;\'>'.$cargo->disch_port.'</b>';
-           //      }else{
-           //          return $cargo->disch_port;
-           //      }
-           //  })
-           //  ->rawColumns(['action','cargo_type_id', 'quantity','laycan_first_day','laycan_last_day','loading_port','discharging_port'])
-
+                return '$'.round($cargo->setGrossRate($port, $ship, $date_of_opening),2);
+            })
+            ->editColumn('cargo_type_id', function(Cargo $cargo){
+                if ($cargo->cargo_type_id_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->type.'</b>';
+                } else {                
+                    return $cargo->type;
+                }               
+            })
+            ->editColumn('quantity', function(Cargo $cargo){
+                if ($cargo->quantity_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->quantity.'</b>';
+                }elseif ($cargo->quantity_constructed) {
+                    return '<b style=\'color:green;\'>'.$cargo->quantity.'</b>';
+                } else {                
+                    return $cargo->quantity;
+                }               
+            })
+           ->editColumn('laycan_first_day', function(Cargo $cargo){
+                if ($cargo->laycan_first_day == null){
+                    return null;
+                }elseif($cargo->laycan_first_day_manual) {
+                    return '<b style=\'color:red;\'>'.date('d-m-Y',strtotime($cargo->laycan_first_day)).'</b>';
+                }elseif ($cargo->laycan_first_day_constructed) {
+                    return '<b style=\'color:green;\'>'.date('d-m-Y',strtotime($cargo->laycan_first_day)).'</b>';
+                }else {                
+                    return date('d-m-Y',strtotime($cargo->laycan_first_day));
+                }               
+            })
+            ->editColumn('laycan_last_day', function(Cargo $cargo){
+                if ($cargo->laycan_last_day == null){
+                    return null;
+                }elseif($cargo->laycan_last_day_manual) {
+                    return '<b style=\'color:red;\'>'.date('d-m-Y',strtotime($cargo->laycan_last_day)).'</b>';
+                } elseif ($cargo->laycan_last_day_constructed) {
+                    return '<b style=\'color:green;\'>'.date('d-m-Y',strtotime($cargo->laycan_last_day)).'</b>';
+                } else {                
+                    return date('d-m-Y',strtotime($cargo->laycan_last_day));
+                }
+            })
+            ->editColumn('loading_port',function(Cargo $cargo){
+                if ($cargo->loading_port_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->load_port.'</b>';
+                }else{
+                    return $cargo->load_port;
+                }
+            })
+            ->editColumn('discharging_port',function(Cargo $cargo){
+                if ($cargo->discharging_port_manual) {
+                    return '<b style=\'color:red;\'>'.$cargo->disch_port.'</b>';
+                }else{
+                    return $cargo->disch_port;
+                }
+            })
+            ->rawColumns(['action','cargo_type_id', 'quantity','laycan_first_day','laycan_last_day','loading_port','discharging_port'])
             ->make(true);
     }
     /**
