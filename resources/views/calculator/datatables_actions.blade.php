@@ -4,9 +4,11 @@
         <i class="glyphicon glyphicon-search"></i>
     </a>
     
+    @if(isset($cargo->email_id))
     <a href="{{url('/emails/'.$cargo->email_id)}}"  target="_blank" class='btn btn-default btn-xs' data-toggle="tooltip" title="View Mail">
         <i class="glyphicon glyphicon-envelope"></i>
     </a>
+    @endif
     
     <a class='btn btn-default btn-xs' data-toggle="tooltip" title="forward to VMS">
         <i class="glyphicon glyphicon-share-alt"></i>
