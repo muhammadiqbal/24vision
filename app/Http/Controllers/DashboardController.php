@@ -57,7 +57,7 @@ class DashboardController extends Controller
                      //       ->where('loading_port','31')
                             ->where('quantity','<=',  '1234')
                             ->having('size','<=','1234')
-                            ->having('draft','<=','12345');
+                            ->having('draft','<=','12345')
                             //->having('range','<=',$request->input('range'))
                             ->havingRaw('(\'range\' <='.$request->input('range').' or loading_port =4)');
 
