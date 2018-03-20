@@ -52,7 +52,7 @@ class DashboardDataTable extends DataTable
     public function ajax()
     { 
         return datatables()
-            ->eleoquent($this->query()) //change this to collection apply the bdi set in query
+            ->of($this->query()) //change this to collection apply the bdi set in query
            //  ->addColumn('action', function(Cargo $cargo) {
            //          $ship = $this->ship;
            //          $port = $this->port;
@@ -211,6 +211,7 @@ class DashboardDataTable extends DataTable
                 ],
             ]);
     }
+
     /**
      * Get columns.
      *
@@ -219,19 +220,20 @@ class DashboardDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'cargo_type_id' => ['defaultContent' => null,'name' => 'type', 'data' => 'type','title'=>'cargo_type_id','searchable'=> false],
-            'quantity' => ['defaultContent' => null,'name' => 'quantity', 'data' => 'quantity','title'=>'quantity'],
-            'laycan_first_day' => ['defaultContent' => null,'name' => 'laycan_first_day', 'data' => 'laycan_first_day','title'=>'laycan_first_day'],
-            'laycan_last_day' => ['defaultContent' => null,'name' => 'laycan_last_day', 'data' => 'laycan_last_day','title'=>'laycan_last_day'],
-            'loading_port' => ['defaultContent' => null,'name' => 'load_port', 'data' => 'load_port','title'=>'loading_port','searchable'=> false],
-            'discharging_port' => ['defaultContent' => null,'name' => 'disch_port', 'data' => 'disch_port','title'=>'discharging_port','searchable'=> false],
-            'email_id' => ['defaultContent' => null,'name' => 'email_id', 'data' => 'email_id','title'=>'email_id'],
-            'bdi' => ['defaultContent'=>null, 'name'=>'bdi', 'data'=>'bdi', 'title'=>'bdi','title'=>'bdi'],
-            'ntce' => ['defaultContent'=>null, 'name'=>'', 'data'=>'ntce',  'title'=>'ntce','title'=>'ntce'],
-            'gross_rate' => ['defaultContent'=>null, 'name'=>'', 'data'=>'gross_rate', 'title'=>'gross_rate','title'=>'gross_rate'],
-            'status_id' => ['defaultContent' => null,'name' => 'status', 'data' => 'status','title'=>'status_id','searchable'=> false],
+            'cargo_type_id' => ['defaultContent' => $this->null,'name' => 'type', 'data' => 'type','title'=>'cargo_type_id','searchable'=> false],
+            'quantity' => ['defaultContent' => $this->null,'name' => 'quantity', 'data' => 'quantity','title'=>'quantity'],
+            'laycan_first_day' => ['defaultContent' => $this->null,'name' => 'laycan_first_day', 'data' => 'laycan_first_day','title'=>'laycan_first_day'],
+            'laycan_last_day' => ['defaultContent' => $this->null,'name' => 'laycan_last_day', 'data' => 'laycan_last_day','title'=>'laycan_last_day'],
+            'loading_port' => ['defaultContent' => $this->null,'name' => 'load_port', 'data' => 'load_port','title'=>'loading_port','searchable'=> false],
+            'discharging_port' => ['defaultContent' => $this->null,'name' => 'disch_port', 'data' => 'disch_port','title'=>'discharging_port','searchable'=> false],
+            'email_id' => ['defaultContent' => $this->null,'name' => 'email_id', 'data' => 'email_id','title'=>'email_id'],
+            'bdi' => ['defaultContent'=>$this->null, 'name'=>'bdi', 'data'=>'bdi', 'title'=>'bdi','title'=>'bdi'],
+            'ntce' => ['defaultContent'=>$this->null, 'name'=>'', 'data'=>'ntce',  'title'=>'ntce','title'=>'ntce'],
+            'gross_rate' => ['defaultContent'=>$this->null, 'name'=>'', 'data'=>'gross_rate', 'title'=>'gross_rate','title'=>'gross_rate'],
+            'status_id' => ['defaultContent' => $this->null,'name' => 'status', 'data' => 'status','title'=>'status_id','searchable'=> false],
         ];
     }
+
     /**
      * Get filename for export.
      *
