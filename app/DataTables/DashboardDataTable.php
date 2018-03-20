@@ -170,14 +170,12 @@ class DashboardDataTable extends DataTable
             $cargo->whereIn('cargos.status_id', $this->request()->get('cargo_status'));
         }
         if($this->request()->get('date_of_opening')){
-            $cargo->where(function($q){
-                    $q->whereDate('laycan_first_day','<=',$this->request()->get('date_of_opening'));
-                    $q->whereDate('laycan_last_day','>=',$this->request()->get('date_of_opening'));
-                    $q->orWhere(function($q){
+            $cargo->whereDate('laycan_first_day','<=',$this->request()->get('date_of_opening'))
+                  ->whereDate('laycan_last_day','>=',$this->request()->get('date_of_opening'))
+                  ->orWhere(function($q){
                         $q->where('laycan_first_day','<=',$this->request()->get('date_of_opening'));
                         $q->whereNull('laycan_last_day');
                 });
-            });
         }
         return $this->applyScopes($cargo);
     }
