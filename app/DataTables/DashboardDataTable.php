@@ -155,7 +155,7 @@ class DashboardDataTable extends DataTable
                                       'p2.name as disch_port',
                                       DB::raw('(quantity / '.$this->ship->dwcc.')*'.$this->ship->max_laden_draft - $this->ship->ballast_draft.' AS draft'),
                                       DB::raw('quantity * cargos.stowage_factor AS size'),
-                                      DB::raw('ST_Distance(POINT('.$this->port->latitude.','.$this->port->longitude.'), POINT(p1.latitude,p1.longitude)) AS \'ranges\'' )
+                                      DB::raw('ST_Distance(POINT('.$this->port->latitude.','.$this->port->longitude.'), POINT(p1.latitude,p1.longitude)) AS \'range\'' )
                                     ])
                             ->leftjoin('cargo_status', 'cargos.status_id','cargo_status.id')
                             ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
@@ -164,8 +164,8 @@ class DashboardDataTable extends DataTable
                             ->where('quantity','<=', $this->remaining_tonage)
                             ->having('size','<=',$this->remaining_size)
                             ->having('draft','<=',$this->remaining_draft)
-                            ->havingRaw('(ranges<='.$this->range.' or loading_port ='.$this->port->id.')');
-
+                            ->havingRaw('(\'range\' <='.$this->range.' or loading_port ='.$this->port->id.')');
+ 
         if($this->request()->get('cargo_status')){
             $cargo->whereIn('cargos.status_id', $this->request()->get('cargo_status'));
         }
