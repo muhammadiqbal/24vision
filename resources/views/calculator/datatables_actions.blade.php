@@ -1,5 +1,5 @@
 <div class='btn-group' style="display: inline-flex;">
-@if(isset($cargo))
+
     <a href="{{url('/voyage/'.$ship->id.'/'.$cargo->id.'/'.$port->id.'/'.$date_of_opening)}}" target="_blank" class='btn btn-default btn-xs' data-toggle="tooltip" title="View Voyage">
         <i class="glyphicon glyphicon-search"></i>
     </a>
@@ -14,6 +14,6 @@
     <a href="{{ route('cargos.edit', $cargo->id) }}" class='btn btn-default btn-xs' data-toggle="tooltip" title="Edit">
         <i class="glyphicon glyphicon-share"></i>
     </a>
-@endif
+
 </div>
 
