@@ -181,6 +181,19 @@ class DashboardDataTable extends DataTable
         //         });
         //     });
         // }
+        $cargo = Cargo::select(['cargos.*',
+                                      'cargo_status.name as status',
+                                      'cargo_types.name as type',
+                                      'p1.name as load_port',
+                                      'p2.name as disch_port',
+                                      DB::raw('(quantity / '.$this->ship->dwcc.')*'.$this->ship->max_laden_draft - $this->ship->ballast_draft.' AS draft'),
+                                      DB::raw('quantity * cargos.stowage_factor AS size'),
+                                      DB::raw('ST_Distance(POINT('.$this->port->latitude.','.$this->port->longitude.'), POINT(p1.latitude,p1.longitude)) AS \'range\'' )
+                                    ])
+                            ->leftjoin('cargo_status', 'cargos.status_id','cargo_status.id')
+                            ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
+                            ->leftjoin('ports as p1', 'p1.id','loading_port')
+                            ->leftjoin('ports as p2', 'p2.id','discharging_port');
         return $this->applyScopes($cargo);
     }
 
