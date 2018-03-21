@@ -450,7 +450,7 @@ class Calculator
 		} else {
 		// Step 2: determine bdi_id for route
 		$route_id = $paths[0]->route_id;
-		$bdi_id = Routes::find($route_id)->bdi_id;
+		$bdi_id = Route::find($route_id)->bdi_id;
 		}
 		
         return $bdi_id;

@@ -5,6 +5,23 @@ namespace App\Models;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Services\Calculator;
+use Carbon\Carbon;
+use App\Models\ShipPosition;
+use App\Models\Cargo;
+use App\Models\Route;
+use App\Models\Ship;
+use App\Models\Region;
+use App\Models\Distance;
+use App\Models\Port;
+use App\Models\Bdi;
+use App\Models\LdRateType;
+use App\Models\FuelPrice;   
+use App\Models\FeePrice;
+use App\Models\BdiPrice;
+use App\Models\Path;
+use App\Models\FuelType;
+use App\Models\CargoType;
+use App\Models\StowageFactorUnit;
 
 /**
  * Class Cargo
@@ -807,7 +824,7 @@ class Cargo extends Model
         } else {
         // Step 2: determine bdi_id for route
         $route_id = $paths[0]->route_id;
-        $bdi_id = Routes::find($route_id)->bdi_id;
+        $bdi_id = Route::find($route_id)->bdi_id;
         }
         
         return $bdi_id;
