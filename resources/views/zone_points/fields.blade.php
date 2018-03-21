@@ -1,7 +1,7 @@
 <!-- Zone Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('zone_id', 'Zone :') !!}
-    <select name="zone_id" ="" class="form-control" 
+    <select name="zone_id" class="form-control" 
     @if ($_GET['id']) {{'disabled'}} @endif>
         @foreach($zones as $zone)
             @if(!empty($zone_point) && $zone_point->zone_id == $zone->id)
