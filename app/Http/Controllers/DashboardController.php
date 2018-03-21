@@ -37,71 +37,37 @@ class DashboardController extends Controller
         $this->middleware('auth');
     }
 
-    public function testing(Request $request)
+    public function assignPortToZone(Request $request)
     {
 
-        // DB::connection('mysql')->enableQueryLog();
-        $cargo = DB::table('cargos')->select(['cargos.*',
-                                      'cargo_status.name as status',
-                                      'cargo_types.name as type',
-                                      'p1.name as load_port',
-                                      'p2.name as disch_port',
-                                      DB::raw('(quantity / 12)* 23 AS draft'),
-                                      DB::raw('quantity * cargo_types.stowage_factor AS size'),
-                                      DB::raw('ST_Distance(POINT(66,32), POINT(p1.latitude,p1.longitude)) AS \'range\'' )
-                                    ])
-                            ->leftjoin('cargo_status', 'cargos.status_id','cargo_status.id')
-                            ->leftjoin('cargo_types', 'cargos.cargo_type_id','cargo_types.id')
-                            ->leftjoin('ports as p1', 'p1.id','loading_port')
-                            ->leftjoin('ports as p2', 'p2.id','discharging_port')
-                     //       ->where('loading_port','31')
-                            ->where('quantity','<=',  '1234')
-                            ->having('size','<=','1234')
-                            ->having('draft','<=','12345')
-                            //->having('range','<=',$request->input('range'))
-                            ->havingRaw('(\'range\' <='.$request->input('range').' or loading_port =4)');
+ 
+        /**port zone assignment**/
+        $ports = Port::all();
+        $zones = Zone::all();
+        $count = 0;
 
-        if($request->input('cargo_status')){
-            $cargo->whereIn('cargos.status_id', $request->input('cargo_status'));
+        foreach ($ports as $port) {
+          if ($port->zone_id ==null){
+            foreach ($zones as $zone) {
+              $zonePoints = $zone->zonePoints;
+              $polyCoordinate = array();
+              foreach ($zonePoints as $zonePoint) {
+                array_push($polyCoordinate, [$port->latitude, $port->longitude]);
+              }
+              $polygon = new Polygon($polyCoordinate);
+
+              if ($port->latitude && $port->longitude && $polygon->pointInPolygon(new Coordinate([$port->latitude, $port->longitude]))) {
+                 $port->update(['zone_id'=>$zone->id]);
+                 $count++;
+                 break;
+              }
+            }
+          }
         }
-         if($request->input('date_of_opening')){
-            $cargo->where(function($q) use ($request){
-                $q->where(function($q) use ($request){
-                    $q->whereDate('laycan_first_day','<=',$request->input('date_of_opening'));
-                    $q->whereDate('laycan_last_day','>=',$request->input('date_of_opening'));
-                });
-                $q->orWhere(function($q) use ($request){
-                    $q->whereDate('laycan_first_day','<=',$request->input('date_of_opening'));
-                    $q->whereNull('laycan_last_day');
-                });
-            });
-        }
-        return $cargo->get();
-        // dd(DB::connection('mysql')->getQueryLog());
+        Flash::success($count.'Port assigned to Zone');
 
-        /* port zone assignment//
-        // $ports = Port::all();
-        // $zones = Zone::all();
-
-        // foreach ($ports as $port) {
-        //   if ($port->zone_id ==null){
-        //     foreach ($zones as $zone) {
-        //       $zonePoints = $zone->zonePoints;
-        //       $polyCoordinate = array();
-        //       foreach ($zonePoints as $zonePoint) {
-        //         array_push($polyCoordinate, [$port->latitude, $port->longitude]);
-        //       }
-        //       $polygon = new Polygon($polyCoordinate);
-
-        //       if ($port->latitude && $port->longitude && $polygon->pointInPolygon(new Coordinate([$port->latitude, $port->longitude]))) {
-        //          $port->update(['zone_id'=>$zone->id]);
-        //          break;
-        //       }
-        //     }
-        //   }
-        // }
-        /**END of Port zone assignment**/
-        // return ;
+        return redirect(url('/home'));
+        /**END of Port zone assignment*
     }
 
     /**
