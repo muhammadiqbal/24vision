@@ -67,7 +67,7 @@ class DashboardController extends Controller
         Flash::success($count.'Port assigned to Zone');
 
         return redirect(url('/home'));
-        /**END of Port zone assignment*
+        /**END of Port zone assignment**/
     }
 
     /**
