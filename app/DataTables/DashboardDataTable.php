@@ -63,7 +63,7 @@ class DashboardDataTable extends DataTable
             })
              ->editColumn('ranges', function(Cargo $cargo){
                
-                return round($cargo->range,2);
+                return round($cargo->ranges,2);
             })
             ->editColumn('bdi', function(Cargo $cargo){
                 $ship = $this->ship;
