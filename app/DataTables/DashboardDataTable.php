@@ -155,7 +155,7 @@ class DashboardDataTable extends DataTable
                                       'p1.name as load_port',
                                       'p2.name as disch_port',
                                       DB::raw('(quantity / '.$this->ship->dwcc.')*'.$this->ship->max_laden_draft - $this->ship->ballast_draft.' AS draft'),
-                                      DB::raw('IF(cargos.stowage_factor != NULL,  
+                                      DB::raw('IF(cargos.stowage_factor IS NOT NULL,  
                                                   quantity * cargos.stowage_factor, 
                                                   quantity * cargo_types.stowage_factor) AS size'),
                                       DB::raw('ST_Distance(POINT('.$this->port->latitude.','.$this->port->longitude.'), POINT(p1.latitude,p1.longitude)) AS \'ranges\'' )
