@@ -59,7 +59,7 @@ class ZonePointController extends AppBaseController
 
         Flash::success('Zone Point saved successfully.');
 
-        return redirect(route('zonePoints.index'));
+        return redirect(route('zones.index'));
     }
 
     /**
