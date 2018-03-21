@@ -14,15 +14,16 @@ use App\Models\Ship;
 use App\Models\Port;
 use App\Models\Zone;
 use App\Models\Email;
+use Symfony\Component\Process\Process;
+use Symfony\Component\Process\Exception\ProcessFailedException;
+use \League\Geotools\Polygon\Polygon;
+use \League\Geotools\Coordinate\Coordinate;
 use Illuminate\Http\Request;
 use Khill\Lavacharts\Lavacharts;
 use PhpImap\Mailbox;
-use Symfony\Component\Process\Process;
-use Symfony\Component\Process\Exception\ProcessFailedException;
 use DB;
+use Flash;
 use Response;
-use \League\Geotools\Polygon\Polygon;
-use \League\Geotools\Coordinate\Coordinate;
 
 
 class DashboardController extends Controller
@@ -58,13 +59,11 @@ class DashboardController extends Controller
 
               if ($port->latitude && $port->longitude && $polygon->pointInPolygon(new Coordinate([$port->latitude, $port->longitude]))) {
                  $port->update(['zone_id'=>$zone->id]);
-                 $count++;
-                 break;
               }
             }
           }
         }
-        Flash::success($count.'Port assigned to Zone');
+        Flash::success('Port assigned to Zone');
 
         return redirect(url('/home'));
         /**END of Port zone assignment**/

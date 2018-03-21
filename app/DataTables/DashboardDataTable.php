@@ -61,6 +61,10 @@ class DashboardDataTable extends DataTable
                     return view('calculator.datatables_actions', 
                         compact('cargo','ship','port','date_of_opening'))->render();
             })
+             ->editColumn('ranges', function(Cargo $cargo){
+               
+                return round($cargo->range,2);
+            })
             ->editColumn('bdi', function(Cargo $cargo){
                 $ship = $this->ship;
                 $port = $this->port;
