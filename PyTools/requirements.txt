@@ -11,7 +11,7 @@ cycler==0.9.0
 decorator==4.0.6
 GDAL==2.2.3
 geopy==1.11.0
-html5lib==0.9999999
+html5lib==0.99999999
 idna==2.0
 Jinja2==2.8
 jsonpatch==1.10
